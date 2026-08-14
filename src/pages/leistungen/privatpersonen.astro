@@ -2,12 +2,16 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import { siteConfig } from "../../data/site";
 import { withBase } from "../../utils/withBase";
+import { getServicePath, getServices } from "../../data/services";
+
+const privateServices = getServices("private", "de");
 ---
 
 <MainLayout
   title={`IT-Service fuer Privatpersonen in Berlin | ${siteConfig.defaultTitleSuffix}`}
   description="Vor-Ort IT-Service fuer Privatkunden in Berlin: PC- und Laptop-Optimierung, WLAN-Einrichtung, Malware-Entfernung und Smart-Home-Fehlerbehebung."
   canonicalPath="leistungen/privatpersonen/"
+  alternatePath="en/services/private/"
 >
   <section class="page-intro">
     <div class="container">
@@ -17,6 +21,26 @@ import { withBase } from "../../utils/withBase";
         Wenn Computer, WLAN oder Smart-Home nicht wie erwartet funktionieren, erhalten Sie
         verstaendliche und schnelle Hilfe direkt vor Ort in Berlin.
       </p>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <span class="eyebrow">Einzelne Leistungen</span>
+      <h2 class="section-title">Drei häufige Anliegen für Zuhause und Homeoffice</h2>
+      <p class="section-lead">
+        Wählen Sie das Thema, das Ihrer Situation am nächsten kommt. Den genauen Umfang klären wir
+        anschließend persönlich.
+      </p>
+      <div class="card-grid" style="margin-top: 1.5rem;">
+        {privateServices.map((service) => (
+          <a class="card service-card-link" href={withBase(getServicePath(service))}>
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+            <span class="service-link-label">Leistung ansehen →</span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -97,12 +121,12 @@ import { withBase } from "../../utils/withBase";
       <div class="feature-rail">
         <h2 style="margin-top: 0;">Direkt Hilfe anfragen</h2>
         <p>
-          Vereinbaren Sie einen Vor-Ort-Termin fuer Ihren Haushalt oder kontaktieren Sie unsere
-          IT-Notaufnahme bei akuten Stoerungen.
+          Schildern Sie Ihr Anliegen und vereinbaren Sie den passenden Vor-Ort- oder Remote-Termin
+          für Ihren Haushalt.
         </p>
         <div class="btn-row">
           <a class="btn btn-primary" href={withBase("#kontakt")}>Jetzt Termin vereinbaren</a>
-          <a class="btn btn-secondary" href={withBase("#kontakt")}>IT-Notaufnahme kontaktieren</a>
+          <a class="btn btn-secondary" href={siteConfig.contact.whatsappHref}>Über WhatsApp schreiben</a>
         </div>
       </div>
     </div>

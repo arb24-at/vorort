@@ -1,0 +1,75 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import ContactSection from "./ContactSection.astro";
+import LanguageSupportBanner from "./LanguageSupportBanner.astro";
+import { siteConfig } from "../data/site";
+import {
+  getAlternateServicePath,
+  getServicePath,
+  type LocalizedService
+} from "../data/services";
+
+type Props = {
+  service: LocalizedService;
+};
+
+const { service } = Astro.props;
+const isEnglish = service.locale === "en";
+---
+
+<MainLayout
+  title={`${service.seoTitle} | ${siteConfig.defaultTitleSuffix}`}
+  description={service.description}
+  canonicalPath={getServicePath(service)}
+  lang={service.locale}
+  alternatePath={getAlternateServicePath(service)}
+>
+  <section class="page-intro service-page-intro">
+    <div class="container">
+      <span class="eyebrow">{service.eyebrow}</span>
+      <h1 class="section-title">{service.title}</h1>
+      <p class="section-lead">{service.intro}</p>
+    </div>
+  </section>
+
+  <LanguageSupportBanner locale={service.locale} />
+
+  <section class="section">
+    <div class="container two-grid">
+      <article class="feature-rail service-feature">
+        <h2>{service.problemsTitle}</h2>
+        <ul class="check-list">
+          {service.problems.map((problem) => <li>{problem}</li>)}
+        </ul>
+      </article>
+
+      <article class="feature-rail service-feature service-feature-accent">
+        <h2>{service.includedTitle}</h2>
+        <ul class="check-list">
+          {service.included.map((item) => <li>{item}</li>)}
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container two-grid service-outcome-grid">
+      <section>
+        <span class="eyebrow">{isEnglish ? "Approach" : "Arbeitsweise"}</span>
+        <h2 class="section-title">{service.outcomeTitle}</h2>
+        <p class="section-lead">{service.outcome}</p>
+      </section>
+      <aside class="feature-rail">
+        <h2>{service.ctaTitle}</h2>
+        <p>{service.ctaText}</p>
+        <p class="service-contact-hint">
+          {isEnglish
+            ? "Support can take place on site in Berlin or remotely when appropriate."
+            : "Die Unterstützung kann vor Ort in Berlin oder – wenn sinnvoll – remote erfolgen."}
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <ContactSection locale={service.locale} />
+</MainLayout>

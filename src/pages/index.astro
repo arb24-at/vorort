@@ -5,6 +5,7 @@ import TrustBar from "../components/TrustBar.astro";
 import ServiceCards from "../components/ServiceCards.astro";
 import FaqSection from "../components/FaqSection.astro";
 import ContactSection from "../components/ContactSection.astro";
+import LanguageSupportBanner from "../components/LanguageSupportBanner.astro";
 import { siteConfig } from "../data/site";
 ---
 
@@ -12,8 +13,10 @@ import { siteConfig } from "../data/site";
   title={`IT Support Berlin fuer Privat & Business | ${siteConfig.defaultTitleSuffix}`}
   description="Professioneller IT Support in Berlin mit Vor-Ort-Service fuer Privatkunden und Unternehmen. Microsoft Certified Techniker, sichere Prozesse und schnelle Hilfe."
   canonicalPath=""
+  alternatePath="en/"
 >
   <HeroHome />
+  <LanguageSupportBanner />
   <TrustBar />
   <ServiceCards />
 

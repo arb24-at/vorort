@@ -1,0 +1,78 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import ContactSection from "../../components/ContactSection.astro";
+import LanguageSupportBanner from "../../components/LanguageSupportBanner.astro";
+import { siteConfig } from "../../data/site";
+import { getServicePath, getServices } from "../../data/services";
+import { withBase } from "../../utils/withBase";
+
+const featuredServices = [
+  ...getServices("private", "en").slice(0, 2),
+  ...getServices("business", "en").slice(0, 2)
+];
+---
+
+<MainLayout
+  title={`IT Support Berlin for Private & Business Customers | ${siteConfig.defaultTitleSuffix}`}
+  description="English-speaking IT support in Berlin for private customers and businesses: computers, Wi-Fi, Microsoft 365, Google Workspace, networks and workplace setup."
+  canonicalPath="en/"
+  lang="en"
+  alternatePath=""
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <section class="hero-main">
+        <span class="eyebrow">On-site IT support in Berlin</span>
+        <h1 class="hero-title">Practical IT help for homes, home offices and businesses</h1>
+        <p class="hero-copy">
+          Support for computers, Wi-Fi, workplace devices, Microsoft 365, Google Workspace and
+          everyday IT problems—explained clearly and handled on site or remotely when appropriate.
+        </p>
+        <div class="btn-row hero-cta-row">
+          <a class="btn btn-primary" href={withBase("en/#contact")}>Request IT support</a>
+          <a class="btn btn-secondary" href={siteConfig.contact.whatsappHref}>Write on WhatsApp</a>
+        </div>
+        <div class="district-list" aria-label="Service districts">
+          {siteConfig.serviceDistricts.map((district) => <span class="district-pill">{district}</span>)}
+        </div>
+      </section>
+
+      <aside class="hero-panel hero-panel-premium">
+        <p class="hero-panel-kicker">Private & business support</p>
+        <h2 class="panel-title">A clear route from problem to solution</h2>
+        <div class="hero-step-list">
+          <article class="hero-step"><span class="hero-step-index">01</span><p>Describe the issue and affected devices.</p></article>
+          <article class="hero-step"><span class="hero-step-index">02</span><p>Receive an initial assessment and agree the next step.</p></article>
+          <article class="hero-step"><span class="hero-step-index">03</span><p>Complete the work with a functional check and clear handover.</p></article>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <LanguageSupportBanner locale="en" />
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">IT services</span>
+      <h2 class="section-title">Support for everyday technology and office operations</h2>
+      <p class="section-lead">
+        Start with the closest service area. The exact scope is agreed directly after you get in touch.
+      </p>
+      <div class="card-grid" style="margin-top: 1.5rem;">
+        {featuredServices.map((service) => (
+          <a class="card service-card-link" href={withBase(getServicePath(service))}>
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+            <span class="service-link-label">View service →</span>
+          </a>
+        ))}
+      </div>
+      <div class="btn-row" style="margin-top: 1.5rem;">
+        <a class="btn btn-secondary" href={withBase("en/services/private/")}>All private services</a>
+        <a class="btn btn-secondary" href={withBase("en/services/business/")}>All business services</a>
+      </div>
+    </div>
+  </section>
+
+  <ContactSection locale="en" />
+</MainLayout>

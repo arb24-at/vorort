@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://arb24-at.github.io/astro-demo/sitemap-index.xml
+Sitemap: https://arb24-at.github.io/vorort/sitemap.xml

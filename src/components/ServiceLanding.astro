@@ -1,0 +1,99 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import ContactSection from "./ContactSection.astro";
+import LanguageSupportBanner from "./LanguageSupportBanner.astro";
+import { siteConfig } from "../data/site";
+import { getServicePath, getServices, type Audience } from "../data/services";
+import { withBase } from "../utils/withBase";
+
+type Props = {
+  audience: Audience;
+};
+
+const { audience } = Astro.props;
+const isPrivate = audience === "private";
+const services = getServices(audience, "en");
+const canonicalPath = `en/services/${audience}/`;
+const alternatePath = isPrivate ? "leistungen/privatpersonen/" : "leistungen/unternehmen/";
+const copy = isPrivate
+  ? {
+      title: `Private IT support in Berlin | ${siteConfig.defaultTitleSuffix}`,
+      description: "English-speaking on-site IT support in Berlin for computers, Wi-Fi, setup and data transfer at home or in a home office.",
+      eyebrow: "Private customers",
+      heading: "Practical IT help at home in Berlin",
+      intro: "From a slow laptop to unreliable Wi-Fi or a new computer: support is explained clearly and adapted to the devices and routines you already use.",
+      sectionEyebrow: "Private services",
+      sectionTitle: "Three common reasons to request support",
+      sectionIntro: "Choose the closest topic. The exact scope and next step are clarified directly by phone or email.",
+      link: "View service →",
+      approachTitle: "Clear communication from diagnosis to handover",
+      approachText: "We first clarify the symptoms and affected devices. Work can take place on site in Berlin or remotely when that is the more practical option.",
+      points: ["Plain-language explanations", "Agreed work before changes", "Functional check at handover"]
+    }
+  : {
+      title: `Business IT support in Berlin | ${siteConfig.defaultTitleSuffix}`,
+      description: "English-speaking IT support in Berlin for Microsoft 365, Google Workspace, office networks, devices and small-business workplaces.",
+      eyebrow: "Business IT",
+      heading: "IT support for small businesses in Berlin",
+      intro: "Practical support for offices, practices, studios and self-employed professionals who need reliable workplaces, cloud services and network infrastructure.",
+      sectionEyebrow: "Business services",
+      sectionTitle: "Three starting points for your business request",
+      sectionIntro: "Choose the closest area. We clarify the affected users, operational impact and sensible next step directly with you.",
+      link: "View service →",
+      approachTitle: "Support that fits the operational impact",
+      approachText: "An isolated workstation problem needs a different response from a recurring network issue. We separate immediate troubleshooting from longer-term improvements and document consequential changes.",
+      points: ["Microsoft and Google environments", "On-site and remote support", "Transparent prioritisation"]
+    };
+---
+
+<MainLayout
+  title={copy.title}
+  description={copy.description}
+  canonicalPath={canonicalPath}
+  lang="en"
+  alternatePath={alternatePath}
+>
+  <section class="page-intro">
+    <div class="container">
+      <span class="eyebrow">{copy.eyebrow}</span>
+      <h1 class="section-title">{copy.heading}</h1>
+      <p class="section-lead">{copy.intro}</p>
+    </div>
+  </section>
+
+  <LanguageSupportBanner locale="en" />
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">{copy.sectionEyebrow}</span>
+      <h2 class="section-title">{copy.sectionTitle}</h2>
+      <p class="section-lead">{copy.sectionIntro}</p>
+      <div class="card-grid" style="margin-top: 1.5rem;">
+        {services.map((service) => (
+          <a class="card service-card-link" href={withBase(getServicePath(service))}>
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+            <span class="service-link-label">{copy.link}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container two-grid">
+      <section>
+        <span class="eyebrow">How it works</span>
+        <h2 class="section-title">{copy.approachTitle}</h2>
+        <p class="section-lead">{copy.approachText}</p>
+      </section>
+      <aside class="feature-rail">
+        <ul class="check-list">
+          {copy.points.map((point) => <li>{point}</li>)}
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <ContactSection locale="en" />
+</MainLayout>

@@ -1,11 +1,34 @@
 ---
 import CertificationBadges from "./CertificationBadges.astro";
-import { legalNavigation, mainNavigation } from "../data/navigation";
+import { legalNavigation, legalNavigationEn, mainNavigation, mainNavigationEn } from "../data/navigation";
 import { siteConfig } from "../data/site";
 import { withBase } from "../utils/withBase";
+import type { Locale } from "../data/services";
+
+type Props = {
+  locale?: Locale;
+};
 
 const year = new Date().getFullYear();
 const toHref = (path: string) => withBase(path);
+const { locale = "de" } = Astro.props;
+const navigation = locale === "en" ? mainNavigationEn : mainNavigation;
+const legal = locale === "en" ? legalNavigationEn : legalNavigation;
+const copy = locale === "en"
+  ? {
+      intro: "Practical IT support for private customers and businesses in Berlin, on site and remote.",
+      services: "Services",
+      districts: "Berlin districts",
+      certifications: "Certifications",
+      rights: "All rights reserved."
+    }
+  : {
+      intro: "IT-Service für Privatkunden und Unternehmen in Berlin mit Vor-Ort-Hilfe, klaren Prozessen und Fokus auf Datensicherheit.",
+      services: "Leistungen",
+      districts: "Berlin-Bezirke",
+      certifications: "Zertifizierungen",
+      rights: "Alle Rechte vorbehalten."
+    };
 ---
 
 <footer class="site-footer">
@@ -14,8 +37,7 @@ const toHref = (path: string) => withBase(path);
       <section>
         <h2 class="footer-title">{siteConfig.shortName}</h2>
         <p>
-          IT-Service fuer Privatkunden und Unternehmen in Berlin mit Vor-Ort-Hilfe, klaren
-          Prozessen und Fokus auf Datensicherheit.
+          {copy.intro}
         </p>
         <p>
           Kontakt: <a href={siteConfig.contact.phoneHref}>{siteConfig.contact.phoneDisplay}</a> |
@@ -24,16 +46,16 @@ const toHref = (path: string) => withBase(path);
       </section>
 
       <section>
-        <h2 class="footer-title">Leistungen</h2>
+        <h2 class="footer-title">{copy.services}</h2>
         <ul class="footer-links">
-          {mainNavigation.map((item) => (
+          {navigation.map((item) => (
             <li><a href={toHref(item.href)}>{item.label}</a></li>
           ))}
         </ul>
       </section>
 
       <section>
-        <h2 class="footer-title">Berlin-Bezirke</h2>
+        <h2 class="footer-title">{copy.districts}</h2>
         <ul class="footer-links">
           {siteConfig.serviceDistricts.slice(0, 6).map((district) => (
             <li>{district}</li>
@@ -42,18 +64,18 @@ const toHref = (path: string) => withBase(path);
       </section>
 
       <section>
-        <h2 class="footer-title">Zertifizierungen</h2>
-        <CertificationBadges />
+        <h2 class="footer-title">{copy.certifications}</h2>
+        <CertificationBadges locale={locale} />
       </section>
     </div>
 
     <div class="footer-note">
-      <span>© {year} {siteConfig.shortName}. Alle Rechte vorbehalten.</span>
+      <span>© {year} {siteConfig.shortName}. {copy.rights}</span>
       <span>
-        {legalNavigation.map((item, index) => (
+        {legal.map((item, index) => (
           <>
             <a href={toHref(item.href)}>{item.label}</a>
-            {index < legalNavigation.length - 1 ? " | " : ""}
+            {index < legal.length - 1 ? " | " : ""}
           </>
         ))}
       </span>

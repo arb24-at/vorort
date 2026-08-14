@@ -1,0 +1,20 @@
+---
+import { siteConfig } from "../data/site";
+import type { Locale } from "../data/services";
+
+type Props = {
+  locale?: Locale;
+};
+
+const { locale = "de" } = Astro.props;
+const content = siteConfig.languageSupport[locale];
+---
+
+{siteConfig.languageSupport.enabled && (
+  <aside class="language-support-banner" aria-label={content.title}>
+    <div class="container language-support-inner">
+      <span class="language-support-icon" aria-hidden="true">DE / EN</span>
+      <p><strong>{content.title}</strong>{" "}{content.text}</p>
+    </div>
+  </aside>
+)}

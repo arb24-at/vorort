@@ -1,13 +1,16 @@
 ---
-import { mainNavigation } from "../data/navigation";
+import { mainNavigation, mainNavigationEn } from "../data/navigation";
 import { siteConfig } from "../data/site";
 import { withBase } from "../utils/withBase";
+import type { Locale } from "../data/services";
 
 type Props = {
   currentPath?: string;
+  locale?: Locale;
+  alternatePath?: string;
 };
 
-const { currentPath = "/" } = Astro.props;
+const { currentPath = "/", locale = "de", alternatePath } = Astro.props;
 const toHref = (path: string) => withBase(path);
 const baseHref = withBase("");
 const baseNoTrailingSlash = baseHref.replace(/\/$/, "");
@@ -27,12 +30,15 @@ const currentPathWithoutBase = (() => {
 })();
 
 const currentRelativePath = normalizePath(currentPathWithoutBase);
-const headerNavigation = mainNavigation.filter(
+const headerNavigation = (locale === "en" ? mainNavigationEn : mainNavigation).filter(
   (item) => item.href !== "datensicherheit-zertifizierungen/"
 );
+const labels = locale === "en"
+  ? { home: "home page", cta: "Request IT support", menu: "Open menu", language: "Deutsch", nav: "Main navigation", tagline: "On-site support for private & business" }
+  : { home: "Startseite", cta: "IT-Hilfe anfragen", menu: "Menü öffnen", language: "English", nav: "Hauptnavigation", tagline: siteConfig.tagline };
 
 const isActive = (href: string) => {
-  if (href === "") return currentRelativePath === "";
+  if (href === "" || href === "en/") return currentRelativePath === normalizePath(href);
   return currentRelativePath.startsWith(normalizePath(href));
 };
 ---
@@ -40,21 +46,26 @@ const isActive = (href: string) => {
 <header class="site-header" id="site-header">
   <div class="container">
     <div class="header-shell">
-      <a href={baseHref} class="brand" aria-label={`${siteConfig.name} Startseite`}>
+      <a href={locale === "en" ? withBase("en/") : baseHref} class="brand" aria-label={`${siteConfig.name} ${labels.home}`}>
         <span class="brand-mark">IT</span>
         <span>
           <span class="brand-name">{siteConfig.shortName}</span>
-          <span class="brand-subline">{siteConfig.tagline}</span>
+          <span class="brand-subline">{labels.tagline}</span>
         </span>
       </a>
 
-      <nav class="nav-desktop" aria-label="Hauptnavigation">
+      <nav class="nav-desktop" aria-label={labels.nav}>
         {headerNavigation.map((item) => (
           <a class={`nav-link ${isActive(item.href) ? "active" : ""}`} href={toHref(item.href)}>
             {item.label}
           </a>
         ))}
-        <a class="btn btn-primary nav-cta" href={withBase("#kontakt")}>Jetzt Termin vereinbaren</a>
+        {alternatePath !== undefined && (
+          <a class="nav-link language-switch" href={withBase(alternatePath)} hreflang={locale === "de" ? "en" : "de"}>
+            {labels.language}
+          </a>
+        )}
+        <a class="btn btn-primary nav-cta" href={withBase(locale === "en" ? "en/#contact" : "#kontakt")}>{labels.cta}</a>
       </nav>
 
       <button
@@ -62,19 +73,24 @@ const isActive = (href: string) => {
         class="mobile-toggle"
         aria-expanded="false"
         aria-controls="mobile-menu"
-        aria-label="Menue oeffnen"
+        aria-label={labels.menu}
       >
         ☰
       </button>
     </div>
 
-    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile Navigation" hidden>
+    <nav id="mobile-menu" class="mobile-menu" aria-label={labels.nav} hidden>
       {headerNavigation.map((item) => (
         <a class={`mobile-link ${isActive(item.href) ? "active" : ""}`} href={toHref(item.href)}>
           {item.label}
         </a>
       ))}
-      <a class="btn btn-primary" href={withBase("#kontakt")}>Jetzt Termin vereinbaren</a>
+      {alternatePath !== undefined && (
+        <a class="mobile-link" href={withBase(alternatePath)} hreflang={locale === "de" ? "en" : "de"}>
+          {labels.language}
+        </a>
+      )}
+      <a class="btn btn-primary" href={withBase(locale === "en" ? "en/#contact" : "#kontakt")}>{labels.cta}</a>
     </nav>
   </div>
 </header>

@@ -9,12 +9,16 @@ type Props = {
   title: string;
   description?: string;
   canonicalPath?: string;
+  lang?: "de" | "en";
+  alternatePath?: string;
 };
 
 const {
   title,
   description = siteConfig.defaultDescription,
-  canonicalPath = ""
+  canonicalPath = "",
+  lang = "de",
+  alternatePath
 } = Astro.props;
 
 const isExternalCanonical =
@@ -26,22 +30,34 @@ const canonicalUrl = isExternalCanonical
   ? normalizedCanonicalPath
   : new URL(normalizedCanonicalPath, Astro.site ?? "https://www.berlin-tech-support.de")
       .toString();
+const alternateUrl = alternatePath !== undefined
+  ? new URL(withBase(alternatePath), Astro.site ?? "https://www.berlin-tech-support.de").toString()
+  : undefined;
+const alternateLang = lang === "de" ? "en" : "de";
+const defaultUrl = new URL(withBase(""), Astro.site ?? "https://www.berlin-tech-support.de").toString();
 ---
 
 <!doctype html>
-<html lang="de">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+    {alternateUrl && <link rel="alternate" hreflang={alternateLang} href={alternateUrl} />}
+    {alternateUrl && <link rel="alternate" hreflang={lang} href={canonicalUrl} />}
+    {alternateUrl && <link rel="alternate" hreflang="x-default" href={defaultUrl} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
   </head>
   <body>
-    <Header currentPath={Astro.url.pathname} />
+    <Header currentPath={Astro.url.pathname} locale={lang} alternatePath={alternatePath} />
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer locale={lang} />
   </body>
 </html>
