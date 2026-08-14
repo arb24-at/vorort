@@ -1,4 +1,5 @@
 .DS_Store
+# Generated dependencies and Astro output at any repository depth.
 node_modules/
 dist/
 .astro/
