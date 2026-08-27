@@ -157,6 +157,8 @@ npm run validate
 
 `npm run validate` builds the site and verifies required pages, sitemap size, internal `/vorort/` targets, and the absence of stale `/astro-demo/` references. GitHub Actions runs the equivalent build and output validation before deployment.
 
+The engine's project-level `.npmrc` sets `bin-links=false` so fresh installs do not create symbolic links in `node_modules/.bin`, which keeps the working directory compatible with its Google Drive location. Package scripts invoke Astro's JavaScript entry point directly and must retain that form unless the storage constraint changes.
+
 ## Documentation ownership
 
 - This file owns stable purpose, decisions, architecture, website map, and operating facts.

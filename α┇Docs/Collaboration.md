@@ -5,13 +5,13 @@ Last updated: 2026-08-27
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: the truth-first public pass is committed on `main`; the responsive connected-space redesign is implemented locally but is not yet committed or pushed.
-- Local validation: `npm run validate` passed after the final implementation and handoff update on 2026-08-27 with 23 HTML pages, 22 sitemap URLs, zero missing `/vorort/` targets, and zero stale `/astro-demo/` paths.
+- Current working state: the responsive connected-space redesign and title adjustment are committed and pushed on `main`; the link-free npm configuration for the Google Drive move is implemented locally but is not yet committed or pushed.
+- Local validation: a clean link-free `npm ci` and `npm run validate` passed on 2026-08-27 with 23 HTML pages, 22 sitemap URLs, zero missing `/vorort/` targets, zero stale `/astro-demo/` paths, and no symbolic links anywhere under `node_modules`.
 - Local browser verification: German and English homepages plus the private computer/laptop and business network/workplace prototypes were reviewed at 1440×1000 and 390×844. No horizontal overflow or console errors were observed; mobile navigation, contact dock, anchored contact section, and progressive enquiry form were exercised successfully.
-- Deployment state: commit `4bd18da` is live on `main`; the connected-space redesign will deploy only after the current changes are committed and pushed.
+- Deployment state: `origin/main` is currently commit `2e60555`; the link-free npm configuration will reach GitHub Actions after the current changes are committed and pushed.
 - Product-direction state: the homepage and two selected prototypes now demonstrate progressive technical depth, intentional visual placeholders, differentiated private/business treatment, and one shared responsive system.
-- Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional.
-- Recommended next action: replace the central telephone and WhatsApp placeholders when supplied, review the implemented visual direction, then define the first commissioned master environment and production enquiry backend.
+- Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional. The clean install also reports nine dependency audit findings for later dependency-maintenance review.
+- Recommended next action: commit the link-free npm setup, move the parent folder with development processes closed, reopen the repository and Obsidian vault from the new locations, and run `npm ci` followed by `npm run validate` once more.
 
 ## Reporting template
 
@@ -114,3 +114,16 @@ Add a new dated entry after material work. Do not rewrite older entries except t
   - Mobile navigation, the sticky contact dock, the contact anchor, and the progressive form expansion were tested successfully.
 - Blockers or required input: real telephone and WhatsApp values, final brand and legal/contact facts, verified qualifications, travel policy, final visual assets, production form endpoint, analytics, and production domain.
 - Recommended next action: review this first visual direction in context, supply the ready phone and WhatsApp values, and choose one master-environment concept for final visual development before extending the page-specific states to every service page.
+
+## 2026-08-27 — Codex — Google Drive-compatible dependency installation
+
+- Objective: prevent npm from permanently recreating symbolic links in `node_modules/.bin` when the repository moves into Google Drive.
+- Changes: added an engine-level `.npmrc` with `bin-links=false` and changed the development, build, and preview scripts to invoke Astro's JavaScript entry point directly instead of relying on the missing `.bin/astro` link.
+- Decisions: `node_modules` remains local, generated, and ignored by Git, but installs inside the Drive-backed project must remain link-free. Future package-script additions must not assume executables are available through `node_modules/.bin`.
+- Validation:
+  - A clean `npm ci` installed 278 packages while respecting `bin-links=false`.
+  - A full scan found no symbolic links anywhere under `node_modules`, and `node_modules/.bin` was not created.
+  - `npm run validate` built 23 HTML pages and verified 22 sitemap URLs, all `/vorort/` links, and the absence of stale `/astro-demo/` paths.
+  - `npm run dev -- --host 127.0.0.1` started Astro successfully through the direct JavaScript entry point.
+- Blockers or required input: none for the link-free npm setup; the parent-folder move itself remains a local filesystem operation outside this repository.
+- Recommended next action: complete the clean-install validation, then move the parent folder while development processes are closed and reopen the repository and Obsidian vault from their new paths.
