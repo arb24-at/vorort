@@ -32,8 +32,15 @@ const featuredServices = [
           <a class="btn btn-primary" href={withBase("en/#contact")}>Request IT support</a>
           <a class="btn btn-secondary" href={siteConfig.contact.whatsappHref}>Write on WhatsApp</a>
         </div>
-        <div class="district-list" aria-label="Service districts">
-          {siteConfig.serviceDistricts.map((district) => <span class="district-pill">{district}</span>)}
+        <div class="hero-signal-row">
+          <article class="signal-chip">
+            <strong>On site throughout Berlin</strong>
+            <span>Support where your computers, devices and network are actually used</span>
+          </article>
+          <article class="signal-chip">
+            <strong>IT experience since 2008</strong>
+            <span>Structured help for homes, home offices and small businesses</span>
+          </article>
         </div>
       </section>
 

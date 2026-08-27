@@ -31,21 +31,25 @@ export type SiteConfig = {
 };
 
 export const siteConfig: SiteConfig = {
-  name: "BerlinTech Support",
-  shortName: "BerlinTech Support",
-  tagline: "Vor-Ort-Service für Privat & Business",
-  defaultTitleSuffix: "BerlinTech Support",
+  name: "VorOrt",
+  shortName: "VorOrt",
+  tagline: "IT-Service vor Ort in Berlin",
+  defaultTitleSuffix: "VorOrt",
   defaultDescription:
-    "Professioneller IT-Service in Berlin für Privatpersonen und Unternehmen: Vor-Ort-Support, Microsoft-Umgebungen, Systemoptimierung, Software-Installation und datenschutzbewusste Prozesse.",
+    "IT-Service vor Ort in Berlin für Privatpersonen, Homeoffice und kleine Unternehmen: verständliche Hilfe bei Computern, Software, Microsoft 365, Google Workspace und Netzwerken.",
   serviceDistricts: [
     "Mitte",
+    "Friedrichshain-Kreuzberg",
     "Pankow",
-    "Charlottenburg",
-    "Kreuzberg",
+    "Charlottenburg-Wilmersdorf",
+    "Spandau",
+    "Steglitz-Zehlendorf",
+    "Tempelhof-Schöneberg",
     "Neukölln",
-    "Friedrichshain",
-    "Wilmersdorf",
-    "Prenzlauer Berg"
+    "Treptow-Köpenick",
+    "Marzahn-Hellersdorf",
+    "Lichtenberg",
+    "Reinickendorf"
   ],
   contact: {
     phoneDisplay: "+49 (0)30 123 45 67",
@@ -58,12 +62,12 @@ export const siteConfig: SiteConfig = {
   languageSupport: {
     enabled: true,
     de: {
-      title: "IT-Service auch auf Englisch",
-      text: "Kontakt, Beratung und Techniker-Service sind auf Wunsch vollständig auf Englisch verfügbar."
+      title: "IT-Service auf Englisch",
+      text: "Der Techniker kann Sie auch während der eigentlichen technischen Arbeit auf Englisch unterstützen."
     },
     en: {
-      title: "IT support available in English",
-      text: "Contact, consultation and technician service can be provided entirely in English."
+      title: "English-speaking technical service",
+      text: "Your technician can communicate with you in English throughout the technical work."
     }
   }
 };

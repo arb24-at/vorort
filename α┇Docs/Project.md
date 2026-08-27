@@ -1,26 +1,55 @@
 # VorOrt project documentation
 
-Last updated: 2026-08-14
+Last updated: 2026-08-27
 
 ## Purpose and positioning
 
-VorOrt is the internal name for a Berlin-focused IT-support website serving private customers, home offices, and small business offices. The public brand has not been selected; the current `BerlinTech Support` identity is provisional.
+VorOrt is the provisional project and public working name for a Berlin-focused IT-support service. It is not the final brand, so architecture and major design decisions must not depend on the name being permanent. The earlier `BerlinTech Support` identity is retired as the working direction.
 
-The website is intended to operate as a normal local Berlin service presence while also providing evidence of demand through calls, emails, prepared form enquiries, WhatsApp conversations, relevant search visibility, and service-page engagement. Public copy must not mention a waitlist, Baku, or delayed operating availability. Communication is primarily in German from Berlin, with optional messaging that contact and technician service are also available in English.
+The website is intended to operate as a normal local Berlin service presence and generate genuine enquiries while testing commercial demand through calls, form enquiries, WhatsApp conversations, relevant search visibility, traffic quality, contact intent, and service-page engagement. A polished professional presence is a means to that outcome rather than an end in itself. Public copy must not mention a waitlist, Baku, or delayed operating availability.
 
-The offer may cover practical computer, software, hardware, setup, migration, connectivity, networking, Microsoft, Google, workplace, troubleshooting, and related IT-support work. Exact promises, prices, response times, and exclusions must remain truthful and should be confirmed before being expanded in public copy.
+The primary audiences are private customers, home-office users, freelancers, and very small businesses, including visitors who may be discouraged by overly technical IT websites. The service should feel accessible to them without publicly labelling them as a demographic segment. On-site support throughout Berlin is the defining service model; remote support and initial diagnosis remain supporting options where appropriate.
+
+The current primary service pillars are computer and laptop troubleshooting, software installation and optimization, office networks and workplace IT, Microsoft 365, and Google Workspace. Public organization should follow customer needs and problems, not internal service tiers. Hardware and component-level repair, low-value repair work, and trivial standalone fixes that cannot reasonably support a professional service rate must not become core advertised categories. Small related tasks may still be handled during a larger visit.
+
+The intended market position combines an accessible neighborhood IT expert, a calm established professional service, and a modern small-business specialist. It must not resemble either a cheap repair shop, a luxury technology concierge, or an expensive enterprise consultancy.
 
 ## Decisions currently in force
 
-- `VorOrt` is an internal project name, not the chosen customer-facing brand.
+- `VorOrt` is the provisional public working name, not the final customer-facing brand.
 - German is the default language at `/`; English is maintained separately under `/en/` for stronger language quality and SEO.
 - Stable translation pairs are connected by service IDs in `src/data/services.ts`, rather than runtime machine translation.
-- English-service messaging is centrally configurable and currently enabled.
+- The German copy uses contemporary, friendly, formal `Sie` language.
+- English-speaking technical service is a real public promise: the technician doing the work can communicate in English. Do not expand this into a claim of fully bilingual technicians or advertise German-speaking telephone support or technicians.
+- The complete German and English sites are both important. English-service messaging is centrally configurable and currently enabled.
+- Content follows progressive technical depth: reduce anxiety at the entrance, reveal stronger evidence further down, and permit substantial professional detail on business pages.
+- Calls, WhatsApp, and a real enquiry form are the three primary contact paths; their visual priority may vary by page, context, and device.
+- Pricing is handled through individual quotations rather than public fixed, starting, or hourly prices for now.
 - The site remains static-first with no accounts or authentication.
 - GitHub Pages is the current host at `https://arb24-at.github.io/vorort/`.
-- The current telephone, WhatsApp, email, postal address, legal identity, and badge assets are placeholders until verified replacements are supplied.
-- Certification badges may only represent credentials actually earned and verifiable. The DSGVO graphic describes a process intention and is not an independent certification.
+- The current telephone, WhatsApp, email, postal address, and legal identity are placeholders until verified replacements are supplied. Unverified public badge assets were removed and must not return without exact credential evidence.
+- Certification badges may only represent credentials actually earned and verifiable. Do not represent a process intention as an independent privacy or compliance certification.
 - Editable business facts and localized content should eventually move to validated Markdown/content collections. Foundational spacing, typography, components, and accessibility behavior stay in code; Markdown must not become an unrestricted page builder.
+
+## Operating model and service truth
+
+The public voice is a small professional team using `wir`. Do not imply a sole freelancer or exaggerate the operation into a large company. The business is a registered Gewerbe under Aykhan's personal name; a separate service brand may be used publicly while the legal notice identifies the real operator.
+
+The internal enquiry path is deliberately more detailed than the public explanation: collect the problem, location, device or service, and urgency; review whether the request is supportable; decide whether on-site work, remote help, or further diagnosis is appropriate; give a scope or cost indication where possible; arrange the appointment; perform the work primarily on site; and agree any additional work, equipment, or return visit before proceeding. A German-speaking operator may handle initial calls, but the website must not advertise this. The public journey should remain short and reassuring.
+
+Relevant professional IT experience dates from 2008. Prefer durable wording such as `IT experience since 2008` rather than a calculated number of years.
+
+Actively represented technology and service areas are Windows computers, Microsoft 365, Google Workspace, Wi-Fi and local networks, printers and peripherals, backups and cloud storage, email and domain configuration, security and account protection, workplace software, device setup, data migration, software installation and optimization, and general system troubleshooting. Apple/macOS, smartphones and tablets, NAS devices, Windows Server, and Linux may be supported where a request fits. They do not all need prominent service categories. Linux and server knowledge may demonstrate deeper capability on relevant business pages without implying enterprise datacenter operations.
+
+The initial business audience is generally workplaces of approximately 1–20 users, including home offices, practices, shops, studios, and similar small organizations. Assess requests individually and do not publish 20 users as an absolute ceiling. One-off projects and problem resolution are primary; optional recurring support may be offered without making a long-term contract feel mandatory.
+
+Do not guarantee data recovery, emergency or 24-hour response, same-day visits, response times, enterprise cybersecurity, component-level electronics repair, acceptance of regulated or highly sensitive environments, or support for pirated, unlicensed, or unsupported software. Small-business server and security-configuration requests may be assessed individually without presenting the service as an enterprise infrastructure or cybersecurity consultancy.
+
+Appointments may be available on weekdays, weekday evenings, and Saturdays with flexible scheduling. Do not publish rigid hours yet. Same-day or urgent help may occasionally be possible but is never a public guarantee.
+
+The initial conversation is free. Give an expected scope or quotation before the visit when the request is sufficiently clear. A paid diagnostic visit may be needed when responsible remote diagnosis is not possible. Explain that distinction without suggesting every technical issue can be priced exactly before inspection. Berlin travel policy remains undecided.
+
+The future enquiry form should stay approachable while collecting name; telephone and/or email; preferred contact method; postcode or Berlin district; private, home-office, or business context; optional company name; a short problem description; affected device, software, or service; preferred appointment period; an optional screenshot or photograph; and privacy consent. It must never request passwords, authentication or recovery codes, payment-card data, remote-access credentials, or other sensitive login information.
 
 ## Repository and application architecture
 
@@ -71,17 +100,33 @@ All routes are served beneath the GitHub Pages repository base, for example `/vo
 
 ## Visual direction
 
-The current blue, white, rounded-card interface is a functional prototype, not the final brand system. The removed standalone HTML concept contributed several ideas worth retaining: clear service signaling, icon-supported scanning, a diagnostic/status-panel metaphor, visible Berlin relevance, and trust/process content that reduces uncertainty.
+The current blue, white, rounded-card interface is a functional prototype, not a visual or content direction that must be preserved. Retain sound technical structure and useful interaction patterns where they support the new direction, but do not preserve generic elements merely because they are already implemented.
 
-The future direction should go beyond unrelated service stock photographs. Explore a consistent visual world—such as a recognizable connected Berlin home/office/building environment—that changes state by subject:
+The desired impression is trustworthy, competent, and modern, supported by approachability, calmness, friendliness, and local familiarity. The site should look like a real Berlin IT service without resembling a conventional IT-company template, a cheap repair shop, or an intimidating consultancy.
+
+The governing visual principle is a coherent environment that changes state by subject. This adapts the successful logic of a previous conservatory website, where one recognizable environment expressed rain, winter, sun, leakage, insulation, or repair according to the page topic. On this site, visitors should often understand a service context through the page treatment before reading its heading.
+
+Explore a consistent Berlin home, home-office, and small-office visual world that changes state by subject:
 
 - networking reveals coverage, signal paths, and connection problems;
 - security reveals protected boundaries, access, and anomalies;
-- repair reveals diagnostic layers and isolated faults;
-- setup and migration reveal information and devices moving into an ordered state;
-- private and business pages show distinct contexts while remaining visibly part of the same system.
+- troubleshooting and software work reveal diagnostic layers, conflicts, and an ordered resolution;
+- Microsoft, Google, and workplace pages reveal collaboration, device relationships, accounts, and information flow;
+- private, home-office, and business pages grow progressively more sophisticated while remaining visibly part of the same system.
 
-Use bespoke imagery selectively. The same visual grammar should extend into icons, diagrams, background details, status colors, and motion. Prototype the system on the homepage and two contrasting service pages before commissioning a large asset library.
+The thematic idea must continue beyond hero imagery into section composition, custom icons, technical diagrams, small system visualizations, interface-like details, typography, restrained abstract graphics, meaningful motion, interaction, and subtle reactive behavior. Avoid generic laptop users, technicians pointing at monitors, server racks without service relevance, handshakes, call centers, unrelated AI people, and a different style on every page.
+
+Generated or bespoke imagery should be selective and belong to a deliberately designed family with recurring environments, composition, perspective, materials, and lighting. Identify a small number of high-value master concepts before commissioning assets. Prototype the system on the homepage, one private service, and one business service before expanding it across the site.
+
+The first contrasting service prototypes are computer and laptop troubleshooting for private customers, and office networks and workplace IT for businesses. Until suitable authentic photography exists, do not substitute generic stock people or generated technicians; use environments, devices, systems, illustrations, diagrams, and icons to carry the identity.
+
+## Content-depth and trust model
+
+The homepage entrance must be simple, attractive, reassuring, and immediately understandable. It should explain what the service does and reduce anxiety without leading with certifications, technology lists, or dense terminology. Deeper homepage sections may reveal more evidence while staying understandable.
+
+Private-service pages may contain more detail because their visitors have shown stronger intent. Business pages may go considerably deeper into workplace IT, networking, Microsoft, Google, working methods, technologies, qualifications, and certificates without adopting enterprise-consultancy language or presentation.
+
+Genuine professional qualifications, years of experience, and named technology expertise are the intended trust signals. Use simple reassurance near the entrance, stronger evidence further down, and detailed proof on relevant professional pages. Certifications must prove competence rather than become decorative badge collections, and no credential or duration may be published until its exact wording and evidence are supplied.
 
 ## SEO, deployment, and measurement
 

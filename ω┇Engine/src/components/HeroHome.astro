@@ -1,60 +1,55 @@
 ---
-import { siteConfig } from "../data/site";
 import { withBase } from "../utils/withBase";
 ---
 
 <section class="hero">
   <div class="container hero-grid">
     <section class="hero-main">
-      <span class="eyebrow">Vor-Ort-Service fuer Privat & Business</span>
-      <h1 class="hero-title">Schneller IT-Support in Berlin, wenn Technik nicht warten kann</h1>
+      <span class="eyebrow">IT-Service vor Ort in Berlin</span>
+      <h1 class="hero-title">IT-Hilfe, die verständlich beginnt und professionell weitergeht</h1>
       <p class="hero-copy">
-        Wir unterstuetzen Sie bei IT-Stoerungen im Alltag und im Unternehmen: von Microsoft 365
-        ueber WLAN und Arbeitsplatzsysteme bis zur strukturierten Fehlerbehebung vor Ort.
+        Wir unterstützen Privatpersonen, Homeoffice und kleine Unternehmen bei Computer-,
+        Software- und Netzwerkproblemen – persönlich vor Ort und ohne unnötiges Fachchinesisch.
       </p>
       <div class="btn-row hero-cta-row">
-        <a class="btn btn-primary" href={withBase("#kontakt")}>Jetzt Termin vereinbaren</a>
-        <a class="btn btn-secondary" href={withBase("#leistungen")}>Leistungen ansehen</a>
+        <a class="btn btn-primary" href={withBase("#kontakt")}>IT-Hilfe anfragen</a>
+        <a class="btn btn-secondary" href={withBase("#leistungen")}>Wobei wir helfen</a>
       </div>
 
       <div class="hero-signal-row">
         <article class="signal-chip">
-          <strong>Microsoft Certified</strong>
-          <span>Zertifizierte Techniker fuer Microsoft-Umgebungen</span>
+          <strong>Vor Ort in ganz Berlin</strong>
+          <span>Hilfe dort, wo Computer, Geräte und Netzwerk tatsächlich genutzt werden</span>
         </article>
         <article class="signal-chip">
-          <strong>DSGVO-konform</strong>
-          <span>Dokumentierte, sichere Datenprozesse</span>
+          <strong>IT-Erfahrung seit 2008</strong>
+          <span>Strukturierte Unterstützung für Alltag, Homeoffice und kleine Betriebe</span>
         </article>
-      </div>
-
-      <div class="district-list" aria-label="Servicebezirke">
-        {siteConfig.serviceDistricts.map((district) => <span class="district-pill">{district}</span>)}
       </div>
     </section>
 
     <aside class="hero-panel hero-panel-premium">
       <p class="hero-panel-kicker">IT-Hilfe in Berlin</p>
-      <h2 class="panel-title">Was Sie von uns erwarten duerfen</h2>
+      <h2 class="panel-title">So kommen wir zum passenden nächsten Schritt</h2>
 
       <div class="hero-step-list">
         <article class="hero-step">
           <span class="hero-step-index">01</span>
-          <p>Erstaufnahme Ihres Problems mit klarer Priorisierung.</p>
+          <p>Sie schildern kurz das Problem, den Standort und die betroffenen Geräte.</p>
         </article>
         <article class="hero-step">
           <span class="hero-step-index">02</span>
-          <p>Direkte Vor-Ort- oder Remote-Unterstuetzung ohne Umwege.</p>
+          <p>Wir prüfen, ob ein Vor-Ort-Termin, Remote-Hilfe oder eine Diagnose sinnvoll ist.</p>
         </article>
         <article class="hero-step">
           <span class="hero-step-index">03</span>
-          <p>Saubere Loesung mit nachvollziehbarer Abschlusskommunikation.</p>
+          <p>Umfang, Termin und mögliche Kosten werden so früh wie verantwortbar geklärt.</p>
         </article>
       </div>
 
       <div class="hero-highlight">
-        <strong>Vor Ort und remote:</strong>
-        <p>Den passenden Supportweg und Termin klären wir direkt bei Ihrer Anfrage.</p>
+        <strong>Vor Ort als Schwerpunkt:</strong>
+        <p>Remote-Unterstützung nutzen wir ergänzend, wenn sie für Ihr Anliegen wirklich passt.</p>
       </div>
     </aside>
   </div>

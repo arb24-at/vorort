@@ -1,5 +1,4 @@
 ---
-import CertificationBadges from "./CertificationBadges.astro";
 import { legalNavigation, legalNavigationEn, mainNavigation, mainNavigationEn } from "../data/navigation";
 import { siteConfig } from "../data/site";
 import { withBase } from "../utils/withBase";
@@ -18,15 +17,15 @@ const copy = locale === "en"
   ? {
       intro: "Practical IT support for private customers and businesses in Berlin, on site and remote.",
       services: "Services",
-      districts: "Berlin districts",
-      certifications: "Certifications",
+      districts: "Service area",
+      trust: "Experience & service",
       rights: "All rights reserved."
     }
   : {
       intro: "IT-Service für Privatkunden und Unternehmen in Berlin mit Vor-Ort-Hilfe, klaren Prozessen und Fokus auf Datensicherheit.",
       services: "Leistungen",
-      districts: "Berlin-Bezirke",
-      certifications: "Zertifizierungen",
+      districts: "Servicegebiet",
+      trust: "Erfahrung & Service",
       rights: "Alle Rechte vorbehalten."
     };
 ---
@@ -57,15 +56,19 @@ const copy = locale === "en"
       <section>
         <h2 class="footer-title">{copy.districts}</h2>
         <ul class="footer-links">
-          {siteConfig.serviceDistricts.slice(0, 6).map((district) => (
-            <li>{district}</li>
-          ))}
+          <li>{locale === "en" ? "All Berlin districts" : "Alle Berliner Bezirke"}</li>
+          <li>{locale === "en" ? "On-site as the primary service" : "Vor Ort als Schwerpunkt"}</li>
+          <li>{locale === "en" ? "Remote help when appropriate" : "Remote-Hilfe, wenn sinnvoll"}</li>
         </ul>
       </section>
 
       <section>
-        <h2 class="footer-title">{copy.certifications}</h2>
-        <CertificationBadges locale={locale} />
+        <h2 class="footer-title">{copy.trust}</h2>
+        <ul class="footer-links">
+          <li>{locale === "en" ? "IT experience since 2008" : "IT-Erfahrung seit 2008"}</li>
+          <li>{locale === "en" ? "English-speaking technical service" : "Technischer Service auf Englisch"}</li>
+          <li>{locale === "en" ? "Clear scope and next steps" : "Klare Einschätzung und nächste Schritte"}</li>
+        </ul>
       </section>
     </div>
 

@@ -1,22 +1,21 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import CertificationBadges from "../components/CertificationBadges.astro";
 import { siteConfig } from "../data/site";
 import { withBase } from "../utils/withBase";
 ---
 
 <MainLayout
-  title={`Datensicherheit & Zertifizierungen | ${siteConfig.defaultTitleSuffix}`}
-  description="Warum Microsoft Certified Standards und DSGVO-konforme Prozesse fuer IT-Service in Berlin entscheidend sind."
+  title={`Sicherer Umgang mit IT-Systemen | ${siteConfig.defaultTitleSuffix}`}
+  description="Nachvollziehbarer Umgang mit Zugriffen, Änderungen und sensiblen Informationen beim IT-Service in Berlin."
   canonicalPath="datensicherheit-zertifizierungen/"
 >
   <section class="page-intro">
     <div class="container">
       <span class="eyebrow">Sicherheit & Vertrauen</span>
-      <h1 class="section-title">Datensicherheit & Zertifizierungen</h1>
+      <h1 class="section-title">Sicherer Umgang mit IT-Systemen</h1>
       <p class="section-lead">
-        IT-Support bedeutet Zugriff auf sensible Systeme. Deshalb sind Zertifizierungen und ein
-        klarer Datenschutzprozess keine Option, sondern Grundvoraussetzung.
+        IT-Support kann Zugriff auf Geräte, Konten und persönliche oder geschäftliche Informationen
+        erfordern. Deshalb klären wir Zweck, Umfang und notwendige Zugriffe so verständlich wie möglich.
       </p>
     </div>
   </section>
@@ -24,28 +23,28 @@ import { withBase } from "../utils/withBase";
   <section class="section">
     <div class="container two-grid">
       <article class="card">
-        <h2 style="margin-top: 0;">Warum "Microsoft Certified" relevant ist</h2>
+        <h2 style="margin-top: 0;">Nur notwendige Zugriffe</h2>
         <p>
-          Microsoft-Zertifizierungen bestaetigen, dass Techniker nach anerkannten Standards in
-          Bereichen wie Microsoft 365, Endpoint-Management und Cloud-Diensten arbeiten.
+          Nicht jede Anfrage erfordert Zugriff auf alle Daten oder Administrationsbereiche. Wir
+          grenzen den benötigten Arbeitsbereich gemeinsam mit Ihnen ein.
         </p>
         <ul>
-          <li>Strukturiertes Vorgehen statt trial-and-error</li>
-          <li>Bessere Qualitaet bei Einrichtung, Migration und Fehleranalyse</li>
-          <li>Hoehere Sicherheit in produktiven Arbeitsumgebungen</li>
+          <li>Keine Passwörter oder Anmeldecodes im Anfrageformular</li>
+          <li>Zugriff erst im passenden Arbeitskontext</li>
+          <li>Abstimmung vor weitergehenden Änderungen</li>
         </ul>
       </article>
 
       <article class="card">
-        <h2 style="margin-top: 0;">Verpflichtung auf professionelle Standards</h2>
+        <h2 style="margin-top: 0;">Änderungen nachvollziehbar halten</h2>
         <p>
-          Neben Microsoft-Kompetenz setzen wir auf ergaenzende Industrie-Standards in den Bereichen
-          Datensicherheit, Dokumentation und Betriebssicherheit.
+          Bei technischen Eingriffen sollen Sie verstehen können, was geändert wurde, weshalb es
+          erforderlich war und ob weitere Schritte sinnvoll sind.
         </p>
         <ul>
-          <li>Transparente Kommunikation zu Zugriffen und Aenderungen</li>
-          <li>Nachvollziehbares Vorgehen bei sensiblen Daten</li>
-          <li>Wartbare Loesungen fuer langfristige Stabilitaet</li>
+          <li>Transparente Kommunikation zu Zugriffen und Änderungen</li>
+          <li>Funktionskontrolle nach der Arbeit</li>
+          <li>Empfehlungen ohne unangekündigte Zusatzarbeiten</li>
         </ul>
       </article>
     </div>
@@ -54,26 +53,22 @@ import { withBase } from "../utils/withBase";
   <section class="section section-soft">
     <div class="container two-grid">
       <section>
-        <span class="eyebrow">DSGVO-konforme Arbeitsweise</span>
-        <h2 class="section-title">Sicherer Umgang mit Kunden- und Unternehmensdaten</h2>
+        <span class="eyebrow">Qualifikationen</span>
+        <h2 class="section-title">Nachweise erst nach sorgfältiger Prüfung</h2>
         <p class="section-lead">
-          Ob Privatkunde in Kreuzberg oder Unternehmen in Charlottenburg: wir behandeln Daten nur
-          zweckgebunden, minimieren Zugriffe und arbeiten mit klaren Verantwortlichkeiten.
+          Relevante berufliche Qualifikationen und Zertifikate werden derzeit gesammelt und geprüft.
+          Wir veröffentlichen erst dann genaue Namen oder Badges, wenn der Nachweis verifiziert ist.
         </p>
-        <ul>
-          <li>Zugriff nur fuer den jeweiligen Supportzweck</li>
-          <li>Datensparsame und zeitlich begrenzte Verarbeitung</li>
-          <li>Protokollierbare Arbeitsschritte fuer hoehere Transparenz</li>
-        </ul>
       </section>
 
       <aside class="feature-rail">
-        <h3 style="margin-top: 0;">Trust-Badges im Footer aller Seiten</h3>
-        <p style="margin-top: 0.3rem; color: var(--ink-700);">
-          In der Konzeptphase nutzen wir Platzhalter. Diese werden spaeter durch echte Logos und
-          Zertifikatsnachweise ersetzt.
-        </p>
-        <CertificationBadges />
+        <h3 style="margin-top: 0;">Was wir heute verlässlich sagen können</h3>
+        <ul>
+          <li>Professionelle IT-Erfahrung seit 2008</li>
+          <li>Praxis mit Windows, Microsoft 365 und Google Workspace</li>
+          <li>Erfahrung mit Netzwerken, Arbeitsplatz-IT und Softwareproblemen</li>
+          <li>Technischer Service auf Englisch</li>
+        </ul>
       </aside>
     </div>
   </section>
@@ -81,13 +76,13 @@ import { withBase } from "../utils/withBase";
   <section class="section">
     <div class="container">
       <div class="feature-rail">
-        <h2 style="margin-top: 0;">Sicherheitsfragen direkt besprechen</h2>
+        <h2 style="margin-top: 0;">Sicherheitsanforderungen direkt besprechen</h2>
         <p>
-          Wenn Sie Anforderungen zu Datenschutz, Microsoft 365 oder sicherer Infrastruktur haben,
-          stimmen wir den passenden Supportprozess mit Ihnen ab.
+          Beschreiben Sie kurz die betroffenen Geräte, Konten oder Arbeitsabläufe. Wir prüfen, ob
+          und in welchem Rahmen wir die Anfrage verantwortungsvoll unterstützen können.
         </p>
         <div class="btn-row">
-          <a class="btn btn-primary" href={withBase("#kontakt")}>Jetzt Termin vereinbaren</a>
+          <a class="btn btn-primary" href={withBase("#kontakt")}>IT-Hilfe anfragen</a>
           <a class="btn btn-secondary" href={siteConfig.contact.whatsappHref}>Über WhatsApp schreiben</a>
         </div>
       </div>
