@@ -1,3 +1,7 @@
+---
+version: 1.2.2
+---
+
 # VorOrt agent instructions
 
 These instructions apply to the entire repository.
@@ -49,14 +53,18 @@ Before considering a material change complete:
 
 ## Git commit handoff
 
-- All completed or proposed Git commit messages must use the exact format `VorOrt vX.Y.Z: message`.
-- `X` is the project-level version controlled by Aykhan. Only Aykhan may change `X`; agents must preserve the latest confirmed `X` exactly.
+- The root `AGENTS.md` frontmatter `version` is the canonical project version and the source of truth for `X.Y.Z`.
+- All completed or proposed Git commit messages must use the exact format `VorOrt vX.Y.Z: message`, and the `X.Y.Z` in the commit message must exactly match the `version` value in `AGENTS.md` frontmatter for that change set. Message should be placed in codeblock
+- `X` is the project-level version controlled by Aykhan. Only Aykhan may change `X`; agents must preserve the current frontmatter `X` exactly unless Aykhan explicitly instructs otherwise.
 - `Y` is for major updates. Increment `Y` by one for a major update and reset `Z` to `0`.
 - `Z` is for minor changes and patches. Increment `Z` by one for each minor change or patch.
-- Determine the next version from the latest confirmed project version. Never invent, guess, or independently change `X`. If the current version is not available, state that clearly rather than fabricating a version number.
+- One logical Git commit receives one version bump. Do not bump the version once per file. All files intended for the same commit use the same bumped version.
+- Before completing a commit or handing Aykhan a proposed commit message, determine the appropriate next version from the current `AGENTS.md` frontmatter, update the frontmatter `version` to that next version as part of the same change set, and use that exact version in the commit message.
+- If `AGENTS.md` already contains an uncommitted version bump for the same intended commit, keep that version rather than bumping it again. If the work is intended as a separate subsequent commit, apply the next appropriate bump.
+- Never suggest or complete a commit whose version differs from the `AGENTS.md` frontmatter. Never provide an `X.Y.Z` placeholder when the frontmatter version is readable.
 - When local repository shell access is available and a commit is completed, state explicitly that the Git commit was completed and include the commit hash and the full versioned commit message when available.
-- A Project Chat or other Drive-connected session without local repository shell access may leave the Git commit for Aykhan instead of attempting to simulate it through Drive.
-- If no Git commit was completed, say so explicitly, tell Aykhan that the changes still need to be committed locally, and provide a ready-to-use versioned commit message when the current version is known. If the current version is not known, provide the message text and explicitly identify the missing version number.
+- A Project Chat or other Drive-connected session without local repository shell access may leave the Git commit for Aykhan instead of attempting to simulate it through Drive, but it must still keep the `AGENTS.md` frontmatter version aligned with the proposed commit version.
+- If no Git commit was completed, say so explicitly, tell Aykhan that the changes still need to be committed locally, and provide a ready-to-use commit message using the exact version already recorded in `AGENTS.md` frontmatter.
 - Never claim that a Git commit, push, status check, diff check, or shell validation was completed unless it was actually run against the local repository.
 
 ## Collaboration contract

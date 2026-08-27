@@ -74,29 +74,113 @@ Important sources of truth inside `ω┇Engine`:
 
 The contact form currently prepares an email through the visitor's configured mail client. It is not a server-backed submission and cannot independently count abandoned or completed form attempts. Calls, email, and WhatsApp are the practical contact channels until the conversion backend is chosen.
 
-## Website map
+## Current implemented website map
 
-The sitemap contains 22 indexable URLs; the separate 404 page brings the generated HTML total to 23.
+The current sitemap contains 22 indexable URLs; the separate 404 page brings the generated HTML total to 23. This describes the implemented state, not a permanently frozen launch architecture.
 
-| Purpose | German route | English route |
-| --- | --- | --- |
-| Homepage | `/` | `/en/` |
-| Private-services landing | `/leistungen/privatpersonen/` | `/en/services/private/` |
-| Computer and laptop help | `/leistungen/privatpersonen/computer-laptop-hilfe/` | `/en/services/private/computer-laptop-help/` |
-| Wi-Fi and home networks | `/leistungen/privatpersonen/wlan-heimnetz/` | `/en/services/private/wifi-home-network/` |
-| Setup and data transfer | `/leistungen/privatpersonen/einrichtung-datenumzug/` | `/en/services/private/setup-data-transfer/` |
-| Business-services landing | `/leistungen/unternehmen/` | `/en/services/business/` |
-| Microsoft 365 workplaces | `/leistungen/unternehmen/microsoft-365-arbeitsplaetze/` | `/en/services/business/microsoft-365-workplaces/` |
-| Google Workspace | `/leistungen/unternehmen/google-workspace-cloud/` | `/en/services/business/google-workspace-cloud/` |
-| Network and office IT | `/leistungen/unternehmen/netzwerk-it-betreuung/` | `/en/services/business/network-it-support/` |
-| System and software overview | `/leistungen/reparatur-installation/` | Not yet mirrored |
-| Security and certifications | `/datensicherheit-zertifizierungen/` | Not yet mirrored |
-| Legal notice | `/impressum/` | German legal source linked from English pages |
-| Privacy policy | `/datenschutz/` | German legal source linked from English pages |
-| Sitemap | `/sitemap.xml` | Shared |
-| Not found | `/404.html` | Shared |
+| Purpose | German route | English route | Current direction |
+| --- | --- | --- | --- |
+| Homepage | `/` | `/en/` | Connected-space homepage foundation implemented |
+| Private-services landing | `/leistungen/privatpersonen/` | `/en/services/private/` | Keep; refine as the approachable gateway into private/home-office help |
+| Computer and laptop help | `/leistungen/privatpersonen/computer-laptop-hilfe/` | `/en/services/private/computer-laptop-help/` | Keep; first private thematic prototype |
+| Wi-Fi and home networks | `/leistungen/privatpersonen/wlan-heimnetz/` | `/en/services/private/wifi-home-network/` | Keep; convert to the validated thematic service-page system |
+| Setup and data transfer | `/leistungen/privatpersonen/einrichtung-datenumzug/` | `/en/services/private/setup-data-transfer/` | Keep; convert to the validated thematic service-page system |
+| Business-services landing | `/leistungen/unternehmen/` | `/en/services/business/` | Keep; refine as a gateway rather than a substitute for deep service pages |
+| Microsoft 365 workplaces | `/leistungen/unternehmen/microsoft-365-arbeitsplaetze/` | `/en/services/business/microsoft-365-workplaces/` | Keep; expand into a deeper business service page |
+| Google Workspace | `/leistungen/unternehmen/google-workspace-cloud/` | `/en/services/business/google-workspace-cloud/` | Keep; expand into a deeper business service page |
+| Network and office IT | `/leistungen/unternehmen/netzwerk-it-betreuung/` | `/en/services/business/network-it-support/` | Keep; first business thematic prototype and the initial home for one-off plus optional recurring IT support |
+| System and software overview | `/leistungen/reparatur-installation/` | Not yet mirrored | Transitional; replace or redirect once the dedicated software installation/optimization service is defined |
+| Security and certifications | `/datensicherheit-zertifizierungen/` | Not yet mirrored | Transitional trust/capability page; do not market unverified certifications |
+| Legal notice | `/impressum/` | German legal source linked from English pages | Keep and replace placeholders with verified legal facts |
+| Privacy policy | `/datenschutz/` | German legal source linked from English pages | Keep and align with the real form/analytics stack |
+| Sitemap | `/sitemap.xml` | Shared | Keep generated |
+| Not found | `/404.html` | Shared | Keep |
 
 All routes are served beneath the GitHub Pages repository base, for example `/vorort/en/`. Source code should continue using the base-aware URL helper rather than hard-coding the repository prefix into individual links.
+
+## Target launch information architecture
+
+The launch architecture should be intentionally small enough to maintain well, but deep enough to satisfy real search intent and let motivated visitors verify competence. The homepage is not expected to carry every service explanation. Audience landings orient visitors; individual service pages answer one concrete problem or professional need in depth.
+
+### Core pages to retain, create, or complete
+
+1. **Homepage — German and English.** Keep the entrance problem-led and non-technical. It should state on-site Berlin IT help clearly, offer call/WhatsApp/form access, let visitors recognize their problem in plain language, introduce private/home-office/business pathways, then progressively reveal experience, technology competence, English-speaking technical service, Berlin coverage, FAQ, and trust evidence. Technology names must not become the main entrance taxonomy.
+2. **Private-services landing — German and English.** This is the middle layer between the simple homepage and individual service pages. Use recognizable situations, plain-language outcomes, a short service process, sensible service boundaries, reassuring trust evidence, and links into the detailed private services. It should remain suitable for non-technical and older visitors without naming them as a demographic target.
+3. **Computer and laptop troubleshooting — German and English.** Retain as the reference private-service page. Lead with symptoms rather than diagnoses; explain what can be investigated, likely outcomes, the on-site diagnostic process, boundaries around component-level repair and guaranteed data recovery, relevant FAQs, and simple contact paths. The page theme should show a recognizable device/problem state progressing towards diagnosis and resolution.
+4. **Software installation and optimization — new dedicated German and English service pair.** This is one of the five confirmed primary service pillars and is currently missing from the service data model as its own page. Cover installation, updates, configuration, performance/stability problems, software conflicts, user profiles, workplace applications, and safe handover. Keep the private-facing explanation understandable, with deeper technical detail only where useful. Choose final slugs during the SEO/content audit rather than inheriting the misleading `reparatur-installation` wording.
+5. **Wi-Fi and home networks — German and English.** Keep as a useful private/home-office search-intent page even though it is not one of the five headline pillars. Cover weak coverage, dropouts, router/device relationships, printers and connected devices, sensible diagnosis, and realistic boundaries. Thematic visuals should make coverage, dead zones, paths, and restored connections understandable without requiring network terminology.
+6. **Setup and data transfer — German and English.** Keep as a secondary private service. Cover new-device setup, accounts, profiles, application setup, migration of user data, backups before changes where appropriate, peripherals, and handover. Do not imply guaranteed recovery of missing or damaged data.
+7. **Business-services landing — German and English.** Treat this as a professional gateway for small businesses, offices, practices, studios, shops, freelancers, and home-office operations rather than a full technical catalogue. Start from operational needs, then expose deeper competence, one-off work plus optional recurring support, relevant technologies, working methods, experience, and verified qualifications when available. Avoid enterprise-consultancy language and avoid publishing the approximate 1–20-user audience as a hard ceiling.
+8. **Office networks and workplace IT — German and English.** Retain as the reference business-service page. Cover operational symptoms, users/devices/Wi-Fi/printers/shared resources, network and workplace relationships, assessment and prioritization, implementation, documentation/handover, maintainability, and optional recurring support. This page may use the deepest network/system diagrams of the initial set.
+9. **Microsoft 365 workplaces — German and English.** Expand beyond a generic service card into a real business page covering accounts and users, Outlook/Teams/Office, files and sharing, permissions, device/workplace setup, migration/integration issues, troubleshooting, and working practices. Publish exact certifications only after evidence is supplied.
+10. **Google Workspace — German and English.** Expand into a real business page covering Gmail, Drive, shared information, users and access, device/workplace integration, synchronization, migration/configuration issues, troubleshooting, and collaboration workflows. Keep the page grounded in small-business outcomes rather than feature-list marketing.
+11. **Working methods, data handling, experience, and qualifications — bilingual trust/capability treatment.** The existing `/datensicherheit-zertifizierungen/` route is provisional and should not remain framed as a certification showcase while credentials are unverified. Rework or replace it around necessary access, understandable changes, account/data protection, backup/change precautions, experience since 2008, supported technology expertise, and verified qualifications when supplied. A future route/name change should preserve or redirect existing URLs deliberately.
+12. **Contact — dedicated German and English route once the real form backend is chosen.** Keep the global contact section and mobile contact access, but add a durable contact destination for call, WhatsApp, and form enquiries. Explain what information helps, the free initial conversation, possible paid diagnosis, Berlin service area, and privacy expectations. Never ask for passwords, authentication/recovery codes, payment-card data, or remote-access credentials.
+
+### Pages not required for the first demand-test launch
+
+- Do not create Berlin-district landing pages merely to multiply local keywords. Berlin coverage belongs in the core pages unless Search Console and enquiry evidence later justify genuinely useful district content.
+- Do not create separate thin pages for every supported technology, printer type, operating system, router brand, or minor task. Add a page only when it represents a real service/search intent and can support substantial original content.
+- A dedicated About/team page can wait until the final public identity and suitable authentic photography or biography material exist. Trust evidence can live on the homepage, audience landings, service pages, and the working-methods/qualifications treatment in the meantime.
+- A blog or advice library is not a launch requirement. Add editorial content later only when it serves demonstrated search questions, internal linking, or customer education rather than publishing filler for SEO.
+
+## Page content contracts
+
+Every indexable service page should have one clear audience, one primary search/problem intent, a defined level of technical depth, a thematic visual state, truthful proof, and an obvious conversion path. German and English should be independently written rather than mechanically translated.
+
+### Homepage
+
+- plain-language promise and Berlin/on-site context;
+- problem/symptom-led navigation rather than product taxonomy;
+- private, home-office, and business pathways;
+- progressive competence and trust evidence;
+- concise English-speaking technician message;
+- Berlin coverage, concise FAQ, and call/WhatsApp/form actions;
+- no wall of certificates, brands, acronyms, or technical specifications above the fold.
+
+### Private landing and private service pages
+
+- recognizable symptoms and everyday situations first;
+- what we can investigate or set up, explained in plain language;
+- likely outcomes without guarantees;
+- a short on-site process and when paid diagnosis may be necessary;
+- clear boundaries around hardware/component repair, data recovery, unsupported software, and other non-core work where relevant;
+- thematic visuals that explain the problem state throughout the page, not only in the hero;
+- FAQs based on genuine customer questions and search intent;
+- call, WhatsApp, and form options kept easy to find.
+
+### Business landing and business service pages
+
+- operational impact before technical architecture;
+- supported scope, systems, users/devices, dependencies, and workflows;
+- diagrams or system relationships where they improve understanding;
+- assessment, prioritization, implementation, documentation/handover, and maintainability;
+- relevant Microsoft, Google, networking, workplace, server/Linux, security, or other expertise only where the page needs it;
+- experience and verified qualifications as proof, not decorative badge collections;
+- one-off project/problem work first, optional recurring support where relevant;
+- security/access boundaries and no unsupported enterprise guarantees;
+- business-appropriate enquiry prompts without making the form feel like procurement paperwork.
+
+### Trust/capability content
+
+- experience since 2008;
+- transparent working methods and necessary-access principles;
+- account/data protection and sensible backup/change precautions;
+- named technology expertise that is actually supported;
+- exact certificates only after names, issuers, holders, status, and verification evidence are supplied;
+- no invented compliance, response-time, availability, or security guarantees.
+
+### Contact content
+
+- phone, WhatsApp, and form as equal legitimate paths with context-sensitive visual priority;
+- minimal first-step fields with optional detail revealed progressively;
+- Berlin location/postcode, customer context, affected device/service, problem summary, preferred contact/appointment period, and optional screenshot/photo;
+- free initial conversation and possible paid diagnostic visit explained without promising an exact pre-visit price for every fault;
+- explicit instruction not to send passwords, authentication/recovery codes, payment-card information, or remote-access credentials.
+
+## SEO and page-creation guardrails
+
+Service-page planning must happen before broad visual rollout. Each new page should target a distinct useful intent rather than a keyword variation of another page. Use Berlin and the service/problem naturally in titles, descriptions, headings, internal links, and copy without repetitive location stuffing. Preserve canonical and `hreflang` pairing for bilingual content. Do not create thin district, technology, or near-duplicate pages merely to increase sitemap size; expand the architecture when search evidence or a genuine customer decision need justifies it.
 
 ## Visual direction
 
