@@ -5,7 +5,7 @@ Last updated: 2026-08-27
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: the responsive connected-space redesign and title adjustment are committed and pushed on `main`; the link-free npm configuration for the Google Drive move is implemented locally but is not yet committed or pushed.
+- Current working state: the responsive connected-space redesign and title adjustment are committed and pushed on `main`; the link-free npm configuration for the Google Drive move and the English homepage hero translation are implemented locally but are not yet committed or pushed.
 - Local validation: a clean link-free `npm ci` and `npm run validate` passed on 2026-08-27 with 23 HTML pages, 22 sitemap URLs, zero missing `/vorort/` targets, zero stale `/astro-demo/` paths, and no symbolic links anywhere under `node_modules`.
 - Local browser verification: German and English homepages plus the private computer/laptop and business network/workplace prototypes were reviewed at 1440×1000 and 390×844. No horizontal overflow or console errors were observed; mobile navigation, contact dock, anchored contact section, and progressive enquiry form were exercised successfully.
 - Deployment state: `origin/main` is currently commit `2e60555`; the link-free npm configuration will reach GitHub Actions after the current changes are committed and pushed.
@@ -127,3 +127,34 @@ Add a new dated entry after material work. Do not rewrite older entries except t
   - `npm run dev -- --host 127.0.0.1` started Astro successfully through the direct JavaScript entry point.
 - Blockers or required input: none for the link-free npm setup; the parent-folder move itself remains a local filesystem operation outside this repository.
 - Recommended next action: complete the clean-install validation, then move the parent folder while development processes are closed and reopen the repository and Obsidian vault from their new paths.
+
+## 2026-08-27 — ChatGPT — English homepage hero translation
+
+- Objective: align the English homepage hero heading and subheading directly with the German homepage wording.
+- Changes: updated only the English `title` and `intro` strings in `ω┇Engine/src/components/HomeExperience.astro`; the German hero copy and all other homepage content remain unchanged.
+- Decisions: translated `IT-Hilfe vor Ort. Klar, persönlich, professionell.` as `On-site IT help. Clear, personal, professional.` and the supporting line as `For computers, software, networks and workplaces – personal on-site support for private customers, home offices and small businesses in Berlin.`
+- Validation:
+  - Compared the pre-edit and post-edit source locally; the diff contains exactly the two intended English hero lines.
+  - Read the updated Drive file back after writing and confirmed the returned bytes match the intended source exactly.
+  - `npm run validate`, `git diff --check`, and `git status --short` were not executed because the connected Drive interface does not expose the repository shell.
+- Blockers or required input: none for the requested wording; repository command validation remains required before commit or deployment.
+- Recommended next action: run the repository validation commands from `ω┇Engine`, then continue with the next requested bilingual content adjustment.
+
+## 2026-08-27 — ChatGPT — Project Chat Git handoff rule
+
+- Objective: make the repository contract explicit about Git handoff when a Project Chat can edit connected Drive files but cannot access the local repository shell.
+- Changes: updated root `AGENTS.md` so `git status`, `git diff --check`, `npm run validate`, and Git commit steps are conditional on local repository shell access; added a dedicated Git commit handoff section requiring explicit commit status and a ready-to-use commit message whenever the commit is left to Aykhan.
+- Decisions: Project Chat sessions without local repository shell access may leave the Git commit for Aykhan and must never imply shell checks or Git operations succeeded when they were not actually run. Sessions that do complete a commit must say so and identify the commit when available.
+- Validation: read the complete current `AGENTS.md` before editing and reviewed the updated local file for internal consistency. Drive readback will be used after writing both documentation files. No repository-shell validation or Git commit was performed in this Project Chat.
+- Blockers or required input: none.
+- Recommended next action: commit this documentation change locally using the provided commit message, then continue normal project work under the updated handoff rule.
+
+## 2026-08-27 — ChatGPT — Versioned Git commit-message convention
+
+- Objective: define the repository-wide Git commit-message format and version-bump ownership for future local and Project Chat handoffs.
+- Changes: updated root `AGENTS.md` so every completed or proposed commit message uses `VorOrt vX.Y.Z: message`; defined `X` as Aykhan-controlled, `Y` as the major-update counter, and `Z` as the minor/patch counter.
+- Decisions: only Aykhan may change `X`; major updates increment `Y` and reset `Z` to `0`; minor changes and patches increment `Z`; agents must use the latest confirmed version and must not invent a missing version number.
+- Validation: read the complete latest `AGENTS.md` and `Collaboration.md` before editing and reviewed the resulting local files. This documentation-only change does not require Astro application validation. Drive readback will be used after writing both files. No repository-shell Git operations were performed in this Project Chat.
+- Blockers or required input: the current numeric project-version baseline was not specified in this conversation, so no `X.Y.Z` value was invented.
+- Recommended next action: establish or confirm the current project version when committing locally, then use the new `VorOrt vX.Y.Z: message` format for subsequent commits and handoffs.
+
