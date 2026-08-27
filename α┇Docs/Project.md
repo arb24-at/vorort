@@ -100,7 +100,7 @@ All routes are served beneath the GitHub Pages repository base, for example `/vo
 
 ## Visual direction
 
-The current blue, white, rounded-card interface is a functional prototype, not a visual or content direction that must be preserved. Retain sound technical structure and useful interaction patterns where they support the new direction, but do not preserve generic elements merely because they are already implemented.
+The first connected-space interface is now implemented as a functional prototype foundation. It replaces the generic blue card system with warm neutral entrance surfaces, a dark technical layer, coral action accents, editorial typography, stronger section rhythm, and distinct private/business page states. Retain its sound structural and interaction patterns while continuing to refine the identity; do not treat this first visual pass or the provisional name as permanently fixed.
 
 The desired impression is trustworthy, competent, and modern, supported by approachability, calmness, friendliness, and local familiarity. The site should look like a real Berlin IT service without resembling a conventional IT-company template, a cheap repair shop, or an intimidating consultancy.
 
@@ -117,6 +117,8 @@ Explore a consistent Berlin home, home-office, and small-office visual world tha
 The thematic idea must continue beyond hero imagery into section composition, custom icons, technical diagrams, small system visualizations, interface-like details, typography, restrained abstract graphics, meaningful motion, interaction, and subtle reactive behavior. Avoid generic laptop users, technicians pointing at monitors, server racks without service relevance, handshakes, call centers, unrelated AI people, and a different style on every page.
 
 Generated or bespoke imagery should be selective and belong to a deliberately designed family with recurring environments, composition, perspective, materials, and lighting. Identify a small number of high-value master concepts before commissioning assets. Prototype the system on the homepage, one private service, and one business service before expanding it across the site.
+
+The current implementation uses intentional visual placeholder panels rather than generic stock or generated imagery. Each panel records its future role, subject, state, and accessible description, so commissioned master environments can replace the placeholders without changing the surrounding page hierarchy or visual narrative.
 
 The first contrasting service prototypes are computer and laptop troubleshooting for private customers, and office networks and workplace IT for businesses. Until suitable authentic photography exists, do not substitute generic stock people or generated technicians; use environments, devices, systems, illustrations, diagrams, and icons to carry the identity.
 

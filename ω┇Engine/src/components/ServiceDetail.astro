@@ -1,7 +1,8 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
 import ContactSection from "./ContactSection.astro";
 import LanguageSupportBanner from "./LanguageSupportBanner.astro";
+import VisualPlaceholder from "./VisualPlaceholder.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 import { siteConfig } from "../data/site";
 import {
   getAlternateServicePath,
@@ -15,6 +16,81 @@ type Props = {
 
 const { service } = Astro.props;
 const isEnglish = service.locale === "en";
+const isPrivatePrototype = service.id === "computer-laptop";
+const isBusinessPrototype = service.id === "network-it-support";
+const pageKind = isPrivatePrototype ? "private" : isBusinessPrototype ? "business" : "standard";
+const visualVariant = isPrivatePrototype ? "computer" : isBusinessPrototype ? "network" : service.audience === "business" ? "network" : "workspace";
+const contactId = isEnglish ? "contact" : "kontakt";
+
+const copy = isEnglish
+  ? {
+      request: "Request support",
+      whatsapp: "WhatsApp",
+      recognitionEyebrow: "Recognise the situation",
+      recognitionTitle: "You do not need to diagnose the computer yourself.",
+      recognitionIntro: "These symptoms are useful starting points. We narrow down the cause before recommending further work.",
+      diagnosticEyebrow: "Understandable diagnosis",
+      diagnosticTitle: "From a visible symptom to a responsible next step.",
+      diagnosticIntro: "The aim is not to perform as many technical actions as possible. It is to determine what is wrong, what can reasonably be changed and what outcome is worth pursuing.",
+      diagnosticSteps: ["Clarify the symptom and recent changes", "Check the system, software and connected devices", "Explain the cause and available options", "Complete agreed work and test the result"],
+      boundaryEyebrow: "Clear boundaries",
+      boundaryTitle: "Professional troubleshooting—not component-level electronics repair.",
+      boundaries: ["No guaranteed recovery from damaged storage", "No passwords or authentication codes through the form", "Replacement or specialist repair is discussed when more economical"],
+      outcomeEyebrow: "A useful outcome",
+      impactEyebrow: "Operational impact",
+      impactTitle: "Start with what the disruption is doing to the workplace.",
+      impactIntro: "A network problem matters because meetings fail, devices disappear or work stops. We connect the technical diagnosis to the affected workflow.",
+      systemEyebrow: "System layer",
+      systemTitle: "See the relationships—not just the failed device.",
+      systemIntro: "Small offices combine users, workplaces, Wi-Fi, printers, accounts and shared services. Recurring problems often sit between those parts.",
+      technicalEyebrow: "Deeper capability",
+      technicalTitle: "Technical detail appears where it helps the decision.",
+      technologies: ["Wi-Fi and local networks", "Windows workplaces", "Printers and shared devices", "Accounts and permissions", "Microsoft 365 and Google Workspace", "NAS or small-server requests assessed individually"],
+      engagementEyebrow: "Ways to work together",
+      oneOffTitle: "One issue or project",
+      oneOffText: "A specific disruption, setup, change or improvement can be handled without a long-term agreement.",
+      recurringTitle: "Optional recurring support",
+      recurringText: "Where a small business has an ongoing need, a repeatable support arrangement can be discussed separately.",
+      commonEyebrow: "Service scope",
+      commonTitle: "Start with the closest description.",
+      commonIntro: "The exact cause and responsible scope are clarified after you get in touch.",
+      approachEyebrow: "Approach",
+      contactHint: "On-site support is the focus. Remote assistance is used where it genuinely fits the request."
+    }
+  : {
+      request: "IT-Hilfe anfragen",
+      whatsapp: "WhatsApp",
+      recognitionEyebrow: "Situation wiedererkennen",
+      recognitionTitle: "Sie müssen den Computer nicht selbst diagnostizieren.",
+      recognitionIntro: "Diese Symptome sind sinnvolle Ausgangspunkte. Wir grenzen die Ursache ein, bevor weitere Arbeit empfohlen wird.",
+      diagnosticEyebrow: "Verständliche Diagnose",
+      diagnosticTitle: "Vom sichtbaren Symptom zum verantwortbaren nächsten Schritt.",
+      diagnosticIntro: "Das Ziel ist nicht, möglichst viele technische Handgriffe auszuführen. Wir klären, was nicht stimmt, was sinnvoll geändert werden kann und welches Ergebnis den Aufwand rechtfertigt.",
+      diagnosticSteps: ["Symptom und letzte Änderungen klären", "System, Software und verbundene Geräte prüfen", "Ursache und mögliche Wege erklären", "Vereinbarte Arbeit umsetzen und Ergebnis testen"],
+      boundaryEyebrow: "Klare Grenzen",
+      boundaryTitle: "Professionelle Fehleranalyse – keine Reparatur auf Bauteilebene.",
+      boundaries: ["Keine garantierte Rettung beschädigter Datenträger", "Keine Passwörter oder Anmeldecodes über das Formular", "Austausch oder Spezialreparatur werden empfohlen, wenn wirtschaftlicher"],
+      outcomeEyebrow: "Ein brauchbares Ergebnis",
+      impactEyebrow: "Auswirkung auf den Betrieb",
+      impactTitle: "Beginnen wir damit, was die Störung am Arbeitsplatz verursacht.",
+      impactIntro: "Ein Netzwerkproblem ist relevant, weil Meetings scheitern, Geräte verschwinden oder Arbeit liegen bleibt. Wir verbinden die technische Diagnose mit dem betroffenen Ablauf.",
+      systemEyebrow: "Systemebene",
+      systemTitle: "Beziehungen betrachten – nicht nur das ausgefallene Gerät.",
+      systemIntro: "Kleine Büros verbinden Nutzer, Arbeitsplätze, WLAN, Drucker, Konten und gemeinsame Dienste. Wiederkehrende Probleme liegen oft zwischen diesen Teilen.",
+      technicalEyebrow: "Mehr technische Tiefe",
+      technicalTitle: "Technische Details erscheinen dort, wo sie die Entscheidung verbessern.",
+      technologies: ["WLAN und lokale Netzwerke", "Windows-Arbeitsplätze", "Drucker und gemeinsam genutzte Geräte", "Konten und Berechtigungen", "Microsoft 365 und Google Workspace", "NAS- oder kleine Server-Anfragen nach Einzelfallprüfung"],
+      engagementEyebrow: "Formen der Zusammenarbeit",
+      oneOffTitle: "Ein Problem oder Projekt",
+      oneOffText: "Eine konkrete Störung, Einrichtung, Änderung oder Verbesserung kann ohne langfristigen Vertrag bearbeitet werden.",
+      recurringTitle: "Optionale wiederkehrende Unterstützung",
+      recurringText: "Wenn ein kleiner Betrieb regelmäßig Hilfe benötigt, kann eine passende Betreuung separat besprochen werden.",
+      commonEyebrow: "Leistungsumfang",
+      commonTitle: "Beginnen Sie mit der passendsten Beschreibung.",
+      commonIntro: "Die genaue Ursache und der verantwortbare Umfang werden nach Ihrer Kontaktaufnahme geklärt.",
+      approachEyebrow: "Arbeitsweise",
+      contactHint: "Vor-Ort-Unterstützung ist der Schwerpunkt. Remote-Hilfe nutzen wir, wenn sie wirklich zum Anliegen passt."
+    };
 ---
 
 <MainLayout
@@ -24,52 +100,184 @@ const isEnglish = service.locale === "en";
   lang={service.locale}
   alternatePath={getAlternateServicePath(service)}
 >
-  <section class="page-intro service-page-intro">
-    <div class="container">
-      <span class="eyebrow">{service.eyebrow}</span>
-      <h1 class="section-title">{service.title}</h1>
-      <p class="section-lead">{service.intro}</p>
+  <section class={`service-hero service-hero--${pageKind}`}>
+    <div class="container service-hero__grid">
+      <div class="service-hero__copy">
+        <span class="eyebrow eyebrow--light">{service.eyebrow}</span>
+        <h1>{service.title}</h1>
+        <p>{service.intro}</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href={`#${contactId}`}>{copy.request}</a>
+          <a class="btn btn-ghost" href={siteConfig.contact.whatsappHref}>{copy.whatsapp}</a>
+        </div>
+      </div>
+      <VisualPlaceholder variant={visualVariant} locale={service.locale} />
     </div>
   </section>
 
   <LanguageSupportBanner locale={service.locale} />
 
-  <section class="section">
-    <div class="container two-grid">
-      <article class="feature-rail service-feature">
-        <h2>{service.problemsTitle}</h2>
-        <ul class="check-list">
-          {service.problems.map((problem) => <li>{problem}</li>)}
-        </ul>
-      </article>
-
-      <article class="feature-rail service-feature service-feature-accent">
-        <h2>{service.includedTitle}</h2>
-        <ul class="check-list">
-          {service.included.map((item) => <li>{item}</li>)}
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <section class="section section-soft">
-    <div class="container two-grid service-outcome-grid">
-      <section>
-        <span class="eyebrow">{isEnglish ? "Approach" : "Arbeitsweise"}</span>
-        <h2 class="section-title">{service.outcomeTitle}</h2>
-        <p class="section-lead">{service.outcome}</p>
+  {isPrivatePrototype && (
+    <>
+      <section class="section recognition-section">
+        <div class="container">
+          <div class="section-heading section-heading--split">
+            <div>
+              <span class="eyebrow">{copy.recognitionEyebrow}</span>
+              <h2 class="section-title">{copy.recognitionTitle}</h2>
+            </div>
+            <p class="section-lead">{copy.recognitionIntro}</p>
+          </div>
+          <div class="symptom-grid">
+            {service.problems.map((problem, index) => (
+              <article class="symptom-item">
+                <span>0{index + 1}</span>
+                <p>{problem}</p>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
-      <aside class="feature-rail">
-        <h2>{service.ctaTitle}</h2>
-        <p>{service.ctaText}</p>
-        <p class="service-contact-hint">
-          {isEnglish
-            ? "Support can take place on site in Berlin or remotely when appropriate."
-            : "Die Unterstützung kann vor Ort in Berlin oder – wenn sinnvoll – remote erfolgen."}
-        </p>
-      </aside>
-    </div>
-  </section>
 
-  <ContactSection locale={service.locale} />
+      <section class="section section--ink diagnostic-section">
+        <div class="container diagnostic-layout">
+          <VisualPlaceholder variant="computer" locale={service.locale} compact />
+          <div>
+            <span class="eyebrow eyebrow--dark">{copy.diagnosticEyebrow}</span>
+            <h2 class="section-title">{copy.diagnosticTitle}</h2>
+            <p class="section-lead">{copy.diagnosticIntro}</p>
+            <ol class="diagnostic-steps">
+              {copy.diagnosticSteps.map((step, index) => <li><span>0{index + 1}</span>{step}</li>)}
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="section scope-section">
+        <div class="container scope-layout">
+          <div>
+            <span class="eyebrow">{service.includedTitle}</span>
+            <h2 class="section-title">{service.outcomeTitle}</h2>
+            <p class="section-lead">{service.outcome}</p>
+          </div>
+          <ul class="scope-list">
+            {service.included.map((item, index) => <li><span>0{index + 1}</span>{item}</li>)}
+          </ul>
+        </div>
+      </section>
+
+      <section class="boundary-band">
+        <div class="container boundary-layout">
+          <div>
+            <span class="eyebrow">{copy.boundaryEyebrow}</span>
+            <h2>{copy.boundaryTitle}</h2>
+          </div>
+          <ul>{copy.boundaries.map((item) => <li>{item}</li>)}</ul>
+        </div>
+      </section>
+    </>
+  )}
+
+  {isBusinessPrototype && (
+    <>
+      <section class="section impact-section">
+        <div class="container impact-layout">
+          <div>
+            <span class="eyebrow">{copy.impactEyebrow}</span>
+            <h2 class="section-title">{copy.impactTitle}</h2>
+            <p class="section-lead">{copy.impactIntro}</p>
+          </div>
+          <div class="impact-list">
+            {service.problems.map((problem, index) => (
+              <article><span>0{index + 1}</span><p>{problem}</p></article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--ink system-section">
+        <div class="container system-layout">
+          <div>
+            <span class="eyebrow eyebrow--dark">{copy.systemEyebrow}</span>
+            <h2 class="section-title">{copy.systemTitle}</h2>
+            <p class="section-lead">{copy.systemIntro}</p>
+            <ul class="plain-checks plain-checks--dark">
+              {service.included.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+          <VisualPlaceholder variant="network" locale={service.locale} compact />
+        </div>
+      </section>
+
+      <section class="section technical-section">
+        <div class="container technical-layout">
+          <div>
+            <span class="eyebrow">{copy.technicalEyebrow}</span>
+            <h2 class="section-title">{copy.technicalTitle}</h2>
+          </div>
+          <div class="technical-tags">
+            {copy.technologies.map((technology, index) => <span><i>0{index + 1}</i>{technology}</span>)}
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--warm engagement-section">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">{copy.engagementEyebrow}</span>
+            <h2 class="section-title">{service.outcomeTitle}</h2>
+            <p class="section-lead">{service.outcome}</p>
+          </div>
+          <div class="engagement-grid">
+            <article><span>01</span><h3>{copy.oneOffTitle}</h3><p>{copy.oneOffText}</p></article>
+            <article><span>02</span><h3>{copy.recurringTitle}</h3><p>{copy.recurringText}</p></article>
+          </div>
+        </div>
+      </section>
+    </>
+  )}
+
+  {!isPrivatePrototype && !isBusinessPrototype && (
+    <>
+      <section class="section common-service-section">
+        <div class="container">
+          <div class="section-heading section-heading--split">
+            <div>
+              <span class="eyebrow">{copy.commonEyebrow}</span>
+              <h2 class="section-title">{copy.commonTitle}</h2>
+            </div>
+            <p class="section-lead">{copy.commonIntro}</p>
+          </div>
+          <div class="common-service-grid">
+            <article class="service-list-panel">
+              <span>01</span><h3>{service.problemsTitle}</h3>
+              <ul>{service.problems.map((problem) => <li>{problem}</li>)}</ul>
+            </article>
+            <VisualPlaceholder variant={visualVariant} locale={service.locale} compact />
+            <article class="service-list-panel service-list-panel--accent">
+              <span>02</span><h3>{service.includedTitle}</h3>
+              <ul>{service.included.map((item) => <li>{item}</li>)}</ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--warm common-outcome-section">
+        <div class="container outcome-layout">
+          <div>
+            <span class="eyebrow">{copy.approachEyebrow}</span>
+            <h2 class="section-title">{service.outcomeTitle}</h2>
+            <p class="section-lead">{service.outcome}</p>
+          </div>
+          <aside>
+            <h3>{service.ctaTitle}</h3>
+            <p>{service.ctaText}</p>
+            <p>{copy.contactHint}</p>
+          </aside>
+        </div>
+      </section>
+    </>
+  )}
+
+  <ContactSection locale={service.locale} context={service.audience} />
 </MainLayout>

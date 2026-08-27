@@ -1,0 +1,173 @@
+---
+import type { Locale } from "../data/services";
+
+type Variant = "home" | "computer" | "network" | "journey" | "berlin" | "workspace";
+
+type Props = {
+  variant?: Variant;
+  locale?: Locale;
+  title?: string;
+  description?: string;
+  compact?: boolean;
+};
+
+const {
+  variant = "home",
+  locale = "de",
+  title,
+  description,
+  compact = false
+} = Astro.props;
+
+const copy = locale === "en"
+  ? {
+      placeholder: "Visual placeholder",
+      status: "Concept panel",
+      titles: {
+        home: "Connected Berlin home and workplace",
+        computer: "Computer diagnosis in a familiar environment",
+        network: "Small-office network and device relationships",
+        journey: "From request to a clear next step",
+        berlin: "On-site service throughout Berlin",
+        workspace: "Ordered devices, accounts and information"
+      },
+      descriptions: {
+        home: "Future master environment: home, home office and small workplace in one visual world.",
+        computer: "Future state change: visible symptoms, isolated cause and an understandable resolution.",
+        network: "Future system view: signal paths, workplaces, printer, router and shared services.",
+        journey: "Future service journey: describe, assess, visit and hand over.",
+        berlin: "Future local visual: Berlin coverage without a generic map graphic.",
+        workspace: "Future service state: software and workplace elements moving into a stable arrangement."
+      }
+    }
+  : {
+      placeholder: "Visual-Platzhalter",
+      status: "Konzeptfläche",
+      titles: {
+        home: "Vernetztes Berliner Zuhause und Arbeitsumfeld",
+        computer: "Computerdiagnose in einer vertrauten Umgebung",
+        network: "Netzwerk und Geräte eines kleinen Büros",
+        journey: "Von der Anfrage zum klaren nächsten Schritt",
+        berlin: "Vor-Ort-Service in ganz Berlin",
+        workspace: "Geordnete Geräte, Konten und Informationen"
+      },
+      descriptions: {
+        home: "Künftige Master-Umgebung: Zuhause, Homeoffice und kleiner Arbeitsplatz in einer Bildwelt.",
+        computer: "Künftiger Zustandswechsel: sichtbares Symptom, eingegrenzte Ursache und verständliche Lösung.",
+        network: "Künftige Systemansicht: Signalwege, Arbeitsplätze, Drucker, Router und gemeinsame Dienste.",
+        journey: "Künftige Service-Reise: schildern, einschätzen, vor Ort helfen und übergeben.",
+        berlin: "Künftige lokale Bildidee: Berlin-Abdeckung ohne austauschbare Kartengrafik.",
+        workspace: "Künftiger Service-Zustand: Software und Arbeitsplatztechnik werden stabil geordnet."
+      }
+    };
+
+const visualTitle = title ?? copy.titles[variant];
+const visualDescription = description ?? copy.descriptions[variant];
+---
+
+<figure
+  class:list={["visual-placeholder", `visual-placeholder--${variant}`, { "visual-placeholder--compact": compact }]}
+  role="img"
+  aria-label={`${copy.placeholder}: ${visualTitle}. ${visualDescription}`}
+>
+  <figcaption class="visual-placeholder__caption">
+    <span class="visual-placeholder__label">{copy.placeholder}</span>
+    <span class="visual-placeholder__status"><i></i>{copy.status}</span>
+  </figcaption>
+
+  <div class="visual-placeholder__stage" aria-hidden="true">
+    {variant === "home" && (
+      <>
+        <div class="scene-grid"></div>
+        <div class="scene-window"><i></i><i></i><i></i></div>
+        <div class="scene-room scene-room--home"><span>HOME</span></div>
+        <div class="scene-room scene-room--office"><span>WORK</span></div>
+        <div class="scene-desk"><i></i></div>
+        <div class="scene-screen"><span>●</span><b></b><b></b><b></b></div>
+        <div class="scene-router"><i></i><i></i><i></i></div>
+        <div class="scene-path scene-path--one"></div>
+        <div class="scene-path scene-path--two"></div>
+        <span class="scene-note scene-note--one">01 · SIGNAL</span>
+        <span class="scene-note scene-note--two">02 · DEVICE</span>
+      </>
+    )}
+
+    {variant === "computer" && (
+      <>
+        <div class="diagnostic-desk"></div>
+        <div class="diagnostic-monitor">
+          <div class="diagnostic-monitor__bar"><i></i><i></i><i></i></div>
+          <div class="diagnostic-monitor__content">
+            <span class="diagnostic-alert">!</span>
+            <b></b><b></b><b></b>
+          </div>
+        </div>
+        <div class="diagnostic-scan"></div>
+        <div class="diagnostic-chip diagnostic-chip--one">START</div>
+        <div class="diagnostic-chip diagnostic-chip--two">CHECK</div>
+        <div class="diagnostic-chip diagnostic-chip--three">CLEAR</div>
+        <span class="scene-note scene-note--one">SYMPTOM</span>
+        <span class="scene-note scene-note--two">CAUSE</span>
+      </>
+    )}
+
+    {variant === "network" && (
+      <>
+        <svg class="network-lines" viewBox="0 0 700 430" preserveAspectRatio="none">
+          <path d="M350 210 C250 90 170 95 105 120" />
+          <path d="M350 210 C470 90 560 100 610 135" />
+          <path d="M350 210 C245 330 155 330 100 315" />
+          <path d="M350 210 C460 330 560 330 620 305" />
+          <path class="network-lines__pulse" d="M105 120 C220 165 250 185 350 210 C465 242 520 265 620 305" />
+        </svg>
+        <div class="network-node network-node--hub"><span>ROUTER</span><i></i></div>
+        <div class="network-node network-node--one"><span>DESK 01</span></div>
+        <div class="network-node network-node--two"><span>DESK 02</span></div>
+        <div class="network-node network-node--three"><span>PRINT</span></div>
+        <div class="network-node network-node--four"><span>SHARED</span></div>
+        <div class="network-status"><i></i> SYSTEM VIEW</div>
+      </>
+    )}
+
+    {variant === "journey" && (
+      <div class="journey-track">
+        <div class="journey-step"><span>01</span><b>{locale === "en" ? "Describe" : "Schildern"}</b></div>
+        <i></i>
+        <div class="journey-step"><span>02</span><b>{locale === "en" ? "Assess" : "Einschätzen"}</b></div>
+        <i></i>
+        <div class="journey-step"><span>03</span><b>{locale === "en" ? "On site" : "Vor Ort"}</b></div>
+        <i></i>
+        <div class="journey-step"><span>04</span><b>{locale === "en" ? "Handover" : "Übergabe"}</b></div>
+      </div>
+    )}
+
+    {variant === "berlin" && (
+      <>
+        <div class="berlin-shape"></div>
+        <span class="berlin-node berlin-node--one"></span>
+        <span class="berlin-node berlin-node--two"></span>
+        <span class="berlin-node berlin-node--three"></span>
+        <span class="berlin-node berlin-node--four"></span>
+        <span class="berlin-node berlin-node--five"></span>
+        <span class="berlin-label">BERLIN · 12</span>
+        <div class="berlin-route"></div>
+      </>
+    )}
+
+    {variant === "workspace" && (
+      <>
+        <div class="workspace-stack workspace-stack--one"><span>APP</span><i></i><i></i></div>
+        <div class="workspace-stack workspace-stack--two"><span>MAIL</span><i></i><i></i></div>
+        <div class="workspace-stack workspace-stack--three"><span>FILES</span><i></i><i></i></div>
+        <div class="workspace-flow workspace-flow--one"></div>
+        <div class="workspace-flow workspace-flow--two"></div>
+        <span class="workspace-state">ORDERED STATE</span>
+      </>
+    )}
+  </div>
+
+  <div class="visual-placeholder__copy">
+    <strong>{visualTitle}</strong>
+    <p>{visualDescription}</p>
+  </div>
+</figure>

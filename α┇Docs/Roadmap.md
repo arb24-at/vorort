@@ -35,7 +35,9 @@ Acceptance: no placeholder identity or unsupported operational claim is public; 
 
 Acceptance: representative content and SEO changes require no Astro component edit; invalid or incomplete content fails the build; every translated page has correct canonical and alternate-language metadata.
 
-## 4. Thematic visual and interaction system — planned
+## 4. Thematic visual and interaction system — next
+
+Prototype foundation completed on 2026-08-27: a new responsive shell, connected-space homepage, intentional visual placeholder family, mobile contact dock, progressive enquiry form, private computer/laptop prototype, and business network/workplace prototype are implemented in both languages. The remaining phase work is refinement, final asset direction, broader page expansion, and release-level accessibility/performance verification.
 
 - Establish typography, color, spacing, icon, illustration, diagram, and motion rules for the provisional or chosen brand.
 - Prototype one coherent, state-changing Berlin home/home-office/office visual world across the homepage, one private service, and one business service.

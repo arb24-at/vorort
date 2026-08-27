@@ -1,0 +1,25 @@
+---
+import { siteConfig } from "../data/site";
+import type { Locale } from "../data/services";
+
+type Props = {
+  locale?: Locale;
+};
+
+const { locale = "de" } = Astro.props;
+const copy = locale === "en"
+  ? { call: "Call", whatsapp: "WhatsApp", form: "Enquiry", formTarget: "#contact" }
+  : { call: "Anrufen", whatsapp: "WhatsApp", form: "Anfrage", formTarget: "#kontakt" };
+---
+
+<nav class="mobile-contact-dock" aria-label={locale === "en" ? "Quick contact" : "Schnellkontakt"}>
+  <a href={siteConfig.contact.phoneHref} class="mobile-contact-dock__item">
+    <span aria-hidden="true">☎</span>{copy.call}
+  </a>
+  <a href={siteConfig.contact.whatsappHref} class="mobile-contact-dock__item">
+    <span aria-hidden="true">↗</span>{copy.whatsapp}
+  </a>
+  <a href={copy.formTarget} class="mobile-contact-dock__item mobile-contact-dock__item--accent">
+    <span aria-hidden="true">＋</span>{copy.form}
+  </a>
+</nav>

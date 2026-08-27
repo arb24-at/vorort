@@ -13,8 +13,8 @@ const content = siteConfig.languageSupport[locale];
 {siteConfig.languageSupport.enabled && (
   <aside class="language-support-banner" aria-label={content.title}>
     <div class="container language-support-inner">
-      <span class="language-support-icon" aria-hidden="true">DE / EN</span>
-      <p><strong>{content.title}</strong>{" "}{content.text}</p>
+      <span class="language-support-icon" aria-hidden="true">EN</span>
+      <p><strong>{content.title}</strong><span>{content.text}</span></p>
     </div>
   </aside>
 )}

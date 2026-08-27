@@ -5,13 +5,13 @@ Last updated: 2026-08-27
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: the engine reorganization, clarified product documentation, and a truth-first public-content pass are implemented locally but are not yet committed or pushed.
-- Local validation: `npm run validate` passed on 2026-08-27 with 23 HTML pages, 22 sitemap URLs, zero missing `/vorort/` targets, and zero stale `/astro-demo/` paths.
-- Local server verification: German home, English home, representative private and business pages, a badge asset, and the sitemap all return HTTP 200 from `/vorort/`.
-- Deployment state: the previously pushed bilingual site is live. This directory reorganization will deploy only after the current changes are committed and pushed to `main`.
-- Product-direction state: audience, service model, primary service pillars, market position, language promise, content-depth principle, visual-system principle, enquiry channels, and pricing approach were clarified on 2026-08-27 and recorded in `Project.md`.
-- Known blockers: final public brand, telephone, WhatsApp, email, postal/legal identity, exact qualification evidence, years of experience, form backend, analytics, and production domain remain unresolved or provisional.
-- Recommended next action: finish the factual discovery round, create a page/content hierarchy and visual-system concept from the confirmed direction, then prototype the homepage plus one private and one business service page.
+- Current working state: the truth-first public pass is committed on `main`; the responsive connected-space redesign is implemented locally but is not yet committed or pushed.
+- Local validation: `npm run validate` passed after the final implementation and handoff update on 2026-08-27 with 23 HTML pages, 22 sitemap URLs, zero missing `/vorort/` targets, and zero stale `/astro-demo/` paths.
+- Local browser verification: German and English homepages plus the private computer/laptop and business network/workplace prototypes were reviewed at 1440×1000 and 390×844. No horizontal overflow or console errors were observed; mobile navigation, contact dock, anchored contact section, and progressive enquiry form were exercised successfully.
+- Deployment state: commit `4bd18da` is live on `main`; the connected-space redesign will deploy only after the current changes are committed and pushed.
+- Product-direction state: the homepage and two selected prototypes now demonstrate progressive technical depth, intentional visual placeholders, differentiated private/business treatment, and one shared responsive system.
+- Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional.
+- Recommended next action: replace the central telephone and WhatsApp placeholders when supplied, review the implemented visual direction, then define the first commissioned master environment and production enquiry backend.
 
 ## Reporting template
 
@@ -97,3 +97,20 @@ Add a new dated entry after material work. Do not rewrite older entries except t
   - Browser verification confirmed `VorOrt` titles and branding on the German homepage, private computer/laptop prototype, and business network/workplace prototype, with no rendered `BerlinTech`, `Microsoft Certified`, or `DSGVO-konform` text.
 - Blockers or required input: actual telephone and WhatsApp values, email, postal/legal details, verified qualifications, travel policy, real form backend, measurement stack, final brand, and production domain.
 - Recommended next action: implement the connected Berlin-space visual system and progressive page hierarchy on the homepage and the two selected prototype service pages.
+
+## 2026-08-27 — Codex — Responsive connected-space redesign
+
+- Objective: replace the generic public prototype with the planned responsive visual system while using explicit placeholder panels instead of unsupported final imagery.
+- Changes:
+  - Rebuilt the German and English homepages around a reassuring entrance, problem-led navigation, a visible service journey, progressive audience depth, professional evidence, Berlin coverage, FAQ, and contact sections.
+  - Added a reusable family of labeled visual placeholder panels for the connected home/workplace, diagnostic, network, service-journey, ordered-workspace, and Berlin states.
+  - Rebuilt the computer/laptop page as an approachable private-customer prototype and the network/workplace page as a deeper small-business prototype within the same design language.
+  - Reworked the header, mobile navigation, footer, language-support message, FAQ, contact section, enquiry fields, and mobile contact dock for the new shell.
+  - Replaced the previous global styling with a responsive token system and removed three superseded homepage components.
+- Decisions: final photography or generated imagery remains deferred; placeholder panels are part of the visual specification and state what future master assets must communicate. The mobile contact dock prioritizes phone, WhatsApp, and the enquiry section without forcing one channel.
+- Validation:
+  - `npm run validate` passed after the final implementation and handoff update with 23 HTML pages, 22 sitemap URLs, all `/vorort/` links resolved, and no stale `/astro-demo/` paths.
+  - Browser review covered German and English homepages and both prototypes at 1440×1000 and 390×844, with no horizontal overflow or console errors.
+  - Mobile navigation, the sticky contact dock, the contact anchor, and the progressive form expansion were tested successfully.
+- Blockers or required input: real telephone and WhatsApp values, final brand and legal/contact facts, verified qualifications, travel policy, final visual assets, production form endpoint, analytics, and production domain.
+- Recommended next action: review this first visual direction in context, supply the ready phone and WhatsApp values, and choose one master-environment concept for final visual development before extending the page-specific states to every service page.
