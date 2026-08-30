@@ -12,7 +12,7 @@ type Props = {
 
 const { audience } = Astro.props;
 const isPrivate = audience === "private";
-const services = getServices(audience, "en");
+const services = await getServices(audience, "en");
 const canonicalPath = `en/services/${audience}/`;
 const alternatePath = isPrivate ? "leistungen/privatpersonen/" : "leistungen/unternehmen/";
 const copy = isPrivate
@@ -23,7 +23,7 @@ const copy = isPrivate
       heading: "Practical IT help at home in Berlin",
       intro: "From a slow laptop to unreliable Wi-Fi or a new computer: support is explained clearly and adapted to the devices and routines you already use.",
       sectionEyebrow: "Private services",
-      sectionTitle: "Three common reasons to request support",
+      sectionTitle: "Four common reasons to request support",
       sectionIntro: "Choose the closest topic. The exact scope and next step are clarified directly by phone or email.",
       link: "View service →",
       approachTitle: "Clear communication from diagnosis to handover",
@@ -71,8 +71,8 @@ const copy = isPrivate
       <div class="card-grid" style="margin-top: 1.5rem;">
         {services.map((service) => (
           <a class="card service-card-link" href={withBase(getServicePath(service))}>
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
+            <h3>{service.hero.title}</h3>
+            <p>{service.seo.description}</p>
             <span class="service-link-label">{copy.link}</span>
           </a>
         ))}

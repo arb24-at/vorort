@@ -1,17 +1,17 @@
 # VorOrt collaboration handoff
 
-Last updated: 2026-08-27
+Last updated: 2026-08-30
 
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: the responsive connected-space redesign and title adjustment are committed and pushed on `main`; the link-free npm configuration for the Google Drive move and the English homepage hero translation are implemented locally but are not yet committed or pushed.
-- Local validation: a clean link-free `npm ci` and `npm run validate` passed on 2026-08-27 with 23 HTML pages, 22 sitemap URLs, zero missing `/vorort/` targets, zero stale `/astro-demo/` paths, and no symbolic links anywhere under `node_modules`.
+- Current working state: the responsive connected-space redesign remains the foundation; the validated bilingual service collection and first expanded software-service pair are implemented locally on `main` and are not yet committed or pushed.
+- Local validation: `npm run validate` passed on 2026-08-30 with 25 HTML pages, 23 sitemap URLs, zero missing `/vorort/` targets, and zero stale `/astro-demo/` paths.
 - Local browser verification: German and English homepages plus the private computer/laptop and business network/workplace prototypes were reviewed at 1440×1000 and 390×844. No horizontal overflow or console errors were observed; mobile navigation, contact dock, anchored contact section, and progressive enquiry form were exercised successfully.
 - Deployment state: `origin/main` is currently commit `2e60555`; the link-free npm configuration will reach GitHub Actions after the current changes are committed and pushed.
-- Product-direction state: the homepage and two selected prototypes now demonstrate progressive technical depth, intentional visual placeholders, differentiated private/business treatment, and one shared responsive system.
+- Product-direction state: the homepage, two selected prototypes, and bilingual software installation/optimization expansion now demonstrate progressive technical depth, validated service content, intentional thematic states, differentiated private/business treatment, and one shared responsive system.
 - Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional. The clean install also reports nine dependency audit findings for later dependency-maintenance review.
-- Recommended next action: commit the link-free npm setup, move the parent folder with development processes closed, reopen the repository and Obsidian vault from the new locations, and run `npm ci` followed by `npm run validate` once more.
+- Recommended next action: review the German and English software-service pair; after acceptance, continue the roadmap priority order with Wi-Fi/home network before setup/data transfer and the business cloud pages.
 
 ## Reporting template
 
@@ -29,6 +29,24 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 ```
 
 ## Work log
+
+## 2026-08-30 — Codex — Validated service architecture and software-service expansion
+
+- Objective: begin the next roadmap phase from the existing launch information architecture, establish the maintainable bilingual service-content model, and complete one service pair for review before broader rollout.
+- Changes:
+  - Moved all German and English service records from the TypeScript data array into a schema-validated Astro content collection with stable translation IDs, distinct search intent, technical-depth levels, approved templates, thematic page states, SEO metadata, and conversion copy.
+  - Added build-time checks for complete German/English pairs, matching audiences, unique service routes, and valid related-service references; fully expanded pages additionally require situations, process, proof, boundaries, FAQs, and related services.
+  - Created substantial, independently authored German and English Software installation and optimization pages at `/leistungen/privatpersonen/software-installation-optimierung/` and `/en/services/private/software-installation-optimisation/`.
+  - Extended the software theme below the hero through symptom states, use-case panels, a conflict-to-order process view, scoped work, competence evidence, truthful boundaries, service-specific FAQs, related-service links, and direct contact paths.
+  - Connected the new service from the problem-led homepage, both private-service gateways, German and English navigation, and related private services.
+  - Replaced the old German `/leistungen/reparatur-installation/` overview with a noindex static transition to the dedicated software page and removed it from the sitemap.
+- Decisions: the first expanded page uses an informative private/home-office depth and the intent-led slugs `software-installation-optimierung` and `software-installation-optimisation`; existing computer/laptop and network/workplace pages remain the reference private and business prototypes; broader mechanical conversion is paused until Aykhan reviews this first expansion.
+- Validation:
+  - `npm run validate` passed with 25 generated HTML pages and 23 sitemap URLs.
+  - All internal `/vorort/` links resolved and no stale `/astro-demo/` references were found.
+  - The local German software-service route returned HTTP 200 and was opened in the Codex preview for review.
+- Blockers or required input: no new decision blocks review of this slice. Final brand, production contact/legal facts, verified qualifications, travel policy, form backend, analytics, production domain, and final imagery remain unresolved.
+- Recommended next action: review the German and English software-service pair and confirm the content depth, thematic treatment, and intent-led slugs; after acceptance, expand the same validated system to Wi-Fi/home network next.
 
 ## 2026-08-14 — Codex — Discovery, bilingual foundation, and engine organization
 
@@ -181,4 +199,3 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 - Validation: read the latest complete `AGENTS.md`, then `Project.md`, `Roadmap.md`, and `Collaboration.md` before editing; reviewed the updated Markdown locally. Drive readback is required after writing. No repository-shell Git status, diff check, Astro validation, commit, or push was run in this Project Chat.
 - Blockers or required input: none.
 - Recommended next action: commit these documentation changes locally with `VorOrt v1.2.2: make AGENTS frontmatter the canonical project version`.
-

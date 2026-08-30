@@ -1,7 +1,7 @@
 ---
 import type { Locale } from "../data/services";
 
-type Variant = "home" | "computer" | "network" | "journey" | "berlin" | "workspace";
+type Variant = "home" | "computer" | "software" | "network" | "journey" | "berlin" | "workspace";
 
 type Props = {
   variant?: Variant;
@@ -26,6 +26,7 @@ const copy = locale === "en"
       titles: {
         home: "Connected Berlin home and workplace",
         computer: "Computer diagnosis in a familiar environment",
+        software: "Software moving from conflict to a controlled state",
         network: "Small-office network and device relationships",
         journey: "From request to a clear next step",
         berlin: "On-site service throughout Berlin",
@@ -34,6 +35,7 @@ const copy = locale === "en"
       descriptions: {
         home: "Future master environment: home, home office and small workplace in one visual world.",
         computer: "Future state change: visible symptoms, isolated cause and an understandable resolution.",
+        software: "Applications, accounts and settings are checked as one environment, then arranged into a stable working state.",
         network: "Future system view: signal paths, workplaces, printer, router and shared services.",
         journey: "Future service journey: describe, assess, visit and hand over.",
         berlin: "Future local visual: Berlin coverage without a generic map graphic.",
@@ -46,6 +48,7 @@ const copy = locale === "en"
       titles: {
         home: "Vernetztes Berliner Zuhause und Arbeitsumfeld",
         computer: "Computerdiagnose in einer vertrauten Umgebung",
+        software: "Software vom Konflikt in einen geordneten Zustand",
         network: "Netzwerk und Geräte eines kleinen Büros",
         journey: "Von der Anfrage zum klaren nächsten Schritt",
         berlin: "Vor-Ort-Service in ganz Berlin",
@@ -54,6 +57,7 @@ const copy = locale === "en"
       descriptions: {
         home: "Künftige Master-Umgebung: Zuhause, Homeoffice und kleiner Arbeitsplatz in einer Bildwelt.",
         computer: "Künftiger Zustandswechsel: sichtbares Symptom, eingegrenzte Ursache und verständliche Lösung.",
+        software: "Programme, Konten und Einstellungen werden als gemeinsame Umgebung geprüft und stabil geordnet.",
         network: "Künftige Systemansicht: Signalwege, Arbeitsplätze, Drucker, Router und gemeinsame Dienste.",
         journey: "Künftige Service-Reise: schildern, einschätzen, vor Ort helfen und übergeben.",
         berlin: "Künftige lokale Bildidee: Berlin-Abdeckung ohne austauschbare Kartengrafik.",
@@ -108,6 +112,20 @@ const visualDescription = description ?? copy.descriptions[variant];
         <div class="diagnostic-chip diagnostic-chip--three">CLEAR</div>
         <span class="scene-note scene-note--one">SYMPTOM</span>
         <span class="scene-note scene-note--two">CAUSE</span>
+      </>
+    )}
+
+    {variant === "software" && (
+      <>
+        <div class="software-orbit software-orbit--one"></div>
+        <div class="software-orbit software-orbit--two"></div>
+        <div class="software-module software-module--app"><span>APP</span><i></i><i></i></div>
+        <div class="software-module software-module--user"><span>USER</span><i></i></div>
+        <div class="software-module software-module--system"><span>SYSTEM</span><i></i><i></i></div>
+        <div class="software-conflict"><b>!</b><span>CONFLICT</span></div>
+        <div class="software-resolution"><i></i><span>CHECKED</span></div>
+        <div class="software-flow-line software-flow-line--one"></div>
+        <div class="software-flow-line software-flow-line--two"></div>
       </>
     )}
 

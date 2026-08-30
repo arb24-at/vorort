@@ -2,86 +2,25 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import { siteConfig } from "../../data/site";
 import { withBase } from "../../utils/withBase";
+
+const destination = "leistungen/privatpersonen/software-installation-optimierung/";
 ---
 
 <MainLayout
-  title={`System & Software-Service in Berlin | ${siteConfig.defaultTitleSuffix}`}
-  description="System- und Software-Service in Berlin: Betriebssysteme, Office-Suiten und Fachanwendungen inklusive strukturierter Einrichtung und Fehlerbehebung."
-  canonicalPath="leistungen/reparatur-installation/"
+  title={`Software-Installation & Optimierung Berlin | ${siteConfig.defaultTitleSuffix}`}
+  description="Die frühere System-und-Software-Übersicht wurde durch die ausführliche Leistung für Software-Installation und Computer-Optimierung ersetzt."
+  canonicalPath={destination}
+  robots="noindex, follow"
+  redirectPath={destination}
 >
   <section class="page-intro">
     <div class="container">
-      <span class="eyebrow">System & Software</span>
-      <h1 class="section-title">System & Software-Service in Berlin</h1>
+      <span class="eyebrow">Seite aktualisiert</span>
+      <h1 class="section-title">Weiter zur Software-Installation und Optimierung</h1>
       <p class="section-lead">
-        Wir richten Systeme ein, optimieren bestehende Umgebungen und loesen Stoerungen fuer
-        Privatkunden und Unternehmen mit klaren Schritten und sauberer Uebergabe.
+        Diese Übersicht wurde durch eine ausführliche, klar abgegrenzte Leistungsseite ersetzt.
       </p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container two-grid">
-      <article class="card">
-        <h2 style="margin-top: 0;">Systemoptimierung und Fehleranalyse</h2>
-        <p>
-          Wir kuemmern uns um typische Systemprobleme und bringen instabile Umgebungen wieder in
-          einen verlaesslichen Zustand.
-        </p>
-        <ul>
-          <li>Analyse von Startproblemen, Abstuerzen und Leistungsengpaessen</li>
-          <li>Bereinigung von Konflikten bei Updates, Treibern und Diensten</li>
-          <li>Performance-Tuning fuer stabile und alltagstaugliche Systeme</li>
-          <li>Funktionskontrolle inklusive dokumentierter Abschlusspruefung</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h2 style="margin-top: 0;">Software-Setup und Troubleshooting</h2>
-        <p>
-          Von Betriebssystemen bis Fachtools integrieren wir Software in bestehende Umgebungen und
-          beheben reproduzierbar Fehler.
-        </p>
-        <ul>
-          <li>Windows-Installation, Systemmigration und Benutzerprofile</li>
-          <li>Microsoft 365, Outlook, Teams und Office-Anwendungsprobleme</li>
-          <li>Einbindung spezialisierter Programme fuer Praxis- oder Bueroablauf</li>
-          <li>Updates, Lizenzpruefung und Stabilitaetsoptimierung</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <section class="section section-soft">
-    <div class="container three-grid">
-      <article class="card">
-        <h3>1. Analyse</h3>
-        <p>Wir erfassen Ursache, Auswirkungen und Prioritaet des Problems.</p>
-      </article>
-      <article class="card">
-        <h3>2. Umsetzung</h3>
-        <p>Optimierung oder Installation mit abgestimmten Massnahmen und Dokumentation.</p>
-      </article>
-      <article class="card">
-        <h3>3. Uebergabe</h3>
-        <p>Abnahme mit Funktionsnachweis und Empfehlungen fuer den stabilen Betrieb.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="feature-rail">
-        <h2 style="margin-top: 0;">Systemservice in Berlin vereinbaren</h2>
-        <p>
-          Ob in Mitte, Pankow, Charlottenburg oder Kreuzberg: Wir planen Ihren Einsatz schnell und
-          transparent.
-        </p>
-        <div class="btn-row">
-          <a class="btn btn-primary" href={withBase("#kontakt")}>Jetzt Termin vereinbaren</a>
-          <a class="btn btn-secondary" href={siteConfig.contact.whatsappHref}>Über WhatsApp schreiben</a>
-        </div>
-      </div>
+      <p><a class="text-link" href={withBase(destination)}>Neue Leistungsseite öffnen →</a></p>
     </div>
   </section>
 </MainLayout>

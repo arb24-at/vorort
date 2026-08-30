@@ -37,10 +37,16 @@ const labels = locale === "en"
   ? { home: "home page", cta: "Request support", menu: "Open menu", close: "Close menu", language: "DE", nav: "Main navigation", tagline: "On-site IT · Berlin" }
   : { home: "Startseite", cta: "Hilfe anfragen", menu: "Menü öffnen", close: "Menü schließen", language: "EN", nav: "Hauptnavigation", tagline: "IT vor Ort · Berlin" };
 
-const isActive = (href: string) => {
-  if (href === "" || href === "en/") return currentRelativePath === normalizePath(href);
-  return currentRelativePath.startsWith(normalizePath(href));
-};
+const activeNavigationHref = headerNavigation
+  .filter((item) => {
+    if (item.href === "" || item.href === "en/") {
+      return currentRelativePath === normalizePath(item.href);
+    }
+    return currentRelativePath.startsWith(normalizePath(item.href));
+  })
+  .sort((left, right) => right.href.length - left.href.length)[0]?.href;
+
+const isActive = (href: string) => href === activeNavigationHref;
 ---
 
 <header class="site-header" id="site-header">

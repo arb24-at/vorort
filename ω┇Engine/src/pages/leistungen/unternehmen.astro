@@ -4,7 +4,7 @@ import { siteConfig } from "../../data/site";
 import { withBase } from "../../utils/withBase";
 import { getServicePath, getServices } from "../../data/services";
 
-const businessServices = getServices("business", "de");
+const businessServices = await getServices("business", "de");
 ---
 
 <MainLayout
@@ -35,8 +35,8 @@ const businessServices = getServices("business", "de");
       <div class="card-grid" style="margin-top: 1.5rem;">
         {businessServices.map((service) => (
           <a class="card service-card-link" href={withBase(getServicePath(service))}>
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
+            <h3>{service.hero.title}</h3>
+            <p>{service.seo.description}</p>
             <span class="service-link-label">Leistung ansehen →</span>
           </a>
         ))}

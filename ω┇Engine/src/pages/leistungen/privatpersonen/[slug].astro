@@ -2,8 +2,9 @@
 import ServiceDetail from "../../../components/ServiceDetail.astro";
 import { getServices, type LocalizedService } from "../../../data/services";
 
-export function getStaticPaths() {
-  return getServices("private", "de").map((service) => ({
+export async function getStaticPaths() {
+  const services = await getServices("private", "de");
+  return services.map((service) => ({
     params: { slug: service.slug },
     props: { service }
   }));

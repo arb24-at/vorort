@@ -1,6 +1,6 @@
 # VorOrt project documentation
 
-Last updated: 2026-08-27
+Last updated: 2026-08-30
 
 ## Purpose and positioning
 
@@ -18,7 +18,7 @@ The intended market position combines an accessible neighborhood IT expert, a ca
 
 - `VorOrt` is the provisional public working name, not the final customer-facing brand.
 - German is the default language at `/`; English is maintained separately under `/en/` for stronger language quality and SEO.
-- Stable translation pairs are connected by service IDs in `src/data/services.ts`, rather than runtime machine translation.
+- Stable translation pairs are connected by service IDs in the validated `services` content collection, rather than runtime machine translation.
 - The German copy uses contemporary, friendly, formal `Sie` language.
 - English-speaking technical service is a real public promise: the technician doing the work can communicate in English. Do not expand this into a claim of fully bilingual technicians or advertise German-speaking telephone support or technicians.
 - The complete German and English sites are both important. English-service messaging is centrally configurable and currently enabled.
@@ -67,7 +67,9 @@ The engine uses Astro 5 with static output. There is one shared layout, reusable
 Important sources of truth inside `ω┇Engine`:
 
 - `src/data/site.ts`: provisional public identity, contact channels, service districts, and optional English-support messaging.
-- `src/data/services.ts`: German and English service copy, stable translation identity, and service route metadata.
+- `src/content.config.ts`: validated service-page schema, approved page templates, thematic variants, SEO fields, FAQ requirements, and expanded-page contracts.
+- `src/content/services.yml`: independently maintained German and English service records connected by stable translation IDs.
+- `src/data/services.ts`: collection loading, translation-pair and route validation, related-service resolution, and route helpers.
 - `src/data/navigation.ts`: language-specific navigation.
 - `src/layouts/MainLayout.astro`: canonical, alternate-language, Open Graph, header, and footer behavior.
 - `astro.config.mjs`: deployment origin and `/vorort/` base path.
@@ -76,20 +78,21 @@ The contact form currently prepares an email through the visitor's configured ma
 
 ## Current implemented website map
 
-The current sitemap contains 22 indexable URLs; the separate 404 page brings the generated HTML total to 23. This describes the implemented state, not a permanently frozen launch architecture.
+The current sitemap contains 23 indexable URLs. The separate 404 page and noindex transitional redirect bring the generated HTML total to 25. This describes the implemented state, not a permanently frozen launch architecture.
 
 | Purpose | German route | English route | Current direction |
 | --- | --- | --- | --- |
 | Homepage | `/` | `/en/` | Connected-space homepage foundation implemented |
 | Private-services landing | `/leistungen/privatpersonen/` | `/en/services/private/` | Keep; refine as the approachable gateway into private/home-office help |
 | Computer and laptop help | `/leistungen/privatpersonen/computer-laptop-hilfe/` | `/en/services/private/computer-laptop-help/` | Keep; first private thematic prototype |
+| Software installation and optimization | `/leistungen/privatpersonen/software-installation-optimierung/` | `/en/services/private/software-installation-optimisation/` | Implemented as the first expanded content-collection service pair and next private-service reference |
 | Wi-Fi and home networks | `/leistungen/privatpersonen/wlan-heimnetz/` | `/en/services/private/wifi-home-network/` | Keep; convert to the validated thematic service-page system |
 | Setup and data transfer | `/leistungen/privatpersonen/einrichtung-datenumzug/` | `/en/services/private/setup-data-transfer/` | Keep; convert to the validated thematic service-page system |
 | Business-services landing | `/leistungen/unternehmen/` | `/en/services/business/` | Keep; refine as a gateway rather than a substitute for deep service pages |
 | Microsoft 365 workplaces | `/leistungen/unternehmen/microsoft-365-arbeitsplaetze/` | `/en/services/business/microsoft-365-workplaces/` | Keep; expand into a deeper business service page |
 | Google Workspace | `/leistungen/unternehmen/google-workspace-cloud/` | `/en/services/business/google-workspace-cloud/` | Keep; expand into a deeper business service page |
 | Network and office IT | `/leistungen/unternehmen/netzwerk-it-betreuung/` | `/en/services/business/network-it-support/` | Keep; first business thematic prototype and the initial home for one-off plus optional recurring IT support |
-| System and software overview | `/leistungen/reparatur-installation/` | Not yet mirrored | Transitional; replace or redirect once the dedicated software installation/optimization service is defined |
+| Former system and software overview | `/leistungen/reparatur-installation/` | Not mirrored | Noindex transitional redirect to the dedicated German software service; excluded from the sitemap |
 | Security and certifications | `/datensicherheit-zertifizierungen/` | Not yet mirrored | Transitional trust/capability page; do not market unverified certifications |
 | Legal notice | `/impressum/` | German legal source linked from English pages | Keep and replace placeholders with verified legal facts |
 | Privacy policy | `/datenschutz/` | German legal source linked from English pages | Keep and align with the real form/analytics stack |
@@ -107,7 +110,7 @@ The launch architecture should be intentionally small enough to maintain well, b
 1. **Homepage — German and English.** Keep the entrance problem-led and non-technical. It should state on-site Berlin IT help clearly, offer call/WhatsApp/form access, let visitors recognize their problem in plain language, introduce private/home-office/business pathways, then progressively reveal experience, technology competence, English-speaking technical service, Berlin coverage, FAQ, and trust evidence. Technology names must not become the main entrance taxonomy.
 2. **Private-services landing — German and English.** This is the middle layer between the simple homepage and individual service pages. Use recognizable situations, plain-language outcomes, a short service process, sensible service boundaries, reassuring trust evidence, and links into the detailed private services. It should remain suitable for non-technical and older visitors without naming them as a demographic target.
 3. **Computer and laptop troubleshooting — German and English.** Retain as the reference private-service page. Lead with symptoms rather than diagnoses; explain what can be investigated, likely outcomes, the on-site diagnostic process, boundaries around component-level repair and guaranteed data recovery, relevant FAQs, and simple contact paths. The page theme should show a recognizable device/problem state progressing towards diagnosis and resolution.
-4. **Software installation and optimization — new dedicated German and English service pair.** This is one of the five confirmed primary service pillars and is currently missing from the service data model as its own page. Cover installation, updates, configuration, performance/stability problems, software conflicts, user profiles, workplace applications, and safe handover. Keep the private-facing explanation understandable, with deeper technical detail only where useful. Choose final slugs during the SEO/content audit rather than inheriting the misleading `reparatur-installation` wording.
+4. **Software installation and optimization — German and English.** Implemented as the first expanded content-collection service pair using the intent-led slugs `software-installation-optimierung` and `software-installation-optimisation`. It covers installation, updates, configuration, performance/stability problems, software conflicts, user profiles, workplace applications, safe handover, FAQs, boundaries, proof, related services, and direct contact paths. Keep it as the review reference before expanding the same treatment to the remaining pages.
 5. **Wi-Fi and home networks — German and English.** Keep as a useful private/home-office search-intent page even though it is not one of the five headline pillars. Cover weak coverage, dropouts, router/device relationships, printers and connected devices, sensible diagnosis, and realistic boundaries. Thematic visuals should make coverage, dead zones, paths, and restored connections understandable without requiring network terminology.
 6. **Setup and data transfer — German and English.** Keep as a secondary private service. Cover new-device setup, accounts, profiles, application setup, migration of user data, backups before changes where appropriate, peripherals, and handover. Do not imply guaranteed recovery of missing or damaged data.
 7. **Business-services landing — German and English.** Treat this as a professional gateway for small businesses, offices, practices, studios, shops, freelancers, and home-office operations rather than a full technical catalogue. Start from operational needs, then expose deeper competence, one-off work plus optional recurring support, relevant technologies, working methods, experience, and verified qualifications when available. Avoid enterprise-consultancy language and avoid publishing the approximate 1–20-user audience as a hard ceiling.

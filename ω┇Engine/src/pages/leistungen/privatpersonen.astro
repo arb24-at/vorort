@@ -4,7 +4,7 @@ import { siteConfig } from "../../data/site";
 import { withBase } from "../../utils/withBase";
 import { getServicePath, getServices } from "../../data/services";
 
-const privateServices = getServices("private", "de");
+const privateServices = await getServices("private", "de");
 ---
 
 <MainLayout
@@ -27,7 +27,7 @@ const privateServices = getServices("private", "de");
   <section class="section section-soft">
     <div class="container">
       <span class="eyebrow">Einzelne Leistungen</span>
-      <h2 class="section-title">Drei häufige Anliegen für Zuhause und Homeoffice</h2>
+      <h2 class="section-title">Vier häufige Anliegen für Zuhause und Homeoffice</h2>
       <p class="section-lead">
         Wählen Sie das Thema, das Ihrer Situation am nächsten kommt. Den genauen Umfang klären wir
         anschließend persönlich.
@@ -35,8 +35,8 @@ const privateServices = getServices("private", "de");
       <div class="card-grid" style="margin-top: 1.5rem;">
         {privateServices.map((service) => (
           <a class="card service-card-link" href={withBase(getServicePath(service))}>
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
+            <h3>{service.hero.title}</h3>
+            <p>{service.seo.description}</p>
             <span class="service-link-label">Leistung ansehen →</span>
           </a>
         ))}

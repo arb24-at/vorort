@@ -16,6 +16,7 @@ const expectedHtml = [
   "impressum/index.html",
   "leistungen/privatpersonen/index.html",
   "leistungen/privatpersonen/computer-laptop-hilfe/index.html",
+  "leistungen/privatpersonen/software-installation-optimierung/index.html",
   "leistungen/privatpersonen/wlan-heimnetz/index.html",
   "leistungen/privatpersonen/einrichtung-datenumzug/index.html",
   "leistungen/reparatur-installation/index.html",
@@ -26,6 +27,7 @@ const expectedHtml = [
   "en/index.html",
   "en/services/private/index.html",
   "en/services/private/computer-laptop-help/index.html",
+  "en/services/private/software-installation-optimisation/index.html",
   "en/services/private/wifi-home-network/index.html",
   "en/services/private/setup-data-transfer/index.html",
   "en/services/business/index.html",
@@ -96,8 +98,8 @@ if (!fs.existsSync(sitemapPath)) {
 } else {
   const sitemap = fs.readFileSync(sitemapPath, "utf8");
   const sitemapUrlCount = (sitemap.match(/<url>/g) ?? []).length;
-  if (sitemapUrlCount !== 22) {
-    errors.push(`Expected 22 sitemap URLs, found ${sitemapUrlCount}.`);
+  if (sitemapUrlCount !== 23) {
+    errors.push(`Expected 23 sitemap URLs, found ${sitemapUrlCount}.`);
   }
 }
 
@@ -107,5 +109,5 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-console.log(`Validated ${htmlFiles.length} HTML pages and 22 sitemap URLs.`);
+console.log(`Validated ${htmlFiles.length} HTML pages and 23 sitemap URLs.`);
 console.log(`All internal ${basePath} links resolve; no stale /astro-demo/ paths found.`);

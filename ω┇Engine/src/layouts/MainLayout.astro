@@ -12,6 +12,8 @@ type Props = {
   canonicalPath?: string;
   lang?: "de" | "en";
   alternatePath?: string;
+  robots?: string;
+  redirectPath?: string;
 };
 
 const {
@@ -19,7 +21,9 @@ const {
   description = siteConfig.defaultDescription,
   canonicalPath = "",
   lang = "de",
-  alternatePath
+  alternatePath,
+  robots,
+  redirectPath
 } = Astro.props;
 
 const isExternalCanonical =
@@ -36,6 +40,7 @@ const alternateUrl = alternatePath !== undefined
   : undefined;
 const alternateLang = lang === "de" ? "en" : "de";
 const defaultUrl = new URL(withBase(""), Astro.site ?? "https://www.berlin-tech-support.de").toString();
+const redirectUrl = redirectPath ? withBase(redirectPath) : undefined;
 ---
 
 <!doctype html>
@@ -45,6 +50,8 @@ const defaultUrl = new URL(withBase(""), Astro.site ?? "https://www.berlin-tech-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {robots && <meta name="robots" content={robots} />}
+    {redirectUrl && <meta http-equiv="refresh" content={`0; url=${redirectUrl}`} />}
     <link rel="canonical" href={canonicalUrl} />
     {alternateUrl && <link rel="alternate" hreflang={alternateLang} href={alternateUrl} />}
     {alternateUrl && <link rel="alternate" hreflang={lang} href={canonicalUrl} />}

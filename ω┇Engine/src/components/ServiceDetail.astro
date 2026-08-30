@@ -6,9 +6,11 @@ import MainLayout from "../layouts/MainLayout.astro";
 import { siteConfig } from "../data/site";
 import {
   getAlternateServicePath,
+  getRelatedServices,
   getServicePath,
   type LocalizedService
 } from "../data/services";
+import { withBase } from "../utils/withBase";
 
 type Props = {
   service: LocalizedService;
@@ -16,11 +18,16 @@ type Props = {
 
 const { service } = Astro.props;
 const isEnglish = service.locale === "en";
-const isPrivatePrototype = service.id === "computer-laptop";
-const isBusinessPrototype = service.id === "network-it-support";
-const pageKind = isPrivatePrototype ? "private" : isBusinessPrototype ? "business" : "standard";
-const visualVariant = isPrivatePrototype ? "computer" : isBusinessPrototype ? "network" : service.audience === "business" ? "network" : "workspace";
+const isPrivatePrototype = service.page.template === "private-prototype";
+const isBusinessPrototype = service.page.template === "business-prototype";
+const isExpanded = service.page.template === "guided-private" && service.expanded;
+const pageKind = isPrivatePrototype || isExpanded ? "private" : isBusinessPrototype ? "business" : "standard";
+const visualVariant = service.page.theme.variant;
+const relatedServices = isExpanded ? await getRelatedServices(service) : [];
 const contactId = isEnglish ? "contact" : "kontakt";
+const audienceLandingPath = isEnglish
+  ? `en/services/${service.audience}/`
+  : `leistungen/${service.audience === "private" ? "privatpersonen" : "unternehmen"}/`;
 
 const copy = isEnglish
   ? {
@@ -55,7 +62,13 @@ const copy = isEnglish
       commonTitle: "Start with the closest description.",
       commonIntro: "The exact cause and responsible scope are clarified after you get in touch.",
       approachEyebrow: "Approach",
-      contactHint: "On-site support is the focus. Remote assistance is used where it genuinely fits the request."
+      contactHint: "On-site support is the focus. Remote assistance is used where it genuinely fits the request.",
+      backToAudience: "All private services",
+      faqEyebrow: "Questions before you contact us",
+      faqTitle: "Useful answers about software support",
+      relatedEyebrow: "Related situations",
+      relatedTitle: "Continue with the service that best matches the task",
+      relatedLink: "View service"
     }
   : {
       request: "IT-Hilfe anfragen",
@@ -89,33 +102,206 @@ const copy = isEnglish
       commonTitle: "Beginnen Sie mit der passendsten Beschreibung.",
       commonIntro: "Die genaue Ursache und der verantwortbare Umfang werden nach Ihrer Kontaktaufnahme geklärt.",
       approachEyebrow: "Arbeitsweise",
-      contactHint: "Vor-Ort-Unterstützung ist der Schwerpunkt. Remote-Hilfe nutzen wir, wenn sie wirklich zum Anliegen passt."
+      contactHint: "Vor-Ort-Unterstützung ist der Schwerpunkt. Remote-Hilfe nutzen wir, wenn sie wirklich zum Anliegen passt.",
+      backToAudience: "Alle Leistungen für Privatkunden",
+      faqEyebrow: "Fragen vor der Kontaktaufnahme",
+      faqTitle: "Wichtige Antworten zur Software-Unterstützung",
+      relatedEyebrow: "Verwandte Situationen",
+      relatedTitle: "Zum passenden nächsten Leistungsbereich weitergehen",
+      relatedLink: "Leistung ansehen"
     };
 ---
 
 <MainLayout
-  title={`${service.seoTitle} | ${siteConfig.defaultTitleSuffix}`}
-  description={service.description}
+  title={`${service.seo.title} | ${siteConfig.defaultTitleSuffix}`}
+  description={service.seo.description}
   canonicalPath={getServicePath(service)}
   lang={service.locale}
   alternatePath={getAlternateServicePath(service)}
 >
-  <section class={`service-hero service-hero--${pageKind}`}>
+  <section class={`service-hero service-hero--${pageKind} service-hero--theme-${visualVariant}`}>
     <div class="container service-hero__grid">
       <div class="service-hero__copy">
-        <span class="eyebrow eyebrow--light">{service.eyebrow}</span>
-        <h1>{service.title}</h1>
-        <p>{service.intro}</p>
+        <a class="service-back-link" href={withBase(audienceLandingPath)}>← {copy.backToAudience}</a>
+        <span class="eyebrow eyebrow--light">{service.hero.eyebrow}</span>
+        <h1>{service.hero.title}</h1>
+        <p>{service.hero.intro}</p>
         <div class="btn-row">
           <a class="btn btn-primary" href={`#${contactId}`}>{copy.request}</a>
           <a class="btn btn-ghost" href={siteConfig.contact.whatsappHref}>{copy.whatsapp}</a>
         </div>
       </div>
-      <VisualPlaceholder variant={visualVariant} locale={service.locale} />
+      <VisualPlaceholder
+        variant={visualVariant}
+        locale={service.locale}
+        title={service.page.theme.title}
+        description={service.page.theme.description}
+      />
     </div>
   </section>
 
   <LanguageSupportBanner locale={service.locale} />
+
+  {isExpanded && (
+    <>
+      <section class="section software-symptoms-section">
+        <div class="container">
+          <div class="section-heading section-heading--split">
+            <div>
+              <span class="eyebrow">{service.problems.eyebrow}</span>
+              <h2 class="section-title">{service.problems.title}</h2>
+            </div>
+            <p class="section-lead">{service.problems.intro}</p>
+          </div>
+          <div class="software-symptom-grid">
+            {service.problems.items.map((problem, index) => (
+              <article>
+                <span>0{index + 1}</span>
+                <p>{problem}</p>
+                <i aria-hidden="true"></i>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--warm software-situations-section">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">{service.expanded.situations.eyebrow}</span>
+            <h2 class="section-title">{service.expanded.situations.title}</h2>
+            <p class="section-lead">{service.expanded.situations.intro}</p>
+          </div>
+          <div class="software-situation-grid">
+            {service.expanded.situations.items.map((item, index) => (
+              <article>
+                <span>0{index + 1}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--ink software-process-section">
+        <div class="container software-process-layout">
+          <div>
+            <span class="eyebrow eyebrow--dark">{service.expanded.process.eyebrow}</span>
+            <h2 class="section-title">{service.expanded.process.title}</h2>
+            <p class="section-lead">{service.expanded.process.intro}</p>
+            <ol class="software-process-steps">
+              {service.expanded.process.steps.map((step, index) => (
+                <li>
+                  <span>0{index + 1}</span>
+                  <div><h3>{step.title}</h3><p>{step.text}</p></div>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <VisualPlaceholder
+            variant="software"
+            locale={service.locale}
+            title={service.page.theme.title}
+            description={service.page.theme.state}
+            compact
+          />
+        </div>
+      </section>
+
+      <section class="section software-scope-section">
+        <div class="container scope-layout">
+          <div>
+            <span class="eyebrow">{service.included.eyebrow}</span>
+            <h2 class="section-title">{service.included.title}</h2>
+            <p class="section-lead">{service.included.intro}</p>
+          </div>
+          <ul class="scope-list scope-list--software">
+            {service.included.items.map((item, index) => (
+              <li><span>0{index + 1}</span>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section--warm software-proof-section">
+        <div class="container software-proof-layout">
+          <div>
+            <span class="eyebrow">{service.expanded.proof.eyebrow}</span>
+            <h2 class="section-title">{service.expanded.proof.title}</h2>
+            <p class="section-lead">{service.expanded.proof.text}</p>
+          </div>
+          <div class="software-proof-grid">
+            {service.expanded.proof.items.map((item, index) => (
+              <span><i>0{index + 1}</i>{item}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="boundary-band boundary-band--software">
+        <div class="container boundary-layout">
+          <div>
+            <span class="eyebrow">{service.expanded.boundaries.eyebrow}</span>
+            <h2>{service.expanded.boundaries.title}</h2>
+          </div>
+          <ul>{service.expanded.boundaries.items.map((item) => <li>{item}</li>)}</ul>
+        </div>
+      </section>
+
+      <section class="section software-outcome-section">
+        <div class="container outcome-layout">
+          <div>
+            <span class="eyebrow">{service.outcome.eyebrow}</span>
+            <h2 class="section-title">{service.outcome.title}</h2>
+            <p class="section-lead">{service.outcome.text}</p>
+          </div>
+          <aside>
+            <h3>{service.cta.title}</h3>
+            <p>{service.cta.text}</p>
+            <p>{service.cta.prompt}</p>
+            <a class="text-link" href={`#${contactId}`}>{copy.request}<span aria-hidden="true">→</span></a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section--warm service-faq-section">
+        <div class="container faq-layout">
+          <div class="faq-layout__heading">
+            <span class="eyebrow">{copy.faqEyebrow}</span>
+            <h2 class="section-title">{copy.faqTitle}</h2>
+          </div>
+          <div class="faq-list">
+            {service.expanded.faqs.map((faq, index) => (
+              <details class="faq-item">
+                <summary><span>0{index + 1}</span>{faq.question}<i aria-hidden="true">+</i></summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section related-services-section">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">{copy.relatedEyebrow}</span>
+            <h2 class="section-title">{copy.relatedTitle}</h2>
+          </div>
+          <div class="related-service-grid">
+            {relatedServices.map((related, index) => (
+              <a href={withBase(getServicePath(related))}>
+                <span>0{index + 1}</span>
+                <h3>{related.hero.title}</h3>
+                <p>{related.seo.description}</p>
+                <b>{copy.relatedLink} →</b>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  )}
 
   {isPrivatePrototype && (
     <>
@@ -129,7 +315,7 @@ const copy = isEnglish
             <p class="section-lead">{copy.recognitionIntro}</p>
           </div>
           <div class="symptom-grid">
-            {service.problems.map((problem, index) => (
+            {service.problems.items.map((problem, index) => (
               <article class="symptom-item">
                 <span>0{index + 1}</span>
                 <p>{problem}</p>
@@ -156,12 +342,12 @@ const copy = isEnglish
       <section class="section scope-section">
         <div class="container scope-layout">
           <div>
-            <span class="eyebrow">{service.includedTitle}</span>
-            <h2 class="section-title">{service.outcomeTitle}</h2>
-            <p class="section-lead">{service.outcome}</p>
+            <span class="eyebrow">{service.included.eyebrow}</span>
+            <h2 class="section-title">{service.outcome.title}</h2>
+            <p class="section-lead">{service.outcome.text}</p>
           </div>
           <ul class="scope-list">
-            {service.included.map((item, index) => <li><span>0{index + 1}</span>{item}</li>)}
+            {service.included.items.map((item, index) => <li><span>0{index + 1}</span>{item}</li>)}
           </ul>
         </div>
       </section>
@@ -188,7 +374,7 @@ const copy = isEnglish
             <p class="section-lead">{copy.impactIntro}</p>
           </div>
           <div class="impact-list">
-            {service.problems.map((problem, index) => (
+            {service.problems.items.map((problem, index) => (
               <article><span>0{index + 1}</span><p>{problem}</p></article>
             ))}
           </div>
@@ -202,7 +388,7 @@ const copy = isEnglish
             <h2 class="section-title">{copy.systemTitle}</h2>
             <p class="section-lead">{copy.systemIntro}</p>
             <ul class="plain-checks plain-checks--dark">
-              {service.included.map((item) => <li>{item}</li>)}
+              {service.included.items.map((item) => <li>{item}</li>)}
             </ul>
           </div>
           <VisualPlaceholder variant="network" locale={service.locale} compact />
@@ -225,8 +411,8 @@ const copy = isEnglish
         <div class="container">
           <div class="section-heading">
             <span class="eyebrow">{copy.engagementEyebrow}</span>
-            <h2 class="section-title">{service.outcomeTitle}</h2>
-            <p class="section-lead">{service.outcome}</p>
+            <h2 class="section-title">{service.outcome.title}</h2>
+            <p class="section-lead">{service.outcome.text}</p>
           </div>
           <div class="engagement-grid">
             <article><span>01</span><h3>{copy.oneOffTitle}</h3><p>{copy.oneOffText}</p></article>
@@ -237,7 +423,7 @@ const copy = isEnglish
     </>
   )}
 
-  {!isPrivatePrototype && !isBusinessPrototype && (
+  {!isPrivatePrototype && !isBusinessPrototype && !isExpanded && (
     <>
       <section class="section common-service-section">
         <div class="container">
@@ -250,13 +436,13 @@ const copy = isEnglish
           </div>
           <div class="common-service-grid">
             <article class="service-list-panel">
-              <span>01</span><h3>{service.problemsTitle}</h3>
-              <ul>{service.problems.map((problem) => <li>{problem}</li>)}</ul>
+              <span>01</span><h3>{service.problems.title}</h3>
+              <ul>{service.problems.items.map((problem) => <li>{problem}</li>)}</ul>
             </article>
             <VisualPlaceholder variant={visualVariant} locale={service.locale} compact />
             <article class="service-list-panel service-list-panel--accent">
-              <span>02</span><h3>{service.includedTitle}</h3>
-              <ul>{service.included.map((item) => <li>{item}</li>)}</ul>
+              <span>02</span><h3>{service.included.title}</h3>
+              <ul>{service.included.items.map((item) => <li>{item}</li>)}</ul>
             </article>
           </div>
         </div>
@@ -266,12 +452,12 @@ const copy = isEnglish
         <div class="container outcome-layout">
           <div>
             <span class="eyebrow">{copy.approachEyebrow}</span>
-            <h2 class="section-title">{service.outcomeTitle}</h2>
-            <p class="section-lead">{service.outcome}</p>
+            <h2 class="section-title">{service.outcome.title}</h2>
+            <p class="section-lead">{service.outcome.text}</p>
           </div>
           <aside>
-            <h3>{service.ctaTitle}</h3>
-            <p>{service.ctaText}</p>
+            <h3>{service.cta.title}</h3>
+            <p>{service.cta.text}</p>
             <p>{copy.contactHint}</p>
           </aside>
         </div>

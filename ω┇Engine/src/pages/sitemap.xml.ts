@@ -8,7 +8,6 @@ const staticRoutes = [
   "",
   "leistungen/privatpersonen/",
   "leistungen/unternehmen/",
-  "leistungen/reparatur-installation/",
   "datensicherheit-zertifizierungen/",
   "impressum/",
   "datenschutz/",
@@ -17,12 +16,14 @@ const staticRoutes = [
   "en/services/business/"
 ];
 
-const serviceRoutes = [
-  ...getServices("private", "de"),
-  ...getServices("business", "de"),
-  ...getServices("private", "en"),
-  ...getServices("business", "en")
-].map(getServicePath);
+const serviceRoutes = (
+  await Promise.all([
+    getServices("private", "de"),
+    getServices("business", "de"),
+    getServices("private", "en"),
+    getServices("business", "en")
+  ])
+).flat().map(getServicePath);
 
 export const GET: APIRoute = ({ site }) => {
   const origin = site ?? new URL("https://www.berlin-tech-support.de");
