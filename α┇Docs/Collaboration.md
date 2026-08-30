@@ -5,13 +5,13 @@ Last updated: 2026-08-30
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: the Technical Field proof slice is committed locally as `ec88303` (`VorOrt v1.4.0: implement the Technical Field proof slice`). The final design-refinement pass is implemented on top of it and remains uncommitted at version `1.4.1`.
-- Local validation: `npm run validate` passed on 2026-08-30 with 25 HTML pages, 23 sitemap URLs, zero missing `/vorort/` targets, and zero stale `/astro-demo/` paths. Final Git whitespace and status checks remain part of the current handoff.
+- Current working state: the Technical Field proof slice remains the last confirmed local commit (`ec88303`, `VorOrt v1.4.0: implement the Technical Field proof slice`). The final design refinement was previously recorded as uncommitted version `1.4.1`; this Drive session adds the German Microsoft 365 guided-business content and SEO keyword routing reference at version `1.4.2`. Local Git sequencing and status still need verification in the repository shell.
+- Local validation: `npm run validate` previously passed on 2026-08-30 with 25 HTML pages, 23 sitemap URLs, zero missing `/vorort/` targets, and zero stale `/astro-demo/` paths. Those shell results predate the `1.4.2` Microsoft 365 changes; this Drive session performed YAML/schema-shape checks, TypeScript/Astro frontmatter syntax checks, targeted diff review, and exact Drive byte readback instead. Repository-shell build, whitespace, and status checks remain required.
 - Local browser verification: the German homepage and software reference page were reviewed at 1440×1000, 768×1024, 390×844, and 320×720 with zero horizontal overflow. Desktop/mobile navigation, 44px mobile service targets, Escape behavior, delayed contact dock, headline scale, image crop, section rhythm, and all four software visual states were checked.
 - Deployment state: `origin/main` is currently commit `8463415`; local `main` is one commit ahead at `ec88303`. The design refinement will not reach GitHub Pages until version `1.4.1` is committed and pushed.
 - Product-direction state: the final design direction is approved and stabilized. The master environment is reserved for broad context; homepage capability and software states now use distinct customer-readable functional visuals. The computer/laptop and office-network prototypes remain unchanged reference anchors, and the next immediate focus is content rather than another design concept.
 - Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional. The clean install also reports nine dependency audit findings for later dependency-maintenance review.
-- Recommended next action: review and develop the service content within the validated bilingual architecture. Resume controlled visual migration later with the business landing and office-network reference pair, without reopening the approved design direction.
+- Recommended next action: run the repository-shell validation and visually review the expanded German Microsoft 365 page, then commit the `1.4.2` change after resolving the prior `1.4.1` local sequencing. After German review, perform a separate English keyword/SERP pass before independently authoring the English Microsoft 365 page.
 
 ## Reporting template
 
@@ -29,6 +29,27 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 ```
 
 ## Work log
+
+## 2026-08-30 — ChatGPT — German Microsoft 365 content and SEO routing map
+
+- Objective: turn the German Microsoft 365 route into a substantial business service page using the approved four-state service grammar, while keeping the existing page system and recording concise useful/harmful keyword boundaries for every current SEO-targetable page.
+- Changes:
+  - Expanded `ω┇Engine/src/content/services.yml` for the German Microsoft 365 service with a professional four-state storyboard, concrete business situations, supported scope, working boundaries, eight FAQs, related-service links, and updated SEO metadata centred on Microsoft 365 support and consultation intent in Berlin.
+  - Added a constrained `guided-business` template to `ω┇Engine/src/content.config.ts`; the same expanded/storyboard contract now validates guided private and guided business services, with audience checks for each mode.
+  - Generalised `ω┇Engine/src/components/ServiceDetail.astro` so guided business services can use the established ServiceField story panels plus business situation and scope sections without creating a Microsoft-specific page component.
+  - Extended `ω┇Engine/src/components/ServiceField.astro` with a `workspace` variant hook so Microsoft 365 can retain the shared visual grammar while remaining distinguishable from the software page.
+  - Added `ω┇Engine/src/data/seo-keywords.yml` as a planning-only, non-imported keyword-routing reference covering the current SEO-targetable German and English pages. Each page keeps 10–25 useful/harmful terms; only the German Microsoft 365 entry is marked researched, while other pages remain provisional seeds pending their own Keyword Planner/SERP pass.
+  - Bumped root `AGENTS.md` to version `1.4.2` for this logical change set.
+- Decisions: `Microsoft 365 Support Berlin` is the German page's primary commercial search intent; `Microsoft 365 Beratung` and `Microsoft 365 Dienstleister` are strong secondary supplier-selection signals. High-volume `Microsoft 365 Administration`, Admin Center/login, Family/Student, and managed-service/enterprise terms are explicitly treated as wrong or misleading intent rather than volume opportunities. The English page remains unchanged until its own research pass.
+- Validation:
+  - Parsed the updated service YAML successfully: 14 localized records, seven complete German/English translation pairs, four required Microsoft 365 storyboard states, six detailed situations, eight FAQs, and valid related-service IDs.
+  - Confirmed the Microsoft 365 SEO title is 39 characters and description 163 characters, within the current content-schema bounds.
+  - TypeScript transpile syntax checks passed for the updated content schema and the Astro frontmatter in `ServiceDetail.astro` and `ServiceField.astro`.
+  - Reviewed targeted diffs so unrelated service records and component behaviour remain unchanged outside the guided-business generalisation.
+  - Read the written Drive files back and confirmed exact byte matches for `content.config.ts`, `ServiceField.astro`, `ServiceDetail.astro`, `services.yml`, and `AGENTS.md`; the new SEO keyword file was also fetched back from `src/data/`.
+  - `npm run validate`, browser rendering, `git diff --check`, `git status --short`, commit, and push were not run because this Drive-connected session has no repository shell.
+- Blockers or required input: the existing handoff still records the prior `1.4.1` design-refinement work as uncommitted, so local Git sequencing must be resolved before committing this separate `1.4.2` change. Final brand, production contact/legal facts, verified qualifications, travel policy, form backend, analytics, domain, and other existing launch inputs remain unresolved.
+- Recommended next action: run `npm run validate`, review the German Microsoft 365 page visually at desktop/tablet/mobile widths, then commit with the versioned message below. After approval, do an English-specific Microsoft 365 keyword/SERP pass instead of translating mechanically.
 
 ## 2026-08-30 — Codex — Final design-system refinement
 

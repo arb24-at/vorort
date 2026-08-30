@@ -1,0 +1,451 @@
+# SEO keyword routing reference
+# Planning-only data. Nothing in the application imports this file.
+# "harmful" means wrong search intent, unsupported offer, navigational intent, or cannibalisation risk.
+
+purpose: SEO routing reference only. This file is not imported by the Astro runtime and must not generate page copy automatically.
+rules:
+- German and English keyword research stays independent; provisional seeds are not final targets.
+- Useful keywords match the page service boundary. Harmful keywords are wrong-intent, unsupported, navigational, or better
+  owned by another page.
+- Update one page after its Keyword Planner and SERP review; do not optimise every page from this seed list mechanically.
+pages:
+- id: home-de
+  route: /
+  locale: de
+  researchStatus: provisional-seed
+  primary: it hilfe berlin
+  useful:
+  - it hilfe vor ort berlin
+  - it support berlin
+  - it service berlin
+  - computerhilfe berlin
+  - pc hilfe berlin
+  - it dienstleister berlin
+  - homeoffice it hilfe berlin
+  - it service kleine unternehmen berlin
+  harmful:
+  - computer reparatur berlin
+  - handy reparatur berlin
+  - datenrettung berlin
+  - 24h it service berlin
+  - kostenloser computer support
+- id: home-en
+  route: /en/
+  locale: en
+  researchStatus: provisional-seed
+  primary: IT support Berlin
+  useful:
+  - on-site IT support Berlin
+  - English IT support Berlin
+  - computer help Berlin
+  - IT service Berlin
+  - home office IT support Berlin
+  - small business IT support Berlin
+  - English speaking IT technician Berlin
+  - PC help Berlin
+  harmful:
+  - laptop repair shop Berlin
+  - data recovery Berlin
+  - 24/7 IT support Berlin
+  - free tech support Berlin
+  - enterprise IT consultancy Berlin
+- id: private-landing-de
+  route: /leistungen/privatpersonen/
+  locale: de
+  researchStatus: provisional-seed
+  primary: computerhilfe privat berlin
+  useful:
+  - it hilfe zuhause berlin
+  - computer hilfe vor ort berlin
+  - pc hilfe zuhause berlin
+  - computer service privat berlin
+  - homeoffice it hilfe berlin
+  - computer einrichten berlin
+  - wlan hilfe zuhause berlin
+  - software hilfe computer berlin
+  harmful:
+  - computerhilfe senioren berlin
+  - handy reparatur berlin
+  - datenrettung berlin
+  - 24 stunden computer notdienst
+  - billige pc reparatur berlin
+- id: private-landing-en
+  route: /en/services/private/
+  locale: en
+  researchStatus: provisional-seed
+  primary: home computer help Berlin
+  useful:
+  - on-site computer help Berlin
+  - personal IT support Berlin
+  - home IT support Berlin
+  - home office computer help Berlin
+  - PC setup Berlin
+  - Wi-Fi help Berlin
+  - software help Berlin
+  - English computer help Berlin
+  harmful:
+  - senior computer classes Berlin
+  - phone repair Berlin
+  - data recovery Berlin
+  - 24 hour computer emergency
+  - cheap laptop repair Berlin
+- id: computer-laptop-de
+  route: /leistungen/privatpersonen/computer-laptop-hilfe/
+  locale: de
+  researchStatus: provisional-seed
+  primary: computer hilfe berlin
+  useful:
+  - laptop hilfe berlin
+  - pc problem hilfe berlin
+  - computer langsam berlin
+  - windows hilfe berlin
+  - pc startet nicht berlin
+  - computer absturz hilfe
+  - windows fehler beheben berlin
+  - pc service vor ort berlin
+  harmful:
+  - laptop reparatur berlin
+  - display reparatur laptop
+  - mainboard reparatur berlin
+  - datenrettung festplatte berlin
+  - gaming pc reparatur berlin
+- id: computer-laptop-en
+  route: /en/services/private/computer-laptop-help/
+  locale: en
+  researchStatus: provisional-seed
+  primary: computer help Berlin
+  useful:
+  - laptop help Berlin
+  - PC troubleshooting Berlin
+  - slow computer help Berlin
+  - Windows help Berlin
+  - PC will not start Berlin
+  - computer crash help Berlin
+  - Windows troubleshooting Berlin
+  - on-site PC support Berlin
+  harmful:
+  - laptop screen repair Berlin
+  - motherboard repair Berlin
+  - hard drive recovery Berlin
+  - gaming PC repair Berlin
+  - computer repair shop Berlin
+- id: software-de
+  route: /leistungen/privatpersonen/software-installation-optimierung/
+  locale: de
+  researchStatus: provisional-seed
+  primary: software installieren berlin
+  useful:
+  - programme installieren hilfe
+  - software probleme berlin
+  - windows software fehler
+  - software update probleme
+  - programme einrichten pc
+  - pc optimieren berlin
+  - programm funktioniert nicht
+  - software konflikt beheben berlin
+  harmful:
+  - software crack installieren
+  - windows aktivierung key kostenlos
+  - pc tuning wunder
+  - piratensoftware hilfe
+  - 24h remote pc support
+- id: software-en
+  route: /en/services/private/software-installation-optimisation/
+  locale: en
+  researchStatus: provisional-seed
+  primary: software installation help Berlin
+  useful:
+  - software troubleshooting Berlin
+  - Windows software problems
+  - software update help Berlin
+  - program setup PC Berlin
+  - PC optimisation Berlin
+  - application conflict help
+  - software configuration Berlin
+  - workplace software setup Berlin
+  harmful:
+  - software crack installation
+  - free Windows key
+  - PC speed booster service
+  - pirated software support
+  - 24/7 remote PC support
+- id: wifi-de
+  route: /leistungen/privatpersonen/wlan-heimnetz/
+  locale: de
+  researchStatus: provisional-seed
+  primary: wlan hilfe berlin
+  useful:
+  - wlan probleme zuhause berlin
+  - wlan einrichten berlin
+  - wifi probleme berlin
+  - wlan abbrüche hilfe
+  - wlan reichweite verbessern
+  - heimnetzwerk einrichten berlin
+  - router einrichten berlin
+  - drucker wlan verbinden
+  harmful:
+  - internet störung provider berlin
+  - router reparatur berlin
+  - wlan passwort hacken
+  - enterprise netzwerk beratung
+  - glasfaser installation berlin
+- id: wifi-en
+  route: /en/services/private/wifi-home-network/
+  locale: en
+  researchStatus: provisional-seed
+  primary: Wi-Fi help Berlin
+  useful:
+  - home Wi-Fi problems Berlin
+  - Wi-Fi setup Berlin
+  - Wi-Fi dropouts Berlin
+  - improve Wi-Fi coverage Berlin
+  - home network setup Berlin
+  - router setup Berlin
+  - wireless printer setup
+  - home office network help Berlin
+  harmful:
+  - internet provider outage Berlin
+  - router hardware repair
+  - Wi-Fi password hacking
+  - enterprise network consultancy
+  - fibre installation Berlin
+- id: setup-transfer-de
+  route: /leistungen/privatpersonen/einrichtung-datenumzug/
+  locale: de
+  researchStatus: provisional-seed
+  primary: neuen computer einrichten berlin
+  useful:
+  - pc einrichten lassen berlin
+  - laptop einrichten berlin
+  - daten übertragen neuer pc
+  - computer umzug daten
+  - windows pc einrichten
+  - programme auf neuen pc übertragen
+  - e mail einrichten computer
+  - drucker am neuen pc einrichten
+  harmful:
+  - datenrettung berlin
+  - festplatte daten retten
+  - handy daten übertragen
+  - smartphone einrichten berlin
+  - mac datenrettung berlin
+- id: setup-transfer-en
+  route: /en/services/private/setup-data-transfer/
+  locale: en
+  researchStatus: provisional-seed
+  primary: new computer setup Berlin
+  useful:
+  - PC setup service Berlin
+  - laptop setup Berlin
+  - transfer data to new PC
+  - computer data migration Berlin
+  - Windows PC setup
+  - move programs to new computer
+  - email setup computer
+  - printer setup new PC
+  harmful:
+  - data recovery Berlin
+  - hard drive recovery Berlin
+  - phone data transfer Berlin
+  - smartphone setup Berlin
+  - Mac data recovery Berlin
+- id: business-landing-de
+  route: /leistungen/unternehmen/
+  locale: de
+  researchStatus: provisional-seed
+  primary: it support unternehmen berlin
+  useful:
+  - it service kleine unternehmen berlin
+  - it betreuung berlin
+  - it dienstleister berlin
+  - it support büro berlin
+  - it service kmu berlin
+  - büro it support berlin
+  - it hilfe praxis berlin
+  - it vor ort unternehmen berlin
+  harmful:
+  - 24h it service berlin
+  - enterprise managed services berlin
+  - rechenzentrum beratung berlin
+  - cybersecurity consultancy berlin
+  - sap beratung berlin
+- id: business-landing-en
+  route: /en/services/business/
+  locale: en
+  researchStatus: provisional-seed
+  primary: IT support for small business Berlin
+  useful:
+  - business IT support Berlin
+  - small business IT service Berlin
+  - office IT support Berlin
+  - IT service provider Berlin
+  - on-site business IT Berlin
+  - IT support for offices Berlin
+  - English business IT support Berlin
+  - IT help for small companies Berlin
+  harmful:
+  - 24/7 managed IT Berlin
+  - enterprise MSP Berlin
+  - data centre consultancy Berlin
+  - cybersecurity consultancy Berlin
+  - SAP consulting Berlin
+- id: microsoft-365-de
+  route: /leistungen/unternehmen/microsoft-365-arbeitsplaetze/
+  locale: de
+  researchStatus: researched-2026-08-30
+  primary: microsoft 365 support berlin
+  useful:
+  - microsoft 365 beratung berlin
+  - microsoft 365 dienstleister berlin
+  - microsoft 365 support
+  - microsoft 365 beratung
+  - office 365 support
+  - microsoft 365 einrichtung
+  - microsoft 365 migration
+  - microsoft 365 benutzerverwaltung
+  - microsoft 365 berechtigungen
+  - outlook support unternehmen
+  harmful:
+  - microsoft 365 administration
+  - microsoft admin center
+  - office 365 login
+  - microsoft 365 family
+  - microsoft 365 student
+  - microsoft 365 managed service
+  notes:
+  - 'Keyword Planner Germany: support 500/month; Beratung 50; Dienstleister 50 with strong commercial bids. Administration
+    5,000 but predominantly admin/navigation intent.'
+- id: microsoft-365-en
+  route: /en/services/business/microsoft-365-workplaces/
+  locale: en
+  researchStatus: provisional-seed
+  primary: Microsoft 365 support Berlin
+  useful:
+  - Microsoft 365 consulting Berlin
+  - Microsoft 365 service provider Berlin
+  - Office 365 support Berlin
+  - Microsoft 365 setup Berlin
+  - Microsoft 365 migration Berlin
+  - Microsoft 365 user management
+  - Microsoft 365 permissions help
+  - Outlook business support Berlin
+  - Teams support Berlin
+  harmful:
+  - Microsoft 365 admin centre
+  - Office 365 login
+  - Microsoft 365 Family
+  - Microsoft 365 student
+  - Microsoft 365 managed services enterprise
+- id: google-workspace-de
+  route: /leistungen/unternehmen/google-workspace-cloud/
+  locale: de
+  researchStatus: provisional-seed
+  primary: google workspace support berlin
+  useful:
+  - google workspace beratung berlin
+  - google workspace dienstleister berlin
+  - google workspace einrichten
+  - google workspace migration
+  - gmail unternehmen support
+  - google drive support unternehmen
+  - google workspace benutzerverwaltung
+  - google drive berechtigungen
+  - gmail domain einrichten
+  harmful:
+  - google konto login
+  - gmail login
+  - google one support
+  - google ads agentur berlin
+  - seo agentur berlin
+- id: google-workspace-en
+  route: /en/services/business/google-workspace-cloud/
+  locale: en
+  researchStatus: provisional-seed
+  primary: Google Workspace support Berlin
+  useful:
+  - Google Workspace consulting Berlin
+  - Google Workspace service provider Berlin
+  - Google Workspace setup Berlin
+  - Google Workspace migration Berlin
+  - Gmail business support
+  - Google Drive business support
+  - Google Workspace user management
+  - Google Drive permissions help
+  - Gmail domain setup
+  harmful:
+  - Google account login
+  - Gmail login
+  - Google One support
+  - Google Ads agency Berlin
+  - SEO agency Berlin
+- id: network-it-de
+  route: /leistungen/unternehmen/netzwerk-it-betreuung/
+  locale: de
+  researchStatus: provisional-seed
+  primary: netzwerk support berlin
+  useful:
+  - büro netzwerk berlin
+  - it betreuung büro berlin
+  - wlan büro berlin
+  - netzwerk probleme unternehmen
+  - arbeitsplatz it berlin
+  - drucker netzwerk büro
+  - it support kleine unternehmen berlin
+  - netzwerk einrichten büro berlin
+  harmful:
+  - enterprise netzwerk engineering berlin
+  - 24h network operations center
+  - penetration test berlin
+  - cisco datacenter consulting
+  - rechenzentrum netzwerk berlin
+- id: network-it-en
+  route: /en/services/business/network-it-support/
+  locale: en
+  researchStatus: provisional-seed
+  primary: office network support Berlin
+  useful:
+  - business network support Berlin
+  - small office network Berlin
+  - office Wi-Fi support Berlin
+  - workplace IT Berlin
+  - network troubleshooting business
+  - network printer support office
+  - small business IT support Berlin
+  - office network setup Berlin
+  harmful:
+  - enterprise network engineering Berlin
+  - 24/7 network operations centre
+  - penetration testing Berlin
+  - Cisco data centre consulting
+  - data centre networking Berlin
+- id: trust-de
+  route: /datensicherheit-zertifizierungen/
+  locale: de
+  researchStatus: supportive-not-primary
+  primary: sicherer it support berlin
+  useful:
+  - it arbeitsweise datenschutz
+  - sicherer umgang mit zugangsdaten
+  - it support datenschutz berlin
+  - it erfahrung berlin
+  - konten sicher einrichten
+  - backup vor it änderung
+  - zugriffsrechte it support
+  - it sicherheit arbeitsplatz berlin
+  harmful:
+  - dsgvo zertifiziert it
+  - microsoft certified partner berlin
+  - iso 27001 beratung berlin
+  - penetration test berlin
+  - cybersecurity firma berlin
+excludedRoutes:
+- route: /impressum/
+  reason: Legal page; no commercial keyword target.
+- route: /datenschutz/
+  reason: Privacy page; no commercial keyword target.
+- route: /leistungen/reparatur-installation/
+  reason: Noindex transitional redirect; no keyword target.
+- route: /404.html
+  reason: Error page; no keyword target.
+- route: /sitemap.xml
+  reason: Technical discovery file; no keyword target.

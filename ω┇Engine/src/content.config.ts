@@ -33,7 +33,7 @@ const serviceSchema = z
       label: z.string().min(4).max(46)
     }),
     page: z.object({
-      template: z.enum(["private-prototype", "business-prototype", "standard", "guided-private"]),
+      template: z.enum(["private-prototype", "business-prototype", "standard", "guided-private", "guided-business"]),
       technicalDepth: z.enum(["approachable", "informative", "professional"]),
       theme: z.object({
         variant: z.enum(["computer", "software", "network", "workspace"]),
@@ -105,7 +105,10 @@ const serviceSchema = z
       });
     }
 
-    if (service.page.template === "guided-private" && !service.expanded) {
+    const isGuidedTemplate =
+      service.page.template === "guided-private" || service.page.template === "guided-business";
+
+    if (isGuidedTemplate && !service.expanded) {
       context.addIssue({
         code: z.ZodIssueCode.custom,
         path: ["expanded"],
@@ -113,11 +116,27 @@ const serviceSchema = z
       });
     }
 
-    if (service.page.template === "guided-private" && !service.page.storyboard) {
+    if (isGuidedTemplate && !service.page.storyboard) {
       context.addIssue({
         code: z.ZodIssueCode.custom,
         path: ["page", "storyboard"],
         message: "Guided service pages require a four-state storyboard"
+      });
+    }
+
+    if (service.page.template === "guided-private" && service.audience !== "private") {
+      context.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["audience"],
+        message: "Guided private pages must use the private audience"
+      });
+    }
+
+    if (service.page.template === "guided-business" && service.audience !== "business") {
+      context.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["audience"],
+        message: "Guided business pages must use the business audience"
       });
     }
   });

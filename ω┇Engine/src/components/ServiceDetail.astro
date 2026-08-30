@@ -21,13 +21,20 @@ const { service } = Astro.props;
 const isEnglish = service.locale === "en";
 const isPrivatePrototype = service.page.template === "private-prototype";
 const isBusinessPrototype = service.page.template === "business-prototype";
-const isExpanded = service.page.template === "guided-private" && service.expanded;
+const isGuidedPrivate = service.page.template === "guided-private";
+const isGuidedBusiness = service.page.template === "guided-business";
+const isExpanded = (isGuidedPrivate || isGuidedBusiness) && Boolean(service.expanded);
 const hasStoryboard = Boolean(service.page.storyboard?.length);
 const storyboard = service.page.storyboard ?? [];
 const heroPanel = storyboard[0];
 const storyPanels = storyboard.slice(1);
-const pageKind = isPrivatePrototype || isExpanded ? "private" : isBusinessPrototype ? "business" : "standard";
+const pageKind = isPrivatePrototype || isGuidedPrivate
+  ? "private"
+  : isBusinessPrototype || isGuidedBusiness
+    ? "business"
+    : "standard";
 const visualVariant = service.page.theme.variant;
+const fieldVariant = visualVariant === "workspace" ? "workspace" : "software";
 const relatedServices = isExpanded ? await getRelatedServices(service) : [];
 const contactId = isEnglish ? "contact" : "kontakt";
 const audienceLandingPath = isEnglish
@@ -139,7 +146,7 @@ const copy = isEnglish
       </div>
       {heroPanel ? (
         <ServiceField
-          variant="software"
+          variant={fieldVariant}
           state={heroPanel.visualState}
           locale={service.locale}
           title={heroPanel.title}
@@ -177,7 +184,7 @@ const copy = isEnglish
               </ul>
             </div>
             <ServiceField
-              variant="software"
+              variant={fieldVariant}
               state={panel.visualState}
               locale={service.locale}
               title={panel.title}
@@ -189,6 +196,46 @@ const copy = isEnglish
           </div>
         </section>
       ))}
+
+      {isGuidedBusiness && (
+        <>
+          <section class="section section--warm business-situations-section">
+            <div class="container">
+              <div class="section-heading section-heading--split">
+                <div>
+                  <span class="eyebrow">{service.expanded.situations.eyebrow}</span>
+                  <h2 class="section-title">{service.expanded.situations.title}</h2>
+                </div>
+                <p class="section-lead">{service.expanded.situations.intro}</p>
+              </div>
+              <div class="software-situation-grid">
+                {service.expanded.situations.items.map((item, index) => (
+                  <article>
+                    <span>0{index + 1}</span>
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section class="section business-scope-section">
+            <div class="container scope-layout">
+              <div>
+                <span class="eyebrow">{service.included.eyebrow}</span>
+                <h2 class="section-title">{service.included.title}</h2>
+                {service.included.intro && <p class="section-lead">{service.included.intro}</p>}
+              </div>
+              <ul class="scope-list scope-list--software">
+                {service.included.items.map((item, index) => (
+                  <li><span>0{index + 1}</span>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        </>
+      )}
 
       <section class="software-assurance-band">
         <div class="container software-assurance-layout">
@@ -215,7 +262,7 @@ const copy = isEnglish
         <div class="container faq-layout">
           <div class="faq-layout__heading">
             <span class="eyebrow">{copy.faqEyebrow}</span>
-            <h2 class="section-title">{copy.faqTitle}</h2>
+            <h2 class="section-title">{isGuidedBusiness ? (isEnglish ? "Useful answers about business IT support" : "Wichtige Antworten zur Business-IT-Unterstützung") : copy.faqTitle}</h2>
           </div>
           <div class="faq-list">
             {service.expanded.faqs.map((faq, index) => (
