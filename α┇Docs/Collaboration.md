@@ -5,13 +5,13 @@ Last updated: 2026-08-30
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: the first Technical Field review slice is implemented locally on `main` and is not yet committed or pushed. It includes grouped bilingual service navigation, condensed German/English homepages, the four-state German/English software-service journey, the shared storyboard contract, and one original Berlin master environment.
-- Local validation: `npm run validate` passed on 2026-08-30 with 25 HTML pages, 23 sitemap URLs, zero missing `/vorort/` targets, and zero stale `/astro-demo/` paths. `git diff --check` also passed.
-- Local browser verification: German and English homepage/software journeys were reviewed at 1440×1000, 768×1024, and 390×844 with zero horizontal overflow. Desktop and mobile service menus, active-service treatment, expandable contact form, dark-panel contrast, and delayed mobile contact dock were exercised successfully.
-- Deployment state: `origin/main` is currently commit `2e60555`; the link-free npm configuration will reach GitHub Actions after the current changes are committed and pushed.
-- Product-direction state: the homepage and software pair now demonstrate the approved place/signal/state visual grammar without public placeholder chrome. The computer/laptop and office-network prototypes remain unchanged reference anchors; the business-mode proof is intentionally next rather than a broad mechanical rollout.
+- Current working state: the Technical Field proof slice is committed locally as `ec88303` (`VorOrt v1.4.0: implement the Technical Field proof slice`). The final design-refinement pass is implemented on top of it and remains uncommitted at version `1.4.1`.
+- Local validation: `npm run validate` passed on 2026-08-30 with 25 HTML pages, 23 sitemap URLs, zero missing `/vorort/` targets, and zero stale `/astro-demo/` paths. Final Git whitespace and status checks remain part of the current handoff.
+- Local browser verification: the German homepage and software reference page were reviewed at 1440×1000, 768×1024, 390×844, and 320×720 with zero horizontal overflow. Desktop/mobile navigation, 44px mobile service targets, Escape behavior, delayed contact dock, headline scale, image crop, section rhythm, and all four software visual states were checked.
+- Deployment state: `origin/main` is currently commit `8463415`; local `main` is one commit ahead at `ec88303`. The design refinement will not reach GitHub Pages until version `1.4.1` is committed and pushed.
+- Product-direction state: the final design direction is approved and stabilized. The master environment is reserved for broad context; homepage capability and software states now use distinct customer-readable functional visuals. The computer/laptop and office-network prototypes remain unchanged reference anchors, and the next immediate focus is content rather than another design concept.
 - Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional. The clean install also reports nine dependency audit findings for later dependency-maintenance review.
-- Recommended next action: review this homepage-to-software journey; after acceptance, apply the professional Technical Field mode to the business landing and office-network reference pair before converting the remaining services.
+- Recommended next action: review and develop the service content within the validated bilingual architecture. Resume controlled visual migration later with the business landing and office-network reference pair, without reopening the approved design direction.
 
 ## Reporting template
 
@@ -29,6 +29,23 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 ```
 
 ## Work log
+
+## 2026-08-30 — Codex — Final design-system refinement
+
+- Objective: complete the approved final visual refinement without changing the information architecture, broadening the service rollout, or rewriting service content.
+- Changes:
+  - Replaced presentation-scale shared section padding with a deliberate rhythm that produces approximately 72–96px between adjacent desktop content areas and 48–64px on mobile.
+  - Reserved the Berlin environment for the homepage context and replaced repeated software imagery with an error interface, dependency map, controlled-change sequence, and verified handover state.
+  - Reworded visual callouts around customer-observable faults, checks, changes, and outcomes; removed abstract numbered overlay labels and duplicate visible captions.
+  - Reduced homepage and software headline scale, tightened both heroes, and moved the software error state into the desktop first viewport while retaining a purposeful mobile sequence.
+  - Increased nested mobile service links to a 44px minimum target and retained menu, contact-dock, and focus behavior.
+- Decisions: `Technical Field` remains internal. Consistency now comes from the shared palette, typography, diagram rules, state colors, and visual purpose—not repeated use of one source image. The approved page architecture and service copy remain unchanged apart from small diagram labels.
+- Validation:
+  - `npm run validate` passed with 25 generated HTML pages and 23 sitemap URLs; all `/vorort/` links resolved and no stale `/astro-demo/` paths were found.
+  - Browser review covered 1440×1000, 768×1024, 390×844, and 320×720 with no horizontal overflow.
+  - Desktop service-menu bounds, mobile menu and Escape behavior, 44px mobile service targets, headline scale, image crop, four software visual states, and contact-dock overlap against headings and controls were checked.
+- Blockers or required input: no design decision remains blocked. Production identity, contact/legal facts, verified qualification evidence, form backend, analytics, domain, and other existing launch facts remain outstanding.
+- Recommended next action: shift attention to substantial bilingual service content and factual production inputs; use the stabilized design system when later migrating the business reference pair and remaining services.
 
 ## 2026-08-30 — Codex — Technical Field discovery and software proof slice
 

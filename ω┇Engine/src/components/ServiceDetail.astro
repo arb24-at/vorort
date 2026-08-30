@@ -145,6 +145,7 @@ const copy = isEnglish
           title={heroPanel.title}
           description={heroPanel.text}
           callouts={heroPanel.callouts}
+          showCaption={false}
         />
       ) : (
         <VisualPlaceholder variant={visualVariant} locale={service.locale} title={service.page.theme.title} description={service.page.theme.description} />
@@ -164,12 +165,11 @@ const copy = isEnglish
 
   {hasStoryboard && isExpanded && service.expanded && (
     <>
-      {storyPanels.map((panel, index) => (
+      {storyPanels.map((panel) => (
         <section class:list={["section", "story-panel-section", `story-panel-section--${panel.role}`, `story-panel-section--${panel.composition}`, { "section--ink": panel.role === "investigation" }]}>
           <div class="container story-panel-layout">
             <div class="story-panel-copy">
               <span class:list={["eyebrow", { "eyebrow--dark": panel.role === "investigation" }]}>{panel.eyebrow}</span>
-              <span class="story-panel-index" aria-hidden="true">0{index + 2}</span>
               <h2 class="section-title">{panel.title}</h2>
               <p class="section-lead">{panel.text}</p>
               <ul class="story-points">
@@ -184,6 +184,7 @@ const copy = isEnglish
               description={panel.text}
               callouts={panel.callouts}
               compact
+              showCaption={false}
             />
           </div>
         </section>

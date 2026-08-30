@@ -41,9 +41,9 @@ Foundation and revised review slice completed on 2026-08-30: all service records
 
 Acceptance: the launch page inventory is explicit; the five primary service pillars are represented coherently; representative content and SEO changes require no Astro component edit; invalid or incomplete content fails the build; every translated page has correct canonical and alternate-language metadata; every new indexable page has substantial distinct content rather than keyword duplication.
 
-## 4. Thematic visual and interaction system — next
+## 4. Thematic visual and interaction system — planned
 
-Prototype foundation completed on 2026-08-27 and the first Technical Field proof slice completed on 2026-08-30: the shared bilingual header now provides grouped direct service discovery; the homepage is condensed to a reassuring entrance, situational routes, capability field, and compact contact conclusion; and the software pair uses one original Berlin environment across four meaningful technical states. The remaining phase work is review, the business-mode proof, broader page expansion, and release-level accessibility/performance verification.
+Prototype foundation completed on 2026-08-27, the first Technical Field proof slice completed on 2026-08-30, and the final shared-design refinement completed on 2026-08-30. The grouped bilingual header, condensed homepage, controlled vertical rhythm, selective environmental artwork, customer-readable diagrams, four-state software journey, contact behavior, and responsive foundation are now stable. Content work is the immediate priority; the business-mode proof, controlled page migration, and release-level accessibility/performance verification remain planned implementation work rather than another design-concept phase.
 
 - Establish typography, color, spacing, icon, illustration, diagram, and motion rules for the provisional or chosen brand.
 - Prototype one coherent, state-changing Berlin home/home-office/office visual world across the homepage, one private service, and one business service.

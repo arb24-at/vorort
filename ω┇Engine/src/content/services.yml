@@ -130,9 +130,9 @@
           - "Letzte Updates, Installationen oder Kontoänderungen einordnen"
           - "Klären, welche Aufgabe danach wieder funktionieren soll"
         callouts:
-          - "Anwendung"
-          - "Anmeldung"
-          - "Windows"
+          - "Programm startet nicht"
+          - "Anmeldung wiederholt sich"
+          - "Nach Update langsamer"
       - role: investigation
         composition: text-left
         visualState: dependencies
@@ -144,10 +144,10 @@
           - "Benutzerprofil, Anmeldung und Berechtigungen prüfen"
           - "Autostarts, Speicher und störende Zusatzprogramme bewerten"
         callouts:
-          - "Version"
-          - "Konto"
-          - "Abhängigkeit"
-          - "Speicher"
+          - "Version passt?"
+          - "Kontozugriff"
+          - "Abhängigkeit fehlt"
+          - "Speicher knapp"
       - role: intervention
         composition: system
         visualState: controlled-change
@@ -159,9 +159,9 @@
           - "Lizenzierte Software aus nachvollziehbarer Quelle verwenden"
           - "Änderungen schrittweise umsetzen und direkt kontrollieren"
         callouts:
-          - "Sicherung"
-          - "Installation"
-          - "Konfiguration"
+          - "Sicherung geklärt"
+          - "Installation läuft"
+          - "Einstellung geprüft"
       - role: outcome
         composition: text-right
         visualState: verified
@@ -173,9 +173,9 @@
           - "Anmeldung, Druck oder Cloud-Verbindung passend testen"
           - "Änderungen und sinnvolle nächste Schritte verständlich erklären"
         callouts:
-          - "Geprüft"
-          - "Dokumentiert"
-          - "Übergabe"
+          - "Programme geöffnet"
+          - "Zugänge geprüft"
+          - "Übergabe erklärt"
   seo:
     title: "Software installieren & PC optimieren Berlin"
     description: "Software-Installation und PC-Optimierung in Berlin: Programme, Updates, Benutzerprofile, Konflikte und langsame Windows-Systeme verständlich lösen."
@@ -309,9 +309,9 @@
           - "Note recent updates, installations or account changes"
           - "Define the everyday task that needs to work again"
         callouts:
-          - "Application"
-          - "Sign-in"
-          - "Windows"
+          - "Application will not open"
+          - "Sign-in keeps repeating"
+          - "Slower after an update"
       - role: investigation
         composition: text-left
         visualState: dependencies
@@ -323,10 +323,10 @@
           - "Check the user profile, sign-in and relevant permissions"
           - "Assess startup load, storage and intrusive add-ons"
         callouts:
-          - "Version"
-          - "Account"
-          - "Dependency"
-          - "Storage"
+          - "Version compatible?"
+          - "Account access"
+          - "Missing dependency"
+          - "Storage running low"
       - role: intervention
         composition: system
         visualState: controlled-change
@@ -338,9 +338,9 @@
           - "Use legitimate software from a traceable source"
           - "Apply changes in stages and verify the response"
         callouts:
-          - "Backup"
-          - "Install"
-          - "Configure"
+          - "Backup confirmed"
+          - "Installation running"
+          - "Settings checked"
       - role: outcome
         composition: text-right
         visualState: verified
@@ -352,9 +352,9 @@
           - "Test sign-in, printing or cloud access where relevant"
           - "Explain the changes and practical next steps clearly"
         callouts:
-          - "Checked"
-          - "Recorded"
-          - "Handover"
+          - "Applications opened"
+          - "Access checked"
+          - "Handover explained"
   seo:
     title: "Software Installation & PC Optimisation Berlin"
     description: "Software installation and PC optimisation in Berlin for application errors, updates, user profiles, conflicts and slow Windows computers."

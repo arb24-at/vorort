@@ -187,7 +187,7 @@ Service-page planning must happen before broad visual rollout. Each new page sho
 
 ## Visual direction
 
-The connected-space foundation now has a reviewable `Technical Field` proof slice. The German and English homepages use one physical Berlin living/work environment with a technical overlay, the shared header exposes every required service through a compact grouped menu, and the software-service pair progresses through situation, investigation, intervention, and verified outcome states. The remaining audience and service pages retain their earlier prototype treatment until each controlled conversion is reviewed.
+The connected-space foundation and its final design-refinement pass are approved. The German and English homepages use one physical Berlin living/work environment for broad context, the shared header exposes every required service through a compact grouped menu, and the software-service pair progresses through situation, investigation, intervention, and verified outcome states. The remaining audience and service pages retain their earlier prototype treatment until each controlled conversion is reviewed.
 
 The desired impression is trustworthy, competent, and modern, supported by approachability, calmness, friendliness, and local familiarity. The site should look like a real Berlin IT service without resembling a conventional IT-company template, a cheap repair shop, or an intimidating consultancy.
 
@@ -205,7 +205,7 @@ The thematic idea must continue beyond hero imagery into section composition, cu
 
 Generated or bespoke imagery should be selective and belong to a deliberately designed family with recurring environments, composition, perspective, materials, and lighting. Identify a small number of high-value master concepts before commissioning assets. Prototype the system on the homepage, one private service, and one business service before expanding it across the site.
 
-The homepage and software-service proof slice use one original illustrated Berlin master environment with accessible HTML annotations and functional state overlays. Public placeholder chrome has been removed from those pages. Existing placeholder panels remain only on routes that have not yet entered the controlled conversion sequence; they must be replaced rather than propagated.
+The homepage reserves the original illustrated Berlin master environment for the broad place-based entrance. Capability and software states use customer-readable diagnostic paths, interface-like fault views, dependency diagrams, controlled-change sequences, and verified handover views instead of repeating the same image. Public placeholder chrome and internal design-taxonomy labels have been removed from those pages. Shared section rhythm targets approximately 72–96px between adjacent desktop content areas and 48–64px on mobile by controlling each section edge rather than stacking presentation-scale padding. Existing placeholder panels remain only on routes that have not yet entered the controlled conversion sequence; they must be replaced rather than propagated.
 
 The first contrasting service prototypes are computer and laptop troubleshooting for private customers, and office networks and workplace IT for businesses. Until suitable authentic photography exists, do not substitute generic stock people or generated technicians; use environments, devices, systems, illustrations, diagrams, and icons to carry the identity.
 
