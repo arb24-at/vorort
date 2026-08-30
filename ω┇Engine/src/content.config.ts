@@ -8,6 +8,17 @@ const itemGroup = z.object({
   items: z.array(z.string().min(12)).min(4)
 });
 
+const storyboardPanel = z.object({
+  role: z.enum(["situation", "investigation", "intervention", "outcome"]),
+  composition: z.enum(["wide", "text-left", "text-right", "system"]),
+  visualState: z.enum(["conflict", "dependencies", "controlled-change", "verified"]),
+  eyebrow: z.string().min(3),
+  title: z.string().min(8),
+  text: z.string().min(60),
+  points: z.array(z.string().min(12)).min(2).max(4),
+  callouts: z.array(z.string().min(3)).min(2).max(4)
+});
+
 const serviceSchema = z
   .object({
     id: z.string().regex(/^[a-z0-9-]+-(de|en)$/),
@@ -17,6 +28,10 @@ const serviceSchema = z
     order: z.number().int().positive(),
     slug: z.string().regex(/^[a-z0-9-]+$/),
     purpose: z.string().min(30),
+    navigation: z.object({
+      group: z.enum(["device-home", "workplace-collaboration"]),
+      label: z.string().min(4).max(46)
+    }),
     page: z.object({
       template: z.enum(["private-prototype", "business-prototype", "standard", "guided-private"]),
       technicalDepth: z.enum(["approachable", "informative", "professional"]),
@@ -25,7 +40,8 @@ const serviceSchema = z
         state: z.string().min(20),
         title: z.string().min(8),
         description: z.string().min(30)
-      })
+      }),
+      storyboard: z.array(storyboardPanel).length(4).optional()
     }),
     seo: z.object({
       title: z.string().min(15).max(70),
@@ -94,6 +110,14 @@ const serviceSchema = z
         code: z.ZodIssueCode.custom,
         path: ["expanded"],
         message: "Expanded service pages require situations, process, proof, boundaries, FAQs and related services"
+      });
+    }
+
+    if (service.page.template === "guided-private" && !service.page.storyboard) {
+      context.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["page", "storyboard"],
+        message: "Guided service pages require a four-state storyboard"
       });
     }
   });

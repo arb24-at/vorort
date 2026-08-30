@@ -23,3 +23,25 @@ const copy = locale === "en"
     <span aria-hidden="true">＋</span>{copy.form}
   </a>
 </nav>
+
+<script>
+  const dock = document.querySelector<HTMLElement>(".mobile-contact-dock");
+  const contactSection = document.querySelector<HTMLElement>(".contact-section");
+  let contactIsVisible = false;
+
+  const updateDock = () => {
+    const shouldShow = window.scrollY > 420 && !contactIsVisible && !document.body.classList.contains("menu-is-open");
+    dock?.classList.toggle("is-visible", shouldShow);
+  };
+
+  if (contactSection) {
+    const observer = new IntersectionObserver((entries) => {
+      contactIsVisible = entries.some((entry) => entry.isIntersecting);
+      updateDock();
+    }, { rootMargin: "0px 0px -15% 0px" });
+    observer.observe(contactSection);
+  }
+
+  updateDock();
+  window.addEventListener("scroll", updateDock, { passive: true });
+</script>

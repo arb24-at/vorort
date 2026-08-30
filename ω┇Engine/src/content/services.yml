@@ -5,6 +5,9 @@
   order: 1
   slug: computer-laptop-hilfe
   purpose: "Symptomorientierte Hilfe für private Windows-Computer und Laptops mit verantwortbarer Diagnose."
+  navigation:
+    group: device-home
+    label: "Computer- & Laptop-Hilfe"
   page:
     template: private-prototype
     technicalDepth: informative
@@ -53,6 +56,9 @@
   order: 1
   slug: computer-laptop-help
   purpose: "Symptom-led support for private Windows computers and laptops with responsible diagnosis."
+  navigation:
+    group: device-home
+    label: "Computer & laptop help"
   page:
     template: private-prototype
     technicalDepth: informative
@@ -101,6 +107,9 @@
   order: 2
   slug: software-installation-optimierung
   purpose: "Installation, Konfiguration und Optimierung von Software für private Nutzer und Homeoffice-Arbeitsplätze."
+  navigation:
+    group: device-home
+    label: "Software-Installation & Optimierung"
   page:
     template: guided-private
     technicalDepth: informative
@@ -109,6 +118,64 @@
       state: "Ungeordnete Programme, Warnungen und Konflikte werden zu einer stabilen, nachvollziehbaren Arbeitsumgebung."
       title: "Software vom Konflikt in einen geordneten Zustand bringen"
       description: "Programme, Konten und Systemteile werden als zusammenhängender Arbeitsplatz geprüft und sinnvoll geordnet."
+    storyboard:
+      - role: situation
+        composition: wide
+        visualState: conflict
+        eyebrow: "Was Sie sehen"
+        title: "Ein Fehlerfenster ist selten das ganze Problem"
+        text: "Ein Programm startet nicht, eine Anmeldung dreht sich im Kreis oder der Computer wird mit jedem Neustart langsamer. Wir beginnen bei diesem sichtbaren Verhalten, ohne von Ihnen eine technische Diagnose zu erwarten."
+        points:
+          - "Fehlermeldung oder Absturz möglichst genau festhalten"
+          - "Letzte Updates, Installationen oder Kontoänderungen einordnen"
+          - "Klären, welche Aufgabe danach wieder funktionieren soll"
+        callouts:
+          - "Anwendung"
+          - "Anmeldung"
+          - "Windows"
+      - role: investigation
+        composition: text-left
+        visualState: dependencies
+        eyebrow: "Zusammenhänge prüfen"
+        title: "Programm, Konto und System beeinflussen einander"
+        text: "Statt nur das betroffene Fenster neu zu installieren, prüfen wir Versionen, Benutzerprofil, verfügbare Ressourcen und angrenzende Dienste. So wird sichtbar, ob die Ursache innerhalb der Anwendung liegt oder an einer Abhängigkeit."
+        points:
+          - "Versionen, Updates und Systemvoraussetzungen vergleichen"
+          - "Benutzerprofil, Anmeldung und Berechtigungen prüfen"
+          - "Autostarts, Speicher und störende Zusatzprogramme bewerten"
+        callouts:
+          - "Version"
+          - "Konto"
+          - "Abhängigkeit"
+          - "Speicher"
+      - role: intervention
+        composition: system
+        visualState: controlled-change
+        eyebrow: "Gezielt verändern"
+        title: "Jeder Eingriff bekommt einen klaren Zweck"
+        text: "Vor einer Installation, Bereinigung oder Neuinstallation stimmen wir ab, was erhalten bleiben muss und welche Zugänge oder Sicherungen nötig sind. Danach ändern wir nur die vereinbarten Bestandteile und kontrollieren ihre Wirkung."
+        points:
+          - "Wichtige Dateien und Wiederherstellungswege vorab klären"
+          - "Lizenzierte Software aus nachvollziehbarer Quelle verwenden"
+          - "Änderungen schrittweise umsetzen und direkt kontrollieren"
+        callouts:
+          - "Sicherung"
+          - "Installation"
+          - "Konfiguration"
+      - role: outcome
+        composition: text-right
+        visualState: verified
+        eyebrow: "Gemeinsam übergeben"
+        title: "Die echte Aufgabe entscheidet, ob die Lösung trägt"
+        text: "Zum Abschluss testen wir nicht nur, ob ein Programmfenster aufgeht. Anmeldung, Dateien, Drucker und der wichtige Alltagsablauf werden im vereinbarten Umfang geprüft, damit Sie den neuen Zustand nachvollziehen können."
+        points:
+          - "Wichtige Programme und Dateien gemeinsam öffnen"
+          - "Anmeldung, Druck oder Cloud-Verbindung passend testen"
+          - "Änderungen und sinnvolle nächste Schritte verständlich erklären"
+        callouts:
+          - "Geprüft"
+          - "Dokumentiert"
+          - "Übergabe"
   seo:
     title: "Software installieren & PC optimieren Berlin"
     description: "Software-Installation und PC-Optimierung in Berlin: Programme, Updates, Benutzerprofile, Konflikte und langsame Windows-Systeme verständlich lösen."
@@ -116,7 +183,7 @@
   hero:
     eyebrow: "Privatkunden & Homeoffice · Software"
     title: "Software installieren und Computer sinnvoll optimieren"
-    intro: "Ein Programm lässt sich nicht installieren, ein Update bringt neue Fehler oder der Computer ist mit der Zeit unübersichtlich und langsam geworden? Wir prüfen das Zusammenspiel von Windows, Programmen, Konten und Einstellungen – und richten einen stabilen Zustand ein, den Sie im Alltag weiter nutzen können."
+    intro: "Ein Programm lässt sich nicht installieren, ein Update bringt neue Fehler oder der Computer ist mit der Zeit unübersichtlich geworden? Wir prüfen Windows, Programme, Konten und Einstellungen als zusammenhängende Arbeitsumgebung und richten einen nachvollziehbaren Zustand ein."
   problems:
     eyebrow: "Woran Sie das Problem merken"
     title: "Nicht jede Softwarestörung hat dieselbe Ursache"
@@ -219,6 +286,9 @@
   order: 2
   slug: software-installation-optimisation
   purpose: "Installation, configuration and optimisation of software for home users and home-office workplaces."
+  navigation:
+    group: device-home
+    label: "Software installation & optimisation"
   page:
     template: guided-private
     technicalDepth: informative
@@ -227,6 +297,64 @@
       state: "Conflicting applications, warnings and settings move into a stable and understandable working state."
       title: "Bring software from conflict to a controlled state"
       description: "Applications, accounts and system settings are treated as one working environment rather than isolated parts."
+    storyboard:
+      - role: situation
+        composition: wide
+        visualState: conflict
+        eyebrow: "What is happening"
+        title: "The error on screen is evidence, not a diagnosis"
+        text: "An application may refuse to open, a sign-in may loop or the computer may become slower after every restart. We begin with the behaviour you can describe and the task you need to regain."
+        points:
+          - "Capture the exact message or unreliable behaviour"
+          - "Note recent updates, installations or account changes"
+          - "Define the everyday task that needs to work again"
+        callouts:
+          - "Application"
+          - "Sign-in"
+          - "Windows"
+      - role: investigation
+        composition: text-left
+        visualState: dependencies
+        eyebrow: "Trace the relationship"
+        title: "Software rarely works in isolation"
+        text: "Rather than reinstalling the visible application by default, we examine versions, the user profile, available system resources and connected services. This separates an application fault from a wider dependency problem."
+        points:
+          - "Compare versions, updates and system requirements"
+          - "Check the user profile, sign-in and relevant permissions"
+          - "Assess startup load, storage and intrusive add-ons"
+        callouts:
+          - "Version"
+          - "Account"
+          - "Dependency"
+          - "Storage"
+      - role: intervention
+        composition: system
+        visualState: controlled-change
+        eyebrow: "Make a controlled change"
+        title: "Every action needs a reason and a checkpoint"
+        text: "Before installing, removing or rebuilding anything, we agree what must remain available and whether backup or recovery options need checking. Only the agreed parts are changed, with the result observed at each step."
+        points:
+          - "Clarify important files and recovery options first"
+          - "Use legitimate software from a traceable source"
+          - "Apply changes in stages and verify the response"
+        callouts:
+          - "Backup"
+          - "Install"
+          - "Configure"
+      - role: outcome
+        composition: text-right
+        visualState: verified
+        eyebrow: "Hand over a working state"
+        title: "The real workflow is the final test"
+        text: "A successful launch is not enough on its own. Within the agreed scope, we check sign-in, important files, printing and the everyday task, then explain the resulting setup and any sensible next step."
+        points:
+          - "Open the important applications and files together"
+          - "Test sign-in, printing or cloud access where relevant"
+          - "Explain the changes and practical next steps clearly"
+        callouts:
+          - "Checked"
+          - "Recorded"
+          - "Handover"
   seo:
     title: "Software Installation & PC Optimisation Berlin"
     description: "Software installation and PC optimisation in Berlin for application errors, updates, user profiles, conflicts and slow Windows computers."
@@ -234,7 +362,7 @@
   hero:
     eyebrow: "Home & home office · Software"
     title: "Software installation and practical computer optimisation"
-    intro: "Perhaps an application refuses to install, an update has disrupted a familiar routine, or the computer has gradually become cluttered and slow. We look at how Windows, applications, accounts and settings interact, then establish a working state you can understand and continue to use."
+    intro: "An application may refuse to install, an update may disrupt a familiar routine, or the computer may have become cluttered over time. We examine Windows, applications, accounts and settings as one environment, then establish a working state you can understand."
   problems:
     eyebrow: "What you may notice"
     title: "The message on screen is only the starting point"
@@ -337,6 +465,9 @@
   order: 3
   slug: wlan-heimnetz
   purpose: "Hilfe bei WLAN-Abdeckung, Verbindungsabbrüchen und dem Zusammenspiel vernetzter Geräte zu Hause."
+  navigation:
+    group: device-home
+    label: "WLAN & Heimnetz"
   page:
     template: standard
     technicalDepth: informative
@@ -385,6 +516,9 @@
   order: 3
   slug: wifi-home-network
   purpose: "Support for Wi-Fi coverage, connection dropouts and connected devices in the home."
+  navigation:
+    group: device-home
+    label: "Wi-Fi & home network"
   page:
     template: standard
     technicalDepth: informative
@@ -433,6 +567,9 @@
   order: 4
   slug: einrichtung-datenumzug
   purpose: "Planbare Einrichtung neuer Computer und Übertragung vorhandener nutzbarer Daten."
+  navigation:
+    group: device-home
+    label: "PC-Einrichtung & Datenumzug"
   page:
     template: standard
     technicalDepth: informative
@@ -481,6 +618,9 @@
   order: 4
   slug: setup-data-transfer
   purpose: "Planned setup of new computers and transfer of existing accessible user data."
+  navigation:
+    group: device-home
+    label: "PC setup & data transfer"
   page:
     template: standard
     technicalDepth: informative
@@ -529,6 +669,9 @@
   order: 1
   slug: microsoft-365-arbeitsplaetze
   purpose: "Professionelle Hilfe für Microsoft-365-Konten, Anwendungen, Dateien, Rechte und Arbeitsplätze."
+  navigation:
+    group: workplace-collaboration
+    label: "Microsoft 365 & Arbeitsplätze"
   page:
     template: standard
     technicalDepth: professional
@@ -577,6 +720,9 @@
   order: 1
   slug: microsoft-365-workplaces
   purpose: "Professional help with Microsoft 365 accounts, applications, files, permissions and workplaces."
+  navigation:
+    group: workplace-collaboration
+    label: "Microsoft 365 & workplaces"
   page:
     template: standard
     technicalDepth: professional
@@ -625,6 +771,9 @@
   order: 2
   slug: google-workspace-cloud
   purpose: "Professionelle Hilfe für Google-Workspace-Nutzer, Gmail, Drive, Freigaben und Arbeitsabläufe."
+  navigation:
+    group: workplace-collaboration
+    label: "Google Workspace"
   page:
     template: standard
     technicalDepth: professional
@@ -673,6 +822,9 @@
   order: 2
   slug: google-workspace-cloud
   purpose: "Professional help with Google Workspace users, Gmail, Drive, sharing and workflows."
+  navigation:
+    group: workplace-collaboration
+    label: "Google Workspace"
   page:
     template: standard
     technicalDepth: professional
@@ -721,6 +873,9 @@
   order: 3
   slug: netzwerk-it-betreuung
   purpose: "Tiefe betriebliche Hilfe für Büro-Netzwerke, Arbeitsplätze, Gerätebeziehungen und wiederkehrende Störungen."
+  navigation:
+    group: workplace-collaboration
+    label: "Büro-Netzwerk & Arbeitsplatz-IT"
   page:
     template: business-prototype
     technicalDepth: professional
@@ -769,6 +924,9 @@
   order: 3
   slug: network-it-support
   purpose: "Deep operational support for office networks, workplaces, device relationships and recurring disruption."
+  navigation:
+    group: workplace-collaboration
+    label: "Office network & workplace IT"
   page:
     template: business-prototype
     technicalDepth: professional

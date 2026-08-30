@@ -27,7 +27,7 @@ Acceptance: no placeholder identity or unsupported operational claim is public; 
 
 ## 3. Validated bilingual content architecture — next
 
-Foundation and first review slice completed on 2026-08-30: all service records now live in a schema-validated bilingual content collection; translation pairs, routes, approved page templates, thematic states, SEO intent, and related-service references are validated during the build. The dedicated German/English software installation and optimization service is the first fully expanded pair. The old German system/software overview is now a noindex transition to the new service. Broader page conversion remains intentionally paused for review.
+Foundation and revised review slice completed on 2026-08-30: all service records live in a schema-validated bilingual content collection; translation pairs, routes, navigation labels, approved page templates, four-state storyboards, thematic states, SEO intent, and related-service references are validated during the build. The dedicated German/English software installation and optimization service is the first fully expanded Technical Field pair. Broader page conversion remains intentionally paused for review.
 
 - Lock the launch information architecture and page briefs before broad visual rollout. Every indexable service page must have a distinct audience/search intent, content-depth level, thematic state, proof level, and conversion path.
 - Extend the current service collection pattern to localized landing-page copy and other appropriate page data; keep contact facts centralized until production values are supplied.
@@ -43,13 +43,13 @@ Acceptance: the launch page inventory is explicit; the five primary service pill
 
 ## 4. Thematic visual and interaction system — next
 
-Prototype foundation completed on 2026-08-27, with the first post-prototype service expansion completed on 2026-08-30: a new responsive shell, connected-space homepage, intentional visual placeholder family, mobile contact dock, progressive enquiry form, private computer/laptop prototype, business network/workplace prototype, and bilingual software installation/optimization state are implemented. The remaining phase work is review, refinement, final asset direction, broader page expansion, and release-level accessibility/performance verification.
+Prototype foundation completed on 2026-08-27 and the first Technical Field proof slice completed on 2026-08-30: the shared bilingual header now provides grouped direct service discovery; the homepage is condensed to a reassuring entrance, situational routes, capability field, and compact contact conclusion; and the software pair uses one original Berlin environment across four meaningful technical states. The remaining phase work is review, the business-mode proof, broader page expansion, and release-level accessibility/performance verification.
 
 - Establish typography, color, spacing, icon, illustration, diagram, and motion rules for the provisional or chosen brand.
 - Prototype one coherent, state-changing Berlin home/home-office/office visual world across the homepage, one private service, and one business service.
 - Use computer and laptop troubleshooting as the private prototype and office networks and workplace IT as the business prototype.
 - Carry each page theme beyond its hero through section composition, diagrams, icons, interface details, and restrained interaction, with technical depth increasing as visitors move deeper into the site.
-- After review of the completed software installation/optimization pair, continue in this priority order: Wi-Fi/home network, setup/data transfer, Microsoft 365, Google Workspace, then the audience landings and trust/capability treatment. Do not redesign every route in parallel before the service-page system is proven.
+- After review of the revised software pair, prove the professional mode on the business landing and office-network reference page. Then continue with Wi-Fi/home network, setup/data transfer, Microsoft 365, Google Workspace, the private landing, and the trust/capability treatment. Do not redesign every route in parallel before both private and business modes are accepted.
 - Let each service use a related environment/state rather than forcing one literal camera view everywhere; consistency comes from the shared visual universe, perspective/material/motion rules, and recurring devices/system language.
 - Add only high-value generated or commissioned imagery with documented consistency rules and accessible alternatives.
 - Review navigation, contact surfaces, responsive behavior, keyboard use, focus treatment, reduced motion, contrast, and performance.

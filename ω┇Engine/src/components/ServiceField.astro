@@ -1,0 +1,84 @@
+---
+import type { Locale } from "../data/services";
+import { withBase } from "../utils/withBase";
+
+type Variant = "home" | "capability" | "software";
+type State = "place" | "connected" | "conflict" | "dependencies" | "controlled-change" | "verified";
+
+type Props = {
+  variant: Variant;
+  state: State;
+  locale?: Locale;
+  title: string;
+  description: string;
+  callouts?: string[];
+  compact?: boolean;
+};
+
+const {
+  variant,
+  state,
+  locale = "de",
+  title,
+  description,
+  callouts = [],
+  compact = false
+} = Astro.props;
+
+const stateLabel = locale === "en"
+  ? {
+      place: "Where the technology is used",
+      connected: "Device, connection and workplace",
+      conflict: "Visible problem",
+      dependencies: "Connected causes",
+      "controlled-change": "Agreed change",
+      verified: "Checked working state"
+    }[state]
+  : {
+      place: "Wo die Technik genutzt wird",
+      connected: "Gerät, Verbindung und Arbeitsplatz",
+      conflict: "Sichtbare Störung",
+      dependencies: "Verbundene Ursachen",
+      "controlled-change": "Vereinbarte Änderung",
+      verified: "Geprüfter Arbeitszustand"
+    }[state];
+
+const defaultCallouts = locale === "en"
+  ? ["Device", "Connection", "Workplace"]
+  : ["Gerät", "Verbindung", "Arbeitsplatz"];
+
+const visibleCallouts = callouts.length > 0 ? callouts : defaultCallouts;
+const titleId = `field-${variant}-${state}-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-").slice(0, 24)}`;
+---
+
+<figure
+  class:list={["service-field", `service-field--${variant}`, `service-field--${state}`, { "service-field--compact": compact }]}
+  aria-labelledby={titleId}
+>
+  <div class="service-field__scene">
+    <img
+      src={withBase("images/technical-field-berlin.jpg")}
+      alt=""
+      width="1706"
+      height="922"
+      loading={variant === "home" && state === "place" ? "eager" : "lazy"}
+      decoding="async"
+    />
+    <div class="service-field__shade" aria-hidden="true"></div>
+    <div class="service-field__signal" aria-hidden="true">
+      <i></i><i></i><i></i><i></i>
+    </div>
+    <ol class="service-field__callouts" aria-label={stateLabel}>
+      {visibleCallouts.map((callout, index) => (
+        <li class={`service-field__callout service-field__callout--${index + 1}`}>
+          <span aria-hidden="true">0{index + 1}</span>{callout}
+        </li>
+      ))}
+    </ol>
+    <span class="service-field__state"><i aria-hidden="true"></i>{stateLabel}</span>
+  </div>
+  <figcaption>
+    <strong id={titleId}>{title}</strong>
+    <p>{description}</p>
+  </figcaption>
+</figure>

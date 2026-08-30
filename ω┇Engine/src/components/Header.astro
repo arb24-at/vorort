@@ -1,8 +1,7 @@
 ---
-import { mainNavigation, mainNavigationEn } from "../data/navigation";
 import { siteConfig } from "../data/site";
+import { getServicePath, getServices, type Locale } from "../data/services";
 import { withBase } from "../utils/withBase";
-import type { Locale } from "../data/services";
 
 type Props = {
   currentPath?: string;
@@ -11,97 +10,131 @@ type Props = {
 };
 
 const { currentPath = "/", locale = "de", alternatePath } = Astro.props;
-const toHref = (path: string) => withBase(path);
+const privateServices = await getServices("private", locale);
+const businessServices = await getServices("business", locale);
 const baseHref = withBase("");
 const baseNoTrailingSlash = baseHref.replace(/\/$/, "");
 
 const normalizePath = (path: string) => {
-  if (!path) return "";
   const noLeading = path.replace(/^\/+/, "");
-  return noLeading.endsWith("/") ? noLeading : `${noLeading}/`;
+  return noLeading && !noLeading.endsWith("/") ? `${noLeading}/` : noLeading;
 };
 
-const currentPathWithoutBase = (() => {
-  if (currentPath === baseNoTrailingSlash || currentPath === baseHref) return "";
-  if (currentPath.startsWith(`${baseNoTrailingSlash}/`)) {
-    return currentPath.slice(baseNoTrailingSlash.length + 1);
-  }
-  return currentPath.replace(/^\/+/, "");
-})();
+const currentPathWithoutBase = currentPath.startsWith(`${baseNoTrailingSlash}/`)
+  ? currentPath.slice(baseNoTrailingSlash.length + 1)
+  : currentPath === baseNoTrailingSlash || currentPath === baseHref
+    ? ""
+    : currentPath.replace(/^\/+/, "");
 
 const currentRelativePath = normalizePath(currentPathWithoutBase);
-const headerNavigation = (locale === "en" ? mainNavigationEn : mainNavigation).filter(
-  (item) => item.href !== "datensicherheit-zertifizierungen/"
-);
-const labels = locale === "en"
-  ? { home: "home page", cta: "Request support", menu: "Open menu", close: "Close menu", language: "DE", nav: "Main navigation", tagline: "On-site IT · Berlin" }
-  : { home: "Startseite", cta: "Hilfe anfragen", menu: "Menü öffnen", close: "Menü schließen", language: "EN", nav: "Hauptnavigation", tagline: "IT vor Ort · Berlin" };
+const isServiceActive = (path: string) => currentRelativePath === normalizePath(path);
+const hasActiveService = [...privateServices, ...businessServices].some((service) => isServiceActive(getServicePath(service)));
 
-const activeNavigationHref = headerNavigation
-  .filter((item) => {
-    if (item.href === "" || item.href === "en/") {
-      return currentRelativePath === normalizePath(item.href);
+const copy = locale === "en"
+  ? {
+      home: "home page",
+      tagline: "On-site IT · Berlin",
+      services: "Services",
+      privateGroup: "Devices & home",
+      businessGroup: "Workplace & collaboration",
+      privateLanding: "All home and home-office support",
+      businessLanding: "IT for workplaces and small teams",
+      approach: "How we work & on site",
+      contact: "Contact",
+      cta: "Request support",
+      menu: "Open menu",
+      close: "Close menu",
+      language: "DE",
+      nav: "Main navigation"
     }
-    return currentRelativePath.startsWith(normalizePath(item.href));
-  })
-  .sort((left, right) => right.href.length - left.href.length)[0]?.href;
+  : {
+      home: "Startseite",
+      tagline: "IT vor Ort · Berlin",
+      services: "Leistungen",
+      privateGroup: "Geräte & Zuhause",
+      businessGroup: "Arbeitsplatz & Zusammenarbeit",
+      privateLanding: "Alle Hilfen für Zuhause & Homeoffice",
+      businessLanding: "IT für Arbeitsplätze & kleine Teams",
+      approach: "Arbeitsweise & Vor Ort",
+      contact: "Kontakt",
+      cta: "Hilfe anfragen",
+      menu: "Menü öffnen",
+      close: "Menü schließen",
+      language: "EN",
+      nav: "Hauptnavigation"
+    };
 
-const isActive = (href: string) => href === activeNavigationHref;
+const homePath = locale === "en" ? "en/" : "";
+const approachHref = withBase(locale === "en" ? "en/#approach" : "#arbeitsweise");
+const contactHref = `#${locale === "en" ? "contact" : "kontakt"}`;
+const privateLandingPath = locale === "en" ? "en/services/private/" : "leistungen/privatpersonen/";
+const businessLandingPath = locale === "en" ? "en/services/business/" : "leistungen/unternehmen/";
 ---
 
 <header class="site-header" id="site-header">
   <div class="mobile-menu-backdrop" id="mobile-menu-backdrop" hidden></div>
   <div class="container">
     <div class="header-shell">
-      <a href={locale === "en" ? withBase("en/") : baseHref} class="brand" aria-label={`${siteConfig.name} ${labels.home}`}>
+      <a href={withBase(homePath)} class="brand" aria-label={`${siteConfig.name} ${copy.home}`}>
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 32 32"><path d="M7 10h8v12H7zM17 6h8v8h-8zM17 16h8v10h-8z"/><path d="M15 11h2M15 21h2M21 14v2"/></svg>
         </span>
-        <span>
-          <span class="brand-name">{siteConfig.shortName}</span>
-          <span class="brand-subline">{labels.tagline}</span>
-        </span>
+        <span><span class="brand-name">{siteConfig.shortName}</span><span class="brand-subline">{copy.tagline}</span></span>
       </a>
 
-      <nav class="nav-desktop" aria-label={labels.nav}>
-        {headerNavigation.map((item) => (
-          <a class={`nav-link ${isActive(item.href) ? "active" : ""}`} href={toHref(item.href)}>
-            {item.label}
-          </a>
-        ))}
-        {alternatePath !== undefined && (
-          <a class="nav-link language-switch" href={withBase(alternatePath)} hreflang={locale === "de" ? "en" : "de"}>
-            {labels.language}
-          </a>
-        )}
-        <a class="btn btn-primary nav-cta" href={locale === "en" ? "#contact" : "#kontakt"}>{labels.cta}</a>
+      <nav class="nav-desktop" aria-label={copy.nav}>
+        <details class="service-nav" data-service-nav>
+          <summary class:list={["nav-link", { active: hasActiveService }]}>{copy.services}<span aria-hidden="true">＋</span></summary>
+          <div class="service-mega-menu">
+            <section>
+              <h2>{copy.privateGroup}</h2>
+              <ul>
+                {privateServices.map((service) => (
+                  <li><a class:list={[{ active: isServiceActive(getServicePath(service)) }]} href={withBase(getServicePath(service))} aria-current={isServiceActive(getServicePath(service)) ? "page" : undefined}>{service.navigation.label}<span aria-hidden="true">→</span></a></li>
+                ))}
+              </ul>
+              <a class="service-group-link" href={withBase(privateLandingPath)}>{copy.privateLanding}<span aria-hidden="true">↗</span></a>
+            </section>
+            <section>
+              <h2>{copy.businessGroup}</h2>
+              <ul>
+                {businessServices.map((service) => (
+                  <li><a class:list={[{ active: isServiceActive(getServicePath(service)) }]} href={withBase(getServicePath(service))} aria-current={isServiceActive(getServicePath(service)) ? "page" : undefined}>{service.navigation.label}<span aria-hidden="true">→</span></a></li>
+                ))}
+              </ul>
+              <a class="service-group-link" href={withBase(businessLandingPath)}>{copy.businessLanding}<span aria-hidden="true">↗</span></a>
+            </section>
+          </div>
+        </details>
+        <a class="nav-link" href={approachHref}>{copy.approach}</a>
+        <a class="nav-link" href={contactHref}>{copy.contact}</a>
+        {alternatePath !== undefined && <a class="nav-link language-switch" href={withBase(alternatePath)} hreflang={locale === "de" ? "en" : "de"}>{copy.language}</a>}
+        <a class="btn btn-primary nav-cta" href={contactHref}>{copy.cta}</a>
       </nav>
 
-      <button
-        id="mobile-toggle"
-        class="mobile-toggle"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        aria-label={labels.menu}
-        data-open-label={labels.menu}
-        data-close-label={labels.close}
-      >
-      <span></span><span></span><span></span>
+      <button id="mobile-toggle" class="mobile-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label={copy.menu} data-open-label={copy.menu} data-close-label={copy.close}>
+        <span></span><span></span><span></span>
       </button>
     </div>
 
-    <nav id="mobile-menu" class="mobile-menu" aria-label={labels.nav} hidden>
-      {headerNavigation.map((item) => (
-        <a class={`mobile-link ${isActive(item.href) ? "active" : ""}`} href={toHref(item.href)}>
-          {item.label}
-        </a>
-      ))}
-      {alternatePath !== undefined && (
-        <a class="mobile-link" href={withBase(alternatePath)} hreflang={locale === "de" ? "en" : "de"}>
-          {labels.language}
-        </a>
-      )}
-      <a class="btn btn-primary" href={locale === "en" ? "#contact" : "#kontakt"}>{labels.cta}</a>
+    <nav id="mobile-menu" class="mobile-menu" aria-label={copy.nav} hidden>
+      <details class="mobile-service-nav" open={hasActiveService}>
+        <summary>{copy.services}<span aria-hidden="true">＋</span></summary>
+        <div class="mobile-service-group">
+          <h2>{copy.privateGroup}</h2>
+          {privateServices.map((service) => <a class:list={["mobile-link", { active: isServiceActive(getServicePath(service)) }]} href={withBase(getServicePath(service))}>{service.navigation.label}</a>)}
+          <a class="mobile-group-link" href={withBase(privateLandingPath)}>{copy.privateLanding} →</a>
+        </div>
+        <div class="mobile-service-group">
+          <h2>{copy.businessGroup}</h2>
+          {businessServices.map((service) => <a class:list={["mobile-link", { active: isServiceActive(getServicePath(service)) }]} href={withBase(getServicePath(service))}>{service.navigation.label}</a>)}
+          <a class="mobile-group-link" href={withBase(businessLandingPath)}>{copy.businessLanding} →</a>
+        </div>
+      </details>
+      <a class="mobile-link" href={approachHref}>{copy.approach}</a>
+      <a class="mobile-link" href={contactHref}>{copy.contact}</a>
+      {alternatePath !== undefined && <a class="mobile-link" href={withBase(alternatePath)} hreflang={locale === "de" ? "en" : "de"}>{copy.language}</a>}
+      <a class="btn btn-primary" href={contactHref}>{copy.cta}</a>
     </nav>
   </div>
 </header>
@@ -111,50 +144,48 @@ const isActive = (href: string) => href === activeNavigationHref;
   const toggle = document.getElementById("mobile-toggle");
   const menu = document.getElementById("mobile-menu");
   const backdrop = document.getElementById("mobile-menu-backdrop");
+  const desktopServiceNav = document.querySelector<HTMLDetailsElement>("[data-service-nav]");
   const openLabel = toggle?.getAttribute("data-open-label") ?? "Open menu";
   const closeLabel = toggle?.getAttribute("data-close-label") ?? "Close menu";
 
-  const handleScroll = () => {
-    if (!header) return;
-    if (window.scrollY > 8) header.classList.add("is-scrolled");
-    else header.classList.remove("is-scrolled");
-  };
-
-  handleScroll();
-  window.addEventListener("scroll", handleScroll);
-
-  toggle?.addEventListener("click", () => {
-    if (!menu) return;
-    const isHidden = menu.hasAttribute("hidden");
-    if (isHidden) {
-      menu.removeAttribute("hidden");
-      backdrop?.removeAttribute("hidden");
-      document.body.classList.add("menu-is-open");
-    } else {
-      menu.setAttribute("hidden", "hidden");
-      backdrop?.setAttribute("hidden", "hidden");
-      document.body.classList.remove("menu-is-open");
-    }
-    toggle.setAttribute("aria-expanded", isHidden ? "true" : "false");
-    toggle.setAttribute("aria-label", isHidden ? closeLabel : openLabel);
-  });
-
-  const closeMenu = () => {
+  const handleScroll = () => header?.classList.toggle("is-scrolled", window.scrollY > 8);
+  const closeMobileMenu = (restoreFocus = false) => {
     menu?.setAttribute("hidden", "hidden");
     backdrop?.setAttribute("hidden", "hidden");
     document.body.classList.remove("menu-is-open");
     toggle?.setAttribute("aria-expanded", "false");
     toggle?.setAttribute("aria-label", openLabel);
+    if (restoreFocus) toggle?.focus();
   };
 
-  backdrop?.addEventListener("click", closeMenu);
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenu();
+  handleScroll();
+  window.addEventListener("scroll", handleScroll, { passive: true });
+
+  toggle?.addEventListener("click", () => {
+    const willOpen = menu?.hasAttribute("hidden") ?? false;
+    if (willOpen) {
+      menu?.removeAttribute("hidden");
+      backdrop?.removeAttribute("hidden");
+      document.body.classList.add("menu-is-open");
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", closeLabel);
+      menu?.querySelector<HTMLElement>("summary, a")?.focus();
+    } else {
+      closeMobileMenu(true);
+    }
   });
 
-  menu?.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      closeMenu();
-    });
+  backdrop?.addEventListener("click", () => closeMobileMenu(true));
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    if (!menu?.hasAttribute("hidden")) closeMobileMenu(true);
+    if (desktopServiceNav?.open) {
+      desktopServiceNav.open = false;
+      desktopServiceNav.querySelector<HTMLElement>("summary")?.focus();
+    }
   });
+  document.addEventListener("click", (event) => {
+    if (desktopServiceNav?.open && !desktopServiceNav.contains(event.target as Node)) desktopServiceNav.open = false;
+  });
+  menu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => closeMobileMenu(false)));
 </script>

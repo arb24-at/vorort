@@ -1,6 +1,7 @@
 ---
 import ContactSection from "./ContactSection.astro";
 import LanguageSupportBanner from "./LanguageSupportBanner.astro";
+import ServiceField from "./ServiceField.astro";
 import VisualPlaceholder from "./VisualPlaceholder.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import { siteConfig } from "../data/site";
@@ -21,6 +22,10 @@ const isEnglish = service.locale === "en";
 const isPrivatePrototype = service.page.template === "private-prototype";
 const isBusinessPrototype = service.page.template === "business-prototype";
 const isExpanded = service.page.template === "guided-private" && service.expanded;
+const hasStoryboard = Boolean(service.page.storyboard?.length);
+const storyboard = service.page.storyboard ?? [];
+const heroPanel = storyboard[0];
+const storyPanels = storyboard.slice(1);
 const pageKind = isPrivatePrototype || isExpanded ? "private" : isBusinessPrototype ? "business" : "standard";
 const visualVariant = service.page.theme.variant;
 const relatedServices = isExpanded ? await getRelatedServices(service) : [];
@@ -28,6 +33,9 @@ const contactId = isEnglish ? "contact" : "kontakt";
 const audienceLandingPath = isEnglish
   ? `en/services/${service.audience}/`
   : `leistungen/${service.audience === "private" ? "privatpersonen" : "unternehmen"}/`;
+const audienceBackLabel = service.audience === "business"
+  ? (isEnglish ? "All business services" : "Alle Leistungen für Unternehmen")
+  : (isEnglish ? "All home services" : "Alle Leistungen für Zuhause & Homeoffice");
 
 const copy = isEnglish
   ? {
@@ -63,7 +71,6 @@ const copy = isEnglish
       commonIntro: "The exact cause and responsible scope are clarified after you get in touch.",
       approachEyebrow: "Approach",
       contactHint: "On-site support is the focus. Remote assistance is used where it genuinely fits the request.",
-      backToAudience: "All private services",
       faqEyebrow: "Questions before you contact us",
       faqTitle: "Useful answers about software support",
       relatedEyebrow: "Related situations",
@@ -103,7 +110,6 @@ const copy = isEnglish
       commonIntro: "Die genaue Ursache und der verantwortbare Umfang werden nach Ihrer Kontaktaufnahme geklärt.",
       approachEyebrow: "Arbeitsweise",
       contactHint: "Vor-Ort-Unterstützung ist der Schwerpunkt. Remote-Hilfe nutzen wir, wenn sie wirklich zum Anliegen passt.",
-      backToAudience: "Alle Leistungen für Privatkunden",
       faqEyebrow: "Fragen vor der Kontaktaufnahme",
       faqTitle: "Wichtige Antworten zur Software-Unterstützung",
       relatedEyebrow: "Verwandte Situationen",
@@ -119,10 +125,10 @@ const copy = isEnglish
   lang={service.locale}
   alternatePath={getAlternateServicePath(service)}
 >
-  <section class={`service-hero service-hero--${pageKind} service-hero--theme-${visualVariant}`}>
+  <section class:list={[`service-hero service-hero--${pageKind} service-hero--theme-${visualVariant}`, { "service-hero--story": hasStoryboard }]}>
     <div class="container service-hero__grid">
       <div class="service-hero__copy">
-        <a class="service-back-link" href={withBase(audienceLandingPath)}>← {copy.backToAudience}</a>
+        <a class="service-back-link" href={withBase(audienceLandingPath)}>← {audienceBackLabel}</a>
         <span class="eyebrow eyebrow--light">{service.hero.eyebrow}</span>
         <h1>{service.hero.title}</h1>
         <p>{service.hero.intro}</p>
@@ -131,18 +137,115 @@ const copy = isEnglish
           <a class="btn btn-ghost" href={siteConfig.contact.whatsappHref}>{copy.whatsapp}</a>
         </div>
       </div>
-      <VisualPlaceholder
-        variant={visualVariant}
-        locale={service.locale}
-        title={service.page.theme.title}
-        description={service.page.theme.description}
-      />
+      {heroPanel ? (
+        <ServiceField
+          variant="software"
+          state={heroPanel.visualState}
+          locale={service.locale}
+          title={heroPanel.title}
+          description={heroPanel.text}
+          callouts={heroPanel.callouts}
+        />
+      ) : (
+        <VisualPlaceholder variant={visualVariant} locale={service.locale} title={service.page.theme.title} description={service.page.theme.description} />
+      )}
+      {heroPanel && (
+        <ul class="story-hero-points">
+          {heroPanel.points.map((point) => <li>{point}</li>)}
+        </ul>
+      )}
+      {hasStoryboard && siteConfig.languageSupport.enabled && (
+        <p class="inline-language-note"><strong>{siteConfig.languageSupport[service.locale].title}</strong><span>{siteConfig.languageSupport[service.locale].text}</span></p>
+      )}
     </div>
   </section>
 
-  <LanguageSupportBanner locale={service.locale} />
+  {!hasStoryboard && <LanguageSupportBanner locale={service.locale} />}
 
-  {isExpanded && (
+  {hasStoryboard && isExpanded && service.expanded && (
+    <>
+      {storyPanels.map((panel, index) => (
+        <section class:list={["section", "story-panel-section", `story-panel-section--${panel.role}`, `story-panel-section--${panel.composition}`, { "section--ink": panel.role === "investigation" }]}>
+          <div class="container story-panel-layout">
+            <div class="story-panel-copy">
+              <span class:list={["eyebrow", { "eyebrow--dark": panel.role === "investigation" }]}>{panel.eyebrow}</span>
+              <span class="story-panel-index" aria-hidden="true">0{index + 2}</span>
+              <h2 class="section-title">{panel.title}</h2>
+              <p class="section-lead">{panel.text}</p>
+              <ul class="story-points">
+                {panel.points.map((point) => <li>{point}</li>)}
+              </ul>
+            </div>
+            <ServiceField
+              variant="software"
+              state={panel.visualState}
+              locale={service.locale}
+              title={panel.title}
+              description={panel.text}
+              callouts={panel.callouts}
+              compact
+            />
+          </div>
+        </section>
+      ))}
+
+      <section class="software-assurance-band">
+        <div class="container software-assurance-layout">
+          <div>
+            <span class="eyebrow">{service.expanded.proof.eyebrow}</span>
+            <h2>{service.expanded.proof.title}</h2>
+            <p>{service.expanded.proof.text}</p>
+          </div>
+          <ul>{service.expanded.proof.items.map((item) => <li>{item}</li>)}</ul>
+        </div>
+      </section>
+
+      <section class="boundary-band boundary-band--software">
+        <div class="container boundary-layout">
+          <div>
+            <span class="eyebrow">{service.expanded.boundaries.eyebrow}</span>
+            <h2>{service.expanded.boundaries.title}</h2>
+          </div>
+          <ul>{service.expanded.boundaries.items.map((item) => <li>{item}</li>)}</ul>
+        </div>
+      </section>
+
+      <section class="section service-faq-section service-faq-section--story">
+        <div class="container faq-layout">
+          <div class="faq-layout__heading">
+            <span class="eyebrow">{copy.faqEyebrow}</span>
+            <h2 class="section-title">{copy.faqTitle}</h2>
+          </div>
+          <div class="faq-list">
+            {service.expanded.faqs.map((faq, index) => (
+              <details class="faq-item">
+                <summary><span>0{index + 1}</span>{faq.question}<i aria-hidden="true">+</i></summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section related-services-section related-services-section--story">
+        <div class="container related-story-layout">
+          <div>
+            <span class="eyebrow">{copy.relatedEyebrow}</span>
+            <h2 class="section-title">{copy.relatedTitle}</h2>
+          </div>
+          <div class="related-story-links">
+            {relatedServices.map((related, index) => (
+              <a href={withBase(getServicePath(related))}>
+                <span>0{index + 1}</span><strong>{related.navigation.label}</strong><i aria-hidden="true">→</i>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  )}
+
+  {isExpanded && !hasStoryboard && (
     <>
       <section class="section software-symptoms-section">
         <div class="container">
@@ -465,5 +568,5 @@ const copy = isEnglish
     </>
   )}
 
-  <ContactSection locale={service.locale} context={service.audience} />
+  <ContactSection locale={service.locale} context={service.audience} compact={hasStoryboard} />
 </MainLayout>

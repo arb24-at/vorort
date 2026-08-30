@@ -5,13 +5,13 @@ Last updated: 2026-08-30
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: the responsive connected-space redesign remains the foundation; the validated bilingual service collection and first expanded software-service pair are implemented locally on `main` and are not yet committed or pushed.
-- Local validation: `npm run validate` passed on 2026-08-30 with 25 HTML pages, 23 sitemap URLs, zero missing `/vorort/` targets, and zero stale `/astro-demo/` paths.
-- Local browser verification: German and English homepages plus the private computer/laptop and business network/workplace prototypes were reviewed at 1440×1000 and 390×844. No horizontal overflow or console errors were observed; mobile navigation, contact dock, anchored contact section, and progressive enquiry form were exercised successfully.
+- Current working state: the first Technical Field review slice is implemented locally on `main` and is not yet committed or pushed. It includes grouped bilingual service navigation, condensed German/English homepages, the four-state German/English software-service journey, the shared storyboard contract, and one original Berlin master environment.
+- Local validation: `npm run validate` passed on 2026-08-30 with 25 HTML pages, 23 sitemap URLs, zero missing `/vorort/` targets, and zero stale `/astro-demo/` paths. `git diff --check` also passed.
+- Local browser verification: German and English homepage/software journeys were reviewed at 1440×1000, 768×1024, and 390×844 with zero horizontal overflow. Desktop and mobile service menus, active-service treatment, expandable contact form, dark-panel contrast, and delayed mobile contact dock were exercised successfully.
 - Deployment state: `origin/main` is currently commit `2e60555`; the link-free npm configuration will reach GitHub Actions after the current changes are committed and pushed.
-- Product-direction state: the homepage, two selected prototypes, and bilingual software installation/optimization expansion now demonstrate progressive technical depth, validated service content, intentional thematic states, differentiated private/business treatment, and one shared responsive system.
+- Product-direction state: the homepage and software pair now demonstrate the approved place/signal/state visual grammar without public placeholder chrome. The computer/laptop and office-network prototypes remain unchanged reference anchors; the business-mode proof is intentionally next rather than a broad mechanical rollout.
 - Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional. The clean install also reports nine dependency audit findings for later dependency-maintenance review.
-- Recommended next action: review the German and English software-service pair; after acceptance, continue the roadmap priority order with Wi-Fi/home network before setup/data transfer and the business cloud pages.
+- Recommended next action: review this homepage-to-software journey; after acceptance, apply the professional Technical Field mode to the business landing and office-network reference pair before converting the remaining services.
 
 ## Reporting template
 
@@ -29,6 +29,25 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 ```
 
 ## Work log
+
+## 2026-08-30 — Codex — Technical Field discovery and software proof slice
+
+- Objective: implement the approved smallest convincing slice without rolling the new treatment mechanically across the remaining audience and service pages.
+- Changes:
+  - Replaced the flat bilingual header navigation with an accessible grouped service menu sourced from validated service navigation metadata, with matching mobile accordion behavior and direct links to every required service and both audience gateways.
+  - Condensed the German and English homepages into a reassuring entrance, five plain-language situation routes, one capability/working-method field, and a compact contact conclusion.
+  - Added a constrained four-state storyboard contract for situation, investigation, intervention, and outcome content; the software pair now renders from independently authored German and English storyboards rather than another service-specific component branch.
+  - Introduced the reusable `ServiceField` visual and one original illustrated Berlin home/home-office/small-workplace environment. Functional HTML overlays communicate device, connection, account, dependency, change, and verified states; public placeholder labels were removed from the proof-slice pages.
+  - Reworked the software pages around three additional thematic panels, concise competence evidence, truthful boundaries, service FAQs, related-service rows, and a compact call/WhatsApp/expandable-form conclusion.
+  - Delayed the mobile contact dock until the visitor scrolls, hid it while the menu or contact section is active, and retained focus return and Escape behavior for navigation.
+- Decisions: `Technical Field` is an internal design-system description, not a public brand or tagline. The current master illustration is reused through meaningful crops and overlays rather than commissioning one unrelated image per section. Existing audience landings and other service layouts remain unchanged pending review.
+- Validation:
+  - `npm run validate` passed with 25 generated HTML pages and 23 sitemap URLs; all internal `/vorort/` links resolved and no stale `/astro-demo/` references were found.
+  - `git diff --check` passed.
+  - Browser review covered German and English homepage/software routes at 1440×1000, 768×1024, and 390×844 with no horizontal overflow. Grouped desktop/mobile navigation, the expandable contact form, state-panel contrast, service paths, and delayed mobile dock were checked.
+  - The generated master asset was visually inspected and delivered as a 464 KB JPEG; the unused 2.1 MB PNG conversion source was removed from the repository while the original generated source remains recoverable outside the checkout.
+- Blockers or required input: no new decision blocks review. Final public brand, real telephone/WhatsApp/email/legal facts, verified qualifications, travel policy, form backend, analytics, production domain, and final production-art decision remain unresolved.
+- Recommended next action: review the German and English homepage-to-software journey. If accepted, implement the business landing and office-network pair as the professional-mode proof before broader service conversion.
 
 ## 2026-08-30 — Codex — Validated service architecture and software-service expansion
 

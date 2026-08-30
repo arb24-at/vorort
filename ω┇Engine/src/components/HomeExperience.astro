@@ -1,14 +1,11 @@
 ---
 import ContactSection from "./ContactSection.astro";
-import FaqSection from "./FaqSection.astro";
-import LanguageSupportBanner from "./LanguageSupportBanner.astro";
-import VisualPlaceholder from "./VisualPlaceholder.astro";
+import ServiceField from "./ServiceField.astro";
 import type { Locale } from "../data/services";
+import { siteConfig } from "../data/site";
 import { withBase } from "../utils/withBase";
 
-type Props = {
-  locale?: Locale;
-};
+type Props = { locale?: Locale };
 
 const { locale = "de" } = Astro.props;
 const isEnglish = locale === "en";
@@ -16,84 +13,79 @@ const isEnglish = locale === "en";
 const copy = isEnglish
   ? {
       eyebrow: "On-site IT support · Berlin",
-      title: "On-site IT help. Clear, personal, professional.",
-      intro: "For computers, software, networks and workplaces – personal on-site support for private customers, home offices and small businesses in Berlin.",
-      primary: "Request IT support",
-      secondary: "See common problems",
-      proof: ["On site throughout Berlin", "IT experience since 2008", "English-speaking technician"],
-      problemEyebrow: "Start with the problem",
-      problemTitle: "What is getting in the way today?",
-      problemIntro: "You do not need to know the technical cause. Choose the description that comes closest.",
+      title: "When technology gets in the way, we help you move forward.",
+      intro: "Practical help with computers, software, Wi-Fi and workplace IT—at the place where the problem actually happens.",
+      primary: "Describe the problem",
+      secondary: "Find the right service",
+      proof: ["On site throughout Berlin", "IT experience since 2008", "Initial conversation is free"],
+      supportLabel: "Technical support in English",
+      fieldTitle: "One environment, several connected causes",
+      fieldDescription: "A device, its connection and the surrounding workplace are considered together before a change is recommended.",
+      problemEyebrow: "Begin with what you notice",
+      problemTitle: "What is not working as it should?",
+      problemIntro: "You do not need to choose a technical category. Start with the situation that feels closest.",
       problems: [
-        { code: "01", title: "Computer or laptop", text: "Slow, unstable, no longer starting or showing unexplained messages.", href: "en/services/private/computer-laptop-help/", tone: "coral" },
-        { code: "02", title: "Software or account", text: "Applications, updates, sign-in or settings are not working together.", href: "en/services/private/software-installation-optimisation/", tone: "sand" },
-        { code: "03", title: "Wi-Fi or connected devices", text: "Weak coverage, dropouts, printers or devices repeatedly lose their connection.", href: "en/services/private/wifi-home-network/", tone: "mint" },
-        { code: "04", title: "Office network or workplace", text: "Recurring disruption affects devices, users or daily business operations.", href: "en/services/business/network-it-support/", tone: "teal" },
-        { code: "05", title: "Microsoft 365 or Google", text: "Users, email, files, permissions or collaboration need attention.", href: "en/services/business/", tone: "blue" }
+        { code: "01", title: "The computer is slow, unstable or will not start", text: "For repeated crashes, unusual messages, update trouble or an unreliable Windows computer.", service: "Computer & laptop help", href: "en/services/private/computer-laptop-help/" },
+        { code: "02", title: "A program, update or sign-in no longer works", text: "For installation, software conflicts, account issues and a computer that has become cluttered over time.", service: "Software installation & optimisation", href: "en/services/private/software-installation-optimisation/" },
+        { code: "03", title: "Wi-Fi drops out or devices lose their connection", text: "For weak coverage, unreliable rooms, router or mesh questions, printers and connected devices.", service: "Wi-Fi & home network", href: "en/services/private/wifi-home-network/" },
+        { code: "04", title: "A new computer needs setting up without losing the useful parts", text: "For files, accounts, applications, email, printers and a considered move from the old device.", service: "PC setup & data transfer", href: "en/services/private/setup-data-transfer/" },
+        { code: "05", title: "Recurring IT trouble is interrupting the workplace", text: "For office networks, shared devices, Microsoft 365, Google Workspace and problems affecting daily operations.", service: "IT for workplaces and small teams", href: "en/services/business/" }
       ],
-      processEyebrow: "On-site by design",
-      processTitle: "We look at the problem where the technology is actually used.",
-      processText: "A short initial conversation helps us decide whether an on-site visit, remote assistance or a diagnostic appointment is the responsible next step.",
-      processNotes: ["Initial conversation is free", "Scope indication where possible", "Further work is agreed before proceeding"],
-      audienceEyebrow: "Progressive depth",
-      audienceTitle: "One service, three levels of context.",
-      audiences: [
-        { label: "Home", title: "Private customers", text: "Plain-language help with familiar technology and everyday problems.", href: "en/services/private/" },
-        { label: "Hybrid", title: "Home office & freelance", text: "Devices, connectivity, software and accounts that must work together reliably.", href: "en/services/private/" },
-        { label: "Work", title: "Small businesses", text: "Deeper support for workplaces, networks, Microsoft 365 and Google Workspace.", href: "en/services/business/" }
+      approachId: "approach",
+      approachEyebrow: "A responsible next step",
+      approachTitle: "Follow the problem from the device to the wider system.",
+      approachText: "A short conversation helps us understand the visible problem. On site, we can then inspect the device, connection, account or workplace relationship that is relevant—without turning the first enquiry into a technical interview.",
+      steps: [
+        { title: "Describe", text: "Tell us what you see and what you need to do again." },
+        { title: "Assess", text: "We suggest an on-site visit, remote help or a diagnostic appointment." },
+        { title: "Agree", text: "Further work and likely scope are discussed before proceeding." }
       ],
-      evidenceEyebrow: "Competence when you need it",
-      evidenceTitle: "Approachable at the entrance. Professionally grounded underneath.",
-      evidenceText: "The deeper you move into the site, the more detail we provide about systems, working methods and supported technology—without turning the service into an enterprise consultancy.",
-      evidence: ["Windows and workplace software", "Microsoft 365 and Google Workspace", "Wi-Fi, routers and local networks", "Backups, cloud storage and account protection"],
-      berlinEyebrow: "Service area",
-      berlinTitle: "On-site support across all Berlin districts.",
-      berlinText: "Tell us your postcode or district when you get in touch. Appointment timing and the most appropriate support route are clarified individually.",
-      berlinCta: "Describe your location and issue"
+      capabilityTitle: "From a familiar symptom to a clear working state",
+      capabilityDescription: "The technical layer becomes more detailed only when it helps explain the cause, scope or handover.",
+      capabilityCallouts: ["Device", "Network", "Account", "Workflow"],
+      evidence: ["Windows and workplace software", "Wi-Fi, routers and local networks", "Microsoft 365 and Google Workspace", "Backups and account protection"]
     }
   : {
       eyebrow: "IT-Service vor Ort · Berlin",
-      title: "IT-Hilfe vor Ort. Klar, persönlich, professionell.",
-      intro: "Für Computer, Software, Netzwerk und Arbeitsplatz – persönlich vor Ort für Privatkunden, Homeoffice und kleine Unternehmen in Berlin.",
-      primary: "IT-Hilfe anfragen",
-      secondary: "Typische Probleme ansehen",
-      proof: ["Vor Ort in ganz Berlin", "IT-Erfahrung seit 2008", "Techniker-Service auf Englisch"],
-      problemEyebrow: "Beim Problem beginnen",
-      problemTitle: "Was steht Ihnen heute im Weg?",
-      problemIntro: "Sie müssen die technische Ursache nicht kennen. Wählen Sie einfach die Beschreibung, die am ehesten passt.",
+      title: "Wenn Technik im Weg steht, helfen wir weiter.",
+      intro: "Praktische Hilfe bei Computer, Software, WLAN und Arbeitsplatz-IT – dort, wo das Problem tatsächlich auftritt.",
+      primary: "Problem schildern",
+      secondary: "Passende Hilfe finden",
+      proof: ["Vor Ort in ganz Berlin", "IT-Erfahrung seit 2008", "Kostenloses Erstgespräch"],
+      supportLabel: "Techniker-Service auf Englisch",
+      fieldTitle: "Eine Umgebung, mehrere mögliche Zusammenhänge",
+      fieldDescription: "Gerät, Verbindung und Arbeitsplatz werden gemeinsam betrachtet, bevor wir eine Änderung empfehlen.",
+      problemEyebrow: "Bei der Situation beginnen",
+      problemTitle: "Was funktioniert gerade nicht so, wie es soll?",
+      problemIntro: "Sie müssen keine technische Kategorie auswählen. Beginnen Sie einfach mit der Situation, die Ihrem Anliegen am nächsten kommt.",
       problems: [
-        { code: "01", title: "Computer oder Laptop", text: "Langsam, instabil, startet nicht mehr oder zeigt unerklärliche Meldungen.", href: "leistungen/privatpersonen/computer-laptop-hilfe/", tone: "coral" },
-        { code: "02", title: "Software oder Konto", text: "Programme, Updates, Anmeldung oder Einstellungen greifen nicht sauber ineinander.", href: "leistungen/privatpersonen/software-installation-optimierung/", tone: "sand" },
-        { code: "03", title: "WLAN oder Geräte", text: "Schwache Abdeckung, Abbrüche, Drucker oder andere Geräte verlieren die Verbindung.", href: "leistungen/privatpersonen/wlan-heimnetz/", tone: "mint" },
-        { code: "04", title: "Büro-Netzwerk oder Arbeitsplatz", text: "Wiederkehrende Störungen betreffen Geräte, Nutzer oder den Arbeitsablauf.", href: "leistungen/unternehmen/netzwerk-it-betreuung/", tone: "teal" },
-        { code: "05", title: "Microsoft 365 oder Google", text: "Benutzer, E-Mail, Dateien, Rechte oder Zusammenarbeit brauchen Unterstützung.", href: "leistungen/unternehmen/", tone: "blue" }
+        { code: "01", title: "Der Computer ist langsam, instabil oder startet nicht", text: "Bei Abstürzen, ungewöhnlichen Meldungen, Update-Problemen oder einem unzuverlässigen Windows-PC.", service: "Computer- & Laptop-Hilfe", href: "leistungen/privatpersonen/computer-laptop-hilfe/" },
+        { code: "02", title: "Ein Programm, Update oder Konto funktioniert nicht mehr", text: "Bei Installation, Softwarekonflikten, Anmeldeproblemen oder einem über Jahre unübersichtlich gewordenen System.", service: "Software-Installation & Optimierung", href: "leistungen/privatpersonen/software-installation-optimierung/" },
+        { code: "03", title: "Das WLAN bricht ab oder Geräte verlieren die Verbindung", text: "Bei schwacher Abdeckung, problematischen Räumen, Router- oder Mesh-Fragen, Druckern und vernetzten Geräten.", service: "WLAN & Heimnetz", href: "leistungen/privatpersonen/wlan-heimnetz/" },
+        { code: "04", title: "Ein neuer Computer soll ohne unnötigen Ballast eingerichtet werden", text: "Für Dateien, Konten, Programme, E-Mail, Drucker und den überlegten Wechsel vom alten Gerät.", service: "PC-Einrichtung & Datenumzug", href: "leistungen/privatpersonen/einrichtung-datenumzug/" },
+        { code: "05", title: "Wiederkehrende IT-Störungen bremsen den Arbeitsplatz", text: "Für Büro-Netzwerke, gemeinsame Geräte, Microsoft 365, Google Workspace und Probleme im täglichen Ablauf.", service: "IT für Arbeitsplätze und kleine Teams", href: "leistungen/unternehmen/" }
       ],
-      processEyebrow: "Vor Ort aus Überzeugung",
-      processTitle: "Wir betrachten das Problem dort, wo die Technik tatsächlich genutzt wird.",
-      processText: "Ein kurzes Erstgespräch hilft uns zu entscheiden, ob ein Vor-Ort-Termin, Remote-Hilfe oder ein Diagnose-Termin der verantwortbare nächste Schritt ist.",
-      processNotes: ["Kostenloses Erstgespräch", "Umfangseinschätzung, wenn möglich", "Weitere Arbeit erst nach Absprache"],
-      audienceEyebrow: "Progressive Tiefe",
-      audienceTitle: "Ein Service, drei Ebenen von Kontext.",
-      audiences: [
-        { label: "Zuhause", title: "Privatpersonen", text: "Verständliche Hilfe bei vertrauter Technik und Problemen im Alltag.", href: "leistungen/privatpersonen/" },
-        { label: "Hybrid", title: "Homeoffice & Selbstständige", text: "Geräte, Verbindung, Software und Konten, die zuverlässig zusammenspielen müssen.", href: "leistungen/privatpersonen/" },
-        { label: "Arbeit", title: "Kleine Unternehmen", text: "Mehr Tiefe für Arbeitsplätze, Netzwerke, Microsoft 365 und Google Workspace.", href: "leistungen/unternehmen/" }
+      approachId: "arbeitsweise",
+      approachEyebrow: "Ein verantwortbarer nächster Schritt",
+      approachTitle: "Dem Problem vom Gerät bis zum System folgen.",
+      approachText: "Im kurzen Erstgespräch genügt das sichtbare Problem. Vor Ort können wir anschließend genau die Beziehung zwischen Gerät, Verbindung, Konto oder Arbeitsplatz prüfen, die für Ihr Anliegen relevant ist.",
+      steps: [
+        { title: "Schildern", text: "Sagen Sie uns, was Sie sehen und was wieder möglich sein soll." },
+        { title: "Einordnen", text: "Wir empfehlen Vor-Ort-Termin, Remote-Hilfe oder Diagnose." },
+        { title: "Absprechen", text: "Weitere Arbeit und möglicher Umfang werden vorab geklärt." }
       ],
-      evidenceEyebrow: "Kompetenz, wenn Sie sie brauchen",
-      evidenceTitle: "Am Eingang zugänglich. Darunter professionell fundiert.",
-      evidenceText: "Je tiefer Sie in die Website einsteigen, desto mehr zeigen wir über Systeme, Arbeitsweise und unterstützte Technik – ohne wie eine Enterprise-Beratung aufzutreten.",
-      evidence: ["Windows und Arbeitsplatzsoftware", "Microsoft 365 und Google Workspace", "WLAN, Router und lokale Netzwerke", "Backups, Cloud-Speicher und Kontoschutz"],
-      berlinEyebrow: "Servicegebiet",
-      berlinTitle: "Vor-Ort-Unterstützung in allen Berliner Bezirken.",
-      berlinText: "Nennen Sie bei Ihrer Anfrage einfach Postleitzahl oder Bezirk. Termin und passender Supportweg werden individuell geklärt.",
-      berlinCta: "Standort und Anliegen schildern"
+      capabilityTitle: "Vom vertrauten Symptom zu einem klaren Arbeitszustand",
+      capabilityDescription: "Die technische Ebene wird erst dann tiefer, wenn sie Ursache, Umfang oder Übergabe verständlicher macht.",
+      capabilityCallouts: ["Gerät", "Netzwerk", "Konto", "Ablauf"],
+      evidence: ["Windows und Arbeitsplatzsoftware", "WLAN, Router und lokale Netzwerke", "Microsoft 365 und Google Workspace", "Backups und Kontoschutz"]
     };
 
 const contactAnchor = isEnglish ? "en/#contact" : "#kontakt";
+const languageSupport = siteConfig.languageSupport[locale];
 ---
 
-<section class="home-hero">
-  <div class="container home-hero__grid">
+<section class="home-hero home-hero--field">
+  <div class="container home-hero__field-layout">
     <div class="home-hero__copy">
       <span class="eyebrow eyebrow--light">{copy.eyebrow}</span>
       <h1>{copy.title}</h1>
@@ -106,94 +98,51 @@ const contactAnchor = isEnglish ? "en/#contact" : "#kontakt";
         {copy.proof.map((item) => <li>{item}</li>)}
       </ul>
     </div>
-    <VisualPlaceholder variant="home" locale={locale} />
+    <ServiceField variant="home" state="place" locale={locale} title={copy.fieldTitle} description={copy.fieldDescription} />
+    {siteConfig.languageSupport.enabled && (
+      <p class="inline-language-note"><strong>{copy.supportLabel}</strong><span>{languageSupport.text}</span></p>
+    )}
   </div>
 </section>
 
-<LanguageSupportBanner locale={locale} />
-
-<section class="section problem-section" id="problem-start">
+<section class="section situation-section" id="problem-start">
   <div class="container">
-    <div class="section-heading section-heading--split">
+    <div class="section-heading section-heading--split situation-heading">
       <div>
         <span class="eyebrow">{copy.problemEyebrow}</span>
         <h2 class="section-title">{copy.problemTitle}</h2>
       </div>
       <p class="section-lead">{copy.problemIntro}</p>
     </div>
-    <div class="problem-grid">
+    <div class="situation-routes">
       {copy.problems.map((problem) => (
-        <a class={`problem-tile problem-tile--${problem.tone}`} href={withBase(problem.href)}>
-          <span class="problem-tile__code">{problem.code}</span>
-          <div>
-            <h3>{problem.title}</h3>
-            <p>{problem.text}</p>
-          </div>
-          <span class="problem-tile__arrow" aria-hidden="true">↗</span>
+        <a class="situation-route" href={withBase(problem.href)}>
+          <span class="situation-route__code">{problem.code}</span>
+          <div><h3>{problem.title}</h3><p>{problem.text}</p></div>
+          <strong>{problem.service}<i aria-hidden="true">→</i></strong>
         </a>
       ))}
     </div>
   </div>
 </section>
 
-<section class="section section--ink process-section">
-  <div class="container process-layout">
-    <div class="process-layout__copy">
-      <span class="eyebrow eyebrow--dark">{copy.processEyebrow}</span>
-      <h2 class="section-title">{copy.processTitle}</h2>
-      <p class="section-lead">{copy.processText}</p>
-      <ul class="plain-checks plain-checks--dark">
-        {copy.processNotes.map((note) => <li>{note}</li>)}
-      </ul>
+<section class="section section--ink capability-section" id={copy.approachId}>
+  <div class="container capability-layout">
+    <div class="capability-copy">
+      <span class="eyebrow eyebrow--dark">{copy.approachEyebrow}</span>
+      <h2 class="section-title">{copy.approachTitle}</h2>
+      <p class="section-lead">{copy.approachText}</p>
+      <ol class="approach-rail">
+        {copy.steps.map((step, index) => (
+          <li><span>0{index + 1}</span><div><strong>{step.title}</strong><p>{step.text}</p></div></li>
+        ))}
+      </ol>
     </div>
-    <VisualPlaceholder variant="journey" locale={locale} compact />
+    <ServiceField variant="capability" state="connected" locale={locale} title={copy.capabilityTitle} description={copy.capabilityDescription} callouts={copy.capabilityCallouts} compact />
+    <ul class="capability-evidence" aria-label={isEnglish ? "Supported areas" : "Unterstützte Bereiche"}>
+      {copy.evidence.map((item) => <li>{item}</li>)}
+    </ul>
   </div>
 </section>
 
-<section class="section audience-section">
-  <div class="container">
-    <div class="section-heading">
-      <span class="eyebrow">{copy.audienceEyebrow}</span>
-      <h2 class="section-title">{copy.audienceTitle}</h2>
-    </div>
-    <div class="audience-grid">
-      {copy.audiences.map((audience, index) => (
-        <a class={`audience-panel audience-panel--${index + 1}`} href={withBase(audience.href)}>
-          <span>{audience.label}</span>
-          <h3>{audience.title}</h3>
-          <p>{audience.text}</p>
-          <b aria-hidden="true">0{index + 1}</b>
-        </a>
-      ))}
-    </div>
-  </div>
-</section>
-
-<section class="section section--warm evidence-section">
-  <div class="container evidence-layout">
-    <VisualPlaceholder variant="workspace" locale={locale} compact />
-    <div>
-      <span class="eyebrow">{copy.evidenceEyebrow}</span>
-      <h2 class="section-title">{copy.evidenceTitle}</h2>
-      <p class="section-lead">{copy.evidenceText}</p>
-      <div class="evidence-list">
-        {copy.evidence.map((item, index) => <span><i>0{index + 1}</i>{item}</span>)}
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section berlin-section">
-  <div class="container berlin-layout">
-    <div>
-      <span class="eyebrow">{copy.berlinEyebrow}</span>
-      <h2 class="section-title">{copy.berlinTitle}</h2>
-      <p class="section-lead">{copy.berlinText}</p>
-      <a class="text-link" href={withBase(contactAnchor)}>{copy.berlinCta}<span aria-hidden="true">→</span></a>
-    </div>
-    <VisualPlaceholder variant="berlin" locale={locale} compact />
-  </div>
-</section>
-
-<FaqSection locale={locale} />
-<ContactSection locale={locale} context="general" />
+<ContactSection locale={locale} context="general" compact />

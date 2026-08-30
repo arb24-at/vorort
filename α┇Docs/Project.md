@@ -82,10 +82,10 @@ The current sitemap contains 23 indexable URLs. The separate 404 page and noinde
 
 | Purpose | German route | English route | Current direction |
 | --- | --- | --- | --- |
-| Homepage | `/` | `/en/` | Connected-space homepage foundation implemented |
+| Homepage | `/` | `/en/` | Condensed Technical Field homepage and grouped service discovery implemented |
 | Private-services landing | `/leistungen/privatpersonen/` | `/en/services/private/` | Keep; refine as the approachable gateway into private/home-office help |
 | Computer and laptop help | `/leistungen/privatpersonen/computer-laptop-hilfe/` | `/en/services/private/computer-laptop-help/` | Keep; first private thematic prototype |
-| Software installation and optimization | `/leistungen/privatpersonen/software-installation-optimierung/` | `/en/services/private/software-installation-optimisation/` | Implemented as the first expanded content-collection service pair and next private-service reference |
+| Software installation and optimization | `/leistungen/privatpersonen/software-installation-optimierung/` | `/en/services/private/software-installation-optimisation/` | First four-state Technical Field service pair and current private-service review reference |
 | Wi-Fi and home networks | `/leistungen/privatpersonen/wlan-heimnetz/` | `/en/services/private/wifi-home-network/` | Keep; convert to the validated thematic service-page system |
 | Setup and data transfer | `/leistungen/privatpersonen/einrichtung-datenumzug/` | `/en/services/private/setup-data-transfer/` | Keep; convert to the validated thematic service-page system |
 | Business-services landing | `/leistungen/unternehmen/` | `/en/services/business/` | Keep; refine as a gateway rather than a substitute for deep service pages |
@@ -187,11 +187,11 @@ Service-page planning must happen before broad visual rollout. Each new page sho
 
 ## Visual direction
 
-The first connected-space interface is now implemented as a functional prototype foundation. It replaces the generic blue card system with warm neutral entrance surfaces, a dark technical layer, coral action accents, editorial typography, stronger section rhythm, and distinct private/business page states. Retain its sound structural and interaction patterns while continuing to refine the identity; do not treat this first visual pass or the provisional name as permanently fixed.
+The connected-space foundation now has a reviewable `Technical Field` proof slice. The German and English homepages use one physical Berlin living/work environment with a technical overlay, the shared header exposes every required service through a compact grouped menu, and the software-service pair progresses through situation, investigation, intervention, and verified outcome states. The remaining audience and service pages retain their earlier prototype treatment until each controlled conversion is reviewed.
 
 The desired impression is trustworthy, competent, and modern, supported by approachability, calmness, friendliness, and local familiarity. The site should look like a real Berlin IT service without resembling a conventional IT-company template, a cheap repair shop, or an intimidating consultancy.
 
-The governing visual principle is a coherent environment that changes state by subject. This adapts the successful logic of a previous conservatory website, where one recognizable environment expressed rain, winter, sun, leakage, insulation, or repair according to the page topic. On this site, visitors should often understand a service context through the page treatment before reading its heading.
+The governing visual principle is a coherent environment that changes state by subject. The shared layers are `place` for the familiar physical setting, `signal` for connections and dependencies, and `state` for fault, intervention, or verified operation. Private pages foreground the place and understandable symptoms; business pages will foreground system relationships and operational consequences while remaining part of the same visual identity.
 
 Explore a consistent Berlin home, home-office, and small-office visual world that changes state by subject:
 
@@ -205,7 +205,7 @@ The thematic idea must continue beyond hero imagery into section composition, cu
 
 Generated or bespoke imagery should be selective and belong to a deliberately designed family with recurring environments, composition, perspective, materials, and lighting. Identify a small number of high-value master concepts before commissioning assets. Prototype the system on the homepage, one private service, and one business service before expanding it across the site.
 
-The current implementation uses intentional visual placeholder panels rather than generic stock or generated imagery. Each panel records its future role, subject, state, and accessible description, so commissioned master environments can replace the placeholders without changing the surrounding page hierarchy or visual narrative.
+The homepage and software-service proof slice use one original illustrated Berlin master environment with accessible HTML annotations and functional state overlays. Public placeholder chrome has been removed from those pages. Existing placeholder panels remain only on routes that have not yet entered the controlled conversion sequence; they must be replaced rather than propagated.
 
 The first contrasting service prototypes are computer and laptop troubleshooting for private customers, and office networks and workplace IT for businesses. Until suitable authentic photography exists, do not substitute generic stock people or generated technicians; use environments, devices, systems, illustrations, diagrams, and icons to carry the identity.
 
