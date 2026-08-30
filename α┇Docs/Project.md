@@ -62,16 +62,17 @@ The repository has two intentional work areas:
 
 Root files are limited to repository instructions, ignore rules, and GitHub-required workflow configuration.
 
-The engine uses Astro 5 with static output. There is one shared layout, reusable header/footer/contact/service components, TypeScript data modules, a global CSS system, and minimal client JavaScript for header behavior. No server adapter, CMS, analytics integration, or form backend is currently installed.
+The engine uses Astro 5 with static output. There is one shared layout, reusable header/footer/contact/service components, TypeScript data modules, a layered global CSS system, and minimal client JavaScript for header behavior. No server adapter, CMS, analytics integration, or form backend is currently installed.
 
 Important sources of truth inside `ω┇Engine`:
 
 - `src/data/site.ts`: provisional public identity, contact channels, service districts, and optional English-support messaging.
 - `src/content.config.ts`: validated service-page schema, approved page templates, thematic variants, SEO fields, FAQ requirements, and expanded-page contracts.
-- `src/content/services.yml`: independently maintained German and English service records connected by stable translation IDs.
+- `src/content/services/<service-identity>/<locale>.yml`: independently maintained German and English service records connected by stable translation IDs; folder names are stable service identities and each locale owns one complete page record.
 - `src/data/services.ts`: collection loading, translation-pair and route validation, related-service resolution, and route helpers.
 - `src/data/navigation.ts`: language-specific navigation.
 - `src/layouts/MainLayout.astro`: canonical, alternate-language, Open Graph, header, and footer behavior.
+- `src/styles/tokens.css`, `global.css`, and `technical-field.css`: shared design decisions, foundation and legacy page rules, and the approved Technical Field layer in explicit cascade order.
 - `astro.config.mjs`: deployment origin and `/vorort/` base path.
 
 The contact form currently prepares an email through the visitor's configured mail client. It is not a server-backed submission and cannot independently count abandoned or completed form attempts. Calls, email, and WhatsApp are the practical contact channels until the conversion backend is chosen.

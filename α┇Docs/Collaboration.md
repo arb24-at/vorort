@@ -5,13 +5,13 @@ Last updated: 2026-08-30
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: the Technical Field proof slice remains the last confirmed local commit (`ec88303`, `VorOrt v1.4.0: implement the Technical Field proof slice`). The final design refinement was previously recorded as uncommitted version `1.4.1`; this Drive session adds the German Microsoft 365 guided-business content and SEO keyword routing reference at version `1.4.2`. Local Git sequencing and status still need verification in the repository shell.
-- Local validation: `npm run validate` previously passed on 2026-08-30 with 25 HTML pages, 23 sitemap URLs, zero missing `/vorort/` targets, and zero stale `/astro-demo/` paths. Those shell results predate the `1.4.2` Microsoft 365 changes; this Drive session performed YAML/schema-shape checks, TypeScript/Astro frontmatter syntax checks, targeted diff review, and exact Drive byte readback instead. Repository-shell build, whitespace, and status checks remain required.
+- Current working state: local `main` is at `c6349c7` (`VorOrt v1.4.2: expand German Microsoft 365 service and SEO map`). The focused content-source and Astro architecture pass is complete locally as an uncommitted `1.4.3` change set.
+- Local validation: `npm run validate` passes with 25 HTML pages, 23 sitemap URLs, zero missing `/vorort/` targets, and zero stale `/astro-demo/` paths. Fourteen split service records match the pre-change dataset semantically, all 26 generated HTML/XML outputs match the clean `1.4.2` build after asset-name normalization, and the compiled CSS is byte-identical. Seven negative content cases also confirmed that invalid IDs, missing locale pairs, duplicate routes, broken related-service references, incomplete expanded records, malformed storyboard order, and inconsistent translated audiences fail the build.
 - Local browser verification: the German homepage and software reference page were reviewed at 1440×1000, 768×1024, 390×844, and 320×720 with zero horizontal overflow. Desktop/mobile navigation, 44px mobile service targets, Escape behavior, delayed contact dock, headline scale, image crop, section rhythm, and all four software visual states were checked.
-- Deployment state: `origin/main` is currently commit `8463415`; local `main` is one commit ahead at `ec88303`. The design refinement will not reach GitHub Pages until version `1.4.1` is committed and pushed.
+- Deployment state: `origin/main` remains at `8463415`; local `main` is three commits ahead before the uncommitted `1.4.3` architecture change. None of the local `1.4.0`–`1.4.3` work reaches GitHub Pages until it is pushed.
 - Product-direction state: the final design direction is approved and stabilized. The master environment is reserved for broad context; homepage capability and software states now use distinct customer-readable functional visuals. The computer/laptop and office-network prototypes remain unchanged reference anchors, and the next immediate focus is content rather than another design concept.
 - Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional. The clean install also reports nine dependency audit findings for later dependency-maintenance review.
-- Recommended next action: run the repository-shell validation and visually review the expanded German Microsoft 365 page, then commit the `1.4.2` change after resolving the prior `1.4.1` local sequencing. After German review, perform a separate English keyword/SERP pass before independently authoring the English Microsoft 365 page.
+- Recommended next action: review and commit the focused `1.4.3` architecture change, then resume page content in a separate controlled slice; an English-specific Microsoft 365 keyword/SERP pass remains necessary before independently authoring that page.
 
 ## Reporting template
 
@@ -29,6 +29,27 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 ```
 
 ## Work log
+
+## 2026-08-30 — Codex — Service-source and Astro maintainability pass
+
+- Objective: make bilingual service content safer to maintain and apply a focused Astro architecture cleanup without changing routes, copy, SEO, visuals, page behavior, dependencies, or the approved page-by-page rollout order.
+- Changes:
+  - Replaced the 1,108-line `src/content/services.yml` list with seven stable service folders containing independent `de.yml` and `en.yml` page records.
+  - Switched the collection to Astro's built-in `glob()` loader and generated collection keys from each validated service ID so identical bilingual slugs cannot overwrite one another.
+  - Strengthened the existing content contract so IDs must match translation identity and locale, storyboard roles must follow situation/investigation/intervention/outcome order, duplicate record IDs are rejected, and every related-service reference is checked during collection loading.
+  - Cached the validated service collection per build instead of rebuilding the same translation and route maps for each caller.
+  - Extracted repeated storyboard-panel and service-FAQ markup into focused shared components; removed the unused legacy homepage FAQ component while keeping distinct prototype, guided, and standard page compositions intact.
+  - Split shared design constants into `tokens.css` and approved Technical Field rules into `technical-field.css`; retained the older foundation/page rules in `global.css` with the same compiled cascade and no visual change.
+  - Updated `Project.md` and `Roadmap.md` to reflect the service-folder source of truth and bumped `AGENTS.md` to `1.4.3`.
+- Decisions: service folders use stable product identities rather than current public slugs; each locale file remains a complete independently authored record. No framework, CMS, dependency, universal page builder, route migration, content rewrite, audience-landing redesign, or remaining service-page visual migration was introduced. Existing inline styles and legacy page-specific CSS on routes awaiting their controlled redesign were left in place rather than expanded into this pass.
+- Validation:
+  - The pre-change clean `1.4.2` baseline and final `npm run validate` both passed with 25 HTML pages and 23 sitemap URLs; all internal `/vorort/` targets resolve and no stale `/astro-demo/` path is present.
+  - Parsed and compared the old list with all 14 new locale files; the complete data structures are equal, including the expanded German Microsoft 365 record.
+  - Built a clean `1.4.2` snapshot beside the updated tree and compared all 26 generated HTML/XML files after normalizing fingerprinted asset names; zero outputs differ. The emitted CSS asset has the same filename and SHA-256 hash in both builds.
+  - Confirmed in isolated copies that all seven required invalid-content scenarios fail the build.
+  - Final `git diff --check` passed and `git status --short` confirms only the intended uncommitted `1.4.3` source, content-tree, stylesheet, version, and documentation changes.
+- Blockers or required input: none for this architecture pass. Existing production identity, contact/legal facts, qualification evidence, travel policy, form backend, analytics, domain, and final imagery inputs remain unresolved.
+- Recommended next action: review the new service content tree and focused component/style boundaries, then commit locally with `VorOrt v1.4.3: split service content and focus Astro architecture` before resuming page-specific content work.
 
 ## 2026-08-30 — ChatGPT — German Microsoft 365 content and SEO routing map
 

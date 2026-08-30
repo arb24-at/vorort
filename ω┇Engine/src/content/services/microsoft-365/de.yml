@@ -1,0 +1,190 @@
+id: microsoft-365-workplaces-de
+translationId: microsoft-365-workplaces
+locale: de
+audience: business
+order: 1
+slug: microsoft-365-arbeitsplaetze
+purpose: "Professioneller Microsoft-365-Support für Berliner Unternehmen mit Konten, E-Mail, Dateien, Berechtigungen und Arbeitsplätzen im Zusammenhang."
+navigation:
+  group: workplace-collaboration
+  label: "Microsoft 365 & Arbeitsplätze"
+page:
+  template: guided-business
+  technicalDepth: professional
+  theme:
+    variant: workspace
+    state: "Benutzer, Geräte, Outlook, Teams, OneDrive, SharePoint und Berechtigungen werden als zusammenhängender Arbeitsplatz sichtbar."
+    title: "Microsoft 365 als verbundener Arbeitsplatz"
+    description: "Konten, E-Mail, Zusammenarbeit, Dateien, Rechte und Windows-Arbeitsplätze werden als ein zusammenhängendes Arbeitssystem betrachtet."
+  storyboard:
+    - role: situation
+      composition: wide
+      visualState: conflict
+      eyebrow: "Arbeitsalltag"
+      title: "Wenn Microsoft 365 die Arbeit ausbremst"
+      text: "Viele Anfragen beginnen nicht mit einem klar definierten IT-Projekt, sondern mit Outlook-Problemen, fehlenden Zugriffsrechten, unklaren Dateiablagen oder einem neuen Mitarbeiter, dessen Arbeitsplatz vollständig funktionieren soll."
+      points:
+        - "Outlook, Teams oder Synchronisierung funktionieren nicht zuverlässig"
+        - "Neue Benutzer oder Geräte müssen sauber in die vorhandene Umgebung passen"
+        - "Dateien, Freigaben oder Berechtigungen sind historisch gewachsen und unübersichtlich"
+      callouts:
+        - "Outlook hakt"
+        - "Zugriff fehlt"
+        - "Dateien unklar"
+    - role: investigation
+      composition: system
+      visualState: dependencies
+      eyebrow: "Zusammenhänge"
+      title: "Konten, Geräte und Dienste gemeinsam prüfen"
+      text: "Ein sichtbares Problem kann an einer anderen Ebene entstehen. Deshalb betrachten wir Benutzerkonto, Lizenz, Postfach, Arbeitsplatz, Teams sowie OneDrive- und SharePoint-Zugriffe dort gemeinsam, wo der Zusammenhang für die Störung relevant ist."
+      points:
+        - "Benutzerkonten, Gruppen, Lizenzen und notwendige Zugriffe"
+        - "Outlook und Exchange Online im Zusammenspiel mit dem Arbeitsplatz"
+        - "Teams, OneDrive und SharePoint als verbundene Datei- und Zusammenarbeitsdienste"
+        - "Windows-Anmeldung, Office-Anwendungen und Synchronisierung auf dem Gerät"
+      callouts:
+        - "Benutzerkonto"
+        - "Exchange Online"
+        - "Teams / Dateien"
+        - "Windows-Gerät"
+    - role: intervention
+      composition: text-left
+      visualState: controlled-change
+      eyebrow: "Änderungen"
+      title: "Nur das ändern, was für das Ziel notwendig ist"
+      text: "Bevor produktive Konten, Zugriffsrechte, Domains oder gemeinsame Daten verändert werden, klären wir den gewünschten Zustand und mögliche Auswirkungen. Größere Umstellungen werden abgegrenzt und in nachvollziehbaren Schritten umgesetzt."
+      points:
+        - "Neue Benutzer und Arbeitsplätze mit passenden Diensten einrichten"
+        - "Berechtigungen, Gruppen und Freigaben nachvollziehbar anpassen"
+        - "E-Mail-, Domain- oder Synchronisierungsprobleme gezielt korrigieren"
+        - "Migrationen und größere Strukturänderungen vorab prüfen und planen"
+      callouts:
+        - "Bestand prüfen"
+        - "Änderung abstimmen"
+        - "Schrittweise umsetzen"
+        - "Funktion testen"
+    - role: outcome
+      composition: text-right
+      visualState: verified
+      eyebrow: "Übergabe"
+      title: "Ein nachvollziehbarer Microsoft-365-Arbeitszustand"
+      text: "Am Ende soll nicht nur eine einzelne Fehlermeldung verschwunden sein. Benutzer sollen sich anmelden können, E-Mail und Zusammenarbeit sollen funktionieren, Zugriffe sollen zur Aufgabe passen und die relevanten Änderungen verständlich übergeben werden."
+      points:
+        - "Anmeldung und benötigte Anwendungen funktionieren am betroffenen Arbeitsplatz"
+        - "E-Mail, Dateien und Zusammenarbeit sind für den vereinbarten Umfang geprüft"
+        - "Zugriffsrechte passen zur vorgesehenen Rolle und Aufgabe"
+        - "Wichtige Änderungen und nächste Schritte bleiben nachvollziehbar"
+      callouts:
+        - "Anmeldung geprüft"
+        - "E-Mail funktioniert"
+        - "Zugriff passt"
+        - "Übergabe klar"
+seo:
+  title: "Microsoft 365 Support & Beratung Berlin"
+  description: "Microsoft 365 Support für Unternehmen in Berlin: Hilfe bei Outlook, Teams, OneDrive, SharePoint, Benutzern, Berechtigungen, Migration und Arbeitsplatz-Einrichtung."
+  intent: "Microsoft-365-Support oder Beratung für ein kleines Berliner Unternehmen mit einem konkreten Problem, einer Einrichtung oder einer geplanten Änderung finden."
+hero:
+  eyebrow: "Unternehmen · Microsoft 365"
+  title: "Microsoft 365 Support für Unternehmen in Berlin"
+  intro: "Microsoft 365 funktioniert im Arbeitsalltag nur dann gut, wenn Benutzerkonten, E-Mail, Dateien, Berechtigungen, Anwendungen und Geräte sinnvoll zusammenspielen. Wir unterstützen Berliner Unternehmen bei Einrichtung, Fehleranalyse und geplanten Änderungen – vom einzelnen Arbeitsplatz bis zur gewachsenen Umgebung."
+problems:
+  eyebrow: "Typische Situationen"
+  title: "Woran Microsoft-365-Probleme im Alltag sichtbar werden"
+  intro: "Sie müssen die technische Ursache nicht vorab kennen. Entscheidend ist zunächst, was im Betrieb nicht funktioniert oder was sich ändern soll."
+  items:
+    - "Ein neuer Mitarbeiter oder Windows-Arbeitsplatz soll vollständig eingerichtet werden"
+    - "Outlook, E-Mail, Anmeldung oder Synchronisierung funktionieren nicht zuverlässig"
+    - "Teams, OneDrive oder SharePoint zeigen unklare Dateien, Freigaben oder Zugriffe"
+    - "Benutzerkonten, Lizenzen, Gruppen oder Berechtigungen sind nicht mehr nachvollziehbar"
+    - "Eine bestehende Microsoft-365-Umgebung ist mit der Zeit uneinheitlich gewachsen"
+    - "E-Mail, Dateien oder Benutzer sollen kontrolliert zu Microsoft 365 umgestellt werden"
+included:
+  eyebrow: "Mögliche Unterstützung"
+  title: "Microsoft 365 im Zusammenhang mit dem Arbeitsplatz"
+  intro: "Der genaue Umfang richtet sich nach der vorhandenen Umgebung und dem konkreten betrieblichen Ziel. Typische Aufgaben verbinden Cloud-Dienste mit Benutzern und den tatsächlichen Arbeitsplätzen."
+  items:
+    - "Benutzerkonten, Gruppen, vorhandene Lizenzen und grundlegende Zugriffsstrukturen"
+    - "Einrichtung von Windows-Arbeitsplätzen und Microsoft-365-Anwendungen"
+    - "Outlook-, Exchange-Online-, Postfach- und Synchronisierungsprobleme"
+    - "Teams-Mitgliedschaften, Zusammenarbeit und grundlegende Zugriffsprobleme"
+    - "OneDrive- und SharePoint-Synchronisierung, Freigaben und Berechtigungen"
+    - "Geschäftliche E-Mail-Domains und notwendige Microsoft-365-Einstellungen"
+    - "Migrations- und Umstellungsprojekte nach Prüfung der Ausgangssituation"
+    - "Verständliche Dokumentation oder Übergabe relevanter Änderungen"
+outcome:
+  eyebrow: "Arbeitsweise"
+  title: "Ein funktionierender Arbeitsplatz statt einer Produktsammlung"
+  text: "Unser Ziel ist nicht, möglichst viele Microsoft-Dienste zu aktivieren. Der richtige Benutzer soll sich anmelden können, E-Mail und gemeinsame Dateien sollen nachvollziehbar funktionieren, Zugriffe sollen zur Aufgabe passen und die Umgebung soll auch nach der Änderung verständlich bleiben."
+cta:
+  title: "Microsoft-365-Anliegen besprechen"
+  text: "Beschreiben Sie kurz, was aktuell nicht funktioniert oder was Sie erreichen möchten. Für die erste Einordnung benötigen wir keine Passwörter oder Authentifizierungscodes."
+  prompt: "Hilfreich sind die ungefähre Zahl betroffener Mitarbeiter, verwendete Dienste, das sichtbare Problem und kürzliche Änderungen."
+expanded:
+  situations:
+    eyebrow: "Konkrete Aufgaben"
+    title: "Typische Microsoft-365-Arbeit in kleinen Unternehmen"
+    intro: "Die folgenden Situationen zeigen, wo Unterstützung häufig sinnvoll ist. Sie sind keine starre Leistungsliste – vorhandene Systeme und gewünschtes Ergebnis bestimmen den verantwortbaren Umfang."
+    items:
+      - title: "Neue Mitarbeiter & Arbeitsplätze"
+        text: "Benutzerkonto, vorhandene Lizenz, E-Mail, Anwendungen, Teams, gemeinsame Dateien und der Windows-Arbeitsplatz werden passend zur tatsächlichen Aufgabe eingerichtet."
+      - title: "Outlook & E-Mail"
+        text: "Anmeldung, Synchronisierung, Outlook-Profile, Microsoft-365-Postfächer und gemeinsam genutzte Postfächer werden dort geprüft, wo die Störung tatsächlich entsteht."
+      - title: "Teams & Zusammenarbeit"
+        text: "Mitgliedschaften, Zugriffe und die Verbindung zu gemeinsamen Dateien werden so geprüft, dass Teams im Alltag verständlich nutzbar bleibt."
+      - title: "OneDrive & SharePoint"
+        text: "Wir helfen bei Synchronisierung, Freigaben, Berechtigungen und der Frage, welche Daten persönlich und welche gemeinsam organisiert werden sollten."
+      - title: "Benutzer & Berechtigungen"
+        text: "Bei Mitarbeiterwechseln oder gewachsenen Umgebungen prüfen wir Benutzer, Gruppen und Zugriffe und passen sie im vereinbarten Umfang nachvollziehbar an."
+      - title: "Bestehende Umgebungen & Migration"
+        text: "Auch vorhandene Microsoft-365-Strukturen können geprüft, schrittweise geordnet oder für eine geplante E-Mail-, Datei- oder Benutzerumstellung vorbereitet werden."
+  process:
+    eyebrow: "Vorgehen"
+    title: "So gehen wir bei Microsoft-365-Anfragen vor"
+    intro: "Wir beginnen mit der betrieblichen Auswirkung und prüfen nur die Bereiche, die für das konkrete Anliegen notwendig sind. Produktive Änderungen werden vor der Umsetzung abgestimmt."
+    steps:
+      - title: "Anliegen klären"
+        text: "Wir erfassen, was nicht funktioniert, wer betroffen ist, welche Dienste verwendet werden und ob es kürzlich Änderungen gab."
+      - title: "Umgebung prüfen"
+        text: "Je nach Fall betrachten wir Konten, Microsoft-365-Dienste, Berechtigungen, Arbeitsplatz, E-Mail- oder Dateistruktur."
+      - title: "Änderung abstimmen"
+        text: "Vor Eingriffen an produktiven Konten, Zugriffsrechten, Domains oder gemeinsamen Daten erklären wir den geplanten Schritt und mögliche Auswirkungen."
+      - title: "Ergebnis prüfen"
+        text: "Nach der Umsetzung testen wir die betroffenen Funktionen und halten relevante Änderungen oder nächste Schritte nachvollziehbar fest."
+  proof:
+    eyebrow: "Kompetenz im Zusammenhang"
+    title: "Microsoft 365 endet nicht an der Browserkante"
+    text: "Für kleine Unternehmen entstehen viele Microsoft-365-Probleme zwischen Cloud-Dienst und realem Arbeitsplatz. Deshalb verbinden wir Microsoft-365-Arbeit mit Erfahrung rund um Windows, E-Mail, Benutzerkonten, Netzwerke und Büro-IT."
+    items:
+      - "IT-Erfahrung seit 2008"
+      - "Windows-Arbeitsplätze und Microsoft-365-Anwendungen"
+      - "E-Mail-, Domain- und Kontozusammenhänge"
+      - "Netzwerk- und Arbeitsplatz-IT im kleinen Unternehmen"
+  boundaries:
+    eyebrow: "Klare Grenzen"
+    title: "Verantwortbar statt pauschal versprochen"
+    items:
+      - "Komplexe Migrationen werden vor einer Zusage nach Ausgangssystem, Daten, Benutzern, Domains und Abhängigkeiten geprüft."
+      - "Passwörter, Authentifizierungs- und Wiederherstellungscodes gehören nicht in Kontaktformular oder ungeschützte E-Mail."
+      - "Umfangreiche Compliance-, Governance-, Hochsicherheits- oder Enterprise-Security-Projekte werden gesondert auf passende Spezialisierung geprüft."
+      - "Eine störungsfreie Umstellung oder bestimmte Reaktionszeit wird nicht pauschal garantiert."
+  faqs:
+    - question: "Unterstützen Sie auch eine bestehende Microsoft-365-Umgebung?"
+      answer: "Ja. Viele Anfragen betreffen keine Neueinführung. Wir können einzelne Probleme untersuchen, neue Benutzer oder Arbeitsplätze einrichten oder bestehende Strukturen im vereinbarten Umfang überprüfen."
+    - question: "Können Sie neue Mitarbeiter und Computer vollständig einrichten?"
+      answer: "Wir können Benutzerkonto, vorhandene Lizenz, Microsoft-365-Anwendungen, E-Mail, benötigte Zugriffe und den Windows-Arbeitsplatz gemeinsam betrachten. Welche Komponenten benötigt werden, hängt von Ihrer vorhandenen Umgebung ab."
+    - question: "Helfen Sie bei Outlook- und E-Mail-Problemen?"
+      answer: "Ja. Dazu können Anmeldung, Synchronisierung, Outlook-Profile, Microsoft-365-Postfächer, gemeinsam genutzte Postfächer und die Verbindung zwischen Arbeitsplatz und E-Mail-Dienst gehören."
+    - question: "Unterstützen Sie auch OneDrive, SharePoint und Teams?"
+      answer: "Ja. Wir helfen bei Synchronisierung, Dateiablagen, Freigaben, Mitgliedschaften und grundlegenden Berechtigungsstrukturen. Größere Governance- oder Enterprise-Projekte werden vorher auf ihren Umfang geprüft."
+    - question: "Können E-Mails und Dateien zu Microsoft 365 migriert werden?"
+      answer: "Das kann je nach Ausgangssystem möglich sein. Vor einer Zusage prüfen wir Benutzer, Daten, Postfächer, Domains, Berechtigungen und weitere Abhängigkeiten und legen anschließend den verantwortbaren Umfang fest."
+    - question: "Bieten Sie auch Office-365-Support an?"
+      answer: "Viele Unternehmen verwenden den Namen Office 365 weiterhin. Entscheidend ist, welche geschäftlichen Microsoft-Dienste und Abonnements tatsächlich eingesetzt werden; anhand dieser Umgebung klären wir die passende Unterstützung."
+    - question: "Unterstützen Sie Microsoft 365 nur vor Ort?"
+      answer: "Vor-Ort-Service in Berlin ist unser primäres Modell, besonders wenn Geräte und Arbeitsplatz Teil des Problems sind. Bestimmte Microsoft-365-Aufgaben oder eine erste Diagnose können auch remote sinnvoll sein."
+    - question: "Muss ich einen langfristigen Betreuungsvertrag abschließen?"
+      answer: "Nein. Einzelne Probleme, Einrichtungen und Projekte sind ein normaler Teil unseres Angebots. Wenn danach wiederkehrende Unterstützung sinnvoll ist, kann sie separat besprochen werden."
+  relatedServiceIds:
+    - network-it-support
+    - google-workspace-cloud
+

@@ -1,0 +1,51 @@
+id: google-workspace-cloud-en
+translationId: google-workspace-cloud
+locale: en
+audience: business
+order: 2
+slug: google-workspace-cloud
+purpose: "Professional help with Google Workspace users, Gmail, Drive, sharing and workflows."
+navigation:
+  group: workplace-collaboration
+  label: "Google Workspace"
+page:
+  template: standard
+  technicalDepth: professional
+  theme:
+    variant: workspace
+    state: "Users, Gmail, Drive and sharing permissions form clear information flows."
+    title: "Google Workspace information in motion"
+    description: "Users, devices, Gmail, Drive and access rights form an understandable small-business environment."
+seo:
+  title: "Google Workspace Support Berlin"
+  description: "Google Workspace support in Berlin for Gmail, Drive, shared storage, users, devices and practical office workflows."
+  intent: "Find Google Workspace support for users, access or collaboration in a Berlin business."
+hero:
+  eyebrow: "Business · Google Workspace"
+  title: "Google Workspace support for Berlin businesses"
+  intro: "Google Workspace can provide a streamlined environment for small teams when accounts, sharing and devices are organised properly. We help with setup, user changes and common access or synchronisation problems."
+problems:
+  eyebrow: "Service scope"
+  title: "Typical requirements"
+  items:
+    - "Gmail, Calendar or Drive problems on workplace devices"
+    - "New users, departing employees and device changes"
+    - "Confusing sharing permissions or jointly used files"
+    - "Parallel use of Google and Microsoft services"
+included:
+  eyebrow: "Possible support"
+  title: "Possible support"
+  items:
+    - "Workspace account setup on computers and mobile devices"
+    - "Baseline user, group and sharing structures"
+    - "Troubleshooting sign-in, synchronisation and file access"
+    - "Documentation of the changes made"
+outcome:
+  eyebrow: "Approach"
+  title: "Clear ownership of shared information"
+  text: "We align technical support with the real workflow. Larger data migrations, compliance requirements and ongoing administration are planned separately before work begins."
+cta:
+  title: "Discuss your Google Workspace request"
+  text: "Describe the user count, affected services and current issue or task."
+  prompt: "User count, affected services and workflow impact help us understand the request."
+

@@ -1,0 +1,51 @@
+id: wifi-home-network-en
+translationId: wifi-home-network
+locale: en
+audience: private
+order: 3
+slug: wifi-home-network
+purpose: "Support for Wi-Fi coverage, connection dropouts and connected devices in the home."
+navigation:
+  group: device-home
+  label: "Wi-Fi & home network"
+page:
+  template: standard
+  technicalDepth: informative
+  theme:
+    variant: network
+    state: "Dead zones and interrupted connections become visible as signal paths through the home."
+    title: "Wi-Fi coverage and device relationships"
+    description: "Routers, rooms and connected devices reveal weak paths, interference and restored connections."
+seo:
+  title: "Wi-Fi & Home Network Help Berlin"
+  description: "Berlin support for weak Wi-Fi, connection drops, router changes, mesh systems, printers, smart TVs and home-office devices."
+  intent: "Find Berlin help for weak Wi-Fi or unreliable home-network connections."
+hero:
+  eyebrow: "Private customers · Wi-Fi"
+  title: "Wi-Fi and home network help in Berlin"
+  intro: "Reliable Wi-Fi depends on more than the internet plan. Position, building structure, radio channels, routers, repeaters and connected devices all interact. We inspect the home network on site and create a clear, maintainable setup."
+problems:
+  eyebrow: "Service scope"
+  title: "Common network problems"
+  items:
+    - "Weak signal or dead zones in individual rooms"
+    - "Dropouts during video calls, streaming or home-office work"
+    - "Confusing router, repeater or mesh configurations"
+    - "Printers, smart TVs or other devices repeatedly disconnect"
+included:
+  eyebrow: "Possible support"
+  title: "Possible services"
+  items:
+    - "Assessment of coverage, interference and device configuration"
+    - "Setup or optimisation of routers, mesh systems and repeaters"
+    - "Secure Wi-Fi, guest access and understandable network naming"
+    - "Connection of computers, mobile devices, printers and smart TVs"
+outcome:
+  eyebrow: "Approach"
+  title: "A network that works day to day"
+  text: "The goal is not unnecessary complexity but stable coverage and a configuration you can understand later. If new hardware would help, you receive a reasoned recommendation first."
+cta:
+  title: "Describe your Wi-Fi situation"
+  text: "Tell us the approximate space, router model and affected rooms or devices."
+  prompt: "The router model, affected rooms and unreliable devices help with an initial assessment."
+

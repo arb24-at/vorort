@@ -1,7 +1,9 @@
 ---
 import ContactSection from "./ContactSection.astro";
 import LanguageSupportBanner from "./LanguageSupportBanner.astro";
+import ServiceFaqSection from "./ServiceFaqSection.astro";
 import ServiceField from "./ServiceField.astro";
+import ServiceStoryboardPanel from "./ServiceStoryboardPanel.astro";
 import VisualPlaceholder from "./VisualPlaceholder.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import { siteConfig } from "../data/site";
@@ -173,28 +175,11 @@ const copy = isEnglish
   {hasStoryboard && isExpanded && service.expanded && (
     <>
       {storyPanels.map((panel) => (
-        <section class:list={["section", "story-panel-section", `story-panel-section--${panel.role}`, `story-panel-section--${panel.composition}`, { "section--ink": panel.role === "investigation" }]}>
-          <div class="container story-panel-layout">
-            <div class="story-panel-copy">
-              <span class:list={["eyebrow", { "eyebrow--dark": panel.role === "investigation" }]}>{panel.eyebrow}</span>
-              <h2 class="section-title">{panel.title}</h2>
-              <p class="section-lead">{panel.text}</p>
-              <ul class="story-points">
-                {panel.points.map((point) => <li>{point}</li>)}
-              </ul>
-            </div>
-            <ServiceField
-              variant={fieldVariant}
-              state={panel.visualState}
-              locale={service.locale}
-              title={panel.title}
-              description={panel.text}
-              callouts={panel.callouts}
-              compact
-              showCaption={false}
-            />
-          </div>
-        </section>
+        <ServiceStoryboardPanel
+          panel={panel}
+          fieldVariant={fieldVariant}
+          locale={service.locale}
+        />
       ))}
 
       {isGuidedBusiness && (
@@ -258,22 +243,12 @@ const copy = isEnglish
         </div>
       </section>
 
-      <section class="section service-faq-section service-faq-section--story">
-        <div class="container faq-layout">
-          <div class="faq-layout__heading">
-            <span class="eyebrow">{copy.faqEyebrow}</span>
-            <h2 class="section-title">{isGuidedBusiness ? (isEnglish ? "Useful answers about business IT support" : "Wichtige Antworten zur Business-IT-Unterstützung") : copy.faqTitle}</h2>
-          </div>
-          <div class="faq-list">
-            {service.expanded.faqs.map((faq, index) => (
-              <details class="faq-item">
-                <summary><span>0{index + 1}</span>{faq.question}<i aria-hidden="true">+</i></summary>
-                <p>{faq.answer}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceFaqSection
+        eyebrow={copy.faqEyebrow}
+        title={isGuidedBusiness ? (isEnglish ? "Useful answers about business IT support" : "Wichtige Antworten zur Business-IT-Unterstützung") : copy.faqTitle}
+        faqs={service.expanded.faqs}
+        variant="story"
+      />
 
       <section class="section related-services-section related-services-section--story">
         <div class="container related-story-layout">
@@ -416,22 +391,11 @@ const copy = isEnglish
         </div>
       </section>
 
-      <section class="section section--warm service-faq-section">
-        <div class="container faq-layout">
-          <div class="faq-layout__heading">
-            <span class="eyebrow">{copy.faqEyebrow}</span>
-            <h2 class="section-title">{copy.faqTitle}</h2>
-          </div>
-          <div class="faq-list">
-            {service.expanded.faqs.map((faq, index) => (
-              <details class="faq-item">
-                <summary><span>0{index + 1}</span>{faq.question}<i aria-hidden="true">+</i></summary>
-                <p>{faq.answer}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceFaqSection
+        eyebrow={copy.faqEyebrow}
+        title={copy.faqTitle}
+        faqs={service.expanded.faqs}
+      />
 
       <section class="section related-services-section">
         <div class="container">

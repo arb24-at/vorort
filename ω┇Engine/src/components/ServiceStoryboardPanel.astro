@@ -1,0 +1,37 @@
+---
+import ServiceField from "./ServiceField.astro";
+import type { Locale, LocalizedService } from "../data/services";
+
+type StoryboardPanel = NonNullable<LocalizedService["page"]["storyboard"]>[number];
+
+type Props = {
+  panel: StoryboardPanel;
+  fieldVariant: "software" | "workspace";
+  locale: Locale;
+};
+
+const { panel, fieldVariant, locale } = Astro.props;
+---
+
+<section class:list={["section", "story-panel-section", `story-panel-section--${panel.role}`, `story-panel-section--${panel.composition}`, { "section--ink": panel.role === "investigation" }]}>
+  <div class="container story-panel-layout">
+    <div class="story-panel-copy">
+      <span class:list={["eyebrow", { "eyebrow--dark": panel.role === "investigation" }]}>{panel.eyebrow}</span>
+      <h2 class="section-title">{panel.title}</h2>
+      <p class="section-lead">{panel.text}</p>
+      <ul class="story-points">
+        {panel.points.map((point) => <li>{point}</li>)}
+      </ul>
+    </div>
+    <ServiceField
+      variant={fieldVariant}
+      state={panel.visualState}
+      locale={locale}
+      title={panel.title}
+      description={panel.text}
+      callouts={panel.callouts}
+      compact
+      showCaption={false}
+    />
+  </div>
+</section>

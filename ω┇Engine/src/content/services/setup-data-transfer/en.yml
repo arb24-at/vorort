@@ -1,0 +1,51 @@
+id: setup-data-transfer-en
+translationId: setup-data-transfer
+locale: en
+audience: private
+order: 4
+slug: setup-data-transfer
+purpose: "Planned setup of new computers and transfer of existing accessible user data."
+navigation:
+  group: device-home
+  label: "PC setup & data transfer"
+page:
+  template: standard
+  technicalDepth: informative
+  theme:
+    variant: workspace
+    state: "Accounts, files and devices move in controlled stages from the old workplace to the new one."
+    title: "An orderly move to a new device"
+    description: "Data, applications and peripherals move through checkable steps into a new working environment."
+seo:
+  title: "PC Setup & Data Transfer Berlin"
+  description: "Set up a new computer, transfer personal files and configure email, software, printers and backups for private customers in Berlin."
+  intent: "Find Berlin help to set up a new PC and transfer accessible files and settings."
+hero:
+  eyebrow: "Private customers · Setup"
+  title: "PC setup and data transfer in Berlin"
+  intro: "A new computer should feel familiar quickly without blindly carrying over old problems. We plan the move, configure accounts and software, and check that important files, email and devices are accessible."
+problems:
+  eyebrow: "Service scope"
+  title: "Suitable for"
+  items:
+    - "Moving from an old Windows PC or laptop to a new device"
+    - "Transferring documents, photos and selected settings"
+    - "Configuring email, Microsoft 365, browsers and printers"
+    - "Creating an understandable local or cloud-based backup"
+included:
+  eyebrow: "Possible support"
+  title: "A structured migration"
+  items:
+    - "Review of existing data and applications"
+    - "Agreement on what should be transferred, reinstalled or cleaned up"
+    - "New-device setup with updates and baseline protection"
+    - "Functional testing and agreed handling of the old device"
+outcome:
+  eyebrow: "Approach"
+  title: "Keep important data in view"
+  text: "Before the move, we clarify the amount and condition of the existing data. Recovery from damaged storage is a separate specialist case; normal transfer and backup can be prepared predictably."
+cta:
+  title: "Plan a device change"
+  text: "Tell us the old and new device and the most important programs and data."
+  prompt: "The old and new devices and the most important applications and files help us plan the move."
+

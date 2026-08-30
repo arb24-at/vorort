@@ -1,0 +1,31 @@
+---
+import type { LocalizedService } from "../data/services";
+
+type ServiceFaqs = NonNullable<LocalizedService["expanded"]>["faqs"];
+
+type Props = {
+  eyebrow: string;
+  title: string;
+  faqs: ServiceFaqs;
+  variant?: "warm" | "story";
+};
+
+const { eyebrow, title, faqs, variant = "warm" } = Astro.props;
+---
+
+<section class:list={["section", { "section--warm": variant === "warm" }, "service-faq-section", { "service-faq-section--story": variant === "story" }]}>
+  <div class="container faq-layout">
+    <div class="faq-layout__heading">
+      <span class="eyebrow">{eyebrow}</span>
+      <h2 class="section-title">{title}</h2>
+    </div>
+    <div class="faq-list">
+      {faqs.map((faq, index) => (
+        <details class="faq-item">
+          <summary><span>0{index + 1}</span>{faq.question}<i aria-hidden="true">+</i></summary>
+          <p>{faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+id: network-it-support-de
+translationId: network-it-support
+locale: de
+audience: business
+order: 3
+slug: netzwerk-it-betreuung
+purpose: "Tiefe betriebliche Hilfe für Büro-Netzwerke, Arbeitsplätze, Gerätebeziehungen und wiederkehrende Störungen."
+navigation:
+  group: workplace-collaboration
+  label: "Büro-Netzwerk & Arbeitsplatz-IT"
+page:
+  template: business-prototype
+  technicalDepth: professional
+  theme:
+    variant: network
+    state: "Nutzer, Arbeitsplätze, WLAN, Drucker und gemeinsame Ressourcen erscheinen als wartbares System."
+    title: "Das kleine Büro als zusammenhängendes System"
+    description: "Signalwege, Geräte und gemeinsame Dienste zeigen ihre Abhängigkeiten und betrieblichen Auswirkungen."
+seo:
+  title: "Netzwerk & IT-Betreuung Berlin"
+  description: "Praktische Netzwerk- und IT-Unterstützung für kleine Büros, Praxen, Studios und Unternehmen in Berlin."
+  intent: "Professionelle Hilfe für Büro-Netzwerk, Arbeitsplätze oder wiederkehrende IT-Störungen in Berlin finden."
+hero:
+  eyebrow: "Unternehmen · Netzwerk & Support"
+  title: "Netzwerk- und IT-Betreuung für Berliner Büros"
+  intro: "Kleine Unternehmen brauchen eine stabile technische Basis, auch ohne eigene IT-Abteilung. Wir unterstützen bei Arbeitsplatzproblemen, WLAN, Druckern, Netzwerkgeräten und wiederkehrenden Störungen im Büroalltag."
+problems:
+  eyebrow: "Betriebliche Auswirkungen"
+  title: "Typische Büroprobleme"
+  items:
+    - "Instabiles WLAN oder Verbindungsprobleme in Besprechungsräumen"
+    - "Drucker, Scanner, Freigaben oder Geräte sind nicht erreichbar"
+    - "Wiederkehrende Störungen ohne dokumentierte Ursache"
+    - "Neue Arbeitsplätze oder ein kleiner Standortwechsel"
+included:
+  eyebrow: "Mögliche Unterstützung"
+  title: "Mögliche Unterstützung"
+  items:
+    - "Bestandsaufnahme von Netzwerk, Geräten und betroffenen Abläufen"
+    - "Fehleranalyse und nachvollziehbare Priorisierung"
+    - "Einrichtung von WLAN, Druckern und grundlegender Infrastruktur"
+    - "Dokumentation und Empfehlungen gegen wiederkehrende Ausfälle"
+outcome:
+  eyebrow: "Formen der Zusammenarbeit"
+  title: "Eine wartbare technische Basis"
+  text: "Einzelne Störungen können kurzfristig behoben werden; wiederkehrende Probleme brauchen häufig eine strukturierte Bestandsaufnahme. Wir trennen akute Hilfe von weiterführenden Verbesserungen, damit Aufwand und Nutzen sichtbar bleiben."
+cta:
+  title: "Büro-IT kurz beschreiben"
+  text: "Nennen Sie Standort, Teamgröße, betroffene Geräte und die Auswirkung auf den Betrieb."
+  prompt: "Standort, Teamgröße, betroffene Systeme und betriebliche Auswirkung helfen bei der Priorisierung."
+

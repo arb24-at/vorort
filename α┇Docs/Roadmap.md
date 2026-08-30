@@ -27,7 +27,7 @@ Acceptance: no placeholder identity or unsupported operational claim is public; 
 
 ## 3. Validated bilingual content architecture — next
 
-Foundation and revised review slice completed on 2026-08-30: all service records live in a schema-validated bilingual content collection; translation pairs, routes, navigation labels, approved page templates, four-state storyboards, thematic states, SEO intent, and related-service references are validated during the build. The dedicated German/English software installation and optimization service is the first fully expanded Technical Field pair. Broader page conversion remains intentionally paused for review.
+Foundation and revised review slice completed on 2026-08-30: all service records live in a schema-validated bilingual content collection, organized as one independently editable locale record per stable service folder; translation pairs, routes, navigation labels, approved page templates, ordered four-state storyboards, thematic states, SEO intent, and related-service references are validated during the build. The dedicated German/English software installation and optimization service is the first fully expanded Technical Field pair. Broader page conversion remains intentionally paused for review.
 
 - Lock the launch information architecture and page briefs before broad visual rollout. Every indexable service page must have a distinct audience/search intent, content-depth level, thematic state, proof level, and conversion path.
 - Extend the current service collection pattern to localized landing-page copy and other appropriate page data; keep contact facts centralized until production values are supplied.

@@ -10,14 +10,22 @@ export type LocalizedService = ServiceData & {
   alternateSlug: string;
 };
 
-async function loadServices(): Promise<LocalizedService[]> {
+let servicesPromise: Promise<LocalizedService[]> | undefined;
+
+async function buildServices(): Promise<LocalizedService[]> {
   const entries = await getCollection("services");
   const entryByTranslationAndLocale = new Map<string, ServiceData>();
+  const serviceIds = new Set<string>();
   const publicPaths = new Set<string>();
 
   for (const entry of entries) {
     const service = entry.data;
     const pairKey = `${service.translationId}:${service.locale}`;
+
+    if (serviceIds.has(service.id)) {
+      throw new Error(`Duplicate service id: ${service.id}`);
+    }
+    serviceIds.add(service.id);
 
     if (entryByTranslationAndLocale.has(pairKey)) {
       throw new Error(`Duplicate localized service entry: ${pairKey}`);
@@ -32,7 +40,7 @@ async function loadServices(): Promise<LocalizedService[]> {
     publicPaths.add(routeKey);
   }
 
-  return entries
+  const localizedServices = entries
     .map(({ data: service }) => {
       const alternateLocale: Locale = service.locale === "de" ? "en" : "de";
       const alternate = entryByTranslationAndLocale.get(
@@ -55,6 +63,24 @@ async function loadServices(): Promise<LocalizedService[]> {
       (left, right) =>
         left.order - right.order || left.hero.title.localeCompare(right.hero.title)
     );
+
+  const translationIds = new Set(localizedServices.map((service) => service.translationId));
+  for (const service of localizedServices) {
+    for (const relatedId of service.expanded?.relatedServiceIds ?? []) {
+      if (!translationIds.has(relatedId)) {
+        throw new Error(
+          `Related service ${relatedId} referenced by ${service.id} does not exist`
+        );
+      }
+    }
+  }
+
+  return localizedServices;
+}
+
+function loadServices(): Promise<LocalizedService[]> {
+  servicesPromise ??= buildServices();
+  return servicesPromise;
 }
 
 export async function getServices(

@@ -1,5 +1,5 @@
 import { defineCollection, z } from "astro:content";
-import { file } from "astro/loaders";
+import { glob } from "astro/loaders";
 
 const itemGroup = z.object({
   eyebrow: z.string().min(3),
@@ -96,12 +96,12 @@ const serviceSchema = z
       .optional()
   })
   .superRefine((service, context) => {
-    const expectedSuffix = `-${service.locale}`;
-    if (!service.id.endsWith(expectedSuffix)) {
+    const expectedId = `${service.translationId}-${service.locale}`;
+    if (service.id !== expectedId) {
       context.addIssue({
         code: z.ZodIssueCode.custom,
         path: ["id"],
-        message: `Service id must end with ${expectedSuffix}`
+        message: `Service id must match translationId and locale: ${expectedId}`
       });
     }
 
@@ -124,6 +124,17 @@ const serviceSchema = z
       });
     }
 
+    const expectedStoryboardRoles = ["situation", "investigation", "intervention", "outcome"];
+    service.page.storyboard?.forEach((panel, index) => {
+      if (panel.role !== expectedStoryboardRoles[index]) {
+        context.addIssue({
+          code: z.ZodIssueCode.custom,
+          path: ["page", "storyboard", index, "role"],
+          message: `Storyboard panel ${index + 1} must use the ${expectedStoryboardRoles[index]} role`
+        });
+      }
+    });
+
     if (service.page.template === "guided-private" && service.audience !== "private") {
       context.addIssue({
         code: z.ZodIssueCode.custom,
@@ -142,7 +153,11 @@ const serviceSchema = z
   });
 
 const services = defineCollection({
-  loader: file("./src/content/services.yml"),
+  loader: glob({
+    pattern: "**/*.{yml,yaml}",
+    base: "./src/content/services",
+    generateId: ({ data }) => String(data.id)
+  }),
   schema: serviceSchema
 });
 

@@ -1,0 +1,51 @@
+id: wifi-home-network-de
+translationId: wifi-home-network
+locale: de
+audience: private
+order: 3
+slug: wlan-heimnetz
+purpose: "Hilfe bei WLAN-Abdeckung, Verbindungsabbrüchen und dem Zusammenspiel vernetzter Geräte zu Hause."
+navigation:
+  group: device-home
+  label: "WLAN & Heimnetz"
+page:
+  template: standard
+  technicalDepth: informative
+  theme:
+    variant: network
+    state: "Funklöcher und unterbrochene Verbindungen werden als Signalwege im Wohnraum sichtbar."
+    title: "WLAN-Abdeckung und Gerätebeziehungen"
+    description: "Router, Räume und verbundene Geräte zeigen schwache Pfade, Störungen und wiederhergestellte Verbindungen."
+seo:
+  title: "WLAN & Heimnetz Hilfe Berlin"
+  description: "Hilfe in Berlin bei schwachem WLAN, Verbindungsabbrüchen, Routerwechsel, Mesh-Systemen, Druckern, Smart-TV und Homeoffice-Geräten."
+  intent: "Hilfe bei schlechtem WLAN oder instabilen Heimnetz-Verbindungen in Berlin finden."
+hero:
+  eyebrow: "Privatkunden · WLAN"
+  title: "WLAN- und Heimnetz-Hilfe in Berlin"
+  intro: "Stabiles WLAN hängt nicht nur vom Internettarif ab. Position, Gebäudestruktur, Funkkanäle, Router, Repeater und die angeschlossenen Geräte wirken zusammen. Wir prüfen das Heimnetz vor Ort und bauen eine verständliche, wartbare Lösung auf."
+problems:
+  eyebrow: "Leistungsumfang"
+  title: "Typische Netzwerkprobleme"
+  items:
+    - "Schwaches Signal oder Funklöcher in einzelnen Zimmern"
+    - "Abbrüche bei Videokonferenzen, Streaming oder Homeoffice"
+    - "Unübersichtliche Router-, Repeater- oder Mesh-Konfiguration"
+    - "Drucker, Smart-TV oder andere Geräte verlieren die Verbindung"
+included:
+  eyebrow: "Mögliche Unterstützung"
+  title: "Mögliche Leistungen"
+  items:
+    - "Analyse von Abdeckung, Störquellen und Gerätekonfiguration"
+    - "Einrichtung oder Optimierung von Router, Mesh und Repeatern"
+    - "Sicheres WLAN, Gastzugang und nachvollziehbare Benennung"
+    - "Verbindung von Computern, Mobilgeräten, Druckern und Smart-TV"
+outcome:
+  eyebrow: "Arbeitsweise"
+  title: "Ein Netz, das im Alltag funktioniert"
+  text: "Ziel ist nicht maximale technische Komplexität, sondern stabile Abdeckung und eine Konfiguration, die Sie später verstehen. Falls neue Hardware sinnvoll ist, erhalten Sie zuerst eine begründete Empfehlung."
+cta:
+  title: "WLAN-Situation beschreiben"
+  text: "Teilen Sie uns Wohnungsgröße, Routermodell und betroffene Räume oder Geräte mit."
+  prompt: "Routermodell, betroffene Räume und auffällige Geräte helfen bei der Einordnung."
+

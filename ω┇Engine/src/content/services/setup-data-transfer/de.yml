@@ -1,0 +1,51 @@
+id: setup-data-transfer-de
+translationId: setup-data-transfer
+locale: de
+audience: private
+order: 4
+slug: einrichtung-datenumzug
+purpose: "Planbare Einrichtung neuer Computer und Übertragung vorhandener nutzbarer Daten."
+navigation:
+  group: device-home
+  label: "PC-Einrichtung & Datenumzug"
+page:
+  template: standard
+  technicalDepth: informative
+  theme:
+    variant: workspace
+    state: "Konten, Dateien und Geräte wechseln kontrolliert vom alten zum neuen Arbeitsplatz."
+    title: "Geordneter Wechsel auf ein neues Gerät"
+    description: "Daten, Programme und Peripherie bewegen sich über prüfbare Schritte in eine neue Arbeitsumgebung."
+seo:
+  title: "PC-Einrichtung & Datenumzug Berlin"
+  description: "Neue Computer einrichten, persönliche Daten übertragen, E-Mail, Programme, Drucker und Backups für Privatkunden in Berlin konfigurieren."
+  intent: "Hilfe beim Einrichten eines neuen PCs und Übertragen vorhandener Daten in Berlin finden."
+hero:
+  eyebrow: "Privatkunden · Einrichtung"
+  title: "PC-Einrichtung und Datenumzug in Berlin"
+  intro: "Ein neuer Computer soll sich schnell vertraut anfühlen, ohne alte Probleme ungeprüft zu übernehmen. Wir planen den Umzug, richten Konten und Programme ein und kontrollieren, ob wichtige Dateien, E-Mails und Geräte erreichbar sind."
+problems:
+  eyebrow: "Leistungsumfang"
+  title: "Geeignet für"
+  items:
+    - "Wechsel von einem alten auf einen neuen Windows-PC oder Laptop"
+    - "Übernahme von Dokumenten, Fotos und ausgewählten Einstellungen"
+    - "Einrichtung von E-Mail, Microsoft 365, Browsern und Druckern"
+    - "Aufbau einer verständlichen lokalen oder cloudbasierten Sicherung"
+included:
+  eyebrow: "Mögliche Unterstützung"
+  title: "Strukturierter Umzug"
+  items:
+    - "Bestandsaufnahme der vorhandenen Daten und Anwendungen"
+    - "Abstimmung, was übertragen, neu installiert oder bereinigt wird"
+    - "Einrichtung des neuen Geräts mit Updates und Basisschutz"
+    - "Funktionsprüfung und Übergabe des alten Geräts nach Absprache"
+outcome:
+  eyebrow: "Arbeitsweise"
+  title: "Wichtige Daten im Blick behalten"
+  text: "Vor dem Umzug klären wir Umfang und Zustand der vorhandenen Daten. Datenrettung von beschädigten Datenträgern ist ein eigener Spezialfall; normale Übertragung und Sicherung können dagegen planbar vorbereitet werden."
+cta:
+  title: "Gerätewechsel planen"
+  text: "Nennen Sie altes und neues Gerät sowie die wichtigsten Programme und Daten."
+  prompt: "Altes und neues Gerät sowie die wichtigsten Programme und Daten helfen bei der Planung."
+

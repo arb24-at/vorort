@@ -1,0 +1,51 @@
+id: computer-laptop-en
+translationId: computer-laptop
+locale: en
+audience: private
+order: 1
+slug: computer-laptop-help
+purpose: "Symptom-led support for private Windows computers and laptops with responsible diagnosis."
+navigation:
+  group: device-home
+  label: "Computer & laptop help"
+page:
+  template: private-prototype
+  technicalDepth: informative
+  theme:
+    variant: computer
+    state: "A visible device problem moves towards an isolated cause and an understandable resolution."
+    title: "Computer diagnosis in a familiar setting"
+    description: "A faulty computer state is checked, narrowed down and resolved in a traceable way."
+seo:
+  title: "Computer & Laptop Help Berlin"
+  description: "On-site help in Berlin for slow computers, startup failures, crashes, updates, malware and the setup of new PCs or laptops."
+  intent: "Find help in Berlin for a specific computer or laptop problem."
+hero:
+  eyebrow: "Private customers · Computer help"
+  title: "Computer and laptop help in Berlin"
+  intro: "When a computer becomes slow, no longer starts or repeatedly displays errors, we narrow down the cause methodically. We help with Windows PCs and laptops, explain the necessary work clearly and check the result together with you."
+problems:
+  eyebrow: "Recognise the situation"
+  title: "Common requests"
+  items:
+    - "Startup failures, crashes and unusually slow systems"
+    - "Problems after Windows, driver or software updates"
+    - "Suspicious pop-ups, malware and compromised accounts"
+    - "Setting up a new computer, printer and accessories"
+included:
+  eyebrow: "Possible support"
+  title: "What support can include"
+  items:
+    - "Initial diagnosis and a clear recommendation for the next step"
+    - "System cleanup, updates and sensible baseline settings"
+    - "Setup of software, user accounts and peripherals"
+    - "A final functional check and practical security guidance"
+outcome:
+  eyebrow: "A useful outcome"
+  title: "Practical and understandable"
+  text: "You receive a traceable solution and know what was changed. If replacement or a specialist repair is more economical, we explain that before unnecessary work is carried out."
+cta:
+  title: "Describe your computer problem"
+  text: "Tell us the device, error message and urgency by phone, email or WhatsApp."
+  prompt: "The device, visible symptom and most recent change help us make an initial assessment."
+

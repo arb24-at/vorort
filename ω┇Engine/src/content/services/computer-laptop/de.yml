@@ -1,0 +1,51 @@
+id: computer-laptop-de
+translationId: computer-laptop
+locale: de
+audience: private
+order: 1
+slug: computer-laptop-hilfe
+purpose: "Symptomorientierte Hilfe für private Windows-Computer und Laptops mit verantwortbarer Diagnose."
+navigation:
+  group: device-home
+  label: "Computer- & Laptop-Hilfe"
+page:
+  template: private-prototype
+  technicalDepth: informative
+  theme:
+    variant: computer
+    state: "Vom sichtbaren Geräteproblem zur eingegrenzten Ursache und verständlichen Lösung."
+    title: "Computerdiagnose in vertrauter Umgebung"
+    description: "Ein fehlerhafter Computerzustand wird geprüft, eingegrenzt und nachvollziehbar aufgelöst."
+seo:
+  title: "Computer- & Laptop-Hilfe Berlin"
+  description: "Vor-Ort-Hilfe in Berlin bei langsamen Computern, Startproblemen, Abstürzen, Updates, Schadsoftware und der Einrichtung neuer PCs oder Laptops."
+  intent: "Hilfe bei einem konkreten Computer- oder Laptopproblem in Berlin finden."
+hero:
+  eyebrow: "Privatkunden · Computerhilfe"
+  title: "Computer- und Laptop-Hilfe in Berlin"
+  intro: "Wenn ein Computer langsam wird, nicht mehr startet oder ständig Fehlermeldungen zeigt, grenzen wir die Ursache strukturiert ein. Wir helfen bei Windows-PCs und Laptops, erklären die notwendigen Schritte verständlich und prüfen die Funktionen gemeinsam mit Ihnen."
+problems:
+  eyebrow: "Situation wiedererkennen"
+  title: "Typische Anliegen"
+  items:
+    - "Startprobleme, Abstürze und auffällig langsame Systeme"
+    - "Fehler nach Windows-, Treiber- oder Software-Updates"
+    - "Verdächtige Pop-ups, Schadsoftware und unsichere Konten"
+    - "Einrichtung eines neuen Computers inklusive Drucker und Zubehör"
+included:
+  eyebrow: "Mögliche Unterstützung"
+  title: "So kann die Hilfe aussehen"
+  items:
+    - "Erstdiagnose und verständliche Einschätzung der nächsten Schritte"
+    - "Systembereinigung, Updates und sinnvolle Grundeinstellungen"
+    - "Einrichtung von Programmen, Benutzerkonten und Peripherie"
+    - "Abschlusskontrolle mit Hinweisen für den sicheren Alltag"
+outcome:
+  eyebrow: "Ein brauchbares Ergebnis"
+  title: "Pragmatisch statt rätselhaft"
+  text: "Sie erhalten eine nachvollziehbare Lösung und wissen anschließend, was geändert wurde. Wenn ein Austausch oder eine Spezialreparatur wirtschaftlicher ist, sprechen wir das offen an, bevor unnötige Arbeit entsteht."
+cta:
+  title: "Computerproblem schildern"
+  text: "Nennen Sie Gerät, Fehlermeldung und Dringlichkeit – telefonisch, per E-Mail oder WhatsApp."
+  prompt: "Gerät, sichtbares Symptom und letzte Änderung helfen bei der ersten Einordnung."
+

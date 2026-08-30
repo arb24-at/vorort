@@ -1,0 +1,51 @@
+id: microsoft-365-workplaces-en
+translationId: microsoft-365-workplaces
+locale: en
+audience: business
+order: 1
+slug: microsoft-365-workplaces
+purpose: "Professional help with Microsoft 365 accounts, applications, files, permissions and workplaces."
+navigation:
+  group: workplace-collaboration
+  label: "Microsoft 365 & workplaces"
+page:
+  template: standard
+  technicalDepth: professional
+  theme:
+    variant: workspace
+    state: "Users, devices, applications and shared files become visible as one connected workplace."
+    title: "The Microsoft 365 workplace in context"
+    description: "Accounts, Outlook, Teams, files and permissions appear as connected layers of a small-business environment."
+seo:
+  title: "Microsoft 365 Support Berlin"
+  description: "Microsoft 365 support and workplace setup for small businesses, offices and self-employed professionals in Berlin."
+  intent: "Find Microsoft 365 support for a small business or professional workplace in Berlin."
+hero:
+  eyebrow: "Business · Microsoft 365"
+  title: "Microsoft 365 and workplace support for Berlin businesses"
+  intro: "Reliable workplaces connect devices, user accounts, email, files and permissions. We support small Berlin businesses with setup and troubleshooting across Windows and Microsoft 365."
+problems:
+  eyebrow: "Service scope"
+  title: "Typical requirements"
+  items:
+    - "New employees, device replacements or additional workplaces"
+    - "Outlook, Teams, OneDrive or access problems"
+    - "Unclear user accounts, licences and permissions"
+    - "Inconsistent updates, device configurations or file storage"
+included:
+  eyebrow: "Possible support"
+  title: "Possible support"
+  items:
+    - "Setup of Windows workplaces and Microsoft 365 applications"
+    - "User, licence and baseline permission management"
+    - "Troubleshooting sign-in, synchronisation and email issues"
+    - "Documented handover for day-to-day office operation"
+outcome:
+  eyebrow: "Approach"
+  title: "Productive without unnecessary complexity"
+  text: "The scope is adapted to the team and existing environment. For complex migrations or security-sensitive changes, prerequisites and responsibilities are agreed before work begins."
+cta:
+  title: "Discuss your Microsoft 365 request"
+  text: "Tell us the team size, affected services and desired result."
+  prompt: "Team size, affected services and operational impact help us prioritise the request."
+

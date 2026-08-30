@@ -1,0 +1,50 @@
+id: network-it-support-en
+translationId: network-it-support
+locale: en
+audience: business
+order: 3
+slug: network-it-support
+purpose: "Deep operational support for office networks, workplaces, device relationships and recurring disruption."
+navigation:
+  group: workplace-collaboration
+  label: "Office network & workplace IT"
+page:
+  template: business-prototype
+  technicalDepth: professional
+  theme:
+    variant: network
+    state: "Users, workplaces, Wi-Fi, printers and shared resources appear as one maintainable system."
+    title: "The small office as a connected system"
+    description: "Signal paths, devices and shared services reveal their dependencies and operational impact."
+seo:
+  title: "Network & IT Support Berlin"
+  description: "Practical network and IT support for small offices, practices, studios and businesses in Berlin."
+  intent: "Find professional help in Berlin for office networks, workplaces or recurring IT disruption."
+hero:
+  eyebrow: "Business · Network & support"
+  title: "Network and IT support for Berlin offices"
+  intro: "Small businesses need a stable technical foundation even without an internal IT department. We help with workplace problems, Wi-Fi, printers, network devices and recurring disruptions in everyday office work."
+problems:
+  eyebrow: "Operational impact"
+  title: "Common office problems"
+  items:
+    - "Unstable Wi-Fi or connection problems in meeting rooms"
+    - "Printers, scanners, file shares or devices are unavailable"
+    - "Recurring disruptions without a documented cause"
+    - "New workplaces or a small office move"
+included:
+  eyebrow: "Possible support"
+  title: "Possible support"
+  items:
+    - "Review of the network, devices and affected workflows"
+    - "Troubleshooting and transparent prioritisation"
+    - "Setup of Wi-Fi, printers and baseline infrastructure"
+    - "Documentation and recommendations to reduce recurring failures"
+outcome:
+  eyebrow: "Ways to work together"
+  title: "A maintainable technical foundation"
+  text: "Individual incidents can be resolved quickly; recurring problems often require a structured review. We separate immediate support from longer-term improvements so effort and benefit remain visible."
+cta:
+  title: "Describe your office IT"
+  text: "Tell us the location, team size, affected equipment and operational impact."
+  prompt: "Location, team size, affected systems and operational impact help us prioritise the request."

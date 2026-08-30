@@ -1,0 +1,179 @@
+id: software-optimisation-de
+translationId: software-optimisation
+locale: de
+audience: private
+order: 2
+slug: software-installation-optimierung
+purpose: "Installation, Konfiguration und Optimierung von Software für private Nutzer und Homeoffice-Arbeitsplätze."
+navigation:
+  group: device-home
+  label: "Software-Installation & Optimierung"
+page:
+  template: guided-private
+  technicalDepth: informative
+  theme:
+    variant: software
+    state: "Ungeordnete Programme, Warnungen und Konflikte werden zu einer stabilen, nachvollziehbaren Arbeitsumgebung."
+    title: "Software vom Konflikt in einen geordneten Zustand bringen"
+    description: "Programme, Konten und Systemteile werden als zusammenhängender Arbeitsplatz geprüft und sinnvoll geordnet."
+  storyboard:
+    - role: situation
+      composition: wide
+      visualState: conflict
+      eyebrow: "Was Sie sehen"
+      title: "Ein Fehlerfenster ist selten das ganze Problem"
+      text: "Ein Programm startet nicht, eine Anmeldung dreht sich im Kreis oder der Computer wird mit jedem Neustart langsamer. Wir beginnen bei diesem sichtbaren Verhalten, ohne von Ihnen eine technische Diagnose zu erwarten."
+      points:
+        - "Fehlermeldung oder Absturz möglichst genau festhalten"
+        - "Letzte Updates, Installationen oder Kontoänderungen einordnen"
+        - "Klären, welche Aufgabe danach wieder funktionieren soll"
+      callouts:
+        - "Programm startet nicht"
+        - "Anmeldung wiederholt sich"
+        - "Nach Update langsamer"
+    - role: investigation
+      composition: text-left
+      visualState: dependencies
+      eyebrow: "Zusammenhänge prüfen"
+      title: "Programm, Konto und System beeinflussen einander"
+      text: "Statt nur das betroffene Fenster neu zu installieren, prüfen wir Versionen, Benutzerprofil, verfügbare Ressourcen und angrenzende Dienste. So wird sichtbar, ob die Ursache innerhalb der Anwendung liegt oder an einer Abhängigkeit."
+      points:
+        - "Versionen, Updates und Systemvoraussetzungen vergleichen"
+        - "Benutzerprofil, Anmeldung und Berechtigungen prüfen"
+        - "Autostarts, Speicher und störende Zusatzprogramme bewerten"
+      callouts:
+        - "Version passt?"
+        - "Kontozugriff"
+        - "Abhängigkeit fehlt"
+        - "Speicher knapp"
+    - role: intervention
+      composition: system
+      visualState: controlled-change
+      eyebrow: "Gezielt verändern"
+      title: "Jeder Eingriff bekommt einen klaren Zweck"
+      text: "Vor einer Installation, Bereinigung oder Neuinstallation stimmen wir ab, was erhalten bleiben muss und welche Zugänge oder Sicherungen nötig sind. Danach ändern wir nur die vereinbarten Bestandteile und kontrollieren ihre Wirkung."
+      points:
+        - "Wichtige Dateien und Wiederherstellungswege vorab klären"
+        - "Lizenzierte Software aus nachvollziehbarer Quelle verwenden"
+        - "Änderungen schrittweise umsetzen und direkt kontrollieren"
+      callouts:
+        - "Sicherung geklärt"
+        - "Installation läuft"
+        - "Einstellung geprüft"
+    - role: outcome
+      composition: text-right
+      visualState: verified
+      eyebrow: "Gemeinsam übergeben"
+      title: "Die echte Aufgabe entscheidet, ob die Lösung trägt"
+      text: "Zum Abschluss testen wir nicht nur, ob ein Programmfenster aufgeht. Anmeldung, Dateien, Drucker und der wichtige Alltagsablauf werden im vereinbarten Umfang geprüft, damit Sie den neuen Zustand nachvollziehen können."
+      points:
+        - "Wichtige Programme und Dateien gemeinsam öffnen"
+        - "Anmeldung, Druck oder Cloud-Verbindung passend testen"
+        - "Änderungen und sinnvolle nächste Schritte verständlich erklären"
+      callouts:
+        - "Programme geöffnet"
+        - "Zugänge geprüft"
+        - "Übergabe erklärt"
+seo:
+  title: "Software installieren & PC optimieren Berlin"
+  description: "Software-Installation und PC-Optimierung in Berlin: Programme, Updates, Benutzerprofile, Konflikte und langsame Windows-Systeme verständlich lösen."
+  intent: "Professionelle Hilfe in Berlin für Softwareinstallation, Softwarefehler oder einen langsamen PC finden."
+hero:
+  eyebrow: "Privatkunden & Homeoffice · Software"
+  title: "Software installieren und Computer sinnvoll optimieren"
+  intro: "Ein Programm lässt sich nicht installieren, ein Update bringt neue Fehler oder der Computer ist mit der Zeit unübersichtlich geworden? Wir prüfen Windows, Programme, Konten und Einstellungen als zusammenhängende Arbeitsumgebung und richten einen nachvollziehbaren Zustand ein."
+problems:
+  eyebrow: "Woran Sie das Problem merken"
+  title: "Nicht jede Softwarestörung hat dieselbe Ursache"
+  intro: "Eine Fehlermeldung kann am Programm selbst, an einem Benutzerkonto, an einem Update oder an einer alten Konfiguration liegen. Deshalb beginnen wir mit dem sichtbaren Verhalten."
+  items:
+    - "Ein Programm lässt sich nicht installieren, starten oder aktualisieren"
+    - "Nach einem Update erscheinen Fehler, Abstürze oder ungewöhnliche Meldungen"
+    - "Der Computer ist langsam, obwohl keine einzelne Ursache erkennbar ist"
+    - "Mehrere Versionen, Testprogramme oder Autostarts sorgen für Unordnung"
+    - "E-Mail, Cloud-Speicher oder Arbeitsplatzprogramme greifen nicht sauber ineinander"
+    - "Ein Benutzerprofil oder eine Anmeldung funktioniert nicht wie erwartet"
+included:
+  eyebrow: "Was wir sinnvoll bearbeiten"
+  title: "Installation ist mehr als Weiterklicken"
+  intro: "Wir stimmen die Software auf Gerät, Betriebssystem, Benutzer und tatsächlichen Zweck ab. Vereinbarte Änderungen werden anschließend gemeinsam geprüft."
+  items:
+    - "Installation und Grundeinrichtung seriöser, lizenzierter Programme"
+    - "Windows-, Treiber- und Anwendungsupdates mit anschließender Funktionskontrolle"
+    - "Analyse von Softwarekonflikten, Fehlermeldungen und instabilen Starts"
+    - "Bereinigung unnötiger Autostarts, Altversionen und störender Zusatzprogramme"
+    - "Einrichtung von Benutzerprofilen, Standardprogrammen und Arbeitsplatzanwendungen"
+    - "Praktische Übergabe mit Hinweisen zu Updates, Konten und Datensicherung"
+outcome:
+  eyebrow: "Ziel der Unterstützung"
+  title: "Ein aufgeräumter Arbeitsplatz, der zu Ihrem Alltag passt"
+  text: "Am Ende sollen die vereinbarten Programme funktionieren, wichtige Einstellungen nachvollziehbar sein und unnötige Konflikte reduziert werden. Wir versprechen keine pauschale Beschleunigung: Wenn Hardware, beschädigte Daten oder eine nicht mehr unterstützte Anwendung die Grenze setzen, erklären wir das offen."
+cta:
+  title: "Softwareproblem kurz einordnen"
+  text: "Schreiben Sie uns, welches Programm oder welche Funktion betroffen ist, was Sie sehen und seit wann das Problem besteht."
+  prompt: "Hilfreich sind Programmname, Windows-Version, genaue Fehlermeldung und die letzte erkennbare Änderung."
+expanded:
+  situations:
+    eyebrow: "Der passende Anlass"
+    title: "Wann diese Leistung sinnvoll ist"
+    intro: "Die Seite richtet sich an Menschen, die nicht nur einen neuen Computer umziehen, sondern eine konkrete Softwareumgebung installieren, stabilisieren oder verständlich ordnen möchten."
+    items:
+      - title: "Neue Anwendung"
+        text: "Ein gekauftes oder betrieblich benötigtes Programm soll korrekt installiert, aktualisiert und für den vorgesehenen Benutzer eingerichtet werden."
+      - title: "Fehler nach Änderung"
+        text: "Seit einem Update, einer Neuinstallation oder einer Kontoumstellung startet eine Anwendung nicht mehr zuverlässig oder verhält sich anders."
+      - title: "Langsames System"
+        text: "Viele Autostarts, alte Versionen, volle Speicherbereiche oder Hintergrundprogramme machen den Computer spürbar träge."
+      - title: "Unübersichtlicher Arbeitsplatz"
+        text: "Programme, Konten, Dateiablagen und Standardanwendungen sind über Jahre gewachsen und sollen ohne unnötigen Komplettumbau geordnet werden."
+  process:
+    eyebrow: "Vom Konflikt zur Ordnung"
+    title: "Wir ändern nicht blind, sondern in überprüfbaren Schritten"
+    intro: "Vor einer Bereinigung oder Neuinstallation klären wir Zweck, vorhandene Lizenzen, wichtige Daten und mögliche Abhängigkeiten. So bleibt erkennbar, warum eine Änderung erfolgt."
+    steps:
+      - title: "Anliegen prüfen"
+        text: "Wir erfassen Fehlermeldung, gewünschtes Ergebnis, Gerät, Benutzer und kürzlich vorgenommene Änderungen."
+      - title: "Umgebung sichern"
+        text: "Wo es sinnvoll und möglich ist, klären wir Datenbestand, Wiederherstellungsoptionen und notwendige Zugänge vor dem Eingriff."
+      - title: "Gezielt umsetzen"
+        text: "Wir installieren, aktualisieren oder bereinigen nur die vereinbarten Bestandteile und beobachten die Wirkung."
+      - title: "Gemeinsam testen"
+        text: "Programmstart, Dateien, Drucker, Anmeldung und wichtige Arbeitsabläufe werden passend zum Auftrag kontrolliert."
+  proof:
+    eyebrow: "Relevante Erfahrung"
+    title: "Softwarehilfe mit Blick auf das ganze System"
+    text: "IT-Erfahrung seit 2008 und praktische Arbeit mit Windows, Arbeitsplatzsoftware, Konten, E-Mail und Cloud-Diensten helfen dabei, Ursachen nicht nur innerhalb eines einzelnen Programms zu suchen."
+    items:
+      - "Windows und Treiber"
+      - "Microsoft 365 und Office"
+      - "E-Mail und Benutzerkonten"
+      - "Cloud-Speicher und Backups"
+      - "Drucker und Peripherie"
+      - "Arbeitsplatz- und Fachanwendungen nach Prüfung"
+  boundaries:
+    eyebrow: "Verantwortbare Grenzen"
+    title: "Was vor Beginn geklärt werden muss"
+    items:
+      - "Wir installieren keine raubkopierte, manipulierte oder anderweitig unlizenzierte Software."
+      - "Nicht mehr unterstützte Programme oder Betriebssysteme lassen sich nicht immer sicher oder dauerhaft weiterbetreiben."
+      - "Eine Optimierung kann ungeeignete oder defekte Hardware nicht zuverlässig ausgleichen."
+      - "Die Rettung fehlender oder beschädigter Daten ist keine zugesicherte Leistung dieser Seite."
+      - "Passwörter, Anmelde- und Wiederherstellungscodes gehören nicht in das Anfrageformular."
+  faqs:
+    - question: "Können Sie ein bestimmtes Programm für mich installieren?"
+      answer: "In vielen Fällen ja. Vorab prüfen wir, ob das Programm seriös bezogen wurde, eine passende Lizenz vorhanden ist und Gerät sowie Windows-Version die Voraussetzungen erfüllen. Fachanwendungen werden individuell eingeordnet."
+    - question: "Wird mein Computer durch eine Optimierung garantiert schneller?"
+      answer: "Nein, eine pauschale Beschleunigung wäre kein seriöses Versprechen. Wir können unnötige Belastungen, fehlerhafte Starts und Softwarekonflikte untersuchen. Liegt die Grenze bei Hardware oder beschädigten Daten, erhalten Sie eine klare Einschätzung."
+    - question: "Muss Windows komplett neu installiert werden?"
+      answer: "Nicht automatisch. Eine Neuinstallation ist nur eine mögliche Maßnahme und wird erst empfohlen, wenn gezielte Reparatur oder Bereinigung nicht sinnvoll genug erscheint. Umfang, Datensicherung und spätere Einrichtung werden vorher besprochen."
+    - question: "Helfen Sie auch mit E-Mail, Microsoft 365 oder Cloud-Speicher?"
+      answer: "Ja, wenn die Aufgabe zu einem privaten oder Homeoffice-Arbeitsplatz passt. Für tiefergehende Benutzer-, Rechte- oder Teamstrukturen führen die Business-Seiten zu den passenden Microsoft-365- und Google-Workspace-Leistungen."
+    - question: "Können Sie Programme remote installieren?"
+      answer: "Manche klar abgegrenzten Aufgaben eignen sich für Remote-Hilfe. Bei unklarem Systemzustand, mehreren Geräten oder notwendigen Vorprüfungen ist ein Vor-Ort-Termin oft verantwortbarer. Das klären wir im kostenlosen Erstgespräch."
+    - question: "Welche Angaben helfen bei der ersten Einschätzung?"
+      answer: "Nennen Sie Programmname, Gerät, Windows-Version, die genaue Meldung und was unmittelbar vor dem Problem passiert ist. Senden Sie keine Passwörter, Lizenzschlüssel oder Anmeldecodes über das Formular."
+  relatedServiceIds:
+    - computer-laptop
+    - setup-data-transfer
+    - wifi-home-network
+
