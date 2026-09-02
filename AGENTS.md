@@ -1,5 +1,5 @@
 ---
-version: 1.4.3
+version: 1.4.5
 ---
 
 # VorOrt agent instructions
@@ -23,6 +23,16 @@ Read these files in order before making material changes:
 - `.github/workflows/astro.yml` must remain at the repository root for GitHub Actions.
 - The external Obsidian Chain remains the high-level project roadmap. Do not edit it unless Aykhan explicitly requests it.
 - Preserve unrelated user changes. Inspect `git status` before editing when local repository shell access is available.
+
+## Astro implementation principles
+
+- Prefer Astro-native, static-first solutions; avoid unnecessary client JavaScript, frameworks, and dependencies.
+- Inspect existing layouts, components, tokens, and styles before creating an implementation. Reuse them before duplicating markup, and consider a reusable component or token when a genuinely recurring UI pattern appears.
+- Keep editable content in validated content collections, not visual components. Keep implementation-specific classes, dimensions, and arbitrary visual settings out of YAML and other content records.
+- Centralize genuine shared design decisions through the existing tokens and shared styles. Use existing CSS custom properties instead of repeatedly hard-coding colors, spacing, radii, widths, or typography values.
+- Keep component-specific presentation in appropriate scoped or component styles.
+- Extend reusable components when the concept is genuinely shared, but do not force meaningfully different page compositions into giant conditional components. Avoid abstraction for its own sake; small cohesive implementations may remain local.
+- Preserve the approved design system unless a task explicitly calls for design changes.
 
 ## Product invariants
 

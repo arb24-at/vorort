@@ -1,17 +1,17 @@
 # VorOrt collaboration handoff
 
-Last updated: 2026-08-30
+Last updated: 2026-09-02
 
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: local `main` is at `c6349c7` (`VorOrt v1.4.2: expand German Microsoft 365 service and SEO map`). The focused content-source and Astro architecture pass is complete locally as an uncommitted `1.4.3` change set.
-- Local validation: `npm run validate` passes with 25 HTML pages, 23 sitemap URLs, zero missing `/vorort/` targets, and zero stale `/astro-demo/` paths. Fourteen split service records match the pre-change dataset semantically, all 26 generated HTML/XML outputs match the clean `1.4.2` build after asset-name normalization, and the compiled CSS is byte-identical. Seven negative content cases also confirmed that invalid IDs, missing locale pairs, duplicate routes, broken related-service references, incomplete expanded records, malformed storyboard order, and inconsistent translated audiences fail the build.
+- Current working state: the Drive source now carries project version `1.4.5` for the independently authored English Microsoft 365 content slice. This Drive-connected session cannot verify the current local Git commit or working-tree state; the previous handoff recorded local `main` at `c6349c7` with the split-service `1.4.3` architecture change still uncommitted.
+- Local validation: the previous handoff records a passing `npm run validate` for the split-service architecture with 25 HTML pages, 23 sitemap URLs and the documented negative content checks. For `1.4.5`, this session validates the edited English YAML against the current schema and uses Drive readback; repository-shell build, diff and status checks are not available here.
 - Local browser verification: the German homepage and software reference page were reviewed at 1440×1000, 768×1024, 390×844, and 320×720 with zero horizontal overflow. Desktop/mobile navigation, 44px mobile service targets, Escape behavior, delayed contact dock, headline scale, image crop, section rhythm, and all four software visual states were checked.
-- Deployment state: `origin/main` remains at `8463415`; local `main` is three commits ahead before the uncommitted `1.4.3` architecture change. None of the local `1.4.0`–`1.4.3` work reaches GitHub Pages until it is pushed.
+- Deployment state: the previous handoff recorded `origin/main` at `8463415` and local work ahead of it. Deployment state was not rechecked in this Drive-connected session, so the `1.4.5` content change should be treated as undeployed until verified locally and pushed.
 - Product-direction state: the final design direction is approved and stabilized. The master environment is reserved for broad context; homepage capability and software states now use distinct customer-readable functional visuals. The computer/laptop and office-network prototypes remain unchanged reference anchors, and the next immediate focus is content rather than another design concept.
 - Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional. The clean install also reports nine dependency audit findings for later dependency-maintenance review.
-- Recommended next action: review and commit the focused `1.4.3` architecture change, then resume page content in a separate controlled slice; an English-specific Microsoft 365 keyword/SERP pass remains necessary before independently authoring that page.
+- Recommended next action: run the repository validation, diff and status checks locally against the current combined tree, resolve commit sequencing for any earlier uncommitted work, then visually review the English Microsoft 365 page at desktop, tablet and mobile widths.
 
 ## Reporting template
 
@@ -29,6 +29,19 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 ```
 
 ## Work log
+
+## 2026-09-02 — ChatGPT — English Microsoft 365 business page
+
+- Objective: expand the English Microsoft 365 route to the same professional service depth as the German page while keeping English editorial content independently authored and preserving the new one-file-per-locale service structure.
+- Changes:
+  - Rewrote `ω┇Engine/src/content/services/microsoft-365/en.yml` as a `guided-business` page with a four-state storyboard, six practical business situations, eight supported-scope items, clear proof and boundaries, eight FAQs, and the existing related-service relationships.
+  - Kept the service focused on small-business setup, troubleshooting and planned change work around accounts, Outlook/Exchange Online, Teams, OneDrive, SharePoint, permissions, Windows workplaces and responsible migration assessment rather than enterprise Microsoft consultancy.
+  - Updated the English Microsoft 365 entry in `ω┇Engine/src/data/seo-keywords.yml` from a provisional seed to a 2026-09-02 SERP-reviewed routing note. The page keeps `Microsoft 365 support Berlin` as the primary phrase but explicitly treats Microsoft self-service/admin intent and enterprise governance, Intune and managed-service intent as harmful or out of scope.
+  - Bumped root `AGENTS.md` from `1.4.4` to `1.4.5` for this separate content change set.
+- Decisions: the German Keyword Planner volumes were not transferred to English. The English page uses the same service truth and content depth but natural English wording, with Berlin and business context qualifying the otherwise mixed `Microsoft 365 support` query. No component, schema, route or German-page changes were required.
+- Validation: the English record was parsed against the current service schema locally in this session, including the required translation ID/locale identity, guided-business audience, four ordered storyboard roles, expanded content minima and related-service IDs. The edited files were read back from Drive after writing. `npm run validate`, browser rendering, `git diff --check`, `git status --short`, commit and push were not run because this session does not expose the local repository shell.
+- Blockers or required input: English Keyword Planner volume remains unmeasured, so the keyword file records SERP review rather than Planner validation. Existing production brand, contact/legal facts, qualification evidence, travel policy, form backend, analytics, final imagery and domain blockers remain unchanged.
+- Recommended next action: run local validation and visual review for `/en/services/business/microsoft-365-workplaces/`; if the page reads naturally in context, commit the current content slice using the project version recorded in `AGENTS.md`.
 
 ## 2026-08-30 — Codex — Service-source and Astro maintainability pass
 

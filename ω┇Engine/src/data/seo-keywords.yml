@@ -318,24 +318,31 @@ pages:
 - id: microsoft-365-en
   route: /en/services/business/microsoft-365-workplaces/
   locale: en
-  researchStatus: provisional-seed
+  researchStatus: serp-reviewed-2026-09-02
   primary: Microsoft 365 support Berlin
   useful:
+  - Microsoft 365 support for business Berlin
   - Microsoft 365 consulting Berlin
   - Microsoft 365 service provider Berlin
   - Office 365 support Berlin
   - Microsoft 365 setup Berlin
   - Microsoft 365 migration Berlin
-  - Microsoft 365 user management
+  - Microsoft 365 small business Berlin
   - Microsoft 365 permissions help
   - Outlook business support Berlin
-  - Teams support Berlin
+  - OneDrive SharePoint support Berlin
   harmful:
   - Microsoft 365 admin centre
-  - Office 365 login
+  - Microsoft 365 login
+  - Microsoft customer support
   - Microsoft 365 Family
   - Microsoft 365 student
   - Microsoft 365 managed services enterprise
+  - Microsoft 365 governance consultant
+  - Microsoft Intune consultant
+  notes:
+  - 'English SERP review 2026-09-02: generic support intent is heavily mixed with Microsoft self-service and admin help, while Berlin provider pages quickly move into enterprise-style migration, governance, Intune, compliance and managed services.'
+  - 'No English Keyword Planner volume has been assumed from the German research; use the page to qualify support by business context, Berlin and practical workplace outcomes.'
 - id: google-workspace-de
   route: /leistungen/unternehmen/google-workspace-cloud/
   locale: de

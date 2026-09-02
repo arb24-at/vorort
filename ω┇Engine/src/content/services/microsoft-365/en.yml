@@ -4,48 +4,186 @@ locale: en
 audience: business
 order: 1
 slug: microsoft-365-workplaces
-purpose: "Professional help with Microsoft 365 accounts, applications, files, permissions and workplaces."
+purpose: "Practical Microsoft 365 support for Berlin businesses covering users, email, files, permissions and the Windows workplaces around them."
 navigation:
   group: workplace-collaboration
   label: "Microsoft 365 & workplaces"
 page:
-  template: standard
+  template: guided-business
   technicalDepth: professional
   theme:
     variant: workspace
-    state: "Users, devices, applications and shared files become visible as one connected workplace."
-    title: "The Microsoft 365 workplace in context"
-    description: "Accounts, Outlook, Teams, files and permissions appear as connected layers of a small-business environment."
+    state: "Users, devices, Outlook, Teams, OneDrive, SharePoint and permissions become visible as one connected workplace."
+    title: "Microsoft 365 as a connected workplace"
+    description: "Accounts, email, collaboration, files, access and Windows workplaces are treated as parts of one working system."
+  storyboard:
+    - role: situation
+      composition: wide
+      visualState: conflict
+      eyebrow: "Day-to-day work"
+      title: "When Microsoft 365 starts getting in the way"
+      text: "Most requests do not begin as a neatly defined IT project. They begin with Outlook not behaving as expected, a colleague missing access to files, an unclear Teams structure or a new starter whose whole workplace needs to be ready for work."
+      points:
+        - "Outlook, Teams, sign-in or synchronisation problems interrupt normal work"
+        - "A new user or replacement computer needs to fit the existing environment"
+        - "Files, sharing and permissions have grown difficult to understand"
+      callouts:
+        - "Outlook problem"
+        - "Access missing"
+        - "Files unclear"
+    - role: investigation
+      composition: system
+      visualState: dependencies
+      eyebrow: "Connected causes"
+      title: "Trace the issue across accounts, services and devices"
+      text: "The visible symptom is not always where the cause sits. We look at the user account, licence, mailbox, Windows workplace, Teams and the relevant OneDrive or SharePoint access together when those relationships matter to the problem."
+      points:
+        - "Users, groups, licences and the access needed for the role"
+        - "Outlook and Exchange Online in relation to the actual workplace"
+        - "Teams, OneDrive and SharePoint as connected collaboration and file services"
+        - "Windows sign-in, Microsoft 365 applications and synchronisation on the device"
+      callouts:
+        - "User account"
+        - "Exchange Online"
+        - "Teams / files"
+        - "Windows device"
+    - role: intervention
+      composition: text-left
+      visualState: controlled-change
+      eyebrow: "Controlled changes"
+      title: "Make changes around a clear business goal"
+      text: "Before changing live accounts, permissions, domains or shared data, we agree what needs to be different and what the change may affect. Larger moves are scoped first and then carried out in understandable steps rather than treated as a generic migration package."
+      points:
+        - "Set up new users and workplaces with the services they actually need"
+        - "Adjust groups, permissions and sharing without adding unnecessary access"
+        - "Correct email, domain, sign-in or synchronisation problems at the relevant layer"
+        - "Assess and plan migrations or wider structural changes before implementation"
+      callouts:
+        - "Review current state"
+        - "Agree the change"
+        - "Implement carefully"
+        - "Test the result"
+    - role: outcome
+      composition: text-right
+      visualState: verified
+      eyebrow: "Handover"
+      title: "A working setup that remains understandable"
+      text: "The aim is not simply to make one error message disappear. The right people should be able to sign in, email and collaboration should work for the agreed scope, access should match the job and the important changes should be clear enough to support later."
+      points:
+        - "Sign-in and required applications work on the affected workplace"
+        - "Email, files and collaboration are checked for the agreed task"
+        - "Permissions match the intended role rather than accumulating by accident"
+        - "Important changes and sensible next steps are handed over clearly"
+      callouts:
+        - "Sign-in checked"
+        - "Email working"
+        - "Access appropriate"
+        - "Handover clear"
 seo:
-  title: "Microsoft 365 Support Berlin"
-  description: "Microsoft 365 support and workplace setup for small businesses, offices and self-employed professionals in Berlin."
-  intent: "Find Microsoft 365 support for a small business or professional workplace in Berlin."
+  title: "Microsoft 365 Support for Businesses in Berlin"
+  description: "Microsoft 365 support for Berlin businesses: Outlook, Teams, OneDrive, SharePoint, users, permissions, migration and Windows workplace setup."
+  intent: "Find practical Microsoft 365 support in Berlin for a small business that needs setup, troubleshooting or a planned change."
 hero:
   eyebrow: "Business · Microsoft 365"
-  title: "Microsoft 365 and workplace support for Berlin businesses"
-  intro: "Reliable workplaces connect devices, user accounts, email, files and permissions. We support small Berlin businesses with setup and troubleshooting across Windows and Microsoft 365."
+  title: "Microsoft 365 support for Berlin businesses"
+  intro: "Microsoft 365 works best when user accounts, email, files, permissions, applications and devices fit together. We help small Berlin businesses with setup, troubleshooting and planned changes, from one workplace to an environment that has grown over time."
 problems:
-  eyebrow: "Service scope"
-  title: "Typical requirements"
+  eyebrow: "Typical situations"
+  title: "How Microsoft 365 problems show up at work"
+  intro: "You do not need to identify the technical cause before contacting us. A useful starting point is what has stopped working, who is affected or what needs to change."
   items:
-    - "New employees, device replacements or additional workplaces"
-    - "Outlook, Teams, OneDrive or access problems"
-    - "Unclear user accounts, licences and permissions"
-    - "Inconsistent updates, device configurations or file storage"
+    - "A new employee or Windows workplace needs to be set up properly"
+    - "Outlook, email, sign-in or synchronisation is unreliable"
+    - "Teams, OneDrive or SharePoint files and access are difficult to follow"
+    - "Users, licences, groups or permissions are no longer clearly organised"
+    - "An existing Microsoft 365 environment has become inconsistent over time"
+    - "Email, files or users need to be moved to Microsoft 365 in a controlled way"
 included:
   eyebrow: "Possible support"
-  title: "Possible support"
+  title: "Microsoft 365 in the context of the workplace"
+  intro: "The exact scope depends on the existing environment and the business outcome you need. Typical work connects Microsoft cloud services with users, permissions and the computers people actually work on."
   items:
+    - "User accounts, groups, existing licences and baseline access structures"
     - "Setup of Windows workplaces and Microsoft 365 applications"
-    - "User, licence and baseline permission management"
-    - "Troubleshooting sign-in, synchronisation and email issues"
-    - "Documented handover for day-to-day office operation"
+    - "Outlook, Exchange Online, mailbox and synchronisation troubleshooting"
+    - "Teams membership, collaboration and common access problems"
+    - "OneDrive and SharePoint synchronisation, sharing and permissions"
+    - "Business email domains and the Microsoft 365 settings needed around them"
+    - "Migration and change projects after the starting environment has been assessed"
+    - "Clear documentation or handover of changes that matter later"
 outcome:
-  eyebrow: "Approach"
-  title: "Productive without unnecessary complexity"
-  text: "The scope is adapted to the team and existing environment. For complex migrations or security-sensitive changes, prerequisites and responsibilities are agreed before work begins."
+  eyebrow: "Working method"
+  title: "A usable workplace, not a collection of Microsoft products"
+  text: "The goal is not to switch on as many Microsoft services as possible. The right user should be able to sign in, email and shared files should behave predictably, access should fit the job and the environment should still make sense after the immediate problem has been solved."
 cta:
   title: "Discuss your Microsoft 365 request"
-  text: "Tell us the team size, affected services and desired result."
-  prompt: "Team size, affected services and operational impact help us prioritise the request."
-
+  text: "Tell us what is not working now or what you need to change. We do not need passwords, authentication codes or recovery codes for the first conversation."
+  prompt: "Useful details include roughly how many people are affected, the services involved, the visible problem and any recent changes."
+expanded:
+  situations:
+    eyebrow: "Practical work"
+    title: "Common Microsoft 365 tasks in small businesses"
+    intro: "These situations show where support is often useful. They are not a fixed package list: the existing setup, dependencies and desired result determine the responsible scope."
+    items:
+      - title: "New starters & workplaces"
+        text: "We can bring together the user account, existing licence, email, applications, Teams, shared files and Windows workplace so the new starter receives what the role actually requires."
+      - title: "Outlook & business email"
+        text: "Sign-in, synchronisation, Outlook profiles, Microsoft 365 mailboxes and shared mailboxes can be checked at the layer where the problem is actually occurring."
+      - title: "Teams & collaboration"
+        text: "We can review membership, access and the relationship with shared files so Teams remains understandable for the people using it day to day."
+      - title: "OneDrive & SharePoint"
+        text: "We help with synchronisation, sharing, permissions and the practical distinction between personal working files and information that should be shared by the business."
+      - title: "Users, groups & permissions"
+        text: "When staff change or an environment has grown organically, we can review users, groups and access and make agreed changes without turning every account into an administrator."
+      - title: "Existing environments & migration"
+        text: "We can also assess an existing Microsoft 365 setup, improve specific areas or prepare a controlled move of email, files or users after the starting position is understood."
+  process:
+    eyebrow: "Approach"
+    title: "How we handle Microsoft 365 requests"
+    intro: "We start with the effect on the business and only inspect the areas needed for the request. Changes to live accounts, access or shared information are agreed before they are made."
+    steps:
+      - title: "Clarify the request"
+        text: "We establish what is not working, who is affected, which services are in use and whether anything changed recently."
+      - title: "Check the environment"
+        text: "Depending on the case, we review accounts, Microsoft 365 services, permissions, the workplace, email configuration or file structure."
+      - title: "Agree the change"
+        text: "Before changing live accounts, permissions, domains or shared data, we explain the proposed step and the likely effect."
+      - title: "Verify the result"
+        text: "After implementation we test the affected functions and record important changes or sensible next steps where useful."
+  proof:
+    eyebrow: "Connected capability"
+    title: "Microsoft 365 does not stop at the browser"
+    text: "For small businesses, many Microsoft 365 problems sit between the cloud service and the real workplace. We combine Microsoft 365 work with practical experience around Windows, email, accounts, networks and office IT."
+    items:
+      - "IT experience since 2008"
+      - "Windows workplaces and Microsoft 365 applications"
+      - "Email, domain and account relationships"
+      - "Network and workplace IT for small businesses"
+  boundaries:
+    eyebrow: "Clear boundaries"
+    title: "Responsible scope rather than blanket promises"
+    items:
+      - "Complex migrations are assessed before commitment, including the source system, data, users, domains and important dependencies."
+      - "Passwords, authentication codes and recovery codes should not be sent through the contact form or ordinary email."
+      - "Large compliance, governance, high-security or enterprise Microsoft projects are assessed separately for the specialist scope they require."
+      - "We do not make blanket guarantees of zero disruption, same-day completion or a particular response time."
+  faqs:
+    - question: "Can you support an existing Microsoft 365 environment?"
+      answer: "Yes. Many requests are not new deployments. We can investigate a specific problem, set up new users or workplaces, or review parts of an existing environment within an agreed scope."
+    - question: "Can you set up a new employee and computer together?"
+      answer: "We can consider the user account, existing licence, Microsoft 365 applications, email, required access and the Windows workplace together. The exact setup depends on the environment you already use."
+    - question: "Do you help with Outlook and business email problems?"
+      answer: "Yes. This can include sign-in, synchronisation, Outlook profiles, Microsoft 365 mailboxes, shared mailboxes and the connection between the workplace and the email service."
+    - question: "Can you help with OneDrive, SharePoint and Teams?"
+      answer: "Yes. We can help with synchronisation, file locations, sharing, membership and baseline permission structures. Larger governance or enterprise projects are assessed separately before any commitment."
+    - question: "Can email and files be migrated to Microsoft 365?"
+      answer: "Depending on the source environment, this may be possible. Before committing to a migration we review users, data, mailboxes, domains, permissions and other dependencies and then define a responsible scope."
+    - question: "Do you also provide Office 365 support?"
+      answer: "Yes. Office 365 is still commonly used as a name for business Microsoft subscriptions. What matters is which Microsoft services and licences are actually in use, so we first establish the real environment."
+    - question: "Is Microsoft 365 support only available on site?"
+      answer: "On-site support in Berlin is our primary model, especially when devices and the workplace are part of the problem. Some Microsoft 365 tasks or an initial diagnosis may also be sensible remotely."
+    - question: "Do I need an ongoing support contract?"
+      answer: "No. One-off problems, setups and projects are a normal part of the service. If recurring help would be useful afterwards, that can be discussed separately rather than being required from the start."
+  relatedServiceIds:
+    - network-it-support
+    - google-workspace-cloud
