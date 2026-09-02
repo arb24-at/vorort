@@ -5,13 +5,13 @@ Last updated: 2026-09-02
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: the Drive source now carries project version `1.4.5` for the independently authored English Microsoft 365 content slice. This Drive-connected session cannot verify the current local Git commit or working-tree state; the previous handoff recorded local `main` at `c6349c7` with the split-service `1.4.3` architecture change still uncommitted.
-- Local validation: the previous handoff records a passing `npm run validate` for the split-service architecture with 25 HTML pages, 23 sitemap URLs and the documented negative content checks. For `1.4.5`, this session validates the edited English YAML against the current schema and uses Drive readback; repository-shell build, diff and status checks are not available here.
+- Current working state: the Drive source now carries project version `1.4.6` for the researched German network/infrastructure content slice. This Drive-connected session cannot verify the current local Git commit or working-tree state; earlier `1.4.3`–`1.4.5` Drive work may still require local commit sequencing and verification.
+- Local validation: the previous handoff records a passing `npm run validate` for the split-service architecture with 25 HTML pages, 23 sitemap URLs and the documented negative content checks. For `1.4.6`, this Drive session validates the German network YAML and planning files locally, checks the small renderer/type changes syntactically, and uses exact Drive readback; repository-shell build, diff and status checks are not available here.
 - Local browser verification: the German homepage and software reference page were reviewed at 1440×1000, 768×1024, 390×844, and 320×720 with zero horizontal overflow. Desktop/mobile navigation, 44px mobile service targets, Escape behavior, delayed contact dock, headline scale, image crop, section rhythm, and all four software visual states were checked.
-- Deployment state: the previous handoff recorded `origin/main` at `8463415` and local work ahead of it. Deployment state was not rechecked in this Drive-connected session, so the `1.4.5` content change should be treated as undeployed until verified locally and pushed.
-- Product-direction state: the final design direction is approved and stabilized. The master environment is reserved for broad context; homepage capability and software states now use distinct customer-readable functional visuals. The computer/laptop and office-network prototypes remain unchanged reference anchors, and the next immediate focus is content rather than another design concept.
+- Deployment state: the previous handoff recorded `origin/main` at `8463415` and local work ahead of it. Deployment state was not rechecked in this Drive-connected session, so the current `1.4.6` Drive changes should be treated as undeployed until verified locally and pushed.
+- Product-direction state: the final design direction remains approved and stabilized. The German network reference page is now positioned around planned infrastructure projects for small and growing businesses—new office networks, modernization, managed network hardware, business Wi-Fi, cabling, NAS and VPN—with troubleshooting secondary and Windows Server/Active Directory plus broader Linux server work reserved for separate future service intents.
 - Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional. The clean install also reports nine dependency audit findings for later dependency-maintenance review.
-- Recommended next action: run the repository validation, diff and status checks locally against the current combined tree, resolve commit sequencing for any earlier uncommitted work, then visually review the English Microsoft 365 page at desktop, tablet and mobile widths.
+- Recommended next action: run repository validation, diff and status checks locally against the current combined tree, resolve commit sequencing for earlier Drive work, then visually review the expanded German network/infrastructure page at desktop, tablet and mobile widths before the English counterpart is researched independently.
 
 ## Reporting template
 
@@ -29,6 +29,21 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 ```
 
 ## Work log
+
+## 2026-09-02 — ChatGPT — German network and IT-infrastructure repositioning
+
+- Objective: use Berlin Keyword Planner evidence plus the confirmed technical/service boundaries to reposition the German office-network page around profitable planned infrastructure work rather than primarily troubleshooting.
+- Changes:
+  - Reworked `ω┇Engine/src/content/services/office-network/de.yml` into a `guided-business` service page focused on new-office network design, modernization, managed network hardware, business Wi-Fi, network cabling/racks/patching, NAS/shared storage, VPN/secure remote access, hardware recommendation or supply, testing, documentation and optional maintenance.
+  - Kept the public language customer-readable: deep switch/routing/firewall/server protocol detail remains behind the service promise rather than appearing as a catalogue. Troubleshooting remains supported but is no longer the main commercial proposition.
+  - Added the `network` variant to the shared `ServiceField` type and allowed `ServiceDetail` to pass the existing network theme into guided-business story visuals; no new CSS or page-specific visual system was introduced.
+  - Updated `ω┇Engine/src/data/seo-keywords.yml` from a provisional network seed to a 2026-09-02 researched map centred on `it infrastruktur berlin`, with `netzwerkverkabelung berlin`, `firmennetzwerk einrichten/aufbauen`, `büro netzwerk einrichten`, `netzwerktechnik berlin` and `it netzwerk berlin` as useful commercial/supporting terms. Business-WLAN, NAS and VPN exact terms remain supporting because Planner volume was 0–10.
+  - Updated `Project.md` and `Roadmap.md` to record the small-and-growing-business wording, project-led network/infrastructure scope, and confirmed future dedicated Windows Server/Active Directory and Linux server service intents after independent research.
+  - Bumped root `AGENTS.md` from `1.4.5` to `1.4.6` for this separate content/architecture slice.
+- Decisions: the German page keeps the existing `/leistungen/unternehmen/netzwerk-it-betreuung/` route to avoid an unnecessary route migration, while navigation and page copy move toward `Netzwerk & IT-Infrastruktur`. Broad `IT Service/Systemhaus` intent stays with the business landing or is rejected where it implies MSP/system-house positioning. No long-term support contract is required; occasional or recurring maintenance may be offered only when wanted.
+- Validation: parsed the expanded German YAML against the current schema constraints, confirmed ordered four-state storyboard roles and required expanded groups, checked SEO field lengths and related-service IDs, and syntax-checked the small Astro frontmatter/type edits. Drive readback is required after writing. `npm run validate`, browser rendering, `git diff --check`, `git status --short`, commit and push are not available in this Drive-only session.
+- Blockers or required input: final visual/browser review remains required. The future Windows Server/Active Directory and Linux pages need their own keyword/SERP and scope passes before routes/content are created. Existing production brand, contact/legal facts, qualification evidence, travel policy, form backend, analytics, final imagery and domain blockers remain unchanged.
+- Recommended next action: run local validation and visually review the German network page; if the content/design works in context, commit the `1.4.6` slice before starting the independently researched English network page.
 
 ## 2026-09-02 — ChatGPT — English Microsoft 365 business page
 

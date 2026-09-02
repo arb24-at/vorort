@@ -36,7 +36,7 @@ const pageKind = isPrivatePrototype || isGuidedPrivate
     ? "business"
     : "standard";
 const visualVariant = service.page.theme.variant;
-const fieldVariant = visualVariant === "workspace" ? "workspace" : "software";
+const fieldVariant = visualVariant === "workspace" || visualVariant === "network" ? visualVariant : "software";
 const relatedServices = isExpanded ? await getRelatedServices(service) : [];
 const contactId = isEnglish ? "contact" : "kontakt";
 const audienceLandingPath = isEnglish

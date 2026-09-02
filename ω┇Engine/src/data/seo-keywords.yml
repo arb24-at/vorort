@@ -388,23 +388,27 @@ pages:
 - id: network-it-de
   route: /leistungen/unternehmen/netzwerk-it-betreuung/
   locale: de
-  researchStatus: provisional-seed
-  primary: netzwerk support berlin
+  researchStatus: researched-2026-09-02
+  primary: it infrastruktur berlin
   useful:
-  - büro netzwerk berlin
-  - it betreuung büro berlin
-  - wlan büro berlin
-  - netzwerk probleme unternehmen
-  - arbeitsplatz it berlin
-  - drucker netzwerk büro
-  - it support kleine unternehmen berlin
-  - netzwerk einrichten büro berlin
+  - netzwerkverkabelung berlin
+  - firmennetzwerk einrichten
+  - firmennetzwerk aufbauen
+  - büro netzwerk einrichten
+  - netzwerktechnik berlin
+  - it netzwerk berlin
+  - business wlan berlin
+  - wlan planung berlin
+  - nas einrichten unternehmen
+  - vpn einrichten unternehmen
   harmful:
+  - systemhaus berlin
+  - managed services berlin
+  - externe it abteilung berlin
+  - computer notdienst berlin
+  - netzwerkdrucker einrichten
   - enterprise netzwerk engineering berlin
-  - 24h network operations center
-  - penetration test berlin
-  - cisco datacenter consulting
-  - rechenzentrum netzwerk berlin
+  note: "Berlin Keyword Planner research on 2026-09-02: IT-Infrastruktur Berlin and Netzwerkverkabelung Berlin were 10–100 with high advertiser competition; Firmennetzwerk einrichten/aufbauen were 10–100 with medium competition. Network planning, Business-WLAN, NAS and VPN exact seeds were 0–10 and are supporting service language rather than primary targets. Broad IT-Service/Systemhaus terms belong to the business landing or conflict with the intended project-led positioning."
 - id: network-it-en
   route: /en/services/business/network-it-support/
   locale: en

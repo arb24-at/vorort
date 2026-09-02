@@ -19,7 +19,7 @@ Acceptance: a fresh dependency install and `npm run validate` pass from `ω┇En
 
 - Replace placeholder telephone and WhatsApp details as soon as the ready values are supplied; keep email, address, final operator presentation, privacy details, and certificate evidence configurable until verified replacements exist.
 - Replace the provisional public working name `VorOrt` with a final brand when selected, and choose the production domain without coupling architecture to the temporary name.
-- Complete the service audit begun on 2026-08-27: the operating model, experience-since-2008 wording, advertised technology groups, 1–20-user business focus, availability boundaries, diagnostic model, and exclusions are confirmed; exact qualifications, travel policy, and remaining production facts are still required.
+- Complete the service audit begun on 2026-08-27: the operating model, experience-since-2008 wording, advertised technology groups, small-and-growing-business focus, availability boundaries, diagnostic model, and exclusions are confirmed; exact qualifications, travel policy, and remaining production facts are still required.
 - Upgrade Astro and affected transitive dependencies, then rerun the security audit and static validation.
 - Remove tracked or generated platform residue and keep the working tree reproducible.
 
@@ -34,10 +34,11 @@ Foundation and revised review slice completed on 2026-08-30: all service records
 - Preserve separate German and English editorial content connected by stable translation IDs.
 - Review the completed bilingual software installation/optimization service pair and its intent-led slugs before applying the expanded template to the remaining pages.
 - Reframe the current security/certification route as working-methods/data-handling/experience/qualifications trust content, with a bilingual equivalent and no unverified credential marketing.
-- Complete or deepen the remaining existing private services (Wi-Fi/home network; setup/data transfer) and business services (Microsoft 365; Google Workspace) using the page-content contracts in `Project.md`.
+- Complete or deepen the remaining existing private services (Wi-Fi/home network; setup/data transfer) and business services (Google Workspace and the English network/infrastructure counterpart) using the page-content contracts in `Project.md`. The German Microsoft 365 and German network/infrastructure pages now have researched, expanded content slices.
 - Normalize German typography and replace remaining transliterated copy such as `fuer` where it is customer-facing.
 - Keep layout primitives and design tokens in code; expose only constrained page/theme choices to content files.
 - Do not create thin district pages, technology-brand pages, or blog filler before search evidence demonstrates a distinct useful intent.
+- Research Windows Server/Active Directory and Linux server services independently before creating their confirmed future dedicated pages; do not make the network page carry those separate intents.
 
 Acceptance: the launch page inventory is explicit; the five primary service pillars are represented coherently; representative content and SEO changes require no Astro component edit; invalid or incomplete content fails the build; every translated page has correct canonical and alternate-language metadata; every new indexable page has substantial distinct content rather than keyword duplication.
 
@@ -49,7 +50,7 @@ Prototype foundation completed on 2026-08-27, the first Technical Field proof sl
 - Prototype one coherent, state-changing Berlin home/home-office/office visual world across the homepage, one private service, and one business service.
 - Use computer and laptop troubleshooting as the private prototype and office networks and workplace IT as the business prototype.
 - Carry each page theme beyond its hero through section composition, diagrams, icons, interface details, and restrained interaction, with technical depth increasing as visitors move deeper into the site.
-- After review of the revised software pair, prove the professional mode on the business landing and office-network reference page. Then continue with Wi-Fi/home network, setup/data transfer, Microsoft 365, Google Workspace, the private landing, and the trust/capability treatment. Do not redesign every route in parallel before both private and business modes are accepted.
+- Use the expanded German network/infrastructure page as the professional business-mode reference and review it visually before broader rollout. Then continue with Wi-Fi/home network, setup/data transfer, Google Workspace, the English network/infrastructure counterpart, the private landing, and the trust/capability treatment. Do not redesign every route in parallel before both private and business modes are accepted.
 - Let each service use a related environment/state rather than forcing one literal camera view everywhere; consistency comes from the shared visual universe, perspective/material/motion rules, and recurring devices/system language.
 - Add only high-value generated or commissioned imagery with documented consistency rules and accessible alternatives.
 - Review navigation, contact surfaces, responsive behavior, keyboard use, focus treatment, reduced motion, contrast, and performance.
