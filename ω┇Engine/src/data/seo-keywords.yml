@@ -412,23 +412,27 @@ pages:
 - id: network-it-en
   route: /en/services/business/network-it-support/
   locale: en
-  researchStatus: provisional-seed
-  primary: office network support Berlin
+  researchStatus: serp-reviewed-2026-09-02
+  primary: network infrastructure Berlin
   useful:
-  - business network support Berlin
-  - small office network Berlin
-  - office Wi-Fi support Berlin
-  - workplace IT Berlin
-  - network troubleshooting business
-  - network printer support office
-  - small business IT support Berlin
+  - network cabling Berlin
   - office network setup Berlin
+  - business network installation Berlin
+  - office network installation Berlin
+  - office LAN cabling Berlin
+  - business Wi-Fi Berlin
+  - network installation Berlin
+  - small business network Berlin
+  - NAS setup business
+  - business VPN setup
   harmful:
+  - IT support Berlin
+  - managed IT services Berlin
+  - 24/7 IT support Berlin
   - enterprise network engineering Berlin
-  - 24/7 network operations centre
-  - penetration testing Berlin
-  - Cisco data centre consulting
   - data centre networking Berlin
+  - home Wi-Fi installation Berlin
+  note: "English SERP review on 2026-09-02: Berlin English-language providers commonly use network infrastructure, network cabling, network installation, office LAN cabling and Wi-Fi planning language. Broad IT support results skew toward break/fix or managed-service offers, so this page stays project-led. German Keyword Planner volumes are not reused as English search-volume evidence."
 - id: trust-de
   route: /datensicherheit-zertifizierungen/
   locale: de

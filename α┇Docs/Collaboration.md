@@ -5,13 +5,13 @@ Last updated: 2026-09-02
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: the Drive source now carries project version `1.4.6` for the researched German network/infrastructure content slice. This Drive-connected session cannot verify the current local Git commit or working-tree state; earlier `1.4.3`–`1.4.5` Drive work may still require local commit sequencing and verification.
-- Local validation: the previous handoff records a passing `npm run validate` for the split-service architecture with 25 HTML pages, 23 sitemap URLs and the documented negative content checks. For `1.4.6`, this Drive session validates the German network YAML and planning files locally, checks the small renderer/type changes syntactically, and uses exact Drive readback; repository-shell build, diff and status checks are not available here.
+- Current working state: the Drive source now carries project version `1.4.7` for the independently authored English network/infrastructure counterpart. This Drive-connected session cannot verify the current local Git commit or working-tree state; earlier `1.4.3`–`1.4.6` Drive work may still require local commit sequencing and verification.
+- Local validation: the previous handoff records a passing `npm run validate` for the split-service architecture with 25 HTML pages, 23 sitemap URLs and the documented negative content checks. For `1.4.7`, this Drive session validates the English network YAML and SEO-routing update against the current schema constraints and uses exact Drive readback; repository-shell build, diff and status checks are not available here.
 - Local browser verification: the German homepage and software reference page were reviewed at 1440×1000, 768×1024, 390×844, and 320×720 with zero horizontal overflow. Desktop/mobile navigation, 44px mobile service targets, Escape behavior, delayed contact dock, headline scale, image crop, section rhythm, and all four software visual states were checked.
-- Deployment state: the previous handoff recorded `origin/main` at `8463415` and local work ahead of it. Deployment state was not rechecked in this Drive-connected session, so the current `1.4.6` Drive changes should be treated as undeployed until verified locally and pushed.
-- Product-direction state: the final design direction remains approved and stabilized. The German network reference page is now positioned around planned infrastructure projects for small and growing businesses—new office networks, modernization, managed network hardware, business Wi-Fi, cabling, NAS and VPN—with troubleshooting secondary and Windows Server/Active Directory plus broader Linux server work reserved for separate future service intents.
+- Deployment state: the previous handoff recorded `origin/main` at `8463415` and local work ahead of it. Deployment state was not rechecked in this Drive-connected session, so the current `1.4.7` Drive changes should be treated as undeployed until verified locally and pushed.
+- Product-direction state: the final design direction remains approved and stabilized. Both German and English network reference pages are now positioned around planned infrastructure projects for small and growing businesses—new office networks, modernization, managed network hardware, business Wi-Fi, cabling, NAS and VPN—with troubleshooting secondary and Windows Server/Active Directory plus broader Linux server work reserved for separate future service intents.
 - Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional. The clean install also reports nine dependency audit findings for later dependency-maintenance review.
-- Recommended next action: run repository validation, diff and status checks locally against the current combined tree, resolve commit sequencing for earlier Drive work, then visually review the expanded German network/infrastructure page at desktop, tablet and mobile widths before the English counterpart is researched independently.
+- Recommended next action: run repository validation, diff and status checks locally against the current combined tree, resolve commit sequencing for earlier Drive work, then continue page-specific content research with the next service rather than broadening the network page further.
 
 ## Reporting template
 
@@ -29,6 +29,19 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 ```
 
 ## Work log
+
+## 2026-09-02 — ChatGPT — English network and IT-infrastructure counterpart
+
+- Objective: independently author the English office-network page around the confirmed project-led infrastructure offer, using English-language Berlin SERP wording rather than translating German SEO targets mechanically.
+- Changes:
+  - Reworked `ω┇Engine/src/content/services/office-network/en.yml` from the shallow business prototype into a `guided-business` page for new-office networks, modernization, network cabling, managed hardware, business Wi-Fi, NAS/shared storage, VPN/secure remote access, equipment recommendation or supply, testing, documentation and optional maintenance.
+  - Kept the same service boundary as German while writing the English copy independently for English-speaking business visitors; troubleshooting remains supported but is not the primary commercial proposition.
+  - Updated `ω┇Engine/src/data/seo-keywords.yml` so the English network route is `serp-reviewed-2026-09-02`, centred on `network infrastructure Berlin` with network cabling, office network setup/installation, office LAN cabling and business Wi-Fi as useful supporting terms. Broad `IT support Berlin`, managed services, 24/7 support, enterprise/data-centre networking and home Wi-Fi are treated as wrong or cannibalising intent for this page.
+  - Bumped root `AGENTS.md` from `1.4.6` to `1.4.7` for this separate English content slice. `Project.md` and `Roadmap.md` required no new change because the bilingual network scope and future server/Linux separation were already recorded in `1.4.6`.
+- Decisions: English search language favours `network infrastructure`, `network cabling`, `network installation`, `office LAN cabling` and Wi-Fi planning terminology. The English page therefore leads with infrastructure projects rather than generic `IT support Berlin`, which is dominated by break/fix and managed-service positioning. German Keyword Planner volumes are not reused as English volume evidence.
+- Validation: parsed the English YAML and SEO routing file successfully, checked the current schema constraints including the ordered four-state storyboard, expanded groups, SEO lengths, FAQ count and related-service IDs. Exact Drive readback is required after writing. `npm run validate`, browser rendering, `git diff --check`, `git status --short`, commit and push are not available in this Drive-only session.
+- Blockers or required input: no additional technical Q&A is required for this page. Existing production brand, contact/legal facts, qualification evidence, travel policy, form backend, analytics, final imagery and domain blockers remain unchanged.
+- Recommended next action: validate the combined tree locally, then choose the next service page for its own German/English intent and content pass.
 
 ## 2026-09-02 — ChatGPT — German network and IT-infrastructure repositioning
 
