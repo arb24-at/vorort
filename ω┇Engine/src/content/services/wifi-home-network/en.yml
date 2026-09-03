@@ -4,48 +4,184 @@ locale: en
 audience: private
 order: 3
 slug: wifi-home-network
-purpose: "Support for Wi-Fi coverage, connection dropouts and connected devices in the home."
+purpose: "Planning, installation and improvement of home networks with Wi-Fi, Ethernet cabling, NAS and connected devices for private homes and home offices."
 navigation:
   group: device-home
   label: "Wi-Fi & home network"
 page:
-  template: standard
+  template: guided-private
   technicalDepth: informative
   theme:
     variant: network
-    state: "Dead zones and interrupted connections become visible as signal paths through the home."
-    title: "Wi-Fi coverage and device relationships"
-    description: "Routers, rooms and connected devices reveal weak paths, interference and restored connections."
+    state: "Rooms, wireless coverage, cable routes, shared storage and connected devices become visible as one coherent home network."
+    title: "A home network that connects rooms, devices and storage"
+    description: "Wi-Fi, Ethernet, Mesh, NAS and everyday devices are shown as practical infrastructure for apartments, houses and home offices."
+  storyboard:
+    - role: situation
+      composition: wide
+      visualState: conflict
+      eyebrow: "What needs to work together"
+      title: "A good home network starts with the rooms, not the router"
+      text: "A modern home may need to support work, streaming, shared files, printers, TVs and other connected devices at the same time. When coverage, cabling and storage have grown separately, the result is often dead zones, improvised connections and equipment that never quite works as one system."
+      points:
+        - "Look at rooms, work areas and important devices as one network"
+        - "Decide where reliable Wi-Fi is enough and where Ethernet is the better choice"
+        - "Plan shared storage, printers and other network devices from the start"
+      callouts:
+        - "Wi-Fi where it matters"
+        - "Shared NAS storage"
+        - "Devices connected"
+    - role: investigation
+      composition: text-left
+      visualState: dependencies
+      eyebrow: "Understand the home first"
+      title: "Walls, cable routes and everyday use shape the right network"
+      text: "We look beyond the advertised range of a router or Mesh kit. Room layout, building materials, existing cable routes, device locations, home-office requirements and the way files should be stored or backed up all influence the right solution."
+      points:
+        - "Assess coverage and sensible positions for Mesh nodes or access points"
+        - "Include existing and possible Ethernet routes in the plan"
+        - "Place NAS, printers, TVs and connected devices according to how they are actually used"
+      callouts:
+        - "Wireless path"
+        - "Cable route"
+        - "Storage"
+        - "Home office"
+    - role: intervention
+      composition: system
+      visualState: controlled-change
+      eyebrow: "Plan and install"
+      title: "Wi-Fi, Ethernet and storage are built as one system"
+      text: "Depending on the property, the right setup may combine Mesh Wi-Fi, wired access points, Ethernet connections, switches, NAS storage and selected devices. We can recommend or supply suitable equipment and install the agreed network on site."
+      points:
+        - "Install agreed network cabling, outlets and clean connection points"
+        - "Set up Mesh or wired access points around the rooms and available cabling"
+        - "Integrate NAS shares and selected devices into the home network"
+      callouts:
+        - "Cabling checked"
+        - "Wi-Fi distributed"
+        - "NAS connected"
+        - "Devices online"
+    - role: outcome
+      composition: text-right
+      visualState: verified
+      eyebrow: "Test it in real use"
+      title: "The network is checked where you actually use it"
+      text: "At handover, we test the agreed rooms and devices in their real locations. Important wired and wireless connections, shared storage and home-office work areas are checked together, and the essential setup is explained so the network remains understandable after we leave."
+      points:
+        - "Test Wi-Fi and Ethernet at the important locations"
+        - "Check NAS access, shares and selected connected devices"
+        - "Explain the layout, key settings and sensible next steps"
+      callouts:
+        - "Coverage checked"
+        - "Storage available"
+        - "Home office tested"
 seo:
-  title: "Wi-Fi & Home Network Help Berlin"
-  description: "Berlin support for weak Wi-Fi, connection drops, router changes, mesh systems, printers, smart TVs and home-office devices."
-  intent: "Find Berlin help for weak Wi-Fi or unreliable home-network connections."
+  title: "Home Network Setup, Wi-Fi & NAS Berlin"
+  description: "Home network setup in Berlin for apartments, houses and home offices: Wi-Fi, Mesh, Ethernet cabling, NAS storage and connected devices planned together."
+  intent: "Find professional help to plan, install or improve a home network with Wi-Fi, cabling and NAS."
 hero:
-  eyebrow: "Private customers · Wi-Fi"
-  title: "Wi-Fi and home network help in Berlin"
-  intro: "Reliable Wi-Fi depends on more than the internet plan. Position, building structure, radio channels, routers, repeaters and connected devices all interact. We inspect the home network on site and create a clear, maintainable setup."
+  eyebrow: "Private customers & home offices · Home network"
+  title: "Home network, Wi-Fi and NAS setup in Berlin"
+  intro: "A reliable home network is more than an internet connection. We plan and build networks for apartments, houses and home offices, combining suitable Wi-Fi coverage, Ethernet cabling, shared storage and the devices that need to work together every day."
 problems:
-  eyebrow: "Service scope"
-  title: "Common network problems"
+  eyebrow: "Typical starting points"
+  title: "When the home has outgrown a simple Wi-Fi setup"
+  intro: "Not every network project begins with a fault. You may be renovating, adding a proper home office, expanding into more rooms or simply want storage and connected devices organised around one dependable network."
   items:
-    - "Weak signal or dead zones in individual rooms"
-    - "Dropouts during video calls, streaming or home-office work"
-    - "Confusing router, repeater or mesh configurations"
-    - "Printers, smart TVs or other devices repeatedly disconnect"
+    - "A new or renovated apartment or house needs a sensible network from the beginning"
+    - "Wi-Fi does not reliably reach the office, bedrooms or other floors"
+    - "Home-office, TV or stationary devices would benefit from a stable Ethernet connection"
+    - "Photos, documents, media or work files should be available centrally on a NAS"
+    - "Printers, TVs and other connected devices should work reliably on the same network"
+    - "An older setup has grown into a confusing mix of repeaters, cables and separate devices"
 included:
-  eyebrow: "Possible support"
-  title: "Possible services"
+  eyebrow: "What we can build"
+  title: "From Ethernet cabling to shared NAS storage"
+  intro: "We combine wireless coverage, cabling and storage around the property and the way you actually use it. If useful, we can recommend, supply, install and configure the required network and storage equipment."
   items:
-    - "Assessment of coverage, interference and device configuration"
-    - "Setup or optimisation of routers, mesh systems and repeaters"
-    - "Secure Wi-Fi, guest access and understandable network naming"
-    - "Connection of computers, mobile devices, printers and smart TVs"
+    - "Planning a new or improved home network for an apartment, house or home office"
+    - "Ethernet cabling, network outlets, clean cable routes and agreed connection work"
+    - "Mesh Wi-Fi or wired access points for more appropriate coverage"
+    - "NAS and shared-storage setup for files, photos, media or backup workflows"
+    - "Recommendation and optional supply of suitable network and storage hardware"
+    - "Connection of selected computers, printers, Smart TVs and other networked devices"
 outcome:
-  eyebrow: "Approach"
-  title: "A network that works day to day"
-  text: "The goal is not unnecessary complexity but stable coverage and a configuration you can understand later. If new hardware would help, you receive a reasoned recommendation first."
+  eyebrow: "What the project should achieve"
+  title: "A home network that can grow with the way you live and work"
+  text: "The goal is not to add as many boxes as possible. It is to create an understandable foundation: reliable connections where they matter, cabling where it makes sense, accessible shared storage and a layout that can be extended later. The exact equipment depends on the property and how the network will be used."
 cta:
-  title: "Describe your Wi-Fi situation"
-  text: "Tell us the approximate space, router model and affected rooms or devices."
-  prompt: "The router model, affected rooms and unreliable devices help with an initial assessment."
-
+  title: "Tell us what your home network needs to do"
+  text: "Share the approximate property size, important rooms, home-office needs, existing cabling and whether NAS storage or other connected devices should be included."
+  prompt: "A floor plan or photos can help, along with approximate room sizes, existing network outlets and the devices or areas that need reliable connections."
+expanded:
+  situations:
+    eyebrow: "Good project fits"
+    title: "When a planned home network is especially worthwhile"
+    intro: "This service suits both new installations and homes whose network has grown over time. The starting point is the property and the desired result, not a particular router brand."
+    items:
+      - title: "New or renovated home"
+        text: "Network outlets, Wi-Fi coverage and cable routes can be planned early so home-office desks, TVs, storage and other devices have the right connections later."
+      - title: "Larger apartment or multi-floor home"
+        text: "Several rooms or floors often work better with a deliberate combination of Wi-Fi, Mesh, wired access points and fixed Ethernet connections."
+      - title: "NAS and shared storage"
+        text: "Photos, documents, media or work files can be stored centrally with suitable user access and a backup approach that matches the importance of the data."
+      - title: "Reliable home office"
+        text: "Video calls, large files, printers or VPN connections need a dependable work-area connection rather than relying on whichever Wi-Fi signal happens to reach the desk."
+      - title: "More connected devices"
+        text: "Printers, Smart TVs and compatible smart-home devices can be treated as part of one understandable network instead of separate one-off problems."
+  process:
+    eyebrow: "From rooms to a network plan"
+    title: "Understand the use first, choose the hardware second"
+    intro: "A stronger router or another Mesh node is not automatically the right answer. We start with rooms, devices, storage and data paths, then choose the technology that best supports the desired result."
+    steps:
+      - title: "Define the need"
+        text: "We clarify important rooms, home-office requirements, connected devices, planned storage, existing outlets and any obvious weak areas."
+      - title: "Check the property"
+        text: "The layout, walls, possible cable routes, existing equipment and sensible equipment positions are reviewed on site."
+      - title: "Choose the approach"
+        text: "We propose an appropriate combination of cabling, Wi-Fi, Mesh or access points, switches, NAS and other required hardware."
+      - title: "Install and configure"
+        text: "The agreed infrastructure is installed, cabled, configured and connected to the relevant devices."
+      - title: "Test and hand over"
+        text: "Important rooms, storage access and home-office connections are tested, and the essential network layout is explained in plain language."
+  proof:
+    eyebrow: "Relevant experience"
+    title: "Network planning without unnecessary complexity"
+    text: "IT experience since 2008 and practical work with networks, cabling, Wi-Fi, NAS, Windows workstations and connected devices allow us to build home setups that go well beyond placing a single repeater in the hallway."
+    items:
+      - "Home networks, LAN and Wi-Fi"
+      - "Mesh and wired access points"
+      - "Network cabling and connection points"
+      - "NAS, shared folders and backup planning"
+      - "Home-office and Windows workstations"
+      - "Printers, Smart TVs and other networked devices"
+  boundaries:
+    eyebrow: "Realistic boundaries"
+    title: "What a well-designed home network can and cannot control"
+    items:
+      - "Faults or line problems outside your own home network remain the responsibility of the relevant internet provider."
+      - "A particular Wi-Fi speed or seamless wireless coverage in every room cannot be responsibly guaranteed without assessing the property."
+      - "A NAS can be part of a good backup approach, but it does not automatically replace an independent backup or guarantee data recovery."
+      - "Compatibility and available features of connected devices still depend on the manufacturer, model, software and ecosystem."
+      - "Passwords, sign-in codes and recovery codes should never be sent through the enquiry form."
+  faqs:
+    - question: "Is Mesh Wi-Fi better than using a single repeater?"
+      answer: "It depends on the property and the connections already available. A well-placed Mesh system can work very well in some homes; in others, an access point connected by Ethernet is much more reliable. We plan around the rooms and required coverage rather than choosing one product first."
+    - question: "Can you install Ethernet cabling in an apartment or house?"
+      answer: "Yes. We can include cable routes, network outlets and connection points in the project and carry out the agreed installation. Where coordinated in advance, necessary making-good around cable routes can also be handled so you do not need to organise a separate service for the network work."
+    - question: "Can you set up a NAS for photos, files and backups?"
+      answer: "Yes. NAS and shared storage are a substantial part of this service. We can recommend or supply suitable hardware, configure storage and user access, and discuss an appropriate backup structure. A NAS by itself, however, is not automatically a complete backup strategy."
+    - question: "Can you supply the network and storage hardware as well?"
+      answer: "Yes. If you want, we can recommend and supply suitable access points, Mesh equipment, switches, network accessories and NAS systems. We first determine what the rooms, devices and intended use actually require before suggesting purchases."
+    - question: "Is this service suitable for a home office?"
+      answer: "Yes. A reliable home-office connection is one of the main use cases. Depending on the property, we can plan Wi-Fi, Ethernet, printers, NAS storage and secure work connections so the work area fits cleanly into the rest of the home network."
+    - question: "Can you connect Smart TVs, printers and smart-home devices?"
+      answer: "Yes, where the devices and their ecosystem are compatible with the network. This page focuses on the network foundation and device connectivity. Larger smart-home projects can be scoped separately so the network, hubs, devices and installation are planned together."
+    - question: "Can you guarantee strong Wi-Fi in every room?"
+      answer: "No. Walls, layout, interference, client devices and available cable routes all influence wireless performance. We can assess the property, plan appropriate measures and test the important areas afterwards, but we do not promise universal coverage or a specific speed without evidence."
+    - question: "What if the internet line itself is faulty?"
+      answer: "We can help determine whether a problem is likely inside the home network or beyond it. Faults at the connection, provider infrastructure or external line must ultimately be resolved by the internet provider."
+  relatedServiceIds:
+    - computer-laptop
+    - setup-data-transfer
+    - software-optimisation

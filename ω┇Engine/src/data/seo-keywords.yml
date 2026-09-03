@@ -196,23 +196,28 @@ pages:
 - id: wifi-en
   route: /en/services/private/wifi-home-network/
   locale: en
-  researchStatus: provisional-seed
-  primary: Wi-Fi help Berlin
+  researchStatus: researched-2026-09-03
+  primary: home network setup
   useful:
-  - home Wi-Fi problems Berlin
-  - Wi-Fi setup Berlin
-  - Wi-Fi dropouts Berlin
-  - improve Wi-Fi coverage Berlin
-  - home network setup Berlin
-  - router setup Berlin
-  - wireless printer setup
-  - home office network help Berlin
+  - home network installation
+  - wifi installation
+  - wifi setup
+  - mesh wifi setup
+  - home network cabling
+  - ethernet installation
+  - network cabling
+  - nas setup
+  - home office network setup
   harmful:
+  - cat 5 e
+  - cat8
+  - ethernet cat 6
+  - rj45 ethernet
+  - installation tp link repeater
+  - vodafone router installation
   - internet provider outage Berlin
-  - router hardware repair
-  - Wi-Fi password hacking
   - enterprise network consultancy
-  - fibre installation Berlin
+  note: "English Keyword Planner research on 2026-09-03: home network setup/installation, Wi-Fi installation/setup, Mesh Wi-Fi setup, home-network/Ethernet/network cabling, NAS setup and home-office network setup all returned 10–100 monthly searches in the Berlin English-language market. NAS setup showed high advertiser competition. Higher-volume Cat5e/Cat6/Cat8/RJ45 ideas are predominantly cable-product/specification intent rather than service intent, while repeater/router-installation ideas skew toward device/provider setup. The page therefore owns home-network setup/installation intent, with cabling, NAS, Mesh/Wi-Fi and home-office networking as substantial service themes."
 - id: setup-transfer-de
   route: /leistungen/privatpersonen/einrichtung-datenumzug/
   locale: de
