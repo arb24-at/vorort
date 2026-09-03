@@ -4,48 +4,184 @@ locale: de
 audience: private
 order: 3
 slug: wlan-heimnetz
-purpose: "Hilfe bei WLAN-Abdeckung, Verbindungsabbrüchen und dem Zusammenspiel vernetzter Geräte zu Hause."
+purpose: "Planung, Aufbau und Verbesserung von Heimnetzwerken mit WLAN, Verkabelung, NAS und verbundenen Geräten für private Haushalte und Homeoffice."
 navigation:
   group: device-home
   label: "WLAN & Heimnetz"
 page:
-  template: standard
+  template: guided-private
   technicalDepth: informative
   theme:
     variant: network
-    state: "Funklöcher und unterbrochene Verbindungen werden als Signalwege im Wohnraum sichtbar."
-    title: "WLAN-Abdeckung und Gerätebeziehungen"
-    description: "Router, Räume und verbundene Geräte zeigen schwache Pfade, Störungen und wiederhergestellte Verbindungen."
+    state: "Räume, Funkabdeckung, Kabelwege, Speicher und verbundene Geräte werden als zusammenhängendes Heimnetz sichtbar."
+    title: "Ein Heimnetz, das Räume, Geräte und Speicher verbindet"
+    description: "WLAN, Ethernet, Mesh, NAS und Endgeräte werden als verständliche Infrastruktur für Wohnung, Haus und Homeoffice gezeigt."
+  storyboard:
+    - role: situation
+      composition: wide
+      visualState: conflict
+      eyebrow: "Was zusammenkommen soll"
+      title: "Viele Geräte brauchen mehr als nur ein WLAN-Passwort"
+      text: "In einer Wohnung oder einem Haus sollen Computer, Homeoffice, Fernseher, Drucker, Speicher und weitere Geräte zuverlässig zusammenarbeiten. Wenn Reichweite, Verkabelung oder Aufbau nicht dazu passen, entstehen Funklöcher, Umwege und unnötige Einzel-Lösungen."
+      points:
+        - "Räume, Arbeitsplätze und wichtige Geräte gemeinsam betrachten"
+        - "Klären, wo stabiles WLAN und wo eine Kabelverbindung sinnvoller ist"
+        - "Speicher, Drucker und weitere Netzwerkgeräte von Anfang an mitdenken"
+      callouts:
+        - "WLAN bis ins Arbeitszimmer"
+        - "NAS gemeinsam nutzen"
+        - "Geräte zuverlässig verbinden"
+    - role: investigation
+      composition: text-left
+      visualState: dependencies
+      eyebrow: "Wohnung und Nutzung prüfen"
+      title: "Grundriss, Wände und Datenwege bestimmen die passende Lösung"
+      text: "Wir prüfen nicht nur die nominelle Reichweite eines Routers. Entscheidend sind Räume, Baumaterialien, vorhandene Kabelwege, Gerätestandorte, Homeoffice-Anforderungen und die Frage, welche Daten lokal gespeichert oder gesichert werden sollen."
+      points:
+        - "Abdeckung und sinnvolle Positionen für Mesh oder Access Points bewerten"
+        - "Vorhandene und mögliche Ethernet-Wege in die Planung einbeziehen"
+        - "NAS, Drucker, Smart-TV und vernetzte Geräte nach tatsächlicher Nutzung einordnen"
+      callouts:
+        - "Funkweg"
+        - "Kabelweg"
+        - "Speicherplatz"
+        - "Homeoffice"
+    - role: intervention
+      composition: system
+      visualState: controlled-change
+      eyebrow: "Planen und aufbauen"
+      title: "WLAN, Kabel und Speicher werden als ein System eingerichtet"
+      text: "Je nach Zuhause kann die passende Lösung aus Mesh-WLAN, kabelgebundenen Access Points, Ethernet-Verbindungen, Switches, NAS und den angeschlossenen Geräten bestehen. Wir können geeignete Hardware empfehlen oder bereitstellen und die vereinbarte Infrastruktur vor Ort aufbauen."
+      points:
+        - "Netzwerkverkabelung, Anschlüsse und saubere Übergabepunkte umsetzen"
+        - "Mesh oder Access Points passend zu Räumen und vorhandener Verkabelung einrichten"
+        - "NAS, Freigaben und ausgewählte Geräte in das Heimnetz integrieren"
+      callouts:
+        - "Kabel geprüft"
+        - "WLAN verteilt"
+        - "NAS eingebunden"
+        - "Geräte verbunden"
+    - role: outcome
+      composition: text-right
+      visualState: verified
+      eyebrow: "Gemeinsam prüfen"
+      title: "Am Ende zählt das Netz im echten Alltag"
+      text: "Zum Abschluss testen wir die vereinbarten Bereiche und Geräte dort, wo sie tatsächlich genutzt werden. Wichtige Verbindungen, gemeinsamer Speicher und Homeoffice-Arbeitsplätze werden nachvollziehbar übergeben, damit die Lösung nicht nur technisch funktioniert, sondern auch verständlich bleibt."
+      points:
+        - "WLAN und kabelgebundene Verbindungen an wichtigen Stellen testen"
+        - "NAS-Zugriff, Freigaben und ausgewählte Geräte praktisch prüfen"
+        - "Aufbau, wichtige Einstellungen und sinnvolle nächste Schritte erklären"
+      callouts:
+        - "Abdeckung geprüft"
+        - "Speicher erreichbar"
+        - "Homeoffice getestet"
 seo:
-  title: "WLAN & Heimnetz Hilfe Berlin"
-  description: "Hilfe in Berlin bei schwachem WLAN, Verbindungsabbrüchen, Routerwechsel, Mesh-Systemen, Druckern, Smart-TV und Homeoffice-Geräten."
-  intent: "Hilfe bei schlechtem WLAN oder instabilen Heimnetz-Verbindungen in Berlin finden."
+  title: "Heimnetzwerk & WLAN einrichten Berlin"
+  description: "Heimnetzwerk in Berlin planen und einrichten: WLAN, Mesh, Netzwerkverkabelung, NAS, Homeoffice und verbundene Geräte sinnvoll aufeinander abstimmen."
+  intent: "Professionelle Hilfe beim Aufbau oder der Verbesserung eines Heimnetzwerks mit WLAN, Verkabelung und NAS finden."
 hero:
-  eyebrow: "Privatkunden · WLAN"
-  title: "WLAN- und Heimnetz-Hilfe in Berlin"
-  intro: "Stabiles WLAN hängt nicht nur vom Internettarif ab. Position, Gebäudestruktur, Funkkanäle, Router, Repeater und die angeschlossenen Geräte wirken zusammen. Wir prüfen das Heimnetz vor Ort und bauen eine verständliche, wartbare Lösung auf."
+  eyebrow: "Privatkunden & Homeoffice · Heimnetz"
+  title: "Heimnetzwerk, WLAN und NAS sinnvoll einrichten"
+  intro: "Ein gutes Heimnetz verbindet mehr als den Router mit dem Internet. Wir planen und bauen Netzwerke für Wohnungen, Häuser und Homeoffice-Arbeitsplätze – mit passender WLAN-Abdeckung, kabelgebundenen Verbindungen, gemeinsamem Speicher und den Geräten, die im Alltag zuverlässig zusammenspielen sollen."
 problems:
-  eyebrow: "Leistungsumfang"
-  title: "Typische Netzwerkprobleme"
+  eyebrow: "Typische Ausgangslagen"
+  title: "Wenn das Zuhause technisch gewachsen ist"
+  intro: "Nicht jedes Heimnetz beginnt mit einem Defekt. Häufig geht es darum, eine neue oder renovierte Wohnung sinnvoll zu vernetzen, mehr Räume zuverlässig abzudecken oder Speicher und Geräte endlich geordnet zusammenzubringen."
   items:
-    - "Schwaches Signal oder Funklöcher in einzelnen Zimmern"
-    - "Abbrüche bei Videokonferenzen, Streaming oder Homeoffice"
-    - "Unübersichtliche Router-, Repeater- oder Mesh-Konfiguration"
-    - "Drucker, Smart-TV oder andere Geräte verlieren die Verbindung"
+    - "Eine Wohnung oder ein Haus soll von Grund auf sinnvoll vernetzt werden"
+    - "WLAN reicht nicht zuverlässig bis Arbeitszimmer, Schlafzimmer oder weitere Etagen"
+    - "Für Homeoffice, Fernseher oder stationäre Geräte ist eine stabile Kabelverbindung sinnvoll"
+    - "Fotos, Dokumente oder Medien sollen zentral auf einem NAS verfügbar sein"
+    - "Drucker, Smart-TV und weitere Geräte sollen zuverlässig im selben Heimnetz funktionieren"
+    - "Ein bestehendes Netz ist über Jahre aus Repeatern, Kabeln und Einzelgeräten unübersichtlich geworden"
 included:
-  eyebrow: "Mögliche Unterstützung"
-  title: "Mögliche Leistungen"
+  eyebrow: "Was wir aufbauen können"
+  title: "Vom Kabelweg bis zum gemeinsamen Speicher"
+  intro: "Wir kombinieren Funk, Kabel und Speicher so, wie es zum Grundriss und zur tatsächlichen Nutzung passt. Hardware kann auf Wunsch empfohlen, beschafft, installiert und eingerichtet werden."
   items:
-    - "Analyse von Abdeckung, Störquellen und Gerätekonfiguration"
-    - "Einrichtung oder Optimierung von Router, Mesh und Repeatern"
-    - "Sicheres WLAN, Gastzugang und nachvollziehbare Benennung"
-    - "Verbindung von Computern, Mobilgeräten, Druckern und Smart-TV"
+    - "Planung eines neuen oder modernisierten Heimnetzes für Wohnung, Haus oder Homeoffice"
+    - "Ethernet-Verkabelung, Netzwerkdosen, saubere Kabelwege und notwendige Anschlussarbeiten"
+    - "Mesh-WLAN oder kabelgebundene Access Points für eine passendere Abdeckung"
+    - "Einrichtung von NAS und gemeinsamem Speicher für Dateien, Fotos, Medien oder Backups"
+    - "Empfehlung und auf Wunsch Beschaffung passender Netzwerk- und Speicherhardware"
+    - "Einbindung ausgewählter Computer, Drucker, Smart-TVs und weiterer vernetzter Geräte"
 outcome:
-  eyebrow: "Arbeitsweise"
-  title: "Ein Netz, das im Alltag funktioniert"
-  text: "Ziel ist nicht maximale technische Komplexität, sondern stabile Abdeckung und eine Konfiguration, die Sie später verstehen. Falls neue Hardware sinnvoll ist, erhalten Sie zuerst eine begründete Empfehlung."
+  eyebrow: "Ziel der Unterstützung"
+  title: "Ein Heimnetz, das mit Ihrem Alltag mitwächst"
+  text: "Das Ergebnis soll nicht aus möglichst vielen Geräten bestehen, sondern aus einer nachvollziehbaren Infrastruktur: stabile Verbindungen an den wichtigen Stellen, sinnvoll eingesetzte Kabel, erreichbarer gemeinsamer Speicher und ein Aufbau, der später erweitert werden kann. Welche Technik dafür nötig ist, hängt vom Gebäude und der Nutzung ab."
 cta:
-  title: "WLAN-Situation beschreiben"
-  text: "Teilen Sie uns Wohnungsgröße, Routermodell und betroffene Räume oder Geräte mit."
-  prompt: "Routermodell, betroffene Räume und auffällige Geräte helfen bei der Einordnung."
-
+  title: "Heimnetz kurz beschreiben"
+  text: "Nennen Sie Wohnungs- oder Hausgröße, wichtige Räume, Homeoffice-Bedarf, vorhandene Verkabelung und ob NAS oder weitere Geräte eingeplant werden sollen."
+  prompt: "Hilfreich sind Grundriss oder Fotos, ungefähre Raumgröße, vorhandene Netzwerkanschlüsse sowie die Geräte und Bereiche, die zuverlässig verbunden sein sollen."
+expanded:
+  situations:
+    eyebrow: "Geeignete Projekte"
+    title: "Wann sich eine geplante Heimnetz-Lösung besonders lohnt"
+    intro: "Diese Leistung passt sowohl zu einem neuen Aufbau als auch zu einem Zuhause, dessen Netzwerk mit neuen Anforderungen gewachsen ist. Im Mittelpunkt steht eine praktische Lösung vor Ort, nicht eine bestimmte Router-Marke."
+    items:
+      - title: "Neue oder renovierte Wohnung"
+        text: "Netzwerk, WLAN und Kabelwege sollen früh mitgedacht werden, damit Arbeitsplätze, Fernseher, Speicher und weitere Geräte später sinnvoll angeschlossen werden können."
+      - title: "Haus oder größere Wohnung"
+        text: "Mehrere Räume oder Etagen benötigen eine durchdachte Kombination aus WLAN, Mesh, kabelgebundenen Access Points und festen Netzwerkverbindungen."
+      - title: "NAS und gemeinsamer Speicher"
+        text: "Fotos, Dokumente, Medien oder Arbeitsdaten sollen zentral verfügbar sein und mit passenden Benutzerfreigaben sowie einer sinnvollen Backup-Strategie eingerichtet werden."
+      - title: "Stabiles Homeoffice"
+        text: "Videokonferenzen, große Dateien, Drucker oder VPN-Verbindungen brauchen am Arbeitsplatz eine verlässliche Verbindung, die nicht vom zufälligen WLAN-Empfang abhängt."
+      - title: "Mehr vernetzte Geräte"
+        text: "Drucker, Smart-TV und weitere Netzwerkgeräte sollen nicht als einzelne Sonderfälle, sondern als Teil eines verständlichen Heimnetzes eingerichtet werden."
+  process:
+    eyebrow: "Von der Wohnung zum Netzplan"
+    title: "Erst Nutzung verstehen, dann Hardware auswählen"
+    intro: "Ein Mesh-Set oder ein stärkerer Router ist nicht automatisch die richtige Antwort. Wir beginnen mit Räumen, Geräten und Datenwegen und entscheiden anschließend, welche Technik den gewünschten Zustand sinnvoll erreicht."
+    steps:
+      - title: "Bedarf aufnehmen"
+        text: "Wir klären Räume, Homeoffice, wichtige Geräte, geplanten Speicher, vorhandene Anschlüsse und auffällige Problemstellen."
+      - title: "Vor Ort prüfen"
+        text: "Grundriss, Wände, mögliche Kabelwege, bestehende Technik und sinnvolle Positionen werden gemeinsam betrachtet."
+      - title: "Lösung festlegen"
+        text: "Wir schlagen eine passende Kombination aus Verkabelung, WLAN, Mesh oder Access Points, Switches, NAS und notwendiger Hardware vor."
+      - title: "Aufbauen und einrichten"
+        text: "Die vereinbarte Infrastruktur wird montiert, verkabelt, konfiguriert und mit den relevanten Geräten verbunden."
+      - title: "Testen und übergeben"
+        text: "Wichtige Bereiche, Speicherzugriffe und Homeoffice-Verbindungen werden getestet und der Aufbau verständlich erklärt."
+  proof:
+    eyebrow: "Relevante Erfahrung"
+    title: "Netzwerkplanung ohne unnötigen Technikballast"
+    text: "IT-Erfahrung seit 2008 und praktische Arbeit mit Netzwerken, Verkabelung, WLAN, NAS, Windows-Arbeitsplätzen und vernetzten Geräten ermöglichen auch zu Hause Lösungen, die über das Aufstellen eines einzelnen Repeaters hinausgehen."
+    items:
+      - "Heimnetz, LAN und WLAN"
+      - "Mesh und kabelgebundene Access Points"
+      - "Netzwerkverkabelung und Anschlusspunkte"
+      - "NAS, Freigaben und Backup-Konzepte"
+      - "Homeoffice und Windows-Arbeitsplätze"
+      - "Drucker, Smart-TV und weitere Netzwerkgeräte"
+  boundaries:
+    eyebrow: "Realistische Grenzen"
+    title: "Was ein gutes Heimnetz leisten kann – und was nicht"
+    items:
+      - "Störungen oder Leitungsprobleme außerhalb des eigenen Heimnetzes bleiben Aufgabe des jeweiligen Internetanbieters."
+      - "Eine bestimmte WLAN-Geschwindigkeit oder lückenlose Funkabdeckung in jedem Raum lässt sich ohne Prüfung des Gebäudes nicht seriös garantieren."
+      - "Ein NAS kann Teil einer guten Datensicherung sein, ersetzt aber nicht automatisch ein unabhängiges Backup oder eine zugesicherte Datenrettung."
+      - "Kompatibilität und Funktionsumfang vernetzter Geräte hängen weiterhin von Hersteller, Modell, Software und dem jeweiligen Ökosystem ab."
+      - "Passwörter, Anmelde- und Wiederherstellungscodes gehören nicht in das Anfrageformular."
+  faqs:
+    - question: "Ist Mesh-WLAN besser als ein einzelner Repeater?"
+      answer: "Das hängt vom Grundriss und den vorhandenen Verbindungen ab. In manchen Wohnungen reicht eine sinnvoll platzierte Mesh-Lösung, in anderen ist ein per Netzwerkkabel angebundener Access Point deutlich zuverlässiger. Wir planen die Lösung nach den Räumen statt nach einem einzelnen Produkt."
+    - question: "Können Sie auch Netzwerkkabel in einer Wohnung oder einem Haus verlegen?"
+      answer: "Ja. Wir können Kabelwege, Anschlüsse und Netzwerkdosen in die Planung einbeziehen und die vereinbarten Arbeiten umsetzen. Bei abgestimmten Projekten können auch notwendige bauliche Nacharbeiten rund um die Kabelwege mit koordiniert werden. Besonders bei Renovierungen oder größeren Wohnungen ist eine saubere Kabelbasis oft die bessere Grundlage für WLAN, Homeoffice und feste Geräte."
+    - question: "Richten Sie auch ein NAS für Fotos, Dateien und Backups ein?"
+      answer: "Ja. NAS und gemeinsamer Speicher sind ein wichtiger Teil unseres Heimnetz-Angebots. Wir können passende Hardware empfehlen oder beschaffen, Speicher und Freigaben einrichten und eine sinnvolle Backup-Struktur besprechen. Ein NAS allein ist jedoch noch kein vollständiges Backup-Konzept."
+    - question: "Können Sie die benötigte Netzwerkhardware auch beschaffen?"
+      answer: "Ja. Auf Wunsch empfehlen und beschaffen wir geeignete Komponenten wie Access Points, Mesh-Geräte, Switches, Netzwerkzubehör oder NAS-Systeme. Vor einer Anschaffung klären wir zunächst, was für Räume, Geräte und Nutzung tatsächlich erforderlich ist."
+    - question: "Ist diese Leistung auch für Homeoffice gedacht?"
+      answer: "Ja. Ein stabiler Homeoffice-Arbeitsplatz ist ein wichtiger Anwendungsfall. Je nach Situation können WLAN, Ethernet, Drucker, NAS und sichere Verbindungen so eingeplant werden, dass der Arbeitsplatz zuverlässig mit dem restlichen Heimnetz zusammenspielt."
+    - question: "Können Sie Smart-TV, Drucker und Smart-Home-Geräte mit dem Netz verbinden?"
+      answer: "Ja, wenn die Geräte und ihr Ökosystem zur vorhandenen Infrastruktur passen. Auf dieser Seite liegt der Schwerpunkt auf der Netzwerkbasis und der Einbindung. Umfangreichere Smart-Home-Projekte werden separat geplant, damit Netzwerk, Hubs, Geräte und Montage sinnvoll zusammenpassen."
+    - question: "Können Sie stabiles WLAN in jedem Raum garantieren?"
+      answer: "Nein. Wände, Grundriss, Störungen, Endgeräte und verfügbare Kabelwege beeinflussen das Ergebnis. Wir können die Situation vor Ort bewerten, geeignete Maßnahmen planen und die wichtigen Bereiche anschließend testen, aber keine pauschale Funkabdeckung versprechen."
+    - question: "Was ist, wenn die Internetleitung selbst gestört ist?"
+      answer: "Wir können feststellen, ob ein Problem wahrscheinlich im Heimnetz oder außerhalb davon liegt. Störungen am Anschluss, an der Provider-Infrastruktur oder an der Leitung selbst müssen anschließend vom jeweiligen Internetanbieter behoben werden."
+  relatedServiceIds:
+    - computer-laptop
+    - setup-data-transfer
+    - software-optimisation

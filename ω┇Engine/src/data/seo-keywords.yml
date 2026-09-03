@@ -172,23 +172,27 @@ pages:
 - id: wifi-de
   route: /leistungen/privatpersonen/wlan-heimnetz/
   locale: de
-  researchStatus: provisional-seed
-  primary: wlan hilfe berlin
+  researchStatus: researched-2026-09-03
+  primary: heimnetzwerk einrichten
   useful:
-  - wlan probleme zuhause berlin
-  - wlan einrichten berlin
-  - wifi probleme berlin
-  - wlan abbrüche hilfe
+  - einrichten heimnetzwerk
+  - heim netzwerk
+  - heimnetzwerk aufbau
+  - mesh netzwerk
+  - mesh wlan einrichten
+  - mesh netzwerk aufbauen
   - wlan reichweite verbessern
-  - heimnetzwerk einrichten berlin
-  - router einrichten berlin
-  - drucker wlan verbinden
+  - nas einrichten
   harmful:
+  - fritz repeater 600 verbinden
+  - fritzbox mesh einrichten
+  - telekom speed home wifi einrichten
+  - windows 11 heimnetzwerk einrichten
+  - router einrichten berlin
   - internet störung provider berlin
-  - router reparatur berlin
   - wlan passwort hacken
   - enterprise netzwerk beratung
-  - glasfaser installation berlin
+  note: "German Keyword Planner research on 2026-09-03: generic Heimnetzwerk terms reached 1k–10k monthly searches and Mesh setup/build terms 100–1k, while all tested Berlin-modified WLAN/Heimnetz service phrases were 0–10. Device- and provider-specific FRITZ!/Telekom phrases are predominantly DIY/instructional and are not page targets. The page therefore owns planned home-network setup/build intent, with Mesh, cabling, NAS and Homeoffice as substantial service themes; NAS is commercially prioritised but was not independently volume-researched in this batch."
 - id: wifi-en
   route: /en/services/private/wifi-home-network/
   locale: en

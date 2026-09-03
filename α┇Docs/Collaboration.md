@@ -1,17 +1,17 @@
 # VorOrt collaboration handoff
 
-Last updated: 2026-09-02
+Last updated: 2026-09-03
 
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: the Drive source now carries project version `1.4.7` for the independently authored English network/infrastructure counterpart. This Drive-connected session cannot verify the current local Git commit or working-tree state; earlier `1.4.3`–`1.4.6` Drive work may still require local commit sequencing and verification.
-- Local validation: the previous handoff records a passing `npm run validate` for the split-service architecture with 25 HTML pages, 23 sitemap URLs and the documented negative content checks. For `1.4.7`, this Drive session validates the English network YAML and SEO-routing update against the current schema constraints and uses exact Drive readback; repository-shell build, diff and status checks are not available here.
+- Current working state: the Drive source now carries project version `1.4.8` for the researched German Wi-Fi/home-network content slice. This Drive-connected session cannot verify the current local Git commit or working-tree state; earlier `1.4.3`–`1.4.7` Drive work may still require local commit sequencing and verification.
+- Local validation: the previous handoff records a passing `npm run validate` for the split-service architecture with 25 HTML pages, 23 sitemap URLs and the documented negative content checks. For `1.4.8`, this Drive session validates the German Wi-Fi/home-network YAML and SEO-routing update against the current schema constraints and requires exact Drive readback; repository-shell build, diff and status checks are not available here.
 - Local browser verification: the German homepage and software reference page were reviewed at 1440×1000, 768×1024, 390×844, and 320×720 with zero horizontal overflow. Desktop/mobile navigation, 44px mobile service targets, Escape behavior, delayed contact dock, headline scale, image crop, section rhythm, and all four software visual states were checked.
 - Deployment state: the previous handoff recorded `origin/main` at `8463415` and local work ahead of it. Deployment state was not rechecked in this Drive-connected session, so the current `1.4.7` Drive changes should be treated as undeployed until verified locally and pushed.
-- Product-direction state: the final design direction remains approved and stabilized. Both German and English network reference pages are now positioned around planned infrastructure projects for small and growing businesses—new office networks, modernization, managed network hardware, business Wi-Fi, cabling, NAS and VPN—with troubleshooting secondary and Windows Server/Active Directory plus broader Linux server work reserved for separate future service intents.
+- Product-direction state: the final design direction remains approved and stabilized. Both German and English business network reference pages are project-led. The German private Wi-Fi/home-network page is now also project-led around new or improved home networks, cabling, Mesh/wired access points, NAS/shared storage, Homeoffice and connected devices; troubleshooting is secondary. A dedicated Smart Home configuration/installation page is a confirmed future private-service intent pending independent research.
 - Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional. The clean install also reports nine dependency audit findings for later dependency-maintenance review.
-- Recommended next action: run repository validation, diff and status checks locally against the current combined tree, resolve commit sequencing for earlier Drive work, then continue page-specific content research with the next service rather than broadening the network page further.
+- Recommended next action: run repository validation, diff and status checks locally against the current combined tree, resolve commit sequencing for earlier Drive work, then independently research and write the English Wi-Fi/home-network counterpart before moving to setup/data transfer.
 
 ## Reporting template
 
@@ -29,6 +29,20 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 ```
 
 ## Work log
+
+## 2026-09-03 — ChatGPT — German Wi-Fi, home-network and NAS service expansion
+
+- Objective: use the private-network capability answers, two German Keyword Planner batches and a current SERP sanity check to reposition the German Wi-Fi/home-network page around planned home-network projects rather than primarily reactive Wi-Fi troubleshooting.
+- Changes:
+  - Reworked `ω┇Engine/src/content/services/wifi-home-network/de.yml` from a short standard page into a `guided-private` page covering new or renovated home networks, Ethernet cabling, Mesh or wired access points, NAS/shared storage, Homeoffice connectivity, hardware recommendation/supply, connected devices, testing and understandable handover.
+  - Promoted NAS/shared storage substantially in customer-facing content because it is a preferred private/home-office service, while keeping Heimnetzwerk setup/build as the page's search-intent owner until NAS receives independent keyword research.
+  - Updated `ω┇Engine/src/data/seo-keywords.yml` from the provisional Wi-Fi seed to a 2026-09-03 researched German map centred on `heimnetzwerk einrichten`. Generic Heimnetzwerk terms showed 1k–10k monthly volume and Mesh setup/build terms 100–1k; all tested Berlin-modified service phrases were 0–10, so Berlin is used naturally as location context rather than forced into exact keyword targets. Device-specific FRITZ!/Telekom setup phrases are treated as DIY/instructional rather than commercial targets.
+  - Updated `Project.md` and `Roadmap.md` to record the planned-home-network positioning, provider-line boundary, substantial NAS/Homeoffice role, and a confirmed future Smart Home configuration/installation service intent that will require independent research before a route is created.
+  - Bumped root `AGENTS.md` from `1.4.7` to `1.4.8` for this German private-network content slice.
+- Decisions: the page sells a coherent home network rather than a router appointment. New builds/renovations, cabling, NAS/storage, Mesh/Wi-Fi and connected devices are preferred project types. ISP line faults remain the provider's responsibility. Smart-home devices may be connected here, but full Smart Home configuration/installation will belong to a separate future page. The existing `/leistungen/privatpersonen/wlan-heimnetz/` route remains unchanged.
+- Validation: parsed the expanded German YAML and SEO-routing YAML successfully; checked four ordered storyboard states, required guided-private groups, eight FAQs, five boundaries, related-service IDs, and SEO field lengths. Current SERP review confirmed manufacturer/DIY dominance for device-specific Mesh setup and commercial precedent for whole-home network, cabling, NAS and connected-device setup. Exact Drive readback is required after writing. `npm run validate`, browser rendering, `git diff --check`, `git status --short`, commit and push are not available in this Drive-only session.
+- Blockers or required input: the English Wi-Fi/home-network page still needs independent English intent research and copy. NAS may justify a dedicated future private page if its own keyword/enquiry evidence supports one. Existing production brand, contact/legal facts, qualification evidence, travel policy, form backend, analytics, final imagery and domain blockers remain unchanged.
+- Recommended next action: validate the combined tree locally, then research and write the independent English Wi-Fi/home-network counterpart before moving to setup/data transfer.
 
 ## 2026-09-02 — ChatGPT — English network and IT-infrastructure counterpart
 
