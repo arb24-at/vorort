@@ -248,23 +248,29 @@ pages:
 - id: setup-transfer-en
   route: /en/services/private/setup-data-transfer/
   locale: en
-  researchStatus: provisional-seed
+  researchStatus: serp-reviewed-2026-09-06
   primary: new computer setup Berlin
   useful:
   - PC setup service Berlin
   - laptop setup Berlin
-  - transfer data to new PC
+  - data transfer to new computer
   - computer data migration Berlin
-  - Windows PC setup
-  - move programs to new computer
-  - email setup computer
-  - printer setup new PC
+  - computer buying advice Berlin
+  - laptop buying advice Berlin
+  - backup setup PC
+  - transfer files to new PC
+  - Windows to Mac data transfer
+  - Mac to Windows data transfer
   harmful:
   - data recovery Berlin
   - hard drive recovery Berlin
+  - Windows password reset Berlin
+  - BitLocker recovery Berlin
   - phone data transfer Berlin
   - smartphone setup Berlin
-  - Mac data recovery Berlin
+  - laptop reviews Berlin
+  - best laptop Berlin
+  note: "English SERP review on 2026-09-06: service language consistently groups new computer setup with data transfer/migration, email/accounts, peripherals and backup, while buying advice can precede setup as part of the same device-change journey. A Berlin-area English provider separately lists initial setup, buying advice, data transfer and data recovery, supporting the same intent boundary as the German page. Apple documents direct migration from Windows to Mac and Mac-to-Mac through Setup/Migration Assistant. This English page is therefore centred on new computer setup with data transfer, buying advice and backup as substantial supporting intents; damaged-media recovery, password/account access and phone migration remain separate topics. No English Keyword Planner volume is claimed for this entry."
 - id: business-landing-de
   route: /leistungen/unternehmen/
   locale: de

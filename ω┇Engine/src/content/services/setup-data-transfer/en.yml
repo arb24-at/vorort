@@ -4,48 +4,189 @@ locale: en
 audience: private
 order: 4
 slug: setup-data-transfer
-purpose: "Planned setup of new computers and transfer of existing accessible user data."
+purpose: "Buying advice, complete setup and planned data migration for new Windows PCs and Macs, including backup, email and peripherals."
 navigation:
   group: device-home
-  label: "PC setup & data transfer"
+  label: "Computer setup & data transfer"
 page:
-  template: standard
+  template: guided-private
   technicalDepth: informative
   theme:
     variant: workspace
-    state: "Accounts, files and devices move in controlled stages from the old workplace to the new one."
-    title: "An orderly move to a new device"
-    description: "Data, applications and peripherals move through checkable steps into a new working environment."
+    state: "The old and new computer, personal data, accounts, backup and peripherals form one controlled device-change journey."
+    title: "From choosing a computer to having it ready to use"
+    description: "Buying advice, setup, migration, backup and connected devices are treated as one practical transition rather than unrelated technical tasks."
+  storyboard:
+    - role: situation
+      composition: wide
+      visualState: conflict
+      eyebrow: "A computer change is coming"
+      title: "The new computer should suit you — and be ready for real use"
+      text: "Replacing a computer is rarely just about turning on a new machine. The right Windows PC, laptop or Mac has to fit the way you use it, while personal data, email, important applications, printers and a sensible backup still need to come together afterwards."
+      points:
+        - "Choose a device around actual use rather than specifications alone"
+        - "Bring across the personal data and services that still matter"
+        - "Plan backup and connected devices as part of the change"
+      callouts:
+        - "Choose"
+        - "Set up"
+        - "Transfer"
+        - "Back up"
+    - role: investigation
+      composition: text-left
+      visualState: dependencies
+      eyebrow: "Before anything is moved"
+      title: "A useful migration starts with how you use the old computer"
+      text: "We look at the existing computer, important personal data, email accounts, applications, peripherals and any current backup. If you have not bought the replacement yet, we also clarify the performance, size and features that make sense for your day-to-day use."
+      points:
+        - "Understand what the new computer actually needs to handle"
+        - "Check that the old device and required data are normally accessible"
+        - "Include backup, NAS, printer or home-network needs where relevant"
+      callouts:
+        - "Windows or Mac"
+        - "Personal data"
+        - "Email & accounts"
+        - "Backup"
+    - role: intervention
+      composition: system
+      visualState: controlled-change
+      eyebrow: "Choose, configure and migrate"
+      title: "The new computer is prepared as a complete everyday setup"
+      text: "We can recommend or source a suitable device, prepare Windows or macOS, and transfer the agreed personal data using an appropriate method. Email, important applications, printers, backup and other required connections can then be added so the new computer is genuinely usable rather than merely switched on."
+      points:
+        - "Set up the new system and remove unnecessary preinstalled software when useful"
+        - "Move agreed personal data within Windows or Mac, or between the two platforms"
+        - "Configure email, backup, NAS, printers and important applications as agreed"
+      callouts:
+        - "System ready"
+        - "Data moved"
+        - "Email connected"
+        - "Backup prepared"
+    - role: outcome
+      composition: text-right
+      visualState: verified
+      eyebrow: "Check before handover"
+      title: "The move is finished when the important things are usable again"
+      text: "At the end, we check the agreed data, accounts, applications and devices with you. The new computer should be understandable to use, and the old one can remain untouched as a fallback or later be prepared for reuse, handover or deletion only after you decide what should happen to it."
+      points:
+        - "Spot-check important personal data and account access"
+        - "Test backup and connected devices within the agreed scope"
+        - "Do not alter or erase the old computer without explicit approval"
+      callouts:
+        - "Data checked"
+        - "Backup available"
+        - "Devices connected"
+        - "Handover clear"
 seo:
-  title: "PC Setup & Data Transfer Berlin"
-  description: "Set up a new computer, transfer personal files and configure email, software, printers and backups for private customers in Berlin."
-  intent: "Find Berlin help to set up a new PC and transfer accessible files and settings."
+  title: "New Computer Setup & Data Transfer Berlin"
+  description: "Choose and set up a new PC, laptop or Mac in Berlin, transfer personal data, reconnect email and devices, and put a practical backup in place."
+  intent: "Find English-speaking Berlin help with choosing, setting up and moving to a new Windows PC, laptop or Mac."
 hero:
-  eyebrow: "Private customers · Setup"
-  title: "PC setup and data transfer in Berlin"
-  intro: "A new computer should feel familiar quickly without blindly carrying over old problems. We plan the move, configure accounts and software, and check that important files, email and devices are accessible."
+  eyebrow: "Private customers & home office · Device change"
+  title: "Choose, set up and move to your new computer"
+  intro: "A new computer should fit what you actually do and be usable without days of setup afterwards. We can help choose a Windows PC, laptop or Mac, prepare the new device and move the agreed personal data, email, backup and connected equipment."
 problems:
-  eyebrow: "Service scope"
-  title: "Suitable for"
+  eyebrow: "Typical situations"
+  title: "When replacing a computer involves more than unboxing it"
+  intro: "Many enquiries start with a planned upgrade rather than a fault. Your old computer may still work but no longer suit you, the replacement may already be on the desk, or you may want independent help deciding what to buy before anything is ordered."
   items:
-    - "Moving from an old Windows PC or laptop to a new device"
-    - "Transferring documents, photos and selected settings"
-    - "Configuring email, Microsoft 365, browsers and printers"
-    - "Creating an understandable local or cloud-based backup"
+    - "You need a new PC, laptop or Mac but are unsure which type and specification are sensible"
+    - "You already bought a new computer and want it fully prepared for everyday use"
+    - "Personal data needs to move from the old computer to the new one"
+    - "The change is Windows to Mac, Mac to Windows or within the same platform"
+    - "Email, important applications, printers and existing accessories should work afterwards"
+    - "You want to use the device change as a good point to introduce or improve a backup"
 included:
-  eyebrow: "Possible support"
-  title: "A structured migration"
+  eyebrow: "What we can take care of"
+  title: "From buying advice to a usable new computer"
+  intro: "The scope is agreed before the work starts. Some people only need a clean data transfer; others want device selection, procurement, setup, backup and connected equipment handled as one joined-up change."
   items:
-    - "Review of existing data and applications"
-    - "Agreement on what should be transferred, reinstalled or cleaned up"
-    - "New-device setup with updates and baseline protection"
-    - "Functional testing and agreed handling of the old device"
+    - "Buying advice for Windows PCs, laptops and Macs based on real use, with optional procurement of the chosen device"
+    - "Initial setup of the new computer and removal of unnecessary preinstalled software where appropriate"
+    - "Transfer of agreed personal data within or between Windows and macOS systems"
+    - "Email and account setup, including Outlook, Gmail and common German email providers used in Berlin"
+    - "Setup of important applications, printers, scanners, monitors, docks and other peripherals by agreement"
+    - "Backup setup or integration using suitable external storage, NAS, Time Machine or an existing Windows backup approach"
 outcome:
-  eyebrow: "Approach"
-  title: "Keep important data in view"
-  text: "Before the move, we clarify the amount and condition of the existing data. Recovery from damaged storage is a separate specialist case; normal transfer and backup can be prepared predictably."
+  eyebrow: "What the service should achieve"
+  title: "A new computer that is ready for your normal day"
+  text: "The goal is not to copy the old computer blindly. It is to bring across the agreed data and functions in a sensible way, leave you with a usable new device, and make clear where important data lives and how backup and the old computer will be handled afterwards."
 cta:
-  title: "Plan a device change"
-  text: "Tell us the old and new device and the most important programs and data."
-  prompt: "The old and new devices and the most important applications and files help us plan the move."
-
+  title: "Tell us about the device change"
+  text: "Tell us about the old computer, the new device you are considering or have already bought, how you use it, and whether you need data transfer, backup or buying advice."
+  prompt: "Useful details include the old device's approximate age or model, your normal use, whether a backup already exists, and whether the replacement has already been bought. Please do not send passwords, PINs or recovery keys."
+expanded:
+  situations:
+    eyebrow: "Good-fit requests"
+    title: "When a planned setup is especially useful"
+    intro: "This service is for people who want the computer change treated as one practical job. The technical method depends on the devices, the state of the existing data and what you actually need to keep using afterwards."
+    items:
+      - title: "You have not chosen the new computer yet"
+        text: "We first look at what you use the computer for, which features matter and which specifications would add little value. We can recommend a suitable Windows device or Mac, help with procurement and then complete the setup."
+      - title: "The new PC, laptop or Mac is already there"
+        text: "We prepare the device and make the agreed personal data, email, applications and peripherals usable again in a controlled sequence."
+      - title: "You are changing between Windows and Mac"
+        text: "Cross-platform moves can be planned too. We identify what can sensibly be transferred and what is better reconfigured on the new system rather than attempting to reproduce the old computer exactly."
+      - title: "You want backup included from the start"
+        text: "A computer change is a useful moment to review an existing backup or introduce one using external storage, NAS, Time Machine or an appropriate Windows backup method."
+      - title: "You need a clear plan for the old computer"
+        text: "Once the new setup has been checked, the old device can remain unchanged as a fallback, be prepared for another user, or be erased later after explicit approval."
+  process:
+    eyebrow: "From decision to handover"
+    title: "Understand the need first, then make the move"
+    intro: "A reliable computer change starts before data is copied. We first clarify how the computer is used, the target device, the condition of the existing data and any additional setup work so the likely effort and boundaries are visible before migration begins."
+    steps:
+      - title: "Understand the requirement"
+        text: "We discuss normal use, the existing computer, preferred platform, important personal data, email, applications, peripherals and current backup."
+      - title: "Choose the device"
+        text: "If the replacement has not been bought yet, we recommend an appropriate class of device or specification and can arrange procurement by agreement."
+      - title: "Check the existing computer"
+        text: "Before migration, we confirm whether the old device and required data are normally accessible and choose a sensible transfer approach."
+      - title: "Prepare the new system"
+        text: "Windows or macOS is set up for the agreed use before personal data and additional services are brought across."
+      - title: "Move data and reconnect services"
+        text: "Personal data, email, required applications, printers, backup and other agreed parts of the setup are transferred or configured step by step."
+      - title: "Check and hand over"
+        text: "We verify the important functions with you and leave the old computer unchanged unless its next step has been explicitly agreed."
+  proof:
+    eyebrow: "Relevant experience"
+    title: "A device change viewed as more than a file copy"
+    text: "IT experience since 2008 and practical work across Windows, macOS, email, backup, NAS, home networks, printers and everyday software help us treat a computer replacement as a complete working setup. Any necessary access to accounts or personal data is discussed directly with you."
+    items:
+      - "Windows PCs, laptops and macOS"
+      - "Data migration within and between Windows and Mac"
+      - "Email, Microsoft, Google and common German mail providers"
+      - "Backup, NAS, Time Machine and Windows backup options"
+      - "Printers, scanners, monitors, docks and peripherals"
+      - "IT experience since 2008"
+  boundaries:
+    eyebrow: "Realistic boundaries"
+    title: "Normal data transfer is different from data recovery or account recovery"
+    items:
+      - "If a drive is damaged, unstable or no longer readable, the job becomes a separate data-recovery case. It needs its own assessment and successful recovery cannot be guaranteed."
+      - "Applications and settings cannot always be transferred identically between Windows versions or between Windows and macOS. We decide from the actual systems what should be moved and what should be configured again."
+      - "Passwords, PINs, BitLocker recovery keys and other authentication or recovery codes must not be sent through the enquiry form. Any required sign-in is handled later and, where practical, entered by you directly."
+      - "If access to the old computer or an account is missing, that is a separate support case. What can be recovered depends on the account type, available recovery methods and any existing recovery keys."
+  faqs:
+    - question: "Can you help me choose a computer before I buy one?"
+      answer: "Yes. We start with how you actually use the computer and which features matter for that work. We can recommend a suitable Windows PC, laptop or Mac and, if wanted, combine procurement with the later setup and migration."
+    - question: "Can you transfer data between Windows and Mac?"
+      answer: "Yes. Data migration can be planned within the same platform or between Windows and macOS. What can sensibly be transferred depends on the old and new systems and the applications you use."
+    - question: "What data can you move to the new computer?"
+      answer: "We agree which personal data is important before the migration and how it should be organised on the new device. The aim is not to copy the complete old system state automatically."
+    - question: "What if the old computer no longer starts?"
+      answer: "We first check whether the required data can still be read normally from the existing storage. If the drive is damaged, unstable or unreadable, the job is no longer a normal migration and needs to be assessed as a separate data-recovery case."
+    - question: "Can you set up my email again?"
+      answer: "Yes. We can reconnect common email accounts and applications, including Outlook, Gmail and widely used German providers such as GMX, WEB.DE or Telekom. Please do not send passwords or recovery codes through the enquiry form."
+    - question: "Can you set up a backup on the new computer?"
+      answer: "Yes. We recommend considering backup during a device change. Depending on your needs, that may use an external drive, an existing NAS, Time Machine or a suitable Windows backup method. The exact approach depends on your data and how you use the computer."
+    - question: "Can you reinstall programs and connect printers or accessories?"
+      answer: "Yes, by agreement. Important applications, printers, scanners, monitors, docks and other required peripherals can be set up as part of the wider device-change job."
+    - question: "Can you help if I have forgotten my Windows password or PIN?"
+      answer: "We can assess access problems separately. What is possible depends on the account type, available recovery options and, for encrypted devices, any available recovery keys. Please do not send passwords, PINs or recovery keys through the enquiry form."
+    - question: "What happens to my old computer after the migration?"
+      answer: "That remains your decision. It can stay untouched as a fallback, be prepared for another user, or be erased after explicit approval. We do not automatically wipe the old device after transferring the data."
+  relatedServiceIds:
+    - computer-laptop
+    - software-optimisation
+    - wifi-home-network
