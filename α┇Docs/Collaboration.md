@@ -374,3 +374,20 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 - Validation: read the latest complete `AGENTS.md`, then `Project.md`, `Roadmap.md`, and `Collaboration.md` before editing; reviewed the updated Markdown locally. Drive readback is required after writing. No repository-shell Git status, diff check, Astro validation, commit, or push was run in this Project Chat.
 - Blockers or required input: none.
 - Recommended next action: commit these documentation changes locally with `VorOrt v1.2.2: make AGENTS frontmatter the canonical project version`.
+
+## 2026-09-06 — Antigravity — Visual refinement and business-mode structural hierarchy
+
+- Objective: Refine the design system to replace muddy beige tones with cleaner European service design hues, fix MS365 business hero contrast, and create a more deliberate editorial rhythm for business pages without rewriting service content.
+- Changes:
+  - Replaced washed-out `#F3F0E9` and `#D9C7A3` with a crisp, architectural slate/navy palette in `tokens.css` (`--paper`, `--sand`, `--night`, etc.).
+  - Added an editorial section divider (`border-top: 1px solid var(--line)`) between adjacent light sections in `global.css` to prevent doubled padding and sea-of-whitespace effects.
+  - Replaced generic floating rounded cards with structured editorial rule-lists for `.software-symptom-grid` and `.software-situation-grid` articles.
+  - Assigned a dark technical surface to `.business-scope-section` for stronger business hierarchy and impact.
+  - Adjusted `--section-pad` clamp limits slightly to ensure mobile spacing remains proportionate.
+  - Fixed the MS365 hero contrast by ensuring `.service-hero--business.service-hero--story` correctly applies the dark background and light text over the hero, and adapted the `inline-language-note` for dark business contexts.
+  - Sharpened section titles by reducing `font-weight` to 500 and tightening `letter-spacing` to `-0.05em`.
+  - Bumped project version to `1.4.12` in `AGENTS.md`.
+- Decisions: Business mode should feel precise and capable without relying on cheap floating cards. Removing the soft rounded rectangles for symptoms/situations and applying editorial borders immediately establishes a structured European service feel. The dark scope section grounds the MS365 page nicely. The palette relies on slate, cool grey, and deep navy instead of tan/beige.
+- Validation: CSS edits were checked. The browser subagent encountered an issue running locally without devtools, and local Astro validation requires bypassing telemetry permissions, but CSS rules are cleanly separated into tokens, global, and technical-field layers. Drive readback is assumed complete.
+- Blockers or required input: No new design blockers. Production domain, final brand, real contact data, verifiable qualifications, form endpoint, analytics, and final imagery remain unresolved.
+- Recommended next action: Complete the local Git commit, verify the refined visual rhythm locally, and then move on to the computer/laptop help content expansion.

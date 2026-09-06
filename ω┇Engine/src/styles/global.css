@@ -86,13 +86,26 @@ p {
 
 .section {
   padding: var(--section-pad) 0;
+  position: relative;
+}
+
+.section + .section {
+  border-top: 1px solid var(--line);
+}
+
+.section--ink {
+  border-top: none !important;
+}
+
+.section--ink + .section {
+  border-top: none;
 }
 
 .section--ink {
   position: relative;
   overflow: hidden;
   background: var(--night);
-  color: #f7f6f1;
+  color: #ffffff;
 }
 
 .section--ink::before {
@@ -128,9 +141,9 @@ p {
   margin: 0.65rem 0 1rem;
   font-family: "Space Grotesk", "Segoe UI", sans-serif;
   font-size: clamp(2.1rem, 4.2vw, 4.35rem);
-  font-weight: 600;
-  line-height: 1.02;
-  letter-spacing: -0.045em;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.05em;
 }
 
 .section-lead {
@@ -141,7 +154,7 @@ p {
 }
 
 .section--ink .section-lead {
-  color: rgba(247, 246, 241, 0.72);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .eyebrow {
@@ -513,7 +526,7 @@ p {
 .language-support-banner {
   border-block: 1px solid rgba(255,255,255,0.12);
   background: var(--night);
-  color: #f7f6f1;
+  color: #ffffff;
 }
 
 .language-support-inner {
@@ -542,7 +555,7 @@ p {
   display: flex;
   gap: 0.55rem;
   margin: 0;
-  color: rgba(247,246,241,0.74);
+  color: rgba(255,255,255,0.74);
   font-size: 0.86rem;
 }
 
@@ -586,11 +599,11 @@ p {
   box-shadow: var(--shadow-soft);
 }
 
-.problem-tile--coral { background: #f3a08d; }
-.problem-tile--sand { background: #e8d9bc; }
-.problem-tile--mint { background: #c5e5d6; }
-.problem-tile--teal { background: #28555a; color: #fff; }
-.problem-tile--blue { background: #b9cce9; }
+.problem-tile--coral { background: #FFEDD5; }
+.problem-tile--sand { background: var(--sand); }
+.problem-tile--mint { background: #D1FAE5; }
+.problem-tile--teal { background: var(--night-soft); color: #fff; }
+.problem-tile--blue { background: #DBEAFE; }
 
 .problem-tile__code {
   color: currentColor;
@@ -671,7 +684,7 @@ p {
 }
 
 .plain-checks--dark li {
-  color: rgba(247,246,241,0.78);
+  color: rgba(255,255,255,0.78);
 }
 
 .plain-checks--dark li::before {
@@ -724,9 +737,9 @@ p {
   opacity: 0.19;
 }
 
-.audience-panel--1 { background: #edd7c8; }
-.audience-panel--2 { background: #c8dfd6; }
-.audience-panel--3 { background: var(--night); color: #f7f6f1; }
+.audience-panel--1 { background: var(--paper-deep); }
+.audience-panel--2 { background: var(--sand); }
+.audience-panel--3 { background: var(--night); color: #ffffff; }
 
 .audience-panel > span {
   position: relative;
@@ -804,7 +817,7 @@ p {
   border-radius: 32px;
   background: var(--night);
   box-shadow: var(--shadow-strong);
-  color: #f7f6f1;
+  color: #ffffff;
 }
 
 .visual-placeholder__caption {
@@ -882,7 +895,7 @@ p {
 
 .visual-placeholder__copy p {
   margin: 0;
-  color: rgba(247,246,241,0.6);
+  color: rgba(255,255,255,0.6);
   font-size: 0.78rem;
   line-height: 1.5;
 }
@@ -1441,8 +1454,8 @@ p {
 
 .service-hero--theme-software {
   background:
-    linear-gradient(105deg, rgba(221,198,158,0.5), transparent 52%),
-    radial-gradient(circle at 84% 16%, rgba(239,109,79,0.18), transparent 28%),
+    linear-gradient(105deg, rgba(203,213,225,0.4), transparent 52%),
+    radial-gradient(circle at 84% 16%, rgba(234,88,12,0.12), transparent 28%),
     var(--paper);
 }
 
@@ -1450,7 +1463,7 @@ p {
   background:
     radial-gradient(circle at 90% 10%, rgba(168,215,194,0.14), transparent 30%),
     var(--night);
-  color: #f7f6f1;
+  color: #ffffff;
 }
 
 .service-hero__grid {
@@ -1481,11 +1494,11 @@ p {
 }
 
 .service-hero--business .service-back-link {
-  color: rgba(247,246,241,0.65);
+  color: rgba(255,255,255,0.65);
 }
 
 .service-hero--business .service-hero__copy > p {
-  color: rgba(247,246,241,0.72);
+  color: rgba(255,255,255,0.72);
 }
 
 .service-hero--business .eyebrow {
@@ -1543,7 +1556,7 @@ p {
   gap: 0.8rem;
   border-top: 1px solid rgba(255,255,255,0.14);
   padding: 0.9rem 0;
-  color: rgba(247,246,241,0.75);
+  color: rgba(255,255,255,0.75);
 }
 
 .diagnostic-steps li:last-child {
@@ -1757,15 +1770,14 @@ p {
 .software-symptom-grid article {
   position: relative;
   display: grid;
-  min-height: 11rem;
+  min-height: 8rem;
   grid-template-columns: auto 1fr;
-  align-content: space-between;
-  gap: 1rem;
+  align-content: start;
+  gap: 1.25rem;
   overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background: var(--surface);
-  padding: 1rem;
+  border-top: 1px solid var(--line-strong);
+  background: transparent;
+  padding: 1.25rem 0;
 }
 
 .software-symptom-grid article span,
@@ -1784,29 +1796,23 @@ p {
   margin: 0;
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.08rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25;
 }
 
 .software-symptom-grid article i {
-  position: absolute;
-  top: -1.8rem;
-  right: -1.8rem;
-  width: 7rem;
-  height: 7rem;
-  border: 1px dashed rgba(198,79,55,0.25);
-  border-radius: 50%;
+  display: none;
 }
 
 .software-situation-grid article {
-  min-height: 15rem;
-  border-top: 4px solid var(--sand);
-  background: var(--surface);
-  padding: 1.25rem;
+  min-height: 12rem;
+  border-top: 1px solid var(--line-strong);
+  background: transparent;
+  padding: 1.5rem 0;
 }
 
 .software-situation-grid article:nth-child(even) {
-  border-top-color: var(--mint-strong);
+  border-top-color: var(--line-strong);
 }
 
 .software-situation-grid h3,
@@ -1860,15 +1866,42 @@ p {
 
 .software-process-steps h3 {
   margin: 0 0 0.35rem;
-  color: #f7f6f1;
+  color: #ffffff;
 }
 
 .software-process-steps p {
-  color: rgba(247,246,241,0.66);
+  color: rgba(255,255,255,0.66);
 }
 
 .scope-list--software li:nth-child(odd) {
-  background: linear-gradient(90deg, rgba(221,198,158,0.18), transparent);
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.04), transparent);
+}
+
+.business-scope-section {
+  background: var(--night);
+  color: #ffffff;
+  border-top: none !important;
+}
+
+.business-scope-section + .section {
+  border-top: none !important;
+}
+
+.business-scope-section .section-title {
+  color: #ffffff;
+}
+
+.business-scope-section .section-lead {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.business-scope-section .scope-list li {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.business-scope-section .scope-list--software li:nth-child(odd) {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.04), transparent);
 }
 
 .software-proof-grid {
@@ -2132,7 +2165,7 @@ p {
   overflow: hidden;
   background: var(--night);
   padding: clamp(1.5rem, 4vw, 3rem);
-  color: #f7f6f1;
+  color: #ffffff;
 }
 
 .contact-intro .section-title {
@@ -2144,7 +2177,7 @@ p {
 .contact-intro > p {
   position: relative;
   z-index: 1;
-  color: rgba(247,246,241,0.72);
+  color: rgba(255,255,255,0.72);
 }
 
 .contact-channels {
