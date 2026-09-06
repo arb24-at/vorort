@@ -1,17 +1,17 @@
 # VorOrt collaboration handoff
 
-Last updated: 2026-09-03
+Last updated: 2026-09-06
 
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: the Drive source now carries project version `1.4.9` for the independently researched English Wi-Fi/home-network counterpart. This Drive-connected session cannot verify the current local Git commit or working-tree state; earlier `1.4.3`–`1.4.8` Drive work may still require local commit sequencing and verification.
-- Local validation: the previous handoff records a passing `npm run validate` for the split-service architecture with 25 HTML pages, 23 sitemap URLs and the documented negative content checks. For `1.4.9`, this Drive session validates the English Wi-Fi/home-network YAML and SEO-routing update against the current guided-private structure and requires exact Drive readback; repository-shell build, diff and status checks are not available here.
+- Current working state: the Drive source now carries project version `1.4.10` for the independently researched German new-computer setup/data-transfer expansion. This Drive-connected session cannot verify the current local Git commit or working-tree state; earlier Drive work may still require local commit sequencing and verification.
+- Local validation: the previous handoff records a passing `npm run validate` for the split-service architecture with 25 HTML pages, 23 sitemap URLs and the documented negative content checks. For `1.4.10`, this Drive session validates the German setup/data-transfer YAML and SEO-routing update against the current guided-private structure and requires exact Drive readback; repository-shell build, diff and status checks are not available here.
 - Local browser verification: the German homepage and software reference page were reviewed at 1440×1000, 768×1024, 390×844, and 320×720 with zero horizontal overflow. Desktop/mobile navigation, 44px mobile service targets, Escape behavior, delayed contact dock, headline scale, image crop, section rhythm, and all four software visual states were checked.
-- Deployment state: the previous handoff recorded `origin/main` at `8463415` and local work ahead of it. Deployment state was not rechecked in this Drive-connected session, so the current `1.4.9` Drive changes should be treated as undeployed until verified locally and pushed.
-- Product-direction state: the final design direction remains approved and stabilized. Both German and English business network reference pages are project-led. The German and English private Wi-Fi/home-network pages are now also project-led around new or improved home networks, cabling, Mesh/wired access points, NAS/shared storage, home-office connectivity and connected devices; troubleshooting is secondary. A dedicated Smart Home configuration/installation page is a confirmed future private-service intent pending independent research.
+- Deployment state: the previous handoff recorded `origin/main` at `8463415` and local work ahead of it. Deployment state was not rechecked in this Drive-connected session, so the current `1.4.10` Drive changes should be treated as undeployed until verified locally and pushed.
+- Product-direction state: the final design direction remains approved and stabilized. Both German and English business network reference pages are project-led, and the German/English private Wi-Fi/home-network pair is project-led around coherent home networks, cabling, NAS and Homeoffice. The German setup/data-transfer page is now centred on device selection/procurement, complete Windows/Mac setup, normal readable-data migration and backup. `Datenrettung Berlin` is reserved as a separate adjacent recovery intent pending its own capability review, while password/account-access/BitLocker demand belongs to the computer/laptop-help topic rather than this page. A dedicated Smart Home configuration/installation page remains a confirmed future private-service intent pending independent research.
 - Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional. The clean install also reports nine dependency audit findings for later dependency-maintenance review.
-- Recommended next action: run repository validation, diff and status checks locally against the current combined tree, resolve commit sequencing for earlier Drive work, then begin the German setup/data-transfer service with its own capability and search-intent pass.
+- Recommended next action: run repository validation, diff and status checks locally against the current combined tree, resolve commit sequencing for earlier Drive work, then research and author the independent English setup/data-transfer counterpart.
 
 ## Reporting template
 
@@ -29,6 +29,21 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 ```
 
 ## Work log
+
+## 2026-09-06 — ChatGPT — German new-computer setup, purchase advice and data migration expansion
+
+- Objective: use the completed German capability Q&A, two Keyword Planner batches and a current SERP boundary check to expand the setup/data-transfer page around the whole planned device-change journey rather than a thin file-copy service.
+- Changes:
+  - Reworked `ω┇Engine/src/content/services/setup-data-transfer/de.yml` from the short standard record into a `guided-private` page covering needs-based Windows-PC/laptop/Mac purchase advice and optional procurement, complete new-device setup, normal readable-data migration within and between Windows/macOS, E-mail/account setup, backup/NAS integration, peripherals and controlled old-device handover.
+  - Updated `ω┇Engine/src/data/seo-keywords.yml` so the German setup route is `researched-2026-09-06`, centred on `neuen computer einrichten`. `neuen Computer/PC einrichten`, `Laptop einrichten lassen`, `Daten auf neuen PC übertragen` and `Datenübertragung PC` returned 100–1k monthly searches; PC/Laptop Kaufberatung and Datensicherung PC also returned 100–1k, while `laptop kaufen und einrichten lassen` returned 10–100 with medium advertiser competition.
+  - Kept `datenrettung berlin` outside this page's target set despite its 100–1k medium-competition demand. Current Berlin results are specialist-recovery led, so damaged, unstable or unreadable media remain a separate adjacent intent requiring its own capability/scope review and no-guarantee language. Normal readable-data migration and a future recovery page should link to each other where cases cross that boundary.
+  - Assigned forgotten Windows/laptop password and BitLocker/recovery-key intent to the computer/laptop-help topic rather than this page. Planner variants often returned 1k–10k, but they describe a distinct access/support problem and should not be used to inflate the new-device page.
+  - Updated `Project.md` and `Roadmap.md` to record Mac support for setup/migration, private device purchase guidance/procurement, the researched setup-page scope, the data-recovery adjacency, password/access ownership, and the already completed English home-network counterpart that had remained stale in the documentation.
+  - Bumped root `AGENTS.md` from `1.4.9` to `1.4.10`.
+- Decisions: this page owns new-computer setup, normal data transfer, purchase advice and backup. It may mention access or damaged-media boundary cases but does not target `Datenrettung`, forgotten-password or BitLocker keywords. Personal data is described at a customer-readable level rather than enumerating every folder or credential type. Passwords, PINs and recovery keys must never be requested through the enquiry form. No privacy/compliance certification is claimed without exact verified evidence.
+- Validation: parsed the expanded German service YAML and updated SEO-routing YAML locally; checked the four ordered storyboard roles, required guided-private sections, nine FAQs, four boundaries, three related-service IDs and SEO field lengths. Current SERP review confirmed a specialist commercial market for data recovery and a separate local-computer-service treatment for forgotten Windows passwords. Exact Drive readback is required after writing. `npm run validate`, browser rendering, `git diff --check`, `git status --short`, commit and push are not available in this Drive-only session.
+- Blockers or required input: the independently authored English setup/data-transfer counterpart still needs its own English search-intent pass. A dedicated data-recovery page should not be created until the in-house recovery boundary and specialist-referral model are defined. Existing production brand, contact/legal facts, qualification evidence, travel policy, form backend, analytics, final imagery and domain blockers remain unchanged.
+- Recommended next action: validate the combined tree locally, then research and write the English setup/data-transfer counterpart before returning to the computer/laptop-help page and its account-access/password intent.
 
 ## 2026-09-03 — ChatGPT — English home-network, Wi-Fi and NAS counterpart
 

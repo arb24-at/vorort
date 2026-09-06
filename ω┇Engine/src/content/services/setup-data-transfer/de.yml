@@ -4,48 +4,189 @@ locale: de
 audience: private
 order: 4
 slug: einrichtung-datenumzug
-purpose: "Planbare Einrichtung neuer Computer und Übertragung vorhandener nutzbarer Daten."
+purpose: "Kaufberatung, Einrichtung und planbarer Datenumzug für neue Windows- und Mac-Computer, inklusive Backup, E-Mail und Peripherie."
 navigation:
   group: device-home
   label: "PC-Einrichtung & Datenumzug"
 page:
-  template: standard
+  template: guided-private
   technicalDepth: informative
   theme:
     variant: workspace
-    state: "Konten, Dateien und Geräte wechseln kontrolliert vom alten zum neuen Arbeitsplatz."
-    title: "Geordneter Wechsel auf ein neues Gerät"
-    description: "Daten, Programme und Peripherie bewegen sich über prüfbare Schritte in eine neue Arbeitsumgebung."
+    state: "Altes und neues Gerät, persönliche Daten, Konten, Sicherung und Peripherie werden als geordneter Gerätewechsel sichtbar."
+    title: "Vom alten Gerät zu einem fertig eingerichteten neuen Computer"
+    description: "Auswahl, Einrichtung, Datenübernahme, Backup und angeschlossene Geräte werden als nachvollziehbarer Wechsel statt als einzelne Technikaufgaben gezeigt."
+  storyboard:
+    - role: situation
+      composition: wide
+      visualState: conflict
+      eyebrow: "Ein Gerätewechsel steht an"
+      title: "Ein neuer Computer soll passen – und danach einfach nutzbar sein"
+      text: "Beim Wechsel auf einen neuen PC, Laptop oder Mac geht es selten nur um das Gerät selbst. Die passende Ausstattung, persönliche Daten, E-Mail, wichtige Programme, Drucker und eine sinnvolle Sicherung sollen am Ende zusammenpassen, ohne den alten Zustand ungeprüft zu kopieren."
+      points:
+        - "Passendes Gerät nach tatsächlicher Nutzung auswählen"
+        - "Persönliche Daten und wichtige Arbeitsabläufe mitnehmen"
+        - "Backup und vorhandene Geräte von Anfang an mitdenken"
+      callouts:
+        - "Gerät auswählen"
+        - "Daten übernehmen"
+        - "Backup planen"
+        - "Weiterarbeiten"
+    - role: investigation
+      composition: text-left
+      visualState: dependencies
+      eyebrow: "Vor dem Umzug klären"
+      title: "Was wirklich mit muss, hängt von Ihrem bisherigen Alltag ab"
+      text: "Wir betrachten das vorhandene Gerät, die wichtigsten Daten, E-Mail-Konten, Programme, angeschlossene Geräte und bestehende Sicherungen. Wenn noch kein neuer Computer gewählt ist, klären wir außerdem, welche Leistung, Größe und Ausstattung zur tatsächlichen Nutzung passen."
+      points:
+        - "Nutzung und Anforderungen für den neuen Computer einordnen"
+        - "Vorhandene persönliche Daten und Konten für den Umzug prüfen"
+        - "Backup, NAS, Drucker und Heimnetz bei Bedarf einbeziehen"
+      callouts:
+        - "Windows oder Mac"
+        - "Persönliche Daten"
+        - "E-Mail & Konten"
+        - "Sicherung"
+    - role: intervention
+      composition: system
+      visualState: controlled-change
+      eyebrow: "Auswählen, einrichten, übertragen"
+      title: "Der neue Computer wird als vollständiger Arbeitsplatz aufgebaut"
+      text: "Auf Wunsch empfehlen oder beschaffen wir ein geeignetes Gerät, richten Windows oder macOS ein und übernehmen die vereinbarten persönlichen Daten. Danach können E-Mail, wichtige Programme, Drucker, Backup und weitere benötigte Verbindungen so eingerichtet werden, dass der neue Computer im Alltag wirklich einsatzbereit ist."
+      points:
+        - "Neues Gerät einrichten und unnötige Vorinstallationen bei Bedarf bereinigen"
+        - "Persönliche Daten zwischen Windows und Mac nach sinnvoller Methode übertragen"
+        - "E-Mail, Backup, NAS, Drucker und wichtige Anwendungen nach Absprache einrichten"
+      callouts:
+        - "System eingerichtet"
+        - "Daten übernommen"
+        - "E-Mail verbunden"
+        - "Backup vorbereitet"
+    - role: outcome
+      composition: text-right
+      visualState: verified
+      eyebrow: "Gemeinsam prüfen"
+      title: "Der Wechsel endet erst, wenn die wichtigen Dinge wieder erreichbar sind"
+      text: "Zum Abschluss prüfen wir die vereinbarten Daten, Konten, Programme und Geräte gemeinsam. Der neue Computer soll verständlich übergeben werden, und für das alte Gerät kann nach Wunsch festgelegt werden, ob es als Rückfalloption bleibt, weitergegeben oder später gelöscht wird."
+      points:
+        - "Wichtige persönliche Daten und Konten stichprobenartig prüfen"
+        - "Backup und angeschlossene Geräte nach vereinbartem Umfang testen"
+        - "Altes Gerät erst nach Absprache verändern oder löschen"
+      callouts:
+        - "Daten geprüft"
+        - "Backup erreichbar"
+        - "Geräte verbunden"
+        - "Übergabe geklärt"
 seo:
-  title: "PC-Einrichtung & Datenumzug Berlin"
-  description: "Neue Computer einrichten, persönliche Daten übertragen, E-Mail, Programme, Drucker und Backups für Privatkunden in Berlin konfigurieren."
-  intent: "Hilfe beim Einrichten eines neuen PCs und Übertragen vorhandener Daten in Berlin finden."
+  title: "Neuen PC einrichten & Daten übertragen Berlin"
+  description: "Neuen PC, Laptop oder Mac in Berlin auswählen und einrichten lassen, persönliche Daten übertragen sowie E-Mail, Backup, NAS und Geräte übernehmen."
+  intent: "Hilfe bei Kaufberatung, Einrichtung und Datenübertragung auf einen neuen Windows-PC, Laptop oder Mac in Berlin finden."
 hero:
-  eyebrow: "Privatkunden · Einrichtung"
-  title: "PC-Einrichtung und Datenumzug in Berlin"
-  intro: "Ein neuer Computer soll sich schnell vertraut anfühlen, ohne alte Probleme ungeprüft zu übernehmen. Wir planen den Umzug, richten Konten und Programme ein und kontrollieren, ob wichtige Dateien, E-Mails und Geräte erreichbar sind."
+  eyebrow: "Privatkunden & Homeoffice · Gerätewechsel"
+  title: "Neuen Computer auswählen, einrichten und Daten übernehmen"
+  intro: "Ein neuer Computer soll zu Ihrer Nutzung passen und danach nicht tagelang eingerichtet werden müssen. Wir beraten bei der Auswahl von Windows-PC, Laptop oder Mac, richten das neue Gerät ein und übernehmen die vereinbarten persönlichen Daten, E-Mail, Backup und angeschlossenen Geräte."
 problems:
-  eyebrow: "Leistungsumfang"
-  title: "Geeignet für"
+  eyebrow: "Typische Ausgangslagen"
+  title: "Wenn ein Gerätewechsel mehr ist als Auspacken und Einschalten"
+  intro: "Viele Anfragen beginnen nicht mit einem Defekt, sondern mit einem geplanten Wechsel. Der alte Computer funktioniert noch, ist aber zu langsam oder unpraktisch, ein neues Gerät steht bereits bereit oder die richtige Kaufentscheidung ist noch offen."
   items:
-    - "Wechsel von einem alten auf einen neuen Windows-PC oder Laptop"
-    - "Übernahme von Dokumenten, Fotos und ausgewählten Einstellungen"
-    - "Einrichtung von E-Mail, Microsoft 365, Browsern und Druckern"
-    - "Aufbau einer verständlichen lokalen oder cloudbasierten Sicherung"
+    - "Ein neuer PC, Laptop oder Mac wird benötigt, aber Modell und Ausstattung sind noch unklar"
+    - "Ein neues Gerät ist bereits vorhanden und soll vollständig für den Alltag eingerichtet werden"
+    - "Persönliche Daten sollen vom alten Computer auf das neue Gerät übernommen werden"
+    - "Der Wechsel geht von Windows zu Mac, von Mac zu Windows oder innerhalb derselben Plattform"
+    - "E-Mail, Drucker, wichtige Programme und vorhandene Geräte sollen anschließend wieder funktionieren"
+    - "Beim Gerätewechsel soll gleichzeitig eine sinnvolle Sicherung mit externer Festplatte, NAS oder vorhandener Backup-Lösung eingerichtet werden"
 included:
-  eyebrow: "Mögliche Unterstützung"
-  title: "Strukturierter Umzug"
+  eyebrow: "Was wir übernehmen können"
+  title: "Von der Kaufentscheidung bis zur fertigen Übergabe"
+  intro: "Der Umfang wird vorab abgestimmt. Manche Kunden brauchen nur einen sauberen Datenumzug, andere möchten Auswahl, Beschaffung, Einrichtung, Backup und angeschlossene Geräte als einen zusammenhängenden Wechsel erledigen."
   items:
-    - "Bestandsaufnahme der vorhandenen Daten und Anwendungen"
-    - "Abstimmung, was übertragen, neu installiert oder bereinigt wird"
-    - "Einrichtung des neuen Geräts mit Updates und Basisschutz"
-    - "Funktionsprüfung und Übergabe des alten Geräts nach Absprache"
+    - "Kaufberatung für Windows-PCs, Laptops und Macs nach tatsächlicher Nutzung und auf Wunsch Beschaffung des passenden Geräts"
+    - "Einrichtung des neuen Computers und Bereinigung unnötiger Vorinstallationen nach Bedarf"
+    - "Übernahme vereinbarter persönlicher Daten zwischen Windows- und Mac-Systemen"
+    - "Einrichtung von E-Mail und Konten, darunter Outlook, Gmail sowie gängige deutsche Mailanbieter"
+    - "Einrichtung wichtiger Programme sowie Drucker, Scanner, Monitore, Docks und weiterer Peripherie nach Absprache"
+    - "Aufbau oder Einbindung einer passenden Sicherung über externen Speicher, NAS, Time Machine oder vorhandene Windows-Backup-Lösungen"
 outcome:
-  eyebrow: "Arbeitsweise"
-  title: "Wichtige Daten im Blick behalten"
-  text: "Vor dem Umzug klären wir Umfang und Zustand der vorhandenen Daten. Datenrettung von beschädigten Datenträgern ist ein eigener Spezialfall; normale Übertragung und Sicherung können dagegen planbar vorbereitet werden."
+  eyebrow: "Ziel der Unterstützung"
+  title: "Ein neuer Computer, der im Alltag wirklich bereit ist"
+  text: "Das Ziel ist nicht, möglichst viel vom alten System zu kopieren, sondern die vereinbarten Daten und Funktionen sinnvoll auf das neue Gerät zu bringen. Sie erhalten einen eingerichteten Computer, wissen, wo Ihre wichtigen Daten liegen und können entscheiden, wie Backup und altes Gerät anschließend behandelt werden sollen."
 cta:
-  title: "Gerätewechsel planen"
-  text: "Nennen Sie altes und neues Gerät sowie die wichtigsten Programme und Daten."
-  prompt: "Altes und neues Gerät sowie die wichtigsten Programme und Daten helfen bei der Planung."
-
+  title: "Gerätewechsel kurz beschreiben"
+  text: "Nennen Sie altes Gerät, gewünschtes oder bereits gekauftes neues Gerät, Ihre typische Nutzung und ob Datenübernahme, Backup oder Kaufberatung benötigt werden."
+  prompt: "Hilfreich sind Modell oder ungefähres Alter des alten Geräts, geplante Nutzung, vorhandene Sicherung und die Frage, ob das neue Gerät bereits gekauft wurde. Bitte keine Passwörter oder Wiederherstellungscodes senden."
+expanded:
+  situations:
+    eyebrow: "Geeignete Aufträge"
+    title: "Wann sich eine geplante Einrichtung besonders lohnt"
+    intro: "Der Service ist für Kunden gedacht, die den Gerätewechsel als zusammenhängende Aufgabe erledigen möchten. Die genaue technische Methode richtet sich nach den vorhandenen Geräten und Daten, nicht nach einem starren Übertragungsschema."
+    items:
+      - title: "Das neue Gerät ist noch nicht gewählt"
+        text: "Wir klären, wofür der Computer tatsächlich genutzt wird, welche Ausstattung sinnvoll ist und welche Geräteklasse zu den Anforderungen passt. Auf Wunsch können wir ein passendes Gerät empfehlen oder beschaffen und anschließend vollständig einrichten."
+      - title: "Der neue PC, Laptop oder Mac steht schon bereit"
+        text: "Das Gerät wird eingerichtet und die vereinbarten persönlichen Daten, E-Mail-Konten, Programme und Peripheriegeräte werden schrittweise wieder nutzbar gemacht."
+      - title: "Wechsel zwischen Windows und Mac"
+        text: "Auch ein Plattformwechsel kann geplant werden. Dabei prüfen wir, welche persönlichen Daten und Arbeitsabläufe sinnvoll übernommen werden können und welche Anwendungen oder Einstellungen auf dem neuen System neu aufgebaut werden sollten."
+      - title: "Backup soll gleich mit eingerichtet werden"
+        text: "Ein Gerätewechsel ist ein guter Zeitpunkt, eine vorhandene Sicherung zu prüfen oder eine passende Lösung über externen Speicher, NAS, Time Machine oder Windows-Backup einzurichten."
+      - title: "Das alte Gerät soll sauber übergeben werden"
+        text: "Nach erfolgreicher Übernahme kann das alte Gerät auf Wunsch als Rückfalloption bleiben, für eine Weitergabe vorbereitet oder nach ausdrücklicher Freigabe gelöscht werden."
+  process:
+    eyebrow: "Vom Bedarf zur Übergabe"
+    title: "Erst entscheiden, was gebraucht wird – dann den Wechsel durchführen"
+    intro: "Ein guter Gerätewechsel beginnt nicht mit dem Kopieren von Dateien. Zuerst klären wir Nutzung, Zielgerät, Datenzustand und gewünschte Zusatzarbeiten, damit Aufwand und Risiken vor der eigentlichen Übertragung sichtbar sind."
+    steps:
+      - title: "Bedarf aufnehmen"
+        text: "Wir klären Nutzung, vorhandenes Gerät, gewünschte Plattform, wichtige Daten, E-Mail, Programme, Peripherie und vorhandene Sicherungen."
+      - title: "Gerät auswählen"
+        text: "Wenn noch kein neues Gerät vorhanden ist, empfehlen wir eine passende Geräteklasse oder konkrete Ausstattung und können die Beschaffung nach Absprache übernehmen."
+      - title: "Bestand prüfen"
+        text: "Vor der Übertragung prüfen wir, ob das alte Gerät und die benötigten Daten normal zugänglich sind und welche Umzugsmethode sinnvoll ist."
+      - title: "Neues System einrichten"
+        text: "Windows oder macOS wird eingerichtet und für die vereinbarte Nutzung vorbereitet, bevor die persönlichen Daten und weiteren Dienste übernommen werden."
+      - title: "Daten und Dienste übernehmen"
+        text: "Persönliche Daten, E-Mail, benötigte Anwendungen, Drucker, Backup und weitere vereinbarte Komponenten werden schrittweise eingerichtet oder übertragen."
+      - title: "Prüfen und übergeben"
+        text: "Wir kontrollieren die wichtigen Funktionen gemeinsam und ändern oder löschen das alte Gerät erst, wenn der weitere Umgang ausdrücklich abgestimmt ist."
+  proof:
+    eyebrow: "Relevante Erfahrung"
+    title: "Gerätewechsel mit Blick auf das ganze Arbeitsumfeld"
+    text: "IT-Erfahrung seit 2008 und praktische Arbeit mit Windows, macOS, E-Mail, Backups, NAS, Heimnetzwerken, Druckern und Arbeitsplatzsoftware helfen dabei, einen Gerätewechsel nicht auf eine einzelne Kopierfunktion zu reduzieren. Notwendiger Zugriff auf Konten und Daten wird mit Ihnen abgestimmt."
+    items:
+      - "Windows-PCs, Laptops und macOS"
+      - "Datenumzug innerhalb und zwischen Windows und Mac"
+      - "E-Mail, Microsoft-, Google- und deutsche Mailanbieter"
+      - "Backup, NAS, Time Machine und Windows-Sicherung"
+      - "Drucker, Scanner, Monitore, Docks und Peripherie"
+      - "IT-Erfahrung seit 2008"
+  boundaries:
+    eyebrow: "Realistische Grenzen"
+    title: "Datenumzug ist nicht dasselbe wie Datenrettung oder Kontowiederherstellung"
+    items:
+      - "Wenn ein Datenträger beschädigt, unzuverlässig oder nicht mehr lesbar ist, wird daraus ein eigener Datenrettungsfall. Solche Fälle müssen separat beurteilt werden und eine erfolgreiche Wiederherstellung kann nicht garantiert werden."
+      - "Programme und Einstellungen lassen sich nicht in jedem Fall identisch auf eine andere Windows-Version oder zwischen Windows und macOS übertragen. Wir entscheiden deshalb nach dem tatsächlichen System, was übernommen und was neu eingerichtet wird."
+      - "Passwörter, PINs, BitLocker-Schlüssel und andere Anmelde- oder Wiederherstellungscodes gehören nicht in das Anfrageformular. Benötigte Anmeldung wird später direkt und möglichst durch den Kunden selbst durchgeführt."
+      - "Wenn der Zugang zum alten Gerät oder zu einem Konto fehlt, ist das ein eigener Supportfall. Welche Wiederherstellung möglich ist, hängt von Kontoart, vorhandenen Wiederherstellungswegen und gegebenenfalls vorhandenen Schlüsseln ab."
+  faqs:
+    - question: "Können Sie mich schon vor dem Kauf eines neuen Computers beraten?"
+      answer: "Ja. Wenn noch kein Gerät ausgewählt ist, klären wir zuerst, wofür Sie den Computer tatsächlich verwenden und welche Ausstattung dafür sinnvoll ist. Auf Wunsch können wir ein geeignetes Windows-Gerät oder einen Mac empfehlen und die Beschaffung mit der späteren Einrichtung verbinden."
+    - question: "Können Daten auch zwischen Windows und Mac übertragen werden?"
+      answer: "Ja. Datenumzüge sind sowohl innerhalb derselben Plattform als auch zwischen Windows und macOS möglich. Welche Inhalte und Einstellungen sinnvoll übernommen werden können, hängt vom alten und neuen System sowie von den verwendeten Anwendungen ab."
+    - question: "Welche Daten übernehmen Sie auf den neuen Computer?"
+      answer: "Wir sprechen vor dem Umzug ab, welche persönlichen Daten für Sie wichtig sind und wie sie auf dem neuen Gerät organisiert werden sollen. Dadurch muss nicht pauschal der komplette alte Systemzustand übernommen werden."
+    - question: "Was passiert, wenn der alte Computer nicht mehr startet?"
+      answer: "Dann prüfen wir zunächst, ob die benötigten Daten noch normal vom vorhandenen Datenträger gelesen werden können. Ist das Laufwerk beschädigt, instabil oder nicht mehr lesbar, handelt es sich nicht mehr um einen normalen Datenumzug, sondern um einen separaten Datenrettungsfall."
+    - question: "Richten Sie auch E-Mail und deutsche Mailanbieter wieder ein?"
+      answer: "Ja. Wir können gängige E-Mail-Konten und Programme wieder einrichten, darunter Outlook und Gmail sowie verbreitete deutsche Anbieter wie GMX, WEB.DE oder Telekom. Zugangsdaten werden dabei nicht über das Anfrageformular angefordert."
+    - question: "Können Sie beim neuen Computer auch ein Backup einrichten?"
+      answer: "Ja. Wir empfehlen, den Gerätewechsel für eine sinnvolle Sicherung zu nutzen. Je nach Bedarf kann das über eine externe Festplatte, ein vorhandenes NAS, Time Machine oder eine geeignete Windows-Sicherung erfolgen. Die konkrete Lösung wird nach Datenmenge und Nutzung gewählt."
+    - question: "Installieren Sie auch Programme und richten Drucker oder Zubehör ein?"
+      answer: "Ja, nach Absprache. Wichtige Programme, Drucker, Scanner, Monitore, Docks und andere benötigte Peripherie können im Rahmen des Gerätewechsels eingerichtet werden, wenn dies zum vereinbarten Umfang gehört."
+    - question: "Können Sie helfen, wenn ich mein Windows-Passwort oder meine PIN vergessen habe?"
+      answer: "Solche Zugangsprobleme können wir separat prüfen. Ob ein Zugang wiederhergestellt werden kann, hängt unter anderem von Kontoart, vorhandenen Wiederherstellungswegen und bei verschlüsselten Geräten von verfügbaren Wiederherstellungsschlüsseln ab. Bitte senden Sie keine Passwörter, PINs oder Schlüssel über das Anfrageformular."
+    - question: "Was passiert mit dem alten Computer nach dem Umzug?"
+      answer: "Das entscheiden Sie. Das alte Gerät kann zunächst unverändert als Rückfalloption bleiben, für eine Weitergabe vorbereitet oder nach ausdrücklicher Freigabe gelöscht werden. Wir verändern oder löschen das alte Gerät nicht automatisch nach der Datenübertragung."
+  relatedServiceIds:
+    - computer-laptop
+    - software-optimisation
+    - wifi-home-network

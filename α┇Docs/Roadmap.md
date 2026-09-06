@@ -1,6 +1,6 @@
 # VorOrt repository roadmap
 
-Last updated: 2026-09-03
+Last updated: 2026-09-06
 
 This roadmap is subordinate to Aykhan's external Obsidian Chain. It records repository implementation phases and acceptance criteria without duplicating the Chain's high-level project-management state.
 
@@ -34,12 +34,14 @@ Foundation and revised review slice completed on 2026-08-30: all service records
 - Preserve separate German and English editorial content connected by stable translation IDs.
 - Review the completed bilingual software installation/optimization service pair and its intent-led slugs before applying the expanded template to the remaining pages.
 - Reframe the current security/certification route as working-methods/data-handling/experience/qualifications trust content, with a bilingual equivalent and no unverified credential marketing.
-- Complete or deepen the remaining existing private services (English Wi-Fi/home network counterpart; setup/data transfer) and business services (Google Workspace) using the page-content contracts in `Project.md`. The German Wi-Fi/home-network page is now researched and expanded around home-network setup, cabling, Mesh, NAS and Homeoffice; the German/English network-infrastructure pair and German/English Microsoft 365 slices are already expanded.
+- Complete or deepen the remaining existing private and business services using the page-content contracts in `Project.md`. The German/English Wi-Fi/home-network pair is researched and expanded around home-network setup, cabling, Mesh, NAS and Homeoffice. The German setup/data-transfer page is now researched and expanded around device selection/procurement, complete setup, normal readable-data migration and backup; its independently authored English counterpart still remains. The German/English network-infrastructure pair and German/English Microsoft 365 slices are already expanded, while Google Workspace remains to be deepened.
 - Normalize German typography and replace remaining transliterated copy such as `fuer` where it is customer-facing.
 - Keep layout primitives and design tokens in code; expose only constrained page/theme choices to content files.
 - Do not create thin district pages, technology-brand pages, or blog filler before search evidence demonstrates a distinct useful intent.
 - Research Windows Server/Active Directory and Linux server services independently before creating their confirmed future dedicated pages; do not make the network page carry those separate intents.
 - Research the confirmed future Smart Home configuration/installation service independently before creating its route; keep the Wi-Fi/home-network page focused on network foundation and device connectivity rather than absorbing the full smart-home offer.
+- Treat data recovery as a separate adjacent private-service candidate rather than broadening the setup/data-transfer page. Before creating a recovery route, define the in-house capability boundary for readable/logical cases versus damaged or specialist-lab cases, keep the no-guarantee rule explicit, and plan reciprocal internal links with normal device migration.
+- When the computer/laptop-help page is next deepened, include forgotten Windows/laptop passwords, legitimate account-access recovery and BitLocker/recovery-key situations as that page's support intent. Do not create a thin standalone password page merely because the raw keyword volume is high; reassess only if SERP, Search Console or enquiry evidence shows a distinct useful route.
 
 Acceptance: the launch page inventory is explicit; the five primary service pillars are represented coherently; representative content and SEO changes require no Astro component edit; invalid or incomplete content fails the build; every translated page has correct canonical and alternate-language metadata; every new indexable page has substantial distinct content rather than keyword duplication.
 

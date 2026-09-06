@@ -221,23 +221,30 @@ pages:
 - id: setup-transfer-de
   route: /leistungen/privatpersonen/einrichtung-datenumzug/
   locale: de
-  researchStatus: provisional-seed
-  primary: neuen computer einrichten berlin
+  researchStatus: researched-2026-09-06
+  primary: neuen computer einrichten
   useful:
-  - pc einrichten lassen berlin
-  - laptop einrichten berlin
-  - daten übertragen neuer pc
-  - computer umzug daten
-  - windows pc einrichten
-  - programme auf neuen pc übertragen
-  - e mail einrichten computer
-  - drucker am neuen pc einrichten
+  - neuen pc einrichten
+  - laptop einrichten lassen
+  - pc einrichten lassen
+  - daten auf neuen pc übertragen
+  - datenübertragung pc
+  - daten von pc zu pc übertragen
+  - pc kaufberatung
+  - laptop kaufberatung
+  - laptop kaufen und einrichten lassen
+  - datensicherung pc
+  - pc backup erstellen
   harmful:
   - datenrettung berlin
   - festplatte daten retten
+  - windows passwort vergessen
+  - passwort laptop vergessen
+  - bit locker wiederherstellung
   - handy daten übertragen
   - smartphone einrichten berlin
-  - mac datenrettung berlin
+  - laptop testsieger stiftung warentest
+  note: "German Keyword Planner research on 2026-09-06: new-computer setup and transfer phrases such as neuen Computer/PC einrichten, Laptop einrichten lassen, Daten auf neuen PC übertragen and Datenübertragung PC returned 100–1k monthly searches with low competition. PC/Laptop Kaufberatung and Datensicherung PC also returned 100–1k, while laptop kaufen und einrichten lassen returned 10–100 with medium competition and supports a combined advice/procurement/setup offer. Datenrettung Berlin returned 100–1k with medium competition and is kept as a separate adjacent intent rather than a target for this page. Forgotten Windows/laptop password and BitLocker-recovery phrases are substantially larger, often 1k–10k, but represent a distinct access/recovery problem that should belong to the computer-support topic rather than this new-device page. High-volume laptop-test/product-comparison ideas are editorial shopping intent and are not service targets."
 - id: setup-transfer-en
   route: /en/services/private/setup-data-transfer/
   locale: en
