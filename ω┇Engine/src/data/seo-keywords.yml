@@ -274,23 +274,25 @@ pages:
 - id: business-landing-de
   route: /leistungen/unternehmen/
   locale: de
-  researchStatus: provisional-seed
-  primary: it support unternehmen berlin
+  researchStatus: researched-2026-09-06
+  primary: it dienstleister berlin
   useful:
-  - it service kleine unternehmen berlin
-  - it betreuung berlin
-  - it dienstleister berlin
-  - it support büro berlin
-  - it service kmu berlin
-  - büro it support berlin
-  - it hilfe praxis berlin
-  - it vor ort unternehmen berlin
+  - it firmen berlin
+  - it unternehmen berlin
+  - it systemhaus berlin
+  - systemhäuser berlin
+  - edv dienstleister berlin
+  - it lösungen berlin
+  - it service in berlin für firmen
   harmful:
+  - managed services berlin
+  - externe it abteilung berlin
   - 24h it service berlin
-  - enterprise managed services berlin
+  - enterprise it consultancy berlin
   - rechenzentrum beratung berlin
   - cybersecurity consultancy berlin
   - sap beratung berlin
+  note: "German Keyword Planner review on 2026-09-06: `it dienstleister berlin`, `it firmen berlin`, `it unternehmen berlin`, `it systemhaus berlin`, `systemhäuser berlin` and `berlin systemhaus` returned 100–1k monthly searches; IT-Dienstleister and Systemhaus variants showed medium advertiser competition, while `it firmen berlin` was high. `edv dienstleister berlin` and `it lösungen berlin` returned 10–100. All tested long phrases containing `für Unternehmen` or `kleine Unternehmen` returned 0–10, so they are customer-readable supporting wording rather than primary exact targets. Current Berlin SERPs for Systemhaus terms skew strongly toward outsourced IT, Managed Services, monitoring, SLAs and monthly contracts. This landing therefore owns the broad `it dienstleister berlin` provider intent while leading with one-off projects/problem resolution and optional recurring support without a mandatory long-term contract. Dedicated Microsoft 365, Google Workspace and network pages retain their narrower service intents."
 - id: business-landing-en
   route: /en/services/business/
   locale: en
