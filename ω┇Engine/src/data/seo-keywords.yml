@@ -33,22 +33,23 @@ pages:
   route: /en/
   locale: en
   researchStatus: provisional-seed
-  primary: IT support Berlin
+  primary: IT help Berlin
   useful:
-  - on-site IT support Berlin
-  - English IT support Berlin
+  - English IT help Berlin
   - computer help Berlin
-  - IT service Berlin
-  - home office IT support Berlin
-  - small business IT support Berlin
+  - home office IT help Berlin
+  - on-site IT help Berlin
   - English speaking IT technician Berlin
   - PC help Berlin
   harmful:
+  - IT support Berlin
+  - small business IT support Berlin
   - laptop repair shop Berlin
   - data recovery Berlin
   - 24/7 IT support Berlin
   - free tech support Berlin
   - enterprise IT consultancy Berlin
+  note: "`IT support Berlin` is now owned by the researched English business-services landing. The homepage keeps a broader provisional mixed-audience `IT help Berlin` role until homepage-specific English research is completed."
 - id: private-landing-de
   route: /leistungen/privatpersonen/
   locale: de
@@ -296,23 +297,27 @@ pages:
 - id: business-landing-en
   route: /en/services/business/
   locale: en
-  researchStatus: provisional-seed
-  primary: IT support for small business Berlin
+  researchStatus: researched-2026-09-06
+  primary: IT support Berlin
   useful:
+  - IT services Berlin
+  - IT support in Berlin
+  - IT company Berlin
+  - English IT support Berlin
   - business IT support Berlin
-  - small business IT service Berlin
-  - office IT support Berlin
-  - IT service provider Berlin
-  - on-site business IT Berlin
-  - IT support for offices Berlin
-  - English business IT support Berlin
-  - IT help for small companies Berlin
+  - on-site IT support Berlin
   harmful:
+  - IT support jobs Berlin
+  - managed IT services Berlin
+  - top IT companies in Berlin
+  - best IT companies in Berlin
+  - big IT companies in Berlin
   - 24/7 managed IT Berlin
   - enterprise MSP Berlin
   - data centre consultancy Berlin
   - cybersecurity consultancy Berlin
   - SAP consulting Berlin
+  note: "English-language Berlin Keyword Planner review on 2026-09-06: `it support berlin`, `it services berlin` and `it company berlin` returned 100–1k monthly searches; IT support showed medium advertiser competition, IT services low and IT company high. The idea `it support in berlin` also returned 100–1k, while `managed it services berlin` returned 10–100 with medium competition. All tested long business-qualified variants such as `business it support berlin`, `it support for businesses berlin`, `small business it support berlin`, `it service provider berlin`, `it services company berlin` and `on site it support berlin` returned 0–10. `it support jobs berlin` also returned 100–1k but is excluded as job-seeker intent. Current Berlin SERPs mix reactive IT support with outsourced/managed-service models, so this page owns broad `IT support Berlin` and `IT services Berlin` provider intent while stating that one-off projects and targeted troubleshooting do not require a managed-service contract. Dedicated Microsoft 365, Google Workspace and network/infrastructure pages retain their narrower service intents."
 - id: microsoft-365-de
   route: /leistungen/unternehmen/microsoft-365-arbeitsplaetze/
   locale: de
