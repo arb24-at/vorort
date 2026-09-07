@@ -375,24 +375,30 @@ pages:
 - id: google-workspace-de
   route: /leistungen/unternehmen/google-workspace-cloud/
   locale: de
-  researchStatus: provisional-seed
-  primary: google workspace support berlin
+  researchStatus: researched-2026-09-07
+  primary: google workspace einrichten
   useful:
-  - google workspace beratung berlin
-  - google workspace dienstleister berlin
-  - google workspace einrichten
+  - google workspace support
   - google workspace migration
-  - gmail unternehmen support
-  - google drive support unternehmen
-  - google workspace benutzerverwaltung
-  - google drive berechtigungen
-  - gmail domain einrichten
+  - google workspace service
+  - google workspace für unternehmen
+  - gmail für unternehmen
+  - google workspace backup
+  - google workspace mail
+  - google workspace konto erstellen
+  - google workspace email einrichten
+  - g suite einrichten
+  - gmail für firmen
   harmful:
-  - google konto login
+  - login gsuite
+  - google workspace support telefonnummer
+  - google workspace für privatpersonen
+  - gmail für unternehmen kostenlos
+  - google education g suite
+  - google workspace login
   - gmail login
-  - google one support
-  - google ads agentur berlin
-  - seo agentur berlin
+  note: "German Keyword Planner research on 2026-09-07: `google workspace einrichten` and `google workspace support` both returned 100–1k monthly searches in Berlin; setup showed medium advertiser competition and support low. SERP review shows generic support is heavily mixed with Google's own Customer Care and admin help, so the page owns implementation/setup intent while still covering practical troubleshooting. `google workspace migration`, `google workspace service`, `gmail für unternehmen`, `google workspace backup` and related Gmail/Workspace setup phrases returned 10–100. `google workspace einrichten lassen`, `google workspace beratung` and `google workspace dienstleister` returned only 0–10. The service is offered neutrally for businesses that use or choose Workspace; it does not present Google Workspace as the default best platform, does not advertise training or ongoing administration as standard, and excludes enterprise-level migration/compliance/identity work."
+
 - id: google-workspace-en
   route: /en/services/business/google-workspace-cloud/
   locale: en
