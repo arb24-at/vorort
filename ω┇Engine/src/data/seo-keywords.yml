@@ -402,24 +402,35 @@ pages:
 - id: google-workspace-en
   route: /en/services/business/google-workspace-cloud/
   locale: en
-  researchStatus: provisional-seed
-  primary: Google Workspace support Berlin
+  researchStatus: researched-2026-09-07
+  primary: google workspace support
   useful:
-  - Google Workspace consulting Berlin
-  - Google Workspace service provider Berlin
-  - Google Workspace setup Berlin
-  - Google Workspace migration Berlin
-  - Gmail business support
-  - Google Drive business support
-  - Google Workspace user management
-  - Google Drive permissions help
-  - Gmail domain setup
+  - google workspace setup
+  - google workspace migration
+  - google workspace services
+  - google workspace implementation
+  - google workspace consulting
+  - google workspace business email
+  - google workspace email setup
+  - gmail business setup
+  - google workspace backup
+  - google workspace domains
+  - google work space email
+  - set up google workspace
+  - business email google workspace
+  - migrate to google workspace
+  - migrate from office 365 to google workspace
+  - migrate google workspace to microsoft 365
   harmful:
-  - Google account login
-  - Gmail login
-  - Google One support
-  - Google Ads agency Berlin
-  - SEO agency Berlin
+  - workspace login google
+  - g suite login
+  - google workspace for education
+  - google workspace help center
+  - google workspace customer service
+  - google workspace phone number
+  - g suite pricing
+  - google workspace project management
+  note: "English Keyword Planner research on 2026-09-07: `google workspace support` returned 100–1k monthly searches in Berlin with low advertiser competition, while `google workspace setup`, `google workspace migration`, `google workspace services`, `google workspace implementation`, `google workspace consulting`, business-email/setup and backup phrases returned 10–100. Generic support is partly mixed with Google's own help and customer-care intent, so the page qualifies the term through Berlin business context and concrete environment work: setup, company domain/Gmail, users, Shared Drives, migration, security, backup and workplace integration. `g suite` and login variants have higher broad volume but are legacy/navigational product intent rather than the page's commercial owner. Migration between Microsoft 365 and Google Workspace remains a strong supporting commercial theme, with several supplied migration variants showing high advertiser competition."
 - id: network-it-de
   route: /leistungen/unternehmen/netzwerk-it-betreuung/
   locale: de
