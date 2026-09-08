@@ -79,23 +79,31 @@ pages:
 - id: private-landing-en
   route: /en/services/private/
   locale: en
-  researchStatus: provisional-seed
-  primary: home computer help Berlin
+  researchStatus: researched-2026-09-08
+  primary: private IT support Berlin
   useful:
-  - on-site computer help Berlin
-  - personal IT support Berlin
+  - IT support for private customers Berlin
+  - IT support for individuals Berlin
   - home IT support Berlin
-  - home office computer help Berlin
-  - PC setup Berlin
-  - Wi-Fi help Berlin
-  - software help Berlin
-  - English computer help Berlin
+  - IT support at home Berlin
+  - home computer support Berlin
+  - private computer support Berlin
+  - on-site computer support Berlin
+  - English IT support at home Berlin
+  - home office IT support Berlin
   harmful:
-  - senior computer classes Berlin
-  - phone repair Berlin
+  - IT help Berlin
+  - IT support Berlin
+  - computer support Berlin
+  - home network setup
+  - new computer setup Berlin
+  - software installation help Berlin
+  - computer repair Berlin
+  - PC repair Berlin
   - data recovery Berlin
-  - 24 hour computer emergency
-  - cheap laptop repair Berlin
+  - phone repair Berlin
+  - 24/7 IT support Berlin
+  note: "English Keyword Planner research on 2026-09-08 found all ten tested private/home-qualified landing phrases at only 0–10 monthly searches in Berlin, including `private it support berlin`, `home it support berlin`, `it support at home berlin`, `on site computer support berlin`, `english it support at home berlin` and `home office it support berlin`. The page therefore has no strong standalone-volume keyword owner and is intentionally an orientation/conversion gateway rather than being forced onto broader phrases already owned elsewhere. The `primary` phrase is a descriptive routing label, not a volume claim. Broad `IT help Berlin` remains a provisional homepage role, `IT support Berlin` belongs to the researched business landing, and `computer support Berlin` belongs to the researched Computer & Laptop Help page. Home-network, new-computer-setup and software intents remain with their detailed service pages."
 - id: computer-laptop-de
   route: /leistungen/privatpersonen/computer-laptop-hilfe/
   locale: de
