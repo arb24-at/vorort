@@ -53,23 +53,29 @@ pages:
 - id: private-landing-de
   route: /leistungen/privatpersonen/
   locale: de
-  researchStatus: provisional-seed
-  primary: computerhilfe privat berlin
+  researchStatus: researched-2026-09-08
+  primary: it hilfe für privatpersonen berlin
   useful:
-  - it hilfe zuhause berlin
+  - it service privatkunden berlin
+  - it hilfe privat berlin
+  - computerhilfe privat berlin
+  - computerhilfe für privatpersonen berlin
+  - computer hilfe zuhause berlin
   - computer hilfe vor ort berlin
-  - pc hilfe zuhause berlin
   - computer service privat berlin
+  - pc hilfe zuhause berlin
   - homeoffice it hilfe berlin
-  - computer einrichten berlin
-  - wlan hilfe zuhause berlin
-  - software hilfe computer berlin
   harmful:
+  - it hilfe berlin
+  - pc hilfe berlin
+  - heimnetzwerk einrichten
+  - neuen computer einrichten
   - computerhilfe senioren berlin
   - handy reparatur berlin
   - datenrettung berlin
   - 24 stunden computer notdienst
   - billige pc reparatur berlin
+  note: "German Keyword Planner research on 2026-09-08 found all ten tested landing-specific private/home-office phrases at only 0–10 monthly searches in Berlin, including `it service privatkunden berlin`, `it hilfe für privatpersonen berlin`, `computerhilfe privat berlin`, `computer hilfe vor ort berlin` and `homeoffice it hilfe berlin`. The page therefore has no strong standalone-volume keyword owner and is intentionally optimized as an orientation/conversion gateway rather than being forced onto a misleading higher-volume term. The `primary` phrase is a descriptive routing label, not a volume claim. Broad `IT Hilfe Berlin` remains with the provisional mixed-audience homepage, while `PC Hilfe Berlin`, `Heimnetzwerk einrichten` and `neuen Computer einrichten` stay owned by their researched detailed service pages."
 - id: private-landing-en
   route: /en/services/private/
   locale: en

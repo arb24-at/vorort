@@ -124,13 +124,13 @@ Copy this block for the currently active page. Keep it concise.
 
 ### Page: German private-services landing — `/leistungen/privatpersonen/`
 
-**Status:** design exploring
+**Status:** production content implemented; design pending
 
 **Audience and search intent**
 
 - Primary audience: private customers and home-office users in Berlin who know they need IT help but may not know whether the cause is the computer, macOS/Windows, an application, an account, the home network, or a device change.
 - Primary intent / commercial job: act as the broad private/home-office gateway, helping a visitor recognise their situation, understand that local professional help is available, and continue either to the correct detailed service or directly to an enquiry without having to diagnose the technology first.
-- Search ownership: the landing itself is still `provisional-seed`; `computerhilfe privat berlin` is the current provisional owner, supported by phrases such as `IT Hilfe zuhause Berlin`, `Computer Hilfe vor Ort Berlin`, `PC Hilfe zuhause Berlin`, `Computer Service privat Berlin` and `Homeoffice IT Hilfe Berlin`. Do not treat that seed as a researched final H1 until landing-specific Keyword Planner research is completed.
+- Search ownership: landing-specific German Keyword Planner research on 2026-09-08 found all ten tested private/home-office long-tail phrases at only 0–10 monthly searches. The page therefore has no strong standalone-volume keyword owner. `it hilfe für privatpersonen berlin` is retained only as a descriptive SEO-routing label, not a volume claim. Broad `IT Hilfe Berlin` remains with the mixed-audience homepage, while the researched detailed services retain their stronger problem-specific terms.
 - Important secondary intent: make “vor Ort in Berlin”, private/home-office context, understandable communication and cross-service competence clear enough that a visitor with a mixed or uncertain problem still sees a credible next step.
 - Detailed-service ownership that the landing must not cannibalise: `PC Hilfe Berlin` belongs to Computer & Laptop Help; `Heimnetzwerk einrichten` belongs to Wi-Fi & Home Network; `neuen Computer einrichten` belongs to Setup & Data Transfer. Software installation/optimisation remains its own service intent and its current SEO seed is still provisional.
 - Wrong or harmful intent to avoid: hardware-repair-shop positioning; cheap PC repair; phone repair; guaranteed data recovery; 24-hour/emergency claims; audience stereotypes such as a “senior computer help” identity; broad Smart-Home installation as if it were part of the present launch offer.
@@ -211,11 +211,13 @@ Copy this block for the currently active page. Keep it concise.
 - How should overlapping situations be represented so a visitor can recognise “slow computer”, “email problem” or “printer problem” without being forced into a false technical diagnosis?
 - How much cross-service breadth is needed before the landing feels credible, while still keeping the detailed pages responsible for depth?
 - Where should the “you do not need to diagnose this yourself” reassurance recur, if anywhere, so it supports both service discovery and direct enquiry without becoming repetitive?
-- The exact German landing SEO owner/H1 remains provisional pending landing-specific Keyword Planner research. Design should therefore preserve semantic flexibility rather than treating the current seed phrase as immutable display copy.
+- The landing-specific research is complete and shows no strong standalone-volume term. Design should preserve natural customer-facing language such as “IT-Hilfe für Zuhause und Homeoffice in Berlin” rather than trying to visually privilege an artificial exact-match keyword.
 
 **Agreed decisions**
 
 - This handoff covers the German landing only. The English landing remains independently authored and should receive its own search/content pass.
+- German landing-specific Keyword Planner research is complete; all ten tested long-tail phrases returned 0–10 monthly searches, so the page is intentionally orientation/conversion-led rather than assigned a false high-volume SEO owner.
+- The production German landing content has been rewritten to match this handoff while preserving the existing composition and CSS classes; the dedicated Design workspace still owns future composition decisions.
 - The landing is a private/home-office orientation and conversion page, not a fifth detailed service and not a catalogue of technologies.
 - Content starts from customer situations and intended outcomes; technical categories are supporting context.
 - The visitor may continue to a detailed service or enquire without choosing one first.
