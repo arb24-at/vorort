@@ -4,48 +4,202 @@ locale: en
 audience: private
 order: 1
 slug: computer-laptop-help
-purpose: "Symptom-led support for private Windows computers and laptops with responsible diagnosis."
+purpose: "Symptom-led support for private Windows PCs, laptops and Macs with responsible system, software and account-access troubleshooting."
 navigation:
   group: device-home
   label: "Computer & laptop help"
 page:
-  template: private-prototype
+  template: guided-private
   technicalDepth: informative
   theme:
     variant: computer
-    state: "A visible device problem moves towards an isolated cause and an understandable resolution."
-    title: "Computer diagnosis in a familiar setting"
-    description: "A faulty computer state is checked, narrowed down and resolved in a traceable way."
+    state: "From a visible computer problem through a narrowed cause to controlled recovery and a checked result."
+    title: "Computer support in a familiar setting"
+    description: "Startup failures, slow systems, account access and other visible problems are checked methodically and resolved in an understandable way."
+  storyboard:
+    - role: situation
+      composition: wide
+      visualState: conflict
+      eyebrow: "The visible problem"
+      title: "The computer will not start, has become painfully slow or will not let you sign in"
+      text: "A Windows PC, laptop or Mac can suddenly stop starting properly, freeze repeatedly, show errors after an update or get stuck at a login or recovery screen. What matters first is getting the device back into a dependable state — not knowing the technical name of the fault before you contact us."
+      points:
+        - "Startup failures, blank screens or repeated restarts"
+        - "Very slow performance, freezing or crashes"
+        - "Login, account or recovery problems"
+      callouts:
+        - "Startup"
+        - "Speed"
+        - "Access"
+    - role: investigation
+      composition: text-left
+      visualState: dependencies
+      eyebrow: "Narrow the cause"
+      title: "We first work out what actually changed"
+      text: "We look at the visible symptom, recent changes, Windows or macOS, installed software, accounts, available recovery options and the state of important readable data. This helps avoid unnecessary reinstalls and makes it easier to recognise when the problem falls outside our software and system-support scope."
+      points:
+        - "Reconstruct the symptoms, timing and recent changes"
+        - "Separate system, software, account and access causes"
+        - "Check what should be backed up before higher-risk steps"
+      callouts:
+        - "Symptom"
+        - "Data"
+        - "Cause"
+    - role: intervention
+      composition: text-right
+      visualState: controlled-change
+      eyebrow: "Fix the right thing"
+      title: "Use the least disruptive route to a dependable result"
+      text: "Depending on the cause, we repair or reconfigure Windows or macOS, remove malware, resolve software conflicts, use legitimate account-recovery options or reinstall the operating system. If a change could put personal data at risk, we discuss protecting readable agreed data first whenever that is practical."
+      points:
+        - "System repair, cleanup or reinstallation when appropriate"
+        - "Legitimate password, account and BitLocker recovery routes"
+        - "Continue longer work away from the home visit by agreement when useful"
+      callouts:
+        - "Controlled"
+        - "Access"
+        - "Backup"
+    - role: outcome
+      composition: system
+      visualState: verified
+      eyebrow: "Usable again"
+      title: "Check the result and make the next step clear"
+      text: "At the end we check the affected functions with you and explain what changed. If the evidence points to a hardware fault, specialist physical repair or a device that is no longer worth further work, we say so clearly rather than turning a software-support visit into an open-ended repair job."
+      points:
+        - "Check startup, login and the functions that were affected"
+        - "Explain changes and any remaining risks in plain English"
+        - "Recommend specialist repair or replacement when that is the better route"
+      callouts:
+        - "Checked"
+        - "Explained"
+        - "Next step"
 seo:
-  title: "Computer & Laptop Help Berlin"
-  description: "On-site help in Berlin for slow computers, startup failures, crashes, updates, malware and the setup of new PCs or laptops."
-  intent: "Find help in Berlin for a specific computer or laptop problem."
+  title: "Computer Support Berlin | Windows & Mac Help"
+  description: "On-site computer and laptop support in Berlin for Windows and Mac: startup problems, slow systems, crashes, malware, account access and BitLocker recovery."
+  intent: "Find private computer support in Berlin for a specific Windows PC, laptop or Mac problem without looking for a hardware repair workshop."
 hero:
-  eyebrow: "Private customers · Computer help"
-  title: "Computer and laptop help in Berlin"
-  intro: "When a computer becomes slow, no longer starts or repeatedly displays errors, we narrow down the cause methodically. We help with Windows PCs and laptops, explain the necessary work clearly and check the result together with you."
+  eyebrow: "Private & home office · PC & Mac support"
+  title: "Computer and laptop support for Windows and Mac in Berlin"
+  intro: "If your PC or Mac will not start, has become unusually slow, keeps crashing or will not let you sign in, we begin by finding the real cause. We help with Windows and macOS problems on site in Berlin, protect readable data before risky steps where sensible, and explain which solution is technically and economically reasonable."
 problems:
   eyebrow: "Recognise the situation"
-  title: "Common requests"
+  title: "Computer problems we can help with"
+  intro: "You do not need to diagnose the fault yourself. Tell us what the device is doing, when it started and anything that changed beforehand."
   items:
-    - "Startup failures, crashes and unusually slow systems"
-    - "Problems after Windows, driver or software updates"
-    - "Suspicious pop-ups, malware and compromised accounts"
-    - "Setting up a new computer, printer and accessories"
+    - "A Windows PC, laptop or Mac no longer starts properly or gets stuck during startup"
+    - "The computer has become very slow, freezes or repeatedly stops responding"
+    - "Windows or macOS shows errors after updates, restarts unexpectedly or software suddenly stops working"
+    - "Pop-ups, malware or suspicious behaviour make the computer or an account feel unsafe"
+    - "A Windows, Mac, Microsoft or Apple account can no longer be opened normally with the available credentials"
+    - "BitLocker asks for a recovery key during startup and the correct existing key needs to be located or identified"
+    - "A printer, peripheral or individual application stops working as part of the wider computer problem"
 included:
   eyebrow: "Possible support"
-  title: "What support can include"
+  title: "What we can check and put back in order"
+  intro: "The right approach depends on the symptoms. We work from the visible problem towards the cause and avoid unnecessary changes."
   items:
-    - "Initial diagnosis and a clear recommendation for the next step"
-    - "System cleanup, updates and sensible baseline settings"
-    - "Setup of software, user accounts and peripherals"
-    - "A final functional check and practical security guidance"
+    - "Structured troubleshooting of Windows and macOS system problems, software errors and startup failures"
+    - "Windows or macOS system repair, sensible cleanup, update troubleshooting or reinstallation when needed"
+    - "Removal of malware and cleanup of suspicious software or browser states"
+    - "Legitimate recovery of Windows or Mac login access and Microsoft or Apple account access where the intended recovery options are available"
+    - "Help locating and using an existing BitLocker recovery key without bypassing encryption"
+    - "Backup of readable agreed personal data before higher-risk repair or reinstallation steps when practical and possible"
+    - "Collection and return by agreement when longer diagnostics or recovery work is impractical during the on-site appointment"
+    - "A clear recommendation to replace the device, with a handoff to buying advice, setup and data transfer when further troubleshooting is no longer sensible"
 outcome:
-  eyebrow: "A useful outcome"
-  title: "Practical and understandable"
-  text: "You receive a traceable solution and know what was changed. If replacement or a specialist repair is more economical, we explain that before unnecessary work is carried out."
+  eyebrow: "A useful result"
+  title: "Get back to using the computer and understand what happened"
+  text: "The goal is a reliably usable computer or, when that is not realistic, a clear and responsible decision about what should happen next. You should know what probably caused the problem, what was changed and whether further system work, specialist physical repair or replacement makes more sense."
 cta:
-  title: "Describe your computer problem"
-  text: "Tell us the device, error message and urgency by phone, email or WhatsApp."
-  prompt: "The device, visible symptom and most recent change help us make an initial assessment."
-
+  title: "Tell us what your computer is doing"
+  text: "Describe the device, the visible symptom, any error message and when the problem began. We can then make an initial assessment and arrange the appropriate next step."
+  prompt: "Do not send passwords, PINs, recovery keys or verification codes through the enquiry form."
+expanded:
+  situations:
+    eyebrow: "Typical situations"
+    title: "When computer support is worth arranging"
+    intro: "The service is designed around concrete problems with a Windows PC, laptop or Mac rather than around a list of technical products."
+    items:
+      - title: "The computer will not start"
+        text: "The device powers on but does not reach Windows or macOS, repeatedly restarts, shows a blank screen or stops at a recovery screen."
+      - title: "Everything has become slow"
+        text: "Startup takes much longer, programs hesitate, the system freezes or normal everyday tasks have become frustratingly sluggish."
+      - title: "Windows or macOS is unstable"
+        text: "Updates, software changes or system errors lead to crashes, repeated warnings, failed applications or unreliable behaviour."
+      - title: "Login or account access is blocked"
+        text: "A local login, Microsoft account, Apple Account or Mac user account cannot be accessed normally and legitimate recovery options need to be checked."
+      - title: "BitLocker appears at startup"
+        text: "Windows unexpectedly requests a BitLocker recovery key and you need help identifying where the correct existing key may have been stored."
+      - title: "Malware or suspicious software appears"
+        text: "Unexpected pop-ups, redirects, unwanted programs or strange account behaviour suggest that the computer should be checked and cleaned."
+      - title: "The device may no longer be worth fixing"
+        text: "When age, performance or likely physical repair costs make further work questionable, we can help decide whether replacement is the more sensible route."
+  process:
+    eyebrow: "How the visit works"
+    title: "From visible symptom to a checked result"
+    intro: "We start with the least destructive information and only move to more disruptive recovery steps when the evidence justifies them."
+    steps:
+      - title: "Describe the problem"
+        text: "We begin with what you can see, when it started, recent changes and whether important data or account access is involved."
+      - title: "Check the current state"
+        text: "We inspect the system, available recovery options, software behaviour and readable data without assuming the cause in advance."
+      - title: "Agree the sensible route"
+        text: "We explain whether repair, cleanup, account recovery, reinstallation or another step is appropriate before carrying out avoidable work."
+      - title: "Protect data where needed"
+        text: "If a planned change could affect personal data, we discuss an appropriate backup of readable agreed data first where practical."
+      - title: "Carry out the work"
+        text: "We make the agreed system, software or account changes and can continue longer work away from the visit by arrangement when useful."
+      - title: "Test and hand over"
+        text: "We check the affected functions with you, explain what changed and make any remaining repair or replacement decision clear."
+  proof:
+    eyebrow: "What sits behind the service"
+    title: "Windows and Mac system support"
+    text: "The focus is operating systems, software, account access and a traceable recovery path — not workshop-style physical hardware repair."
+    items:
+      - "Windows PCs and laptops as well as Apple Macs and macOS"
+      - "Startup problems, system errors, crashes and slow computers"
+      - "Windows and macOS system repair or reinstallation when appropriate"
+      - "Malware cleanup, suspicious software states and practical account security"
+      - "Legitimate Windows/Mac login, Microsoft/Apple account recovery and BitLocker-key checks"
+      - "IT experience since 2008 with understandable handover rather than unnecessary jargon"
+  boundaries:
+    eyebrow: "Clear boundaries"
+    title: "What this computer support service does not promise"
+    items:
+      - "We are not advertising a hardware repair workshop or physical hardware-fault diagnosis. If troubleshooting points towards a hardware problem, we explain that clearly; a simple, well-defined component replacement may occasionally be agreed without becoming the standard offer."
+      - "Physical repairs such as display, hinge, charging-port, motherboard or liquid-damage work are outside the advertised service."
+      - "A damaged, unstable or unreadable storage device is not normal computer support. That becomes a separate data-recovery assessment, and successful recovery cannot be guaranteed."
+      - "BitLocker encryption cannot simply be bypassed. Access to an encrypted drive requires a valid existing recovery key; a lost key cannot be recreated by us."
+      - "Password and account recovery only uses legitimate recovery options that are actually available. Protected access cannot be guaranteed in every case."
+      - "Passwords, PINs, recovery keys and verification codes should never be sent through the website enquiry. When login is needed, enter sensitive information yourself on the device whenever possible."
+  faqs:
+    - question: "Do you support both Windows computers and Macs?"
+      answer: "Yes. Computer and laptop support covers Windows PCs and laptops as well as Macs running macOS. The focus is system, software, startup, performance and legitimate account-access problems rather than physical hardware repair."
+    - question: "What can you do if my PC will not start?"
+      answer: "We check the startup state, recent changes, Windows recovery options, important readable data and likely software or system causes. We then decide whether repair, recovery or reinstallation is the sensible next step."
+    - question: "Can you help if my Mac does not start properly?"
+      answer: "Yes. We can investigate common macOS startup and recovery problems, including cases where the Mac does not reach the normal login or needs macOS Recovery. If the evidence points to a physical hardware fault, that is outside the advertised support scope."
+    - question: "My computer or laptop has become very slow. Is it worth checking?"
+      answer: "Yes. Slow performance can come from software, storage space, startup items, updates, background processes or other system conditions. We try to narrow the cause before recommending a reinstall or replacement."
+    - question: "Do you reinstall Windows or macOS?"
+      answer: "Yes, when repair is not sensible or a clean reinstall is the responsible route. Beforehand we check what agreed personal data should be protected where possible and whether the required accounts or recovery information are available."
+    - question: "Do you remove viruses or malware?"
+      answer: "Yes. We can investigate and clean suspicious programs, browser states and malware, and discuss sensible baseline security steps. This is normal computer support, not a forensic investigation or enterprise cybersecurity service."
+    - question: "Can you help if I forgot my Windows password or PIN?"
+      answer: "Yes, when a legitimate recovery route exists. Depending on the account type, Windows recovery options, a Microsoft account or other intended methods may apply. We do not bypass protection mechanisms or promise access when the necessary recovery options are unavailable."
+    - question: "What if Windows asks for a BitLocker recovery key?"
+      answer: "We can help check where an existing recovery key may have been stored, such as the relevant Microsoft or organisational account, a saved file, printout or another intended location. Without the correct recovery key, an encrypted drive cannot simply be unlocked."
+    - question: "Can you help with a forgotten Mac login or Apple Account password?"
+      answer: "We can work through the intended macOS and Apple recovery options with you. Depending on the type of lock and the recovery information or trusted devices available, Apple or an authorised service may also be required."
+    - question: "What happens to my data if Windows or macOS must be reinstalled?"
+      answer: "If personal data is still normally readable and the planned work could put it at risk, we discuss protecting the agreed data first. If the storage device is damaged or unreadable, the case becomes a separate data-recovery assessment without a success guarantee."
+    - question: "Do you repair screens, motherboards or other hardware faults?"
+      answer: "No. We do not present ourselves as a hardware repair workshop and do not advertise physical repair diagnostics. A clearly defined simple component replacement may sometimes be agreed, but physical device and electronics repair are outside the standard offer."
+    - question: "Does all work have to be completed at my home?"
+      answer: "No. On-site help is the normal model, but for longer checks, reinstalls or recovery work we can agree to take the computer away and return it when that is more practical."
+    - question: "What if repairing the computer no longer makes financial sense?"
+      answer: "We say so clearly. Rather than spending more time on an uneconomical device, we can help choose or procure a suitable Windows PC, laptop or Mac and then handle setup and normal data transfer."
+  relatedServiceIds:
+    - software-optimisation
+    - setup-data-transfer
+    - wifi-home-network

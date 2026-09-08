@@ -121,23 +121,27 @@ pages:
 - id: computer-laptop-en
   route: /en/services/private/computer-laptop-help/
   locale: en
-  researchStatus: provisional-seed
-  primary: computer help Berlin
+  researchStatus: researched-2026-09-08
+  primary: computer support Berlin
   useful:
-  - laptop help Berlin
-  - PC troubleshooting Berlin
-  - slow computer help Berlin
-  - Windows help Berlin
-  - PC will not start Berlin
-  - computer crash help Berlin
-  - Windows troubleshooting Berlin
-  - on-site PC support Berlin
+  - PC support Berlin
+  - on-site computer support Berlin
+  - Windows computer support Berlin
+  - Mac support Berlin
+  - slow computer support Berlin
+  - computer startup problem Berlin
+  - Windows password help Berlin
+  - BitLocker recovery help Berlin
   harmful:
+  - computer repair Berlin
+  - PC repair Berlin
+  - laptop repair Berlin
   - laptop screen repair Berlin
   - motherboard repair Berlin
   - hard drive recovery Berlin
   - gaming PC repair Berlin
   - computer repair shop Berlin
+  note: "English Berlin Keyword Planner research on 2026-09-08: `computer repair berlin` and the idea `pc repair berlin` returned 100–1k monthly searches, but current English Berlin SERPs for those phrases are dominated by physical repair workshops offering motherboard, screen, charging-port, liquid-damage, hardware and data-recovery work that falls outside the advertised service boundary. `computer support berlin` returned 10–100 with high competition and `pc support berlin` 10–100 with low competition; both fit the actual system/software support offer better. `computer help berlin`, `pc help berlin`, `laptop help berlin`, `computer troubleshooting berlin` and `mac help berlin` returned 0–10. The page therefore owns `computer support Berlin`, keeps `PC support Berlin` secondary, and treats repair-shop vocabulary as wrong intent despite its higher volume. Mac, startup, slow-computer, account and BitLocker phrases are capability-aligned supporting language unless separately volume-researched."
 - id: software-de
   route: /leistungen/privatpersonen/software-installation-optimierung/
   locale: de
