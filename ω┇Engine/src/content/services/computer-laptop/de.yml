@@ -4,48 +4,202 @@ locale: de
 audience: private
 order: 1
 slug: computer-laptop-hilfe
-purpose: "Symptomorientierte Hilfe für private Windows-Computer und Laptops mit verantwortbarer Diagnose."
+purpose: "Symptomorientierte Hilfe für private Windows-Computer, Laptops und Macs bei System-, Software- und Zugangsproblemen."
 navigation:
   group: device-home
   label: "Computer- & Laptop-Hilfe"
 page:
-  template: private-prototype
+  template: guided-private
   technicalDepth: informative
   theme:
     variant: computer
-    state: "Vom sichtbaren Geräteproblem zur eingegrenzten Ursache und verständlichen Lösung."
+    state: "Vom sichtbaren Computerproblem über die eingegrenzte Ursache bis zur kontrollierten Wiederherstellung und Prüfung."
     title: "Computerdiagnose in vertrauter Umgebung"
-    description: "Ein fehlerhafter Computerzustand wird geprüft, eingegrenzt und nachvollziehbar aufgelöst."
+    description: "Startfehler, langsame Systeme, Kontozugang und andere sichtbare Probleme werden strukturiert geprüft und nachvollziehbar gelöst."
+  storyboard:
+    - role: situation
+      composition: wide
+      visualState: conflict
+      eyebrow: "Das sichtbare Problem"
+      title: "Der Computer startet nicht, ist langsam oder lässt Sie nicht mehr hinein"
+      text: "Ein PC, Laptop oder Mac kann plötzlich nicht mehr starten, ständig hängen bleiben, nach einem Update Fehler zeigen oder am Anmeldebildschirm feststecken. Für Sie zählt zuerst, dass das Gerät wieder verlässlich nutzbar wird – nicht die technische Bezeichnung des Fehlers."
+      points:
+        - "Startfehler, schwarzer Bildschirm oder wiederholte Neustarts"
+        - "Sehr langsames Verhalten, Hänger oder Abstürze"
+        - "Anmelde-, Konto- oder Wiederherstellungsprobleme"
+      callouts:
+        - "Start"
+        - "Tempo"
+        - "Zugang"
+    - role: investigation
+      composition: text-left
+      visualState: dependencies
+      eyebrow: "Ursache eingrenzen"
+      title: "Wir prüfen zuerst, was sich tatsächlich verändert hat"
+      text: "Wir betrachten das sichtbare Symptom, letzte Änderungen, Windows oder macOS, Programme, Konten, vorhandene Wiederherstellungswege und den Zustand wichtiger lesbarer Daten. So vermeiden wir vorschnelle Neuinstallationen und erkennen, wenn ein Fall außerhalb unseres Software- und System-Supports liegt."
+      points:
+        - "Fehlerbild, Verlauf und letzte Änderungen nachvollziehen"
+        - "System-, Software-, Konto- und Zugangsursachen unterscheiden"
+        - "Vor riskanten Schritten prüfen, welche Daten gesichert werden sollten"
+      callouts:
+        - "Symptom"
+        - "Daten"
+        - "Ursache"
+    - role: intervention
+      composition: text-right
+      visualState: controlled-change
+      eyebrow: "Gezielt beheben"
+      title: "Nur die Schritte, die für eine belastbare Lösung nötig sind"
+      text: "Je nach Ursache reparieren oder konfigurieren wir Windows beziehungsweise macOS, bereinigen Schadsoftware, beheben Softwarekonflikte, nutzen vorgesehene Kontowiederherstellung oder installieren das Betriebssystem neu. Wenn ein Eingriff Daten gefährden könnte, sichern wir lesbare persönliche Daten soweit sinnvoll und vereinbart zuerst."
+      points:
+        - "Systemreparatur, Bereinigung oder Neuinstallation nach Bedarf"
+        - "Legitime Konto-, Passwort- und BitLocker-Wiederherstellungswege"
+        - "Bei Bedarf Weiterarbeit am Gerät außerhalb des Vor-Ort-Termins nach Absprache"
+      callouts:
+        - "Kontrolliert"
+        - "Zugang"
+        - "Backup"
+    - role: outcome
+      composition: system
+      visualState: verified
+      eyebrow: "Wieder nutzbar"
+      title: "Funktion prüfen und den nächsten Schritt klar benennen"
+      text: "Zum Abschluss prüfen wir gemeinsam die betroffenen Funktionen und erklären, was geändert wurde. Wenn sich ein Hardwaredefekt abzeichnet, eine Spezialreparatur nötig wäre oder ein Austausch wirtschaftlicher ist, sprechen wir das offen an und empfehlen keinen unnötigen weiteren Aufwand."
+      points:
+        - "Start, Anmeldung und betroffene Funktionen kontrollieren"
+        - "Änderungen und verbleibende Risiken verständlich erklären"
+        - "Bei Bedarf Reparaturgrenze oder Gerätewechsel klar empfehlen"
+      callouts:
+        - "Geprüft"
+        - "Erklärt"
+        - "Nächster Schritt"
 seo:
-  title: "Computer- & Laptop-Hilfe Berlin"
-  description: "Vor-Ort-Hilfe in Berlin bei langsamen Computern, Startproblemen, Abstürzen, Updates, Schadsoftware und der Einrichtung neuer PCs oder Laptops."
-  intent: "Hilfe bei einem konkreten Computer- oder Laptopproblem in Berlin finden."
+  title: "PC-Hilfe Berlin | Windows & Mac Computerprobleme"
+  description: "Vor-Ort Computer- und Laptop-Hilfe in Berlin für Windows und Mac: Startprobleme, langsame Systeme, Abstürze, Schadsoftware, Kontozugang und BitLocker."
+  intent: "Hilfe bei einem konkreten Windows-PC-, Laptop- oder Mac-Problem in Berlin finden, ohne eine Hardwarewerkstatt zu suchen."
 hero:
-  eyebrow: "Privatkunden · Computerhilfe"
-  title: "Computer- und Laptop-Hilfe in Berlin"
-  intro: "Wenn ein Computer langsam wird, nicht mehr startet oder ständig Fehlermeldungen zeigt, grenzen wir die Ursache strukturiert ein. Wir helfen bei Windows-PCs und Laptops, erklären die notwendigen Schritte verständlich und prüfen die Funktionen gemeinsam mit Ihnen."
+  eyebrow: "Privatkunden & Homeoffice · PC- & Mac-Hilfe"
+  title: "Computer- und Laptop-Hilfe für Windows und Mac in Berlin"
+  intro: "Wenn Ihr PC oder Mac nicht startet, ungewöhnlich langsam geworden ist, abstürzt oder den Zugang verweigert, suchen wir zuerst nach der tatsächlichen Ursache. Wir helfen bei Windows- und macOS-Problemen, schützen lesbare Daten vor riskanten Schritten soweit sinnvoll und erklären, welche Lösung technisch und wirtschaftlich vertretbar ist."
 problems:
   eyebrow: "Situation wiedererkennen"
-  title: "Typische Anliegen"
+  title: "Typische Computerprobleme, bei denen wir helfen"
+  intro: "Sie müssen die Ursache nicht kennen. Beschreiben Sie einfach, was das Gerät macht oder seit wann sich etwas verändert hat."
   items:
-    - "Startprobleme, Abstürze und auffällig langsame Systeme"
-    - "Fehler nach Windows-, Treiber- oder Software-Updates"
-    - "Verdächtige Pop-ups, Schadsoftware und unsichere Konten"
-    - "Einrichtung eines neuen Computers inklusive Drucker und Zubehör"
+    - "Der Windows-PC, Laptop oder Mac startet nicht mehr richtig oder bleibt beim Start hängen"
+    - "Der Computer ist sehr langsam geworden, friert ein oder reagiert immer wieder verzögert"
+    - "Windows oder macOS zeigt Fehler nach Updates, startet neu oder Programme funktionieren plötzlich nicht mehr"
+    - "Pop-ups, Schadsoftware oder verdächtiges Verhalten machen das Gerät oder ein Konto unsicher"
+    - "Das Windows-, Mac- oder Online-Konto lässt sich mit den verfügbaren Zugangsdaten nicht mehr normal öffnen"
+    - "BitLocker fordert beim Start einen Wiederherstellungsschlüssel an oder der richtige Schlüssel ist unklar"
+    - "Einzelne Programme, Drucker oder angeschlossene Geräte funktionieren im Zusammenhang mit dem Computerproblem nicht richtig"
 included:
   eyebrow: "Mögliche Unterstützung"
-  title: "So kann die Hilfe aussehen"
+  title: "Was wir prüfen und wieder in Ordnung bringen"
+  intro: "Der konkrete Weg hängt vom Fehlerbild ab. Wir arbeiten vom Symptom zur Ursache und vermeiden unnötige Eingriffe."
   items:
-    - "Erstdiagnose und verständliche Einschätzung der nächsten Schritte"
-    - "Systembereinigung, Updates und sinnvolle Grundeinstellungen"
-    - "Einrichtung von Programmen, Benutzerkonten und Peripherie"
-    - "Abschlusskontrolle mit Hinweisen für den sicheren Alltag"
+    - "Strukturierte Prüfung von Windows- und macOS-Systemproblemen, Softwarefehlern und Startproblemen"
+    - "Systemreparatur, sinnvolle Bereinigung, Update-Fehlerbehebung oder Neuinstallation von Windows beziehungsweise macOS"
+    - "Entfernung von Schadsoftware und Bereinigung auffälliger Software- oder Browserzustände"
+    - "Legitime Wiederherstellung von Windows- oder Mac-Anmeldung sowie Microsoft- oder Apple-Account-Zugang, soweit die vorgesehenen Wege verfügbar sind"
+    - "Hilfe beim Auffinden und Verwenden eines vorhandenen BitLocker-Wiederherstellungsschlüssels ohne Umgehung der Verschlüsselung"
+    - "Sicherung lesbarer persönlicher Daten vor riskanten Reparatur- oder Neuinstallationsschritten, wenn dies sinnvoll und möglich ist"
+    - "Mitnahme und Rückgabe des Computers nach Absprache, wenn eine längere Diagnose oder Wiederherstellung vor Ort unpraktisch wäre"
+    - "Klare Empfehlung für einen Gerätewechsel mit Verweis auf Kaufberatung, Einrichtung und Datenumzug, wenn weiteres Reparieren nicht sinnvoll ist"
 outcome:
   eyebrow: "Ein brauchbares Ergebnis"
-  title: "Pragmatisch statt rätselhaft"
-  text: "Sie erhalten eine nachvollziehbare Lösung und wissen anschließend, was geändert wurde. Wenn ein Austausch oder eine Spezialreparatur wirtschaftlicher ist, sprechen wir das offen an, bevor unnötige Arbeit entsteht."
+  title: "Wieder arbeiten können und wissen, was passiert ist"
+  text: "Ziel ist ein verlässlich nutzbares Gerät oder zumindest eine klare, verantwortbare Entscheidung über den nächsten Schritt. Sie erfahren, was die Ursache wahrscheinlich war, was wir geändert haben und ob weitere Arbeit, ein Spezialist oder ein Gerätewechsel sinnvoller ist."
 cta:
   title: "Computerproblem schildern"
-  text: "Nennen Sie Gerät, Fehlermeldung und Dringlichkeit – telefonisch, per E-Mail oder WhatsApp."
-  prompt: "Gerät, sichtbares Symptom und letzte Änderung helfen bei der ersten Einordnung."
-
+  text: "Nennen Sie Gerät, sichtbares Symptom und – falls bekannt – die letzte Änderung. Wir ordnen ein, ob ein Vor-Ort-Termin, weitere Prüfung oder ein anderer Weg sinnvoll ist."
+  prompt: "Bitte senden Sie keine Passwörter, PINs, BitLocker-Schlüssel, Bestätigungscodes oder andere Zugangsdaten über das Anfrageformular."
+expanded:
+  situations:
+    eyebrow: "Häufige Ausgangslagen"
+    title: "Von Startproblemen bis zu gesperrtem Zugang"
+    intro: "Computerprobleme wirken oft ähnlich, obwohl dahinter ganz unterschiedliche Ursachen stecken. Deshalb beginnen wir beim sichtbaren Verhalten."
+    items:
+      - title: "PC oder Laptop startet nicht"
+        text: "Windows bleibt beim Start hängen, der Rechner bootet nicht vollständig, startet wiederholt neu oder erreicht den Desktop nicht mehr zuverlässig."
+      - title: "Mac startet nicht richtig"
+        text: "Der Mac bleibt beim Start stehen, zeigt ein ungewöhnliches Startsymbol, erreicht die Anmeldung nicht oder benötigt die macOS-Wiederherstellung."
+      - title: "Computer ist sehr langsam"
+        text: "PC, Laptop oder Mac braucht ungewöhnlich lange zum Starten, reagiert verzögert, friert ein oder wird bei normalen Aufgaben immer träger."
+      - title: "Abstürze und Fehler nach Änderungen"
+        text: "Nach einem Update, einer Softwareänderung oder ohne erkennbaren Anlass treten Abstürze, Fehlermeldungen, Neustarts oder nicht mehr funktionierende Programme auf."
+      - title: "Schadsoftware oder verdächtiges Verhalten"
+        text: "Pop-ups, unerwünschte Programme, Browseränderungen oder andere Auffälligkeiten lassen vermuten, dass das System bereinigt und die Kontosicherheit geprüft werden sollte."
+      - title: "Passwort oder Konto blockiert den Zugang"
+        text: "Ein Windows- oder Mac-Anmeldepasswort, eine PIN oder der Microsoft- beziehungsweise Apple-Account funktioniert nicht mehr wie erwartet und die legitimen Wiederherstellungsoptionen müssen geprüft werden."
+      - title: "BitLocker verlangt einen Wiederherstellungsschlüssel"
+        text: "Windows fordert beim Start den BitLocker-Schlüssel an. Wir helfen zu prüfen, wo ein vorhandener Schlüssel gespeichert sein kann und ob er zum betroffenen Gerät passt."
+  process:
+    eyebrow: "So gehen wir vor"
+    title: "Erst verstehen, dann verändern"
+    intro: "Eine Neuinstallation ist nicht automatisch der erste Schritt. Wir versuchen zuerst, Problem, Datenrisiko und sinnvolle Lösung voneinander zu trennen."
+    steps:
+      - title: "Symptom aufnehmen"
+        text: "Wir klären, was sichtbar passiert, seit wann das Problem besteht und welche Änderungen kurz davor vorgenommen wurden."
+      - title: "Daten und Zugang prüfen"
+        text: "Vor größeren Eingriffen prüfen wir, ob wichtige persönliche Daten lesbar sind und welche Konto- oder Wiederherstellungswege verfügbar sind."
+      - title: "Ursache eingrenzen"
+        text: "Wir unterscheiden System-, Software-, Konto- und Zugangsprobleme und erkennen, wenn ein Fall eher auf Hardware oder Spezialreparatur hinausläuft."
+      - title: "Daten schützen"
+        text: "Wenn ein Reparatur- oder Neuinstallationsschritt Daten gefährden könnte, sichern wir die vereinbarten lesbaren Daten zuerst, soweit dies technisch sinnvoll möglich ist."
+      - title: "Problem beheben"
+        text: "Wir reparieren, bereinigen, konfigurieren oder installieren Windows beziehungsweise macOS neu und nutzen nur legitime Wiederherstellungswege für geschützte Konten oder Laufwerke."
+      - title: "Funktion kontrollieren"
+        text: "Zum Abschluss prüfen wir Start, Anmeldung und die betroffenen Funktionen und erklären, was geändert wurde oder welcher nächste Schritt sinnvoll ist."
+  proof:
+    eyebrow: "Was dahintersteht"
+    title: "Systemhilfe für Windows und Mac"
+    text: "Der Schwerpunkt liegt auf Software, Betriebssystem, Kontozugang und einem nachvollziehbaren Wiederherstellungsweg – nicht auf einer Hardwarewerkstatt."
+    items:
+      - "Windows-PCs und -Laptops sowie Apple Macs und macOS"
+      - "Startprobleme, Systemfehler, Abstürze und langsame Computer"
+      - "Windows- und macOS-Reparatur beziehungsweise Neuinstallation nach Bedarf"
+      - "Schadsoftware, verdächtige Softwarezustände und grundlegende Kontosicherheit"
+      - "Legitime Windows-/Mac-Anmeldung, Microsoft-/Apple-Account-Wiederherstellung und BitLocker-Schlüsselprüfung"
+      - "IT-Erfahrung seit 2008 und verständliche Übergabe statt unnötiger Fachsprache"
+  boundaries:
+    eyebrow: "Klare Grenzen"
+    title: "Was diese Computerhilfe nicht verspricht"
+    items:
+      - "Wir bieten keine Werkstatt- oder Hardware-Reparaturdiagnostik an. Wenn die Prüfung auf einen Hardwaredefekt hindeutet, sagen wir das offen; klar definierte einfache Teilewechsel können im Einzelfall nach Absprache möglich sein."
+      - "Physische Reparaturen wie Display-, Scharnier-, Ladebuchsen-, Mainboard- oder Flüssigkeitsschäden gehören nicht zum beworbenen Angebot."
+      - "Ein beschädigter, instabiler oder nicht lesbarer Datenträger ist kein normaler Computer-Supportfall. Solche Fälle gehören zur getrennten Datenrettungsbewertung, und eine erfolgreiche Wiederherstellung kann nicht garantiert werden."
+      - "BitLocker kann nicht einfach umgangen werden. Für den Zugriff auf ein verschlüsseltes Laufwerk ist ein passender vorhandener Wiederherstellungsschlüssel nötig; ein verlorener Schlüssel kann nicht von uns neu erzeugt werden."
+      - "Konto- und Passwortwiederherstellung erfolgt nur über legitime, verfügbare Wiederherstellungswege. Geschützter Zugang kann nicht in jedem Fall wiederhergestellt werden."
+      - "Passwörter, PINs, Wiederherstellungsschlüssel und Bestätigungscodes gehören nicht in die Website-Anfrage. Wenn eine Anmeldung nötig ist, geben Sie sensible Daten möglichst selbst direkt am Gerät ein."
+  faqs:
+    - question: "Helfen Sie sowohl bei Windows-PCs als auch bei Macs?"
+      answer: "Ja. Die Computer- und Laptop-Hilfe umfasst Windows-PCs und -Laptops sowie Macs mit macOS. Der Schwerpunkt liegt auf System-, Software-, Start-, Zugangs- und typischen Alltagsproblemen, nicht auf physischer Hardware-Reparatur."
+    - question: "Was können Sie tun, wenn mein PC nicht mehr startet?"
+      answer: "Wir prüfen den Startzustand, letzte Änderungen, Windows-Wiederherstellungsoptionen, wichtige lesbare Daten und mögliche Software- oder Systemursachen. Erst danach entscheiden wir, ob Reparatur, Wiederherstellung oder Neuinstallation sinnvoll ist."
+    - question: "Was können Sie tun, wenn mein Mac nicht richtig startet?"
+      answer: "Wir können typische macOS-Start- und Wiederherstellungsprobleme prüfen, einschließlich Fällen, in denen der Mac die Anmeldung nicht erreicht oder die macOS-Wiederherstellung benötigt. Bei einem tatsächlichen Hardware- oder physischen Defekt endet unser beworbener Supportbereich."
+    - question: "Mein Computer oder Laptop ist sehr langsam geworden – lohnt sich eine Prüfung?"
+      answer: "Ja. Langsames Verhalten kann durch Software, Speicherplatz, Autostart, Updates, Hintergrundprozesse oder andere Systemzustände entstehen. Wir versuchen zuerst die Ursache einzugrenzen, bevor wir eine Neuinstallation oder einen Gerätewechsel empfehlen."
+    - question: "Installieren Sie Windows oder macOS auch neu?"
+      answer: "Ja, wenn eine Reparatur nicht sinnvoll oder eine saubere Neuinstallation der verantwortbare Weg ist. Vorher prüfen wir nach Möglichkeit, welche vereinbarten persönlichen Daten gesichert werden sollten und ob benötigte Konten oder Wiederherstellungsinformationen verfügbar sind."
+    - question: "Entfernen Sie Viren oder andere Schadsoftware?"
+      answer: "Ja. Wir können verdächtige Programme, Browserzustände und Schadsoftware prüfen und bereinigen sowie sinnvolle grundlegende Sicherheitsmaßnahmen besprechen. Eine umfassende forensische oder Enterprise-Cybersecurity-Untersuchung ist damit nicht gemeint."
+    - question: "Können Sie helfen, wenn ich mein Windows-Passwort oder meine PIN vergessen habe?"
+      answer: "Ja, sofern ein legitimer Wiederherstellungsweg vorhanden ist. Je nach Kontotyp können lokale Windows-Optionen, ein Microsoft-Konto oder andere vorgesehene Methoden relevant sein. Wir umgehen keine Schutzmechanismen und versprechen keinen Zugang, wenn die nötigen Voraussetzungen fehlen."
+    - question: "Was ist, wenn Windows nach dem BitLocker-Wiederherstellungsschlüssel fragt?"
+      answer: "Wir helfen zu prüfen, ob ein vorhandener Schlüssel beispielsweise im passenden Microsoft- oder Organisationskonto, als Datei, Ausdruck oder auf einem anderen vorgesehenen Speicherort vorhanden ist. Ohne passenden Wiederherstellungsschlüssel kann ein verschlüsseltes Laufwerk nicht einfach entsperrt werden."
+    - question: "Können Sie auch bei einem vergessenen Mac- oder Apple-Account-Passwort helfen?"
+      answer: "Wir können die vorgesehenen macOS- und Apple-Wiederherstellungswege mit Ihnen prüfen. Je nach Art der Sperre, verfügbaren vertrauenswürdigen Geräten, Wiederherstellungsinformationen oder Sicherheitsmechanismen kann zusätzlich Apple oder ein autorisierter Service erforderlich sein."
+    - question: "Was passiert mit meinen Daten, wenn Windows oder macOS neu installiert werden muss?"
+      answer: "Wenn persönliche Daten noch normal lesbar sind und ein Eingriff sie gefährden könnte, besprechen wir vorab eine Sicherung der vereinbarten Daten. Bei beschädigten oder nicht mehr lesbaren Datenträgern wird daraus ein gesonderter Datenrettungsfall ohne Erfolgsgarantie."
+    - question: "Reparieren Sie Displays, Mainboards oder andere Hardwaredefekte?"
+      answer: "Nein, wir treten nicht als Hardwarewerkstatt auf und bewerben keine physische Reparaturdiagnostik. Ein klar definierter einfacher Teilewechsel kann nach Absprache möglich sein, aber physische Geräte- und Elektronikreparaturen gehören nicht zum Standardangebot."
+    - question: "Muss die Arbeit immer vollständig bei mir vor Ort stattfinden?"
+      answer: "Nein. Vor-Ort-Hilfe bleibt das normale Modell, aber bei längeren Prüfungen, Neuinstallationen oder Wiederherstellungen kann nach Absprache eine Mitnahme und spätere Rückgabe des Geräts sinnvoller sein."
+    - question: "Was, wenn sich die Reparatur nicht mehr lohnt?"
+      answer: "Dann sagen wir das offen. Statt weitere Zeit in ein wirtschaftlich unvernünftiges Gerät zu investieren, können wir bei Auswahl und Beschaffung eines passenden neuen Windows-PCs, Laptops oder Macs sowie bei Einrichtung und Datenumzug helfen."
+  relatedServiceIds:
+    - software-optimisation
+    - setup-data-transfer
+    - wifi-home-network

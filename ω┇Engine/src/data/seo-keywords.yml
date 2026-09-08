@@ -19,11 +19,11 @@ pages:
   - it support berlin
   - it service berlin
   - computerhilfe berlin
-  - pc hilfe berlin
   - it dienstleister berlin
   - homeoffice it hilfe berlin
   - it service kleine unternehmen berlin
   harmful:
+  - pc hilfe berlin
   - computer reparatur berlin
   - handy reparatur berlin
   - datenrettung berlin
@@ -93,23 +93,31 @@ pages:
 - id: computer-laptop-de
   route: /leistungen/privatpersonen/computer-laptop-hilfe/
   locale: de
-  researchStatus: provisional-seed
-  primary: computer hilfe berlin
+  researchStatus: researched-2026-09-08
+  primary: pc hilfe berlin
   useful:
-  - laptop hilfe berlin
-  - pc problem hilfe berlin
-  - computer langsam berlin
-  - windows hilfe berlin
-  - pc startet nicht berlin
-  - computer absturz hilfe
-  - windows fehler beheben berlin
-  - pc service vor ort berlin
+  - pc service berlin
+  - pc startet nicht
+  - pc fährt nicht hoch
+  - computer startet nicht
+  - computer langsam
+  - laptop langsam
+  - windows passwort vergessen
+  - passwort laptop vergessen
+  - bit locker wiederherstellung
+  - mac hilfe berlin
+  - mac startet nicht
+  - mac langsam
   harmful:
+  - computer reparatur berlin
+  - pc reparatur berlin
   - laptop reparatur berlin
   - display reparatur laptop
   - mainboard reparatur berlin
-  - datenrettung festplatte berlin
+  - wasserschaden laptop reparatur berlin
+  - datenrettung berlin
   - gaming pc reparatur berlin
+  note: "German Keyword Planner research on 2026-09-08: `pc startet nicht` and `pc fährt nicht hoch` returned 1k–10k monthly searches, while `pc hilfe berlin`, `pc service berlin`, `computer reparatur berlin`, `computer langsam` and `laptop langsam` returned 100–1k. Numerous close slow-PC/laptop and boot-failure variants also returned 100–1k, confirming strong symptom-led demand. `pc schneller machen` returned 1k–10k but is predominantly DIY/optimization language rather than the page owner. Current Berlin SERPs for `Computer Reparatur Berlin` are strongly workshop/hardware-led, including display, charging-port, mainboard, liquid-damage and chip-level repair, so repair-shop terms are deliberately excluded despite volume. Earlier Planner research found forgotten Windows/laptop password and BitLocker-recovery variants often at 1k–10k; those legitimate access problems belong here, not the new-computer setup page. Windows and Mac troubleshooting are both supported, while the Mac phrases in this entry are capability-aligned supporting terms rather than volume claims from this Planner batch."
 - id: computer-laptop-en
   route: /en/services/private/computer-laptop-help/
   locale: en

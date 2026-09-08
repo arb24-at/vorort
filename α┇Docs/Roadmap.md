@@ -1,6 +1,6 @@
 # VorOrt repository roadmap
 
-Last updated: 2026-09-07
+Last updated: 2026-09-08
 
 This roadmap is subordinate to Aykhan's external Obsidian Chain. It records repository implementation phases and acceptance criteria without duplicating the Chain's high-level project-management state.
 
@@ -41,7 +41,7 @@ Foundation and revised review slice completed on 2026-08-30: all service records
 - Research Windows Server/Active Directory and Linux server services independently before creating their confirmed future dedicated pages; do not make the network page carry those separate intents.
 - Research the confirmed future Smart Home configuration/installation service independently before creating its route; keep the Wi-Fi/home-network page focused on network foundation and device connectivity rather than absorbing the full smart-home offer.
 - Treat data recovery as a separate adjacent private-service candidate rather than broadening the setup/data-transfer page. Before creating a recovery route, define the in-house capability boundary for readable/logical cases versus damaged or specialist-lab cases, keep the no-guarantee rule explicit, and plan reciprocal internal links with normal device migration.
-- When the computer/laptop-help page is next deepened, include forgotten Windows/laptop passwords, legitimate account-access recovery and BitLocker/recovery-key situations as that page's support intent. Do not create a thin standalone password page merely because the raw keyword volume is high; reassess only if SERP, Search Console or enquiry evidence shows a distinct useful route.
+- The German computer/laptop-help page is now Keyword-Planner researched and expanded around `PC Hilfe Berlin`, non-starting/slow computers, Windows and macOS troubleshooting, malware, legitimate account access and BitLocker recovery-key situations without claiming hardware-repair-shop capability. Keep repair-shop/hardware terms out despite their volume, and do not create a thin standalone password page merely because raw password/BitLocker volume is high. The independently researched English computer/laptop-help counterpart remains to follow.
 
 Acceptance: the launch page inventory is explicit; the five primary service pillars are represented coherently; representative content and SEO changes require no Astro component edit; invalid or incomplete content fails the build; every translated page has correct canonical and alternate-language metadata; every new indexable page has substantial distinct content rather than keyword duplication.
 
@@ -53,7 +53,7 @@ Prototype foundation completed on 2026-08-27, the first Technical Field proof sl
 - Prototype one coherent, state-changing Berlin home/home-office/office visual world across the homepage, one private service, and one business service.
 - Use computer and laptop troubleshooting as the private prototype and office networks and workplace IT as the business prototype.
 - Carry each page theme beyond its hero through section composition, diagrams, icons, interface details, and restrained interaction, with technical depth increasing as visitors move deeper into the site.
-- Use the expanded German network/infrastructure page as the professional business-mode reference and review it visually before broader rollout. Wi-Fi/home network and setup/data transfer are now expanded bilingually, and both German and English business landings have been independently reworked away from the old generic/managed-service copy. Continue content work with the private landing, computer/laptop help, and the trust/capability treatment; the bilingual Google Workspace pair is now complete at the content/research level. Do not redesign every route in parallel before both private and business modes are accepted.
+- Use the expanded German network/infrastructure page as the professional business-mode reference and review it visually before broader rollout. Wi-Fi/home network and setup/data transfer are now expanded bilingually, and both German and English business landings have been independently reworked away from the old generic/managed-service copy. Continue content work with the independently researched English computer/laptop-help counterpart, the private landing, and the trust/capability treatment; the German computer/laptop page and bilingual Google Workspace pair are now complete at the content/research level for their finished locales. Do not redesign every route in parallel before both private and business modes are accepted.
 - Let each service use a related environment/state rather than forcing one literal camera view everywhere; consistency comes from the shared visual universe, perspective/material/motion rules, and recurring devices/system language.
 - Add only high-value generated or commissioned imagery with documented consistency rules and accessible alternatives.
 - Review navigation, contact surfaces, responsive behavior, keyboard use, focus treatment, reduced motion, contrast, and performance.
