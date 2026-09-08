@@ -75,11 +75,13 @@ Important sources of truth inside `ω┇Engine`:
 - `src/styles/tokens.css`, `global.css`, and `technical-field.css`: shared design decisions, foundation and legacy page rules, and the approved Technical Field layer in explicit cascade order.
 - `astro.config.mjs`: deployment origin and `/vorort/` base path.
 
+The internal `/design-lab/` route is a Phase-1 composition workspace inside the same Astro application. It inherits the shared styles through `MainLayout`, uses isolated `design-lab.css` rules and a small internal experiment wrapper, and omits customer-facing chrome through the default-on `showSiteChrome` layout option. Its General/Private/Business control changes `data-mode` on the canvas; the initial modes only demonstrate marker changes. Fixtures are internal, unapproved examples, not service collection content or production patterns. The route carries `noindex, nofollow`, is absent from navigation and the explicit sitemap route list, and retains the configured base. It is an unlisted static route, not an authenticated workspace.
+
 The contact form currently prepares an email through the visitor's configured mail client. It is not a server-backed submission and cannot independently count abandoned or completed form attempts. Calls, email, and WhatsApp are the practical contact channels until the conversion backend is chosen.
 
 ## Current implemented website map
 
-The current sitemap contains 23 indexable URLs. The separate 404 page and noindex transitional redirect bring the generated HTML total to 25. This describes the implemented state, not a permanently frozen launch architecture.
+The current sitemap contains 23 indexable URLs. The separate 404 page, noindex transitional redirect, and internal noindex Design Lab bring the generated HTML total to 26. This describes the implemented state, not a permanently frozen launch architecture.
 
 | Purpose | German route | English route | Current direction |
 | --- | --- | --- | --- |

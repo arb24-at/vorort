@@ -11,6 +11,7 @@ const basePath = astroConfig.base ?? "/";
 const expectedHtml = [
   "404.html",
   "index.html",
+  "design-lab/index.html",
   "datenschutz/index.html",
   "datensicherheit-zertifizierungen/index.html",
   "impressum/index.html",
@@ -82,6 +83,20 @@ for (const file of files) {
   }
 
   if (!file.endsWith(".html")) continue;
+  if (displayPath === "design-lab/index.html") {
+    if (!/<meta name="robots" content="noindex, nofollow"\s*\/?\s*>/.test(contents)) {
+      errors.push("Design Lab must carry noindex, nofollow robots metadata.");
+    }
+    const labCanonical = new URL(`${basePath}design-lab/`, astroConfig.site).toString();
+    if (!contents.includes(`<link rel="canonical" href="${labCanonical}"`)) {
+      errors.push("Design Lab canonical must retain the configured site and base.");
+    }
+    if (/class="(?:site-header|site-footer|mobile-contact-dock)"/.test(contents)) {
+      errors.push("Design Lab must not render customer-facing site chrome.");
+    }
+  } else if (contents.includes(`${basePath}design-lab/`)) {
+    errors.push(`Customer page must not link to the internal Design Lab: ${displayPath}`);
+  }
   for (const match of contents.matchAll(/(?:href|src)="([^"]+)"/g)) {
     const url = match[1];
     if (!url.startsWith(basePath)) continue;
@@ -98,6 +113,9 @@ if (!fs.existsSync(sitemapPath)) {
 } else {
   const sitemap = fs.readFileSync(sitemapPath, "utf8");
   const sitemapUrlCount = (sitemap.match(/<url>/g) ?? []).length;
+  if (sitemap.includes("/design-lab/")) {
+    errors.push("Design Lab must remain excluded from sitemap.xml.");
+  }
   if (sitemapUrlCount !== 23) {
     errors.push(`Expected 23 sitemap URLs, found ${sitemapUrlCount}.`);
   }

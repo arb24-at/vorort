@@ -16,6 +16,7 @@ type Props = {
   alternatePath?: string;
   robots?: string;
   redirectPath?: string;
+  showSiteChrome?: boolean;
 };
 
 const {
@@ -25,7 +26,8 @@ const {
   lang = "de",
   alternatePath,
   robots,
-  redirectPath
+  redirectPath,
+  showSiteChrome = true
 } = Astro.props;
 
 const isExternalCanonical =
@@ -66,11 +68,11 @@ const redirectUrl = redirectPath ? withBase(redirectPath) : undefined;
   </head>
   <body>
     <a class="skip-link" href="#main-content">{lang === "en" ? "Skip to content" : "Zum Inhalt springen"}</a>
-    <Header currentPath={Astro.url.pathname} locale={lang} alternatePath={alternatePath} />
+    {showSiteChrome && <Header currentPath={Astro.url.pathname} locale={lang} alternatePath={alternatePath} />}
     <main id="main-content">
       <slot />
     </main>
-    <Footer locale={lang} />
-    <MobileContactDock locale={lang} />
+    {showSiteChrome && <Footer locale={lang} />}
+    {showSiteChrome && <MobileContactDock locale={lang} />}
   </body>
 </html>

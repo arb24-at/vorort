@@ -1,0 +1,167 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Experiment from "../components/design-lab/Experiment.astro";
+import "../styles/design-lab.css";
+
+// Deliberate Lab fixtures, not service content or approved production compositions.
+const modes = ["General", "Private", "Business"];
+---
+
+<MainLayout
+  title="Internal Design Lab"
+  description="Internal composition experiments and existing foundation reference."
+  canonicalPath="design-lab/"
+  robots="noindex, nofollow"
+  lang="en"
+  showSiteChrome={false}
+>
+  <div class="design-lab">
+    <header class="lab-header container">
+      <div>
+        <p class="lab-label">Internal · VorOrt / Design workspace</p>
+        <h1>Design Lab</h1>
+        <p>Phase 1 / Composition, proportion &amp; rhythm</p>
+      </div>
+      <p class="lab-header-note">Working studies. All sample copy and composition shells are unapproved.</p>
+    </header>
+
+    <div class="lab-toolbar container">
+      <fieldset id="lab-mode-control" disabled aria-describedby="lab-mode-help">
+        <legend>Canvas mode</legend>
+        <div class="lab-modes">
+          {modes.map((mode) => (
+            <label>
+              <input type="radio" name="lab-mode" value={mode.toLowerCase()} checked={mode === "General"} aria-controls="lab-canvas" />
+              <span>{mode}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+      <p id="lab-mode-help">Mode changes only the canvas marker in this phase.</p>
+      <noscript><p>JavaScript is off. All studies remain available in General mode.</p></noscript>
+      <a class="lab-jump" href="#lab-canvas">Jump to compositions ↓</a>
+    </div>
+
+    <details class="lab-foundation container" id="lab-foundation">
+      <summary>Foundation reference <span>Existing typography, actions, surfaces &amp; spacing</span></summary>
+      <div class="lab-foundation-body">
+        <p class="lab-label">Reference only · inherited shared styles · unaffected by canvas mode</p>
+        <div class="lab-reference-grid">
+          <div lang="de">
+            <p class="lab-label">H1 / current service hero</p>
+            <div class="service-hero service-hero--story lab-type-sample">
+              <div class="service-hero__copy"><h1>Technik im Alltag</h1></div>
+            </div>
+            <p class="lab-label">H2 / section-title</p>
+            <h2 class="section-title">Zusammenhänge verstehen</h2>
+            <p class="lab-label">H3 / body heading</p>
+            <h3>Ein Arbeitsplatz, mehrere Verbindungen</h3>
+            <p class="eyebrow">Orientierung vor Ort</p>
+            <p>Ein Computer, ein Zugang und eine Verbindung gehören im Alltag zusammen. Ein kurzer Überblick hilft, den nächsten Schritt zu besprechen.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="#lab-canvas">Komposition ansehen</a>
+              <a class="btn btn-secondary" href="#lab-notes-end">Lab-Notizen lesen</a>
+            </div>
+          </div>
+          <div>
+            <div class="lab-surfaces">
+              <div class="lab-surface lab-surface--light"><code>--paper-light</code><p>Light page surface</p></div>
+              <div class="lab-surface lab-surface--paper"><code>--paper</code><p>Soft section surface</p></div>
+              <div class="lab-surface lab-surface--white"><code>--surface</code><p>Raised surface</p></div>
+              <div class="lab-surface lab-surface--dark"><code>--night</code><p>Dark technical surface</p></div>
+            </div>
+            <p class="lab-label">Existing border / radius tokens</p>
+            <div class="lab-radii">
+              <span style="border-radius: var(--radius-sm)">sm</span>
+              <span style="border-radius: var(--radius-md)">md</span>
+              <span style="border-radius: var(--radius-lg)">lg</span>
+              <span style="border-radius: var(--radius-xl)">xl</span>
+            </div>
+            <p class="lab-label">Rhythm / real .section padding</p>
+            <div class="section lab-spacing"><span>Content edge</span></div>
+            <p class="lab-reference-note">Uses the shared responsive section rule and <code>--section-pad</code>. The surrounding frame marks its padding.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <div id="lab-canvas" class="lab-canvas" data-mode="general" tabindex="-1" aria-label="Composition canvas">
+      <div class="lab-canvas-heading container">
+        <h2>Composition canvas</h2>
+        <p class="lab-label">Active mode: <span data-lab-mode-label>General</span> · 5 neutral studies</p>
+      </div>
+
+      <Experiment id="lab-split" title="01 / Text + visual split" purpose="Balance a short explanation with a visual area." notes="Two columns at desktop; text first when stacked.">
+        <div class="lab-split">
+          <div>
+            <p class="eyebrow">Ein erster Überblick</p>
+            <h2 class="section-title">Was hängt miteinander zusammen?</h2>
+            <p class="section-lead">Am Arbeitsplatz treffen Gerät, Programme und Verbindung aufeinander. Wir schauen gemeinsam auf die Situation.</p>
+          </div>
+          <figure class="lab-visual">
+            <div class="lab-diagram" aria-label="Beispiel: Gerät ist über eine Verbindung mit einem Zugang verbunden.">
+              <span>Gerät</span><i aria-hidden="true">↔</i><span>Verbindung</span><i aria-hidden="true">↔</i><span>Zugang</span>
+            </div>
+            <figcaption>Platz für eine spätere Darstellung der Zusammenhänge.</figcaption>
+          </figure>
+        </div>
+      </Experiment>
+
+      <Experiment id="lab-editorial" title="02 / Editorial wide + narrow" purpose="Judge sustained reading beside a brief annotation." notes="Longer text fixture; narrow column becomes a closing note.">
+        <div class="lab-editorial">
+          <div>
+            <p class="eyebrow">Die Situation beschreiben</p>
+            <h2 class="section-title">Erst verstehen, dann den nächsten Schritt planen.</h2>
+            <p>Manchmal betrifft eine Veränderung mehr als ein einzelnes Gerät. Ein Programm verhält sich anders, eine Verbindung fehlt oder ein Zugang wird neu benötigt.</p>
+            <p>Hilfreich ist zunächst ein Blick auf den Alltag: Was möchten Sie erledigen, was funktioniert bereits und an welcher Stelle kommen Sie nicht weiter?</p>
+          </div>
+          <aside class="lab-margin-note"><h3>Ein konkretes Beispiel</h3><p>Eine Datei lässt sich am Computer öffnen, ist aber am zweiten Arbeitsplatz nicht erreichbar.</p></aside>
+        </div>
+      </Experiment>
+
+      <Experiment id="lab-technical" title="03 / Dark technical field" purpose="Test contrast and the relationship between text and a sequence." notes="Existing dark surface; neutral diagram, no service-state claim." surface="dark">
+        <div class="lab-split">
+          <div><p class="eyebrow eyebrow--dark">Die Verbindung betrachten</p><h2 class="section-title">Ein Weg durch das System.</h2><p class="section-lead">Vom Gerät über die Verbindung bis zum Zugang: Einzelne Schritte machen den Zusammenhang sichtbar.</p></div>
+          <ol class="lab-sequence"><li><span>01</span>Gerät betrachten</li><li><span>02</span>Verbindung nachvollziehen</li><li><span>03</span>Zugang einordnen</li></ol>
+        </div>
+      </Experiment>
+
+      <Experiment id="lab-transition" title="04 / Full-width transition" purpose="Create a pause between two denser sections." notes="One statement across the content width; no card wrapper." surface="soft">
+        <p class="eyebrow">Raum für den nächsten Schritt</p>
+        <h2 class="section-title">Aus einzelnen Beobachtungen entsteht ein gemeinsamer Überblick.</h2>
+      </Experiment>
+
+      <Experiment id="lab-asymmetric" title="05 / Asymmetric two-column section" purpose="Compare a compact introduction with more detailed reading." notes="Short left column, wider right column; natural reading order on mobile.">
+        <div class="lab-asymmetric">
+          <div><p class="eyebrow">Gemeinsam einordnen</p><h2 class="section-title">Was soll sich verändern?</h2></div>
+          <div class="lab-detail-copy"><h3>Der Alltag gibt die Richtung vor.</h3><p>Ein neuer Arbeitsplatz, ein Gerätewechsel oder ein veränderter Ablauf: Entscheidend ist, welche Aufgaben Sie damit erledigen möchten.</p><p>Aus dieser Beschreibung lässt sich besprechen, welche Verbindungen und Einstellungen genauer betrachtet werden sollten.</p></div>
+        </div>
+      </Experiment>
+    </div>
+
+    <footer id="lab-notes-end" class="lab-end container">
+      <p class="lab-label">Lab notes / Phase 1 boundary</p>
+      <p>Add future experiments to the canvas only after a focused design brief. These shells establish no approved private, business or production pattern.</p>
+      <a class="lab-jump" href="#lab-foundation">Back to foundation reference ↑</a>
+    </footer>
+  </div>
+</MainLayout>
+
+<script>
+  const control = document.querySelector<HTMLFieldSetElement>("#lab-mode-control");
+  const canvas = document.querySelector<HTMLElement>("#lab-canvas");
+
+  if (control && canvas) {
+    const updateMode = () => {
+      const selected = control.querySelector<HTMLInputElement>("input:checked");
+      if (!selected || !["general", "private", "business"].includes(selected.value)) return;
+      canvas.dataset.mode = selected.value;
+      canvas.querySelectorAll<HTMLElement>("[data-lab-mode-label]").forEach((label) => {
+        label.textContent = selected.value[0].toUpperCase() + selected.value.slice(1);
+      });
+    };
+    control.disabled = false;
+    control.addEventListener("change", updateMode);
+    updateMode();
+  }
+</script>
