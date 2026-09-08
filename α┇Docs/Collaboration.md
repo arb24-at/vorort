@@ -5,13 +5,13 @@ Last updated: 2026-09-08
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: local `main` is based on committed `68354c6` (`1.5.6`). Phase 1 of the internal Design Lab is complete as an uncommitted `1.5.7` change set. The pre-existing untracked `Design-Content-Handoff.md` is preserved byte-for-byte and is not part of this implementation.
-- Local validation: baseline and final `npm run validate` passed; the new total is 26 HTML pages with the same 23 sitemap URLs. All 25 pre-existing HTML pages and sitemap XML are byte-for-byte unchanged from the baseline; original CSS assets retain identical contents. Base-aware targets, Lab robots/canonical metadata, sitemap exclusion, absent customer chrome and absence of production links to the Lab are checked by the build validator.
-- Local browser verification: Design Lab reviewed at 1440×1000, 768×1024 and 390×844, with no horizontal overflow, including the expanded foundation reference. Native mode selection, keyboard arrow navigation, synchronized experiment labels, disclosure and in-page links work; no browser warnings/errors were reported.
-- Deployment state: no commit, push or deployment was performed for this Lab task. Local preview route: `/vorort/design-lab/`.
+- Current working state: local `main` is based on committed `a4817e7` (`1.5.7`), with a clean tree before this task. The Phase-1.1 Design Lab workbench refinement is complete as a separate uncommitted `1.5.8` change set.
+- Local validation: baseline and final `npm run validate` passed with 26 HTML pages and 23 sitemap URLs. All 25 production HTML files and sitemap XML are byte-for-byte unchanged; the production stylesheet has the same filename and SHA-256. All five study interiors are unchanged. Existing Lab indexing, navigation exclusion and base-path checks pass.
+- Local browser verification: every study was checked at 1440×1000, 768×1024 and 390×844 with exactly one visible study and no horizontal overflow. Notes and Foundation were also checked open at every width. Mode selection, selected-study metadata, keyboard controls, mutually exclusive panels and Escape focus return work; no browser warnings/errors were reported.
+- Deployment state: no commit, push or deployment was performed for this Phase-1.1 task. Local preview route: `/vorort/design-lab/`.
 - Product-direction state: the final design direction remains approved and stabilized. Both business landings are independently researched gateways: German owns broad `IT-Dienstleister Berlin` intent and English owns `IT support Berlin` with `IT services Berlin` as a strong secondary phrase. The Google Workspace pair is independently researched in both languages: German owns `google workspace einrichten`; English owns `google workspace support`, but qualifies that broader phrase through local business setup, company-domain Gmail, Shared Drives, migration, security, backup and workplace integration rather than mimicking Google's own product-support channel. Neither page presents Workspace as automatically preferable to Microsoft 365. The German/English business network reference pages remain project-led; the private Wi-Fi/home-network, setup/data-transfer and computer/laptop-help pairs are now expanded bilingually. Computer/laptop help supports Windows and macOS for system/software/startup/performance problems, malware and legitimate account access while deliberately excluding hardware-repair-shop positioning; German owns `PC Hilfe Berlin`, English owns `computer support Berlin` with `PC support Berlin` secondary. `Datenrettung Berlin` remains a separate adjacent recovery intent, and Smart Home remains a future researched service intent.
 - Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional. The clean install also reports nine dependency audit findings for later dependency-maintenance review.
-- Recommended next action: review the Phase-1 Lab and commit its focused `1.5.7` change set locally. Stop here; private-landing design, composition-library expansion and production migration require a separate brief.
+- Recommended next action: review the focused workbench and commit the `1.5.8` change set locally. Stop after this refinement; further composition design requires a separate brief.
 
 ## Reporting template
 
@@ -29,6 +29,19 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 ```
 
 ## Work log
+
+## 2026-09-08 — Codex — Phase 1.1 Design Lab workbench refinement
+
+- Objective: make the existing Lab a focused workbench with one selected study on a clean stage; preserve all five neutral shells and production isolation.
+- Changes: updated `ω┇Engine/src/pages/design-lab.astro`, `ω┇Engine/src/components/design-lab/Experiment.astro` and `ω┇Engine/src/styles/design-lab.css`; added a native study selector to the compact internal toolbar, moved metadata into the selected-study Notes inspector, moved the complete foundation reference behind its toolbar control, and removed in-stage metadata/header/footer chrome. Updated the stable Lab description in `Project.md`, this handoff and root `AGENTS.md` from `1.5.7` to `1.5.8`.
+- Decisions: default to the first study with both inspectors closed. Open at most one inspector at a time; changing the study updates its notes without changing the mode. Preserve the existing `data-mode` mechanism with only a demonstrative marker. Use native buttons/select/radios, hidden inactive sections and minimal framework-free JavaScript. Panel controls expose expanded state; Escape inside an inspector closes it and returns focus to its toggle. The first study remains readable without JavaScript, with an explicit explanation of unavailable controls. No Overview, composition library, new private/business rules or production migration was introduced.
+- Validation:
+  - Baseline and final `ASTRO_TELEMETRY_DISABLED=1 npm run validate` passed: 26 HTML pages, 23 sitemap URLs, valid internal `/vorort/` targets and existing Lab robots/canonical/navigation/sitemap guards.
+  - All 25 non-Lab HTML files and `sitemap.xml` are byte-for-byte identical to the pre-change build. The shared production CSS filename and SHA-256 are identical. Compared all five authored composition interiors against `1.5.7`: unchanged.
+  - Browser checks covered every study at 1440×1000, 768×1024 and 390×844, each with exactly one visible study and zero horizontal overflow. Both inspectors also have zero overflow at all three sizes. Confirmed default closed panels, selected-study notes, radio arrow-key selection, keyboard panel toggling, mutual panel exclusion, Escape focus return and absence of browser warnings/errors.
+  - `git diff --check` passed; `git status --short` reviewed. No service/content YAML, dependency, global stylesheet, shared layout, Astro configuration, sitemap or public navigation file changed. The design–content handoff document remains unchanged.
+- Blockers or required input: none for Phase 1.1. No commit, push or deployment was performed.
+- Recommended next action: review `/vorort/design-lab/`, then commit locally with `VorOrt v1.5.8: refine Design Lab into a focused workbench`. Stop here; do not begin private-mode composition design without a separate brief.
 
 ## 2026-09-08 — Codex — Phase 1 internal Astro Design Lab
 

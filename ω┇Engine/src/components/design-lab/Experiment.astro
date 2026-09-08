@@ -1,25 +1,14 @@
 ---
 type Props = {
-  id: string;
-  title: string;
-  purpose: string;
-  notes: string;
+  study: { id: string; title: string };
+  selected?: boolean;
   surface?: "light" | "dark" | "soft";
 };
 
-const { id, title, purpose, notes, surface = "light" } = Astro.props;
+const { study, selected = false, surface = "light" } = Astro.props;
 ---
 
-<section id={id} class="lab-experiment" aria-label={title}>
-  <aside class="lab-notes container" aria-label={`Internal notes: ${title}`}>
-    <p class="lab-label">{title}</p>
-    <dl>
-      <div><dt>Purpose</dt><dd>{purpose}</dd></div>
-      <div><dt>Status</dt><dd>Shell · unapproved</dd></div>
-      <div><dt>Mode</dt><dd data-lab-mode-label>General</dd></div>
-      <div><dt>Notes</dt><dd>{notes}</dd></div>
-    </dl>
-  </aside>
+<section id={study.id} class="lab-experiment" aria-label={study.title} hidden={!selected}>
   <div class:list={["section", "lab-composition", { "section--ink": surface === "dark", "section--warm": surface === "soft" }]} lang="de">
     <div class="container"><slot /></div>
   </div>

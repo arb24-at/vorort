@@ -5,6 +5,38 @@ import "../styles/design-lab.css";
 
 // Deliberate Lab fixtures, not service content or approved production compositions.
 const modes = ["General", "Private", "Business"];
+const studies = [
+  {
+    "id": "lab-split",
+    "title": "01 / Text + visual split",
+    "purpose": "Balance a short explanation with a visual area.",
+    "notes": "Two columns at desktop; text first when stacked."
+  },
+  {
+    "id": "lab-editorial",
+    "title": "02 / Editorial wide + narrow",
+    "purpose": "Judge sustained reading beside a brief annotation.",
+    "notes": "Longer text fixture; narrow column becomes a closing note."
+  },
+  {
+    "id": "lab-technical",
+    "title": "03 / Dark technical field",
+    "purpose": "Test contrast and the relationship between text and a sequence.",
+    "notes": "Existing dark surface; neutral diagram, no service-state claim."
+  },
+  {
+    "id": "lab-transition",
+    "title": "04 / Full-width transition",
+    "purpose": "Create a pause between two denser sections.",
+    "notes": "One statement across the content width; no card wrapper."
+  },
+  {
+    "id": "lab-asymmetric",
+    "title": "05 / Asymmetric two-column section",
+    "purpose": "Compare a compact introduction with more detailed reading.",
+    "notes": "Short left column, wider right column; natural reading order on mobile."
+  }
+];
 ---
 
 <MainLayout
@@ -16,34 +48,55 @@ const modes = ["General", "Private", "Business"];
   showSiteChrome={false}
 >
   <div class="design-lab">
-    <header class="lab-header container">
-      <div>
-        <p class="lab-label">Internal · VorOrt / Design workspace</p>
-        <h1>Design Lab</h1>
-        <p>Phase 1 / Composition, proportion &amp; rhythm</p>
-      </div>
-      <p class="lab-header-note">Working studies. All sample copy and composition shells are unapproved.</p>
-    </header>
-
-    <div class="lab-toolbar container">
-      <fieldset id="lab-mode-control" disabled aria-describedby="lab-mode-help">
-        <legend>Canvas mode</legend>
-        <div class="lab-modes">
-          {modes.map((mode) => (
-            <label>
-              <input type="radio" name="lab-mode" value={mode.toLowerCase()} checked={mode === "General"} aria-controls="lab-canvas" />
-              <span>{mode}</span>
-            </label>
-          ))}
+    <header class="lab-toolbar">
+      <div class="container lab-controls">
+        <div class="lab-identity">
+          <p class="lab-label">Internal · Phase 1.1</p>
+          <h1>Design Lab</h1>
         </div>
-      </fieldset>
-      <p id="lab-mode-help">Mode changes only the canvas marker in this phase.</p>
-      <noscript><p>JavaScript is off. All studies remain available in General mode.</p></noscript>
-      <a class="lab-jump" href="#lab-canvas">Jump to compositions ↓</a>
-    </div>
+        <fieldset id="lab-mode-control" disabled>
+          <legend>Canvas mode</legend>
+          <div class="lab-modes">
+            {modes.map((mode) => (
+              <label>
+                <input type="radio" name="lab-mode" value={mode.toLowerCase()} checked={mode === "General"} aria-controls="lab-canvas" />
+                <span>{mode}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+        <label class="lab-study-control">
+          <span>Study</span>
+          <select id="lab-study-control" aria-controls="lab-canvas lab-notes" disabled>
+            {studies.map((study) => <option value={study.id}>{study.title}</option>)}
+          </select>
+        </label>
+        <div class="lab-panel-controls">
+          <button type="button" data-panel-toggle="lab-notes" aria-controls="lab-notes" aria-expanded="false" disabled>Notes</button>
+          <button type="button" data-panel-toggle="lab-foundation" aria-controls="lab-foundation" aria-expanded="false" disabled>Foundation</button>
+        </div>
+      </div>
+    </header>
+    <noscript><p class="container">JavaScript is off. The first study remains readable; enable JavaScript to switch studies or open the inspectors.</p></noscript>
 
-    <details class="lab-foundation container" id="lab-foundation">
-      <summary>Foundation reference <span>Existing typography, actions, surfaces &amp; spacing</span></summary>
+    <aside id="lab-notes" class="lab-inspector container" aria-label="Selected study notes" hidden tabindex="-1">
+      {studies.map((study, index) => (
+        <div class="lab-notes" data-study-notes={study.id} hidden={index !== 0}>
+          <h2 class="lab-label">{study.title}</h2>
+          <dl>
+            <div><dt>Purpose</dt><dd>{study.purpose}</dd></div>
+            <div><dt>Status</dt><dd>Shell · unapproved</dd></div>
+            <div><dt>Mode</dt><dd data-lab-mode-label>General</dd></div>
+            <div><dt>Notes</dt><dd>{study.notes}</dd></div>
+          </dl>
+        </div>
+      ))}
+      <p class="lab-reference-note">Mode changes only the canvas marker in this phase. All sample copy and composition shells are unapproved.</p>
+      <p class="lab-reference-note">Add future experiments only after a focused design brief. These shells establish no approved private, business or production pattern.</p>
+    </aside>
+
+    <section class="lab-inspector container" id="lab-foundation" aria-labelledby="lab-foundation-title" hidden tabindex="-1">
+      <h2 id="lab-foundation-title" class="lab-panel-title">Foundation reference</h2>
       <div class="lab-foundation-body">
         <p class="lab-label">Reference only · inherited shared styles · unaffected by canvas mode</p>
         <div class="lab-reference-grid">
@@ -59,8 +112,8 @@ const modes = ["General", "Private", "Business"];
             <p class="eyebrow">Orientierung vor Ort</p>
             <p>Ein Computer, ein Zugang und eine Verbindung gehören im Alltag zusammen. Ein kurzer Überblick hilft, den nächsten Schritt zu besprechen.</p>
             <div class="btn-row">
-              <a class="btn btn-primary" href="#lab-canvas">Komposition ansehen</a>
-              <a class="btn btn-secondary" href="#lab-notes-end">Lab-Notizen lesen</a>
+              <button type="button" class="btn btn-primary" data-lab-show-stage>Komposition ansehen</button>
+              <button type="button" class="btn btn-secondary" data-lab-show-notes>Lab-Notizen lesen</button>
             </div>
           </div>
           <div>
@@ -83,15 +136,10 @@ const modes = ["General", "Private", "Business"];
           </div>
         </div>
       </div>
-    </details>
+    </section>
 
     <div id="lab-canvas" class="lab-canvas" data-mode="general" tabindex="-1" aria-label="Composition canvas">
-      <div class="lab-canvas-heading container">
-        <h2>Composition canvas</h2>
-        <p class="lab-label">Active mode: <span data-lab-mode-label>General</span> · 5 neutral studies</p>
-      </div>
-
-      <Experiment id="lab-split" title="01 / Text + visual split" purpose="Balance a short explanation with a visual area." notes="Two columns at desktop; text first when stacked.">
+      <Experiment study={studies[0]} selected>
         <div class="lab-split">
           <div>
             <p class="eyebrow">Ein erster Überblick</p>
@@ -107,7 +155,7 @@ const modes = ["General", "Private", "Business"];
         </div>
       </Experiment>
 
-      <Experiment id="lab-editorial" title="02 / Editorial wide + narrow" purpose="Judge sustained reading beside a brief annotation." notes="Longer text fixture; narrow column becomes a closing note.">
+      <Experiment study={studies[1]}>
         <div class="lab-editorial">
           <div>
             <p class="eyebrow">Die Situation beschreiben</p>
@@ -119,19 +167,19 @@ const modes = ["General", "Private", "Business"];
         </div>
       </Experiment>
 
-      <Experiment id="lab-technical" title="03 / Dark technical field" purpose="Test contrast and the relationship between text and a sequence." notes="Existing dark surface; neutral diagram, no service-state claim." surface="dark">
+      <Experiment study={studies[2]} surface="dark">
         <div class="lab-split">
           <div><p class="eyebrow eyebrow--dark">Die Verbindung betrachten</p><h2 class="section-title">Ein Weg durch das System.</h2><p class="section-lead">Vom Gerät über die Verbindung bis zum Zugang: Einzelne Schritte machen den Zusammenhang sichtbar.</p></div>
           <ol class="lab-sequence"><li><span>01</span>Gerät betrachten</li><li><span>02</span>Verbindung nachvollziehen</li><li><span>03</span>Zugang einordnen</li></ol>
         </div>
       </Experiment>
 
-      <Experiment id="lab-transition" title="04 / Full-width transition" purpose="Create a pause between two denser sections." notes="One statement across the content width; no card wrapper." surface="soft">
+      <Experiment study={studies[3]} surface="soft">
         <p class="eyebrow">Raum für den nächsten Schritt</p>
         <h2 class="section-title">Aus einzelnen Beobachtungen entsteht ein gemeinsamer Überblick.</h2>
       </Experiment>
 
-      <Experiment id="lab-asymmetric" title="05 / Asymmetric two-column section" purpose="Compare a compact introduction with more detailed reading." notes="Short left column, wider right column; natural reading order on mobile.">
+      <Experiment study={studies[4]}>
         <div class="lab-asymmetric">
           <div><p class="eyebrow">Gemeinsam einordnen</p><h2 class="section-title">Was soll sich verändern?</h2></div>
           <div class="lab-detail-copy"><h3>Der Alltag gibt die Richtung vor.</h3><p>Ein neuer Arbeitsplatz, ein Gerätewechsel oder ein veränderter Ablauf: Entscheidend ist, welche Aufgaben Sie damit erledigen möchten.</p><p>Aus dieser Beschreibung lässt sich besprechen, welche Verbindungen und Einstellungen genauer betrachtet werden sollten.</p></div>
@@ -139,29 +187,64 @@ const modes = ["General", "Private", "Business"];
       </Experiment>
     </div>
 
-    <footer id="lab-notes-end" class="lab-end container">
-      <p class="lab-label">Lab notes / Phase 1 boundary</p>
-      <p>Add future experiments to the canvas only after a focused design brief. These shells establish no approved private, business or production pattern.</p>
-      <a class="lab-jump" href="#lab-foundation">Back to foundation reference ↑</a>
-    </footer>
   </div>
 </MainLayout>
 
 <script>
+  const lab = document.querySelector<HTMLElement>(".design-lab");
   const control = document.querySelector<HTMLFieldSetElement>("#lab-mode-control");
+  const selector = document.querySelector<HTMLSelectElement>("#lab-study-control");
   const canvas = document.querySelector<HTMLElement>("#lab-canvas");
 
-  if (control && canvas) {
+  if (lab && control && selector && canvas) {
+    const toggles = lab.querySelectorAll<HTMLButtonElement>("[data-panel-toggle]");
+    const panels = lab.querySelectorAll<HTMLElement>(".lab-inspector");
+    const showPanel = (id?: string) => {
+      panels.forEach((panel) => { panel.hidden = panel.id !== id; });
+      toggles.forEach((toggle) => {
+        toggle.setAttribute("aria-expanded", String(toggle.dataset.panelToggle === id));
+      });
+    };
+    const updateStudy = () => {
+      canvas.querySelectorAll<HTMLElement>(".lab-experiment").forEach((study) => {
+        study.hidden = study.id !== selector.value;
+      });
+      lab.querySelectorAll<HTMLElement>("[data-study-notes]").forEach((notes) => {
+        notes.hidden = notes.dataset.studyNotes !== selector.value;
+      });
+    };
     const updateMode = () => {
       const selected = control.querySelector<HTMLInputElement>("input:checked");
       if (!selected || !["general", "private", "business"].includes(selected.value)) return;
       canvas.dataset.mode = selected.value;
-      canvas.querySelectorAll<HTMLElement>("[data-lab-mode-label]").forEach((label) => {
+      lab.querySelectorAll<HTMLElement>("[data-lab-mode-label]").forEach((label) => {
         label.textContent = selected.value[0].toUpperCase() + selected.value.slice(1);
       });
     };
+    toggles.forEach((toggle) => {
+      toggle.disabled = false;
+      toggle.addEventListener("click", () => {
+        showPanel(toggle.getAttribute("aria-expanded") === "true" ? undefined : toggle.dataset.panelToggle);
+      });
+    });
+    panels.forEach((panel) => panel.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+      showPanel();
+      lab.querySelector<HTMLButtonElement>(`[data-panel-toggle="${panel.id}"]`)?.focus();
+    }));
+    lab.querySelector("[data-lab-show-stage]")?.addEventListener("click", () => {
+      showPanel();
+      canvas.focus();
+    });
+    lab.querySelector("[data-lab-show-notes]")?.addEventListener("click", () => {
+      showPanel("lab-notes");
+      document.querySelector<HTMLElement>("#lab-notes")?.focus();
+    });
     control.disabled = false;
+    selector.disabled = false;
+    selector.addEventListener("change", updateStudy);
     control.addEventListener("change", updateMode);
+    updateStudy();
     updateMode();
   }
 </script>
