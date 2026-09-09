@@ -5,13 +5,13 @@ Last updated: 2026-09-09
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: the Drive source now carries project version `1.5.14` for the revised post-hero Design Lab experiments. P01/P02 were rejected after visual review because their first sections repeated the hero composition; P03/P04 replace them with a business project-brief artefact and a private observation-to-investigation correspondence. This Drive-connected session did not inspect or alter `.git`.
-- Local validation: not run for `1.5.14` because this session has no repository shell. The revised Design Lab source/styles require normal local `npm run validate`, browser, diff and status checks before commit.
-- Local browser verification: not run for `1.5.14`. The Lab now tests Business dark hero → compact light project brief and Private light hero → compact dark observation correspondence, with materially smaller post-hero heading scale and no second large diagram.
+- Current working state: the Drive source now carries project version `1.5.15`. The earlier P01–P04 opening experiments and the DeepSeek static prototype were not accepted as production directions. `VorOrt Berlin — Design Direction - Tangible Order.md` has been reduced to a concise external design reference containing only the useful principles. This Drive-connected session did not inspect or alter `.git`.
+- Local validation: not run for `1.5.15` because this documentation-only Drive session has no repository shell. No Astro source changed in this slice. Any still-uncommitted `1.5.14` Design Lab source changes require their normal local validation before commit.
+- Local browser verification: not applicable to the `1.5.15` documentation cleanup. Previous P01–P04 opening experiments and the DeepSeek static prototype were reviewed visually and were not accepted as production directions.
 - Deployment state: no commit, push or deployment was performed in this Drive-only design session. Intended local preview route remains `/vorort/design-lab/`.
-- Product-direction state: Private and Business opening treatments remain **experimental**, not approved production rules. Visual review rejected the first post-hero diagrams as second-hero compositions. The new hypothesis is that Business should move from proposition to method/artefact, while Private should move from proposition to customer observation/understanding. Surface rhythm remains a supporting cue. Production service YAML remains unchanged.
+- Product-direction state: no Private/Business opening treatment is approved yet. Useful retained principles are the three-second Hero + first-section comprehension test, stronger visual service-scope communication, and audience differentiation through spatial scale/composition rather than colour alone. Tangible Order is inspiration only, not a production specification. Production service YAML remains unchanged.
 - Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional. The clean install also reports nine dependency audit findings for later dependency-maintenance review.
-- Recommended next action: review P03/P04 in `/vorort/design-lab/` at desktop and mobile widths. If either information structure is approved, ask Content only for the targeted micro-copy pairs recorded in `Design-Content-Handoff.md`; do not yet migrate production pages.
+- Recommended next action: prototype a small set of strong opening directions in the Design Lab (Homepage, one Private service and one Business service), focusing only on the Hero + first highly visual scope section before broader page redesign.
 
 ## Reporting template
 
@@ -29,6 +29,16 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 ```
 
 ## Work log
+
+## 2026-09-09 — ChatGPT — Condense Tangible Order design reference
+
+- Objective: remove the long DeepSeek design essay/wireframes and keep only the ideas that remain useful to VorOrt.
+- Changes: reduced `α┇Docs/VorOrt Berlin — Design Direction - Tangible Order.md` from roughly 91 KB / 1,075 lines to a concise reference covering the Tangible/Order concept, shared family rules, three-second opening test, Private/Business differentiation, useful visualisation forms, rhythm, anti-patterns and mobile behaviour. Removed full page prescriptions, repeated rationale, desktop wireframes, fixed section counts, detailed typography micro-rules and DeepSeek-specific implementation assumptions. Updated the current collaboration handoff to record that P01–P04 and the DeepSeek static prototype are not approved production directions. Bumped `AGENTS.md` from `1.5.14` to `1.5.15`.
+- Decisions: Tangible Order is retained as external design inspiration only. It does not override `Project.md`, `Roadmap.md`, production content or the Design Lab, and it is not an approved page architecture.
+- Validation: read the latest canonical context in the required order and downloaded the complete 91,723-byte target file before rewriting it. Read all edited Drive files back after upload and verified exact SHA-256 matches against the staged target, Collaboration and AGENTS files. Repository-shell validation, Git status/diff, commit and push are not available in this session and are not claimed.
+- Blockers or required input: none for the documentation cleanup.
+- Recommended next action: use the retained principles only as input to focused Design Lab opening experiments rather than treating the old wireframes or generated static prototype as implementation guidance.
+
 
 ## 2026-09-09 — ChatGPT — Useful post-hero experiments P03 / P04
 
