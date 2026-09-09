@@ -2,95 +2,31 @@
 
 Last updated: 2026-09-09
 
-This roadmap is subordinate to Aykhan's external Obsidian Chain. It records repository implementation phases and acceptance criteria without duplicating the Chain's high-level project-management state.
+Repository priorities and acceptance criteria live here; Aykhan's external Obsidian Chain remains the high-level roadmap. Stable contracts live in [Project.md](Project.md), current validation and handoff in [Collaboration.md](Collaboration.md).
 
-Status markers: `complete`, `next`, `planned`, `blocked`.
+## Completed foundation — v2.0.1
 
-## 1. Repository organization and operating context — complete
+Page Workshop and Approved Sections share one governed registry, strict page fixtures and reusable Astro sections. Both private/business pages, existing artwork and responsive previews are available. Production remains separate. Implementation and validation are complete; the next cycle is design review, not rebuilding the foundation.
 
-- Isolate the Astro application in `ω┇Engine` while retaining GitHub-required root configuration.
-- Establish three canonical documentation files and a root `AGENTS.md` contract.
-- Add repeatable static-output validation and update GitHub Pages to build from the engine.
-- Preserve the live `/vorort/` URL, German root, English subtree, 23 HTML pages, and 22 sitemap URLs.
+## Next cycle — the two current Workshop pages
 
-Acceptance: a fresh dependency install and `npm run validate` pass from `ω┇Engine`; the `main` Pages workflow deploys successfully; future agents can orient themselves from root documentation alone.
+Work in manageable tasks after the usage reset. The first cycle covers the private home-network page and business office-network page only.
 
-## 2. Production truth and technical health — next
+1. **Retire legacy application names.** Rename old fixture IDs, internal routes, component/style identifiers and asset references coherently around Page Workshop. Update tests and documentation references; retain the deployment base and verify every image, internal link and preview. This documentation cleanup changes explanatory naming only.
+2. **Refine both complete pages.** Review section composition, private/business differences, design-stage wording, hero text/art separation and responsive crops. Aykhan continues generating images using the separate prompt library; integrate them through validated fixture content when ready. Preserve researched production content.
+3. **Approve sections explicitly.** Review each candidate in its relevant page contexts, including copy/media contract, audience/page-type support, accessibility and any placeholders. Record Aykhan's decision, then promote only accepted registry entries to Approved Sections and update validation accordingly.
+4. **Record each ready page's composition.** Once its constituent sections are approved, record the ordered section IDs, recipe IDs and content in the existing Workshop fixture; use the registry for approval state. Avoid a duplicate composition checklist in documentation. Both current pages must have reviewed compositions containing only approved recipes before this cycle is complete.
+5. **Begin another improvement cycle.** Review remaining weaknesses and choose the next bounded changes with Aykhan. Production adoption and expansion to other pages remain separate decisions; neither follows automatically from approval.
 
-- Replace placeholder telephone and WhatsApp details as soon as the ready values are supplied; keep email, address, final operator presentation, privacy details, and certificate evidence configurable until verified replacements exist.
-- Replace the provisional public working name `VorOrt` with a final brand when selected, and choose the production domain without coupling architecture to the temporary name.
-- Complete the service audit begun on 2026-08-27: the operating model, experience-since-2008 wording, advertised technology groups, small-and-growing-business focus, availability boundaries, diagnostic model, and exclusions are confirmed; exact qualifications, travel policy, and remaining production facts are still required.
-- Upgrade Astro and affected transitive dependencies, then rerun the security audit and static validation.
-- Remove tracked or generated platform residue and keep the working tree reproducible.
+Acceptance: both pages are complete and understandable on desktop/tablet/mobile; required artwork/copy is reviewed; keyboard, focus, contrast and reduced-motion behavior are checked; ordered compositions use explicitly approved sections; contracts, base paths, static validation and production-regression checks pass. Do not mark a page ready merely because its recipes render successfully.
 
-Acceptance: no placeholder identity or unsupported operational claim is public; legal pages match the real hosting/contact stack; dependency audit findings are reviewed and production-relevant issues resolved.
+## Deferred implementation and launch requirements
 
-## 3. Validated bilingual content architecture — next
-
-Foundation and revised review slice completed on 2026-08-30: all service records live in a schema-validated bilingual content collection, organized as one independently editable locale record per stable service folder; translation pairs, routes, navigation labels, approved page templates, ordered four-state storyboards, thematic states, SEO intent, and related-service references are validated during the build. The dedicated German/English software installation and optimization service is the first fully expanded Technical Field pair. Broader page conversion remains intentionally paused for review.
-
-- Lock the launch information architecture and page briefs before broad visual rollout. Every indexable service page must have a distinct audience/search intent, content-depth level, thematic state, proof level, and conversion path.
-- Extend the current service collection pattern to localized landing-page copy and other appropriate page data; keep contact facts centralized until production values are supplied.
-- Preserve separate German and English editorial content connected by stable translation IDs.
-- Review the completed bilingual software installation/optimization service pair and its intent-led slugs before applying the expanded template to the remaining pages.
-- Reframe the current security/certification route as working-methods/data-handling/experience/qualifications trust content, with a bilingual equivalent and no unverified credential marketing.
-- Complete or deepen the remaining existing private and business services using the page-content contracts in `Project.md`. The German/English Wi-Fi/home-network pair is researched and expanded around home-network setup, cabling, Mesh, NAS and Homeoffice. The German setup/data-transfer page is Keyword-Planner researched and its independently authored English counterpart is SERP-reviewed; both now cover device selection/procurement, complete setup, normal readable-data migration and backup. The German/English network-infrastructure pair and German/English Microsoft 365 slices are already expanded. Both business-services landings are now independently Keyword-Planner researched and rewritten: German owns broad `IT-Dienstleister Berlin` intent, while English owns `IT support Berlin` with `IT services Berlin` as a strong secondary phrase. The German/English Google Workspace pair is now independently Keyword-Planner researched and expanded: German owns setup/implementation intent around `google workspace einrichten`, while English owns `google workspace support` and qualifies that broader term through business setup, Gmail/domain, Shared Drives, users/access, migration, security, backup and workplace integration.
-- Normalize German typography and replace remaining transliterated copy such as `fuer` where it is customer-facing.
-- Keep layout primitives and design tokens in code; expose only constrained page/theme choices to content files.
-- Do not create thin district pages, technology-brand pages, or blog filler before search evidence demonstrates a distinct useful intent.
-- Research Windows Server/Active Directory and Linux server services independently before creating their confirmed future dedicated pages; do not make the network page carry those separate intents.
-- Research the confirmed future Smart Home configuration/installation service independently before creating its route; keep the Wi-Fi/home-network page focused on network foundation and device connectivity rather than absorbing the full smart-home offer.
-- Treat data recovery as a separate adjacent private-service candidate rather than broadening the setup/data-transfer page. Before creating a recovery route, define the in-house capability boundary for readable/logical cases versus damaged or specialist-lab cases, keep the no-guarantee rule explicit, and plan reciprocal internal links with normal device migration.
-- The German/English computer-laptop-help pair is now independently Keyword-Planner researched and expanded around symptom-led Windows/macOS support, malware, legitimate account access and BitLocker recovery-key situations without claiming hardware-repair-shop capability. German owns `PC Hilfe Berlin`; English owns `computer support Berlin` with `PC support Berlin` secondary. Keep repair-shop/hardware terms out despite their volume, including English `computer repair Berlin` / `PC repair Berlin`, and do not create a thin standalone password page merely because raw password/BitLocker volume is high.
-- Both private-services landings are now independently Keyword-Planner researched and rewritten in production. All ten tested landing-specific private/home-office phrases returned only 0–10 monthly searches in German, and all ten tested private/home-qualified phrases returned only 0–10 in English. Both pages are therefore orientation/conversion gateways with natural local language rather than standalone SEO-volume targets. German protects its homepage and detailed-service owners; English protects provisional `IT help Berlin` on the homepage, `IT support Berlin` on the business landing, `computer support Berlin` on Computer & Laptop Help, and the detailed home-network/new-computer/software intents.
-
-Acceptance: the launch page inventory is explicit; the five primary service pillars are represented coherently; representative content and SEO changes require no Astro component edit; invalid or incomplete content fails the build; every translated page has correct canonical and alternate-language metadata; every new indexable page has substantial distinct content rather than keyword duplication.
-
-## 4. Thematic visual and interaction system — planned
-
-Prototype foundation completed on 2026-08-27, the first Technical Field proof slice completed on 2026-08-30, and the final shared-design refinement completed on 2026-08-30. The grouped bilingual header, condensed homepage, controlled vertical rhythm, selective environmental artwork, customer-readable diagrams, four-state software journey, contact behavior, and responsive foundation are now stable. Content work is the immediate priority; the business-mode proof, controlled page migration, and release-level accessibility/performance verification remain planned implementation work rather than another design-concept phase.
-
-- Establish typography, color, spacing, icon, illustration, diagram, and motion rules for the provisional or chosen brand.
-- Prototype one coherent, state-changing Berlin home/home-office/office visual world across the homepage, one private service, and one business service.
-- Use computer and laptop troubleshooting as the private prototype and office networks and workplace IT as the business prototype.
-- Carry each page theme beyond its hero through section composition, diagrams, icons, interface details, and restrained interaction, with technical depth increasing as visitors move deeper into the site.
-- Use the expanded German network/infrastructure page as the professional business-mode reference and review it visually before broader rollout. Wi-Fi/home network, setup/data transfer, computer/laptop help and Google Workspace are now expanded bilingually, both German and English business landings have been independently reworked, and both private landings are now independently researched and content-complete. Continue the content phase with the trust/capability treatment before the dedicated design-definition phase. Do not redesign every route in parallel before both private and business modes are accepted.
-- Let each service use a related environment/state rather than forcing one literal camera view everywhere; consistency comes from the shared visual universe, perspective/material/motion rules, and recurring devices/system language.
-- Add only high-value generated or commissioned imagery with documented consistency rules and accessible alternatives.
-- Review navigation, contact surfaces, responsive behavior, keyboard use, focus treatment, reduced motion, contrast, and performance.
-
-Acceptance: page topics are visually understandable and distinguishable without unrelated stock imagery; the theme remains present below the hero; private and business contexts show appropriate progressive technical depth inside one recognizable system; each converted service page fulfils its content contract and remains useful without the visual layer; accessibility and performance checks meet the agreed release baseline.
-
-### Design Lab v2.0.1 full update plan — complete
-
-One logical upgrade and commit, explicitly labelled `2.0.1` by Aykhan. All five tasks below are implemented and validated; stop after the commit for Aykhan's usage check. Production pages/content and GitHub Pages hosting remain unchanged.
-
-1. **Registry and content contracts:** establish one code registry with semantic IDs, lifecycle, purpose, audience/page-type compatibility, content schemas and renderer references. Add strict Workshop YAML metadata and ordered sections; reject unknown recipes, styling keys, invalid content, duplicate IDs and incompatible references.
-2. **Concept II migration:** preserve both existing designs, copy and P1–P6 assets in Private/Business fixtures; extract cohesive Astro sections and shared art primitives; split recipe CSS while retaining existing foundations and meaningful audience differences.
-3. **Workshop and approval surfaces:** replace the old catalogue with only Page Workshop and Approved Sections. Provide page selection, metadata, a continuous full-page canvas and a useful empty approved state derived from the registry. Register every migrated section as experimental.
-4. **Preview and impact:** add small static-compatible desktop/tablet/mobile controls without compromising the normal document view; derive distinct Workshop page usage from fixtures. Prepare an approved-only validation policy for future production consumers; add no production migration or local write API.
-5. **Cleanup and verification:** remove superseded catalogue/wrapper, monolithic Concept II implementation and old experimental routes once migrated; check schema failures, both audience designs, controls, artwork, robots, canonical/base paths, sitemap exclusion and production regressions. Run `npm run validate`, diff/status checks; update canonical architecture and handoff; commit v2.0.1.
-
-Acceptance: two realistic selectable pages, one canonical recipe registry, zero approved sections, no visual settings in YAML, no public route/content regression, static read-only Lab, preserved artwork and page rhythm, documented validation and a completed versioned Git commit. A first approval remains a later explicit Aykhan decision; filesystem controls and production migration remain separate future tasks.
-
-## 5. Conversion and demand measurement — planned
-
-- Choose and implement a static-compatible form backend with spam protection, error/success states, privacy disclosure, retention policy, and reliable delivery.
-- Create a dedicated German/English contact route once the real backend and privacy behavior are known, while keeping the global contact section and mobile contact dock available throughout the site.
-- Keep the form approachable: minimal first-step fields, progressive optional detail, context-sensitive private/business prompts, and no collection of passwords, authentication/recovery codes, payment-card data, or remote-access credentials.
-- Instrument phone, email, WhatsApp, and form interactions as distinct conversion events.
-- Configure Search Console and privacy-conscious traffic measurement that separates impressions, visits, service intent, and genuine enquiries.
-- Define a lightweight review cadence and avoid redesigning between observation windows without evidence.
-
-Acceptance: every contact method is functional and measurable; the dedicated contact destination and embedded/global contact surfaces use the same truthful enquiry model; a test enquiry is delivered and observable; the site can distinguish vanity traffic from meaningful Berlin service demand.
-
-## 6. Launch, observe, and iterate — planned
-
-- Complete production-domain, HTTPS, redirect, canonical, sitemap, indexing, legal, accessibility, and contact-flow checks.
-- Launch the agreed German and English demand-test pages.
-- Review search visibility, relevant visits, service-page behavior, calls, emails, WhatsApp conversations, and form enquiries at useful intervals.
-- Improve copy, internal linking, service positioning, and conversion friction based on evidence.
-- Add new district, technology, advice, or service-intent pages only when Search Console, enquiry patterns, or a genuine customer-information need justifies substantial distinct content; do not expand the sitemap for keyword count alone.
-- Decide whether evidence supports further investment in content, paid acquisition, booking, staffing, or broader Berlin operations.
-
-Acceptance: the demand test is live on the production domain, measurement is reliable, and investment decisions reference accumulated enquiry and search evidence rather than raw traffic alone.
+- **Navigation preference:** at the top, the navigation should appear docked into the hero, then detach into a persistent sticky/floating state on scroll. Revisit when the page system is mature; no implementation is included in the documentation cleanup.
+- **Production adoption:** separately plan content mapping, approved-only validation, bilingual coverage, route preservation and controlled page migration. Extend Workshop locale/page-type contracts deliberately if needed. Local filesystem editing tools are also separate future work.
+- **Verified business facts:** final brand/domain; real phone, WhatsApp, email, address and legal operator details; exact qualifications; Berlin travel policy. Keep unsupported claims and placeholder badges out.
+- **Trust and contact:** replace the provisional certification treatment with truthful working methods, data handling, experience and verified qualifications, including bilingual coverage and deliberate redirects. Choose a reliable form backend, spam controls, delivery/error states, privacy/retention rules and dedicated bilingual contact routes.
+- **Technical health:** review Astro/transitive dependency updates and current security findings; keep the working tree reproducible. Existing audit counts are historical, not a current assessment.
+- **Demand test:** configure domain/HTTPS, redirects, canonicals, sitemap/indexing, Search Console and privacy-conscious measurement of phone/email/WhatsApp/form enquiries. Verify legal, accessibility, performance and contact delivery before launch; iterate from enquiry/search evidence.
+- **Future services:** independently research Windows Server/Active Directory, Linux server and Smart Home configuration/installation before creating their dedicated pages. Data recovery remains a candidate requiring capability/referral boundaries and no-guarantee wording; normal migration and recovery should link where relevant. Account-access problems stay with computer support unless evidence warrants a separate journey.
+- **Content expansion:** retain the independently researched service and audience content. Use the SEO routing source to identify remaining research needs. Avoid thin district/technology/password pages; an About page or blog is not required for the first launch.

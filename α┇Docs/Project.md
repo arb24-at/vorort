@@ -2,294 +2,107 @@
 
 Last updated: 2026-09-09
 
-## Purpose and positioning
+## Purpose and operating facts
 
-VorOrt is the provisional project and public working name for a Berlin-focused IT-support service. It is not the final brand, so architecture and major design decisions must not depend on the name being permanent. The earlier `BerlinTech Support` identity is retired as the working direction.
+`VorOrt` is the internal project name, not an approved public brand. Final branding remains Aykhan's decision; existing placeholder identity must not be treated as verified. The website should generate genuine enquiries for a normal local Berlin IT business through useful service information, credible presentation and accessible contact paths. Do not mention a waitlist, Baku or delayed availability.
 
-The website is intended to operate as a normal local Berlin service presence and generate genuine enquiries while testing commercial demand through calls, form enquiries, WhatsApp conversations, relevant search visibility, traffic quality, contact intent, and service-page engagement. A polished professional presence is a means to that outcome rather than an end in itself. Public copy must not mention a waitlist, Baku, or delayed operating availability.
+The audiences are private customers, home-office users, freelancers and small and growing businesses. Lead with understandable problems and outcomes, then reveal technical depth. On-site Berlin support is the defining model; remote help and initial diagnosis are supporting options. Use a small professional team voice (`wir`) without implying either a sole freelancer or a large company. The business is a registered Gewerbe under Aykhan's personal name; the legal notice must eventually identify the verified operator. Relevant IT experience dates from 2008.
 
-The primary audiences are private customers, home-office users, freelancers, and small and growing businesses, including visitors who may be discouraged by overly technical IT websites. The service should feel accessible to them without publicly labelling them as a demographic segment. On-site support throughout Berlin is the defining service model; remote support and initial diagnosis remain supporting options where appropriate.
+- **Language:** German at `/` uses friendly formal `Sie`; English at `/en/` is independently authored and connected through stable translation IDs. English-speaking technical service is real, but its public messaging is optional and centrally controlled in `src/data/site.ts`. Do not promise German-speaking technicians or telephone support; a German-speaking operator is an internal possibility only.
+- **Engagement:** one-off projects, planned work and problem resolution are primary; recurring maintenance is optional. Assess business fit by complexity, risk and supportability, without an employee/device ceiling or required long-term contract.
+- **Pricing and appointments:** individual quotations, no public fixed/starting/hourly rates. The initial conversation is free; explain any paid diagnostic visit before arranging it. Weekdays, evenings and Saturdays may be available by agreement, without rigid published hours or same-day/response-time guarantees. Berlin travel policy remains undecided.
+- **Internal journey:** collect problem, location, device/service and urgency; assess fit and on-site/remote/diagnostic needs; indicate scope/cost where possible; arrange and perform work; agree extra work, equipment or return visits before proceeding. Keep the public explanation short and reassuring.
+- **Trust boundaries:** no invented customers, prices, availability, qualifications or security/compliance promises. Publish certificates only after exact names, issuers, holders, status and verification evidence are supplied. Never turn a working-method intention into an independent certification.
 
-The current primary service pillars are computer and laptop troubleshooting, software installation and optimization, office networks and workplace IT, Microsoft 365, and Google Workspace. Public organization should follow customer needs and problems, not internal service tiers. Hardware and component-level repair, low-value repair work, and trivial standalone fixes that cannot reasonably support a professional service rate must not become core advertised categories. Small related tasks may still be handled during a larger visit.
+## Service and content boundaries
 
-The intended market position combines an accessible neighborhood IT expert, a calm established professional service, and a modern small-business specialist. It must not resemble either a cheap repair shop, a luxury technology concierge, or an expensive enterprise consultancy.
+The core pillars are computer/laptop troubleshooting, software installation/optimization, office networks/workplace IT, Microsoft 365 and Google Workspace. Home networks and new-device setup/data transfer also have dedicated substantial service pages. Supported technologies include Windows, macOS, Wi-Fi and managed networks, cabling, printers/peripherals, NAS, VPN/remote access, backups/cloud storage, email/domains, accounts/security configuration and workplace software.
 
-## Decisions currently in force
+| Service | Durable boundary |
+| --- | --- |
+| Computer/laptop help | Symptom-led Windows/macOS system, software, startup, performance and legitimate account-access support, including available recovery-key mechanisms. No promise to restore protected access. Hardware-fault diagnosis and component-level repair are not the advertised offer; simple replacement may be agreed selectively. |
+| Software installation/optimization | Licensed, supported software; installation, updates, configuration, conflicts, profiles, stability and handover. |
+| Home networks | Planned setup/improvement, Mesh/access points, Ethernet, NAS, home-office connectivity and device integration. ISP-line faults stay with the provider; no universal coverage/speed guarantee. Broader smart-home installation is a separate future intent. |
+| Setup/data transfer | Windows/Mac selection, optional procurement, complete setup, normal readable-data migration, email/accounts, optional software/peripherals and recommended backup. Smartphones/tablets are not advertised in this page's scope. Damaged media and password-access problems belong elsewhere. |
+| Business networks | Planning, modernization, cabling/racks/patching, managed hardware, business Wi-Fi, NAS, VPN, procurement, testing, documentation and optional maintenance. Server/AD/Linux capabilities deserve separate researched pages. |
+| Microsoft 365 | Accounts/users, Outlook/Teams/Office, sharing/permissions, workplace setup, migration/integration, troubleshooting and working practices; exact credentials require evidence. |
+| Google Workspace | Business setup, tariff guidance, domain/Gmail, users/access, Shared Drives, workplace integration, migration/coexistence, security configuration and optional independent backup. No reseller claim, default ongoing administration, end-user training or enterprise DLP/eDiscovery/SSO/compliance-migration offer. Distinguish local business work from Google's own support. |
 
-- `VorOrt` is the provisional public working name, not the final customer-facing brand.
-- German is the default language at `/`; English is maintained separately under `/en/` for stronger language quality and SEO.
-- Stable translation pairs are connected by service IDs in the validated `services` content collection, rather than runtime machine translation.
-- The German copy uses contemporary, friendly, formal `Sie` language.
-- English-speaking technical service is a real public promise: the technician doing the work can communicate in English. Do not expand this into a claim of fully bilingual technicians or advertise German-speaking telephone support or technicians.
-- The complete German and English sites are both important. English-service messaging is centrally configurable and currently enabled.
-- Content follows progressive technical depth: reduce anxiety at the entrance, reveal stronger evidence further down, and permit substantial professional detail on business pages.
-- Calls, WhatsApp, and a real enquiry form are the three primary contact paths; their visual priority may vary by page, context, and device.
-- Pricing is handled through individual quotations rather than public fixed, starting, or hourly prices for now.
-- The site remains static-first with no accounts or authentication.
-- GitHub Pages is the current host at `https://arb24-at.github.io/vorort/`.
-- The current telephone, WhatsApp, email, postal address, and legal identity are placeholders until verified replacements are supplied. Unverified public badge assets were removed and must not return without exact credential evidence.
-- Certification badges may only represent credentials actually earned and verifiable. Do not represent a process intention as an independent privacy or compliance certification.
-- Editable business facts and localized content should eventually move to validated Markdown/content collections. Foundational spacing, typography, components, and accessibility behavior stay in code; Markdown must not become an unrestricted page builder.
+Do not advertise a hardware-repair workshop, guaranteed data recovery, emergency/24-hour response, enterprise cybersecurity, acceptance of regulated/highly sensitive environments, or pirated/unlicensed/unsupported software. Damaged or unreadable media requires a separately defined recovery capability and referral boundary. Small-business server/security requests may be assessed individually without implying an enterprise consultancy.
 
-## Operating model and service truth
+**Content contracts:** homepages provide a plain-language Berlin/on-site entrance and progressive trust; audience landings orient visitors and link to detailed services. Private pages lead with recognizable situations, scope, outcomes, process, boundaries and FAQs. Business pages lead with operational impact, then systems/dependencies, implementation, documentation and maintainability. Trust content explains necessary access, account/data protection, backup/change precautions, experience and verified qualifications. Each indexable service owns a distinct useful intent, truthful proof and an obvious contact path.
 
-The public voice is a small professional team using `wir`. Do not imply a sole freelancer or exaggerate the operation into a large company. The business is a registered Gewerbe under Aykhan's personal name; a separate service brand may be used publicly while the legal notice identifies the real operator.
-
-The internal enquiry path is deliberately more detailed than the public explanation: collect the problem, location, device or service, and urgency; review whether the request is supportable; decide whether on-site work, remote help, or further diagnosis is appropriate; give a scope or cost indication where possible; arrange the appointment; perform the work primarily on site; and agree any additional work, equipment, or return visit before proceeding. A German-speaking operator may handle initial calls, but the website must not advertise this. The public journey should remain short and reassuring.
-
-Relevant professional IT experience dates from 2008. Prefer durable wording such as `IT experience since 2008` rather than a calculated number of years.
-
-Actively represented technology and service areas are Windows computers, Microsoft 365, Google Workspace, Wi-Fi and local networks, managed network infrastructure, network cabling, printers and peripherals, NAS and shared storage, VPN/remote access, backups and cloud storage, email and domain configuration, security and account protection, workplace software, device selection and purchase guidance, device setup, data migration, software installation and optimization, and general system troubleshooting. Apple/macOS is actively supported for computer/laptop troubleshooting, new-device selection, setup and cross-platform data migration. The computer/laptop-help page may therefore cover common macOS startup, performance, software and legitimate account-access problems alongside Windows; smartphones/tablets may still be supported where a request fits but are not part of the setup/data-transfer page's advertised scope. Windows Server/Active Directory and Linux server work are confirmed deeper business capabilities and candidates for dedicated future service pages after independent search-intent research; the network page may mention their network relationship without absorbing the full server offer.
-
-The business audience is small and growing organizations, including offices, practices, shops, studios, and similar workplaces. Assess fit by the actual project, complexity, operational risk, and supportability rather than publishing an employee or device ceiling. One-off projects, planned infrastructure work, and problem resolution are primary; occasional or optional recurring maintenance may be offered without making a long-term contract part of the standard engagement.
-
-Do not guarantee data recovery, emergency or 24-hour response, same-day visits, response times, enterprise cybersecurity, component-level electronics repair, acceptance of regulated or highly sensitive environments, or support for pirated, unlicensed, or unsupported software. Small-business server and security-configuration requests may be assessed individually without presenting the service as an enterprise infrastructure or cybersecurity consultancy.
-
-Appointments may be available on weekdays, weekday evenings, and Saturdays with flexible scheduling. Do not publish rigid hours yet. Same-day or urgent help may occasionally be possible but is never a public guarantee.
-
-The initial conversation is free. Give an expected scope or quotation before the visit when the request is sufficiently clear. A paid diagnostic visit may be needed when responsible remote diagnosis is not possible. Explain that distinction without suggesting every technical issue can be priced exactly before inspection. Berlin travel policy remains undecided.
-
-The future enquiry form should stay approachable while collecting name; telephone and/or email; preferred contact method; postcode or Berlin district; private, home-office, or business context; optional company name; a short problem description; affected device, software, or service; preferred appointment period; an optional screenshot or photograph; and privacy consent. It must never request passwords, authentication or recovery codes, payment-card data, remote-access credentials, or other sensitive login information.
+Production copy and page-specific scope live in `ω┇Engine/src/content/services/`; the planning-only `ω┇Engine/src/data/seo-keywords.yml` owns keyword routing and research status. Do not regenerate copy from its provisional seeds or duplicate research logs here. German and English research remain independent. Protect service intent over search volume: hardware-repair keywords must not redefine computer support, normal migration must not imply recovery, and business provider terms must not imply a mandatory managed-service/SLA contract. Private landings remain orientation/conversion gateways rather than forced high-volume targets. Preserve canonical and alternate-language pairing; add substantial new pages only for distinct search intent or a genuine customer-information need.
 
 ## Repository and application architecture
 
-The repository has two intentional work areas:
+`ω┇Engine/` owns the static Astro application, dependencies, source, assets and validation. `α┇Docs/` owns project context; the deployment workflow stays at repository-root `.github/workflows/astro.yml`. Prefer reusable Astro components, shared tokens, scoped styles and minimal client JavaScript. Editable content belongs in validated collections; layout, dimensions, classes and arbitrary visual controls stay in code.
 
-```text
-α┇Docs/     Stable context, roadmap, and collaborative handoffs
-ω┇Engine/   Astro application, source, assets, dependencies, and validation
-```
+Key sources inside `ω┇Engine/`:
 
-Root files are limited to repository instructions, ignore rules, and GitHub-required workflow configuration.
-
-The engine uses Astro 5 with static output. There is one shared layout, reusable header/footer/contact/service components, TypeScript data modules, a layered global CSS system, and minimal client JavaScript for header behavior. No server adapter, CMS, analytics integration, or form backend is currently installed.
-
-Important sources of truth inside `ω┇Engine`:
-
-- `src/data/site.ts`: provisional public identity, contact channels, service districts, and optional English-support messaging.
-- `src/content.config.ts`: validated service-page schema, approved page templates, thematic variants, SEO fields, FAQ requirements, and expanded-page contracts.
-- `src/content/services/<service-identity>/<locale>.yml`: independently maintained German and English service records connected by stable translation IDs; folder names are stable service identities and each locale owns one complete page record.
-- `src/data/services.ts`: collection loading, translation-pair and route validation, related-service resolution, and route helpers.
-- `src/data/navigation.ts`: language-specific navigation.
-- `src/layouts/MainLayout.astro`: canonical, alternate-language, Open Graph, header, and footer behavior.
-- `src/styles/tokens.css`, `global.css`, and `technical-field.css`: shared design decisions, foundation and legacy page rules, and the approved Technical Field layer in explicit cascade order.
-- `astro.config.mjs`: deployment origin and `/vorort/` base path.
-
-### Design Lab: Page Workshop and Approved Sections
-
-Design Lab is an internal, static, read-only workspace with exactly two user-facing areas: **Page Workshop** and **Approved Sections**. Page Workshop renders complete experimental service pages from validated YAML; Approved Sections filters the canonical recipe registry and starts empty. No Concept II section has been approved. The previous continuous recipe catalogue, Notes/Foundation inspectors and Experiment wrapper have been removed.
-
-The governing direction is **semantic content → section recipe → reusable Astro implementation**. Experimental recipes may be used in Workshop. Only explicitly approved recipe IDs form the governed vocabulary that future production content may reference. Production services have **not** migrated to this contract: researched service YAML and production routes remain independent and unchanged.
-
-Sources of truth, relative to `ω┇Engine`:
-
-- `src/design-system/section-recipes.ts` owns stable semantic recipe IDs, lifecycle (`experimental`, `approved`, `deprecated`), semantic purpose/kind, suitable page types/audiences, the content schema and Astro renderer reference. Registry consumers derive their validation, rendering lookup and approval list from these records. `recipeAllowedIn()` exposes the future approved-only production policy; it is not wired into current production service rendering.
-- `src/design-system/workshop-schema.ts` validates semantic page metadata and an ordered list of `{ id, kind, recipe, content }` sections. Every object is strict, including nested copy/media records. Unknown recipes, arbitrary styling keys, wrong kinds, unsupported audiences/page types/locales, duplicate section IDs, invalid content and broken hero action targets fail validation. The current reviewed fixture scope is English private/business service pages with one opening hero and one closing shared contact section; other page types/locales require an intentional extension, not a permissive fallback.
-- `src/content/workshop/*.yml` contains independently editable Private Home Network / Wi-Fi / NAS and Business Office Network / Network Infrastructure Concept II fixtures. File stems match semantic page IDs. The loader retains file extensions in collection keys to prevent same-stem YAML files silently overwriting each other; `src/data/workshop.ts` checks matching and unique page IDs.
-- `src/components/design-lab/WorkshopCanvas.astro` resolves registry renderer references through Astro's build-time component imports. Eight small section renderers live under `src/components/design-lab/sections/`; repeated artwork geometry uses `ArtField.astro`, and the enquiry recipe reuses the existing `ContactSection.astro`. Shared foundation and recipe-specific styles are split under `src/styles/design-lab/`; toolbar styling stays in `src/styles/design-lab.css`. MainLayout and the production tokens/global typography are reused unchanged. Existing Concept II audience-specific dark tones, geometry, density and artwork placeholders remain experimental design decisions, not another global design system.
-- `src/data/workshop-usage.ts` derives distinct Workshop pages using a recipe, ignoring repeated occurrences and duplicate preview routes. Approved recipe records can show these page links/counts. Production usage is explicitly unconnected, not represented by invented counts.
-
-YAML may contain copy, items, semantic image subjects, site-relative image references, accessible media labels and section-link targets. It does not expose CSS classes, columns, dimensions, colours, radii, positioning or animations. Recipe-specific content cardinality is validated where the existing composition requires it. The P1–P6 files remain at `public/images/concept-ii/private/`; renderer URL resolution adds the configured base. Shared contact facts and optional English-support messaging remain governed by `src/data/site.ts`.
-
-Workshop navigation works with ordinary static links, including the native page-selector disclosure. Its default canvas uses normal document scrolling. Optional Full page / Desktop (1440px) / Tablet (768px) / Mobile (390px) buttons use a small framework-free script and the same canvas in an auto-height iframe, so viewport media queries operate correctly; an oversized preview scrolls horizontally within its stage. “Open page canvas” offers the composition on its own. The page picker and ordinary canvas remain usable without JavaScript; only width controls need it.
-
-| Internal route | Purpose |
+| Source | Owns |
 | --- | --- |
-| `/design-lab/` | Page Workshop entrance, initially Private |
-| `/design-lab/workshop/wifi-home-network-concept-ii/` | Private fixture with Workshop controls |
-| `/design-lab/workshop/office-network-concept-ii/` | Business fixture with Workshop controls |
-| `/design-lab/approved/` | Approved Sections; initially empty |
-| `/design-lab/preview/wifi-home-network-concept-ii/` | Private render-only canvas, also used by preview controls |
-| `/design-lab/preview/office-network-concept-ii/` | Business render-only canvas, also used by preview controls |
+| `src/data/site.ts` | Provisional identity/contact facts, service districts, optional English-support messaging |
+| `src/content.config.ts`, `src/content/services/<identity>/<locale>.yml`, `src/data/services.ts` | Production schemas, independent locale records, translation/route validation and service resolution |
+| `src/data/navigation.ts`, `src/layouts/MainLayout.astro` | Localized navigation and shared metadata/chrome |
+| `src/styles/tokens.css`, `global.css`, `technical-field.css` | Shared tokens, global foundation and existing production visual layer |
+| `astro.config.mjs` | Static deployment origin and `/vorort/` base |
+| `src/design-system/section-recipes.ts`, `workshop-schema.ts` | Canonical section registry and strict Workshop contracts |
+| `src/content/workshop/`, `src/data/workshop*.ts` | Experimental page fixtures, unique page IDs, loading, paths and distinct-page usage |
+| `src/components/design-lab/`, `src/styles/design-lab/` | Workshop UI, cohesive section renderers, shared artwork primitive and section styles |
 
-All six routes retain the `/vorort/` deployment base, carry `noindex, nofollow`, omit customer navigation and stay absent from production navigation and the sitemap. They are unlisted, not authenticated. The former public-like `wifi-home-network-ii` and `office-network-ii` routes were removed after both designs were accessible in Workshop. There is no filesystem-writing UI, local Node/file API or `npm run design-lab` command yet. The pure registry/schema/usage modules and fixture files provide a boundary a future local-only tool can consume; the normal build must remain read-only.
+### Page Workshop and Approved Sections
 
-A non-breaking visual improvement may keep an approved ID. A breaking semantic/content-contract change requires a new semantic ID. Before the first approval, Aykhan must explicitly accept the section's design in context, its copy/media contract, supported audience/page type and remaining placeholders. Record that approval in the collaboration handoff, set only that registry record's `status` to `approved`, and deliberately update the initial-zero acceptance assertions in validation. Existing production pages do not change automatically.
+Design Lab has exactly two user-facing areas: **Page Workshop** and **Approved Sections**. The Workshop renders complete experimental pages; Approved Sections derives its list from the same canonical registry. The governing relationship is **semantic content → section recipe → reusable Astro implementation**. Production services remain independent and have not adopted this contract.
 
+The registry owns stable semantic IDs, lifecycle (`experimental`, `approved`, `deprecated`), purpose/kind, audience/page-type compatibility, content schema and renderer reference. Workshop YAML holds page metadata and ordered `{ id, kind, recipe, content }` sections, including copy, accessible media and semantic link targets. Strict validation rejects unknown recipes, styling keys, incompatible kinds/audiences, invalid content, duplicate IDs and broken hero targets. Current support is deliberately English private/business service pages with an opening hero and closing shared contact section; additional locales/page types require intentional extension. Fixture stems match page IDs; loader keys retain extensions to detect duplicate YAML stems.
 
-The contact form currently prepares an email through the visitor's configured mail client. It is not a server-backed submission and cannot independently count abandoned or completed form attempts. Calls, email, and WhatsApp are the practical contact channels until the conversion backend is chosen.
+The Workshop is static and read-only. Page selection uses normal links; normal document scrolling is the default. Optional desktop/tablet/mobile previews reuse the same canvas in auto-height iframes. Page selection and the full canvas work without JavaScript; width controls require it. Usage counts distinct fixture pages, excluding repeated sections and preview routes; production usage is not connected. No file-writing UI/API or dedicated local editing command exists yet.
 
-## Current implemented website map
+**Approval contract:** Aykhan explicitly accepts a section's design in context, copy/media contract, supported audiences/page types and remaining placeholders before its registry status becomes `approved`. Record the decision in the handoff and update relevant validation assertions deliberately. A non-breaking visual refinement may retain its ID; a breaking semantic/content-contract change requires a new ID. Future production consumers must enforce approved-only recipes. Approval does not itself authorize production adoption or copy migration.
 
-The current sitemap contains 23 indexable URLs. The separate 404 page, noindex transitional redirect and six internal noindex Design Lab routes bring the generated HTML total to 31. Two of the internal routes are render-only preview canvases, not additional Lab areas. The retired English Concept II service routes are no longer generated; the researched production service pages remain unchanged.
+**Collaboration:** Content/SEO owns factual meaning, search intent, proof, boundaries and independently written locales. Design owns hierarchy, information relationships, composition, imagery and page rhythm. Implementation follows those decisions through the existing contracts. Content briefs should explain relationships rather than prescribe components. If a design requires changed wording, record a targeted request in the current handoff; revise production content only when truthful, SEO-safe and authorized.
 
-| Purpose | German route | English route | Current direction |
-| --- | --- | --- | --- |
-| Homepage | `/` | `/en/` | Condensed Technical Field homepage and grouped service discovery implemented |
-| Private-services landing | `/leistungen/privatpersonen/` | `/en/services/private/` | Keep; both landings are independently Keyword-Planner researched and rewritten as approachable private/home-office orientation and conversion gateways. All tested landing-specific phrases returned only 0–10 in each language, so neither page is forced onto a misleading high-volume owner; both protect the stronger homepage and detailed-service intents. |
-| Computer and laptop help | `/leistungen/privatpersonen/computer-laptop-hilfe/` | `/en/services/private/computer-laptop-help/` | Keep; both pages are independently Keyword-Planner researched and expanded around symptom-led Windows/macOS support. German owns `PC Hilfe Berlin`; English owns `computer support Berlin` while excluding higher-volume hardware-workshop `computer repair Berlin` intent |
-| Software installation and optimization | `/leistungen/privatpersonen/software-installation-optimierung/` | `/en/services/private/software-installation-optimisation/` | First four-state Technical Field service pair and current private-service review reference |
-| Wi-Fi and home networks | `/leistungen/privatpersonen/wlan-heimnetz/` | `/en/services/private/wifi-home-network/` | Keep; German and independently authored English pages are expanded around planned home-network setup, cabling, Mesh, NAS and Homeoffice |
-| Setup and data transfer | `/leistungen/privatpersonen/einrichtung-datenumzug/` | `/en/services/private/setup-data-transfer/` | Keep; German page is Keyword-Planner researched and the independently authored English counterpart is SERP-reviewed; both centre on device selection/procurement, complete setup, normal data migration and backup |
-| Business-services landing | `/leistungen/unternehmen/` | `/en/services/business/` | Both landings are Keyword-Planner researched gateways: German owns broad `IT-Dienstleister Berlin` intent; English owns `IT support Berlin` with `IT services Berlin` as a strong secondary term. Neither page substitutes for the deeper Microsoft 365, Google Workspace or network/infrastructure services |
-| Microsoft 365 workplaces | `/leistungen/unternehmen/microsoft-365-arbeitsplaetze/` | `/en/services/business/microsoft-365-workplaces/` | Keep; expand into a deeper business service page |
-| Google Workspace | `/leistungen/unternehmen/google-workspace-cloud/` | `/en/services/business/google-workspace-cloud/` | Keep; both pages are independently Keyword-Planner researched and expanded. German owns `google workspace einrichten`; English owns `google workspace support` while qualifying direct-Google-support intent through business setup, Gmail/domain, Shared Drives, users/access, migration, security, backup and workplace integration |
-| Network and IT infrastructure | `/leistungen/unternehmen/netzwerk-it-betreuung/` | `/en/services/business/network-it-support/` | Keep; reference business page, led by planning, building and modernizing office networks and infrastructure, with troubleshooting secondary |
-| Former system and software overview | `/leistungen/reparatur-installation/` | Not mirrored | Noindex transitional redirect to the dedicated German software service; excluded from the sitemap |
-| Security and certifications | `/datensicherheit-zertifizierungen/` | Not yet mirrored | Transitional trust/capability page; do not market unverified certifications |
-| Legal notice | `/impressum/` | German legal source linked from English pages | Keep and replace placeholders with verified legal facts |
-| Privacy policy | `/datenschutz/` | German legal source linked from English pages | Keep and align with the real form/analytics stack |
-| Sitemap | `/sitemap.xml` | Shared | Keep generated |
-| Not found | `/404.html` | Shared | Keep |
+## Website map and deployment
 
-All routes are served beneath the GitHub Pages repository base, for example `/vorort/en/`. Source code should continue using the base-aware URL helper rather than hard-coding the repository prefix into individual links.
+The current output has 23 indexable URLs and 31 HTML pages. Routes below omit the configured `/vorort/` deployment base; always resolve links/assets with the existing base-aware helpers.
 
-## Target launch information architecture
+| Page | German | English |
+| --- | --- | --- |
+| Homepage | `/` | `/en/` |
+| Private landing | `/leistungen/privatpersonen/` | `/en/services/private/` |
+| Computer/laptop help | `/leistungen/privatpersonen/computer-laptop-hilfe/` | `/en/services/private/computer-laptop-help/` |
+| Software installation/optimization | `/leistungen/privatpersonen/software-installation-optimierung/` | `/en/services/private/software-installation-optimisation/` |
+| Home networks | `/leistungen/privatpersonen/wlan-heimnetz/` | `/en/services/private/wifi-home-network/` |
+| Setup/data transfer | `/leistungen/privatpersonen/einrichtung-datenumzug/` | `/en/services/private/setup-data-transfer/` |
+| Business landing | `/leistungen/unternehmen/` | `/en/services/business/` |
+| Microsoft 365 | `/leistungen/unternehmen/microsoft-365-arbeitsplaetze/` | `/en/services/business/microsoft-365-workplaces/` |
+| Google Workspace | `/leistungen/unternehmen/google-workspace-cloud/` | `/en/services/business/google-workspace-cloud/` |
+| Business networks | `/leistungen/unternehmen/netzwerk-it-betreuung/` | `/en/services/business/network-it-support/` |
+| Transitional trust page | `/datensicherheit-zertifizierungen/` | Bilingual replacement pending |
+| Legal notice / privacy | `/impressum/`, `/datenschutz/` | Link to German legal sources |
 
-The launch architecture should be intentionally small enough to maintain well, but deep enough to satisfy real search intent and let motivated visitors verify competence. The homepage is not expected to carry every service explanation. Audience landings orient visitors; individual service pages answer one concrete problem or professional need in depth.
+Additional output: `/sitemap.xml`, `/404.html`, and the noindex transitional `/leistungen/reparatur-installation/` redirect. The six internal Lab routes are the `/design-lab/` entrance, `/design-lab/approved/`, and Workshop/preview routes for each of the two fixtures. All are `noindex, nofollow`, omit customer chrome, and stay out of production navigation and the sitemap. They are unlisted, not authenticated. Discover current fixture URLs through the Workshop picker; legacy technical names remain until the planned application rename.
 
-### Core pages to retain, create, or complete
+GitHub Pages currently hosts `https://arb24-at.github.io/vorort/`. The workflow responds to engine/workflow changes; documentation-only commits do not redeploy. SEO metadata, canonical/alternate-language links and the sitemap are implemented. No server adapter, analytics integration or submission backend is installed. The contact form currently prepares an email in the visitor's mail client; it does not deliver or measure submissions independently.
 
-1. **Homepage — German and English.** Keep the entrance problem-led and non-technical. It should state on-site Berlin IT help clearly, offer call/WhatsApp/form access, let visitors recognize their problem in plain language, introduce private/home-office/business pathways, then progressively reveal experience, technology competence, English-speaking technical service, Berlin coverage, FAQ, and trust evidence. Technology names must not become the main entrance taxonomy.
-2. **Private-services landing — German and English.** This is the middle layer between the simple homepage and individual service pages. Use recognizable situations, plain-language outcomes, a short service process, sensible service boundaries, reassuring trust evidence, and links into the detailed private services. It should remain suitable for non-technical and older visitors without naming them as a demographic target. Independent German and English Keyword Planner research on 2026-09-08 found all tested private/home-office landing phrases at only 0–10 monthly searches in both languages, so both landings are intentionally orientation/conversion-led rather than forced onto misleading higher-volume terms. German protects `IT Hilfe Berlin` on the homepage plus detailed owners such as `PC Hilfe Berlin`, `Heimnetzwerk einrichten` and `neuen Computer einrichten`; English protects the homepage's provisional `IT help Berlin`, the business landing's `IT support Berlin`, the computer page's `computer support Berlin`, and the detailed home-network/new-computer/software intents.
-3. **Computer and laptop troubleshooting — German and English.** Retain as the reference private-service page. Lead with symptoms rather than diagnoses and support both Windows PCs/laptops and Macs for system, software, startup, performance and legitimate account-access problems. The German page owns broad `PC Hilfe Berlin` intent, while the independently researched English page owns `computer support Berlin` with `PC support Berlin` secondary. High-volume German startup/slow-computer phrases remain symptom themes rather than separate thin routes. In English research, `computer repair Berlin` and `PC repair Berlin` have materially higher volume than support/help terms but current SERPs are dominated by physical hardware workshops, so those phrases are deliberately excluded rather than used to misrepresent the offer. Forgotten Windows/laptop passwords, Mac login/account problems and BitLocker/recovery-key situations belong to this support intent rather than the new-device setup page; recovery must use legitimate available account or key mechanisms and must not imply that protected access can always be restored. Do not present the service as a hardware-repair workshop or advertise hardware-fault diagnosis, display/hinge/charging-port/mainboard/liquid-damage repair; clearly scoped simple component replacement may be agreed selectively without becoming a repair-shop offer. Damaged or unreadable media remains a separate data-recovery case, and uneconomical devices should route naturally to new-device advice/setup. The page theme should show a recognizable device/problem state progressing towards diagnosis and resolution.
-4. **Software installation and optimization — German and English.** Implemented as the first expanded content-collection service pair using the intent-led slugs `software-installation-optimierung` and `software-installation-optimisation`. It covers installation, updates, configuration, performance/stability problems, software conflicts, user profiles, workplace applications, safe handover, FAQs, boundaries, proof, related services, and direct contact paths. Keep it as the review reference before expanding the same treatment to the remaining pages.
-5. **Wi-Fi and home networks — German and English.** Keep as a useful private/home-office search-intent page even though it is not one of the five headline pillars. Lead with planned home-network setup and improvement rather than router troubleshooting: new or renovated homes, Ethernet cabling, Mesh or wired access points, NAS/shared storage, Homeoffice connectivity, printers/TVs and other connected devices, hardware recommendation or supply, testing and understandable handover. Weak coverage and dropouts remain supported entry points but are secondary to building a coherent network. Provider-line faults remain the ISP's responsibility, and no universal Wi-Fi coverage or speed guarantee is published. Smart-home devices may be connected to the network here, while broader smart-home configuration/installation is a separate future service intent.
-6. **Setup and data transfer — German and English.** Keep as a substantial planned private service centred on the whole device-change journey: needs-based Windows-PC/laptop/Mac purchase advice and optional procurement, complete new-device setup, migration of personal data within or between Windows and macOS, E-mail/account setup including common German providers, optional application/peripheral setup, and a recommended backup step using suitable external storage, NAS, Time Machine or Windows backup. The page should own new-computer setup and normal readable-data transfer intent, not damaged-media recovery or password-access intent. Do not imply guaranteed recovery of missing or damaged data, and never request passwords, PINs or recovery keys through the enquiry form.
-7. **Business-services landing — German and English.** Treat this as a professional gateway for small and growing businesses, offices, practices, studios, shops, freelancers, and home-office operations rather than a full technical catalogue. Start from operational needs, then expose deeper competence, one-off work plus optional recurring support, relevant technologies, working methods, experience, and verified qualifications when available. The German landing owns broad provider intent around `IT-Dienstleister Berlin`; `Systemhaus Berlin` is adjacent search language but must not be used to imply a full outsourced-IT/Managed-Services/SLA model that is not the standard offer. The independently researched English landing owns broad `IT support Berlin` intent with `IT services Berlin` as the main secondary phrase; `managed IT services Berlin` is adjacent demand but must not be used to imply that a managed-service contract is the standard engagement. Dedicated Microsoft 365, Google Workspace, and network/infrastructure pages retain their narrower search intent. Avoid enterprise-consultancy language and avoid publishing an employee or device ceiling.
-8. **Network and IT infrastructure — German and English.** Retain as the reference business-service page, with planned infrastructure work ahead of break/fix troubleshooting. Lead with new-office network design, modernization of existing networks, managed network hardware, business Wi-Fi, network cabling/racks/patching, NAS/shared storage, VPN/secure remote access, hardware recommendation or supply, implementation, testing, documentation/handover, and optional maintenance. Keep the public language understandable and describe technical depth through customer outcomes rather than protocol lists. Windows Server/Active Directory and comprehensive Linux server work remain separate service intents even when they overlap technically with networking. This page may use the deepest network/system diagrams of the initial set.
-9. **Microsoft 365 workplaces — German and English.** Expand beyond a generic service card into a real business page covering accounts and users, Outlook/Teams/Office, files and sharing, permissions, device/workplace setup, migration/integration issues, troubleshooting, and working practices. Publish exact certifications only after evidence is supplied.
-10. **Google Workspace — German and English.** Treat this as practical small-business implementation and support rather than product evangelism. For businesses that already use Workspace or have chosen it, cover complete setup, tariff/order guidance without claiming reseller status, domain verification and business Gmail, users/groups/admin roles, Shared Drives and permissions, Windows/macOS workplace integration, 2-step verification and legitimate recovery options, migrations into or out of Workspace, coexistence with Microsoft 365, troubleshooting and optional independent backup. If the platform choice is still open, assess the business need rather than presenting Google Workspace as automatically preferable to Microsoft 365. Do not advertise end-user training, ongoing administration as the default engagement, or enterprise-level DLP/eDiscovery/SSO/identity/compliance migrations. The independently researched German page owns `google workspace einrichten`. The independently researched English page owns `google workspace support`, but must distinguish local business-environment work from Google's own Customer Care/help-centre intent; setup, migration, company-domain email, Shared Drives and backup are supporting commercial themes.
-11. **Working methods, data handling, experience, and qualifications — bilingual trust/capability treatment.** The existing `/datensicherheit-zertifizierungen/` route is provisional and should not remain framed as a certification showcase while credentials are unverified. Rework or replace it around necessary access, understandable changes, account/data protection, backup/change precautions, experience since 2008, supported technology expertise, and verified qualifications when supplied. A future route/name change should preserve or redirect existing URLs deliberately.
-12. **Contact — dedicated German and English route once the real form backend is chosen.** Keep the global contact section and mobile contact access, but add a durable contact destination for call, WhatsApp, and form enquiries. Explain what information helps, the free initial conversation, possible paid diagnosis, Berlin service area, and privacy expectations. Never ask for passwords, authentication/recovery codes, payment-card data, or remote-access credentials.
+The intended enquiry form uses minimal initial fields with progressive optional detail: name, telephone/email, preferred contact, postcode/district, customer context, optional company, problem/device/service, preferred appointment period, optional screenshot/photo and privacy consent. Never request passwords, authentication/recovery codes, payment-card data or remote-access credentials. Phone, WhatsApp and a future delivered form are primary paths; email remains available.
 
-**Confirmed future business-service expansions — routes and wording TBD after independent research.** Windows Server/Active Directory and Linux server services are real supported capabilities that should receive dedicated service pages rather than being compressed into the network page. Create them only after page-specific keyword/SERP research defines distinct intent, scope, boundaries, and internal-link relationships.
+## Visual baseline and direction under review
 
-**Confirmed future private-service expansion — route and wording TBD after independent research.** Smart-home configuration and installation is a real intended service area. The home-network page may cover the network foundation and connection of compatible smart-home devices, but a dedicated smart-home page should own equipment selection, ecosystem compatibility, configuration and broader installation scope once its own intent, boundaries and product strategy are researched.
+Preserve the existing shared production foundation, tokens, grouped navigation and Technical Field treatment until a separately authorized migration. The illustrated Berlin homepage environment and software-service progression are existing production work, not newly approved Workshop recipes.
 
-**Research-backed adjacent private-service candidate — data recovery.** German Keyword Planner research returned 100–1k monthly searches for `datenrettung berlin` with medium advertiser competition, and current Berlin results are dominated by specialist recovery providers. Keep damaged, unstable or unreadable media outside the setup/data-transfer page's primary intent. A dedicated recovery page may be created only after a separate capability/scope review defines what can responsibly be handled in-house, when specialist referral is appropriate, and how the no-guarantee boundary is explained. Normal readable-data migration and a future recovery page should link to each other where a case crosses that boundary.
+The two Workshop pages explore dark banner heroes with integrated artwork, prominent illustrated scope, galleries, situations, process, proof/boundaries, FAQ and shared contact. Private compositions use softer room/device-scale scenes; Business uses more structured workplace/infrastructure relationships. The working artwork language is tactile editorial illustration, with flatter supporting panels, restrained navy/petrol/off-white surfaces, orange routes and mint connection cues. Aykhan's accepted working private hero reference establishes an art family, not section approval.
 
-**Account-access intent ownership.** Forgotten Windows/laptop password phrases and BitLocker-recovery terms show substantially higher search volume than device-migration phrases, but they represent a distinct access/support problem and should initially be owned by the computer/laptop-help page rather than a thin standalone password page. Revisit a dedicated route only if later SERP, Search Console or enquiry evidence shows a separately useful customer journey.
+Useful ideas retained from the external design reference remain **review heuristics**, not mandatory layouts: recognizable physical environments; clear spatial relationships; topic/scope/relevance apparent from the hero and first section within roughly three seconds; connected scope shown as a coherent environment where useful; meaningful variation in section rhythm. Choose scenes, diagrams, sequences, prose or lists according to meaning. Do not force integrated scenes, identical cards, fixed section counts or a single composition onto every page.
 
-### Pages not required for the first demand-test launch
+Keep one family through typography, navigation, palette, illustration quality and contact patterns; distinguish audiences through composition, scale and density as well as colour. Mobile should recompose complex visuals, keep key meaning available without hover, and preserve readable/tappable contact actions. Avoid generic stock people/generated technicians, decorative cyber imagery and unexplained diagrams. Review keyboard/focus behavior, contrast, reduced motion and performance alongside appearance. The temporary [artwork prompt library](art-prompts.md) holds reusable generation prompts and asset status until Aykhan finishes generating the images.
 
-- Do not create Berlin-district landing pages merely to multiply local keywords. Berlin coverage belongs in the core pages unless Search Console and enquiry evidence later justify genuinely useful district content.
-- Do not create separate thin pages for every supported technology, printer type, operating system, router brand, or minor task. Add a page only when it represents a real service/search intent and can support substantial original content.
-- A dedicated About/team page can wait until the final public identity and suitable authentic photography or biography material exist. Trust evidence can live on the homepage, audience landings, service pages, and the working-methods/qualifications treatment in the meantime.
-- A blog or advice library is not a launch requirement. Add editorial content later only when it serves demonstrated search questions, internal linking, or customer education rather than publishing filler for SEO.
+## Documentation and local workflow
 
-## Page content contracts
+- `AGENTS.md` owns agent rules and the canonical project version.
+- This file owns stable decisions, architecture, service boundaries and the website map.
+- [Roadmap.md](Roadmap.md) owns priorities and acceptance criteria, subordinate to Aykhan's external Obsidian Chain. Do not edit or duplicate the Chain.
+- [Collaboration.md](Collaboration.md) owns the maintained current handoff and brief recent session reports. Move durable decisions here, priorities to the roadmap and obsolete history to Git rather than growing an append-only log.
 
-Every indexable service page should have one clear audience, one primary search/problem intent, a defined level of technical depth, a thematic visual state, truthful proof, and an obvious conversion path. German and English should be independently written rather than mechanically translated.
-
-### Homepage
-
-- plain-language promise and Berlin/on-site context;
-- problem/symptom-led navigation rather than product taxonomy;
-- private, home-office, and business pathways;
-- progressive competence and trust evidence;
-- concise English-speaking technician message;
-- Berlin coverage, concise FAQ, and call/WhatsApp/form actions;
-- no wall of certificates, brands, acronyms, or technical specifications above the fold.
-
-### Private landing and private service pages
-
-- recognizable symptoms and everyday situations first;
-- what we can investigate or set up, explained in plain language;
-- likely outcomes without guarantees;
-- a short on-site process and when paid diagnosis may be necessary;
-- clear boundaries around hardware/component repair, data recovery, unsupported software, and other non-core work where relevant;
-- thematic visuals that explain the problem state throughout the page, not only in the hero;
-- FAQs based on genuine customer questions and search intent;
-- call, WhatsApp, and form options kept easy to find.
-
-### Business landing and business service pages
-
-- operational impact before technical architecture;
-- supported scope, systems, users/devices, dependencies, and workflows;
-- diagrams or system relationships where they improve understanding;
-- assessment, prioritization, implementation, documentation/handover, and maintainability;
-- relevant Microsoft, Google, networking, workplace, server/Linux, security, or other expertise only where the page needs it;
-- experience and verified qualifications as proof, not decorative badge collections;
-- one-off project/problem work first, optional recurring support where relevant;
-- security/access boundaries and no unsupported enterprise guarantees;
-- business-appropriate enquiry prompts without making the form feel like procurement paperwork.
-
-### Trust/capability content
-
-- experience since 2008;
-- transparent working methods and necessary-access principles;
-- account/data protection and sensible backup/change precautions;
-- named technology expertise that is actually supported;
-- exact certificates only after names, issuers, holders, status, and verification evidence are supplied;
-- no invented compliance, response-time, availability, or security guarantees.
-
-### Contact content
-
-- phone, WhatsApp, and form as equal legitimate paths with context-sensitive visual priority;
-- minimal first-step fields with optional detail revealed progressively;
-- Berlin location/postcode, customer context, affected device/service, problem summary, preferred contact/appointment period, and optional screenshot/photo;
-- free initial conversation and possible paid diagnostic visit explained without promising an exact pre-visit price for every fault;
-- explicit instruction not to send passwords, authentication/recovery codes, payment-card information, or remote-access credentials.
-
-## SEO and page-creation guardrails
-
-Service-page planning must happen before broad visual rollout. Each new page should target a distinct useful intent rather than a keyword variation of another page. Use Berlin and the service/problem naturally in titles, descriptions, headings, internal links, and copy without repetitive location stuffing. Preserve canonical and `hreflang` pairing for bilingual content. Do not create thin district, technology, or near-duplicate pages merely to increase sitemap size; expand the architecture when search evidence or a genuine customer decision need justifies it.
-
-## Visual direction
-
-The connected-space foundation and its final design-refinement pass are approved. The German and English homepages use one physical Berlin living/work environment for broad context, the shared header exposes every required service through a compact grouped menu, and the software-service pair progresses through situation, investigation, intervention, and verified outcome states. The remaining audience and service pages retain their earlier prototype treatment until each controlled conversion is reviewed.
-
-The desired impression is trustworthy, competent, and modern, supported by approachability, calmness, friendliness, and local familiarity. The site should look like a real Berlin IT service without resembling a conventional IT-company template, a cheap repair shop, or an intimidating consultancy.
-
-The governing visual principle is a coherent environment that changes state by subject. The shared layers are `place` for the familiar physical setting, `signal` for connections and dependencies, and `state` for fault, intervention, or verified operation. Private pages foreground the place and understandable symptoms; business pages will foreground system relationships and operational consequences while remaining part of the same visual identity.
-
-Explore a consistent Berlin home, home-office, and small-office visual world that changes state by subject:
-
-- networking reveals coverage, signal paths, and connection problems;
-- security reveals protected boundaries, access, and anomalies;
-- troubleshooting and software work reveal diagnostic layers, conflicts, and an ordered resolution;
-- Microsoft, Google, and workplace pages reveal collaboration, device relationships, accounts, and information flow;
-- private, home-office, and business pages grow progressively more sophisticated while remaining visibly part of the same system.
-
-The thematic idea must continue beyond hero imagery into section composition, custom icons, technical diagrams, small system visualizations, interface-like details, typography, restrained abstract graphics, meaningful motion, interaction, and subtle reactive behavior. Avoid generic laptop users, technicians pointing at monitors, server racks without service relevance, handshakes, call centers, unrelated AI people, and a different style on every page.
-
-Generated or bespoke imagery should be selective and belong to a deliberately designed family with recurring environments, composition, perspective, materials, and lighting. Identify a small number of high-value master concepts before commissioning assets. Prototype the system on the homepage, one private service, and one business service before expanding it across the site.
-
-The homepage reserves the original illustrated Berlin master environment for the broad place-based entrance. Capability and software states use customer-readable diagnostic paths, interface-like fault views, dependency diagrams, controlled-change sequences, and verified handover views instead of repeating the same image. Public placeholder chrome and internal design-taxonomy labels have been removed from those pages. Shared section rhythm targets approximately 72–96px between adjacent desktop content areas and 48–64px on mobile by controlling each section edge rather than stacking presentation-scale padding. Existing placeholder panels remain only on routes that have not yet entered the controlled conversion sequence; they must be replaced rather than propagated.
-
-The first contrasting service prototypes are computer and laptop troubleshooting for private customers, and office networks and workplace IT for businesses. Until suitable authentic photography exists, do not substitute generic stock people or generated technicians; use environments, devices, systems, illustrations, diagrams, and icons to carry the identity.
-
-## Content-depth and trust model
-
-The homepage entrance must be simple, attractive, reassuring, and immediately understandable. It should explain what the service does and reduce anxiety without leading with certifications, technology lists, or dense terminology. Deeper homepage sections may reveal more evidence while staying understandable.
-
-Private-service pages may contain more detail because their visitors have shown stronger intent. Business pages may go considerably deeper into workplace IT, networking, Microsoft, Google, working methods, technologies, qualifications, and certificates without adopting enterprise-consultancy language or presentation.
-
-Genuine professional qualifications, years of experience, and named technology expertise are the intended trust signals. Use simple reassurance near the entrance, stronger evidence further down, and detailed proof on relevant professional pages. Certifications must prove competence rather than become decorative badge collections, and no credential or duration may be published until its exact wording and evidence are supplied.
-
-## SEO, deployment, and measurement
-
-The current site includes page titles, descriptions, canonical URLs, German/English `hreflang`, Open Graph basics, a generated sitemap, base-aware links, and a GitHub Pages workflow. The workflow builds only when the engine or workflow changes; documentation-only commits do not redeploy the site.
-
-Still required before a meaningful demand test:
-
-- real contact and legal information;
-- a chosen brand and production domain;
-- search-console verification and privacy-conscious analytics;
-- measurable telephone, email, WhatsApp, and form events;
-- a reliable form endpoint and consent/data-retention decisions;
-- dependency/security maintenance;
-- English equivalents or deliberate canonical treatment for remaining German-only service/trust pages.
-
-## Local workflow
-
-Run commands from the engine:
-
-```bash
-cd 'ω┇Engine'
-npm ci
-npm run dev
-npm run validate
-```
-
-`npm run validate` builds the site, checks Workshop fixture contracts and approval/usage policies, then verifies required pages, all Lab robots/canonical/chrome guards, sitemap size, internal `/vorort/` targets, retired route removal and the absence of stale `/astro-demo/` references. GitHub Actions runs the equivalent build and output validation before deployment.
-
-The engine's project-level `.npmrc` sets `bin-links=false` so fresh installs do not create symbolic links in `node_modules/.bin`, which keeps the working directory compatible with its Google Drive location. Package scripts invoke Astro's JavaScript entry point directly and must retain that form unless the storage constraint changes.
-
-## Documentation ownership
-
-- This file owns stable purpose, decisions, architecture, website map, and operating facts.
-- `Roadmap.md` owns implementation phases and acceptance criteria subordinate to the external Obsidian Chain.
-- `Collaboration.md` owns the current handoff and append-only reports from material work sessions.
-- The external Chain remains Aykhan's high-level advancing task list and should not be expanded with repository-level implementation detail.
+Run application commands from `ω┇Engine/`: `npm ci`, `npm run dev`, `npm run validate`. Validation builds the site, checks Workshop contracts/approval/usage rules and verifies static output, robots, canonical/base paths, internal assets and sitemap exclusions. Follow root instructions for Git checks and commit handoff. The engine's `.npmrc` uses `bin-links=false` for Google Drive compatibility; scripts invoke Astro's JavaScript entry point directly and must retain that form unless the storage constraint changes.
