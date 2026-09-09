@@ -1,17 +1,17 @@
 # VorOrt collaboration handoff
 
-Last updated: 2026-09-08
+Last updated: 2026-09-09
 
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: the Drive source now carries project version `1.5.11` for the independently researched English private-services production landing rewrite. The previous handoff records local `main` at committed `a4817e7` (`1.5.7`) with the Phase-1.1 Design Lab workbench as a separate uncommitted `1.5.8` change set; subsequent `1.5.9`, `1.5.10`, and this `1.5.11` content slice still require local Git-state verification in a repository-shell session.
-- Local validation: the previous Design Lab handoff records passing baseline/final `npm run validate` with 26 HTML pages and 23 sitemap URLs. This `1.5.11` Drive-only task replaces the English private landing wrapper with dedicated authored Astro content, updates SEO routing and documentation/version records, and does not change styles or shared components. Repository-shell validation, browser rendering, diff and status checks are not available in this session.
-- Local browser verification: every study was checked at 1440×1000, 768×1024 and 390×844 with exactly one visible study and no horizontal overflow. Notes and Foundation were also checked open at every width. Mode selection, selected-study metadata, keyboard controls, mutually exclusive panels and Escape focus return work; no browser warnings/errors were reported.
-- Deployment state: no commit, push or deployment was performed for this Phase-1.1 task. Local preview route: `/vorort/design-lab/`.
+- Current working state: the Drive source now carries project version `1.5.12` for the Design Lab composition-recipe catalogue. Local Git sequencing for the earlier `1.5.8`–`1.5.11` slices still requires repository-shell verification; this Drive-connected design session did not inspect or alter `.git`.
+- Local validation: not run for `1.5.12` because this Drive-connected session has no repository shell. The previous Lab handoff records passing `npm run validate` at `1.5.8`; the new recipe catalogue requires fresh local build/browser/diff/status validation before commit.
+- Local browser verification: not run for `1.5.12`. The Design Lab source now uses a continuous canvas, jump navigation, meaningful mode variants in selected recipes and 18 exploratory section recipes; responsive behaviour still needs browser review at the established desktop/tablet/mobile widths.
+- Deployment state: no commit, push or deployment was performed in this Drive-only design session. Intended local preview route remains `/vorort/design-lab/`.
 - Product-direction state: the final design direction remains approved and stabilized. Both business landings are independently researched gateways: German owns broad `IT-Dienstleister Berlin` intent and English owns `IT support Berlin` with `IT services Berlin` as a strong secondary phrase. The Google Workspace pair is independently researched in both languages: German owns `google workspace einrichten`; English owns `google workspace support`, but qualifies that broader phrase through local business setup, company-domain Gmail, Shared Drives, migration, security, backup and workplace integration rather than mimicking Google's own product-support channel. Neither page presents Workspace as automatically preferable to Microsoft 365. The German/English business network reference pages remain project-led; the private Wi-Fi/home-network, setup/data-transfer and computer/laptop-help pairs are expanded bilingually, and both private-services landings are now independently researched and rewritten as orientation/conversion gateways. Computer/laptop help supports Windows and macOS for system/software/startup/performance problems, malware and legitimate account access while deliberately excluding hardware-repair-shop positioning; German owns `PC Hilfe Berlin`, English owns `computer support Berlin` with `PC support Berlin` secondary. `Datenrettung Berlin` remains a separate adjacent recovery intent, and Smart Home remains a future researched service intent.
 - Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional. The clean install also reports nine dependency audit findings for later dependency-maintenance review.
-- Recommended next action: verify local Git sequencing for the pre-existing `1.5.8` and `1.5.9` slices, validate the `1.5.10` German and `1.5.11` English private landing slices locally, then continue the content phase with the trust/capability treatment before design composition is applied.
+- Recommended next action: read back the Drive recipe files, then when repository-shell capacity is available run the full validation/browser checks and commit the `1.5.12` Lab slice. In parallel, use the recipe catalogue to classify the finished page content and choose the first production composition, starting with the private landing.
 
 ## Reporting template
 
@@ -29,6 +29,21 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 ```
 
 ## Work log
+
+## 2026-09-09 — ChatGPT — Design Lab composition-recipe catalogue
+
+- Objective: turn the internal Lab from five isolated neutral shells into a continuous composition cookbook that can express different information relationships without defaulting to repeated cards, bullets, numbered lists and accordions.
+- Changes:
+  - Reworked `ω┇Engine/src/pages/design-lab.astro` into a continuous 18-recipe canvas. The selector now jumps to recipes instead of hiding all other studies; Notes and Foundation remain optional inspectors.
+  - Added recipes for situational environment, dominant/supporting paths, situation-to-service routing, connected systems, layered diagnosis, before/change/outcome, working path, editorial prose, long-form reading, decision fork, evidence statement, experience timeline, customer-readable boundaries, capability constellation, annotated media, editorial Q&A, directional related-service paths and media/narrative pauses.
+  - Made General/Private/Business mode materially affect selected examples: the situational environment, connected-system topology and capability constellation change content/density instead of only changing a marker. Other recipes remain shared when the relationship is universal.
+  - Reworked `Experiment.astro` from a one-selected-study wrapper into a recipe wrapper with a small internal metadata band outside the customer-like composition.
+  - Replaced the Lab-only CSS with recipe-specific responsive compositions while continuing to reuse the existing shared tokens and production typography. No production stylesheet, service YAML or public page source was intentionally changed.
+  - Expanded `Design-Content-Handoff.md` with the R01–R18 recipe vocabulary, content-side semantic collaboration rules and an exploratory mapping for the active private-services landing. Updated `Project.md` to describe the new Lab behaviour and bumped `AGENTS.md` from `1.5.11` to `1.5.12`.
+- Decisions: recipes express semantic relationships and are not mandatory Astro components or YAML page-builder values. Continuous page rhythm is the default Lab view; recipe selection is navigation, not filtering. Lists/cards/accordions remain valid where the information genuinely is list-like, but they should not carry the principal story of several consecutive sections by default.
+- Validation: read the latest complete Drive copies of `AGENTS.md`, `Project.md`, `Roadmap.md`, `Collaboration.md`, `Design-Content-Handoff.md`, `design-lab.astro`, `design-lab.css` and `Experiment.astro` before editing. Performed local text-level structural checks on the staged files: 18 unique recipe IDs, 18 matching recipe wrapper pairs, balanced CSS braces and expected top-level Astro/script pairs. Repository-shell `npm run validate`, browser rendering, `git diff --check`, `git status --short`, Git commit and push are unavailable in this Drive-connected session and must not be treated as passed. Exact Drive readback follows the write.
+- Blockers or required input: no design-content blocker for the Lab catalogue. Production brand/contact/legal/qualification/travel/form/analytics/domain blockers remain unchanged. Browser and build validation are still required before this slice is committed.
+- Recommended next action: validate `/vorort/design-lab/` locally, then use the recipe catalogue with the researched private landing first: compare R01/R03 for recognition and routing, R04/R14 for cross-service context, R07 for working method, R11 for proof, R13 for boundaries and R17 for continuation.
 
 ## 2026-09-08 — ChatGPT — English private-services production landing rewrite
 

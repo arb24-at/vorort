@@ -73,6 +73,37 @@ Use these as prompts, not mandatory component names.
 
 A repeated data structure does **not** require a repeated card component.
 
+## Design Lab recipe catalogue
+
+The internal Design Lab now provides a reusable **composition vocabulary**. These IDs are design shorthand, not component names and not YAML layout values. Content should continue to describe meaning and relationships; Design chooses and combines recipes after reading the real content.
+
+| ID | Recipe | Best suited to | Avoid when |
+| --- | --- | --- | --- |
+| R01 | Situational environment | recognition through a home, office or device context | the subject has no meaningful spatial context |
+| R02 | Dominant + supporting paths | one genuinely dominant situation with secondary routes | all items are equally important |
+| R03 | Situation → service map | visitors know symptoms/outcomes but not the technical category | the mapping would imply a false diagnosis |
+| R04 | Connected environment | devices, people, network, access or storage depend on each other | items are actually independent |
+| R05 | Layered diagnosis | one symptom may originate in several layers | the steps are chronological rather than diagnostic |
+| R06 | Before → change → outcome | the core story is a controlled state change | there is no meaningful before/after state |
+| R07 | Working path | enquiry, assessment, agreement, work and handover form a real sequence | order is optional or variable enough to mislead |
+| R08 | Editorial split + pull quote | nuanced explanation needs prose plus one visual statement | the quote would merely repeat the heading |
+| R09 | Long-form reading block | sustained nuance or reassurance deserves quiet reading space | the content can be understood faster as a relationship or diagram |
+| R10 | Decision fork | two genuinely different routes, choices or engagement modes | arbitrary two-column content |
+| R11 | Evidence statement | one factual trust claim supported by relevant evidence | proof is weak, invented or requires caveats that dominate |
+| R12 | Experience timeline | time is genuinely the organising relationship | milestones are artificial marketing filler |
+| R13 | Supported ↔ specialist boundary | explain service limits in customer language | the distinction is legal boilerplate with no decision value |
+| R14 | Capability constellation | supporting abilities surround one customer task or environment | labels would accidentally become new headline services |
+| R15 | Annotated visual | a photograph, screenshot, device, floor plan or interface can carry the explanation | annotations would be decorative rather than informative |
+| R16 | Editorial Q&A cluster | a few important questions deserve open answers | a long set of independent FAQs is better collapsed |
+| R17 | Directional next paths | related services represent meaningful continuation | every link is equally generic |
+| R18 | Media + narrative pause | the page needs a visual or editorial reset between dense sections | the page is already sparse or the media adds no meaning |
+
+### Content-side collaboration rule
+
+When preparing or revising content, the Content workspace should record the **relationship** rather than a recipe choice. Useful descriptions include: “these are chronological stages”, “these situations overlap”, “this is one system with dependent parts”, “this is a real either/or decision”, “these are independent facts”, or “this paragraph needs nuance and should not be fragmented”. It may also flag required wording, ordering, source imagery/screenshots, and which facts are equal versus hierarchical. Design then selects a recipe or deliberately chooses plain prose/list treatment.
+
+Do not restructure content merely to fill a recipe. Do not create recipe IDs, layout names, column counts, visual themes or image positions in production YAML.
+
 ## Page-level handoff template
 
 Copy this block for the currently active page. Keep it concise.
@@ -223,3 +254,14 @@ Copy this block for the currently active page. Keep it concise.
 - Content starts from customer situations and intended outcomes; technical categories are supporting context.
 - The visitor may continue to a detailed service or enquire without choosing one first.
 - No page composition, card system, accordion behaviour, grid, diagram type or other UI pattern is prescribed here. The Design workspace owns representation.
+**Current Design recipe mapping — exploratory, not yet production-approved**
+
+- Recognition: test **R01 Situational environment** against a quieter editorial entrance; do not assume imagery is mandatory.
+- Situation-to-service routing: **R03 Situation → service map** is the leading experiment because it preserves overlap and allows direct enquiry without self-diagnosis.
+- Cross-service environment: compare **R04 Connected environment** with **R14 Capability constellation**; supporting capabilities must not become extra services.
+- Working relationship: **R07 Working path** fits the real sequence from description through agreement and handover.
+- Proof: **R11 Evidence statement** can carry `IT experience since 2008` without badges or invented metrics.
+- Boundaries: **R13 Supported ↔ specialist boundary** can explain repair/data-recovery limits in customer language.
+- Continuation: **R17 Directional next paths** should be tested instead of another equal card grid.
+- Page rhythm: use **R08/R09/R18** where the finished copy benefits from prose, imagery or a deliberate visual pause rather than more structured UI.
+

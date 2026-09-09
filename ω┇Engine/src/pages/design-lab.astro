@@ -3,45 +3,33 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Experiment from "../components/design-lab/Experiment.astro";
 import "../styles/design-lab.css";
 
-// Deliberate Lab fixtures, not service content or approved production compositions.
+// Internal composition recipes. These are design studies, not production content or page-builder settings.
 const modes = ["General", "Private", "Business"];
-const studies = [
-  {
-    "id": "lab-split",
-    "title": "01 / Text + visual split",
-    "purpose": "Balance a short explanation with a visual area.",
-    "notes": "Two columns at desktop; text first when stacked."
-  },
-  {
-    "id": "lab-editorial",
-    "title": "02 / Editorial wide + narrow",
-    "purpose": "Judge sustained reading beside a brief annotation.",
-    "notes": "Longer text fixture; narrow column becomes a closing note."
-  },
-  {
-    "id": "lab-technical",
-    "title": "03 / Dark technical field",
-    "purpose": "Test contrast and the relationship between text and a sequence.",
-    "notes": "Existing dark surface; neutral diagram, no service-state claim."
-  },
-  {
-    "id": "lab-transition",
-    "title": "04 / Full-width transition",
-    "purpose": "Create a pause between two denser sections.",
-    "notes": "One statement across the content width; no card wrapper."
-  },
-  {
-    "id": "lab-asymmetric",
-    "title": "05 / Asymmetric two-column section",
-    "purpose": "Compare a compact introduction with more detailed reading.",
-    "notes": "Short left column, wider right column; natural reading order on mobile."
-  }
+const recipes = [
+  { id: "r01-situation", title: "R01 / Situational environment", category: "Recognition", purpose: "Turn a broad problem into a recognisable physical context.", notes: "Useful when the visitor understands their environment better than the technical category." },
+  { id: "r02-dominant", title: "R02 / Dominant + supporting paths", category: "Recognition", purpose: "Give one common entry point visual priority while keeping secondary paths visible.", notes: "Use when one situation is genuinely more common or important; do not fake hierarchy." },
+  { id: "r03-routing", title: "R03 / Situation → service map", category: "Service discovery", purpose: "Map customer language to service destinations without requiring self-diagnosis.", notes: "Strong candidate for audience landings where situations overlap." },
+  { id: "r04-system", title: "R04 / Connected environment", category: "Connected systems", purpose: "Show how devices, access, network and storage relate spatially.", notes: "Private and business modes intentionally use different system density." },
+  { id: "r05-layers", title: "R05 / Layered diagnosis", category: "Explanation", purpose: "Express a symptom as several possible layers rather than a flat checklist.", notes: "Good for computer troubleshooting, accounts and service dependencies." },
+  { id: "r06-transform", title: "R06 / Before → change → outcome", category: "Sequence", purpose: "Make a controlled transformation visible without numbered cards.", notes: "Useful when the real story is a change of state rather than a list of tasks." },
+  { id: "r07-process", title: "R07 / Working path", category: "Sequence", purpose: "Explain the service relationship as one continuous route.", notes: "Use for enquiry, assessment, agreement, work and handover." },
+  { id: "r08-editorial", title: "R08 / Editorial split + pull quote", category: "Explanation", purpose: "Let sustained prose carry the idea while one statement provides visual emphasis.", notes: "Paragraphs are allowed to be the main design object; not everything needs UI." },
+  { id: "r09-reading", title: "R09 / Long-form reading block", category: "Explanation", purpose: "Create a calm, readable passage between denser visual sections.", notes: "Use when nuance matters and compression into cards would damage meaning." },
+  { id: "r10-choice", title: "R10 / Decision fork", category: "Comparison", purpose: "Compare two genuinely different routes or engagement modes.", notes: "Avoid using this for arbitrary two-column content; the contrast must be real." },
+  { id: "r11-proof", title: "R11 / Evidence statement", category: "Proof", purpose: "Build trust around one factual claim and supporting evidence.", notes: "No invented ratings, counts or certification language." },
+  { id: "r12-timeline", title: "R12 / Experience timeline", category: "Proof", purpose: "Use time as the organising relationship instead of a badge wall.", notes: "Best for durable history or milestones, not artificial marketing chronology." },
+  { id: "r13-boundary", title: "R13 / Supported ↔ specialist boundary", category: "Boundaries", purpose: "Explain where the service ends without turning limitations into legal small print.", notes: "Paired treatment should remain calm and customer-readable." },
+  { id: "r14-scope", title: "R14 / Capability constellation", category: "Scope", purpose: "Show breadth as a connected field rather than another bullet cloud.", notes: "Labels remain supporting capabilities, not extra headline services." },
+  { id: "r15-annotated", title: "R15 / Annotated visual", category: "Media", purpose: "Use one visual object as the explanation surface with concise annotations.", notes: "Can later hold a real photograph, screenshot, device illustration or floor plan." },
+  { id: "r16-questions", title: "R16 / Editorial Q&A cluster", category: "Questions", purpose: "Answer selected questions openly before falling back to an accordion.", notes: "Use an accordion only when the question set is long and genuinely independent." },
+  { id: "r17-related", title: "R17 / Directional next paths", category: "Related services", purpose: "Make related pages feel like continuation rather than a generic card footer.", notes: "Paths can be asymmetric; relevance matters more than equal card weight." },
+  { id: "r18-pause", title: "R18 / Media + narrative pause", category: "Rhythm", purpose: "Create a visual reset between information-heavy sections.", notes: "A photograph, illustration, statement or quiet paragraph can carry this role." }
 ];
 ---
 
 <MainLayout
   title="Internal Design Lab"
-  description="Internal composition experiments and existing foundation reference."
+  description="Internal composition recipe catalogue and foundation reference."
   canonicalPath="design-lab/"
   robots="noindex, nofollow"
   lang="en"
@@ -51,9 +39,10 @@ const studies = [
     <header class="lab-toolbar">
       <div class="container lab-controls">
         <div class="lab-identity">
-          <p class="lab-label">Internal · Phase 1.1</p>
+          <p class="lab-label">Internal · Recipe catalogue</p>
           <h1>Design Lab</h1>
         </div>
+
         <fieldset id="lab-mode-control" disabled>
           <legend>Canvas mode</legend>
           <div class="lab-modes">
@@ -65,56 +54,53 @@ const studies = [
             ))}
           </div>
         </fieldset>
+
         <label class="lab-study-control">
-          <span>Study</span>
+          <span>Jump to recipe</span>
           <select id="lab-study-control" aria-controls="lab-canvas lab-notes" disabled>
-            {studies.map((study) => <option value={study.id}>{study.title}</option>)}
+            {recipes.map((recipe) => <option value={recipe.id}>{recipe.title}</option>)}
           </select>
         </label>
+
         <div class="lab-panel-controls">
           <button type="button" data-panel-toggle="lab-notes" aria-controls="lab-notes" aria-expanded="false" disabled>Notes</button>
           <button type="button" data-panel-toggle="lab-foundation" aria-controls="lab-foundation" aria-expanded="false" disabled>Foundation</button>
         </div>
       </div>
     </header>
-    <noscript><p class="container">JavaScript is off. The first study remains readable; enable JavaScript to switch studies or open the inspectors.</p></noscript>
 
-    <aside id="lab-notes" class="lab-inspector container" aria-label="Selected study notes" hidden tabindex="-1">
-      {studies.map((study, index) => (
-        <div class="lab-notes" data-study-notes={study.id} hidden={index !== 0}>
-          <h2 class="lab-label">{study.title}</h2>
+    <noscript><p class="container lab-noscript">JavaScript is off. All recipes remain readable; mode switching, recipe jumping and inspectors require JavaScript.</p></noscript>
+
+    <aside id="lab-notes" class="lab-inspector container" aria-label="Selected recipe notes" hidden tabindex="-1">
+      {recipes.map((recipe, index) => (
+        <div class="lab-notes" data-study-notes={recipe.id} hidden={index !== 0}>
+          <p class="lab-kicker">{recipe.category}</p>
+          <h2>{recipe.title}</h2>
           <dl>
-            <div><dt>Purpose</dt><dd>{study.purpose}</dd></div>
-            <div><dt>Status</dt><dd>Shell · unapproved</dd></div>
+            <div><dt>Purpose</dt><dd>{recipe.purpose}</dd></div>
+            <div><dt>Status</dt><dd>Recipe · exploratory</dd></div>
             <div><dt>Mode</dt><dd data-lab-mode-label>General</dd></div>
-            <div><dt>Notes</dt><dd>{study.notes}</dd></div>
+            <div><dt>Notes</dt><dd>{recipe.notes}</dd></div>
           </dl>
         </div>
       ))}
-      <p class="lab-reference-note">Mode changes only the canvas marker in this phase. All sample copy and composition shells are unapproved.</p>
-      <p class="lab-reference-note">Add future experiments only after a focused design brief. These shells establish no approved private, business or production pattern.</p>
+      <p class="lab-reference-note">Recipes express information relationships. They are not mandatory components and do not create layout settings in YAML.</p>
     </aside>
 
     <section class="lab-inspector container" id="lab-foundation" aria-labelledby="lab-foundation-title" hidden tabindex="-1">
       <h2 id="lab-foundation-title" class="lab-panel-title">Foundation reference</h2>
       <div class="lab-foundation-body">
-        <p class="lab-label">Reference only · inherited shared styles · unaffected by canvas mode</p>
+        <p class="lab-label">Inherited shared styles · unaffected by recipe choice</p>
         <div class="lab-reference-grid">
           <div lang="de">
             <p class="lab-label">H1 / current service hero</p>
-            <div class="service-hero service-hero--story lab-type-sample">
-              <div class="service-hero__copy"><h1>Technik im Alltag</h1></div>
-            </div>
+            <div class="service-hero service-hero--story lab-type-sample"><div class="service-hero__copy"><h1>Technik im Alltag</h1></div></div>
             <p class="lab-label">H2 / section-title</p>
             <h2 class="section-title">Zusammenhänge verstehen</h2>
-            <p class="lab-label">H3 / body heading</p>
+            <p class="lab-label">Body heading</p>
             <h3>Ein Arbeitsplatz, mehrere Verbindungen</h3>
             <p class="eyebrow">Orientierung vor Ort</p>
             <p>Ein Computer, ein Zugang und eine Verbindung gehören im Alltag zusammen. Ein kurzer Überblick hilft, den nächsten Schritt zu besprechen.</p>
-            <div class="btn-row">
-              <button type="button" class="btn btn-primary" data-lab-show-stage>Komposition ansehen</button>
-              <button type="button" class="btn btn-secondary" data-lab-show-notes>Lab-Notizen lesen</button>
-            </div>
           </div>
           <div>
             <div class="lab-surfaces">
@@ -125,68 +111,226 @@ const studies = [
             </div>
             <p class="lab-label">Existing border / radius tokens</p>
             <div class="lab-radii">
-              <span style="border-radius: var(--radius-sm)">sm</span>
-              <span style="border-radius: var(--radius-md)">md</span>
-              <span style="border-radius: var(--radius-lg)">lg</span>
-              <span style="border-radius: var(--radius-xl)">xl</span>
+              <span style="border-radius: var(--radius-sm)">sm</span><span style="border-radius: var(--radius-md)">md</span><span style="border-radius: var(--radius-lg)">lg</span><span style="border-radius: var(--radius-xl)">xl</span>
             </div>
-            <p class="lab-label">Rhythm / real .section padding</p>
-            <div class="section lab-spacing"><span>Content edge</span></div>
-            <p class="lab-reference-note">Uses the shared responsive section rule and <code>--section-pad</code>. The surrounding frame marks its padding.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <div id="lab-canvas" class="lab-canvas" data-mode="general" tabindex="-1" aria-label="Composition canvas">
-      <Experiment study={studies[0]} selected>
-        <div class="lab-split">
-          <div>
-            <p class="eyebrow">Ein erster Überblick</p>
-            <h2 class="section-title">Was hängt miteinander zusammen?</h2>
-            <p class="section-lead">Am Arbeitsplatz treffen Gerät, Programme und Verbindung aufeinander. Wir schauen gemeinsam auf die Situation.</p>
+    <div class="lab-intro container">
+      <div>
+        <p class="eyebrow">Composition, not component count</p>
+        <h2 class="section-title">One content relationship, many possible forms.</h2>
+      </div>
+      <p>Use this canvas to judge how sections behave together. Lists, cards and accordions remain valid tools, but they should not become the default representation for every kind of information.</p>
+    </div>
+
+    <main id="lab-canvas" class="lab-canvas" data-mode="general" tabindex="-1" aria-label="Composition recipe canvas">
+      <Experiment recipe={recipes[0]} surface="warm">
+        <div class="recipe-situation">
+          <div class="recipe-copy">
+            <p class="eyebrow">Zuhause & Homeoffice</p>
+            <h2 class="section-title">Sie beschreiben, was Sie bemerken.</h2>
+            <p class="section-lead">Computer, Software und Heimnetz hängen im Alltag zusammen. Der Einstieg beginnt bei Ihrer Situation – nicht bei einer technischen Diagnose.</p>
           </div>
-          <figure class="lab-visual">
-            <div class="lab-diagram" aria-label="Beispiel: Gerät ist über eine Verbindung mit einem Zugang verbunden.">
-              <span>Gerät</span><i aria-hidden="true">↔</i><span>Verbindung</span><i aria-hidden="true">↔</i><span>Zugang</span>
-            </div>
-            <figcaption>Platz für eine spätere Darstellung der Zusammenhänge.</figcaption>
+          <div class="environment-stage" aria-label="Vereinfachte Umgebung mit verbundenen Geräten und Diensten">
+            <div class="environment-desk" aria-hidden="true"></div>
+            <div class="environment-screen" aria-hidden="true"><span></span></div>
+            <div class="environment-router" aria-hidden="true"></div>
+            <div class="environment-node node-a"><strong data-mode-general>Gerät</strong><strong data-mode-private>Computer</strong><strong data-mode-business>Arbeitsplatz</strong><span>startet nicht</span></div>
+            <div class="environment-node node-b"><strong data-mode-general>Verbindung</strong><strong data-mode-private>WLAN</strong><strong data-mode-business>Netzwerk</strong><span>ist instabil</span></div>
+            <div class="environment-node node-c"><strong data-mode-general>Zugang</strong><strong data-mode-private>E-Mail</strong><strong data-mode-business>Cloud</strong><span>fehlt</span></div>
+            <div class="environment-node node-d"><strong data-mode-general>Änderung</strong><strong data-mode-private>Neues Gerät</strong><strong data-mode-business>Neue Arbeitsplätze</strong><span>steht an</span></div>
+          </div>
+        </div>
+      </Experiment>
+
+      <Experiment recipe={recipes[1]}>
+        <div class="recipe-dominant">
+          <article class="dominant-path">
+            <p class="eyebrow">Der häufigste Einstieg</p>
+            <h2 class="section-title">Der Computer verhält sich plötzlich anders.</h2>
+            <p>Langsam, instabil, nach einem Update oder mit einer Anmeldung, die nicht mehr funktioniert. Das sichtbare Symptom bekommt zuerst Raum.</p>
+            <a href="#r03-routing">Situation einordnen →</a>
+          </article>
+          <div class="supporting-paths">
+            <article><span>01</span><h3>Software macht Schwierigkeiten</h3><p>Installieren, aktualisieren, konfigurieren oder Konflikte lösen.</p></article>
+            <article><span>02</span><h3>WLAN und Geräte gehören zusammen</h3><p>Verbindung, NAS, Drucker und Homeoffice als eine Umgebung betrachten.</p></article>
+            <article><span>03</span><h3>Ein Gerätewechsel steht an</h3><p>Auswahl, Einrichtung, Daten, E-Mail und Backup als einen Weg planen.</p></article>
+          </div>
+        </div>
+      </Experiment>
+
+      <Experiment recipe={recipes[2]} surface="soft">
+        <div class="routing-head">
+          <div><p class="eyebrow">Sie müssen die Ursache nicht kennen</p><h2 class="section-title">Von der Situation zum passenden Leistungsbereich.</h2></div>
+          <p>Die Pfeile zeigen Orientierung, keine harte Diagnose. Überschneidungen bleiben erlaubt.</p>
+        </div>
+        <div class="routing-map" aria-label="Beispiele für Situationen und mögliche Leistungsbereiche">
+          <div class="routing-situations">
+            <div><span class="route-dot route-dot--alert">!</span><p>Mein Computer ist langsam oder startet nicht.</p></div>
+            <div><span class="route-dot">↻</span><p>Ein Programm funktioniert nicht oder lässt sich nicht installieren.</p></div>
+            <div><span class="route-dot route-dot--mint">⌁</span><p>WLAN, NAS oder Drucker arbeiten nicht sinnvoll zusammen.</p></div>
+            <div><span class="route-dot route-dot--blue">▣</span><p>Ich richte ein neues Gerät ein und möchte meine Daten übernehmen.</p></div>
+            <div><span class="route-dot route-dot--neutral">?</span><p>Ich bin nicht sicher, wo die Ursache liegt.</p></div>
+          </div>
+          <div class="routing-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="routing-services">
+            <div><strong>Computer- & Laptop-Hilfe</strong><span>System, Start, Zugriff</span></div>
+            <div><strong>Software & Optimierung</strong><span>Programme, Updates, Konflikte</span></div>
+            <div><strong>WLAN & Heimnetz</strong><span>Verbindung, Geräte, Speicher</span></div>
+            <div><strong>Einrichtung & Datenumzug</strong><span>Neues Gerät, Übernahme, Backup</span></div>
+            <div class="routing-open"><strong>Gemeinsam einordnen</strong><span>Problem schildern, ohne Servicewahl</span></div>
+          </div>
+        </div>
+      </Experiment>
+
+      <Experiment recipe={recipes[3]} surface="dark">
+        <div class="system-head"><p class="eyebrow eyebrow--dark">Zusammenhänge sichtbar machen</p><h2 class="section-title">Nicht fünf Punkte. Ein System.</h2></div>
+        <div class="system-modes">
+          <div data-mode-panel="general" class="system-topology">
+            <span class="system-node system-node--core">Aufgabe</span><span class="system-node n1">Gerät</span><span class="system-node n2">Verbindung</span><span class="system-node n3">Zugang</span><span class="system-node n4">Daten</span>
+          </div>
+          <div data-mode-panel="private" class="system-topology system-topology--private">
+            <span class="system-node system-node--core">Homeoffice</span><span class="system-node n1">Laptop</span><span class="system-node n2">WLAN</span><span class="system-node n3">Drucker</span><span class="system-node n4">NAS</span><span class="system-node n5">E-Mail</span>
+          </div>
+          <div data-mode-panel="business" class="system-topology system-topology--business">
+            <span class="system-node system-node--core">Arbeitsplatz</span><span class="system-node n1">Endpoint</span><span class="system-node n2">Switch</span><span class="system-node n3">Wi-Fi</span><span class="system-node n4">Cloud</span><span class="system-node n5">Storage</span><span class="system-node n6">Identity</span>
+          </div>
+        </div>
+      </Experiment>
+
+      <Experiment recipe={recipes[4]}>
+        <div class="layered-diagnosis">
+          <div class="layer-copy"><p class="eyebrow">Vom Symptom zur Ebene</p><h2 class="section-title">„Langsam“ ist eine Beobachtung, keine Diagnose.</h2><p>Statt mehrere mögliche Ursachen als Liste nebeneinanderzustellen, kann die Darstellung zeigen, welche Schichten nacheinander geprüft werden.</p></div>
+          <div class="layer-stack" aria-label="Vier Diagnoseebenen">
+            <div><span>01</span><strong>Gerät</strong><small>Start, Speicher, Stabilität</small></div>
+            <div><span>02</span><strong>System</strong><small>Windows oder macOS</small></div>
+            <div><span>03</span><strong>Software</strong><small>Programme, Updates, Profile</small></div>
+            <div><span>04</span><strong>Verbindung</strong><small>Netzwerk, Zugang, Cloud</small></div>
+          </div>
+        </div>
+      </Experiment>
+
+      <Experiment recipe={recipes[5]} surface="soft">
+        <div class="transform-head"><p class="eyebrow">Kontrollierte Veränderung</p><h2 class="section-title">Ein Zustand verändert sich sichtbar.</h2></div>
+        <div class="transform-flow">
+          <figure><div class="state state--before"><span></span><strong>Vorher</strong><p>Unklarer Zustand, mehrere mögliche Ursachen.</p></div></figure>
+          <div class="transform-arrow" aria-hidden="true">→</div>
+          <figure><div class="state state--during"><span></span><strong>Änderung</strong><p>Nur das Vereinbarte wird angepasst.</p></div></figure>
+          <div class="transform-arrow" aria-hidden="true">→</div>
+          <figure><div class="state state--after"><span>✓</span><strong>Danach</strong><p>Der vereinbarte Arbeitszustand wird geprüft.</p></div></figure>
+        </div>
+      </Experiment>
+
+      <Experiment recipe={recipes[6]}>
+        <div class="path-layout">
+          <div><p class="eyebrow">So arbeiten wir</p><h2 class="section-title">Ein Weg vom ersten Satz bis zur Übergabe.</h2><p>Der Ablauf bleibt kurz genug für Orientierung, aber sichtbar genug, um Verantwortung und Zustimmung zu erklären.</p></div>
+          <ol class="path-track">
+            <li><span>01</span><strong>Beschreiben</strong><small>Problem, Ort, Gerät oder Ziel</small></li>
+            <li><span>02</span><strong>Einordnen</strong><small>Vor Ort, remote oder Diagnose</small></li>
+            <li><span>03</span><strong>Vereinbaren</strong><small>Umfang und nächster Schritt</small></li>
+            <li><span>04</span><strong>Durchführen</strong><small>Änderungen nachvollziehbar halten</small></li>
+            <li><span>05</span><strong>Prüfen</strong><small>Verständliche Übergabe</small></li>
+          </ol>
+        </div>
+      </Experiment>
+
+      <Experiment recipe={recipes[7]}>
+        <div class="editorial-pull">
+          <article><p class="eyebrow">Erklärung darf Erklärung bleiben</p><h2 class="section-title">Nicht jeder Absatz braucht eine Box.</h2><p>Wenn mehrere Systeme ineinandergreifen, ist eine zusammenhängende Erklärung oft hilfreicher als sechs kleine Elemente. Der Text kann beschreiben, warum E-Mail, Drucker, NAS und Backup in unterschiedlichen Aufträgen auftauchen, ohne daraus vier neue Leistungen zu machen.</p><p>Die Gestaltung schafft dabei Hierarchie durch Satzbreite, Abstand und ein starkes Gegenstück – nicht durch zusätzliche Komponenten.</p></article>
+          <blockquote>„Eine gute Komposition reduziert nicht den Inhalt. Sie macht seine Beziehung sichtbar.“</blockquote>
+        </div>
+      </Experiment>
+
+      <Experiment recipe={recipes[8]} surface="soft">
+        <article class="reading-block">
+          <p class="eyebrow">Ruhiger Lesemoment</p>
+          <h2 class="section-title">Manchmal ist ein guter Absatz die abwechslungsreichere Entscheidung.</h2>
+          <div class="reading-columns"><p>Bei einem längeren IT-Projekt entsteht Vertrauen nicht nur durch technische Begriffe. Wichtig ist, dass nachvollziehbar bleibt, was geprüft wird, welche Annahmen noch offen sind und wann eine Entscheidung gemeinsam getroffen werden muss.</p><p>Ein ruhiger Abschnitt zwischen Diagrammen und strukturierten Details kann genau diese Rolle übernehmen. Er gibt dem Auge eine Pause und dem Inhalt Raum für Nuance, ohne daraus eine neue Liste, ein Toggle oder eine Gruppe gleichgewichteter Karten zu machen.</p></div>
+        </article>
+      </Experiment>
+
+      <Experiment recipe={recipes[9]}>
+        <div class="decision-fork">
+          <div class="decision-intro"><p class="eyebrow">Zwei echte Wege</p><h2 class="section-title">Aufbauen oder wieder zuverlässig arbeiten?</h2></div>
+          <article><span class="decision-tag">Geplante Veränderung</span><h3>Aufbauen & modernisieren</h3><p>Neue Arbeitsplätze, Migration, Netzwerkaufbau oder Gerätewechsel beginnen mit einem Zielbild.</p><div class="decision-line">Planung → Aufbau → Übergabe</div></article>
+          <article><span class="decision-tag">Bestehendes System</span><h3>Störung & Ursache</h3><p>Wenn ein vorhandenes System nicht zuverlässig arbeitet, beginnt die Arbeit beim sichtbaren Zustand.</p><div class="decision-line">Symptom → Eingrenzung → Wiederherstellung</div></article>
+        </div>
+      </Experiment>
+
+      <Experiment recipe={recipes[10]} surface="dark">
+        <div class="proof-statement">
+          <div><p class="eyebrow eyebrow--dark">Fakt statt Badge-Wand</p><strong class="proof-number">2008</strong><h2>IT-Erfahrung seit 2008.</h2></div>
+          <div class="proof-evidence"><p>Der einzelne Beleg wird durch relevante Breite gestützt.</p><dl><div><dt>Systeme</dt><dd>Windows & macOS</dd></div><div><dt>Arbeitsumgebung</dt><dd>Software, Netzwerk, Geräte</dd></div><div><dt>Vor Ort</dt><dd>Berlin</dd></div><div><dt>Sprache</dt><dd>Technischer Service auch auf Englisch</dd></div></dl></div>
+        </div>
+      </Experiment>
+
+      <Experiment recipe={recipes[11]}>
+        <div class="timeline-layout">
+          <div><p class="eyebrow">Zeit als Beziehung</p><h2 class="section-title">Erfahrung kann eine Linie sein, keine Sammlung von Siegeln.</h2></div>
+          <div class="timeline"><div><time>2008</time><span></span><p>Beginn relevanter professioneller IT-Erfahrung.</p></div><div><time>Heute</time><span></span><p>Vor-Ort-Unterstützung für private und kleine betriebliche Umgebungen in Berlin.</p></div><div class="timeline-future"><time>Weiter</time><span></span><p>Neue Leistungen nur dort vertiefen, wo Fähigkeit und Nachfrage zusammenpassen.</p></div></div>
+        </div>
+      </Experiment>
+
+      <Experiment recipe={recipes[12]} surface="soft">
+        <div class="boundary-layout">
+          <div class="boundary-head"><p class="eyebrow">Klare Grenzen schaffen Vertrauen</p><h2 class="section-title">Was wir bearbeiten – und wann ein Spezialist sinnvoller ist.</h2></div>
+          <div class="boundary-side boundary-side--yes"><span>Passt zu uns</span><h3>System, Software und Einrichtung</h3><p>Fehler eingrenzen, konfigurieren, verbinden, migrieren und verständlich übergeben.</p></div>
+          <div class="boundary-divider" aria-hidden="true"><span>↔</span></div>
+          <div class="boundary-side boundary-side--no"><span>Spezialfall</span><h3>Komponenten- oder Laborreparatur</h3><p>Mainboard-, Display-, Flüssigkeitsschäden oder beschädigte Datenträger gehören nicht in ein allgemeines Versprechen.</p></div>
+        </div>
+      </Experiment>
+
+      <Experiment recipe={recipes[13]}>
+        <div class="scope-layout">
+          <div><p class="eyebrow">Breite ohne Katalog</p><h2 class="section-title">Eine Aufgabe berührt mehrere Fähigkeiten.</h2><p>Die Konstellation zeigt unterstützende Bereiche, ohne daraus neue Hauptleistungen zu machen.</p></div>
+          <div class="scope-field" aria-label="Verbundene Fähigkeiten">
+            <strong class="scope-core" data-mode-general>Aufgabe</strong><strong class="scope-core" data-mode-private>Zuhause</strong><strong class="scope-core" data-mode-business>Betrieb</strong>
+            <span class="s1">Windows</span><span class="s2">macOS</span><span class="s3">WLAN</span><span class="s4">E-Mail</span><span class="s5">NAS</span><span class="s6">Backup</span><span class="s7">Drucker</span><span class="s8">Cloud</span>
+          </div>
+        </div>
+      </Experiment>
+
+      <Experiment recipe={recipes[14]} surface="dark">
+        <div class="annotated-layout">
+          <div><p class="eyebrow eyebrow--dark">Ein Bild als Erklärung</p><h2 class="section-title">Ein Objekt, wenige präzise Hinweise.</h2><p>Später kann hier eine echte Aufnahme, ein Screenshot oder ein Grundriss stehen. Entscheidend ist, dass die Annotationen Bedeutung tragen.</p></div>
+          <figure class="annotated-visual">
+            <svg viewBox="0 0 640 360" role="img" aria-label="Vereinfachter Arbeitsplatz mit Bildschirm, Router und Speicher">
+              <rect x="120" y="70" width="270" height="170" rx="14" class="av-screen"/><rect x="145" y="95" width="220" height="120" rx="6" class="av-window"/><rect x="210" y="240" width="90" height="15" rx="7" class="av-stand"/><rect x="470" y="210" width="80" height="48" rx="10" class="av-router"/><rect x="450" y="85" width="95" height="105" rx="10" class="av-storage"/>
+              <path d="M385 125 C430 125 435 125 470 125"/><path d="M390 215 C430 230 440 235 470 235"/>
+            </svg>
+            <span class="annotation a1">Zugang / Konto</span><span class="annotation a2">Verbindung</span><span class="annotation a3">Speicher / Backup</span>
           </figure>
         </div>
       </Experiment>
 
-      <Experiment study={studies[1]}>
-        <div class="lab-editorial">
-          <div>
-            <p class="eyebrow">Die Situation beschreiben</p>
-            <h2 class="section-title">Erst verstehen, dann den nächsten Schritt planen.</h2>
-            <p>Manchmal betrifft eine Veränderung mehr als ein einzelnes Gerät. Ein Programm verhält sich anders, eine Verbindung fehlt oder ein Zugang wird neu benötigt.</p>
-            <p>Hilfreich ist zunächst ein Blick auf den Alltag: Was möchten Sie erledigen, was funktioniert bereits und an welcher Stelle kommen Sie nicht weiter?</p>
-          </div>
-          <aside class="lab-margin-note"><h3>Ein konkretes Beispiel</h3><p>Eine Datei lässt sich am Computer öffnen, ist aber am zweiten Arbeitsplatz nicht erreichbar.</p></aside>
+      <Experiment recipe={recipes[15]}>
+        <div class="qa-layout">
+          <div class="qa-featured"><p class="eyebrow">Eine Frage offen beantworten</p><h2 class="section-title">Muss ich vorher wissen, welcher Service passt?</h2><p>Nein. Beschreiben Sie, was nicht funktioniert oder was Sie erreichen möchten. Die technische Zuordnung kann Teil des ersten Gesprächs sein.</p></div>
+          <div class="qa-cluster"><article><h3>Kann Hilfe auch remote erfolgen?</h3><p>Wenn Aufgabe und Risiko dafür geeignet sind. Vor Ort in Berlin bleibt das prägende Modell.</p></article><article><h3>Was passiert bei unklarer Ursache?</h3><p>Dann kann eine verantwortliche Diagnose der nächste vereinbarte Schritt sein.</p></article><details><summary>Weitere unabhängige Fragen</summary><p>Für lange, voneinander unabhängige FAQ-Sets bleibt ein Accordion sinnvoll.</p></details></div>
         </div>
       </Experiment>
 
-      <Experiment study={studies[2]} surface="dark">
-        <div class="lab-split">
-          <div><p class="eyebrow eyebrow--dark">Die Verbindung betrachten</p><h2 class="section-title">Ein Weg durch das System.</h2><p class="section-lead">Vom Gerät über die Verbindung bis zum Zugang: Einzelne Schritte machen den Zusammenhang sichtbar.</p></div>
-          <ol class="lab-sequence"><li><span>01</span>Gerät betrachten</li><li><span>02</span>Verbindung nachvollziehen</li><li><span>03</span>Zugang einordnen</li></ol>
+      <Experiment recipe={recipes[16]} surface="soft">
+        <div class="related-layout">
+          <div><p class="eyebrow">Kontext statt Kartenfuß</p><h2 class="section-title">Der nächste Weg hängt davon ab, was Sie gerade erkannt haben.</h2></div>
+          <nav class="related-paths" aria-label="Beispielhafte nächste Leistungswege">
+            <a href="#r03-routing"><span>01</span><strong>Computer & Laptop</strong><small>Wenn das sichtbare Symptom am Gerät beginnt.</small><i>→</i></a>
+            <a href="#r04-system"><span>02</span><strong>WLAN & Heimnetz</strong><small>Wenn mehrere Geräte oder Räume zusammenhängen.</small><i>→</i></a>
+            <a href="#r06-transform"><span>03</span><strong>Einrichtung & Datenumzug</strong><small>Wenn eine geplante Veränderung im Mittelpunkt steht.</small><i>→</i></a>
+          </nav>
         </div>
       </Experiment>
 
-      <Experiment study={studies[3]} surface="soft">
-        <p class="eyebrow">Raum für den nächsten Schritt</p>
-        <h2 class="section-title">Aus einzelnen Beobachtungen entsteht ein gemeinsamer Überblick.</h2>
-      </Experiment>
-
-      <Experiment study={studies[4]}>
-        <div class="lab-asymmetric">
-          <div><p class="eyebrow">Gemeinsam einordnen</p><h2 class="section-title">Was soll sich verändern?</h2></div>
-          <div class="lab-detail-copy"><h3>Der Alltag gibt die Richtung vor.</h3><p>Ein neuer Arbeitsplatz, ein Gerätewechsel oder ein veränderter Ablauf: Entscheidend ist, welche Aufgaben Sie damit erledigen möchten.</p><p>Aus dieser Beschreibung lässt sich besprechen, welche Verbindungen und Einstellungen genauer betrachtet werden sollten.</p></div>
+      <Experiment recipe={recipes[17]} surface="warm">
+        <div class="pause-layout">
+          <div class="pause-media" aria-hidden="true"><span class="pause-window"></span><span class="pause-desk"></span><span class="pause-device"></span><span class="pause-plant p1"></span><span class="pause-plant p2"></span></div>
+          <div class="pause-copy"><p class="eyebrow">Rhythmus ist Teil des Systems</p><h2 class="section-title">Nach viel Information darf eine Seite wieder ruhig werden.</h2><p>Ein Bild, eine kurze Aussage oder ein gut gesetzter Absatz kann mehr Abwechslung schaffen als die nächste Gruppe von Elementen.</p><a class="btn btn-primary" href="#r01-situation">Zurück zum Anfang</a></div>
         </div>
       </Experiment>
-    </div>
-
+    </main>
   </div>
 </MainLayout>
 
@@ -199,52 +343,57 @@ const studies = [
   if (lab && control && selector && canvas) {
     const toggles = lab.querySelectorAll<HTMLButtonElement>("[data-panel-toggle]");
     const panels = lab.querySelectorAll<HTMLElement>(".lab-inspector");
+
     const showPanel = (id?: string) => {
       panels.forEach((panel) => { panel.hidden = panel.id !== id; });
-      toggles.forEach((toggle) => {
-        toggle.setAttribute("aria-expanded", String(toggle.dataset.panelToggle === id));
-      });
+      toggles.forEach((toggle) => toggle.setAttribute("aria-expanded", String(toggle.dataset.panelToggle === id)));
     };
-    const updateStudy = () => {
-      canvas.querySelectorAll<HTMLElement>(".lab-experiment").forEach((study) => {
-        study.hidden = study.id !== selector.value;
-      });
-      lab.querySelectorAll<HTMLElement>("[data-study-notes]").forEach((notes) => {
-        notes.hidden = notes.dataset.studyNotes !== selector.value;
-      });
+
+    const updateNotes = (id: string) => {
+      lab.querySelectorAll<HTMLElement>("[data-study-notes]").forEach((notes) => { notes.hidden = notes.dataset.studyNotes !== id; });
     };
+
     const updateMode = () => {
       const selected = control.querySelector<HTMLInputElement>("input:checked");
       if (!selected || !["general", "private", "business"].includes(selected.value)) return;
       canvas.dataset.mode = selected.value;
-      lab.querySelectorAll<HTMLElement>("[data-lab-mode-label]").forEach((label) => {
-        label.textContent = selected.value[0].toUpperCase() + selected.value.slice(1);
-      });
+      lab.querySelectorAll<HTMLElement>("[data-lab-mode-label]").forEach((label) => { label.textContent = selected.value[0].toUpperCase() + selected.value.slice(1); });
     };
+
+    const jumpToRecipe = () => {
+      const target = document.getElementById(selector.value);
+      if (!target) return;
+      updateNotes(selector.value);
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
     toggles.forEach((toggle) => {
       toggle.disabled = false;
-      toggle.addEventListener("click", () => {
-        showPanel(toggle.getAttribute("aria-expanded") === "true" ? undefined : toggle.dataset.panelToggle);
-      });
+      toggle.addEventListener("click", () => showPanel(toggle.getAttribute("aria-expanded") === "true" ? undefined : toggle.dataset.panelToggle));
     });
+
     panels.forEach((panel) => panel.addEventListener("keydown", (event) => {
       if (event.key !== "Escape") return;
       showPanel();
       lab.querySelector<HTMLButtonElement>(`[data-panel-toggle="${panel.id}"]`)?.focus();
     }));
-    lab.querySelector("[data-lab-show-stage]")?.addEventListener("click", () => {
-      showPanel();
-      canvas.focus();
-    });
-    lab.querySelector("[data-lab-show-notes]")?.addEventListener("click", () => {
-      showPanel("lab-notes");
-      document.querySelector<HTMLElement>("#lab-notes")?.focus();
-    });
+
     control.disabled = false;
     selector.disabled = false;
-    selector.addEventListener("change", updateStudy);
+    selector.addEventListener("change", jumpToRecipe);
     control.addEventListener("change", updateMode);
-    updateStudy();
     updateMode();
+
+    const recipes = Array.from(canvas.querySelectorAll<HTMLElement>(".lab-experiment"));
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visible) return;
+        const id = (visible.target as HTMLElement).id;
+        selector.value = id;
+        updateNotes(id);
+      }, { rootMargin: "-18% 0px -58% 0px", threshold: [0.05, 0.2, 0.5] });
+      recipes.forEach((recipe) => observer.observe(recipe));
+    }
   }
 </script>

@@ -1,6 +1,6 @@
 # VorOrt project documentation
 
-Last updated: 2026-09-08
+Last updated: 2026-09-09
 
 ## Purpose and positioning
 
@@ -75,7 +75,7 @@ Important sources of truth inside `ω┇Engine`:
 - `src/styles/tokens.css`, `global.css`, and `technical-field.css`: shared design decisions, foundation and legacy page rules, and the approved Technical Field layer in explicit cascade order.
 - `astro.config.mjs`: deployment origin and `/vorort/` base path.
 
-The internal `/design-lab/` route is a Phase-1 composition workspace inside the same Astro application. The Phase-1.1 workbench defaults to one selected study at normal content width, with a compact toolbar and closed Notes/Foundation inspectors; metadata stays outside the composition stage. It inherits the shared styles through `MainLayout`, uses isolated `design-lab.css` rules and a small internal experiment wrapper, and omits customer-facing chrome through the default-on `showSiteChrome` layout option. Its General/Private/Business control changes `data-mode` on the canvas; the initial modes only demonstrate marker changes. Fixtures are internal, unapproved examples, not service collection content or production patterns. The route carries `noindex, nofollow`, is absent from navigation and the explicit sitemap route list, and retains the configured base. It is an unlisted static route, not an authenticated workspace.
+The internal `/design-lab/` route is a composition-recipe workspace inside the same Astro application. It now presents a continuous scroll canvas of exploratory recipes rather than hiding all but one study, so full-page rhythm and transitions can be judged in context; the recipe selector jumps to a section instead of filtering the canvas. Notes and Foundation remain optional inspectors outside the customer-like composition stage. General/Private/Business mode changes the canvas context and selected recipes contain genuinely different mode variants where the information density or visual world should differ, while many recipes remain shared because the underlying relationship is universal. The initial catalogue covers recognition, service routing, connected systems, diagnosis layers, transformation, process, editorial reading, comparison, proof, boundaries, scope, annotated media, questions, related-service paths and narrative pauses. Recipes are internal design vocabulary, not mandatory production components or YAML layout settings. The route inherits shared tokens and production typography through `MainLayout`, keeps recipe-specific styling isolated in `design-lab.css`, omits customer-facing chrome, carries `noindex, nofollow`, remains absent from navigation and the explicit sitemap route list, and retains the configured base. It is an unlisted static route, not an authenticated workspace.
 
 The contact form currently prepares an email through the visitor's configured mail client. It is not a server-backed submission and cannot independently count abandoned or completed form attempts. Calls, email, and WhatsApp are the practical contact channels until the conversion backend is chosen.
 

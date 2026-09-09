@@ -1,15 +1,18 @@
 ---
 type Props = {
-  study: { id: string; title: string };
-  selected?: boolean;
-  surface?: "light" | "dark" | "soft";
+  recipe: { id: string; title: string; category: string; purpose: string };
+  surface?: "light" | "dark" | "soft" | "warm";
 };
 
-const { study, selected = false, surface = "light" } = Astro.props;
+const { recipe, surface = "light" } = Astro.props;
 ---
 
-<section id={study.id} class="lab-experiment" aria-label={study.title} hidden={!selected}>
-  <div class:list={["section", "lab-composition", { "section--ink": surface === "dark", "section--warm": surface === "soft" }]} lang="de">
+<section id={recipe.id} class="lab-experiment" aria-labelledby={`${recipe.id}-title`}>
+  <header class="lab-recipe-meta container">
+    <div><span>{recipe.category}</span><h2 id={`${recipe.id}-title`}>{recipe.title}</h2></div>
+    <p>{recipe.purpose}</p>
+  </header>
+  <div class:list={["section", "lab-composition", { "section--ink": surface === "dark", "section--warm": surface === "soft", "lab-surface-warm": surface === "warm" }]} lang="de">
     <div class="container"><slot /></div>
   </div>
 </section>
