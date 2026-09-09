@@ -376,3 +376,142 @@
   .design-lab .related-paths a { grid-template-columns: 2rem 1fr auto; }
   .design-lab .related-paths small { grid-column: 2; }
 }
+
+
+/* Audience opening studies — live service content, exploratory page-family language */
+.design-lab .lab-opening-study { background: var(--paper); }
+.design-lab .opening-prototype { overflow: clip; }
+.design-lab .opening-hero,
+.design-lab .opening-first { position: relative; padding-block: clamp(3.5rem, 8vw, 7.25rem); }
+.design-lab .opening-copy { min-width: 0; }
+.design-lab .opening-back { display: inline-block; margin-bottom: 1.4rem; font-size: 0.78rem; font-weight: 750; }
+.design-lab .opening-eyebrow { margin: 0 0 0.7rem; font-size: 0.72rem; font-weight: 850; letter-spacing: 0.09em; text-transform: uppercase; }
+.design-lab .opening-eyebrow--signal { color: var(--signal-dark); }
+.design-lab .opening-eyebrow--mint { color: var(--mint); }
+.design-lab .opening-hero-title,
+.design-lab .opening-section-title { margin: 0; letter-spacing: -0.055em; line-height: 0.96; }
+.design-lab .opening-hero-title { max-width: 13ch; font-size: clamp(2.5rem, 6vw, 5.6rem); }
+.design-lab .opening-section-title { max-width: 15ch; font-size: clamp(2.15rem, 4.7vw, 4.5rem); }
+.design-lab .opening-hero-intro,
+.design-lab .opening-first-copy > p:last-child { max-width: 58ch; margin: 1.35rem 0 0; font-size: clamp(1rem, 1.3vw, 1.12rem); line-height: 1.65; }
+.design-lab .opening-actions { margin-top: 1.5rem; }
+.design-lab .opening-actions .btn { pointer-events: none; }
+.design-lab .opening-first-copy { align-self: start; }
+.design-lab .lab-catalogue-divider { padding-block: clamp(3rem, 7vw, 6rem) 2rem; }
+.design-lab .lab-catalogue-divider h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.05em; }
+.design-lab .lab-catalogue-divider p:last-child { max-width: 58ch; color: var(--ink-soft); }
+
+/* Business: architectural, rectilinear, denser. The dark hero is a deliberate opening field. */
+.design-lab .opening-hero--business { background: var(--night); color: var(--surface); }
+.design-lab .opening-hero--business::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.28; background-image: linear-gradient(color-mix(in srgb, var(--mint) 18%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--mint) 18%, transparent) 1px, transparent 1px); background-size: 4rem 4rem; mask-image: linear-gradient(90deg, transparent 0, black 18%, black 100%); }
+.design-lab .opening-business-grid { position: relative; z-index: 1; display: grid; gap: clamp(2.5rem, 6vw, 6rem); align-items: center; }
+.design-lab .opening-copy--business .opening-back { color: color-mix(in srgb, var(--surface) 65%, transparent); }
+.design-lab .opening-copy--business .opening-eyebrow { color: var(--mint); }
+.design-lab .opening-copy--business .opening-hero-intro { color: color-mix(in srgb, var(--surface) 78%, transparent); }
+.design-lab .opening-copy--business .btn-ghost { color: var(--surface); border-color: color-mix(in srgb, var(--surface) 35%, transparent); }
+.design-lab .business-plan { position: relative; margin: 0; min-height: 31rem; border: 1px solid color-mix(in srgb, var(--mint) 22%, transparent); border-radius: var(--radius-md); background: color-mix(in srgb, var(--surface) 3%, transparent); box-shadow: 0 2rem 5rem color-mix(in srgb, #000 35%, transparent); overflow: hidden; }
+.design-lab .business-plan::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 10%, transparent), transparent 52%); }
+.design-lab .business-plan figcaption { position: relative; z-index: 2; display: grid; gap: 0.25rem; padding: 1.1rem 1.2rem; border-bottom: 1px solid color-mix(in srgb, var(--surface) 12%, transparent); }
+.design-lab .business-plan figcaption span { color: var(--mint); font: 700 0.69rem/1.2 monospace; letter-spacing: 0.08em; text-transform: uppercase; }
+.design-lab .business-plan figcaption strong { max-width: 38ch; font-size: 0.92rem; }
+.design-lab .business-plan svg { position: relative; z-index: 1; width: 100%; height: auto; display: block; }
+.design-lab .plan-shell { fill: color-mix(in srgb, var(--surface) 2%, transparent); stroke: color-mix(in srgb, var(--surface) 18%, transparent); }
+.design-lab .plan-zone { fill: color-mix(in srgb, var(--surface) 3%, transparent); stroke: color-mix(in srgb, var(--surface) 15%, transparent); stroke-dasharray: 4 6; }
+.design-lab .plan-route { fill: none; stroke: color-mix(in srgb, var(--mint) 55%, var(--surface)); stroke-width: 2; }
+.design-lab .plan-core { fill: color-mix(in srgb, var(--blue) 55%, var(--night)); stroke: var(--mint); }
+.design-lab .plan-point { fill: var(--mint); stroke: var(--night); stroke-width: 4; }
+.design-lab .business-plan text { fill: color-mix(in srgb, var(--surface) 55%, transparent); font: 700 18px/1 monospace; letter-spacing: 0.08em; }
+.design-lab .business-plan .plan-core-label { fill: var(--surface); font-size: 15px; }
+.design-lab .plan-callouts { position: absolute; z-index: 3; left: 1rem; right: 1rem; bottom: 1rem; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.design-lab .plan-callouts span { padding: 0.38rem 0.55rem; border: 1px solid color-mix(in srgb, var(--mint) 35%, transparent); border-radius: 0.2rem; background: color-mix(in srgb, var(--night) 86%, transparent); color: var(--surface); font: 700 0.68rem/1.2 monospace; }
+
+/* The business first section deliberately changes surface and thinking mode: from proposition to planning. */
+.design-lab .opening-first--business { background: var(--paper-light); color: var(--ink); }
+.design-lab .opening-business-first-grid { display: grid; gap: clamp(2.5rem, 6vw, 6rem); align-items: center; }
+.design-lab .business-requirements { position: relative; min-height: 34rem; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); background-image: linear-gradient(var(--line-light) 1px, transparent 1px), linear-gradient(90deg, var(--line-light) 1px, transparent 1px); background-size: 4rem 4rem; }
+.design-lab .business-requirements::before,
+.design-lab .business-requirements::after { content: ""; position: absolute; background: var(--line-strong); }
+.design-lab .business-requirements::before { left: 50%; top: 12%; bottom: 12%; width: 1px; }
+.design-lab .business-requirements::after { top: 50%; left: 12%; right: 12%; height: 1px; }
+.design-lab .business-requirements__core { position: absolute; z-index: 2; left: 50%; top: 50%; width: min(13rem, 36%); transform: translate(-50%, -50%); padding: 1rem; border: 1px solid var(--ink); border-radius: 0.25rem; background: var(--surface); box-shadow: 0 1rem 2.5rem color-mix(in srgb, var(--ink) 8%, transparent); }
+.design-lab .business-requirements__core span { display: block; margin-bottom: 0.35rem; color: var(--signal-dark); font: 800 0.68rem/1.2 monospace; text-transform: uppercase; }
+.design-lab .business-requirements__core strong { font-size: 1rem; line-height: 1.2; }
+.design-lab .requirement { position: absolute; z-index: 2; width: min(15rem, 35%); padding: 0.85rem 0.9rem; border-left: 2px solid var(--signal); background: color-mix(in srgb, var(--paper-light) 92%, transparent); }
+.design-lab .requirement span { display: block; margin-bottom: 0.25rem; color: var(--signal-dark); font: 800 0.68rem/1.2 monospace; }
+.design-lab .requirement strong { display: block; margin-bottom: 0.3rem; font-size: 0.93rem; }
+.design-lab .requirement p { margin: 0; color: var(--ink-soft); font-size: 0.78rem; line-height: 1.45; }
+.design-lab .requirement--1 { left: 2%; top: 7%; }
+.design-lab .requirement--2 { right: 2%; top: 7%; }
+.design-lab .requirement--3 { left: 2%; bottom: 7%; }
+.design-lab .requirement--4 { right: 2%; bottom: 7%; }
+
+/* Private: warmer entrance, recognisable domestic context and softer geometry. */
+.design-lab .opening-hero--private { background: linear-gradient(135deg, var(--paper-light) 0 60%, color-mix(in srgb, var(--mint) 8%, var(--paper)) 100%); color: var(--ink); }
+.design-lab .opening-hero--private::after { content: ""; position: absolute; right: -12rem; top: -14rem; width: 34rem; height: 34rem; border-radius: 50%; background: color-mix(in srgb, var(--mint) 9%, transparent); filter: blur(10px); pointer-events: none; }
+.design-lab .opening-private-grid { position: relative; z-index: 1; display: grid; gap: clamp(2.5rem, 6vw, 6rem); align-items: center; }
+.design-lab .opening-copy--private .opening-back { color: var(--ink-soft); }
+.design-lab .home-scene { position: relative; margin: 0; min-height: 31rem; padding: 1rem; border: 1px solid var(--line); border-radius: var(--radius-xl); background: color-mix(in srgb, var(--surface) 88%, transparent); box-shadow: 0 2rem 5rem color-mix(in srgb, var(--ink) 10%, transparent); overflow: hidden; }
+.design-lab .home-scene figcaption { position: relative; z-index: 3; display: grid; gap: 0.25rem; padding: 0.3rem 0.35rem 1rem; }
+.design-lab .home-scene figcaption span { color: var(--signal-dark); font: 800 0.69rem/1.2 monospace; letter-spacing: 0.08em; text-transform: uppercase; }
+.design-lab .home-scene figcaption strong { max-width: 38ch; font-size: 0.95rem; }
+.design-lab .home-scene__house { position: relative; min-height: 22rem; border-radius: var(--radius-lg); background: linear-gradient(180deg, color-mix(in srgb, var(--blue) 7%, var(--surface)) 0 54%, color-mix(in srgb, var(--signal) 7%, var(--paper-deep)) 54% 100%); overflow: hidden; }
+.design-lab .home-room { position: absolute; display: grid; align-content: end; padding: 0.7rem; border: 1px solid color-mix(in srgb, var(--ink) 16%, transparent); border-radius: var(--radius-md); background: color-mix(in srgb, var(--surface) 76%, transparent); color: var(--ink); font-size: 0.72rem; font-weight: 750; }
+.design-lab .home-room--office { left: 5%; top: 8%; width: 38%; height: 37%; }
+.design-lab .home-room--living { right: 5%; top: 8%; width: 43%; height: 52%; }
+.design-lab .home-room--storage { left: 5%; bottom: 8%; width: 38%; height: 36%; }
+.design-lab .home-router-dot { position: absolute; z-index: 4; left: 49%; top: 52%; display: grid; place-items: center; width: 4.3rem; height: 4.3rem; transform: translate(-50%, -50%); border: 0.45rem solid color-mix(in srgb, var(--surface) 82%, transparent); border-radius: 50%; background: var(--mint); color: var(--night); box-shadow: 0 0 0 1px color-mix(in srgb, var(--ink) 10%, transparent); }
+.design-lab .home-router-dot b { font-size: 0.67rem; }
+.design-lab .wifi-arc { position: absolute; z-index: 2; left: 49%; top: 52%; border: 1px solid color-mix(in srgb, var(--mint) 64%, transparent); border-radius: 50%; transform: translate(-50%, -50%); }
+.design-lab .wifi-arc--one { width: 8rem; height: 8rem; }.design-lab .wifi-arc--two { width: 14rem; height: 14rem; opacity: 0.65; }.design-lab .wifi-arc--three { width: 20rem; height: 20rem; opacity: 0.35; }
+.design-lab .home-cable { position: absolute; z-index: 2; height: 2px; background: var(--signal); transform-origin: left center; }
+.design-lab .home-cable--one { left: 38%; bottom: 26%; width: 29%; transform: rotate(-24deg); }
+.design-lab .home-cable--two { left: 48%; bottom: 23%; width: 35%; transform: rotate(15deg); }
+.design-lab .home-device { position: absolute; display: block; background: var(--surface); border: 0.22rem solid var(--ink); }
+.design-lab .home-device--laptop { left: 32%; top: 27%; width: 3.8rem; height: 2.5rem; border-radius: 0.25rem; }.design-lab .home-device--laptop::after { content: ""; position: absolute; left: -0.45rem; right: -0.45rem; bottom: -0.55rem; height: 0.16rem; background: var(--ink); }
+.design-lab .home-device--tv { left: 38%; top: 26%; width: 4.2rem; height: 2.7rem; border-radius: 0.2rem; }.design-lab .home-device--nas { left: 38%; top: 20%; width: 2.6rem; height: 3.5rem; border-radius: 0.35rem; background: color-mix(in srgb, var(--blue) 18%, var(--surface)); }
+.design-lab .home-scene__callouts { display: flex; flex-wrap: wrap; gap: 0.45rem; padding-top: 0.8rem; }
+.design-lab .home-scene__callouts span { padding: 0.4rem 0.55rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink-soft); font-size: 0.72rem; }
+
+/* Private first section deliberately deepens the conversation rather than extending the hero. */
+.design-lab .opening-first--private { background: var(--night); color: var(--surface); }
+.design-lab .opening-private-first-grid { display: grid; gap: clamp(2.5rem, 6vw, 6rem); align-items: center; }
+.design-lab .opening-first--private .opening-first-copy > p:last-child { color: color-mix(in srgb, var(--surface) 75%, transparent); }
+.design-lab .private-room-map { display: grid; gap: 0.9rem; }
+.design-lab .private-room-map__shell { position: relative; min-height: 31rem; border: 1px solid color-mix(in srgb, var(--surface) 12%, transparent); border-radius: var(--radius-lg); background-image: linear-gradient(color-mix(in srgb, var(--mint) 7%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--mint) 7%, transparent) 1px, transparent 1px); background-size: 3.25rem 3.25rem; overflow: hidden; }
+.design-lab .private-map-room { position: absolute; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--surface) 20%, transparent); border-radius: var(--radius-lg); color: color-mix(in srgb, var(--surface) 72%, transparent); font-size: 0.72rem; }
+.design-lab .private-map-room.r1 { left: 6%; top: 8%; width: 38%; height: 31%; }.design-lab .private-map-room.r2 { right: 6%; top: 8%; width: 42%; height: 41%; }.design-lab .private-map-room.r3 { left: 6%; bottom: 8%; width: 48%; height: 38%; }.design-lab .private-map-room.r4 { right: 6%; bottom: 8%; width: 34%; height: 31%; }
+.design-lab .private-map-router { position: absolute; z-index: 3; left: 51%; top: 49%; display: grid; place-items: center; width: 4.2rem; height: 4.2rem; transform: translate(-50%, -50%); border-radius: 50%; background: var(--mint); color: var(--night); font: 850 0.72rem/1 monospace; box-shadow: 0 0 0 0.45rem color-mix(in srgb, var(--night) 78%, transparent); }
+.design-lab .private-map-nas { position: absolute; z-index: 3; right: 15%; bottom: 18%; padding: 0.55rem 0.7rem; border: 1px solid var(--mint); border-radius: var(--radius-sm); background: color-mix(in srgb, var(--mint) 10%, var(--night)); color: var(--surface); font: 800 0.68rem/1 monospace; }
+.design-lab .private-room-map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.design-lab .private-map-wireless { fill: none; stroke: color-mix(in srgb, var(--mint) 62%, transparent); stroke-width: 2; stroke-dasharray: 5 7; }
+.design-lab .private-map-cable { fill: none; stroke: var(--signal); stroke-width: 2.5; }
+.design-lab .private-map-labels { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.design-lab .private-map-labels span { padding: 0.4rem 0.55rem; border: 1px solid color-mix(in srgb, var(--surface) 18%, transparent); border-radius: 999px; color: color-mix(in srgb, var(--surface) 75%, transparent); font-size: 0.72rem; }
+
+@media (min-width: 960px) {
+  .design-lab .opening-business-grid { grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); }
+  .design-lab .opening-business-first-grid { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); }
+  .design-lab .opening-private-grid { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+  .design-lab .opening-private-first-grid { grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr); }
+}
+
+@media (max-width: 739px) {
+  .design-lab .opening-hero,
+  .design-lab .opening-first { padding-block: 3.25rem; }
+  .design-lab .opening-hero-title { font-size: clamp(2.35rem, 12vw, 3.5rem); }
+  .design-lab .opening-section-title { font-size: clamp(2rem, 10vw, 3rem); }
+  .design-lab .business-plan,
+  .design-lab .home-scene { min-height: auto; }
+  .design-lab .business-plan svg { min-height: 19rem; }
+  .design-lab .home-scene__house { min-height: 19rem; }
+  .design-lab .business-requirements { min-height: auto; display: grid; gap: 0; background-image: none; border: 1px solid var(--line); }
+  .design-lab .business-requirements::before,
+  .design-lab .business-requirements::after { display: none; }
+  .design-lab .business-requirements__core,
+  .design-lab .requirement { position: static; width: auto; transform: none; }
+  .design-lab .business-requirements__core { border: 0; border-radius: 0; box-shadow: none; background: var(--ink); color: var(--surface); }
+  .design-lab .requirement { padding: 1rem; border-left: 0; border-top: 1px solid var(--line); background: var(--surface); }
+  .design-lab .requirement p { font-size: 0.82rem; }
+  .design-lab .private-room-map__shell { min-height: 23rem; }
+  .design-lab .private-map-room.r1 { left: 4%; width: 42%; }.design-lab .private-map-room.r2 { right: 4%; width: 43%; }.design-lab .private-map-room.r3 { left: 4%; width: 52%; }.design-lab .private-map-room.r4 { right: 4%; width: 35%; }
+}

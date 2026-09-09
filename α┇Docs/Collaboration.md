@@ -5,13 +5,13 @@ Last updated: 2026-09-09
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: the Drive source now carries project version `1.5.12` for the Design Lab composition-recipe catalogue. Local Git sequencing for the earlier `1.5.8`–`1.5.11` slices still requires repository-shell verification; this Drive-connected design session did not inspect or alter `.git`.
-- Local validation: not run for `1.5.12` because this Drive-connected session has no repository shell. The previous Lab handoff records passing `npm run validate` at `1.5.8`; the new recipe catalogue requires fresh local build/browser/diff/status validation before commit.
-- Local browser verification: not run for `1.5.12`. The Design Lab source now uses a continuous canvas, jump navigation, meaningful mode variants in selected recipes and 18 exploratory section recipes; responsive behaviour still needs browser review at the established desktop/tablet/mobile widths.
+- Current working state: the Drive source now carries project version `1.5.13` for the audience-opening Design Lab experiment, Design–Content handoff cleanup and Astro CSS language-tooling declaration. This Drive-connected session did not inspect or alter `.git`.
+- Local validation: not run for `1.5.13` because this session has no repository shell. The new Design Lab source and `src/env.d.ts` require normal local `npm run validate`, browser, diff and status checks before commit.
+- Local browser verification: not run for `1.5.13`. The Lab now contains two real-content opening studies before the recipe catalogue: Business tests dark hero → light planning section with architectural/system density; Private tests light hero → dark environmental section with softer spatial language.
 - Deployment state: no commit, push or deployment was performed in this Drive-only design session. Intended local preview route remains `/vorort/design-lab/`.
-- Product-direction state: the final design direction remains approved and stabilized. Both business landings are independently researched gateways: German owns broad `IT-Dienstleister Berlin` intent and English owns `IT support Berlin` with `IT services Berlin` as a strong secondary phrase. The Google Workspace pair is independently researched in both languages: German owns `google workspace einrichten`; English owns `google workspace support`, but qualifies that broader phrase through local business setup, company-domain Gmail, Shared Drives, migration, security, backup and workplace integration rather than mimicking Google's own product-support channel. Neither page presents Workspace as automatically preferable to Microsoft 365. The German/English business network reference pages remain project-led; the private Wi-Fi/home-network, setup/data-transfer and computer/laptop-help pairs are expanded bilingually, and both private-services landings are now independently researched and rewritten as orientation/conversion gateways. Computer/laptop help supports Windows and macOS for system/software/startup/performance problems, malware and legitimate account access while deliberately excluding hardware-repair-shop positioning; German owns `PC Hilfe Berlin`, English owns `computer support Berlin` with `PC support Berlin` secondary. `Datenrettung Berlin` remains a separate adjacent recovery intent, and Smart Home remains a future researched service intent.
+- Product-direction state: Private and Business opening treatments are **experimental**, not approved production rules. The current hypothesis is that audience differentiation should come primarily from composition, density, geometry, visual subject and information hierarchy, with surface rhythm as a supporting cue rather than palette substitution. Production service YAML remains unchanged.
 - Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional. The clean install also reports nine dependency audit findings for later dependency-maintenance review.
-- Recommended next action: read back the Drive recipe files, then when repository-shell capacity is available run the full validation/browser checks and commit the `1.5.12` Lab slice. In parallel, use the recipe catalogue to classify the finished page content and choose the first production composition, starting with the private landing.
+- Recommended next action: review the two opening studies in `/vorort/design-lab/` at desktop and mobile widths, approve/reject the page-family direction, then translate the accepted principle into the shared production service renderer without changing researched content unnecessarily.
 
 ## Reporting template
 
@@ -29,6 +29,22 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 ```
 
 ## Work log
+
+## 2026-09-09 — ChatGPT — Private/business service-opening experiment
+
+- Objective: test a meaningful Private-versus-Business page-family distinction using the real English Office Network and Wi-Fi/Home Network content, while fixing the Design Lab CSS import tooling error and reducing the design–content handoff to its intended narrow role.
+- Changes:
+  - Extended `ω┇Engine/src/pages/design-lab.astro` with two continuous real-content opening studies sourced through the existing service collection rather than duplicated placeholder copy. Business uses `office-network/en.yml`; Private uses `wifi-home-network/en.yml`.
+  - Business study tests a dark architectural hero followed by a light planning/requirements section. The visual language is rectilinear, denser and infrastructure-led.
+  - Private study tests a light environmental hero followed by a dark spatial explanation. The visual language uses recognisable rooms/objects, softer geometry and lower information density.
+  - Extended Lab-only `design-lab.css` for those studies; production styles and service YAML were intentionally left unchanged while the direction remains exploratory.
+  - Added `ω┇Engine/src/env.d.ts` with Astro client types and an explicit `*.css` module declaration to resolve VS Code/TypeScript `ts(2882)` on the existing side-effect stylesheet import without moving or duplicating the stylesheet.
+  - Reduced `α┇Docs/Design-Content-Handoff.md` from a duplicated page brief/recipe dump to a concise collaboration contract plus the current opening experiment, hypotheses and targeted Content requests. The full recipe catalogue remains in the Lab where it belongs.
+  - Bumped `AGENTS.md` from `1.5.12` to `1.5.13` for this separate change set.
+- Decisions: no production audience-mode rule is approved yet. The experiment deliberately tests structural differentiation rather than a Business/Private colour swap. Dark→light for Business and light→dark for Private are hypotheses to review, and adjacent dark hero + dark first section should be avoided when it visually reads as one extended hero.
+- Validation: read the latest complete Drive copies of `AGENTS.md`, `Project.md`, `Roadmap.md`, `Collaboration.md`, both reference English service YAML records, `ServiceDetail.astro`, `ServiceStoryboardPanel.astro`, `design-lab.astro`, `design-lab.css` and `Design-Content-Handoff.md` before editing. Performed text-level checks on the staged Lab source and CSS. Repository-shell `npm run validate`, browser rendering, `git diff --check`, `git status --short`, Git commit and push were not available and are not claimed.
+- Blockers or required input: visual approval of the two opening studies. Existing production brand/contact/legal/qualification/travel/form/analytics/domain blockers remain unchanged.
+- Recommended next action: open `/vorort/design-lab/`, compare P01 and P02 at desktop and mobile sizes, then either refine the hypotheses or approve them before any shared production renderer change.
 
 ## 2026-09-09 — ChatGPT — Design Lab composition-recipe catalogue
 
