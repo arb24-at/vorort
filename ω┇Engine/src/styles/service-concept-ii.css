@@ -202,6 +202,37 @@
   box-shadow: 0 0 0 18px rgba(134,239,172,.05), 0 0 0 38px rgba(134,239,172,.025);
 }
 
+
+.c2-art--has-image {
+  background: var(--c2-private-night-deep);
+}
+
+.c2-art__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 54%;
+  transform: scale(1.002);
+}
+
+.c2-art__image-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(7, 21, 33, .52) 0%, rgba(7, 21, 33, .13) 22%, transparent 48%),
+    linear-gradient(to top, rgba(7, 21, 33, .42) 0%, transparent 28%);
+}
+
+.concept-ii--private .c2-art--has-image .c2-art__image-shade {
+  background:
+    linear-gradient(to bottom, rgba(14, 32, 48, .48) 0%, rgba(14, 32, 48, .10) 24%, transparent 50%),
+    linear-gradient(to top, rgba(14, 32, 48, .40) 0%, transparent 30%);
+}
+
 .c2-art__caption {
   position: absolute;
   right: .75rem;
@@ -554,8 +585,11 @@
 
 @media (max-width: 720px) {
   .c2-hero__banner { min-height: 680px; padding: 2rem 1.2rem; }
+  .c2-hero__banner--with-image { min-height: 760px; }
   .c2-hero h1 { font-size: clamp(2.6rem, 13vw, 4.15rem); }
   .c2-art--hero { bottom: 4.4rem; left: .8rem; right: .8rem; height: 260px; }
+  .c2-art--hero.c2-art--has-image { height: 270px; }
+  .c2-art--hero.c2-art--has-image .c2-art__image { object-position: center 52%; }
   .c2-hero__facts { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; padding-bottom: .2rem; scrollbar-width: none; }
   .c2-hero__facts::-webkit-scrollbar { display: none; }
   .c2-hero__facts span { flex: 0 0 auto; }

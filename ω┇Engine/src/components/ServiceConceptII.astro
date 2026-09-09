@@ -49,6 +49,7 @@ type Props = {
   title: string;
   intro: string;
   heroArtLabel: string;
+  heroImageSrc?: string;
   scopeHeading: string;
   scopeIntro: string;
   scopeItems: readonly ScopeItem[];
@@ -80,6 +81,7 @@ const {
   title,
   intro,
   heroArtLabel,
+  heroImageSrc,
   scopeHeading,
   scopeIntro,
   scopeItems,
@@ -111,7 +113,7 @@ const heroKind: ArtKind = mode === "private" ? "private-hero" : "business-hero";
 <div class:list={["concept-ii", `concept-ii--${mode}`]}>
   <section class="c2-hero">
     <div class="container">
-      <div class="c2-hero__banner">
+      <div class:list={["c2-hero__banner", { "c2-hero__banner--with-image": Boolean(heroImageSrc) }]}>
         <div class="c2-hero__copy">
           <span class="c2-eyebrow">{eyebrow}</span>
           <h1>{title}</h1>
@@ -122,15 +124,41 @@ const heroKind: ArtKind = mode === "private" ? "private-hero" : "business-hero";
           </div>
         </div>
 
-        <div class:list={["c2-art", "c2-art--hero", `c2-art--${heroKind}`]} aria-label={heroArtLabel} role="img">
-          <div class="c2-art__field" aria-hidden="true">
-            <span class="c2-art__shape c2-art__shape--a"></span>
-            <span class="c2-art__shape c2-art__shape--b"></span>
-            <span class="c2-art__shape c2-art__shape--c"></span>
-            <span class="c2-art__route"></span>
-            <span class="c2-art__pulse"></span>
-          </div>
-          <span class="c2-art__caption">Artwork placeholder · {heroArtLabel}</span>
+        <div
+          class:list={[
+            "c2-art",
+            "c2-art--hero",
+            `c2-art--${heroKind}`,
+            { "c2-art--has-image": Boolean(heroImageSrc) }
+          ]}
+          aria-label={heroArtLabel}
+          role="img"
+        >
+          {heroImageSrc ? (
+            <>
+              <img
+                class="c2-art__image"
+                src={heroImageSrc}
+                alt=""
+                aria-hidden="true"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+              <span class="c2-art__image-shade" aria-hidden="true"></span>
+            </>
+          ) : (
+            <>
+              <div class="c2-art__field" aria-hidden="true">
+                <span class="c2-art__shape c2-art__shape--a"></span>
+                <span class="c2-art__shape c2-art__shape--b"></span>
+                <span class="c2-art__shape c2-art__shape--c"></span>
+                <span class="c2-art__route"></span>
+                <span class="c2-art__pulse"></span>
+              </div>
+              <span class="c2-art__caption">Artwork placeholder · {heroArtLabel}</span>
+            </>
+          )}
         </div>
 
         <div class="c2-hero__facts" aria-label="Service highlights">

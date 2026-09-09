@@ -617,3 +617,17 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 - Validation: CSS edits were checked. The browser subagent encountered an issue running locally without devtools, and local Astro validation requires bypassing telemetry permissions, but CSS rules are cleanly separated into tokens, global, and technical-field layers. Drive readback is assumed complete.
 - Blockers or required input: No new design blockers. Production domain, final brand, real contact data, verifiable qualifications, form endpoint, analytics, and final imagery remain unresolved.
 - Recommended next action: Complete the local Git commit, verify the refined visual rhythm locally, and then move on to the computer/laptop help content expansion.
+
+## 2026-09-09 — ChatGPT — Concept II private hero image swap slot
+
+- Objective: make the noindex `wifi-home-network-ii` prototype load a replaceable real hero artwork so alternative P1 generations can be judged directly in the Astro page on desktop and mobile without changing code between tests.
+- Changes:
+  - added optional `heroImageSrc` support to `src/components/ServiceConceptII.astro`; business Concept II still falls back to the existing generated placeholder when no image is supplied;
+  - wired `src/pages/en/services/private/wifi-home-network-ii.astro` to `${import.meta.env.BASE_URL}images/concept-ii/private/P1.png`;
+  - added responsive cover/crop and restrained edge shading in `src/styles/service-concept-ii.css` so the artwork remains integrated with the dark hero while the hero copy stays outside the main image field;
+  - created `public/images/concept-ii/private/` as the dedicated manual test location. Replacing `P1.png` in that folder is enough to compare different hero candidates.
+- Decisions: use one stable filename for comparison rather than changing source for each candidate. Desktop uses a broad cover crop; mobile intentionally uses the same source with a tighter centre crop so mobile suitability can be judged as part of the image selection.
+- Validation: read the latest `AGENTS.md`, `Project.md`, `Roadmap.md`, and `Collaboration.md` before editing, then read the latest complete Concept II component, private page, and stylesheet. Drive readback is required after writing. `npm run validate`, browser rendering, `git diff --check`, `git status --short`, and Git commit were not run because this session has no local repository shell.
+- Blockers or required input: `public/images/concept-ii/private/P1.png` must be supplied locally/through Drive before the real artwork appears.
+- Recommended next action: place either P1 candidate at that path, run the local Astro dev server, test desktop and mobile, then replace the same file with the other candidate and hard-refresh before choosing the master art direction.
+

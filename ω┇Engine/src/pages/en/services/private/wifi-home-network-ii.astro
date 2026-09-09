@@ -3,6 +3,7 @@ import MainLayout from "../../../../layouts/MainLayout.astro";
 import ServiceConceptII from "../../../../components/ServiceConceptII.astro";
 
 const canonicalPath = "/en/services/private/wifi-home-network-ii/";
+const heroImageSrc = `${import.meta.env.BASE_URL}images/concept-ii/private/P1.png`;
 
 const scopeItems = [
   { title: "Wi‑Fi & Mesh coverage", artKind: "wifi" },
@@ -81,6 +82,7 @@ const faqs = [
     title="Home network, Wi‑Fi and NAS setup in Berlin"
     intro="A reliable home network is more than an internet connection. We plan and improve Wi‑Fi, cabling, shared storage and device connections around the rooms and routines that matter every day."
     heroArtLabel="Tactile illustrated Berlin home network scene: apartment rooms, home-office desk, Wi‑Fi coverage, cable route and NAS in one calm environmental composition."
+    heroImageSrc={heroImageSrc}
     scopeHeading="The parts of a home network we can help bring together"
     scopeIntro="The page should answer the scope question almost instantly. This horizontal visual ribbon stays concise; deeper explanation comes later."
     scopeItems={scopeItems}
