@@ -1,0 +1,23 @@
+---
+import type { RecipeContent } from "../../../design-system/section-recipes";
+type Props = { id: string; content: RecipeContent<"faq.accordion"> };
+const { id, content } = Astro.props;
+const { title: faqHeading, items: faqs } = content;
+---
+
+<section class="c2-faq-section" id={id} data-recipe="faq.accordion">
+    <div class="container c2-faq-grid">
+      <div>
+        <span class="c2-eyebrow c2-eyebrow--dark">{content.eyebrow}</span>
+        <h2>{faqHeading}</h2>
+      </div>
+      <div class="c2-faq-list">
+        {faqs.map((faq) => (
+          <details>
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>

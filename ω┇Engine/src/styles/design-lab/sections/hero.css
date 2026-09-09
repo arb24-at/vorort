@@ -1,0 +1,169 @@
+.c2-hero {
+  padding: clamp(1rem, 2vw, 1.5rem) 0 clamp(3.5rem, 6vw, 6rem);
+}
+
+.c2-hero__banner {
+  position: relative;
+  min-height: clamp(620px, 74vw, 790px);
+  overflow: hidden;
+  border-radius: clamp(22px, 3vw, 36px);
+  padding: clamp(2.2rem, 5vw, 4.8rem);
+  color: #f7fbff;
+  box-shadow: 0 28px 60px rgba(7, 21, 33, 0.2);
+  isolation: isolate;
+}
+
+.concept-ii--private .c2-hero__banner {
+  background:
+    radial-gradient(circle at 72% 14%, rgba(134, 239, 172, 0.13), transparent 24%),
+    linear-gradient(155deg, var(--c2-private-night), var(--c2-private-night-deep));
+}
+
+.concept-ii--business .c2-hero__banner {
+  background:
+    radial-gradient(circle at 72% 12%, rgba(37, 99, 235, 0.2), transparent 25%),
+    linear-gradient(155deg, var(--c2-business-night-soft), var(--c2-business-night));
+}
+
+.c2-hero__banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.8), transparent 72%);
+}
+
+.concept-ii--private .c2-hero__banner::before {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.035) 0 1px, transparent 1.5px),
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 22px 22px, 54px 54px, 54px 54px;
+}
+
+.c2-hero__copy {
+  position: relative;
+  z-index: 3;
+  max-width: 920px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.c2-hero h1 {
+  max-width: 13ch;
+  margin: .8rem auto 0;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: .92;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+}
+
+.c2-hero__copy > p {
+  max-width: 780px;
+  margin: 1.25rem auto 0;
+  color: rgba(247,251,255,.78);
+  font-size: clamp(1rem, 1.7vw, 1.18rem);
+  line-height: 1.68;
+}
+
+.c2-hero__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.5rem;
+}
+
+.c2-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: .8rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-weight: 720;
+  transition: transform .18s ease, background-color .18s ease, border-color .18s ease;
+}
+
+.c2-button:hover { transform: translateY(-1px); }
+
+.c2-button--signal { background: var(--signal); color: white; }
+
+.c2-button--ghost { border-color: rgba(255,255,255,.18); color: white; background: rgba(255,255,255,.04); }
+
+.c2-hero__facts {
+  position: absolute;
+  left: clamp(1.5rem, 4vw, 3.5rem);
+  right: clamp(1.5rem, 4vw, 3.5rem);
+  bottom: 1rem;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+
+.c2-hero__facts span {
+  padding: .6rem .8rem;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  background: rgba(7,21,33,.45);
+  color: rgba(247,251,255,.76);
+  font-size: .82rem;
+  backdrop-filter: blur(12px);
+}
+
+.c2-art--hero {
+  position: absolute;
+  z-index: 1;
+  left: clamp(1.2rem, 3.5vw, 3rem);
+  right: clamp(1.2rem, 3.5vw, 3rem);
+  bottom: 3.65rem;
+  height: clamp(220px, 31vw, 330px);
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.03);
+  box-shadow: inset 0 1px rgba(255,255,255,.05);
+}
+
+.concept-ii--private .c2-art--private-hero .c2-art__shape--a {
+  left: 8%; top: 14%; width: 27%; height: 48%; border-radius: 28px 28px 10px 10px;
+}
+
+.concept-ii--private .c2-art--private-hero .c2-art__shape--b {
+  right: 8%; top: 18%; width: 29%; height: 44%; border-radius: 28px 28px 10px 10px;
+}
+
+.concept-ii--private .c2-art--private-hero .c2-art__shape--c {
+  left: 37%; bottom: 12%; width: 25%; height: 32%; border-radius: 18px 18px 8px 8px;
+}
+
+.concept-ii--business .c2-art--business-hero .c2-art__shape {
+  border-radius: 8px;
+}
+
+.concept-ii--business .c2-art--business-hero .c2-art__shape--a { left: 9%; top: 16%; width: 28%; height: 34%; }
+
+.concept-ii--business .c2-art--business-hero .c2-art__shape--b { right: 9%; top: 16%; width: 32%; height: 34%; }
+
+.concept-ii--business .c2-art--business-hero .c2-art__shape--c { left: 34%; bottom: 15%; width: 34%; height: 26%; }
+
+@media (max-width: 720px) {
+  .c2-hero__banner { min-height: 680px; padding: 2rem 1.2rem; }
+  .c2-hero__banner--with-image { min-height: 760px; }
+  .c2-hero h1 { font-size: clamp(2.6rem, 13vw, 4.15rem); }
+  .c2-art--hero { bottom: 4.4rem; left: .8rem; right: .8rem; height: 260px; }
+  .c2-art--hero.c2-art--has-image { height: 270px; }
+  .c2-art--hero.c2-art--has-image .c2-art__image { object-position: center 52%; }
+  .c2-hero__facts { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; padding-bottom: .2rem; scrollbar-width: none; }
+  .c2-hero__facts::-webkit-scrollbar { display: none; }
+  .c2-hero__facts span { flex: 0 0 auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .c2-button { transition: none; }
+}

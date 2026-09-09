@@ -1,0 +1,27 @@
+---
+import type { RecipeContent } from "../../../design-system/section-recipes";
+type Props = { id: string; content: RecipeContent<"recognition.situations"> };
+const { id, content } = Astro.props;
+const { eyebrow: situationsEyebrow, title: situationsHeading, intro: situationsIntro, items: situations } = content;
+---
+
+<section class="c2-situations" id={id} data-recipe="recognition.situations">
+    <div class="container c2-situations__grid">
+      <div class="c2-situations__intro">
+        <span class="c2-eyebrow c2-eyebrow--dark">{situationsEyebrow}</span>
+        <h2>{situationsHeading}</h2>
+        <p>{situationsIntro}</p>
+      </div>
+      <div class="c2-situation-lines">
+        {situations.map((item, index) => (
+          <article>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>

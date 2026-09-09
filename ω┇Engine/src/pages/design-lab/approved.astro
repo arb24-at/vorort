@@ -1,0 +1,34 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import LabNavigation from "../../components/design-lab/LabNavigation.astro";
+import { recipesWithStatus, type RecipeId } from "../../design-system/section-recipes";
+import { getWorkshopPages, getWorkshopUsage } from "../../data/workshop";
+import { withBase } from "../../utils/withBase";
+import "../../styles/design-lab.css";
+const approved = recipesWithStatus("approved");
+const pages = await getWorkshopPages();
+---
+<MainLayout title="Approved Sections · Design Lab" canonicalPath="/design-lab/approved/" lang="en" robots="noindex, nofollow" showSiteChrome={false}>
+  <div class="design-lab">
+    <LabNavigation area="approved" />
+    <section class="lab-approved" data-approved-count={approved.length}>
+      <span class="lab-label">Governed section library</span>
+      <h1>Approved Sections</h1>
+      {approved.length === 0 ? <div class="lab-empty">
+        <h2>No approved sections yet.</h2>
+        <p>Sections appear here only after Aykhan explicitly approves their design and content contract. The Concept II sections in Page Workshop are experimental.</p>
+        <p>Review a section in a complete page before approving it for future production use.</p>
+        <a href={withBase("/design-lab/")}>Return to Page Workshop →</a>
+      </div> : <div class="lab-approved-list">
+        {approved.map(([id, recipe]) => {
+          const usage = getWorkshopUsage(pages, id as RecipeId);
+          return <article>
+            <h2>{recipe.name}</h2><code>{id}</code><p>{recipe.purpose}</p>
+            <p>Used by {usage.length} Workshop {usage.length === 1 ? "page" : "pages"}. Production usage is not connected yet.</p>
+            <ul>{usage.map(page => <li><a href={withBase(page.path)}>{page.title}</a></li>)}</ul>
+          </article>;
+        })}
+      </div>}
+    </section>
+  </div>
+</MainLayout>

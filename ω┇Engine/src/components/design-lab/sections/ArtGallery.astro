@@ -1,0 +1,37 @@
+---
+import type { RecipeContent } from "../../../design-system/section-recipes";
+import ArtField from "../ArtField.astro";
+import { withBase } from "../../../utils/withBase";
+type Props = { id: string; content: RecipeContent<"explanation.art-gallery"> };
+const { id, content } = Astro.props;
+const { eyebrow: galleryEyebrow, title: galleryHeading, intro: galleryIntro, items } = content;
+const galleryItems = items.map(item => ({ ...item, artKind: item.media.subject }));
+---
+
+<section class="c2-gallery-section" id={id} data-recipe="explanation.art-gallery">
+    <div class="container">
+      <div class="c2-section-head">
+        <div>
+          <span class="c2-eyebrow c2-eyebrow--dark">{galleryEyebrow}</span>
+          <h2>{galleryHeading}</h2>
+        </div>
+        <p>{galleryIntro}</p>
+      </div>
+
+      <div class="c2-gallery">
+        {galleryItems.map((item, index) => (
+          <article class:list={["c2-gallery-card", { "c2-gallery-card--feature": index === 0 }]}>
+            <div class:list={["c2-art", "c2-art--panel", `c2-art--${item.artKind}`]} role="img" aria-label={item.media.src ? item.title : `${item.title} artwork placeholder`}>
+              <ArtField />
+              {item.media.src ? <img class="c2-art__image" src={withBase(item.media.src)} alt="" loading="lazy" decoding="async" /> : <span class="c2-art__caption">Artwork placeholder</span>}
+            </div>
+            <div class="c2-gallery-card__copy">
+              <span class="c2-kicker">{item.eyebrow}</span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>

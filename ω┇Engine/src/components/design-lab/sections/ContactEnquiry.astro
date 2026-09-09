@@ -1,0 +1,9 @@
+---
+import ContactSection from "../../ContactSection.astro";
+import type { Audience } from "../../../design-system/section-recipes";
+type Props = { audience: Audience; locale: "en" };
+const { audience, locale } = Astro.props;
+---
+<div data-recipe="contact.enquiry">
+  <ContactSection locale={locale} context={audience} />
+</div>

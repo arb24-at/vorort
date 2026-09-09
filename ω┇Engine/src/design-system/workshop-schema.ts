@@ -1,0 +1,44 @@
+import { z } from "astro/zod";
+import { getSectionRecipe, recipeAllowedIn, recipeSectionSchema } from "./section-recipes";
+
+export const workshopSchema = z.object({
+  page: z.object({
+    id: z.string().regex(/^[a-z][a-z0-9-]*$/),
+    // Only the independently authored English Concept II content is supported yet.
+    locale: z.literal("en"),
+    audience: z.enum(["private", "business"]),
+    pageType: z.literal("service"),
+    title: z.string().trim().min(1),
+  }).strict(),
+  sections: z.array(recipeSectionSchema).min(2),
+}).strict().superRefine((fixture, context) => {
+  const ids = new Set<string>();
+  const issue = (path: (string | number)[], message: string) => context.addIssue({ code: z.ZodIssueCode.custom, path, message });
+  fixture.sections.forEach((section, index) => {
+    if (ids.has(section.id)) issue(["sections", index, "id"], `Duplicate section ID: ${section.id}`);
+    ids.add(section.id);
+    const recipe = getSectionRecipe(section.recipe);
+    if (!recipeAllowedIn(section.recipe, "workshop")) issue(["sections", index, "recipe"], "Deprecated recipes cannot be selected for Workshop pages");
+    if (!recipe.audiences.includes(fixture.page.audience) || !recipe.pageTypes.includes(fixture.page.pageType)) {
+      issue(["sections", index, "recipe"], "Recipe does not support this audience or page type");
+    }
+    if (section.kind === "contact" && section.id !== "contact") issue(["sections", index, "id"], "The shared English enquiry section requires the contact ID");
+  });
+  if (fixture.sections[0]?.kind !== "hero" || fixture.sections.filter(s => s.kind === "hero").length !== 1) {
+    issue(["sections"], "A Workshop service page requires exactly one opening hero");
+  }
+  if (fixture.sections.at(-1)?.kind !== "contact" || fixture.sections.filter(s => s.kind === "contact").length !== 1) {
+    issue(["sections"], "A Workshop service page requires exactly one closing contact section");
+  }
+  fixture.sections.forEach((section, index) => {
+    if (section.recipe !== "hero.banner-art") return;
+    const parsed = getSectionRecipe(section.recipe).schema.safeParse(section.content);
+    if (!parsed.success) return; // Keep the original section-path validation issues.
+    const content = parsed.data;
+    content.actions.forEach((action, actionIndex) => {
+      if (!ids.has(action.target)) issue(["sections", index, "content", "actions", actionIndex, "target"], `Missing section target: ${action.target}`);
+    });
+  });
+});
+
+export type WorkshopFixture = z.infer<typeof workshopSchema>;

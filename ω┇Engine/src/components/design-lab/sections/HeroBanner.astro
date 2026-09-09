@@ -1,0 +1,62 @@
+---
+import type { RecipeContent } from "../../../design-system/section-recipes";
+import { withBase } from "../../../utils/withBase";
+import ArtField from "../ArtField.astro";
+type Props = { id: string; content: RecipeContent<"hero.banner-art"> };
+const { id, content } = Astro.props;
+const { eyebrow, title, intro, media, actions, highlights } = content;
+const heroImageSrc = media.src ? withBase(media.src) : undefined;
+const heroArtLabel = media.alt;
+const heroKind = media.subject;
+---
+
+<section class="c2-hero" id={id} data-recipe="hero.banner-art">
+    <div class="container">
+      <div class:list={["c2-hero__banner", { "c2-hero__banner--with-image": Boolean(heroImageSrc) }]}>
+        <div class="c2-hero__copy">
+          <span class="c2-eyebrow">{eyebrow}</span>
+          <h1>{title}</h1>
+          <p>{intro}</p>
+          <div class="c2-hero__actions">
+            <a class="c2-button c2-button--signal" href={`#${actions[0].target}`}>{actions[0].label}</a>
+            <a class="c2-button c2-button--ghost" href={`#${actions[1].target}`}>{actions[1].label}</a>
+          </div>
+        </div>
+
+        <div
+          class:list={[
+            "c2-art",
+            "c2-art--hero",
+            `c2-art--${heroKind}`,
+            { "c2-art--has-image": Boolean(heroImageSrc) }
+          ]}
+          aria-label={heroArtLabel}
+          role="img"
+        >
+          {heroImageSrc ? (
+            <>
+              <img
+                class="c2-art__image"
+                src={heroImageSrc}
+                alt=""
+                aria-hidden="true"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+              <span class="c2-art__image-shade" aria-hidden="true"></span>
+            </>
+          ) : (
+            <>
+              <ArtField />
+              <span class="c2-art__caption">Artwork placeholder · {heroArtLabel}</span>
+            </>
+          )}
+        </div>
+
+        <div class="c2-hero__facts" aria-label="Service highlights">
+          {highlights.map((item) => <span>{item}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>

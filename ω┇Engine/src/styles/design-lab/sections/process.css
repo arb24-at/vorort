@@ -1,0 +1,50 @@
+.c2-process-section {
+  padding: var(--section-pad) 0;
+}
+
+.c2-process-shell {
+  padding: clamp(2rem, 5vw, 4rem);
+  border-radius: 32px;
+  color: white;
+  background:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+    var(--night);
+  background-size: 44px 44px, 44px 44px, auto;
+}
+
+.concept-ii--private .c2-process-shell { background-color: var(--c2-private-night-deep); border-radius: 36px; }
+
+.concept-ii--business .c2-process-shell { background-color: var(--c2-business-night); border-radius: 14px; }
+
+.c2-process {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid rgba(255,255,255,.12);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.c2-process-step {
+  padding: 1.6rem 1.1rem 1.8rem;
+  border-right: 1px solid rgba(255,255,255,.1);
+}
+
+.c2-process-step:last-child { border-right: 0; }
+
+.c2-process-step__number { color: var(--mint); font-size: .72rem; font-weight: 800; letter-spacing: .12em; }
+
+.c2-process-step h3 { margin: .85rem 0 0; font-size: 1.18rem; line-height: 1.15; }
+
+.c2-process-step p { margin: .65rem 0 0; color: rgba(255,255,255,.68); line-height: 1.58; }
+
+@media (max-width: 900px) {
+  .c2-process { grid-template-columns: 1fr 1fr; }
+  .c2-process-step:nth-child(2) { border-right: 0; }
+  .c2-process-step:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.1); }
+}
+
+@media (max-width: 720px) {
+  .c2-process { grid-template-columns: 1fr; }
+  .c2-process-step { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .c2-process-step:last-child { border-bottom: 0; }
+}

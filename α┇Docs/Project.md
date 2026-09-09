@@ -75,13 +75,43 @@ Important sources of truth inside `ω┇Engine`:
 - `src/styles/tokens.css`, `global.css`, and `technical-field.css`: shared design decisions, foundation and legacy page rules, and the approved Technical Field layer in explicit cascade order.
 - `astro.config.mjs`: deployment origin and `/vorort/` base path.
 
-The internal `/design-lab/` route is a composition-recipe workspace inside the same Astro application. It now presents a continuous scroll canvas of exploratory recipes rather than hiding all but one study, so full-page rhythm and transitions can be judged in context; the recipe selector jumps to a section instead of filtering the canvas. Notes and Foundation remain optional inspectors outside the customer-like composition stage. General/Private/Business mode changes the canvas context and selected recipes contain genuinely different mode variants where the information density or visual world should differ, while many recipes remain shared because the underlying relationship is universal. The initial catalogue covers recognition, service routing, connected systems, diagnosis layers, transformation, process, editorial reading, comparison, proof, boundaries, scope, annotated media, questions, related-service paths and narrative pauses. Recipes are internal design vocabulary, not mandatory production components or YAML layout settings. The route inherits shared tokens and production typography through `MainLayout`, keeps recipe-specific styling isolated in `design-lab.css`, omits customer-facing chrome, carries `noindex, nofollow`, remains absent from navigation and the explicit sitemap route list, and retains the configured base. It is an unlisted static route, not an authenticated workspace.
+### Design Lab: Page Workshop and Approved Sections
+
+Design Lab is an internal, static, read-only workspace with exactly two user-facing areas: **Page Workshop** and **Approved Sections**. Page Workshop renders complete experimental service pages from validated YAML; Approved Sections filters the canonical recipe registry and starts empty. No Concept II section has been approved. The previous continuous recipe catalogue, Notes/Foundation inspectors and Experiment wrapper have been removed.
+
+The governing direction is **semantic content → section recipe → reusable Astro implementation**. Experimental recipes may be used in Workshop. Only explicitly approved recipe IDs form the governed vocabulary that future production content may reference. Production services have **not** migrated to this contract: researched service YAML and production routes remain independent and unchanged.
+
+Sources of truth, relative to `ω┇Engine`:
+
+- `src/design-system/section-recipes.ts` owns stable semantic recipe IDs, lifecycle (`experimental`, `approved`, `deprecated`), semantic purpose/kind, suitable page types/audiences, the content schema and Astro renderer reference. Registry consumers derive their validation, rendering lookup and approval list from these records. `recipeAllowedIn()` exposes the future approved-only production policy; it is not wired into current production service rendering.
+- `src/design-system/workshop-schema.ts` validates semantic page metadata and an ordered list of `{ id, kind, recipe, content }` sections. Every object is strict, including nested copy/media records. Unknown recipes, arbitrary styling keys, wrong kinds, unsupported audiences/page types/locales, duplicate section IDs, invalid content and broken hero action targets fail validation. The current reviewed fixture scope is English private/business service pages with one opening hero and one closing shared contact section; other page types/locales require an intentional extension, not a permissive fallback.
+- `src/content/workshop/*.yml` contains independently editable Private Home Network / Wi-Fi / NAS and Business Office Network / Network Infrastructure Concept II fixtures. File stems match semantic page IDs. The loader retains file extensions in collection keys to prevent same-stem YAML files silently overwriting each other; `src/data/workshop.ts` checks matching and unique page IDs.
+- `src/components/design-lab/WorkshopCanvas.astro` resolves registry renderer references through Astro's build-time component imports. Eight small section renderers live under `src/components/design-lab/sections/`; repeated artwork geometry uses `ArtField.astro`, and the enquiry recipe reuses the existing `ContactSection.astro`. Shared foundation and recipe-specific styles are split under `src/styles/design-lab/`; toolbar styling stays in `src/styles/design-lab.css`. MainLayout and the production tokens/global typography are reused unchanged. Existing Concept II audience-specific dark tones, geometry, density and artwork placeholders remain experimental design decisions, not another global design system.
+- `src/data/workshop-usage.ts` derives distinct Workshop pages using a recipe, ignoring repeated occurrences and duplicate preview routes. Approved recipe records can show these page links/counts. Production usage is explicitly unconnected, not represented by invented counts.
+
+YAML may contain copy, items, semantic image subjects, site-relative image references, accessible media labels and section-link targets. It does not expose CSS classes, columns, dimensions, colours, radii, positioning or animations. Recipe-specific content cardinality is validated where the existing composition requires it. The P1–P6 files remain at `public/images/concept-ii/private/`; renderer URL resolution adds the configured base. Shared contact facts and optional English-support messaging remain governed by `src/data/site.ts`.
+
+Workshop navigation works with ordinary static links, including the native page-selector disclosure. Its default canvas uses normal document scrolling. Optional Full page / Desktop (1440px) / Tablet (768px) / Mobile (390px) buttons use a small framework-free script and the same canvas in an auto-height iframe, so viewport media queries operate correctly; an oversized preview scrolls horizontally within its stage. “Open page canvas” offers the composition on its own. The page picker and ordinary canvas remain usable without JavaScript; only width controls need it.
+
+| Internal route | Purpose |
+| --- | --- |
+| `/design-lab/` | Page Workshop entrance, initially Private |
+| `/design-lab/workshop/wifi-home-network-concept-ii/` | Private fixture with Workshop controls |
+| `/design-lab/workshop/office-network-concept-ii/` | Business fixture with Workshop controls |
+| `/design-lab/approved/` | Approved Sections; initially empty |
+| `/design-lab/preview/wifi-home-network-concept-ii/` | Private render-only canvas, also used by preview controls |
+| `/design-lab/preview/office-network-concept-ii/` | Business render-only canvas, also used by preview controls |
+
+All six routes retain the `/vorort/` deployment base, carry `noindex, nofollow`, omit customer navigation and stay absent from production navigation and the sitemap. They are unlisted, not authenticated. The former public-like `wifi-home-network-ii` and `office-network-ii` routes were removed after both designs were accessible in Workshop. There is no filesystem-writing UI, local Node/file API or `npm run design-lab` command yet. The pure registry/schema/usage modules and fixture files provide a boundary a future local-only tool can consume; the normal build must remain read-only.
+
+A non-breaking visual improvement may keep an approved ID. A breaking semantic/content-contract change requires a new semantic ID. Before the first approval, Aykhan must explicitly accept the section's design in context, its copy/media contract, supported audience/page type and remaining placeholders. Record that approval in the collaboration handoff, set only that registry record's `status` to `approved`, and deliberately update the initial-zero acceptance assertions in validation. Existing production pages do not change automatically.
+
 
 The contact form currently prepares an email through the visitor's configured mail client. It is not a server-backed submission and cannot independently count abandoned or completed form attempts. Calls, email, and WhatsApp are the practical contact channels until the conversion backend is chosen.
 
 ## Current implemented website map
 
-The current sitemap contains 23 indexable URLs. The separate 404 page, noindex transitional redirect, internal noindex Design Lab, and two noindex English Concept II service prototypes bring the generated HTML total to 28. This describes the implemented state, not a permanently frozen launch architecture. The experimental routes are `/en/services/private/wifi-home-network-ii/` and `/en/services/business/office-network-ii/`; they are deliberately excluded from the sitemap and do not replace the researched production service pages.
+The current sitemap contains 23 indexable URLs. The separate 404 page, noindex transitional redirect and six internal noindex Design Lab routes bring the generated HTML total to 31. Two of the internal routes are render-only preview canvases, not additional Lab areas. The retired English Concept II service routes are no longer generated; the researched production service pages remain unchanged.
 
 | Purpose | German route | English route | Current direction |
 | --- | --- | --- | --- |
@@ -253,7 +283,7 @@ npm run dev
 npm run validate
 ```
 
-`npm run validate` builds the site and verifies required pages, sitemap size, internal `/vorort/` targets, and the absence of stale `/astro-demo/` references. GitHub Actions runs the equivalent build and output validation before deployment.
+`npm run validate` builds the site, checks Workshop fixture contracts and approval/usage policies, then verifies required pages, all Lab robots/canonical/chrome guards, sitemap size, internal `/vorort/` targets, retired route removal and the absence of stale `/astro-demo/` references. GitHub Actions runs the equivalent build and output validation before deployment.
 
 The engine's project-level `.npmrc` sets `bin-links=false` so fresh installs do not create symbolic links in `node_modules/.bin`, which keeps the working directory compatible with its Google Drive location. Package scripts invoke Astro's JavaScript entry point directly and must retain that form unless the storage constraint changes.
 

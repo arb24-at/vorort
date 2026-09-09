@@ -8,7 +8,7 @@ Purpose: a **small working bridge** between the Content/SEO workspace and the De
 - `α┇Docs/Project.md` — stable product, architecture and website-map decisions.
 - `α┇Docs/Roadmap.md` — implementation phases and acceptance criteria.
 - `α┇Docs/Collaboration.md` — chronological work/session handoff.
-- `/design-lab/` and explicit noindex concept routes — visual composition experiments.
+- `/design-lab/` — Page Workshop experiments and the explicitly Approved Sections registry view.
 
 Do **not** duplicate full YAML content, keyword research, service truth, recipe catalogues or implementation logs here.
 
@@ -28,11 +28,11 @@ If a composition genuinely needs different wording, Design records a targeted re
 
 ## Current experiment — Concept II service pages
 
-**Status:** two real Astro prototype routes are now implemented; the existing researched production pages and YAML remain unchanged.
+**Status:** both Concept II designs now live as validated Page Workshop fixtures. All eight section recipes are experimental; Approved Sections is empty. Researched production pages and YAML remain unchanged.
 
-- Private: `/en/services/private/wifi-home-network-ii/`
-- Business: `/en/services/business/office-network-ii/`
-- Shared implementation: `src/components/ServiceConceptII.astro` + `src/styles/service-concept-ii.css`
+- Private: `/design-lab/workshop/wifi-home-network-concept-ii/`
+- Business: `/design-lab/workshop/office-network-concept-ii/`
+- Shared implementation: `src/design-system/section-recipes.ts`, `src/content/workshop/*.yml`, small Astro renderers under `src/components/design-lab/sections/`, and recipe styles under `src/styles/design-lab/`
 - Both routes are `noindex, nofollow` and intentionally absent from the sitemap while the design system is being established.
 
 ### Direction under test
@@ -47,7 +47,7 @@ If a composition genuinely needs different wording, Design records a targeted re
 
 Approved working direction: **tactile illustrated panels** — premium editorial web illustration with semi-flat depth, soft shadows, restrained navy/off-white surfaces, orange route/cable accents and mint connectivity/status accents. Avoid photorealism, childish vector icons, SaaS dashboards and generic stock imagery.
 
-Current art is deliberately represented by designed CSS placeholders. Final illustration assets are the next visual input.
+Private P1–P6 use the existing fixed artwork files. Other panels and Business retain their existing designed placeholders. An accepted working art direction does not approve a section recipe or authorize production migration.
 
 ## Targeted Content requests
 
@@ -55,4 +55,4 @@ None yet. The Concept II pages use design-stage rewrites grounded in existing se
 
 ## Decisions ready for implementation
 
-None in production yet. Review the two Concept II routes first; approved patterns can then be migrated deliberately rather than replacing the existing pages wholesale.
+None in production yet. Review the two complete Workshop pages first. After explicit approval, a recipe ID can enter Approved Sections; production migration remains a separate requested step.

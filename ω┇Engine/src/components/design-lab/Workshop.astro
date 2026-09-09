@@ -1,0 +1,77 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import LabNavigation from "./LabNavigation.astro";
+import WorkshopCanvas from "./WorkshopCanvas.astro";
+import { workshopPath, workshopPreviewPath } from "../../data/workshop";
+import type { WorkshopFixture } from "../../design-system/workshop-schema";
+import { withBase } from "../../utils/withBase";
+import "../../styles/design-lab.css";
+type Props = { fixture: WorkshopFixture; pages: WorkshopFixture[]; canonicalPath: string };
+const { fixture, pages, canonicalPath } = Astro.props;
+---
+<MainLayout title={`${fixture.page.title} · Page Workshop`} description="Internal page-level design experiments. No sections are approved for production automatically." canonicalPath={canonicalPath} lang={fixture.page.locale} robots="noindex, nofollow" showSiteChrome={false}>
+  <div class="design-lab">
+    <LabNavigation area="workshop" />
+    <div class="lab-toolbar">
+      <details class="lab-page-picker">
+        <summary><span class="lab-label">Workshop page</span><strong>{fixture.page.title}</strong></summary>
+        <nav aria-label="Workshop pages">
+          {pages.map(({ page }) => <a href={withBase(workshopPath(page.id))} aria-current={page.id === fixture.page.id ? "page" : undefined}>{page.title}</a>)}
+        </nav>
+      </details>
+      <p class="lab-metadata"><span>{fixture.page.audience}</span> · {fixture.page.pageType} · {fixture.page.locale.toUpperCase()}</p>
+      <div class="lab-preview-controls" role="group" aria-label="Preview width" hidden>
+        <button type="button" data-preview-width="full" aria-pressed="true">Full page</button>
+        <button type="button" data-preview-width="1440" aria-pressed="false">Desktop</button>
+        <button type="button" data-preview-width="768" aria-pressed="false">Tablet</button>
+        <button type="button" data-preview-width="390" aria-pressed="false">Mobile</button>
+      </div>
+      <a class="lab-canvas-link" href={withBase(workshopPreviewPath(fixture.page.id))}>Open page canvas ↗</a>
+    </div>
+    <p class="lab-preview-status" role="status" hidden></p>
+    <div data-full-canvas><WorkshopCanvas fixture={fixture} /></div>
+    <div class="lab-frame-stage" hidden>
+      <iframe title={`${fixture.page.title} — responsive preview`} data-preview-src={withBase(workshopPreviewPath(fixture.page.id))}></iframe>
+    </div>
+  </div>
+</MainLayout>
+
+<script>
+  const controls = document.querySelector<HTMLElement>(".lab-preview-controls");
+  const full = document.querySelector<HTMLElement>("[data-full-canvas]");
+  const stage = document.querySelector<HTMLElement>(".lab-frame-stage");
+  const frame = stage?.querySelector<HTMLIFrameElement>("iframe");
+  const status = document.querySelector<HTMLElement>(".lab-preview-status");
+  if (controls && full && stage && frame && status) {
+    controls.hidden = false;
+    let observer: ResizeObserver | undefined;
+    frame.addEventListener("load", () => {
+      observer?.disconnect();
+      const body = frame.contentDocument?.body;
+      if (!body) return;
+      const fitHeight = () => { frame.style.height = `${Math.ceil(body.getBoundingClientRect().height)}px`; };
+      observer = new ResizeObserver(fitHeight);
+      observer.observe(body);
+      fitHeight();
+    });
+    controls.addEventListener("click", event => {
+      const button = (event.target as HTMLElement).closest<HTMLButtonElement>("button[data-preview-width]");
+      if (!button) return;
+      const width = button.dataset.previewWidth!;
+      controls.querySelectorAll("button").forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+      const isFull = width === "full";
+      full.hidden = !isFull;
+      stage.hidden = isFull;
+      status.hidden = isFull;
+      if (isFull) {
+        observer?.disconnect();
+        frame.removeAttribute("src");
+      } else {
+        frame.style.width = `${width}px`;
+        status.textContent = `${button.textContent} preview · ${width}px. Scroll sideways if this is wider than your window.`;
+        if (!frame.hasAttribute("src")) frame.src = frame.dataset.previewSrc!;
+      }
+    });
+    window.addEventListener("pagehide", () => observer?.disconnect(), { once: true });
+  }
+</script>

@@ -1,0 +1,10 @@
+---
+import Workshop from "../../../components/design-lab/Workshop.astro";
+import { getWorkshopPages, workshopPath } from "../../../data/workshop";
+export async function getStaticPaths() {
+  const pages = await getWorkshopPages();
+  return pages.map(fixture => ({ params: { id: fixture.page.id }, props: { fixture, pages } }));
+}
+const { fixture, pages } = Astro.props;
+---
+<Workshop fixture={fixture} pages={pages} canonicalPath={workshopPath(fixture.page.id)} />

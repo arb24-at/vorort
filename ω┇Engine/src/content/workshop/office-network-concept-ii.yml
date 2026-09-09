@@ -1,0 +1,204 @@
+page:
+  id: office-network-concept-ii
+  locale: en
+  audience: business
+  pageType: service
+  title: Office Network / Network Infrastructure Concept II
+sections:
+  - id: hero
+    kind: hero
+    recipe: hero.banner-art
+    content:
+      eyebrow: Business · Network infrastructure
+      title: Network infrastructure for businesses in Berlin
+      intro: >-
+        We plan, supply, install and configure network infrastructure for small and growing businesses in
+        Berlin — from cabling and business Wi‑Fi to managed network hardware, shared storage and secure
+        access.
+      media:
+        subject: business-hero
+        alt: >-
+          Tactile illustrated small-business workplace scene: desks, meeting area, cable routes, access
+          points, network cabinet and shared services in one structured architectural composition.
+      actions:
+        - label: Request support
+          target: contact
+        - label: See what is included
+          target: service-scope
+      highlights:
+        - Office Wi‑Fi & work areas
+        - Cabling, outlets & routes
+        - Managed network hardware
+        - Shared storage & services
+  - id: service-scope
+    kind: scope
+    recipe: scope.art-panels
+    content:
+      eyebrow: At a glance
+      title: The infrastructure areas this service can bring together
+      intro: >-
+        The page should make the project scope visible immediately, before asking a business owner or office
+        manager to read technical detail.
+      items:
+        - title: Office Wi‑Fi & work areas
+          media:
+            subject: office-wifi
+        - title: Cabling, outlets & routes
+          media:
+            subject: office-cabling
+        - title: Managed network hardware
+          media:
+            subject: network-core
+        - title: Shared storage & services
+          media:
+            subject: storage-business
+        - title: Secure access & connectivity
+          media:
+            subject: secure-access
+  - id: network-environment
+    kind: explanation
+    recipe: explanation.art-gallery
+    content:
+      eyebrow: Workplace infrastructure
+      title: Build the network around how the office actually operates
+      intro: >-
+        Business pages use the same art family as Private, but with stricter geometry, larger spatial scale
+        and more system relationships. The final panels should feel architectural, not like software
+        dashboards.
+      items:
+        - eyebrow: Planning
+          title: Start with the workplace, not with a shopping list
+          body: >-
+            Rooms, workspaces, users, cable routes, Wi‑Fi requirements and likely growth define what the
+            infrastructure needs to support before hardware is selected.
+          media:
+            subject: office-wifi
+        - eyebrow: Physical infrastructure
+          title: Make cabling and equipment understandable
+          body: >-
+            Network outlets, patching, cabinets and managed hardware should form a traceable system rather
+            than a collection of unrelated devices accumulated over time.
+          media:
+            subject: office-cabling
+        - eyebrow: Shared services
+          title: Connect storage and access to the way people actually work
+          body: >-
+            NAS, internal resources, staff or guest access and secure remote connectivity can be integrated
+            where they belong in the agreed network scope.
+          media:
+            subject: storage-business
+  - id: situations
+    kind: recognition
+    recipe: recognition.situations
+    content:
+      eyebrow: Common project triggers
+      title: When an office network deserves planned attention
+      intro: >-
+        The visitor normally knows there is a project. This section helps frame the type of change without
+        reducing the page to a hardware specification.
+      items:
+        - title: A new office needs infrastructure before the team moves in
+          body: >-
+            Planning early makes it easier to place outlets, cable routes, Wi‑Fi access points and shared
+            equipment around the actual workspace.
+        - title: The business has added rooms, desks or people
+          body: >-
+            An older network may still function but no longer fit the way the workplace is being used or the
+            number of services depending on it.
+        - title: The network works, but nobody really understands it
+          body: >-
+            Improvised switches, undocumented patching and mixed generations of equipment make future changes
+            harder and troubleshooting slower.
+        - title: A planned modernisation is better than another temporary fix
+          body: >-
+            A clean rebuild can make physical infrastructure, Wi‑Fi, shared storage and secure access easier
+            to support and extend.
+  - id: process
+    kind: process
+    recipe: process.staged-path
+    content:
+      eyebrow: Planning and delivery
+      title: From premises and requirements to working infrastructure
+      intro: >-
+        This is where the page earns technical credibility: a clear method tied to real rooms, users,
+        equipment and operational needs rather than generic IT consulting language.
+      steps:
+        - title: Survey the premises
+          body: >-
+            Rooms, work areas, existing connections, cable routes and current infrastructure establish the
+            physical starting point.
+        - title: Define the requirements
+          body: >-
+            Users, Wi‑Fi, shared equipment, storage, internal resources, access and future changes shape the
+            network design.
+        - title: Implement the agreed scope
+          body: >-
+            Cabling, cabinets, managed hardware, business Wi‑Fi, NAS and secure connectivity are installed and
+            configured as required.
+        - title: Test, document and hand over
+          body: >-
+            The network should be understandable after the project, with testing and a practical handover
+            rather than unexplained infrastructure.
+  - id: outcome
+    kind: outcome
+    recipe: outcome.scope-proof
+    content:
+      eyebrow: Useful outcome
+      title: Not a pile of devices. Infrastructure the business can understand and extend.
+      body: >-
+        The target is organised, traceable connectivity that works where it is needed, supports agreed shared
+        resources and leaves a clearer foundation for future changes.
+      media:
+        subject: office-wifi
+        alt: Outcome artwork placeholder
+      includedHeading: Often included
+      included:
+        - Office network planning
+        - Ethernet cabling
+        - Network outlets and patching
+        - Network cabinets
+        - Managed switches and hardware
+        - Business Wi‑Fi
+        - NAS and shared storage
+        - VPN / secure remote access where appropriate
+        - Testing
+        - Documentation and handover
+      boundariesHeading: Important boundaries
+      boundaries:
+        - Small and growing businesses, not enterprise consultancy
+        - No penetration testing
+        - No digital forensics
+        - No blanket cybersecurity or compliance claims
+        - Windows Server / Active Directory and substantial Linux server work remain separate scopes
+        - No fixed response-time or availability guarantees
+  - id: questions
+    kind: faq
+    recipe: faq.accordion
+    content:
+      eyebrow: Useful answers
+      title: Useful answers about business network projects
+      items:
+        - question: Do you work on both new offices and existing networks?
+          answer: >-
+            Yes. The service can cover new-office planning, expansion, modernisation and problem-led work on
+            an existing small-business network.
+        - question: Can you supply the network hardware as well?
+          answer: >-
+            Equipment recommendations and optional procurement can be part of an agreed project. The exact
+            hardware depends on the premises, requirements and supportability.
+        - question: Can you install cabling, outlets and network cabinets?
+          answer: >-
+            Yes, within the agreed project scope and the practical constraints of the premises. Cable routes
+            and installation details are assessed rather than assumed.
+        - question: Can secure remote access or VPN be included?
+          answer: >-
+            Appropriate secure remote access can be part of a network project. This does not turn the service
+            into an enterprise cybersecurity or penetration-testing consultancy.
+        - question: Do we need an ongoing maintenance contract?
+          answer: >-
+            No. One-off projects, planned infrastructure work and problem resolution are primary. Occasional
+            or recurring support can be discussed where it is useful, but it is not a standard requirement.
+  - id: contact
+    kind: contact
+    recipe: contact.enquiry
+    content: {}

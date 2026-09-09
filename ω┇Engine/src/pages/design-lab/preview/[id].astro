@@ -1,0 +1,12 @@
+---
+import MainLayout from "../../../layouts/MainLayout.astro";
+import WorkshopCanvas from "../../../components/design-lab/WorkshopCanvas.astro";
+import { getWorkshopPages, workshopPreviewPath } from "../../../data/workshop";
+export async function getStaticPaths() {
+  return (await getWorkshopPages()).map(fixture => ({ params: { id: fixture.page.id }, props: { fixture } }));
+}
+const { fixture } = Astro.props;
+---
+<MainLayout title={`${fixture.page.title} · Experimental canvas`} canonicalPath={workshopPreviewPath(fixture.page.id)} lang={fixture.page.locale} robots="noindex, nofollow" showSiteChrome={false}>
+  <WorkshopCanvas fixture={fixture} />
+</MainLayout>

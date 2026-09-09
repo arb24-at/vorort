@@ -1,0 +1,29 @@
+---
+import type { RecipeContent } from "../../../design-system/section-recipes";
+type Props = { id: string; content: RecipeContent<"process.staged-path"> };
+const { id, content } = Astro.props;
+const { eyebrow: processEyebrow, title: processHeading, intro: processIntro, steps } = content;
+---
+
+<section class="c2-process-section" id={id} data-recipe="process.staged-path">
+    <div class="container">
+      <div class="c2-process-shell">
+        <div class="c2-section-head c2-section-head--dark">
+          <div>
+            <span class="c2-eyebrow">{processEyebrow}</span>
+            <h2>{processHeading}</h2>
+          </div>
+          <p>{processIntro}</p>
+        </div>
+        <div class="c2-process">
+          {steps.map((step, index) => (
+            <article class="c2-process-step">
+              <span class="c2-process-step__number">{String(index + 1).padStart(2, "0")}</span>
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>

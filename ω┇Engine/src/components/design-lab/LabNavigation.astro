@@ -1,0 +1,12 @@
+---
+import { withBase } from "../../utils/withBase";
+type Props = { area: "workshop" | "approved" };
+const { area } = Astro.props;
+---
+<header class="lab-header">
+  <a class="lab-name" href={withBase("/design-lab/")}>Design Lab <span>Internal · experimental</span></a>
+  <nav aria-label="Design Lab">
+    <a href={withBase("/design-lab/")} aria-current={area === "workshop" ? "page" : undefined}>Page Workshop</a>
+    <a href={withBase("/design-lab/approved/")} aria-current={area === "approved" ? "page" : undefined}>Approved Sections</a>
+  </nav>
+</header>

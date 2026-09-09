@@ -1,9 +1,11 @@
 # VorOrt Concept II — Art prompts
 
-Use these prompts to generate the illustration set for the two Concept II Astro pages:
+Use these prompts to generate the illustration set for the two Concept II Page Workshop fixtures:
 
-- `office-network-ii`
-- `wifi-home-network-ii`
+- `office-network-concept-ii`
+- `wifi-home-network-concept-ii`
+
+Open the fixtures through `/design-lab/`. P1–P6 keep their existing `public/images/concept-ii/private/` filenames; only the experimental page routes and content source moved.
 
 These prompts assume **Option A** is the chosen direction: **premium tactile editorial illustration**.
 
@@ -153,7 +155,7 @@ Use this logic while generating:
 
 ## Checklist
 
-### Private page — `wifi-home-network-ii`
+### Private page — `wifi-home-network-concept-ii`
 
 - [x] **P1 — Private hero: whole-home network overview**
   - **Suggested ratio:** `16:9` or `5:3`
@@ -210,7 +212,7 @@ Use this logic while generating:
   - **Prompt:**
     > Create a premium tactile editorial illustration showing that wired connections can still matter in a home network. Show a home-office or key device benefiting from a stable physical connection, expressed through elegant spatial composition and one restrained cable route. The image should communicate reliability and clarity, not complexity.
 
-### Business page — `office-network-ii`
+### Business page — `office-network-concept-ii`
 
 - [ ] **B1 — Business hero: office infrastructure overview**
   - **Suggested ratio:** `16:9` or `5:3`

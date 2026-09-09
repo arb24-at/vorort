@@ -1,0 +1,6 @@
+---
+import Workshop from "../../components/design-lab/Workshop.astro";
+import { getWorkshopPages } from "../../data/workshop";
+const pages = await getWorkshopPages();
+---
+<Workshop fixture={pages[0]} pages={pages} canonicalPath="/design-lab/" />

@@ -1,6 +1,6 @@
 # VorOrt repository roadmap
 
-Last updated: 2026-09-08
+Last updated: 2026-09-09
 
 This roadmap is subordinate to Aykhan's external Obsidian Chain. It records repository implementation phases and acceptance criteria without duplicating the Chain's high-level project-management state.
 
@@ -60,6 +60,18 @@ Prototype foundation completed on 2026-08-27, the first Technical Field proof sl
 - Review navigation, contact surfaces, responsive behavior, keyboard use, focus treatment, reduced motion, contrast, and performance.
 
 Acceptance: page topics are visually understandable and distinguishable without unrelated stock imagery; the theme remains present below the hero; private and business contexts show appropriate progressive technical depth inside one recognizable system; each converted service page fulfils its content contract and remains useful without the visual layer; accessibility and performance checks meet the agreed release baseline.
+
+### Design Lab v2.0.1 full update plan — complete
+
+One logical upgrade and commit, explicitly labelled `2.0.1` by Aykhan. All five tasks below are implemented and validated; stop after the commit for Aykhan's usage check. Production pages/content and GitHub Pages hosting remain unchanged.
+
+1. **Registry and content contracts:** establish one code registry with semantic IDs, lifecycle, purpose, audience/page-type compatibility, content schemas and renderer references. Add strict Workshop YAML metadata and ordered sections; reject unknown recipes, styling keys, invalid content, duplicate IDs and incompatible references.
+2. **Concept II migration:** preserve both existing designs, copy and P1–P6 assets in Private/Business fixtures; extract cohesive Astro sections and shared art primitives; split recipe CSS while retaining existing foundations and meaningful audience differences.
+3. **Workshop and approval surfaces:** replace the old catalogue with only Page Workshop and Approved Sections. Provide page selection, metadata, a continuous full-page canvas and a useful empty approved state derived from the registry. Register every migrated section as experimental.
+4. **Preview and impact:** add small static-compatible desktop/tablet/mobile controls without compromising the normal document view; derive distinct Workshop page usage from fixtures. Prepare an approved-only validation policy for future production consumers; add no production migration or local write API.
+5. **Cleanup and verification:** remove superseded catalogue/wrapper, monolithic Concept II implementation and old experimental routes once migrated; check schema failures, both audience designs, controls, artwork, robots, canonical/base paths, sitemap exclusion and production regressions. Run `npm run validate`, diff/status checks; update canonical architecture and handoff; commit v2.0.1.
+
+Acceptance: two realistic selectable pages, one canonical recipe registry, zero approved sections, no visual settings in YAML, no public route/content regression, static read-only Lab, preserved artwork and page rhythm, documented validation and a completed versioned Git commit. A first approval remains a later explicit Aykhan decision; filesystem controls and production migration remain separate future tasks.
 
 ## 5. Conversion and demand measurement — planned
 

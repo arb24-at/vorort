@@ -1,5 +1,6 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
+import { workshopSchema } from "./design-system/workshop-schema";
 
 const itemGroup = z.object({
   eyebrow: z.string().min(3),
@@ -161,4 +162,11 @@ const services = defineCollection({
   schema: serviceSchema
 });
 
-export const collections = { services };
+const workshop = defineCollection({
+  // Keep extensions in loader keys so same-stem .yml/.yaml files cannot silently
+  // overwrite each other before getWorkshopPages checks their semantic IDs.
+  loader: glob({ pattern: "*.{yml,yaml}", base: "./src/content/workshop", generateId: ({ entry }) => entry }),
+  schema: workshopSchema,
+});
+
+export const collections = { services, workshop };

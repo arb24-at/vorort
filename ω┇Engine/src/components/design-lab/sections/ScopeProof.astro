@@ -1,0 +1,42 @@
+---
+import type { RecipeContent } from "../../../design-system/section-recipes";
+import ArtField from "../ArtField.astro";
+import { withBase } from "../../../utils/withBase";
+import { siteConfig } from "../../../data/site";
+type Props = { id: string; content: RecipeContent<"outcome.scope-proof"> };
+const { id, content } = Astro.props;
+const { eyebrow: outcomeEyebrow, title: outcomeHeading, body: outcomeBody, included, boundaries } = content;
+---
+
+<section class="c2-outcome-section" id={id} data-recipe="outcome.scope-proof">
+    <div class="container c2-outcome-grid">
+      <article class="c2-outcome-statement">
+        <span class="c2-eyebrow c2-eyebrow--dark">{outcomeEyebrow}</span>
+        <h2>{outcomeHeading}</h2>
+        <p>{outcomeBody}</p>
+        <div class:list={["c2-art", "c2-art--outcome", `c2-art--${content.media.subject}`]} role="img" aria-label={content.media.alt}>
+          <ArtField />
+          {content.media.src ? <img class="c2-art__image" src={withBase(content.media.src)} alt="" loading="lazy" decoding="async" /> : <span class="c2-art__caption">Final outcome artwork placeholder</span>}
+        </div>
+      </article>
+
+      <div class="c2-scope-notes">
+        <section>
+          <h3>{content.includedHeading}</h3>
+          <ul>
+            {included.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+        <section>
+          <h3>{content.boundariesHeading}</h3>
+          <ul>
+            {boundaries.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+        <div class="c2-proof">
+          <strong>2008</strong>
+          <span>IT experience since 2008 · on-site service in Berlin{siteConfig.languageSupport.enabled && " · English-speaking technical support available"}</span>
+        </div>
+      </div>
+    </div>
+  </section>

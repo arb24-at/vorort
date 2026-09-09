@@ -1,0 +1,48 @@
+---
+import type { RecipeContent } from "../../../design-system/section-recipes";
+import { withBase } from "../../../utils/withBase";
+type Props = { id: string; content: RecipeContent<"scope.art-panels"> };
+const { id, content } = Astro.props;
+const { eyebrow, title: scopeHeading, intro: scopeIntro, items } = content;
+const scopeItems = items.map(item => ({ ...item, artKind: item.media.subject, imageSrc: item.media.src ? withBase(item.media.src) : undefined }));
+---
+
+<section class="c2-scope" id={id} data-recipe="scope.art-panels">
+    <div class="container">
+      <div class="c2-section-head c2-section-head--compact">
+        <div>
+          <span class="c2-eyebrow c2-eyebrow--dark">{eyebrow}</span>
+          <h2>{scopeHeading}</h2>
+        </div>
+        <p>{scopeIntro}</p>
+      </div>
+
+      <div class="c2-scope-ribbon" role="group" aria-label="Service scope" tabindex="0">
+        {scopeItems.map((item) => (
+          <article class="c2-scope-item">
+            <div
+              class:list={[
+                "c2-scope-icon",
+                `c2-scope-icon--${item.artKind}`,
+                { "c2-scope-icon--has-image": Boolean(item.imageSrc) }
+              ]}
+              aria-hidden="true"
+            >
+              <span></span><span></span><span></span>
+              {item.imageSrc && (
+                <img
+                  class="c2-scope-icon__image"
+                  src={item.imageSrc}
+                  alt=""
+                  loading="eager"
+                  decoding="async"
+                  onerror="this.hidden=true"
+                />
+              )}
+            </div>
+            <h3>{item.title}</h3>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>

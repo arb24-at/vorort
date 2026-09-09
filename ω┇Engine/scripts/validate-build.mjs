@@ -7,11 +7,15 @@ const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const engineRoot = path.resolve(scriptDirectory, "..");
 const distRoot = path.join(engineRoot, "dist");
 const basePath = astroConfig.base ?? "/";
+const workshopIds = fs.readdirSync(path.join(engineRoot, "src/content/workshop"))
+  .filter(file => /\.ya?ml$/.test(file)).map(file => file.replace(/\.ya?ml$/, ""));
 
 const expectedHtml = [
   "404.html",
   "index.html",
   "design-lab/index.html",
+  "design-lab/approved/index.html",
+  ...workshopIds.flatMap(id => [`design-lab/workshop/${id}/index.html`, `design-lab/preview/${id}/index.html`]),
   "datenschutz/index.html",
   "datensicherheit-zertifizierungen/index.html",
   "impressum/index.html",
@@ -83,16 +87,19 @@ for (const file of files) {
   }
 
   if (!file.endsWith(".html")) continue;
-  if (displayPath === "design-lab/index.html") {
+  if (displayPath.startsWith("design-lab/")) {
     if (!/<meta name="robots" content="noindex, nofollow"\s*\/?\s*>/.test(contents)) {
       errors.push("Design Lab must carry noindex, nofollow robots metadata.");
     }
-    const labCanonical = new URL(`${basePath}design-lab/`, astroConfig.site).toString();
+    const labCanonical = new URL(`${basePath}${displayPath.replace(/index\.html$/, "")}`, astroConfig.site).toString();
     if (!contents.includes(`<link rel="canonical" href="${labCanonical}"`)) {
       errors.push("Design Lab canonical must retain the configured site and base.");
     }
     if (/class="(?:site-header|site-footer|mobile-contact-dock)"/.test(contents)) {
       errors.push("Design Lab must not render customer-facing site chrome.");
+    }
+    if (displayPath === "design-lab/approved/index.html" && !contents.includes('data-approved-count="0"')) {
+      errors.push("No recipes have been explicitly approved for the initial Design Lab migration.");
     }
   } else if (contents.includes(`${basePath}design-lab/`)) {
     errors.push(`Customer page must not link to the internal Design Lab: ${displayPath}`);
@@ -105,6 +112,10 @@ for (const file of files) {
       errors.push(`Missing internal target in ${displayPath}: ${url}`);
     }
   }
+}
+
+for (const retired of ["en/services/private/wifi-home-network-ii/index.html", "en/services/business/office-network-ii/index.html"]) {
+  if (fs.existsSync(path.join(distRoot, retired))) errors.push(`Retired Concept II route is still generated: ${retired}`);
 }
 
 const sitemapPath = path.join(distRoot, "sitemap.xml");
