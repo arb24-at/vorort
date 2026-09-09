@@ -19,6 +19,7 @@ type ArtKind =
 type ScopeItem = {
   title: string;
   artKind: ArtKind;
+  imageSrc?: string;
 };
 
 type GalleryItem = {
@@ -181,8 +182,25 @@ const heroKind: ArtKind = mode === "private" ? "private-hero" : "business-hero";
       <div class="c2-scope-ribbon" aria-label="Service scope">
         {scopeItems.map((item) => (
           <article class="c2-scope-item">
-            <div class:list={["c2-scope-icon", `c2-scope-icon--${item.artKind}`]} aria-hidden="true">
+            <div
+              class:list={[
+                "c2-scope-icon",
+                `c2-scope-icon--${item.artKind}`,
+                { "c2-scope-icon--has-image": Boolean(item.imageSrc) }
+              ]}
+              aria-hidden="true"
+            >
               <span></span><span></span><span></span>
+              {item.imageSrc && (
+                <img
+                  class="c2-scope-icon__image"
+                  src={item.imageSrc}
+                  alt=""
+                  loading="eager"
+                  decoding="async"
+                  onerror="this.hidden=true"
+                />
+              )}
             </div>
             <h3>{item.title}</h3>
           </article>

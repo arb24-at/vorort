@@ -5,13 +5,13 @@ Last updated: 2026-09-09
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: the Drive source now carries project version `1.5.16`. Two real noindex English Concept II service routes have been added in the Astro project: `/en/services/private/wifi-home-network-ii/` and `/en/services/business/office-network-ii/`. They share a new page-family component/style layer and leave the researched production pages/YAML unchanged. This Drive-connected session did not inspect or alter `.git`.
-- Local validation: not run for `1.5.16` because this Drive-connected session has no repository shell. The new Astro component, stylesheet and two routes require normal local `npm run validate`, browser review, diff and status checks before commit.
-- Local browser verification: not run for `1.5.16`. The intended preview routes are `/vorort/en/services/private/wifi-home-network-ii/` and `/vorort/en/services/business/office-network-ii/`.
+- Current working state: the Drive source now carries project version `1.5.20`. The two noindex English Concept II service routes remain isolated from production. The private Concept II page now accepts fixed `P1.png`–`P6.png` artwork slots, and its first post-hero scope section has been refined into larger portrait-oriented visual cards with centred, high-contrast titles above each artwork. The researched production pages/YAML remain unchanged. This Drive-connected session did not inspect or alter `.git`.
+- Local validation: not run for `1.5.20` because this Drive-connected session has no repository shell. The Concept II stylesheet change requires normal local `npm run validate`, browser review, diff and status checks before commit.
+- Local browser verification: not run for `1.5.20`. The intended preview routes are `/vorort/en/services/private/wifi-home-network-ii/` and `/vorort/en/services/business/office-network-ii/`.
 - Deployment state: no commit, push or deployment was performed in this Drive-only design session. Intended local preview routes are `/vorort/en/services/private/wifi-home-network-ii/` and `/vorort/en/services/business/office-network-ii/`.
 - Product-direction state: Concept II now tests full-width dark banner heroes, a horizontal visual service-scope ribbon immediately after the hero, tactile illustrated art panels, and meaningful Private/Business differentiation through geometry, scale and information density. Private uses a lighter dark tone and Business a deeper dark tone, but colour is secondary to composition. Production service YAML remains unchanged.
 - Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional. The clean install also reports nine dependency audit findings for later dependency-maintenance review.
-- Recommended next action: run the two Concept II routes locally, review desktop/mobile screenshots, then replace the designed CSS art placeholders with a small consistent set of generated tactile illustrations before deciding whether any production migration is justified.
+- Recommended next action: review the enlarged private P2–P6 portrait scope cards on desktop and mobile, then continue generating/refining the larger private feature-panel artwork before deciding how the business page should diverge structurally.
 
 ## Reporting template
 
@@ -639,3 +639,31 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 - Decisions: supporting scope artwork should preserve the hero's deep-blue evening atmosphere, warm neutral materials, restrained orange routes and mint connectivity cues, but use simpler silhouettes, plausible geometry, matte surfaces, fewer objects and sparse connectivity graphics instead of cinematic/photoreal depth.
 - Validation: read the latest full `AGENTS.md`, `Project.md`, `Roadmap.md`, `Collaboration.md` and `art-prompts.md` before editing. Drive readback is required after writing. No Astro source files changed in this slice. Local `npm run validate`, browser checks, `git diff --check`, `git status --short`, Git commit and push are not available from this Drive-only session.
 - Recommended next action: generate P2–P6 one by one using the revised prompts, place them into the private Concept II scope ribbon, and judge the set at desktop and mobile before refining the larger P7–P9 panels.
+
+## 2026-09-09 — ChatGPT — Concept II private scope-panel image slots
+
+- Objective: let the private Concept II service-scope ribbon accept the generated P2–P6 artwork one image at a time, using the same fixed-filename workflow already established for P1.
+- Changes:
+  - extended `src/components/ServiceConceptII.astro` scope items with optional image sources and a real cover-image layer; the existing generated icon art remains underneath as a graceful fallback if an image is missing or fails to load;
+  - wired `src/pages/en/services/private/wifi-home-network-ii.astro` to `public/images/concept-ii/private/P2.png` through `P6.png` using the configured Astro base path;
+  - enlarged the scope visuals in `src/styles/service-concept-ii.css` from small icon boxes into 4:3 cover panels, with horizontal mobile scrolling so the artwork remains legible instead of collapsing into tiny icons;
+  - updated `α┇Docs/art-prompts.md` with the exact drop-in folder, filenames and cover behaviour;
+  - bumped `AGENTS.md` from `1.5.18` to `1.5.19`.
+- Decisions: P2–P6 are fixed replaceable cover slots, matching the P1 testing workflow. The labels remain outside the artwork, so the generated images should contain no embedded text. Missing files must not require source edits before the user can continue testing the page.
+- Validation: read the latest canonical project context and the latest complete component, private Concept II page, stylesheet, art prompt file and collaboration handoff before editing. Staged source was checked for the five fixed filenames and balanced CSS braces. Drive readback is required after writing. `npm run validate`, browser rendering, `git diff --check`, `git status --short`, Git commit and push are not available from this Drive-only session.
+- Recommended next action: place `P2.png` in `public/images/concept-ii/private/`, run the local Astro server and judge the first scope cover on desktop/mobile before generating and adding P3–P6.
+## 2026-09-09 — ChatGPT — Enlarge private Concept II scope cards
+
+- Objective: make the P2–P6 private service-scope artwork feel like substantial visual covers rather than a small icon ribbon, while keeping the labels immediately readable.
+- Changes:
+  - refined `src/styles/service-concept-ii.css` so the private scope ribbon uses five larger portrait-oriented cards on wide screens rather than flat 4:3 thumbnail cells;
+  - moved the private service titles visually to a centred high-contrast top cap inside each card, leaving the generated artwork to fill the remaining portrait field;
+  - added a larger horizontal scroll treatment below 1120px and a wider single-card mobile viewport so the artwork stays visually important instead of shrinking into a dense five-column strip;
+  - preserved the existing P2–P6 fixed image slots, `object-fit: cover` behaviour and graceful generated-art fallback;
+  - kept the business scope-ribbon treatment unchanged for now so the two audience families can continue to diverge deliberately rather than inheriting every private-page refinement automatically;
+  - bumped `AGENTS.md` from `1.5.19` to `1.5.20`.
+- Decisions: the private post-hero scope section should behave more like a visual gallery of service territories than an icon list. Titles belong in a clear, quiet top band; the artwork carries the recognition burden below. The generated P2–P6 landscape masters may be cropped into the portrait covers through `object-fit: cover`, so no regeneration is required for this layout test.
+- Validation: read the latest `AGENTS.md`, `Project.md`, `Roadmap.md`, `Collaboration.md`, complete Concept II component and complete Concept II stylesheet before editing. The resulting CSS has balanced structural braces and preserves the existing image-slot/fallback selectors. Drive readback is required after writing. `npm run validate`, browser rendering, `git diff --check`, `git status --short`, Git commit and push are not available from this Drive-only session.
+- Blockers or required input: visual review of the portrait crop on the user's existing P2–P6 images at desktop and mobile widths.
+- Recommended next action: review the updated private scope section, adjust crop focal points only if specific images lose important content, then continue to P7–P9 feature-panel artwork.
+

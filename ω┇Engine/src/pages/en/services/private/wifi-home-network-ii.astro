@@ -3,14 +3,15 @@ import MainLayout from "../../../../layouts/MainLayout.astro";
 import ServiceConceptII from "../../../../components/ServiceConceptII.astro";
 
 const canonicalPath = "/en/services/private/wifi-home-network-ii/";
-const heroImageSrc = `${import.meta.env.BASE_URL}images/concept-ii/private/P1.png`;
+const privateArtBase = `${import.meta.env.BASE_URL}images/concept-ii/private/`;
+const heroImageSrc = `${privateArtBase}P1.png`;
 
 const scopeItems = [
-  { title: "Wi‑Fi & Mesh coverage", artKind: "wifi" },
-  { title: "Home-office connectivity", artKind: "home-office" },
-  { title: "NAS & shared storage", artKind: "storage-home" },
-  { title: "Ethernet & cable routes", artKind: "cabling-home" },
-  { title: "Moves, renovation & upgrades", artKind: "upgrade-home" }
+  { title: "Wi‑Fi & Mesh coverage", artKind: "wifi", imageSrc: `${privateArtBase}P2.png` },
+  { title: "Home-office connectivity", artKind: "home-office", imageSrc: `${privateArtBase}P3.png` },
+  { title: "NAS & shared storage", artKind: "storage-home", imageSrc: `${privateArtBase}P4.png` },
+  { title: "Ethernet & cable routes", artKind: "cabling-home", imageSrc: `${privateArtBase}P5.png` },
+  { title: "Moves, renovation & upgrades", artKind: "upgrade-home", imageSrc: `${privateArtBase}P6.png` }
 ] as const;
 
 const galleryItems = [

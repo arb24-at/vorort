@@ -1,5 +1,5 @@
 ---
-version: 1.5.18
+version: 1.5.20
 ---
 
 # VorOrt agent instructions

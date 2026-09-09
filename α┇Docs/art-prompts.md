@@ -79,6 +79,26 @@ Use this shared direction for **every image in the set** unless a prompt overrid
 
 ## Scope-ribbon style — P2–P6 and B2–B6
 
+### Drop-in filenames for the private Concept II page
+
+The private page is wired to pick these files up automatically from:
+
+```text
+ω┇Engine/public/images/concept-ii/private/
+```
+
+Use these exact filenames:
+
+```text
+P2.png  — Wi-Fi & Mesh coverage
+P3.png  — Home-office connectivity
+P4.png  — NAS & shared storage
+P5.png  — Ethernet & cable routes
+P6.png  — Moves, renovation & upgrades
+```
+
+Each image is used as a **4:3 cover** inside its scope panel. If a file is missing or fails to load, the existing generated placeholder remains visible underneath, so images can be added one by one without editing the page source.
+
 These five images on each page are **small visual identifiers**, not miniature hero scenes. They should be noticeably flatter and simpler than P1/B1 while keeping the same palette and material mood.
 
 - target look: high-end architectural/editorial vignette, shallow 2.5D or near-flat perspective
@@ -142,31 +162,31 @@ Use this logic while generating:
   - **Prompt:**
     > Create a premium tactile editorial illustration of a Berlin apartment or home-office environment as one connected home network. Show a calm, design-led overview that brings together a home-office desk, a living area, shared storage or NAS, and a subtle Wi-Fi hub or router position. Suggest how the home network supports everyday work and living rather than focusing on technical hardware alone. Include one restrained orange cable route and subtle mint connectivity accents. Use elegant architectural forms, layered depth, deep petrol and navy shadows, off-white surfaces and soft lighting. The image should feel practical, trustworthy and modern, with generous negative space and no embedded text.
 
-- [ ] **P2 — Private scope image: Wi-Fi and mesh coverage**
+- [x] **P2 — Private scope image: Wi-Fi and mesh coverage**
   - **Suggested ratio:** `4:3`
   - **Use in page:** service-scope ribbon and/or small art panel
   - **Prompt:**
     > Create a **flat architectural editorial vignette** showing Wi-Fi coverage in a real home. Use two simplified room masses only — for example a home-office zone and a living zone — with one small router/access-point form and one or two thin mint signal arcs connecting the spaces. Keep the room geometry plausible and deliberately simplified. Use the same deep petrol/navy, warm off-white and muted material palette as the private hero, with no photographic depth of field and no glowing sci-fi effects. Use 3–4 major forms maximum, subtle matte texture, a consistent oblique/front perspective and generous negative space. It must still read clearly when shown very small.
 
-- [ ] **P3 — Private scope image: home-office connectivity**
+- [x] **P3 — Private scope image: home-office connectivity**
   - **Suggested ratio:** `4:3`
   - **Use in page:** service-scope ribbon and/or small art panel
   - **Prompt:**
     > Create a **flat editorial home-office vignette** with one desk, one laptop/monitor and one subtle network connection cue. The idea is dependable everyday work, not a showcase of computer hardware. Use shallow 2.5D geometry, matte deep-petrol and warm-neutral surfaces, restrained mint connectivity and a tiny orange routing accent only if useful. Keep the silhouette strong and the object count low. No screen text, no decorative gadgets, no plants or accessories unless they improve the composition. One consistent perspective, one consistent light direction, no glossy 3D render look.
 
-- [ ] **P4 — Private scope image: NAS and shared storage**
+- [x] **P4 — Private scope image: NAS and shared storage**
   - **Suggested ratio:** `4:3`
   - **Use in page:** service-scope ribbon and/or small art panel
   - **Prompt:**
     > Create a **flat tactile editorial vignette** centred on one compact NAS/shared-storage unit, with only two supporting device silhouettes indicating that the storage is shared. Use simple believable geometry, matte materials and a shallow perspective. Preserve the private hero palette: deep petrol/navy, warm off-white, one restrained mint connection cue and optionally one thin orange route. No cloud icons, no floating files, no dashboard UI, no server-room styling, and no extra decorative objects.
 
-- [ ] **P5 — Private scope image: Ethernet and cable routes**
+- [x] **P5 — Private scope image: Ethernet and cable routes**
   - **Suggested ratio:** `4:3`
   - **Use in page:** service-scope ribbon and/or small art panel
   - **Prompt:**
     > Create a **flat architectural detail vignette** of home Ethernet and cable routing. Show one simplified wall/surface, one network outlet, one router or access point, and a single clean orange cable route connecting them. The route must be physically plausible and terminate correctly. Use shallow perspective, matte off-white/petrol surfaces and restrained shadowing. No blueprint labels, no floating connectors, no extra cables, no glossy render effects. The orange path should be the dominant visual cue and remain readable at small size.
 
-- [ ] **P6 — Private scope image: moves, renovations and upgrades**
+- [x] **P6 — Private scope image: moves, renovations and upgrades**
   - **Suggested ratio:** `4:3`
   - **Use in page:** service-scope ribbon and/or small art panel
   - **Prompt:**
