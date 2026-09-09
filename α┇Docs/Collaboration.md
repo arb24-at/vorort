@@ -5,13 +5,13 @@ Last updated: 2026-09-09
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: the Drive source now carries project version `1.5.13` for the audience-opening Design Lab experiment, Design–Content handoff cleanup and Astro CSS language-tooling declaration. This Drive-connected session did not inspect or alter `.git`.
-- Local validation: not run for `1.5.13` because this session has no repository shell. The new Design Lab source and `src/env.d.ts` require normal local `npm run validate`, browser, diff and status checks before commit.
-- Local browser verification: not run for `1.5.13`. The Lab now contains two real-content opening studies before the recipe catalogue: Business tests dark hero → light planning section with architectural/system density; Private tests light hero → dark environmental section with softer spatial language.
+- Current working state: the Drive source now carries project version `1.5.14` for the revised post-hero Design Lab experiments. P01/P02 were rejected after visual review because their first sections repeated the hero composition; P03/P04 replace them with a business project-brief artefact and a private observation-to-investigation correspondence. This Drive-connected session did not inspect or alter `.git`.
+- Local validation: not run for `1.5.14` because this session has no repository shell. The revised Design Lab source/styles require normal local `npm run validate`, browser, diff and status checks before commit.
+- Local browser verification: not run for `1.5.14`. The Lab now tests Business dark hero → compact light project brief and Private light hero → compact dark observation correspondence, with materially smaller post-hero heading scale and no second large diagram.
 - Deployment state: no commit, push or deployment was performed in this Drive-only design session. Intended local preview route remains `/vorort/design-lab/`.
-- Product-direction state: Private and Business opening treatments are **experimental**, not approved production rules. The current hypothesis is that audience differentiation should come primarily from composition, density, geometry, visual subject and information hierarchy, with surface rhythm as a supporting cue rather than palette substitution. Production service YAML remains unchanged.
+- Product-direction state: Private and Business opening treatments remain **experimental**, not approved production rules. Visual review rejected the first post-hero diagrams as second-hero compositions. The new hypothesis is that Business should move from proposition to method/artefact, while Private should move from proposition to customer observation/understanding. Surface rhythm remains a supporting cue. Production service YAML remains unchanged.
 - Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional. The clean install also reports nine dependency audit findings for later dependency-maintenance review.
-- Recommended next action: review the two opening studies in `/vorort/design-lab/` at desktop and mobile widths, approve/reject the page-family direction, then translate the accepted principle into the shared production service renderer without changing researched content unnecessarily.
+- Recommended next action: review P03/P04 in `/vorort/design-lab/` at desktop and mobile widths. If either information structure is approved, ask Content only for the targeted micro-copy pairs recorded in `Design-Content-Handoff.md`; do not yet migrate production pages.
 
 ## Reporting template
 
@@ -29,6 +29,19 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 ```
 
 ## Work log
+
+## 2026-09-09 — ChatGPT — Useful post-hero experiments P03 / P04
+
+- Objective: replace the rejected second-hero first sections with useful information structures that visibly move the visitor from proposition into substance.
+- Changes:
+  - Replaced the two opening studies in `ω┇Engine/src/pages/design-lab.astro`: P03 keeps the dark business hero but follows it with a compact light project-brief artefact built from the existing Office Network planning callouts/points; P04 keeps the light private hero but follows it with a compact dark observation-to-investigation correspondence grounded in the Wi-Fi/Home Network planning scope.
+  - Reduced post-hero typographic scale and vertical padding in Lab-only `design-lab.css`. Removed the unused large business requirements diagram and private room-map first-section styling, replacing them with ruled brief/correspondence treatments that are denser and deliberately non-hero-like.
+  - Updated `Design-Content-Handoff.md` to record the P01/P02 rejection, P03/P04 hypotheses and narrow Content requests to use only if the new visual directions are approved.
+  - Bumped `AGENTS.md` from `1.5.13` to `1.5.14`.
+- Decisions: the first section after a hero should answer a new visitor question and should normally reduce visual scale rather than restate the service proposition. Business is currently testing proposition → method/brief; Private is testing proposition → observation/understanding. Surface colour is not treated as the audience identity.
+- Validation: current Drive copies of `AGENTS.md`, `Project.md`, `Roadmap.md`, `Collaboration.md`, both reference English service records, `design-lab.astro`, `design-lab.css` and `Design-Content-Handoff.md` were read before editing. Local text-level checks are performed before Drive write/readback. Repository-shell `npm run validate`, browser rendering, `git diff --check`, `git status --short`, Git commit and push are unavailable in this session and are not claimed.
+- Blockers or required input: visual review of P03/P04. No production content rewrite is requested yet.
+- Recommended next action: compare P03/P04 at desktop and mobile; if approved, let Content refine only the micro-copy pairs required by the chosen structures, then prepare production implementation.
 
 ## 2026-09-09 — ChatGPT — Private/business service-opening experiment
 

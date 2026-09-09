@@ -28,8 +28,8 @@ const recipes = [
  ];
 
 const openingStudies = [
-  { id: "p01-business-opening", title: "P01 / Business opening — dark to light", category: "Audience opening", purpose: "Test a business-service opening where a dark architectural hero resolves into a light planning section.", notes: "Live content from office-network/en.yml. Difference comes from density, grid logic and infrastructure mapping — not a separate brand colour." },
-  { id: "p02-private-opening", title: "P02 / Private opening — light to dark", category: "Audience opening", purpose: "Test a private-service opening where a light environmental hero resolves into a darker spatial explanation.", notes: "Live content from wifi-home-network/en.yml. Difference comes from recognisable rooms, objects, softer geometry and lower information density." }
+  { id: "p03-business-brief", title: "P03 / Business opening — project brief", category: "Audience opening", purpose: "Keep the dark business hero, then make the first light section useful as a compact planning brief rather than a second hero.", notes: "Live content from office-network/en.yml. The first section is deliberately smaller, denser and artefact-led: planning input → what needs clarifying." },
+  { id: "p04-private-observations", title: "P04 / Private opening — observation correspondence", category: "Audience opening", purpose: "Keep the light private hero, then make the first dark section useful by translating recognisable observations into what we inspect.", notes: "Live content from wifi-home-network/en.yml with Lab-only observation wording derived from the existing service scope. This is not production copy yet." }
 ];
 const studies = [...openingStudies, ...recipes];
 
@@ -50,6 +50,30 @@ const homeFirstPanel = homeNetwork.page.storyboard?.[1];
 if (!officeHeroPanel || !officeFirstPanel || !homeHeroPanel || !homeFirstPanel) {
   throw new Error("Design Lab opening studies require the first two storyboard panels for both reference services.");
 }
+
+const businessBriefRows = officeFirstPanel.callouts.map((label, index) => ({
+  label,
+  detail: officeFirstPanel.points[index] ?? officeFirstPanel.text
+}));
+
+const privateObservationRows = [
+  {
+    notice: "Wi-Fi is reliable in one part of the home but weak where you actually work.",
+    inspect: homeFirstPanel.points[0]
+  },
+  {
+    notice: "A room or fixed device would be more dependable on Ethernet.",
+    inspect: homeFirstPanel.points[1]
+  },
+  {
+    notice: "NAS, printers, TVs or other shared devices do not feel like one coherent network.",
+    inspect: homeFirstPanel.points[2]
+  },
+  {
+    notice: "The setup has grown over time and it is unclear what should stay, move or change.",
+    inspect: "Room layout, building materials, existing cable routes and device locations."
+  }
+];
 ---
 
 <MainLayout
@@ -194,20 +218,30 @@ if (!officeHeroPanel || !officeFirstPanel || !homeHeroPanel || !homeFirstPanel) 
             </div>
           </section>
 
-          <section class="opening-first opening-first--business">
-            <div class="container opening-business-first-grid">
-              <div class="opening-first-copy">
+          <section class="opening-first opening-first--business-brief">
+            <div class="container business-brief-layout">
+              <div class="opening-utility-copy">
                 <p class="opening-eyebrow opening-eyebrow--signal">{officeFirstPanel.eyebrow}</p>
-                <h2 class="opening-section-title">{officeFirstPanel.title}</h2>
+                <h2 class="opening-utility-title">Before hardware, define the working brief.</h2>
                 <p>{officeFirstPanel.text}</p>
+                <p class="opening-utility-note">The first useful output is not a shopping list. It is a shared picture of what the office needs the network to support.</p>
               </div>
-              <div class="business-requirements" aria-label="Planning requirements organised around one office">
-                <div class="business-requirements__core"><span>Start here</span><strong>How the office is actually used</strong></div>
-                {officeFirstPanel.callouts.map((callout, index) => (
-                  <article class={`requirement requirement--${index + 1}`}>
-                    <span>0{index + 1}</span><strong>{callout}</strong><p>{officeFirstPanel.points[index]}</p>
-                  </article>
-                ))}
+              <div class="business-brief" aria-label="Project brief showing planning inputs and what needs to be clarified">
+                <header class="business-brief__head">
+                  <div><span>Project brief</span><strong>Network infrastructure</strong></div>
+                  <small>before equipment selection</small>
+                </header>
+                <div class="business-brief__columns" aria-hidden="true"><span>Planning input</span><span>What we clarify</span></div>
+                <div class="business-brief__rows">
+                  {businessBriefRows.map((row, index) => (
+                    <div class="business-brief__row">
+                      <span class="business-brief__index">0{index + 1}</span>
+                      <strong>{row.label}</strong>
+                      <p>{row.detail}</p>
+                    </div>
+                  ))}
+                </div>
+                <footer class="business-brief__result"><span>Result</span><strong>One agreed brief that can guide cabling, Wi-Fi, hardware and shared services.</strong></footer>
               </div>
             </div>
           </section>
@@ -247,20 +281,25 @@ if (!officeHeroPanel || !officeFirstPanel || !homeHeroPanel || !homeFirstPanel) 
             </div>
           </section>
 
-          <section class="opening-first opening-first--private">
-            <div class="container opening-private-first-grid">
-              <div class="opening-first-copy">
+          <section class="opening-first opening-first--private-observations">
+            <div class="container private-observation-layout">
+              <div class="opening-utility-copy opening-utility-copy--dark">
                 <p class="opening-eyebrow opening-eyebrow--mint">{homeFirstPanel.eyebrow}</p>
-                <h2 class="opening-section-title">{homeFirstPanel.title}</h2>
+                <h2 class="opening-utility-title">Start with what you notice around the home.</h2>
                 <p>{homeFirstPanel.text}</p>
+                <p class="opening-utility-note">You do not need to decide whether the cause is Wi-Fi, cabling, placement or a connected device before getting in touch.</p>
               </div>
-              <div class="private-room-map" aria-label="Home layout showing wireless path, cable route, storage and home-office needs">
-                <div class="private-room-map__shell" aria-hidden="true">
-                  <div class="private-map-room r1">Home office</div><div class="private-map-room r2">Living</div><div class="private-map-room r3">Hall</div><div class="private-map-room r4">Storage</div>
-                  <div class="private-map-router">Wi-Fi</div><div class="private-map-nas">NAS</div>
-                  <svg viewBox="0 0 720 420"><path class="private-map-wireless" d="M370 205 C250 80 150 90 95 150 M370 205 C500 80 620 115 655 180"/><path class="private-map-cable" d="M370 205 L370 315 L560 315" /></svg>
-                </div>
-                <div class="private-map-labels">{homeFirstPanel.callouts.map((callout) => <span>{callout}</span>)}</div>
+              <div class="observation-correspondence" aria-label="Examples of home-network observations and what they make us inspect">
+                <div class="observation-correspondence__head" aria-hidden="true"><span>You notice</span><span>We look at</span></div>
+                {privateObservationRows.map((row, index) => (
+                  <div class="observation-correspondence__row">
+                    <span class="observation-correspondence__index">0{index + 1}</span>
+                    <p class="observation-correspondence__notice">{row.notice}</p>
+                    <span class="observation-correspondence__arrow" aria-hidden="true">→</span>
+                    <p class="observation-correspondence__inspect">{row.inspect}</p>
+                  </div>
+                ))}
+                <footer class="observation-correspondence__footer"><span>Still unclear?</span><strong>Describe the situation. The technical category can come later.</strong></footer>
               </div>
             </div>
           </section>

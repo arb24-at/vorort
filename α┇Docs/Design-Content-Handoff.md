@@ -28,45 +28,50 @@ Design may then choose a diagram, scene, comparison, sequence, paragraph, list, 
 
 If a composition genuinely needs different wording, Design records a **targeted request** here (for example: merge two paragraphs, supply three short labels, confirm whether an order is chronological). Content then updates the real source if the change is truthful and SEO-safe.
 
-## Current experiment — service-page openings
+## Current experiment — useful first section after the hero
 
-**Status:** design exploring; no production content rewrite requested.
+**Status:** design exploring; production content and production service pages remain unchanged.
 
-**English reference content**
+**English references**
 
 - Business: `ω┇Engine/src/content/services/office-network/en.yml`
 - Private: `ω┇Engine/src/content/services/wifi-home-network/en.yml`
 
-**Question being tested**
+### Review result from P01 / P02
 
-Can the first two movements establish a recognisable page-family language without creating two unrelated brands?
+The first opening experiment was rejected. Both first sections repeated the hero grammar: oversized heading + explanatory paragraph + large diagram. A surface change alone did not create a new narrative movement.
 
-### Business hypothesis
+The first section after a hero should therefore become **smaller in typographic scale, denser in useful information and different in information form**. It should answer a new visitor question rather than restate the service proposition.
 
-- **Dark hero → light first section.** Avoid a dark hero followed by another dark section, which visually merges into one oversized opening.
-- Hero language: architectural, rectilinear, system-led and somewhat denser; show rooms/workspaces/infrastructure as an organised whole.
-- First section language: move onto a light planning surface; use requirements, dependencies and spatial organisation rather than another bullet list.
-- Colour may vary by shade, but palette is **not** the primary differentiator.
+### P03 — Business project brief
 
-### Private hypothesis
+- Keep the current dark, architectural hero as the business opening hypothesis.
+- Move to a light first section, but make the centrepiece a **project brief / planning artefact**, not another diagram.
+- Use the existing Planning content as four ruled rows: planning input → what needs to be clarified before equipment selection.
+- Business page-family cue under test: operational, structured, artefact-led, denser and visibly methodical.
 
-- **Light hero → dark first section.** The light entrance stays approachable; the first dark section marks the move from familiar situation into deeper technical explanation.
-- Hero language: recognisable home/home-office space, everyday objects, softer geometry and lower information density.
-- First section language: spatial/environmental explanation of rooms, walls, wireless path, cable route and storage rather than a generic technical panel.
-- Keep the same VorOrt typography, tokens and core interaction language as Business.
+### P04 — Private observation correspondence
+
+- Keep the current light, environmental hero as the private opening hypothesis.
+- Move to a dark first section, but make the centrepiece an **observation → investigation correspondence**, not another room map.
+- Start from recognisable household observations and pair them with what VorOrt would inspect.
+- Private page-family cue under test: situational, plain-language, reassuring, lower-density and rooted in what the customer notices rather than technical categories.
 
 ### Shared rules under test
 
-- The surface transition must signal a **narrative change**, not merely decoration.
-- Private and Business differ primarily through composition, density, geometry, visual subject and information hierarchy — not by swapping brand colours.
-- The hero and first section may use the same researched copy with different visual treatment; do not rewrite content simply to fit the experiment.
-- German equivalents should inherit the approved page-family principle later, while retaining independently authored German copy.
-- No production YAML layout controls or recipe IDs should be added.
+- Surface contrast supports the narrative change; it is not the audience identity by itself.
+- The first post-hero H2 should not compete with the H1 in scale.
+- Avoid a second hero composition immediately after the hero.
+- Lists, tables, diagrams, prose and media are all valid when they fit the information relationship; no form is the default.
+- No recipe IDs or arbitrary visual controls go into production YAML.
 
 ## Targeted Content requests
 
-None currently. The existing English reference copy is sufficient for this design experiment.
+**Do not rewrite production content yet.** If P03/P04 are approved visually, Content should then refine only:
+
+- Business: 4–5 short **planning input → what it changes / what we clarify** pairs, grounded in the existing network-planning content.
+- Private: 4 short **what the customer notices → what we inspect** pairs, avoiding false diagnosis and preserving the current Wi-Fi/Ethernet/NAS scope.
 
 ## Decisions ready for implementation
 
-None yet. Aykhan should first review the two Design Lab opening studies. Once a direction is approved, record only the final principle and any specific Content change required here; implementation details belong in `Collaboration.md` / code.
+None yet. Aykhan should review P03/P04 first.
