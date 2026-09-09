@@ -11,22 +11,40 @@ These prompts assume **Option A** is the chosen direction: **premium tactile edi
 
 ## Shared art direction
 
-Use this shared direction for **every image in the set** unless a prompt overrides it.
+Use this shared direction for **every image in the set** unless a prompt overrides it. The approved private hero test establishes the visual world: deep blue evening tones, warm off-white interiors, restrained orange cable/routes, mint connectivity cues, and a calm premium Berlin-home atmosphere. Supporting illustrations should belong to that same world without trying to imitate the hero's photographic depth.
 
 **Core style**
 
 - premium tactile editorial web illustration
-- semi-flat with restrained dimensional depth
-- crisp geometry, elegant proportions, and subtle architectural structure
+- flatter than the hero: **2D / shallow 2.5D**, not full 3D rendering
+- simplified architectural forms with deliberate, believable geometry
+- matte surfaces, restrained highlights, minimal reflections
+- crisp silhouettes and controlled line weight
+- soft ambient shadows only where they help separate forms
+- subtle evening-light cues borrowed from the hero, but no cinematic glow overload
 - calm, sophisticated, design-forward rather than playful
-- soft realistic lighting cues, but **not** photoreal
-- soft ambient shadows, light texture, and gentle layered depth
-- clean negative space and controlled focal areas
+- limited number of objects per image; every object should have a reason to be there
+- clean negative space and one clear focal idea
+- a very light editorial/print grain or surface texture is welcome so the result feels authored rather than perfectly synthetic
 - no stock-photo look
 - no generic SaaS vector-icon look
+- no glossy isometric-dashboard look
 - no 3D plastic toy look
 - no cartoon characters
 - no embedded interface text, labels or typography inside the final illustration
+
+**Reduce the obvious AI-generated look**
+
+- prefer **plausible real-world construction** over decorative invention
+- keep furniture, outlets, routers, cables and devices at believable scale
+- do not duplicate or mutate objects, plants, shelves, sockets, cables or furniture
+- avoid impossible room geometry, floating objects, mysterious extra doors/windows and cables that begin or end nowhere
+- avoid excessive symmetry and over-centred compositions; use deliberate editorial asymmetry
+- avoid random decorative clutter added only to make the scene look 'rich'
+- keep connectivity graphics precise and sparse: one or two mint signal arcs/lines are enough
+- use one consistent light direction and one consistent perspective system per image
+- prefer flat colour blocks plus restrained texture over hyper-detailed generated surfaces
+- the result should feel like an illustrator simplified a real environment after observing it, not like an image model invented an elaborate room
 
 **Palette logic**
 
@@ -57,6 +75,23 @@ Use this shared direction for **every image in the set** unless a prompt overrid
 - no fake UI text inside the art
 
 ---
+
+
+## Scope-ribbon style — P2–P6 and B2–B6
+
+These five images on each page are **small visual identifiers**, not miniature hero scenes. They should be noticeably flatter and simpler than P1/B1 while keeping the same palette and material mood.
+
+- target look: high-end architectural/editorial vignette, shallow 2.5D or near-flat perspective
+- **one focal object or one tiny spatial relationship** per image
+- 2–4 major forms maximum; remove background decoration that will disappear at small sizes
+- use a quiet off-white / mist / deep-petrol field rather than a fully furnished room
+- preserve the hero family's deep navy/petrol, warm neutral, orange-route and mint-connectivity language
+- no strong photographic depth of field, lens effects, bloom or cinematic haze
+- no generic line-icon treatment; the images should still have material presence
+- no tiny labels, diagrams or UI
+- composition must remain legible when displayed at roughly icon-card size on desktop and mobile
+- if people appear at all, use only simplified partial human presence; objects and environment are preferable
+- make each image distinct by **subject and silhouette**, not by changing palette
 
 ## How the artwork will be used
 
@@ -100,9 +135,10 @@ Use this logic while generating:
 
 ### Private page — `wifi-home-network-ii`
 
-- [ ] **P1 — Private hero: whole-home network overview**
+- [x] **P1 — Private hero: whole-home network overview**
   - **Suggested ratio:** `16:9` or `5:3`
   - **Use in page:** hero banner artwork
+  - **Status:** current hero test accepted as the working visual reference for the Concept II private page; no regeneration required before the next-section test.
   - **Prompt:**
     > Create a premium tactile editorial illustration of a Berlin apartment or home-office environment as one connected home network. Show a calm, design-led overview that brings together a home-office desk, a living area, shared storage or NAS, and a subtle Wi-Fi hub or router position. Suggest how the home network supports everyday work and living rather than focusing on technical hardware alone. Include one restrained orange cable route and subtle mint connectivity accents. Use elegant architectural forms, layered depth, deep petrol and navy shadows, off-white surfaces and soft lighting. The image should feel practical, trustworthy and modern, with generous negative space and no embedded text.
 
@@ -110,31 +146,31 @@ Use this logic while generating:
   - **Suggested ratio:** `4:3`
   - **Use in page:** service-scope ribbon and/or small art panel
   - **Prompt:**
-    > Create a premium tactile editorial illustration showing Wi-Fi coverage in a real home rather than an abstract network diagram. Show two or three recognisable home zones, such as a living room and home office, with a subtle sense of wireless reach and continuity. The emphasis should be on coverage where people actually use the connection. Use refined geometry, calm spatial composition, deep navy and petrol tones, off-white surfaces, mint signal accents and a restrained orange cue if needed. Keep the scene simple, elegant and easily readable at small sizes.
+    > Create a **flat architectural editorial vignette** showing Wi-Fi coverage in a real home. Use two simplified room masses only — for example a home-office zone and a living zone — with one small router/access-point form and one or two thin mint signal arcs connecting the spaces. Keep the room geometry plausible and deliberately simplified. Use the same deep petrol/navy, warm off-white and muted material palette as the private hero, with no photographic depth of field and no glowing sci-fi effects. Use 3–4 major forms maximum, subtle matte texture, a consistent oblique/front perspective and generous negative space. It must still read clearly when shown very small.
 
 - [ ] **P3 — Private scope image: home-office connectivity**
   - **Suggested ratio:** `4:3`
   - **Use in page:** service-scope ribbon and/or small art panel
   - **Prompt:**
-    > Create a premium tactile editorial illustration of a home-office connectivity scene. Show a desk setup with laptop or monitor, a calm working atmosphere, and subtle signs of reliable connectivity as part of the room. The focus is not the device itself, but dependable work from home. Avoid UI screens with text. Use soft depth, crisp geometry, deep navy and slate tones, off-white materials and restrained mint connectivity accents.
+    > Create a **flat editorial home-office vignette** with one desk, one laptop/monitor and one subtle network connection cue. The idea is dependable everyday work, not a showcase of computer hardware. Use shallow 2.5D geometry, matte deep-petrol and warm-neutral surfaces, restrained mint connectivity and a tiny orange routing accent only if useful. Keep the silhouette strong and the object count low. No screen text, no decorative gadgets, no plants or accessories unless they improve the composition. One consistent perspective, one consistent light direction, no glossy 3D render look.
 
 - [ ] **P4 — Private scope image: NAS and shared storage**
   - **Suggested ratio:** `4:3`
   - **Use in page:** service-scope ribbon and/or small art panel
   - **Prompt:**
-    > Create a premium tactile editorial illustration about shared storage in a home environment. Show a small NAS or storage device integrated into the home network, with subtle relationships to a desk setup, household devices or media use. The scene should communicate organised access to files and a more coherent setup, not generic cloud software. Use calm architectural composition, limited mint highlights and restrained orange path cues.
+    > Create a **flat tactile editorial vignette** centred on one compact NAS/shared-storage unit, with only two supporting device silhouettes indicating that the storage is shared. Use simple believable geometry, matte materials and a shallow perspective. Preserve the private hero palette: deep petrol/navy, warm off-white, one restrained mint connection cue and optionally one thin orange route. No cloud icons, no floating files, no dashboard UI, no server-room styling, and no extra decorative objects.
 
 - [ ] **P5 — Private scope image: Ethernet and cable routes**
   - **Suggested ratio:** `4:3`
   - **Use in page:** service-scope ribbon and/or small art panel
   - **Prompt:**
-    > Create a premium tactile editorial illustration focused on Ethernet cabling and physical network routes in a home. Show a refined scene with a wall outlet, cable route, router or access-point placement and how these physical decisions affect the overall setup. The illustration should feel tangible, spatial and understandable, not like a technical blueprint. Use muted off-white walls and surfaces, deep navy shadows, and a clean orange route accent.
+    > Create a **flat architectural detail vignette** of home Ethernet and cable routing. Show one simplified wall/surface, one network outlet, one router or access point, and a single clean orange cable route connecting them. The route must be physically plausible and terminate correctly. Use shallow perspective, matte off-white/petrol surfaces and restrained shadowing. No blueprint labels, no floating connectors, no extra cables, no glossy render effects. The orange path should be the dominant visual cue and remain readable at small size.
 
 - [ ] **P6 — Private scope image: moves, renovations and upgrades**
   - **Suggested ratio:** `4:3`
   - **Use in page:** service-scope ribbon and/or small art panel
   - **Prompt:**
-    > Create a premium tactile editorial illustration of a home in transition: moving, renovating or upgrading. Show a partially arranged room or home-office corner with subtle cues such as a box, moved furniture, or a newly planned setup. The image should suggest that this is the right moment to improve the network properly. Keep the tone reassuring and design-led rather than chaotic.
+    > Create a **flat editorial vignette** of a home in transition for a move, renovation or network upgrade. Use a simple room corner with one desk/furniture mass, one moving box or renovation cue, and one clearly planned outlet/cable/network position. Keep the scene orderly rather than chaotic. Use shallow 2.5D geometry, matte surfaces, the same deep-petrol/warm-neutral palette as the hero, and one restrained orange planning route. Avoid random construction clutter, tools, decorative props or impossible architecture.
 
 - [ ] **P7 — Private feature panel: plan the network around rooms and routines**
   - **Suggested ratio:** `4:3`
