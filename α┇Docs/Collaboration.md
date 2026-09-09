@@ -5,13 +5,13 @@ Last updated: 2026-09-09
 ## Current handoff
 
 - Active branch: `main`.
-- Current working state: the Drive source now carries project version `1.5.15`. The earlier P01–P04 opening experiments and the DeepSeek static prototype were not accepted as production directions. `VorOrt Berlin — Design Direction - Tangible Order.md` has been reduced to a concise external design reference containing only the useful principles. This Drive-connected session did not inspect or alter `.git`.
-- Local validation: not run for `1.5.15` because this documentation-only Drive session has no repository shell. No Astro source changed in this slice. Any still-uncommitted `1.5.14` Design Lab source changes require their normal local validation before commit.
-- Local browser verification: not applicable to the `1.5.15` documentation cleanup. Previous P01–P04 opening experiments and the DeepSeek static prototype were reviewed visually and were not accepted as production directions.
-- Deployment state: no commit, push or deployment was performed in this Drive-only design session. Intended local preview route remains `/vorort/design-lab/`.
-- Product-direction state: no Private/Business opening treatment is approved yet. Useful retained principles are the three-second Hero + first-section comprehension test, stronger visual service-scope communication, and audience differentiation through spatial scale/composition rather than colour alone. Tangible Order is inspiration only, not a production specification. Production service YAML remains unchanged.
+- Current working state: the Drive source now carries project version `1.5.16`. Two real noindex English Concept II service routes have been added in the Astro project: `/en/services/private/wifi-home-network-ii/` and `/en/services/business/office-network-ii/`. They share a new page-family component/style layer and leave the researched production pages/YAML unchanged. This Drive-connected session did not inspect or alter `.git`.
+- Local validation: not run for `1.5.16` because this Drive-connected session has no repository shell. The new Astro component, stylesheet and two routes require normal local `npm run validate`, browser review, diff and status checks before commit.
+- Local browser verification: not run for `1.5.16`. The intended preview routes are `/vorort/en/services/private/wifi-home-network-ii/` and `/vorort/en/services/business/office-network-ii/`.
+- Deployment state: no commit, push or deployment was performed in this Drive-only design session. Intended local preview routes are `/vorort/en/services/private/wifi-home-network-ii/` and `/vorort/en/services/business/office-network-ii/`.
+- Product-direction state: Concept II now tests full-width dark banner heroes, a horizontal visual service-scope ribbon immediately after the hero, tactile illustrated art panels, and meaningful Private/Business differentiation through geometry, scale and information density. Private uses a lighter dark tone and Business a deeper dark tone, but colour is secondary to composition. Production service YAML remains unchanged.
 - Known blockers: final public brand, supplied telephone and WhatsApp values, email, postal/legal identity, exact qualification evidence, travel policy, real form backend, analytics, final imagery, and production domain remain unresolved or provisional. The clean install also reports nine dependency audit findings for later dependency-maintenance review.
-- Recommended next action: prototype a small set of strong opening directions in the Design Lab (Homepage, one Private service and one Business service), focusing only on the Hero + first highly visual scope section before broader page redesign.
+- Recommended next action: run the two Concept II routes locally, review desktop/mobile screenshots, then replace the designed CSS art placeholders with a small consistent set of generated tactile illustrations before deciding whether any production migration is justified.
 
 ## Reporting template
 
@@ -29,6 +29,21 @@ Add a new dated entry after material work. Do not rewrite older entries except t
 ```
 
 ## Work log
+
+## 2026-09-09 — ChatGPT — Build real Concept II service pages
+
+- Objective: create two additional real Astro pages for full-page Private/Business design exploration without changing the current researched production routes.
+- Changes:
+  - Added `src/pages/en/services/private/wifi-home-network-ii.astro` and `src/pages/en/services/business/office-network-ii.astro` as `noindex, nofollow` concept routes.
+  - Added shared `src/components/ServiceConceptII.astro` and isolated `src/styles/service-concept-ii.css`.
+  - Rebuilt the full page narrative: full-width dark banner hero with title/CTA/integrated art area; immediate horizontal visual scope ribbon; asymmetrical full-art panel gallery; situation/project trigger section; four-stage process; outcome/proof/boundary composition; concise FAQ; existing contact component.
+  - Private uses a lighter petrol/navy dark, softer geometry, room/device-scale language and situation-led copy. Business uses a deeper dark, stricter geometry, workplace/infrastructure-scale language and more structured system framing.
+  - Added designed CSS artwork placeholders so the composition can be reviewed before final tactile illustrated assets are generated. Production YAML and existing production service pages were not changed.
+  - Updated `Design-Content-Handoff.md`, current generated-page inventory in `Project.md`, and bumped `AGENTS.md` from `1.5.15` to `1.5.16`.
+- Decisions: Concept II is the active design experiment. The hero is no longer a left-text/right-image split; reverse colouring is abandoned; the first post-hero section may use a horizontal icon/art list when it is sufficiently visual and low-reading-burden. Final art direction is tactile illustrated panels, not stock photography or generic SaaS iconography.
+- Validation: mandatory context files were read in order before editing. Existing `MainLayout.astro`, `ContactSection.astro`, page routing structure and shared tokens were inspected. New files received local text-level checks and are read back from Drive after upload. Repository-shell `npm run validate`, browser rendering, `git diff --check`, `git status --short`, commit and push are unavailable in this session and are not claimed.
+- Blockers or required input: local Astro/browser validation and final custom illustration assets.
+- Recommended next action: preview both Concept II routes at desktop and mobile widths, then generate the hero + five core art panels for each audience in the agreed tactile illustration style.
 
 ## 2026-09-09 — ChatGPT — Condense Tangible Order design reference
 

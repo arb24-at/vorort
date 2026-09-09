@@ -81,7 +81,7 @@ The contact form currently prepares an email through the visitor's configured ma
 
 ## Current implemented website map
 
-The current sitemap contains 23 indexable URLs. The separate 404 page, noindex transitional redirect, and internal noindex Design Lab bring the generated HTML total to 26. This describes the implemented state, not a permanently frozen launch architecture.
+The current sitemap contains 23 indexable URLs. The separate 404 page, noindex transitional redirect, internal noindex Design Lab, and two noindex English Concept II service prototypes bring the generated HTML total to 28. This describes the implemented state, not a permanently frozen launch architecture. The experimental routes are `/en/services/private/wifi-home-network-ii/` and `/en/services/business/office-network-ii/`; they are deliberately excluded from the sitemap and do not replace the researched production service pages.
 
 | Purpose | German route | English route | Current direction |
 | --- | --- | --- | --- |

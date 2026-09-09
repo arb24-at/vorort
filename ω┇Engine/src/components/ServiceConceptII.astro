@@ -1,0 +1,301 @@
+---
+import ContactSection from "./ContactSection.astro";
+import "../styles/service-concept-ii.css";
+
+type ArtKind =
+  | "private-hero"
+  | "wifi"
+  | "home-office"
+  | "storage-home"
+  | "cabling-home"
+  | "upgrade-home"
+  | "business-hero"
+  | "office-wifi"
+  | "office-cabling"
+  | "network-core"
+  | "storage-business"
+  | "secure-access";
+
+type ScopeItem = {
+  title: string;
+  artKind: ArtKind;
+};
+
+type GalleryItem = {
+  eyebrow: string;
+  title: string;
+  body: string;
+  artKind: ArtKind;
+};
+
+type Situation = {
+  title: string;
+  body: string;
+};
+
+type Step = {
+  title: string;
+  body: string;
+};
+
+type Faq = {
+  question: string;
+  answer: string;
+};
+
+type Props = {
+  mode: "private" | "business";
+  eyebrow: string;
+  title: string;
+  intro: string;
+  heroArtLabel: string;
+  scopeHeading: string;
+  scopeIntro: string;
+  scopeItems: readonly ScopeItem[];
+  galleryEyebrow: string;
+  galleryHeading: string;
+  galleryIntro: string;
+  galleryItems: readonly GalleryItem[];
+  situationsEyebrow: string;
+  situationsHeading: string;
+  situationsIntro: string;
+  situations: readonly Situation[];
+  processEyebrow: string;
+  processHeading: string;
+  processIntro: string;
+  steps: readonly Step[];
+  outcomeEyebrow: string;
+  outcomeHeading: string;
+  outcomeBody: string;
+  included: readonly string[];
+  boundaries: readonly string[];
+  faqHeading: string;
+  faqs: readonly Faq[];
+  contactContext: "private" | "business";
+};
+
+const {
+  mode,
+  eyebrow,
+  title,
+  intro,
+  heroArtLabel,
+  scopeHeading,
+  scopeIntro,
+  scopeItems,
+  galleryEyebrow,
+  galleryHeading,
+  galleryIntro,
+  galleryItems,
+  situationsEyebrow,
+  situationsHeading,
+  situationsIntro,
+  situations,
+  processEyebrow,
+  processHeading,
+  processIntro,
+  steps,
+  outcomeEyebrow,
+  outcomeHeading,
+  outcomeBody,
+  included,
+  boundaries,
+  faqHeading,
+  faqs,
+  contactContext
+} = Astro.props as Props;
+
+const heroKind: ArtKind = mode === "private" ? "private-hero" : "business-hero";
+---
+
+<div class:list={["concept-ii", `concept-ii--${mode}`]}>
+  <section class="c2-hero">
+    <div class="container">
+      <div class="c2-hero__banner">
+        <div class="c2-hero__copy">
+          <span class="c2-eyebrow">{eyebrow}</span>
+          <h1>{title}</h1>
+          <p>{intro}</p>
+          <div class="c2-hero__actions">
+            <a class="c2-button c2-button--signal" href="#contact">Request support</a>
+            <a class="c2-button c2-button--ghost" href="#service-scope">See what is included</a>
+          </div>
+        </div>
+
+        <div class:list={["c2-art", "c2-art--hero", `c2-art--${heroKind}`]} aria-label={heroArtLabel} role="img">
+          <div class="c2-art__field" aria-hidden="true">
+            <span class="c2-art__shape c2-art__shape--a"></span>
+            <span class="c2-art__shape c2-art__shape--b"></span>
+            <span class="c2-art__shape c2-art__shape--c"></span>
+            <span class="c2-art__route"></span>
+            <span class="c2-art__pulse"></span>
+          </div>
+          <span class="c2-art__caption">Artwork placeholder · {heroArtLabel}</span>
+        </div>
+
+        <div class="c2-hero__facts" aria-label="Service highlights">
+          {scopeItems.slice(0, 4).map((item) => <span>{item.title}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="c2-scope" id="service-scope">
+    <div class="container">
+      <div class="c2-section-head c2-section-head--compact">
+        <div>
+          <span class="c2-eyebrow c2-eyebrow--dark">At a glance</span>
+          <h2>{scopeHeading}</h2>
+        </div>
+        <p>{scopeIntro}</p>
+      </div>
+
+      <div class="c2-scope-ribbon" aria-label="Service scope">
+        {scopeItems.map((item) => (
+          <article class="c2-scope-item">
+            <div class:list={["c2-scope-icon", `c2-scope-icon--${item.artKind}`]} aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <h3>{item.title}</h3>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="c2-gallery-section">
+    <div class="container">
+      <div class="c2-section-head">
+        <div>
+          <span class="c2-eyebrow c2-eyebrow--dark">{galleryEyebrow}</span>
+          <h2>{galleryHeading}</h2>
+        </div>
+        <p>{galleryIntro}</p>
+      </div>
+
+      <div class="c2-gallery">
+        {galleryItems.map((item, index) => (
+          <article class:list={["c2-gallery-card", { "c2-gallery-card--feature": index === 0 }]}>
+            <div class:list={["c2-art", "c2-art--panel", `c2-art--${item.artKind}`]} role="img" aria-label={`${item.title} artwork placeholder`}>
+              <div class="c2-art__field" aria-hidden="true">
+                <span class="c2-art__shape c2-art__shape--a"></span>
+                <span class="c2-art__shape c2-art__shape--b"></span>
+                <span class="c2-art__shape c2-art__shape--c"></span>
+                <span class="c2-art__route"></span>
+                <span class="c2-art__pulse"></span>
+              </div>
+              <span class="c2-art__caption">Artwork placeholder</span>
+            </div>
+            <div class="c2-gallery-card__copy">
+              <span class="c2-kicker">{item.eyebrow}</span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="c2-situations">
+    <div class="container c2-situations__grid">
+      <div class="c2-situations__intro">
+        <span class="c2-eyebrow c2-eyebrow--dark">{situationsEyebrow}</span>
+        <h2>{situationsHeading}</h2>
+        <p>{situationsIntro}</p>
+      </div>
+      <div class="c2-situation-lines">
+        {situations.map((item, index) => (
+          <article>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="c2-process-section">
+    <div class="container">
+      <div class="c2-process-shell">
+        <div class="c2-section-head c2-section-head--dark">
+          <div>
+            <span class="c2-eyebrow">{processEyebrow}</span>
+            <h2>{processHeading}</h2>
+          </div>
+          <p>{processIntro}</p>
+        </div>
+        <div class="c2-process">
+          {steps.map((step, index) => (
+            <article class="c2-process-step">
+              <span class="c2-process-step__number">{String(index + 1).padStart(2, "0")}</span>
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="c2-outcome-section">
+    <div class="container c2-outcome-grid">
+      <article class="c2-outcome-statement">
+        <span class="c2-eyebrow c2-eyebrow--dark">{outcomeEyebrow}</span>
+        <h2>{outcomeHeading}</h2>
+        <p>{outcomeBody}</p>
+        <div class:list={["c2-art", "c2-art--outcome", `c2-art--${galleryItems[0]?.artKind ?? heroKind}`]} role="img" aria-label="Outcome artwork placeholder">
+          <div class="c2-art__field" aria-hidden="true">
+            <span class="c2-art__shape c2-art__shape--a"></span>
+            <span class="c2-art__shape c2-art__shape--b"></span>
+            <span class="c2-art__shape c2-art__shape--c"></span>
+            <span class="c2-art__route"></span>
+            <span class="c2-art__pulse"></span>
+          </div>
+          <span class="c2-art__caption">Final outcome artwork placeholder</span>
+        </div>
+      </article>
+
+      <div class="c2-scope-notes">
+        <section>
+          <h3>Often included</h3>
+          <ul>
+            {included.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+        <section>
+          <h3>Important boundaries</h3>
+          <ul>
+            {boundaries.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+        <div class="c2-proof">
+          <strong>2008</strong>
+          <span>IT experience since 2008 · on-site service in Berlin · English-speaking technical support available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="c2-faq-section">
+    <div class="container c2-faq-grid">
+      <div>
+        <span class="c2-eyebrow c2-eyebrow--dark">Useful answers</span>
+        <h2>{faqHeading}</h2>
+      </div>
+      <div class="c2-faq-list">
+        {faqs.map((faq) => (
+          <details>
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ContactSection locale="en" context={contactContext} />
+</div>
