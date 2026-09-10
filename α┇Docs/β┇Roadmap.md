@@ -22,11 +22,11 @@ Acceptance: role/context routing is documented; renamed documentation links reso
 
 ## Next cycle — the two current Workshop pages
 
-Work in manageable tasks after the usage reset. The first cycle covers the private home-network page and business office-network page only.
+Work in manageable tasks. The first cycle covers the private home-network page and business office-network page only.
 
 1. **Retire legacy application names.** Rename old fixture IDs, internal routes, component/style identifiers and asset references coherently around Page Workshop. Update tests and documentation references; retain the deployment base and verify every image, internal link and preview. This documentation cleanup changes explanatory naming only.
 2. **Refine both complete pages.** Review section composition, private/business differences, design-stage wording, hero text/art separation and responsive crops. Aykhan continues producing/reviewing images through `ω┇Media-Queue.md`; integrate accepted media through validated fixture content when ready. Preserve researched production content.
-3. **Approve sections explicitly.** Review each candidate in its relevant page contexts, including copy/media contract, audience/page-type support, accessibility and any placeholders. Record Aykhan's decision, then promote only accepted registry entries to Approved Sections and update validation accordingly.
+3. **Approve sections explicitly.** Review each candidate in its relevant page contexts, including copy/media contract, audience/page-type support, accessibility and any placeholders. Record Aykhan's decision, then promote only accepted registry entries to Approved Sections and run the existing validation. Change validation logic only when the underlying contract changes, not for routine approval.
 4. **Record each ready page's composition.** Once its constituent sections are approved, record the ordered section IDs, recipe IDs and content in the existing Workshop fixture; use the registry for approval state. Avoid a duplicate composition checklist in documentation. Both current pages must have reviewed compositions containing only approved recipes before this cycle is complete.
 5. **Begin another improvement cycle.** Review remaining weaknesses and choose the next bounded changes with Aykhan. Production adoption and expansion to other pages remain separate decisions; neither follows automatically from approval.
 

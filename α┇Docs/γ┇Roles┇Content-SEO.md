@@ -20,9 +20,9 @@ This role may combine with Design, Implementation, or QA whenever doing so compl
 
 ## Page composition with Approved Sections
 
-Content & SEO is allowed to build the semantic composition of a page using the available **approved and compatible** section recipes.
+Content & SEO is allowed to build the semantic composition of a **Workshop page** using the available **approved and compatible** section recipes. Current production pages remain outside this recipe-composition flow until production adoption is explicitly authorized and implemented.
 
-For each page:
+For each Workshop page:
 
 1. Establish the page's intent, audience/context, customer questions, proof/boundaries, and conversion path.
 2. Review Approved Sections and their recipe IDs.

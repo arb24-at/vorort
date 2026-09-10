@@ -119,6 +119,12 @@ export function validateRecipeRegistry() {
     if (recipe.supersedes && !Object.hasOwn(sectionRecipes, recipe.supersedes)) {
       throw new Error(`Section recipe ${id} supersedes unknown recipe: ${recipe.supersedes}`);
     }
+    if (recipe.supersedes) {
+      const predecessor = sectionRecipes[recipe.supersedes as RecipeId];
+      if (predecessor.kind !== recipe.kind) {
+        throw new Error(`Section recipe ${id} may only supersede a recipe of the same kind: ${recipe.supersedes}`);
+      }
+    }
 
     const seen = new Set<string>([id]);
     let predecessor = recipe.supersedes;

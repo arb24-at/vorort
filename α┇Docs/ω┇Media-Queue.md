@@ -20,20 +20,7 @@ The private hero is the accepted working art reference: premium tactile editoria
 - Keep important subjects readable through responsive crops. Reserve calm areas near copy; place busy visual detail away from text and frame edges. Hero art needs a broad quiet content zone; larger panels should support copy beside/below them or a restrained caption without heavy overlays.
 - When available, reuse a stable image reference/style or seed across the set. The individual prompts below inherit these shared rules.
 
-## Current asset status and use
-
-The current queue covers **18 planned images**: one hero, five scope panels and three gallery panels per page. P1 is the accepted working private hero reference. P2–P6 already exist and are wired into the fixture but remain unchecked here until Aykhan explicitly accepts them for the current design. P7–P9 and B1–B9 still need production. The first gallery image may also serve its page's outcome block without requiring another master.
-
-| Images | Status | Use |
-| --- | --- | --- |
-| P1 | Accepted for current use | Private hero |
-| P2–P6 | Existing candidates; review/accept | Private scope panels |
-| P7–P9 | Produce/review | Private gallery, optional outcome reuse |
-| B1–B9 | Produce/review | Business hero, scope and gallery |
-
-A checked queue item means the media itself is accepted for current use, not that its section is approved. Earlier browser checks confirmed P1–P6 loading at desktop/tablet/mobile widths; P2–P6 still require Aykhan's explicit media acceptance in the current design cycle. Recheck responsive crop/readability after replacing any image.
-
-### Existing private file slots
+## Existing private file slots
 
 Keep these exact paths until the planned application rename:
 
@@ -49,7 +36,7 @@ P6.png  — Moves, renovation & upgrades
 
 Replacing these files updates the existing fixture without changing its content. The application resolves their URLs with the configured deployment base. Generated fallback art may remain visible when a scope image fails in the browser, but referenced missing files fail build-output validation; retain valid files. New P7–P9 and business images will need deliberate fixture media references when integrated, rather than automatically loading by filename.
 
-### Source ratios versus rendered crops
+## Source ratios versus rendered crops
 
 Suggested ratios below describe generation masters, not fixed layout settings. Private scope art fills large portrait-oriented panels with centered title caps and `object-fit: cover`; the business scope treatment remains 4:3. Existing landscape private masters can remain if portrait crops retain their subjects. Keep the key subject clear in the central area and review the actual page at desktop/tablet/mobile widths. Scope images should read simply at reduced sizes without being designed as tiny icons.
 

@@ -39,7 +39,7 @@ Do not rerun expensive browser or production-wide checks when the task cannot af
 For Page Workshop / Approved Sections changes, verify as applicable:
 
 - recipe IDs/lifecycle states are valid;
-- new replacement/supersedes relationships point to real recipes and do not create contradictory/cyclic relationships;
+- new replacement/supersedes relationships point to real recipes of the same section kind and do not create contradictory/cyclic relationships;
 - approved lists derive from the canonical registry;
 - active usage is derived from actual consumers rather than copied metadata;
 - fixture section-instance IDs remain unique and recipe references valid;

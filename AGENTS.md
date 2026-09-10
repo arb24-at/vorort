@@ -1,5 +1,5 @@
 ---
-version: 2.1.0
+version: 2.1.1
 ---
 
 # VorOrt agent instructions
@@ -46,6 +46,8 @@ Use precise evidence language:
 - **Deployed verified** means the deployed site was actually checked after deployment.
 
 Never claim shell validation, browser testing, Git status/diff/commit/push, deployment, or any environment-specific check unless it was actually performed. A Drive-connected Chat may complete source changes and readback verification without shell access; record remaining repository checks under Pending repository verification rather than treating the task as blocked.
+
+When editing through Google Drive or another connected source, read the latest complete target immediately before editing, preserve unrelated work and repository structure, make only requested or evidence-backed changes, then read the written result back before claiming success.
 
 ## Repository boundaries
 

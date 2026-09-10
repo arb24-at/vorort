@@ -26,7 +26,8 @@ Canonical sources:
 - Experimental page fixtures: `ω┇Engine/src/content/workshop/`
 - Workshop loading/usage: `ω┇Engine/src/data/workshop*.ts`
 - Reusable renderers: `ω┇Engine/src/components/design-lab/`
-- Design Lab styles: `ω┇Engine/src/styles/design-lab/`
+- Design Lab shell styles: `ω┇Engine/src/styles/design-lab.css`
+- Recipe/section styles: `ω┇Engine/src/styles/design-lab/`
 - Approved Sections view: `ω┇Engine/src/pages/design-lab/approved.astro`
 
 The governing relationship is **semantic content → section recipe → reusable Astro implementation**. A page fixture contains ordered section instances; the recipe ID identifies the reusable design/content contract used by those instances.
@@ -68,7 +69,7 @@ Classify the change first.
 
 **Non-breaking refinement:** the semantic purpose, content contract, audience/page compatibility, and essential interaction remain intact. The existing recipe ID may remain. Because consumers share the reusable implementation, an approved refinement can update all consumers automatically. Use this for genuine visual corrections/refinements such as spacing, contrast, type treatment, crop behavior, or equivalent layout tuning.
 
-**Material/breaking refinement:** the semantic/content contract, compatibility, required media, important behavior, or fundamental composition changes. Preserve the existing approved recipe and create a new experimental recipe ID. The new recipe may declare that it supersedes the older recipe. Iterate on the new candidate in Workshop contexts until Aykhan approves it; then approve the replacement, deprecate the superseded recipe when appropriate, and deliberately migrate intended consumers. Do not mutate a stable approved contract into an experimental redesign underneath existing consumers.
+**Material/breaking refinement:** the semantic/content contract, compatibility, required media, important behavior, or fundamental composition changes. Preserve the existing approved recipe and create a new experimental recipe ID of the same section kind. The new recipe may declare that it supersedes the older recipe. Iterate on the new candidate in Workshop contexts until Aykhan approves it; then approve the replacement, deliberately migrate intended consumers, and only after the intended migration is complete deprecate the predecessor when appropriate. Do not mutate a stable approved contract into an experimental redesign underneath existing consumers.
 
 Stable IDs are contracts, not visual version numbers for every tiny tweak. Create a new ID only when the contract meaningfully changes.
 

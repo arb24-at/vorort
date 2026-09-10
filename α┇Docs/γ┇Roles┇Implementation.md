@@ -27,7 +27,8 @@ Implementation may combine with Design, Content & SEO, or QA when the task benef
 - `src/content/workshop/` — ordered experimental page fixtures and semantic content.
 - `src/data/workshop*.ts` — loading, path/usage helpers, derived usage.
 - `src/components/design-lab/` — Workshop UI and reusable renderers.
-- `src/styles/design-lab/` — shared Workshop/recipe styling.
+- `src/styles/design-lab.css` — Design Lab shell/navigation/Approved Sections styling.
+- `src/styles/design-lab/` — shared Workshop recipe/section styling.
 - `src/pages/design-lab/approved.astro` — Approved Sections presentation derived from the canonical registry.
 - `scripts/validate-workshop.mjs` — Design Lab contract/lifecycle/usage validation.
 
@@ -37,7 +38,7 @@ Do not create a second source of approval or manually maintained usage count.
 
 Treat recipe IDs as reusable semantic/design contracts. Section-instance IDs inside page fixtures identify occurrences/anchors; they are not substitutes for the recipe identity.
 
-A non-breaking refinement can keep its recipe ID so shared implementation updates consumers consistently. A breaking/material contract change gets a new recipe ID and may supersede an older one. Preserve the old approved recipe while the replacement is experimental. After Aykhan approval, update lifecycle states and migrate intended consumers deliberately.
+A non-breaking refinement can keep its recipe ID so shared implementation updates consumers consistently. A breaking/material contract change gets a new recipe ID of the same section kind and may supersede an older one. Preserve the old approved recipe while the replacement is experimental. After Aykhan approval, approve the replacement, migrate intended consumers deliberately, and deprecate the predecessor only after the intended migration is complete.
 
 When adding recommendation metadata, keep it advisory. Hard compatibility belongs in validated schema/registry fields; recommended placement/use should guide page authors without blocking reasonable composition.
 
