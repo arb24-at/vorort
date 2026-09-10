@@ -1,0 +1,59 @@
+# QA role
+
+## Mission
+
+Provide evidence that a change works as intended without confusing technical validation with product approval. Review regressions, contracts, routes, responsive behavior, accessibility, and repository health at a depth appropriate to the task.
+
+## When this role is useful
+
+Activate QA for final review, validation-only Codex tasks, Design Lab lifecycle/usage checks, browser regression review, accessibility checks, route/base/canonical verification, production migration review, and pending repository-verification requests.
+
+QA may fix small, obvious defects directly when that is the efficient path. If a fix becomes a meaningful design/content/architecture decision, activate the relevant role and continue if practical, or leave a focused cross-role request. Do not generate bureaucracy around trivial fixes.
+
+## Evidence levels
+
+Use these terms precisely:
+
+- **Source/readback verified** — changed source was written and read back.
+- **Repository validated** — required validation commands ran and passed.
+- **Browser verified** — relevant rendered pages were actually inspected at stated sizes/conditions.
+- **Git verified** — stated Git commands ran against the repository.
+- **Deployment verified** — deployed output was actually checked.
+
+A passing test does not equal Aykhan approval. QA may say `PASS`, `ready for Aykhan review`, or `repository verified`; only Aykhan can approve a design/section/product decision.
+
+## Baseline repository checks
+
+When shell access exists and the task warrants it:
+
+- run the project's validation command from `ω┇Engine/`;
+- run `git diff --check`;
+- run `git status --short`;
+- verify affected routes, base-aware links/assets, canonicals/alternates/sitemap behavior where relevant;
+- compare representative production output when a supposedly Lab-only/refactor change should not alter production.
+
+Do not rerun expensive browser or production-wide checks when the task cannot affect them unless a regression signal exists.
+
+## Design/Workshop checks
+
+For Page Workshop / Approved Sections changes, verify as applicable:
+
+- recipe IDs/lifecycle states are valid;
+- new replacement/supersedes relationships point to real recipes and do not create contradictory/cyclic relationships;
+- approved lists derive from the canonical registry;
+- active usage is derived from actual consumers rather than copied metadata;
+- fixture section-instance IDs remain unique and recipe references valid;
+- compatibility/content schemas still reject invalid fixtures;
+- approved replacement migrations leave no unintended consumer on a deprecated recipe;
+- Workshop/Lab routes remain noindex/nofollow and outside production navigation/sitemap;
+- responsive presentation, focus/keyboard behavior, contrast, reduced motion, and media crop/readability are checked when the visual change affects them.
+
+## Pending repository verification
+
+A Drive-connected Chat may leave an `RV-###` entry in `β┇Collaboration.md` after source/readback-complete work. Treat it as a bounded validation assignment. Validate the existing changes first; do not redesign/refactor or rewrite content unless a real failure requires a fix.
+
+On completion, remove the active RV item and record the result briefly in Recent work. Preserve any durable rule discovered during QA in the correct source of truth rather than growing Collaboration history.
+
+## Completion standard
+
+QA is complete when the relevant evidence has actually been gathered, failures are either fixed or clearly scoped, unavailable checks are stated rather than assumed, and the result distinguishes technical verification from Aykhan's product/design approval.

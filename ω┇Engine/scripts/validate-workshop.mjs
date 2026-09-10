@@ -14,7 +14,7 @@ try {
     stdin: { contents: 'export * from "./src/design-system/workshop-schema.ts"; export * from "./src/design-system/section-recipes.ts"; export * from "./src/data/workshop-usage.ts";', resolveDir: root, loader: "ts" },
     outfile: modulePath, bundle: true, platform: "node", format: "esm", packages: "external",
   });
-  const { workshopSchema, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage } = await import(pathToFileURL(modulePath).href);
+  const { workshopSchema, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
   const folder = path.join(root, "src/content/workshop");
   const fixtures = await Promise.all((await fs.readdir(folder)).filter(file => /\.ya?ml$/.test(file)).map(async file => {
     const fixture = workshopSchema.parse(yaml.load(await fs.readFile(path.join(folder, file), "utf8")));
@@ -22,7 +22,7 @@ try {
     return fixture;
   }));
   assert.equal(new Set(fixtures.map(f => f.page.id)).size, fixtures.length, "Fixture page IDs must be unique");
-  assert.equal(recipesWithStatus("approved").length, 0, "Initial migration must not approve recipes");
+  assert.doesNotThrow(() => validateRecipeRegistry(), "Recipe guidance/replacement registry must be valid");
   const source = fixtures[0];
   const invalid = [
     ["unknown recipe", f => { f.sections[0].recipe = "hero.unknown"; }],
@@ -49,25 +49,41 @@ try {
     assert.equal(workshopSchema.safeParse(fixture).success, false, `Invalid fixture accepted: ${name}`);
   }
   const hero = sectionRecipes["hero.banner-art"];
+  const originalStatus = hero.status;
+  const originalAudiences = hero.audiences;
+  assert.throws(() => recipeAllowedIn("__proto__", "workshop"), /Unknown section recipe/);
+  hero.status = "experimental";
   assert.equal(recipeAllowedIn("hero.banner-art", "production"), false);
   assert.equal(recipeAllowedIn("hero.banner-art", "workshop"), true);
-  assert.throws(() => recipeAllowedIn("__proto__", "workshop"), /Unknown section recipe/);
   hero.status = "approved";
   assert.equal(recipeAllowedIn("hero.banner-art", "production"), true);
-  assert.equal(recipesWithStatus("approved").length, 1);
+  assert.ok(recipesWithStatus("approved").some(([id]) => id === "hero.banner-art"));
   hero.status = "deprecated";
   assert.equal(recipeAllowedIn("hero.banner-art", "production"), false);
   assert.equal(workshopSchema.safeParse(source).success, false);
-  hero.status = "experimental";
+  hero.status = originalStatus;
   hero.audiences = [];
   assert.equal(workshopSchema.safeParse(source).success, false, "Incompatible audience accepted");
-  hero.audiences = ["private", "business"];
+  hero.audiences = originalAudiences;
+  const originalSupersedes = hero.supersedes;
+  const scope = sectionRecipes["scope.art-panels"];
+  const originalScopeSupersedes = scope.supersedes;
+  hero.supersedes = "hero.banner-art";
+  assert.throws(() => validateRecipeRegistry(), /cannot supersede itself/);
+  hero.supersedes = "recipe.that-does-not-exist";
+  assert.throws(() => validateRecipeRegistry(), /supersedes unknown recipe/);
+  hero.supersedes = "scope.art-panels";
+  scope.supersedes = "hero.banner-art";
+  assert.throws(() => validateRecipeRegistry(), /supersedes cycle/);
+  hero.supersedes = originalSupersedes;
+  scope.supersedes = originalScopeSupersedes;
+  assert.doesNotThrow(() => validateRecipeRegistry());
   const repeated = structuredClone(source);
   repeated.sections.splice(2, 0, { ...structuredClone(source.sections[1]), id: "additional-scope" });
   assert.equal(workshopSchema.safeParse(repeated).success, true);
   assert.equal(getWorkshopUsage([repeated], "scope.art-panels").length, 1, "Usage must count pages, not occurrences");
   assert.equal(getWorkshopUsage(fixtures, "hero.banner-art").length, fixtures.length);
-  console.log(`Validated ${fixtures.length} Workshop fixtures, ${invalid.length} invalid-content cases, lifecycle/compatibility policy and distinct-page usage.`);
+  console.log(`Validated ${fixtures.length} Workshop fixtures, ${invalid.length} invalid-content cases, recipe guidance/replacement relationships, lifecycle/compatibility policy and distinct-page usage.`);
 } finally {
   await fs.rm(temporary, { recursive: true, force: true });
 }

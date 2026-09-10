@@ -18,13 +18,17 @@ function recipe<S extends z.ZodTypeAny>(definition: {
   name: string;
   kind: string;
   purpose: string;
+  recommendedPlacement: string;
+  recommendedUse: string;
   renderer: string;
   schema: S;
   status?: RecipeStatus;
+  supersedes?: string;
 }) {
   return {
     ...definition,
     status: definition.status ?? "experimental",
+    supersedes: definition.supersedes ?? null,
     pageTypes: ["service"] as readonly PageType[],
     audiences: ["private", "business"] as readonly Audience[],
   };
@@ -36,6 +40,8 @@ export const sectionRecipes = {
   "hero.banner-art": recipe({
     name: "Banner with environmental artwork", kind: "hero",
     purpose: "Introduce a service and its environment with clear next actions.",
+    recommendedPlacement: "Opening / first section",
+    recommendedUse: "Introduce the service, establish its real-world context, and present the primary next actions.",
     renderer: "HeroBanner.astro",
     schema: z.object({ ...heading, media: labelledMedia,
       actions: z.array(z.object({ label: text, target: anchor }).strict()).length(2),
@@ -45,30 +51,40 @@ export const sectionRecipes = {
   "scope.art-panels": recipe({
     name: "Service scope artwork panels", kind: "scope",
     purpose: "Show the service territories before detailed explanation.",
+    recommendedPlacement: "Early page, usually after the hero",
+    recommendedUse: "Make several distinct service territories understandable at a glance before deeper explanation.",
     renderer: "ScopeArtPanels.astro",
     schema: z.object({ ...heading, items: z.array(z.object({ title: text, media }).strict()).length(5) }).strict(),
   }),
   "explanation.art-gallery": recipe({
     name: "Environmental explanation gallery", kind: "explanation",
     purpose: "Explain connected service areas through one lead panel and supporting panels.",
+    recommendedPlacement: "Early-to-middle page",
+    recommendedUse: "Develop one primary idea with two supporting ideas when visual context helps explain how service areas relate.",
     renderer: "ArtGallery.astro",
     schema: z.object({ ...heading, items: z.array(item.extend({ eyebrow: text, media })).length(3) }).strict(),
   }),
   "recognition.situations": recipe({
     name: "Recognisable situations", kind: "recognition",
     purpose: "Connect customer situations or project triggers to the service.",
+    recommendedPlacement: "Early-to-middle page",
+    recommendedUse: "Help visitors recognise concrete situations, symptoms, or project triggers that make the service relevant.",
     renderer: "Situations.astro",
     schema: z.object({ ...heading, items: z.array(item).min(2).max(6) }).strict(),
   }),
   "process.staged-path": recipe({
     name: "Staged working path", kind: "process",
     purpose: "Explain the four stages from assessment to handover.",
+    recommendedPlacement: "Middle page",
+    recommendedUse: "Explain a four-stage working method or customer journey where sequence and handover matter.",
     renderer: "StagedPath.astro",
     schema: z.object({ ...heading, steps: z.array(item).length(4) }).strict(),
   }),
   "outcome.scope-proof": recipe({
     name: "Outcome, scope and working boundaries", kind: "outcome",
     purpose: "Connect a useful outcome with included work, boundaries and verified experience.",
+    recommendedPlacement: "Middle-to-late page",
+    recommendedUse: "Set expectations by connecting the intended outcome with included work, working boundaries, and credible proof.",
     renderer: "ScopeProof.astro",
     schema: z.object({ eyebrow: text, title: text, body: text, media: labelledMedia,
       includedHeading: text, included: z.array(text).min(1),
@@ -78,18 +94,47 @@ export const sectionRecipes = {
   "faq.accordion": recipe({
     name: "Expandable questions", kind: "faq",
     purpose: "Answer independent service questions without hiding the rest of the page.",
+    recommendedPlacement: "Late page, after the core service explanation",
+    recommendedUse: "Resolve independent practical questions that remain after the page has established scope, process, and boundaries.",
     renderer: "FaqAccordion.astro",
     schema: z.object({ eyebrow: text, title: text, items: z.array(z.object({ question: text, answer: text }).strict()).min(1) }).strict(),
   }),
   "contact.enquiry": recipe({
     name: "Service enquiry", kind: "contact",
     purpose: "Use the existing centrally maintained contact channels and enquiry form.",
+    recommendedPlacement: "Closing section",
+    recommendedUse: "Close the page with the shared enquiry paths once the visitor has enough context to act.",
     renderer: "ContactEnquiry.astro",
     schema: z.object({}).strict(),
   }),
 };
 
 export type RecipeId = keyof typeof sectionRecipes;
+
+export function validateRecipeRegistry() {
+  for (const [id, recipe] of Object.entries(sectionRecipes)) {
+    if (!recipe.recommendedPlacement.trim()) throw new Error(`Section recipe ${id} needs recommended placement guidance`);
+    if (!recipe.recommendedUse.trim()) throw new Error(`Section recipe ${id} needs recommended use guidance`);
+    if (recipe.supersedes === id) throw new Error(`Section recipe ${id} cannot supersede itself`);
+    if (recipe.supersedes && !Object.hasOwn(sectionRecipes, recipe.supersedes)) {
+      throw new Error(`Section recipe ${id} supersedes unknown recipe: ${recipe.supersedes}`);
+    }
+
+    const seen = new Set<string>([id]);
+    let predecessor = recipe.supersedes;
+    while (predecessor) {
+      if (!Object.hasOwn(sectionRecipes, predecessor)) {
+        throw new Error(`Section recipe ${id} supersedes unknown recipe: ${predecessor}`);
+      }
+      if (seen.has(predecessor)) throw new Error(`Section recipe supersedes cycle detected from ${id}`);
+      seen.add(predecessor);
+      predecessor = sectionRecipes[predecessor as RecipeId].supersedes;
+    }
+  }
+}
+
+validateRecipeRegistry();
+
 export type RecipeContent<K extends RecipeId> = z.infer<(typeof sectionRecipes)[K]["schema"]>;
 export type RecipeSection = { [K in RecipeId]: {
   id: string; kind: string; recipe: K; content: RecipeContent<K>;

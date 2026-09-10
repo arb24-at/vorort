@@ -23,8 +23,13 @@ const pages = await getWorkshopPages();
         {approved.map(([id, recipe]) => {
           const usage = getWorkshopUsage(pages, id as RecipeId);
           return <article>
-            <h2>{recipe.name}</h2><code>{id}</code><p>{recipe.purpose}</p>
-            <p>Used by {usage.length} Workshop {usage.length === 1 ? "page" : "pages"}. Production usage is not connected yet.</p>
+            <h2>{recipe.name}</h2>
+            <p><strong>Recipe ID:</strong> <code>{id}</code></p>
+            <p>{recipe.purpose}</p>
+            <p><strong>Recommended placement:</strong> {recipe.recommendedPlacement}</p>
+            <p><strong>Recommended use:</strong> {recipe.recommendedUse}</p>
+            {recipe.supersedes && <p><strong>Supersedes:</strong> <code>{recipe.supersedes}</code></p>}
+            <p><strong>Active Workshop usage:</strong> {usage.length} {usage.length === 1 ? "page" : "pages"}. This count is derived from current Workshop fixtures; production usage is not connected yet.</p>
             <ul>{usage.map(page => <li><a href={withBase(page.path)}>{page.title}</a></li>)}</ul>
           </article>;
         })}

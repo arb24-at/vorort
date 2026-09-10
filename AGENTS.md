@@ -1,91 +1,108 @@
 ---
-version: 2.0.2
+version: 2.1.0
 ---
 
 # VorOrt agent instructions
 
-These instructions apply to the entire repository.
+These instructions apply to every worker on the project: ChatGPT Project chats, repository coding agents, and other AI tools. `VorOrt` is an internal project name. Do not introduce it as the public brand unless Aykhan explicitly chooses it.
 
-## Read before working
+## Roles and task routing
 
-Read these files in order before making material changes:
+Aykhan may assign one or more roles for a task. If he does not, select the minimum useful roles from the registry below and continue. State the active role(s) briefly before material work when useful for clarity.
 
-1. `α┇Docs/Project.md` — project purpose, decisions, architecture, website map, and source-of-truth boundaries.
-2. `α┇Docs/Roadmap.md` — current implementation phases and acceptance criteria.
-3. `α┇Docs/Collaboration.md` — current handoff, recent work, validation, and blockers.
+Roles describe primary expertise and ownership; they are not hard permission boundaries. Do not stop useful work merely because another role becomes relevant. Add that role, read its role file, and continue when doing so is a reasonable way to complete the task. Create a cross-role request only when a separate focused task or conversation is genuinely useful, not for minor work the current worker can responsibly handle.
 
-`VorOrt` is an internal project name. Do not introduce it as the public brand unless Aykhan explicitly chooses it.
+Aykhan is the Product Owner and final approval authority. This is not a selectable worker role. A worker may review, recommend, implement, validate, or mark something ready for Aykhan's review, but may not invent Aykhan's approval.
+
+Role registry:
+
+- **Design** → `α┇Docs/γ┇Roles┇Design.md`
+- **Content & SEO** → `α┇Docs/γ┇Roles┇Content-SEO.md`
+- **Implementation** → `α┇Docs/γ┇Roles┇Implementation.md`
+- **QA** → `α┇Docs/γ┇Roles┇QA.md`
+
+## Context loading
+
+Always read this file first, then every active role file. After that, load only the project context needed for the task instead of preloading every document.
+
+- Read `α┇Docs/α┇Project.md` when durable product, service, content, architecture, design, routing, deployment, or production facts matter. Read the relevant sections rather than unrelated material when the environment supports selective reading.
+- Read `α┇Docs/β┇Roadmap.md` when priority, sequencing, planned scope, or acceptance criteria matter.
+- Read `α┇Docs/β┇Collaboration.md` before changing project/repository state, when acting on a handoff, or when current cross-role requests, pending verification, or Aykhan decisions matter. Prefer the live sections over old history.
+- Read `α┇Docs/ω┇Media-Queue.md` when creating, integrating, reviewing, or waiting on media.
+- Read target source/content files needed for the task. Do not preload unrelated repository files merely because they exist.
+
+Do not create a parallel roadmap, context system, role system, media tracker, or source of truth.
+
+## Environment awareness and evidence
+
+Determine available capabilities yourself: repository filesystem, shell, browser automation, Google Drive, web research, image generation, or other tools. Missing one capability does not by itself block work that can be completed safely with the capabilities that are available.
+
+Use precise evidence language:
+
+- **Source/readback verified** means the changed source was written and read back successfully.
+- **Repository validated** means the required repository commands actually ran and passed.
+- **Browser verified** means the relevant rendered page was actually reviewed in a browser at the stated sizes/conditions.
+- **Git verified** means the stated Git command actually ran against the repository.
+- **Deployed verified** means the deployed site was actually checked after deployment.
+
+Never claim shell validation, browser testing, Git status/diff/commit/push, deployment, or any environment-specific check unless it was actually performed. A Drive-connected Chat may complete source changes and readback verification without shell access; record remaining repository checks under Pending repository verification rather than treating the task as blocked.
 
 ## Repository boundaries
 
 - `ω┇Engine/` owns the Astro application, dependencies, source, public assets, scripts, and generated build output.
-- `α┇Docs/` owns stable project documentation, the repository roadmap, and collaboration handoffs.
+- `α┇Docs/` owns stable project documentation, roles, handoffs, and the media-production queue.
 - `.github/workflows/astro.yml` must remain at the repository root for GitHub Actions.
 - The external Obsidian Chain remains the high-level project roadmap. Do not edit it unless Aykhan explicitly requests it.
 - Preserve unrelated user changes. Inspect `git status` before editing when local repository shell access is available.
+- Do not modify `.git` internals.
 
-## Astro implementation principles
+## Shared implementation principles
 
-- Prefer Astro-native, static-first solutions; avoid unnecessary client JavaScript, frameworks, and dependencies.
-- Inspect existing layouts, components, tokens, and styles before creating an implementation. Reuse them before duplicating markup, and consider a reusable component or token when a genuinely recurring UI pattern appears.
-- Keep editable content in validated content collections, not visual components. Keep implementation-specific classes, dimensions, and arbitrary visual settings out of YAML and other content records.
-- Centralize genuine shared design decisions through the existing tokens and shared styles. Use existing CSS custom properties instead of repeatedly hard-coding colors, spacing, radii, widths, or typography values.
-- Keep component-specific presentation in appropriate scoped or component styles.
-- Extend reusable components when the concept is genuinely shared, but do not force meaningfully different page compositions into giant conditional components. Avoid abstraction for its own sake; small cohesive implementations may remain local.
-- Preserve the approved design system unless a task explicitly calls for design changes.
+- Prefer Astro-native, static-first solutions and minimal client JavaScript.
+- Inspect existing layouts, components, section recipes, tokens, and styles before creating new implementation.
+- Reuse genuine shared concepts through reusable Astro components, section recipes, tokens, and shared styles; do not force meaningfully different compositions into giant conditional components.
+- Keep editable content in validated content records. Keep implementation-specific classes, arbitrary dimensions, and styling controls out of content unless a documented contract explicitly requires them.
+- Preserve approved production behavior and design unless the task authorizes change.
 
 ## Product invariants
 
 - The service is positioned as a normal local Berlin IT business. Do not mention a waitlist, Baku, or delayed availability.
-- German is served at `/`; independently authored English content is served at `/en/`.
-- English contact and technician support messaging is optional and controlled centrally in `ω┇Engine/src/data/site.ts`.
-- Public branding, contact details, legal identity, and badges are provisional until Aykhan supplies verified replacements.
-- Never publish unearned certification claims or invented customer, availability, pricing, or response-time facts.
+- German is served at `/`; English is independently authored under `/en/`.
+- English-speaking technical service is real but its public messaging is centrally controlled.
+- Public branding, contact details, legal identity, qualifications, and badges remain provisional until verified.
+- Never publish invented customers, pricing, availability, response-time guarantees, qualifications, or security/compliance claims.
+
+## Collaboration and handoffs
+
+Use `α┇Docs/β┇Collaboration.md` as a live coordination surface, not a second roadmap or permanent diary. Its active areas are:
+
+- **Current handoff** — concise current state.
+- **Cross-role requests** — targeted work that genuinely benefits from another role/chat.
+- **Awaiting Aykhan** — decisions or assets only Aykhan can supply/approve.
+- **Pending repository verification** — source-complete changes still needing shell/browser/Git checks.
+- **Recent work** — only brief recent material changes; durable decisions move to Project, priorities to Roadmap, and old history remains in Git.
+
+Cross-role requests use stable IDs such as `CR-001`. Repository-verification requests use IDs such as `RV-001`. Remove resolved items from the active sections after preserving any durable consequence in the correct source of truth.
 
 ## Commands and validation
 
-Run application commands from the engine directory:
+When local shell access is available, run application commands from `ω┇Engine/`:
 
 ```bash
-cd 'ω┇Engine'
 npm ci
 npm run dev
 npm run validate
 ```
 
-Before considering a material change complete:
+Before considering a material repository change fully verified, run the applicable validation, confirm base-aware links/assets and relevant routes, and review `git diff --check` plus `git status --short`. Follow `α┇Docs/γ┇Roles┇QA.md` for review depth appropriate to the task.
 
-- Run `npm run validate` when local repository shell access is available.
-- Confirm canonical URLs and internal assets retain the configured GitHub Pages base.
-- Review `git diff --check` and `git status --short` from the repository root when local repository shell access is available.
-- If a Project Chat or other Drive-connected session does not have access to the local repository shell, it may skip shell-only validation and Git commands, but it must state clearly which checks were not run and must not imply they succeeded.
-- For deployment changes, verify the live GitHub Pages URL after the `main` workflow completes.
+## Version and Git handoff
 
-## Git commit handoff
+The frontmatter `version` in this file is the canonical project version.
 
-- The root `AGENTS.md` frontmatter `version` is the canonical project version and the source of truth for `X.Y.Z`.
-- All completed or proposed Git commit messages must use the exact format `VorOrt vX.Y.Z: message`, and the `X.Y.Z` in the commit message must exactly match the `version` value in `AGENTS.md` frontmatter for that change set. Message should be placed in codeblock
-- `X` is the project-level version controlled by Aykhan. Only Aykhan may change `X`; agents must preserve the current frontmatter `X` exactly unless Aykhan explicitly instructs otherwise.
-- `Y` is for major updates. Increment `Y` by one for a major update and reset `Z` to `0`.
-- `Z` is for minor changes and patches. Increment `Z` by one for each minor change or patch.
-- One logical Git commit receives one version bump. Do not bump the version once per file. All files intended for the same commit use the same bumped version.
-- Before completing a commit or handing Aykhan a proposed commit message, determine the appropriate next version from the current `AGENTS.md` frontmatter, update the frontmatter `version` to that next version as part of the same change set, and use that exact version in the commit message.
-- If `AGENTS.md` already contains an uncommitted version bump for the same intended commit, keep that version rather than bumping it again. If the work is intended as a separate subsequent commit, apply the next appropriate bump.
-- Never suggest or complete a commit whose version differs from the `AGENTS.md` frontmatter. Never provide an `X.Y.Z` placeholder when the frontmatter version is readable.
-- When local repository shell access is available and a commit is completed, state explicitly that the Git commit was completed and include the commit hash and the full versioned commit message when available.
-- A Project Chat or other Drive-connected session without local repository shell access may leave the Git commit for Aykhan instead of attempting to simulate it through Drive, but it must still keep the `AGENTS.md` frontmatter version aligned with the proposed commit version.
-- If no Git commit was completed, say so explicitly, tell Aykhan that the changes still need to be committed locally, and provide a ready-to-use commit message using the exact version already recorded in `AGENTS.md` frontmatter.
-- Never claim that a Git commit, push, status check, diff check, or shell validation was completed unless it was actually run against the local repository.
-
-## Collaboration contract
-
-After material source, content, architecture, or deployment work, update `α┇Docs/Collaboration.md` with:
-
-- objective and scope;
-- files or systems changed;
-- decisions made;
-- validation performed and results;
-- blockers or facts still requiring Aykhan;
-- the recommended next action.
-
-Keep stable decisions in `Project.md`, implementation priorities in `Roadmap.md`, and chronological session reporting in `Collaboration.md`. Do not duplicate the same evolving checklist across all three files.
+- Only Aykhan may change the major `X` version.
+- Increment `Y` for a major project update and reset `Z` to `0`; increment `Z` for a minor change or patch.
+- One logical Git commit receives one version bump. If an uncommitted bump already belongs to the same intended commit, reuse it.
+- Commit messages use exactly `VorOrt vX.Y.Z: message` and must match this file's version.
+- Never claim a commit, push, status check, diff check, or deployment happened unless it actually did.
+- If no commit was completed, state that clearly and provide the ready versioned commit message using the version already recorded here.
