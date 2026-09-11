@@ -1,0 +1,20 @@
+---
+import type { RecipeContent } from "../../../design-system/section-recipes";
+import WorkshopImage from "../WorkshopImage.astro";
+import EditorialNote from "../EditorialNote.astro";
+type Props = { id: string; content: RecipeContent<"explanation.editorial-media"> };
+const { id, content } = Astro.props;
+---
+<section class="pw-editorial pw-section" id={id} data-recipe="explanation.editorial-media" aria-labelledby={`${id}-title`} tabindex="-1">
+  <div class="container pw-editorial__grid">
+    <header><p class="pw-eyebrow">{content.eyebrow}</p><h2 id={`${id}-title`}>{content.title}</h2></header>
+    <figure class="pw-editorial__media">
+      <WorkshopImage {...content.media} sizes="(max-width: 767px) 92vw, 480px" />
+      <figcaption>{content.caption}</figcaption>
+    </figure>
+    <div class="pw-prose pw-editorial__body">
+      {content.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      {content.note && <EditorialNote {...content.note} />}
+    </div>
+  </div>
+</section>

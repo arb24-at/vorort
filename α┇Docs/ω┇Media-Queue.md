@@ -26,7 +26,7 @@ Keep these exact paths until the planned application rename:
 
 ```text
 ω┇Engine/public/images/concept-ii/private/
-P1.png  — Whole-home hero
+P1.png  — Whole-home editorial hero
 P2.png  — Wi-Fi & Mesh coverage
 P3.png  — Home-office connectivity
 P4.png  — NAS & shared storage
@@ -38,7 +38,9 @@ Replacing these files updates the existing fixture without changing its content.
 
 ## Source ratios versus rendered crops
 
-Suggested ratios below describe generation masters, not fixed layout settings. Private scope art fills large portrait-oriented panels with centered title caps and `object-fit: cover`; the business scope treatment remains 4:3. Existing landscape private masters can remain if portrait crops retain their subjects. Keep the key subject clear in the central area and review the actual page at desktop/tablet/mobile widths. Scope images should read simply at reduced sizes without being designed as tiny icons.
+Suggested ratios describe generation masters, not fixed layout settings. The private Workshop now uses a broad hero, an illustrated topic index and editorial chapters. Topic entries recompose from one featured image plus supporting entries on desktop to compact illustrated rows on mobile; the original portrait masters remain intact. Editorial images use taller desktop crops and landscape mobile crops, keeping the relevant device or room visible. Crop choices belong in reusable renderer styles, not fixture styling fields. Business image use is unchanged.
+
+P1–P6 are reused in the current private pass. P2–P6 remain candidates pending Aykhan's acceptance. The former P7–P9 gallery requests are deferred, not needed for this composition; their standalone prompts remain below for a later decision.
 
 ## Current media tasks
 
@@ -46,7 +48,7 @@ Suggested ratios below describe generation masters, not fixed layout settings. P
 
 - [x] **P1 — Private hero: whole-home network overview**
   - **Suggested source ratio:** `16:9` or `5:3`
-  - **Use in page:** hero banner artwork
+  - **Use in page:** `hero.editorial-art`, in-flow environmental artwork
   - **Target path:** `ω┇Engine/public/images/concept-ii/private/P1.png`
   - **Status:** current hero test accepted as the working visual reference for the private Workshop page; no regeneration required before the next-section test.
   - **Prompt:**
@@ -57,7 +59,7 @@ Use the VorOrt private-service art language: premium tactile editorial illustrat
 
 - [ ] **P2 — Private scope image: Wi-Fi and mesh coverage**
   - **Suggested source ratio:** `4:3`
-  - **Use in page:** service-scope art panel
+  - **Use in page:** `scope.topic-index` lead entry and `explanation.options-guide` Wi-Fi illustration
   - **Target path:** `ω┇Engine/public/images/concept-ii/private/P2.png`
   - **Queue note:** Existing candidate is present and wired; keep unchecked until Aykhan explicitly accepts it for current use.
   - **Prompt:**
@@ -68,7 +70,7 @@ Use the VorOrt private-service art language: premium tactile editorial illustrat
 
 - [ ] **P3 — Private scope image: home-office connectivity**
   - **Suggested source ratio:** `4:3`
-  - **Use in page:** service-scope art panel
+  - **Use in page:** `scope.topic-index` and `explanation.editorial-media` home-office chapter
   - **Target path:** `ω┇Engine/public/images/concept-ii/private/P3.png`
   - **Queue note:** Existing candidate is present and wired; keep unchecked until Aykhan explicitly accepts it for current use.
   - **Prompt:**
@@ -79,7 +81,7 @@ Use the VorOrt private-service art language: premium tactile editorial illustrat
 
 - [ ] **P4 — Private scope image: NAS and shared storage**
   - **Suggested source ratio:** `4:3`
-  - **Use in page:** service-scope art panel
+  - **Use in page:** `scope.topic-index` and `explanation.editorial-media` NAS chapter
   - **Target path:** `ω┇Engine/public/images/concept-ii/private/P4.png`
   - **Queue note:** Existing candidate is present and wired; keep unchecked until Aykhan explicitly accepts it for current use.
   - **Prompt:**
@@ -90,7 +92,7 @@ Use the VorOrt private-service art language: premium tactile editorial illustrat
 
 - [ ] **P5 — Private scope image: Ethernet and cable routes**
   - **Suggested source ratio:** `4:3`
-  - **Use in page:** service-scope art panel
+  - **Use in page:** `scope.topic-index` Ethernet entry; the detailed chapter uses a code-native connection diagram
   - **Target path:** `ω┇Engine/public/images/concept-ii/private/P5.png`
   - **Queue note:** Existing candidate is present and wired; keep unchecked until Aykhan explicitly accepts it for current use.
   - **Prompt:**
@@ -101,7 +103,7 @@ Use the VorOrt private-service art language: premium tactile editorial illustrat
 
 - [ ] **P6 — Private scope image: moves, renovations and upgrades**
   - **Suggested source ratio:** `4:3`
-  - **Use in page:** service-scope art panel
+  - **Use in page:** `scope.topic-index` and `explanation.editorial-media` planning chapter
   - **Target path:** `ω┇Engine/public/images/concept-ii/private/P6.png`
   - **Queue note:** Existing candidate is present and wired; keep unchecked until Aykhan explicitly accepts it for current use.
   - **Prompt:**
@@ -111,6 +113,7 @@ Use the VorOrt private-service art language: premium tactile editorial illustrat
 ```
 
 - [ ] **P7 — Private feature panel: plan the network around rooms and routines**
+  - **Queue note:** Deferred. The v2.2.0 private composition uses P1–P6 and a code-native diagram; this asset is not required for the current review.
   - **Suggested source ratio:** `4:3`
   - **Use in page:** main large feature panel in the gallery
   - **Target path:** `ω┇Engine/public/images/concept-ii/private/P7.png`
@@ -121,6 +124,7 @@ Use the VorOrt private-service art language: premium tactile editorial illustrat
 ```
 
 - [ ] **P8 — Private secondary panel: give files a sensible home**
+  - **Queue note:** Deferred. The v2.2.0 private composition uses P1–P6 and a code-native diagram; this asset is not required for the current review.
   - **Suggested source ratio:** `4:3`
   - **Use in page:** secondary gallery panel
   - **Target path:** `ω┇Engine/public/images/concept-ii/private/P8.png`
@@ -131,6 +135,7 @@ Use the VorOrt private-service art language: premium tactile editorial illustrat
 ```
 
 - [ ] **P9 — Private secondary panel: use cable where reliability matters**
+  - **Queue note:** Deferred. The v2.2.0 private composition uses P1–P6 and a code-native diagram; this asset is not required for the current review.
   - **Suggested source ratio:** `4:3`
   - **Use in page:** secondary gallery panel
   - **Target path:** `ω┇Engine/public/images/concept-ii/private/P9.png`

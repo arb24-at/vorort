@@ -1,0 +1,29 @@
+---
+import type { RecipeContent } from "../../../design-system/section-recipes";
+import WorkshopImage from "../WorkshopImage.astro";
+type Props = { id: string; content: RecipeContent<"hero.editorial-art"> };
+const { id, content } = Astro.props;
+---
+<section class="pw-hero" id={id} data-recipe="hero.editorial-art" aria-labelledby={`${id}-title`}>
+  <div class="container">
+    <div class="pw-hero__surface">
+      <div class="pw-hero__copy">
+        <div>
+          <p class="pw-eyebrow">{content.eyebrow}</p>
+          <h1 id={`${id}-title`}>{content.title}</h1>
+        </div>
+        <div class="pw-hero__intro">
+          <p>{content.intro}</p>
+          <div class="pw-actions">
+            {content.actions.map((action, index) => <a class:list={["pw-action", {"pw-action--primary": index === 0}]} href={`#${action.target}`}>
+              {action.label}<span aria-hidden="true">{index === 0 ? "↗" : "↓"}</span>
+            </a>)}
+          </div>
+        </div>
+      </div>
+      <div class="pw-hero__art">
+        <WorkshopImage {...content.media} sizes="(max-width: 767px) 100vw, (max-width: 1200px) 92vw, 1080px" eager />
+      </div>
+    </div>
+  </div>
+</section>

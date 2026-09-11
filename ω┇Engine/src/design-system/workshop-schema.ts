@@ -31,13 +31,25 @@ export const workshopSchema = z.object({
     issue(["sections"], "A Workshop service page requires exactly one closing contact section");
   }
   fixture.sections.forEach((section, index) => {
-    if (section.recipe !== "hero.banner-art") return;
-    const parsed = getSectionRecipe(section.recipe).schema.safeParse(section.content);
-    if (!parsed.success) return; // Keep the original section-path validation issues.
-    const content = parsed.data;
-    content.actions.forEach((action, actionIndex) => {
-      if (!ids.has(action.target)) issue(["sections", index, "content", "actions", actionIndex, "target"], `Missing section target: ${action.target}`);
-    });
+    if (section.recipe === "hero.banner-art" || section.recipe === "hero.editorial-art") {
+      const parsed = getSectionRecipe(section.recipe).schema.safeParse(section.content);
+      if (!parsed.success) return; // Preserve the original section-path validation issues.
+      parsed.data.actions.forEach((action, actionIndex) => {
+        if (!ids.has(action.target)) issue(["sections", index, "content", "actions", actionIndex, "target"], `Missing section target: ${action.target}`);
+      });
+    }
+    if (section.recipe === "scope.topic-index") {
+      const parsed = getSectionRecipe("scope.topic-index").schema.safeParse(section.content);
+      if (!parsed.success) return;
+      const targets = new Set<string>();
+      parsed.data.items.forEach((item, itemIndex) => {
+        const path = ["sections", index, "content", "items", itemIndex, "target"];
+        if (!ids.has(item.target)) issue(path, `Missing section target: ${item.target}`);
+        if (item.target === section.id) issue(path, "A topic must link to its explanation, not the index itself");
+        if (targets.has(item.target)) issue(path, `Duplicate topic target: ${item.target}`);
+        targets.add(item.target);
+      });
+    }
   });
 });
 

@@ -13,6 +13,10 @@ const media = z.object({
 const labelledMedia = media.extend({ alt: text });
 const heading = { eyebrow: text, title: text, intro: text };
 const item = z.object({ title: text, body: text }).strict();
+const suppliedMedia = labelledMedia.extend({ src: media.shape.src.unwrap() });
+const paragraphs = z.array(text).min(1);
+const editorialHeading = { eyebrow: text, title: text, paragraphs };
+const sectionAction = z.object({ label: text, target: anchor }).strict();
 
 function recipe<S extends z.ZodTypeAny>(definition: {
   name: string;
@@ -37,6 +41,54 @@ function recipe<S extends z.ZodTypeAny>(definition: {
 // The single recipe contract: validation, renderer lookup and approval/impact views
 // all consume these records. A breaking content contract gets a new semantic ID.
 export const sectionRecipes = {
+  "hero.editorial-art": recipe({
+    name: "Editorial introduction with environmental artwork", kind: "hero",
+    purpose: "Give a substantial service introduction and artwork their own readable space.",
+    recommendedPlacement: "Opening / first section",
+    recommendedUse: "Introduce a service with a strong heading, readable explanation and a broad environmental image, without text covering the scene.",
+    renderer: "EditorialHero.astro",
+    supersedes: "hero.banner-art",
+    schema: z.object({ ...heading, media: suppliedMedia, actions: z.array(sectionAction).length(2) }).strict(),
+  }),
+  "scope.topic-index": recipe({
+    name: "Illustrated topic index", kind: "scope",
+    purpose: "Help visitors choose a topic and jump directly to its full explanation.",
+    recommendedPlacement: "Immediately after the service introduction",
+    recommendedUse: "Orient readers on a substantial service page with a prominent lead topic and supporting illustrated chapter links.",
+    renderer: "TopicIndex.astro",
+    supersedes: "scope.art-panels",
+    schema: z.object({ ...heading, items: z.array(z.object({ title: text, body: text, target: anchor, media: suppliedMedia }).strict()).min(2).max(6) }).strict(),
+  }),
+  "explanation.options-guide": recipe({
+    name: "Editorial explanation and options guide", kind: "explanation",
+    purpose: "Explain a customer problem and compare practical approaches using consistent criteria.",
+    recommendedPlacement: "Early-to-middle page, within a service topic",
+    recommendedUse: "Help a reader understand alternatives without implying one product or approach is always the best choice.",
+    renderer: "OptionsGuide.astro",
+    schema: z.object({ ...editorialHeading, media: suppliedMedia, caption: text,
+      comparisonTitle: text, fitLabel: text, considerationLabel: text,
+      options: z.array(z.object({ title: text, fit: text, consideration: text }).strict()).min(2).max(4),
+      note: item.optional(),
+    }).strict(),
+  }),
+  "explanation.connection-path": recipe({
+    name: "Explanation with a connection path", kind: "explanation",
+    purpose: "Make the relationship between a source, a physical route and its destinations understandable.",
+    recommendedPlacement: "Within a topic about infrastructure or connected systems",
+    recommendedUse: "Explain one shared connection route branching to several destinations; labels remain real text when the diagram recomposes on mobile.",
+    renderer: "ConnectionPath.astro",
+    schema: z.object({ ...editorialHeading, diagramTitle: text, caption: text,
+      source: item, route: item, destinations: z.array(item).min(2).max(4), note: item.optional(),
+    }).strict(),
+  }),
+  "explanation.editorial-media": recipe({
+    name: "Editorial chapter with supporting media", kind: "explanation",
+    purpose: "Develop a service topic through substantial prose, a relevant illustration and optional practical context.",
+    recommendedPlacement: "Middle page / service topic chapters",
+    recommendedUse: "Give one subject room to be explained; consecutive chapters alternate their media relationship while keeping a consistent reading order.",
+    renderer: "EditorialMedia.astro",
+    schema: z.object({ ...editorialHeading, media: suppliedMedia, caption: text, note: item.optional() }).strict(),
+  }),
   "hero.banner-art": recipe({
     name: "Banner with environmental artwork", kind: "hero",
     purpose: "Introduce a service and its environment with clear next actions.",
@@ -105,7 +157,10 @@ export const sectionRecipes = {
     recommendedPlacement: "Closing section",
     recommendedUse: "Close the page with the shared enquiry paths once the visitor has enough context to act.",
     renderer: "ContactEnquiry.astro",
-    schema: z.object({}).strict(),
+    schema: z.object({
+      title: text.optional(), intro: text.optional(), formIntro: text.optional(),
+      affectedPlaceholder: text.optional(), request: text.optional(), requestPlaceholder: text.optional(),
+    }).strict(),
   }),
 };
 
@@ -125,7 +180,10 @@ export function validateRecipeRegistry() {
         throw new Error(`Section recipe ${id} may only supersede a recipe of the same kind: ${recipe.supersedes}`);
       }
     }
-
+  }
+  // Check each local relationship before walking chains so an invalid ancestor
+  // reports its own error regardless of registry insertion order.
+  for (const [id, recipe] of Object.entries(sectionRecipes)) {
     const seen = new Set<string>([id]);
     let predecessor = recipe.supersedes;
     while (predecessor) {

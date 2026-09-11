@@ -23,7 +23,8 @@ try {
   }));
   assert.equal(new Set(fixtures.map(f => f.page.id)).size, fixtures.length, "Fixture page IDs must be unique");
   assert.doesNotThrow(() => validateRecipeRegistry(), "Recipe guidance/replacement registry must be valid");
-  const source = fixtures[0];
+  const source = fixtures.find(f => f.sections[0].recipe === "hero.banner-art");
+  assert.ok(source, "Lifecycle checks require an existing banner-art consumer");
   const invalid = [
     ["unknown recipe", f => { f.sections[0].recipe = "hero.unknown"; }],
     ["wrong semantic kind", f => { f.sections[0].kind = "scope"; }],
@@ -43,10 +44,34 @@ try {
     ["missing closing contact", f => { f.sections.pop(); }],
     ["wrong shared contact anchor", f => { f.sections.at(-1).id = "enquiry"; }],
   ];
-  for (const [name, change] of invalid) {
-    const fixture = structuredClone(source);
+  for (const original of fixtures) {
+    for (const [name, change] of invalid) {
+      const fixture = structuredClone(original);
+      change(fixture);
+      assert.equal(workshopSchema.safeParse(fixture).success, false, `Invalid fixture accepted (${original.page.id}): ${name}`);
+    }
+  }
+  const editorial = fixtures.find(f => f.sections.some(s => s.recipe === "scope.topic-index"));
+  assert.ok(editorial, "The topic-index consumer must be exercised");
+  const findContent = (fixture, id) => fixture.sections.find(s => s.recipe === id).content;
+  const editorialInvalid = [
+    ["missing topic target", f => { findContent(f, "scope.topic-index").items[0].target = "missing"; }],
+    ["duplicate topic target", f => { const c = findContent(f, "scope.topic-index"); c.items[1].target = c.items[0].target; }],
+    ["self-referencing topic", f => { const s = f.sections.find(s => s.recipe === "scope.topic-index"); s.content.items[0].target = s.id; }],
+    ["missing topic image label", f => { delete findContent(f, "scope.topic-index").items[0].media.alt; }],
+    ["empty editorial prose", f => { findContent(f, "explanation.editorial-media").paragraphs = []; }],
+    ["empty paragraph", f => { findContent(f, "explanation.editorial-media").paragraphs[0] = "  "; }],
+    ["missing editorial image", f => { delete findContent(f, "explanation.editorial-media").media.src; }],
+    ["incomplete comparison", f => { delete findContent(f, "explanation.options-guide").options[0].consideration; }],
+    ["diagram without destinations", f => { findContent(f, "explanation.connection-path").destinations = []; }],
+    ["arbitrary diagram positioning", f => { findContent(f, "explanation.connection-path").source.x = 42; }],
+    ["contact styling", f => { findContent(f, "contact.enquiry").columns = 2; }],
+    ["empty contact override", f => { findContent(f, "contact.enquiry").title = " "; }],
+  ];
+  for (const [name, change] of editorialInvalid) {
+    const fixture = structuredClone(editorial);
     change(fixture);
-    assert.equal(workshopSchema.safeParse(fixture).success, false, `Invalid fixture accepted: ${name}`);
+    assert.equal(workshopSchema.safeParse(fixture).success, false, `Invalid editorial content accepted: ${name}`);
   }
   const hero = sectionRecipes["hero.banner-art"];
   const originalStatus = hero.status;
@@ -66,28 +91,25 @@ try {
   assert.equal(workshopSchema.safeParse(source).success, false, "Incompatible audience accepted");
   hero.audiences = originalAudiences;
   const originalSupersedes = hero.supersedes;
-  const scope = sectionRecipes["scope.art-panels"];
-  const originalScopeSupersedes = scope.supersedes;
-  const originalScopeKind = scope.kind;
   hero.supersedes = "hero.banner-art";
   assert.throws(() => validateRecipeRegistry(), /cannot supersede itself/);
   hero.supersedes = "recipe.that-does-not-exist";
   assert.throws(() => validateRecipeRegistry(), /supersedes unknown recipe/);
   hero.supersedes = "scope.art-panels";
   assert.throws(() => validateRecipeRegistry(), /same kind/);
-  scope.kind = hero.kind;
-  scope.supersedes = "hero.banner-art";
+  hero.supersedes = "hero.editorial-art";
   assert.throws(() => validateRecipeRegistry(), /supersedes cycle/);
   hero.supersedes = originalSupersedes;
-  scope.supersedes = originalScopeSupersedes;
-  scope.kind = originalScopeKind;
   assert.doesNotThrow(() => validateRecipeRegistry());
   const repeated = structuredClone(source);
   repeated.sections.splice(2, 0, { ...structuredClone(source.sections[1]), id: "additional-scope" });
   assert.equal(workshopSchema.safeParse(repeated).success, true);
   assert.equal(getWorkshopUsage([repeated], "scope.art-panels").length, 1, "Usage must count pages, not occurrences");
-  assert.equal(getWorkshopUsage(fixtures, "hero.banner-art").length, fixtures.length);
-  console.log(`Validated ${fixtures.length} Workshop fixtures, ${invalid.length} invalid-content cases, recipe guidance/replacement relationships, lifecycle/compatibility policy and distinct-page usage.`);
+  for (const id of Object.keys(sectionRecipes)) {
+    assert.deepEqual(getWorkshopUsage(fixtures, id).map(p => p.id).sort(), fixtures.filter(f => f.sections.some(s => s.recipe === id)).map(f => f.page.id).sort());
+  }
+  assert.equal(getWorkshopUsage([editorial], "explanation.editorial-media").length, 1, "Repeated editorial chapters count as one consuming page");
+  console.log(`Validated ${fixtures.length} Workshop fixtures, ${invalid.length * fixtures.length + editorialInvalid.length} invalid-content cases, recipe guidance/replacement relationships, lifecycle/compatibility policy and distinct-page usage.`);
 } finally {
   await fs.rm(temporary, { recursive: true, force: true });
 }

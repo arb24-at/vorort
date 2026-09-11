@@ -1,0 +1,13 @@
+---
+import { Image, type ImageMetadata } from "astro:assets";
+type Props = { src: string; alt: string; sizes: string; eager?: boolean };
+const { src, alt, sizes, eager = false } = Astro.props;
+// Import the existing master without moving or changing its accepted source file.
+const assets = import.meta.glob<{ default: ImageMetadata }>("../../../public/images/**/*.{png,jpg,jpeg,webp,svg}");
+const load = assets[`../../../public${src}`];
+if (!load) throw new Error(`Workshop artwork is missing: ${src}`);
+const { default: asset } = await load();
+const widths = [240, 480, 800, 1140, 1672].filter(width => width <= asset.width);
+---
+<Image src={asset} alt={alt} widths={widths} sizes={sizes} format="webp" quality={85}
+  loading={eager ? "eager" : "lazy"} fetchpriority={eager ? "high" : undefined} decoding="async" />

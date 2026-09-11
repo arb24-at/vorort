@@ -1,0 +1,31 @@
+---
+import type { RecipeContent } from "../../../design-system/section-recipes";
+import WorkshopImage from "../WorkshopImage.astro";
+import EditorialNote from "../EditorialNote.astro";
+type Props = { id: string; content: RecipeContent<"explanation.options-guide"> };
+const { id, content } = Astro.props;
+---
+<section class="pw-options pw-section" id={id} data-recipe="explanation.options-guide" aria-labelledby={`${id}-title`} tabindex="-1">
+  <div class="container">
+    <div class="pw-options__intro">
+      <div class="pw-prose">
+        <p class="pw-eyebrow">{content.eyebrow}</p><h2 id={`${id}-title`}>{content.title}</h2>
+        {content.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      </div>
+      <figure class="pw-options__media">
+        <WorkshopImage {...content.media} sizes="(max-width: 767px) 92vw, 440px" />
+        <figcaption>{content.caption}</figcaption>
+      </figure>
+    </div>
+    <div class="pw-comparison">
+      <h3>{content.comparisonTitle}</h3>
+      <div class="pw-comparison__labels" aria-hidden="true"><span></span><span>{content.fitLabel}</span><span>{content.considerationLabel}</span></div>
+      {content.options.map((option, index) => <article class="pw-option">
+        <h4><span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>{option.title}</h4>
+        <p><strong>{content.fitLabel}</strong>{option.fit}</p>
+        <p><strong>{content.considerationLabel}</strong>{option.consideration}</p>
+      </article>)}
+    </div>
+    {content.note && <EditorialNote {...content.note} />}
+  </div>
+</section>

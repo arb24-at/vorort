@@ -1,15 +1,16 @@
 # VorOrt collaboration handoff
 
-Last updated: 2026-09-10
+Last updated: 2026-09-11
 
 ## Current handoff
 
-- **Version and branch:** canonical source version `2.1.0` in root `AGENTS.md`; expected branch remains `main`, but this Drive-connected Chat cannot verify the local Git branch or working tree.
-- **Collaboration system:** role-aware context loading is now defined for Design, Content & SEO, Implementation and QA. Roles may be combined and are guidance rather than permission gates; Aykhan remains Product Owner and final approval authority.
-- **Design Lab governance:** the canonical recipe registry now carries advisory recommended placement/use and optional same-kind `supersedes` relationships. Approved Sections derives recipe IDs, guidance, active Workshop usage and pending replacement candidates from canonical sources. The validation script no longer hard-codes an approved-section count, so explicit approval is a normal lifecycle change.
-- **Media:** `ω┇Media-Queue.md` is the sole operational media-production/acceptance queue, with one authoritative checkbox per asset and standalone prompts. The former `art-prompts.md` tracker has been retired.
-- **Production:** production pages have not adopted the Workshop recipe contract. Section approval still does not authorize production migration.
-- **Next action:** complete `RV-001` in a shell/browser-capable QA or Codex session, then resume iterative review of the two Workshop pages with Aykhan.
+- **Version and branch:** `2.2.0` in root `AGENTS.md`; local branch `main` verified. Aykhan explicitly requested a commit after implementation; no push or deployment is authorized by this handoff. His pre-existing Design role guidance edit is preserved and excluded from this implementation commit.
+- **Private Workshop:** the English home-network prototype now has ten sections: editorial hero, five-topic index, Wi-Fi options, Ethernet connection diagram, home office, NAS, planning/troubleshooting, four-stage process, eight native FAQs and enquiry. Content uses the repository's English research and canonical service facts; scope boundaries sit beside their relevant topics.
+- **Recipes:** five new experimental recipes — `hero.editorial-art`, `scope.topic-index`, `explanation.options-guide`, `explanation.connection-path`, `explanation.editorial-media` (reused for three chapters). Retained `process.staged-path`, `faq.accordion`, `contact.enquiry`; predecessors remain available and experimental. Nothing is approved or deprecated.
+- **Media:** P1–P6 reused with explicit image dimensions and responsive WebP derivatives; masters unchanged. P1 remains the accepted working reference, P2–P6 await Aykhan's acceptance, P7–P9 are deferred. Placement notes remain in `ω┇Media-Queue.md`.
+- **Verification:** full repository validation passes (31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, registry/lifecycle/usage checks). All 25 production HTML files and their referenced assets compare byte-for-byte with a fresh build of the pre-change Git revision; sitemap identical. Business canvas markup differs only in the shared Lab stylesheet filename. `/vorort/` resolution and Lab `noindex, nofollow` are preserved.
+- **Browser review:** private canvas reviewed at 1440, 768, 390 and 320px; no horizontal overflow or clipped paragraph/heading text found. Checked hero/index crops, chapter layout, vertical mobile diagram, form disclosure/fields, keyboard focus, topic anchors, FAQ Enter/Space behavior and empty-form validation. Fixed a private-only mobile-to-tablet disclosure visibility issue. All five chapter anchors and native FAQ interaction also work with scripts blocked by a verified CSP response. Workshop width control, business canvas and Approved Sections smoke-tested. Main text/button contrast pairs exceed 4.5:1; focus ring on white exceeds 3:1. Reduced-motion rules were reviewed in source; actual OS preference emulation was unavailable. Email-app launch and message sending were not performed; the shared enquiry script and production output are unchanged.
+- **Next action:** Aykhan's visual review of hero balance, topic navigation, chapter rhythm, diagram clarity and mobile/contact composition. Keep unrelated historical verification below open until its stated scope is completed.
 
 ## Cross-role requests
 
@@ -18,7 +19,7 @@ None.
 ## Awaiting Aykhan
 
 - Review/accept outstanding items in `ω┇Media-Queue.md` as they become relevant to page review.
-- Explicitly approve individual section recipes only after reviewing their design in context; no recipe is approved by this collaboration-system change.
+- Review the v2.2.0 private prototype: hero balance, topic navigation, chapter rhythm, diagram clarity and mobile/contact composition. Individual recipe approval remains an explicit, separate Aykhan decision.
 - Final brand/domain, production contact/legal facts, qualification evidence and Berlin travel policy remain future launch inputs tracked in `β┇Roadmap.md`.
 
 ## Pending repository verification
@@ -33,13 +34,11 @@ None.
 
 ## Recent work
 
-### 2026-09-10 — ChatGPT — v2.1.0 role-aware collaboration and Design Lab governance
+### 2026-09-11 — Codex — v2.2.0 private home-network Workshop
 
-- **Objective:** make collaboration modular enough for iterative Project Chats and bounded coding-agent work without creating hard discipline silos or another source-of-truth system.
-- **Changes:** renamed the three canonical docs; added four role contracts; rewrote `AGENTS.md` as the shared worker/router contract; replaced the temporary art-prompt tracker with `ω┇Media-Queue.md`; added Design Lab recipe guidance/replacement metadata, same-kind replacement validation, Approved Sections guidance/usage/replacement-candidate presentation and generic lifecycle validation; clarified routine approval, production-composition and style-source contracts.
-- **Decisions:** workers select the minimum useful roles when Aykhan does not assign them and may add roles to finish work; environment limits evidence rather than permission to work; active section usage is derived; recommendation metadata is advisory; only Aykhan approves; routine approval changes registry state and runs existing validation rather than rewriting tests; non-breaking refinements may retain a recipe ID while material contract changes use a same-kind experimental replacement, migrate intended consumers after approval, and deprecate the predecessor only after migration.
-- **Validation performed here:** all changed Drive documentation and source files were read back after writing; the local copy of `validate-workshop.mjs` passed JavaScript syntax checking. No repository `npm run validate`, browser review, Git diff/status, commit, push or deployment check was available in this Chat.
-- **Next action:** complete `RV-001`, then continue the Workshop design-review cycle.
+- Combined Design, Content & SEO, Implementation and QA pass. Replaced the private gallery, repeated situations and outcome/tag panel with substantial service chapters, a linked visual index and a labelled connection diagram.
+- Added strict semantic contracts and negative cases for topic targets, paragraph blocks, labelled media, comparisons, connection labels and contact copy; usage remains derived from fixtures. Production contact defaults and email-preparation behavior remain unchanged.
+- Completed repository and browser checks described above, corrected the discovered private disclosure resize failure, and handed the experimental result back for visual review. Historical RV-001 is not claimed resolved by this implementation pass.
 
 ## Maintenance
 

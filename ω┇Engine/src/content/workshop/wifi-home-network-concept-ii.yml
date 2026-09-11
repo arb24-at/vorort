@@ -7,200 +7,307 @@ page:
 sections:
   - id: hero
     kind: hero
-    recipe: hero.banner-art
+    recipe: hero.editorial-art
     content:
-      eyebrow: Private customers & home offices · Home network
-      title: Home network, Wi‑Fi and NAS setup in Berlin
+      eyebrow: At home in Berlin · Network installation & support
+      title: Home network, Wi-Fi and NAS setup in Berlin
       intro: >-
-        A reliable home network is more than an internet connection. We plan and improve Wi‑Fi, cabling,
-        shared storage and device connections around the rooms and routines that matter every day.
+        Better connections for the rooms you live and work in. We plan, install and improve home networks —
+        bringing Wi-Fi, Ethernet, shared storage and everyday devices together around your home.
       media:
         subject: private-hero
-        alt: >-
-          Tactile illustrated Berlin home network scene: apartment rooms, home-office desk, Wi‑Fi coverage,
-          cable route and NAS in one calm environmental composition.
         src: /images/concept-ii/private/P1.png
+        alt: An illustrated Berlin apartment with a work desk, living room, wireless connections and a cable route to shared storage.
       actions:
-        - label: Request support
+        - label: Discuss your network
           target: contact
-        - label: See what is included
+        - label: Explore the service
           target: service-scope
-      highlights:
-        - Wi‑Fi & Mesh coverage
-        - Home-office connectivity
-        - NAS & shared storage
-        - Ethernet & cable routes
   - id: service-scope
     kind: scope
-    recipe: scope.art-panels
+    recipe: scope.topic-index
     content:
-      eyebrow: At a glance
-      title: The parts of a home network we can help bring together
+      eyebrow: Find your starting point
+      title: Explore home network services
       intro: >-
-        The page should answer the scope question almost instantly. This horizontal visual ribbon stays
-        concise; deeper explanation comes later.
+        A weak signal, a new home office or a place for shared files: start with what matters to you.
+        Each topic below explains the options and the work we can help with.
       items:
-        - title: Wi‑Fi & Mesh coverage
+        - title: Wi-Fi & Mesh
+          body: Coverage where you need it, with equipment placed for the real home.
+          target: wifi-coverage
           media:
             subject: wifi
             src: /images/concept-ii/private/P2.png
-        - title: Home-office connectivity
-          media:
-            subject: home-office
-            src: /images/concept-ii/private/P3.png
-        - title: NAS & shared storage
-          media:
-            subject: storage-home
-            src: /images/concept-ii/private/P4.png
-        - title: Ethernet & cable routes
+            alt: Wireless connections linking a home-office area and living space.
+        - title: Ethernet & cabling
+          body: Cable routes, network outlets and connections for fixed devices.
+          target: ethernet-cabling
           media:
             subject: cabling-home
             src: /images/concept-ii/private/P5.png
-        - title: Moves, renovation & upgrades
+            alt: An orange cable route connecting a home-office desk through a wall outlet.
+        - title: Home office & devices
+          body: Work calls, printers and everyday equipment on the same network.
+          target: home-office
+          media:
+            subject: home-office
+            src: /images/concept-ii/private/P3.png
+            alt: A connected workstation in a warm residential interior.
+        - title: NAS & shared storage
+          body: A central home for files, with user access and backup planned properly.
+          target: nas-storage
+          media:
+            subject: storage-home
+            src: /images/concept-ii/private/P4.png
+            alt: A compact NAS sharing a connection with a laptop, tablet and television.
+        - title: Planning & upgrades
+          body: A new home, an older setup or a network that has become hard to follow.
+          target: network-planning
           media:
             subject: upgrade-home
             src: /images/concept-ii/private/P6.png
-  - id: network-environment
+            alt: A home in transition with a desk, moving boxes and network planning details.
+  - id: wifi-coverage
     kind: explanation
-    recipe: explanation.art-gallery
+    recipe: explanation.options-guide
     content:
-      eyebrow: The network as an environment
-      title: A home network works best when the pieces are planned together
-      intro: >-
-        These full-art panels are where the final illustration system should do most of the storytelling:
-        recognisable rooms and objects, just enough technical structure, and very little reading burden.
-      items:
-        - eyebrow: Whole-home connectivity
-          title: Plan the network around rooms and routines, not a router box
-          body: >-
-            Coverage, cable routes, device locations and home-office needs are considered together so the
-            result makes sense in the actual home.
-          media:
-            subject: wifi
-        - eyebrow: Shared storage
-          title: Give files a sensible home
-          body: >-
-            A NAS can provide useful shared storage for photos, media or work data, with backup treated as a
-            separate requirement rather than assumed.
-          media:
-            subject: storage-home
-        - eyebrow: Physical setup
-          title: Use cable where reliability matters
-          body: >-
-            Ethernet, wired access points and better router placement can reduce the pressure on wireless
-            coverage and keep stationary equipment dependable.
-          media:
-            subject: cabling-home
-  - id: situations
-    kind: recognition
-    recipe: recognition.situations
+      eyebrow: 01 / Wireless coverage
+      title: Wi-Fi coverage, Mesh and access points
+      paragraphs:
+        - >-
+          The Wi-Fi works beside the router, but calls break up at the desk or a bedroom barely connects.
+          Before adding another box, it helps to understand the layout: where the router sits, what lies
+          between rooms and which devices need a dependable connection.
+        - >-
+          We assess the existing setup and plan suitable positions for the router, Mesh units or access
+          points. Walls, other wireless networks, available Ethernet connections and the way you use each
+          room all influence the approach. A stronger router is not automatically the answer, and useful
+          existing equipment does not need to be replaced simply because something newer is available.
+      media:
+        subject: wifi
+        src: /images/concept-ii/private/P2.png
+        alt: A home-office desk and living area connected by subtle wireless signal paths.
+      caption: Plan coverage around the rooms and devices that need it.
+      comparisonTitle: Three approaches, chosen around your home
+      fitLabel: Where it can help
+      considerationLabel: What to consider
+      options:
+        - title: Reposition & configure
+          fit: An existing router or access point is poorly placed, or the setup needs adjustment.
+          consideration: The internet entry point, walls and available connections limit where equipment can go.
+        - title: Mesh Wi-Fi
+          fit: Several areas need wireless coverage and a coordinated set of units suits the property.
+          consideration: Placement and the connection between units matter. Adding a node in a dead zone is not a substitute for planning.
+        - title: Wired access points
+          fit: Coverage is needed away from the router and an Ethernet route exists or can be installed.
+          consideration: Each access point needs a suitable position and a physical connection back into the network.
+      note:
+        title: Coverage is checked in the real space
+        body: >-
+          We test the agreed rooms and devices after the work. Building materials, interference and the
+          devices themselves affect performance, so we do not promise a universal Wi-Fi speed or coverage guarantee.
+  - id: ethernet-cabling
+    kind: explanation
+    recipe: explanation.connection-path
     content:
-      eyebrow: Recognisable situations
-      title: You can start with what is happening, not with a diagnosis
-      intro: >-
-        Private customers should not need to think like network engineers before contacting us. The page can
-        recognise the experience first and introduce the technical language later.
-      items:
-        - title: The Wi‑Fi is fine in one room and frustrating in another
-          body: >-
-            You do not need to know whether the answer is Mesh, a wired access point, a different location or
-            something else. Start with what you actually notice.
-        - title: The home office now needs more than a basic internet connection
-          body: >-
-            Reliable calls, work devices, printers and storage can make the network part of everyday work
-            rather than background household equipment.
-        - title: The setup has become a collection of repeaters, cables and separate boxes
-          body: A planned refresh can simplify the physical layout and make it clearer what each part is doing.
-        - title: You are moving, renovating or finally planning the network properly
-          body: >-
-            That is often the best moment to think about outlets, cable routes, Wi‑Fi placement and shared
-            storage before furniture and finishes make changes harder.
+      eyebrow: 02 / Physical connections
+      title: Ethernet installation and cable routes
+      paragraphs:
+        - >-
+          Wi-Fi is convenient for moving around the home. A fixed desk, television, NAS or access point can
+          also benefit from a wired connection. Ethernet gives those devices a physical route into the
+          network and reduces their reliance on a wireless signal travelling through the home.
+        - >-
+          We can plan and install agreed network cabling, outlets and connection points in apartments and
+          houses. Existing routes, furniture, equipment positions and the work the property allows are
+          considered together. Moves and renovations are useful moments to plan these connections before
+          finishes and furniture make access more difficult.
+      diagramTitle: From the router to the places that need a connection
+      source:
+        title: Router / network switch
+        body: The starting point for the wired connections in your home.
+      route:
+        title: Cable route & outlet
+        body: A practical, agreed path through the property.
+      destinations:
+        - title: Home-office desk
+          body: A wired connection for a stationary work device.
+        - title: Wi-Fi access point
+          body: Wireless coverage from a point connected by Ethernet.
+        - title: NAS or television
+          body: A fixed connection for shared files or everyday media.
+      caption: >-
+        A simplified relationship, not a wiring plan: destinations use their own suitable connections.
+        The number of cables, outlets and switch ports is agreed for your setup.
+      note:
+        title: Agree the installation details first
+        body: >-
+          We assess possible routes and discuss access, visible cabling, outlets and any associated making-good
+          before the installation. The physical work is scoped for the actual property rather than promised as a standard package.
+  - id: home-office
+    kind: explanation
+    recipe: explanation.editorial-media
+    content:
+      eyebrow: 03 / Everyday connections
+      title: Reliable home-office and device connections
+      paragraphs:
+        - >-
+          A work area needs more than a signal indicator. Video calls, large files, printers and shared
+          storage all depend on the connection at the desk. We consider the home office as part of the
+          whole network, including whether Wi-Fi, a wired connection or a nearby access point is the
+          sensible foundation.
+        - >-
+          Computers, compatible printers, Smart TVs and other networked devices can be connected as part
+          of the agreed work. We look at how they need to reach each other, where they are used and which
+          connections should be tested at handover. The aim is a setup you can understand, rather than a
+          growing collection of separate fixes.
+      media:
+        subject: home-office
+        src: /images/concept-ii/private/P3.png
+        alt: A home-office workstation connected to the network within a lived-in apartment.
+      caption: The work area belongs in the network plan from the beginning.
+      note:
+        title: Device and workplace boundaries
+        body: >-
+          Compatibility depends on the manufacturer, model and software. Employer-managed devices or VPN
+          settings may need coordination with your workplace IT team. Broader smart-home installation is a
+          separate project; this service focuses on the network and device connectivity.
+  - id: nas-storage
+    kind: explanation
+    recipe: explanation.editorial-media
+    content:
+      eyebrow: 04 / Shared storage
+      title: NAS setup, shared files and backup planning
+      paragraphs:
+        - >-
+          A NAS is a storage device connected to your network. It can give photos, documents, media and
+          work files a central place that suitable devices in the home can access. The starting point is
+          what should be stored, who needs access and how those files will be used — not simply how many
+          drive bays a box has.
+        - >-
+          We can recommend or supply suitable NAS hardware, configure shared storage and user access,
+          and connect the agreed computers or other compatible devices. The NAS location and its network
+          connection are part of the same plan as the Wi-Fi, cabling and home office.
+        - >-
+          Backup needs a separate conversation. Decide which files need another copy, where that copy
+          should live and how the backup process will be checked. We discuss a suitable structure and
+          explain the agreed setup at handover, so shared storage and backup have clear, distinct roles.
+      media:
+        subject: storage-home
+        src: /images/concept-ii/private/P4.png
+        alt: A four-bay NAS on a shelf with connections to a laptop, tablet and television.
+      caption: Shared storage connects devices. Backup protects a separate copy of the files.
+      note:
+        title: A NAS is not automatically a backup
+        body: >-
+          If a file only exists on the NAS, moving it there has not created an independent backup. Shared
+          storage also does not guarantee data recovery. Damaged or unreadable media needs a separately assessed approach.
+  - id: network-planning
+    kind: explanation
+    recipe: explanation.editorial-media
+    content:
+      eyebrow: 05 / New and existing homes
+      title: Home network planning, upgrades and troubleshooting
+      paragraphs:
+        - >-
+          A new apartment, a renovation or a change in how you work can be a good reason to plan the
+          network from the beginning. We consider room layout, important devices, existing outlets,
+          possible cable routes and storage requirements before proposing equipment. Optional hardware
+          supply can be included once the useful changes are clear.
+        - >-
+          An existing network may need a more focused improvement. If the setup has grown into several
+          repeaters, routers and loose cables, we review how the parts connect, check the relevant router
+          and network configuration, and identify what can usefully stay. Tell us where the problem
+          happens and what you need to work; you do not need to arrive with a technical diagnosis.
+        - >-
+          Troubleshooting also means separating the home network from the internet connection that
+          serves it. We can help assess whether a problem is likely within the home or beyond it.
+          External line faults and provider infrastructure remain the internet provider's responsibility.
+      media:
+        subject: upgrade-home
+        src: /images/concept-ii/private/P6.png
+        alt: A residential workspace during a move, with boxes and plans for future connections.
+      caption: Plan the useful connections before adding more equipment.
   - id: process
     kind: process
     recipe: process.staged-path
     content:
-      eyebrow: How we work
-      title: From a frustrating situation to a network that makes sense
+      eyebrow: On-site work in Berlin
+      title: How home network installation works
       intro: >-
-        Technical depth increases here, after the visitor already understands the service scope. The process
-        remains short and practical.
+        Practical IT experience since 2008 informs the work. The initial conversation is free; projects
+        are quoted individually. If a paid diagnostic visit is needed, we explain it before arranging it.
       steps:
-        - title: Tell us what you notice
+        - title: Understand your home
           body: >-
-            A room with poor coverage, unstable calls, central-storage needs or a messy existing setup is
-            enough to start.
-        - title: Understand the home
+            Start with the important rooms, devices and symptoms. We review the property, existing equipment,
+            connections and intended use.
+        - title: Agree the scope
           body: >-
-            Rooms, walls, existing connections, device locations and the way the home office is used shape the
-            practical options.
-        - title: Agree the useful changes
+            We explain the practical options, equipment and installation work. Costs and any extra work
+            are agreed before proceeding.
+        - title: Install & configure
           body: >-
-            We keep the scope tied to the real problem rather than replacing equipment simply because
-            something newer exists.
-        - title: Build, test and explain
+            We install the agreed cabling and equipment, configure the network and storage, and connect
+            the devices included in the project.
+        - title: Test & explain
           body: >-
-            The finished network should be more reliable and more understandable, with an agreed handover
-            rather than a mystery box.
-  - id: outcome
-    kind: outcome
-    recipe: outcome.scope-proof
-    content:
-      eyebrow: Useful outcome
-      title: The goal is not more hardware. It is a clearer network foundation.
-      body: >-
-        Reliable connections where they matter, cable where it makes sense, useful shared storage and a setup
-        that is easier to understand and extend later.
-      media:
-        subject: wifi
-        alt: Outcome artwork placeholder
-      includedHeading: Often included
-      included:
-        - Wi‑Fi planning
-        - Mesh and wired access points
-        - Ethernet cabling
-        - Network outlets
-        - Router placement
-        - NAS and shared storage
-        - Home-office connectivity
-        - Selected printers and connected devices
-        - Testing
-        - Understandable handover
-      boundariesHeading: Important boundaries
-      boundaries:
-        - No blanket speed guarantee
-        - No whole-property coverage guarantee without assessment
-        - ISP line faults remain outside the home network
-        - NAS does not automatically mean backup
-        - No guaranteed data recovery
-        - Never send passwords or recovery codes through the enquiry
+            We check the agreed rooms, wired and wireless connections and storage access, then explain
+            the essential setup in plain language.
   - id: questions
     kind: faq
     recipe: faq.accordion
     content:
-      eyebrow: Useful answers
-      title: Useful answers about home network work
+      eyebrow: Before you get in touch
+      title: Home-network questions
       items:
-        - question: Can you improve Wi‑Fi without replacing everything?
+        - question: Can you improve my network without replacing everything?
           answer: >-
-            Often, yes. The useful answer depends on the property, existing equipment, cable options and where
-            reliable coverage is actually needed.
-        - question: Can you install Ethernet and wired access points?
+            Often, yes. We review existing equipment, placement, settings and cable options before recommending
+            changes. The aim is to solve the actual problem and keep useful equipment where it fits the plan.
+        - question: Can you supply the network and NAS hardware?
           answer: >-
-            Yes, where the property and agreed scope make that practical. Cable routes and installation
-            details are assessed for the real space rather than promised generically.
-        - question: Can you set up NAS and backup?
+            Yes, suitable equipment can be recommended and supplied as part of the agreed project. We first
+            clarify the rooms, devices, storage needs and connections so purchases support the intended result.
+        - question: Can Ethernet be installed in an existing apartment?
           answer: >-
-            We can set up NAS and shared storage. A NAS is not automatically a backup, so backup requirements
-            should be planned separately and explained clearly.
-        - question: Can printers, TVs and other devices be connected too?
+            Yes, where a practical route and the necessary access can be agreed. We assess outlets, cable
+            routes and installation details for the property. Any associated making-good is discussed in
+            advance rather than assumed to be included.
+        - question: Is Mesh always better than a repeater or wired access point?
           answer: >-
-            Suitable networked devices can be integrated when they fit the project. Compatibility and vendor
-            limitations still apply.
-        - question: Can you guarantee strong Wi‑Fi in every room?
+            No single approach fits every home. Layout, the existing equipment and the connection between
+            wireless units all matter. Where cabling is available, a wired access point may be a useful
+            option. We assess the property before recommending an approach.
+        - question: Can the NAS also be used for backups?
           answer: >-
-            No. Coverage depends on the property, interference, materials and equipment. We can assess and
-            design for the real environment, but we do not publish blanket coverage or speed guarantees.
+            A NAS can be part of a backup workflow, but it is not automatically a complete backup strategy.
+            We discuss which data needs another copy, where that copy belongs and how the agreed backup
+            process will be checked. There is no guaranteed recovery of lost or damaged data.
+        - question: Can printers, televisions and smart-home devices be included?
+          answer: >-
+            Compatible networked devices can be included in the agreed scope. Available features depend on
+            the device and its ecosystem. This page covers their network connection; broader smart-home
+            installation is a separately scoped project.
+        - question: Can you guarantee strong Wi-Fi in every room?
+          answer: >-
+            We do not give blanket coverage or speed guarantees. Walls, interference, available cable routes
+            and client devices affect the result. We assess the home, plan suitable measures and test the
+            areas agreed for the work.
+        - question: What if the internet provider's line is faulty?
+          answer: >-
+            We can help assess whether the problem is likely in the home network or outside it. Faults in the
+            external connection or provider infrastructure ultimately need to be resolved by the internet provider.
   - id: contact
     kind: contact
     recipe: contact.enquiry
-    content: {}
+    content:
+      title: Tell us about your home network
+      intro: >-
+        Planning something new or improving what is already there? Tell us the important rooms, the devices
+        you use and what you would like to work better. A short description is enough to start.
+      formIntro: This form opens your email app with your details so you can review and send your enquiry.
+      affectedPlaceholder: For example Wi-Fi coverage, Ethernet, a home office or NAS
+      request: What does your home network need to do?
+      requestPlaceholder: Describe the rooms, existing connections or symptoms, and what you would like to improve.
