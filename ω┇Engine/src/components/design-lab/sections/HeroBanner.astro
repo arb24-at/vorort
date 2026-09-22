@@ -11,18 +11,14 @@ const heroKind = media.subject;
 ---
 
 <section class="c2-hero" id={id} data-recipe="hero.banner-art">
-    <div class="container">
-      <div class:list={["c2-hero__banner", { "c2-hero__banner--with-image": Boolean(heroImageSrc) }]}>
-        <div class="c2-hero__copy">
-          <span class="c2-eyebrow">{eyebrow}</span>
-          <h1>{title}</h1>
-          <p>{intro}</p>
-          <div class="c2-hero__actions">
-            <a class="c2-button c2-button--signal" href={`#${actions[0].target}`}>{actions[0].label}</a>
-            <a class="c2-button c2-button--ghost" href={`#${actions[1].target}`}>{actions[1].label}</a>
-          </div>
-        </div>
+  <div class="container">
+    <div class:list={["c2-hero__banner", { "c2-hero__banner--with-image": Boolean(heroImageSrc) }]}>
+      <div class="c2-hero__copy">
+        <span class="c2-eyebrow">{eyebrow}</span>
+        <h1>{title}</h1>
+      </div>
 
+      <div class="c2-hero__visual">
         <div
           class:list={[
             "c2-art",
@@ -54,9 +50,22 @@ const heroKind = media.subject;
           )}
         </div>
 
-        <div class="c2-hero__facts" aria-label="Service highlights">
-          {highlights.map((item) => <span>{item}</span>)}
+        <div class="c2-hero__glass">
+          <p>{intro}</p>
+          <div class="c2-hero__actions">
+            <a class="c2-button c2-button--signal" href={`#${actions[0].target}`}>
+              <span>{actions[0].label}</span><b aria-hidden="true">↗</b>
+            </a>
+            <a class="c2-button c2-button--ghost" href={`#${actions[1].target}`}>
+              <span>{actions[1].label}</span><b aria-hidden="true">↓</b>
+            </a>
+          </div>
         </div>
       </div>
+
+      <div class="c2-hero__facts" aria-label="Service highlights">
+        {highlights.map((item) => <span>{item}</span>)}
+      </div>
     </div>
-  </section>
+  </div>
+</section>

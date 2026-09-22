@@ -1,0 +1,14 @@
+---
+import { getSectionRecipe, type RecipeId } from "../../design-system/section-recipes";
+import "../../styles/design-lab/section-review.css";
+
+type Props = { recipeId: RecipeId };
+const { recipeId } = Astro.props;
+const recipe = getSectionRecipe(recipeId);
+---
+<div class="lab-section-review" data-lab-recipe={recipeId} data-lab-status={recipe.status}>
+  <div class="lab-section-review__chrome">
+    <code class="lab-recipe-label">{recipeId}</code>
+  </div>
+  <slot />
+</div>

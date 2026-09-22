@@ -43,6 +43,7 @@ const expectedHtml = [
 
 const textExtensions = new Set([".css", ".html", ".js", ".svg", ".txt", ".xml"]);
 const errors = [];
+const reviewChrome = /lab-section-review|lab-recipe-label|data-lab-recipe/;
 
 function walk(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
@@ -101,12 +102,17 @@ for (const file of files) {
   } else if (contents.includes(`${basePath}design-lab/`)) {
     errors.push(`Customer page must not link to the internal Design Lab: ${displayPath}`);
   }
+  if (!displayPath.startsWith("design-lab/") && reviewChrome.test(contents)) {
+    errors.push(`Design Lab section labels must not appear in customer HTML: ${displayPath}`);
+  }
   for (const match of contents.matchAll(/(?:href|src)="([^"]+)"/g)) {
     const url = match[1];
     if (!url.startsWith(basePath)) continue;
     const target = resolveBuiltTarget(url);
     if (!fs.existsSync(target)) {
       errors.push(`Missing internal target in ${displayPath}: ${url}`);
+    } else if (!displayPath.startsWith("design-lab/") && /\.(css|js)$/.test(target) && reviewChrome.test(fs.readFileSync(target, "utf8"))) {
+      errors.push(`Customer page must not load Design Lab section label assets: ${displayPath}: ${url}`);
     }
   }
 }
@@ -121,7 +127,7 @@ if (!fs.existsSync(sitemapPath)) {
 } else {
   const sitemap = fs.readFileSync(sitemapPath, "utf8");
   const sitemapUrlCount = (sitemap.match(/<url>/g) ?? []).length;
-  if (sitemap.includes("/design-lab/")) {
+  if (sitemap.includes("/design-lab/") || reviewChrome.test(sitemap)) {
     errors.push("Design Lab must remain excluded from sitemap.xml.");
   }
   if (sitemapUrlCount !== 23) {

@@ -1,0 +1,38 @@
+/* Review tooling only: imported by SectionReview, never by a recipe renderer. */
+.lab-section-review { position: relative; }
+.lab-section-review__chrome {
+  position: absolute;
+  inset: 0 auto auto .5rem;
+  z-index: 5;
+  max-width: calc(100% - 1rem);
+  line-height: 0;
+  pointer-events: none;
+}
+.lab-recipe-label {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0 .3rem;
+  border: 1px solid rgba(100, 116, 139, .1);
+  border-radius: 3px;
+  background: #f4f5f6;
+  color: #596775;
+  font: 400 11px/14px ui-monospace, SFMono-Regular, Consolas, monospace;
+  overflow-wrap: anywhere;
+  user-select: all;
+  pointer-events: auto;
+}
+.lab-section-review[data-lab-status="approved"] > .lab-section-review__chrome > .lab-recipe-label {
+  background: #edf7f0;
+  border-color: rgba(16, 185, 129, .12);
+}
+
+/* Preserve the renderer's sibling-based editorial alternation through the
+   review wrapper. Keep this adaptation out of reusable section styles. */
+.lab-section-review[data-lab-recipe="explanation.editorial-media"] + .lab-section-review[data-lab-recipe="explanation.editorial-media"] > .pw-editorial { border-top: 1px solid #d8e0e1; }
+.lab-section-review:nth-child(even of [data-lab-recipe="explanation.editorial-media"]) > .pw-editorial { background: #fff; }
+@media (min-width: 768px) {
+  .lab-section-review:nth-child(even of [data-lab-recipe="explanation.editorial-media"]) > .pw-editorial .pw-editorial__grid {
+    grid-template-columns: 1fr 1.22fr;
+    grid-template-areas: "media heading" "media body";
+  }
+}

@@ -4,13 +4,13 @@ Last updated: 2026-09-22
 
 ## Current handoff
 
-- **Version and branch:** `2.2.16` in root `AGENTS.md`; local branch `main` was Git verified for Task 1C. The current editorial explanation experiments are Drive source/readback work; no new repository validation, browser verification, Git commit, push or deployment is claimed.
+- **Version and branch:** `2.2.17` in root `AGENTS.md`; local branch `main` was Git verified for Task 1C. The current editorial explanation experiments are Drive source/readback work; no new repository validation, browser verification, Git commit, push or deployment is claimed.
 - **Private Workshop:** the English home-network prototype now has twelve sections: editorial hero, five-topic index, Wi-Fi options, the new rich editorial-prose Wi-Fi chapter, refined Ethernet connection path, three editorial-media chapters, four-stage process, approved always-visible editorial Q&A, retained experimental accordion FAQ for comparison, a redesigned always-visible direct-submit enquiry form, and shared Workshop footer chrome. Content uses the repository's English research and canonical service facts; scope boundaries sit beside their relevant topics.
 - **Recipes:** `process.staged-path`, `faq.editorial-answers`, `explanation.editorial-media`, `explanation.options-guide`, `explanation.editorial-prose` and `explanation.connection-path` are approved. `faq.accordion` remains experimental and is superseded by the approved editorial Q&A recipe; it has not been deprecated because Workshop comparison/migration is still active. Other newer private recipes and `contact.enquiry` remain experimental; the enquiry recipe now has a tighter reusable-template contract: direct phone/WhatsApp/email actions remain visible, required and reply-channel-dependent fields validate inline, audience-known context is not redundantly asked, no default consent checkbox is used, and production delivery targets a configured direct endpoint rather than mailto. The options guide and rich editorial prose remain separate recipes that can be used independently or consecutively. `explanation.editorial-media` keeps its simpler one-image chapter contract, while the connection-path approval covers the full section composition and semantic path; its exact schematic artwork remains replaceable/refinable.
 - **Media:** P1–P6 reused with explicit image dimensions and responsive WebP derivatives; masters unchanged. P1 remains the accepted working reference, P2–P6 await Aykhan's acceptance, P7–P9 are deferred. Placement notes remain in `ω┇Media-Queue.md`.
 - **Verification:** Task 1C passed `npm run validate`: 31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, 86 invalid approved-guidance cases, experimental guidance migration/promotion, replacement/lifecycle/compatibility and derived usage checks. Built approval count now matches the registry instead of a stale zero-approval assertion. Base-aware internal links resolve; Lab robots/sitemap separation passes. `git diff --check` passed and `git status --short` was reviewed.
 - **Browser review:** Task 1C reviewed at 1440×1000 and 390×844 in collapsed and expanded states. Native guidance disclosures start closed, support Enter/Space with visible focus, preserve readable hierarchy and do not alter FAQ disclosure state. No horizontal overflow at either width. Desktop height is 3,056px collapsed versus 4,863px with both guidance panels open (about 37% shorter); specimen heights remain unchanged. All pre-existing authoring/usage markup was compared with HEAD and preserved apart from indentation.
-- **Next action:** review the revised `contact` (`contact.enquiry`) direct-submit UX and whole-page Workshop footer together, then approve/refine the form if desired. A real submission endpoint/provider still needs to be selected/configured before production adoption. Task **2A** adds Lab-only recipe labels with a subtle green/mint ID tint for approved recipes, **2B** adds the `recipe.id — “Visible section heading”` contents navigator, and **2C** adds a Lab-only per-section Copy screenshot control that captures the current rendered width to PNG/clipboard with a graceful download fallback. Task **1D** final QA should wait until Aykhan is ready to close the library pass. Historical RV-001 remains open for its broader review scope.
+- **Next action:** review the revised business `hero.banner-art` experiment against the private `hero.editorial-art` reference at desktop and mobile widths. The business hero now keeps the centred headline in the dark gradient surface, places the introduction/actions in a single frosted band that overlaps the image edge, moves highlights out of the conflict zone, and deliberately simplifies to a readable stacked mobile composition. The private hero remains unchanged. After visual review, decide whether to continue refining this recipe or use the stronger ideas in a future shared hero blueprint. Task **2A** adds Lab-only recipe labels with a subtle green/mint ID tint for approved recipes, **2B** adds the `recipe.id — “Visible section heading”` contents navigator, and **2C** adds a Lab-only per-section Copy screenshot control. Task **1D** final QA should wait until Aykhan is ready to close the library pass. Historical RV-001 remains open for its broader review scope.
 
 ## Cross-role requests
 
@@ -24,6 +24,12 @@ None.
 - Choose/authorize the production form submission provider/endpoint (including its data-processing/privacy implications) before direct enquiry delivery can be enabled on GitHub Pages.
 
 ## Pending repository verification
+
+### RV-007 — v2.2.17 business hero composition experiment
+
+- **Source state:** Drive source/readback work refines the experimental business `hero.banner-art` renderer and hero styles only. The centred eyebrow/headline remain above the visual inside the dark gradient hero surface; the introduction and two CTAs move into one translucent frosted panel overlapping the upper image edge; the artwork stays a separate semantic image region; highlights move into a quieter row below the image. Mobile switches to left-aligned heading copy, an in-flow frosted panel with full-width actions, then the image and compact highlights so no overlay collision is required. The private `hero.editorial-art` renderer is unchanged.
+- **Verify:** run the Workshop/registry validation plus `git diff --check` and `git status --short`. Confirm `HeroBanner.astro` and `hero.css` compile, action links still target the intended section IDs, the artwork remains accessible as one labelled image region, and no production route is changed.
+- **Browser review:** inspect the business Workshop hero at representative desktop/tablet/mobile widths. Check headline wrapping, frosted-panel readability over both placeholder art and a future real image, CTA focus/hover states, no overlap with the headline, no clipped highlights, and no horizontal overflow. Compare visually with the private hero but do not modify the private recipe as part of this verification.
 
 ### RV-006 — v2.2.15 direct enquiry UX
 
@@ -58,6 +64,12 @@ None.
 - **Scope:** validate the existing v2.1.0 change first. Do not redesign, rewrite content or refactor unrelated code unless an actual failure requires it.
 
 ## Recent work
+
+### 2026-09-22 — ChatGPT — v2.2.17 centred business hero experiment
+
+- Reworked experimental `hero.banner-art` toward the chosen centred Option A: the headline remains fully above the image within the existing dark gradient hero surface, while one controlled light/frosted introduction + CTA panel overlaps only the image edge instead of layering multiple translucent boxes across the content.
+- Moved service highlights below the image into a quieter supporting row and reduced the artwork-placeholder caption footprint. On mobile the heading becomes left-aligned, the frosted content panel stays in normal flow with full-width actions, the image follows underneath, and highlights recompose into compact rows rather than clipping horizontally.
+- The private `hero.editorial-art` reference was intentionally left unchanged. Drive source/readback verification is required; repository/browser/Git verification remains pending under RV-007.
 
 ### 2026-09-22 — ChatGPT — v2.2.16 Design Lab section screenshot task
 
