@@ -4,7 +4,7 @@ import { withBase } from "../../../utils/withBase";
 import ArtField from "../ArtField.astro";
 type Props = { id: string; content: RecipeContent<"hero.banner-art"> };
 const { id, content } = Astro.props;
-const { eyebrow, title, intro, media, actions, highlights } = content;
+const { eyebrow, title, intro, media, actions } = content;
 const heroImageSrc = media.src ? withBase(media.src) : undefined;
 const heroArtLabel = media.alt;
 const heroKind = media.subject;
@@ -47,7 +47,6 @@ const heroKind = media.subject;
           )}
         </div>
 
-        <span class="c2-hero__frost" aria-hidden="true"></span>
 
         <div class="c2-hero__glass">
           <p>{intro}</p>
@@ -62,9 +61,6 @@ const heroKind = media.subject;
         </div>
       </div>
 
-      <div class="c2-hero__facts" aria-label="Service highlights">
-        {highlights.map((item) => <span>{item}</span>)}
-      </div>
     </div>
   </div>
 </section>

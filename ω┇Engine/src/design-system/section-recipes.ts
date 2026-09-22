@@ -19,7 +19,6 @@ const editorialHeading = { eyebrow: text, title: text, paragraphs };
 const sectionAction = z.object({ label: text, target: anchor }).strict();
 const heroBannerContentSchema = z.object({ ...heading, media: labelledMedia,
   actions: z.array(z.object({ label: text, target: anchor }).strict()).length(2),
-  highlights: z.array(text).min(1).max(4),
 }).strict();
 const editorialNote = z.object({
   title: text,
@@ -188,6 +187,14 @@ export const sectionRecipes = {
     recommendedPlacement: "Design Lab comparison only, immediately after the real opening hero when useful",
     recommendedUse: "Compare an experimental hero treatment against the page's real opening hero while preserving the one-opening-hero Workshop contract.",
     renderer: "HeroBanner.astro",
+    schema: heroBannerContentSchema,
+  }),
+  "comparison.hero-banner-cta-overlay": recipe({
+    name: "Hero banner with CTA-only image overlay", kind: "comparison",
+    purpose: "Compare the same centred banner structure with headline and introduction above the artwork while keeping only the actions over the image.",
+    recommendedPlacement: "Design Lab comparison only, beside other hero-banner variants",
+    recommendedUse: "Test whether moving explanatory copy above the artwork improves image legibility while preserving centred in-image calls to action.",
+    renderer: "HeroBannerCtaOverlay.astro",
     schema: heroBannerContentSchema,
   }),
   "scope.art-panels": recipe({

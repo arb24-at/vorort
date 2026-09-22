@@ -25,11 +25,6 @@ sections:
           target: contact
         - label: See what is included
           target: service-scope
-      highlights:
-        - Office Wi‑Fi & work areas
-        - Cabling, outlets & routes
-        - Managed network hardware
-        - Shared storage & services
   - id: service-scope
     kind: scope
     recipe: scope.art-panels

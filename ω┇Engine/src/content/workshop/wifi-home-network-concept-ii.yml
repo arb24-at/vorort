@@ -41,11 +41,24 @@ sections:
           target: contact
         - label: Explore the service
           target: service-scope
-      highlights:
-        - Wi-Fi coverage & Mesh
-        - Ethernet & cabling
-        - Home office & devices
-        - NAS & shared storage
+  - id: hero-cta-overlay
+    kind: comparison
+    recipe: comparison.hero-banner-cta-overlay
+    content:
+      eyebrow: At home in Berlin · Network installation & support
+      title: Home network, Wi-Fi and NAS setup in Berlin
+      intro: >-
+        Better connections for the rooms you live and work in. We plan, install and improve home networks —
+        bringing Wi-Fi, Ethernet, shared storage and everyday devices together around your home.
+      media:
+        subject: private-hero
+        src: /images/concept-ii/private/P1.png
+        alt: An illustrated Berlin apartment with a work desk, living room, wireless connections and a cable route to shared storage.
+      actions:
+        - label: Discuss your network
+          target: contact
+        - label: Explore the service
+          target: service-scope
   - id: service-scope
     kind: scope
     recipe: scope.topic-index

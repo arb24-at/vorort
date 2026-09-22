@@ -4,14 +4,14 @@ Last updated: 2026-09-22
 
 ## Current handoff
 
-- **Version and branch:** `2.2.18` in root `AGENTS.md`; local branch `main` was Git verified for Task 1C. The current editorial explanation experiments are Drive source/readback work; no new repository validation, browser verification, Git commit, push or deployment is claimed.
+- **Version and branch:** `2.2.21` in root `AGENTS.md`; local branch `main` was Git verified for Task 1C. The current editorial explanation experiments are Drive source/readback work; no new repository validation, browser verification, Git commit, push or deployment is claimed.
 - **v2.2.18 correction:** the private `hero-frosted` comparison now uses experimental `comparison.hero-banner` with `kind: comparison`, so the Workshop retains exactly one semantic opening hero while still rendering the same `HeroBanner.astro` experiment immediately after it. Hero action-target validation covers the comparison specimen too.
-- **Private Workshop:** the English home-network prototype now has thirteen sections: editorial hero, a second frosted-banner hero comparison, five-topic index, Wi-Fi options, the new rich editorial-prose Wi-Fi chapter, refined Ethernet connection path, three editorial-media chapters, four-stage process, approved always-visible editorial Q&A, retained experimental accordion FAQ for comparison, a redesigned always-visible direct-submit enquiry form, and shared Workshop footer chrome. Content uses the repository's English research and canonical service facts; scope boundaries sit beside their relevant topics.
+- **Private Workshop:** the English home-network prototype now has fourteen sections: editorial hero, a second blur-overlay hero comparison, five-topic index, Wi-Fi options, the new rich editorial-prose Wi-Fi chapter, refined Ethernet connection path, three editorial-media chapters, four-stage process, approved always-visible editorial Q&A, retained experimental accordion FAQ for comparison, a redesigned always-visible direct-submit enquiry form, and shared Workshop footer chrome. Content uses the repository's English research and canonical service facts; scope boundaries sit beside their relevant topics.
 - **Recipes:** `process.staged-path`, `faq.editorial-answers`, `explanation.editorial-media`, `explanation.options-guide`, `explanation.editorial-prose` and `explanation.connection-path` are approved. `faq.accordion` remains experimental and is superseded by the approved editorial Q&A recipe; it has not been deprecated because Workshop comparison/migration is still active. Other newer private recipes and `contact.enquiry` remain experimental; the enquiry recipe now has a tighter reusable-template contract: direct phone/WhatsApp/email actions remain visible, required and reply-channel-dependent fields validate inline, audience-known context is not redundantly asked, no default consent checkbox is used, and production delivery targets a configured direct endpoint rather than mailto. The options guide and rich editorial prose remain separate recipes that can be used independently or consecutively. `explanation.editorial-media` keeps its simpler one-image chapter contract, while the connection-path approval covers the full section composition and semantic path; its exact schematic artwork remains replaceable/refinable.
 - **Media:** P1–P6 reused with explicit image dimensions and responsive WebP derivatives; masters unchanged. P1 remains the accepted working reference, P2–P6 await Aykhan's acceptance, P7–P9 are deferred. Placement notes remain in `ω┇Media-Queue.md`.
 - **Verification:** Task 1C passed `npm run validate`: 31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, 86 invalid approved-guidance cases, experimental guidance migration/promotion, replacement/lifecycle/compatibility and derived usage checks. Built approval count now matches the registry instead of a stale zero-approval assertion. Base-aware internal links resolve; Lab robots/sitemap separation passes. `git diff --check` passed and `git status --short` was reviewed.
 - **Browser review:** Task 1C reviewed at 1440×1000 and 390×844 in collapsed and expanded states. Native guidance disclosures start closed, support Enter/Space with visible focus, preserve readable hierarchy and do not alter FAQ disclosure state. No horizontal overflow at either width. Desktop height is 3,056px collapsed versus 4,863px with both guidance panels open (about 37% shorter); specimen heights remain unchanged. All pre-existing authoring/usage markup was compared with HEAD and preserved apart from indentation.
-- **Next action:** review the revised business `hero.banner-art` experiment against the private `hero.editorial-art` reference at desktop and mobile widths. The business hero now keeps the centred headline in the dark gradient surface, places the introduction/actions in a single frosted band that overlaps the image edge, moves highlights out of the conflict zone, and deliberately simplifies to a readable stacked mobile composition. The private hero remains unchanged. After visual review, decide whether to continue refining this recipe or use the stronger ideas in a future shared hero blueprint. Task **2A** adds Lab-only recipe labels with a subtle green/mint ID tint for approved recipes, **2B** adds the `recipe.id — “Visible section heading”` contents navigator, and **2C** adds a Lab-only per-section Copy screenshot control. Task **1D** final QA should wait until Aykhan is ready to close the library pass. Historical RV-001 remains open for its broader review scope.
+- **Next action:** review the v2.2.20 `hero.banner-art` / `comparison.hero-banner` refinement at desktop and mobile widths. The hero keeps the centred main title above an ultra-wide 8:3 image, moves the bright gradient behind that title, left-aligns the service eyebrow (mint on private), puts larger intro copy at the top of the image, removes the highlight-tag row, and uses direct image blur with a stronger hover/focus state while preserving the image radius. The image now reaches much closer to the hero edges with equal left/right/bottom padding. Compare the private `hero-frosted` specimen directly with the original `hero.editorial-art`, then decide whether this banner philosophy is worth approving/refining. Task **2A** adds Lab-only recipe labels with a subtle green/mint ID tint for approved recipes, **2B** adds the `recipe.id — “Visible section heading”` contents navigator, and **2C** adds a Lab-only per-section Copy screenshot control. Task **1D** final QA should wait until Aykhan is ready to close the library pass. Historical RV-001 remains open for its broader review scope.
 
 ## Cross-role requests
 
@@ -25,6 +25,24 @@ None.
 - Choose/authorize the production form submission provider/endpoint (including its data-processing/privacy implications) before direct enquiry delivery can be enabled on GitHub Pages.
 
 ## Pending repository verification
+
+### RV-011 — v2.2.21 CTA-only hero comparison
+
+- **Source state:** Drive source/readback work adds a third private hero comparison immediately after `hero-frosted`. New experimental `comparison.hero-banner-cta-overlay` reuses the same content schema and visual foundation but moves the introduction above the artwork with the main heading, leaving only the two CTA buttons centred over the image. The existing opening hero and second comparison remain unchanged.
+- **Verify:** run Workshop/registry validation plus `git diff --check` and `git status --short`. Confirm `HeroBannerCtaOverlay.astro` resolves through the registry, the private fixture still contains exactly one semantic opening hero, and both CTA targets validate.
+- **Browser review:** inspect the three private hero variants at representative desktop/mobile widths. Confirm the third keeps the same 8:3 desktop crop, blur/hover treatment, image inset/radius and gradient shell as the second while the intro sits cleanly above the image and the CTA pair remains centred over it without overflow.
+
+### RV-010 — v2.2.20 hero hierarchy and image-edge refinement
+
+- **Source state:** Drive source/readback work refines the shared experimental `HeroBanner.astro` / `hero.css` used by business `hero.banner-art` and private `comparison.hero-banner`. It removes the service-highlight tags from both the renderer and experimental hero content contract, left-aligns the eyebrow (mint for private), enlarges the main title and image-overlay intro, top-aligns that intro, moves the hero glow behind the centred title, reduces left/right/bottom image inset while keeping equal edge padding, and moves blur from a backdrop layer onto the image itself so the rounded frame remains intact during hover/focus. CTA text shadows are explicitly disabled and hover/focus motion/shadow/brightness are stronger.
+- **Verify:** run Workshop/registry validation plus `git diff --check` and `git status --short`. Confirm the simplified experimental hero schema no longer requires the removed `highlights` field, both business/private comparison instances compile, and no production route is changed.
+- **Browser review:** inspect the private comparison and business hero at representative desktop/mobile widths. Check eyebrow alignment/colour, title wrapping, intro top alignment, 8:3 crop width and equal edge padding, corner radius during blur transitions, CTA focus/hover prominence, mobile 4:5 composition and no horizontal overflow.
+
+### RV-009 — v2.2.19 blur-only ultra-wide hero refinement
+
+- **Source state:** Drive source/readback work refines the shared experimental `HeroBanner.astro` styling used by business `hero.banner-art` and private `comparison.hero-banner`: removes the white frost/background treatment, preserves image colour, uses blur-only readability with a stronger hover/focus blur, enlarges and lightens overlay intro copy, strengthens the secondary CTA, reduces the centred desktop headline so long service titles can settle into roughly two lines, and switches the desktop visual to an ultra-wide 8:3 crop. New top-level CSS variables expose base/hover blur plus desktop/mobile vertical image position; mobile uses its own taller 4:5 crop.
+- **Verify:** run Workshop/registry validation plus `git diff --check` and `git status --short`. Confirm both comparison and business hero renderers compile, action targets still resolve, and no production route is changed.
+- **Browser review:** inspect private `hero-frosted` and business `hero` at representative desktop/mobile widths. Check title wrapping, 8:3 crop balance, top-biased image position, overlay copy contrast without colour wash, CTA readability/focus, stronger hover/focus blur, mobile 4:5 recomposition and no horizontal overflow.
 
 ### RV-008 — v2.2.18 frosted hero comparison
 
@@ -71,6 +89,24 @@ None.
 - **Scope:** validate the existing v2.1.0 change first. Do not redesign, rewrite content or refactor unrelated code unless an actual failure requires it.
 
 ## Recent work
+
+### 2026-09-22 — ChatGPT — v2.2.21 third hero comparison
+
+- Added a third private Workshop hero comparison as experimental `comparison.hero-banner-cta-overlay`, preserving the second variant's gradient shell, ultra-wide image, blur interaction, crop and CTA styling.
+- The new variant moves the introduction above the image beneath the main heading and keeps only the CTA pair centred over the artwork, allowing direct comparison of overlay-copy density without replacing either earlier version.
+- Repository/browser/Git verification remains pending under RV-011.
+
+### 2026-09-22 — ChatGPT — v2.2.20 hero hierarchy and image-edge refinement
+
+- Refined the centred banner from Aykhan's screenshot notes: private eyebrow now uses the previous mint accent and is left-aligned; main title and image-overlay intro are larger; the intro sits at the top of the image rather than vertically centred; and the service-highlight tag row/content field is removed entirely.
+- Tightened the hero frame so the ultra-wide 8:3 image extends much closer to the outer rectangle, with one shared left/right/bottom inset. Repositioned the private/business radial glow behind the title centre.
+- Replaced the full overlay/backdrop blur with direct image filtering, preserving rounded corners via clipping while still increasing blur on hover/focus. CTA labels explicitly have no text shadow and buttons receive stronger lift/brightness/shadow feedback. Repository/browser/Git verification remains pending under RV-010.
+
+### 2026-09-22 — ChatGPT — v2.2.19 blur-only ultra-wide hero refinement
+
+- Refined the experimental centred banner after Aykhan's screenshot review: removed all white frost and saturation treatment so artwork colours stay intact; the overlay now uses blur only, with a stronger blur on visual hover/focus.
+- Increased overlay intro size/weight, switched it to high-contrast light text with a controlled dark shadow, strengthened the secondary CTA, reduced desktop headline scale to better support two-line service titles, and restored the desired ultra-wide desktop banner proportion at 8:3.
+- Added quick tuning variables for base/hover blur and vertical image crop position (`--hero-image-y`, with a separate mobile value). Mobile uses a taller 4:5 frame and retains centred content while keeping the overlay readable. Repository/browser/Git verification remains pending under RV-009.
 
 ### 2026-09-22 — ChatGPT — v2.2.18 hero comparison schema correction
 
