@@ -87,14 +87,14 @@ Use this board when a task is too large or risky to hand to Codex as one uninter
 
 ---
 
-## Task 2 — Design Lab section recipe identifiers
+## Task 2 — Design Lab section review workflow
 
-**Goal:** Make every rendered section in Design Lab immediately identifiable by its canonical recipe ID without adding internal labels to production pages.
+**Goal:** Make Design Lab section review faster: identify recipes immediately, jump to sections on long Workshop pages, and copy a clean screenshot of any rendered section for design/content review without affecting production output.
 
 **Roles**
 - Design:
 - Content & SEO:
-- Implementation: 2A, 2B
+- Implementation: 2A, 2B, 2C
 - QA:
 
 - [ ] **2A — Add subtle recipe-ID labels to Design Lab sections**
@@ -113,3 +113,13 @@ Use this board when a task is too large or risky to hand to Codex as one uninter
   - The navigator is Design Lab tooling only. It must not appear inside the reusable section canvas, responsive preview content, Approved Section specimen itself, production pages or customer-facing accessibility output.
   - Design for long pages: the menu should remain usable with roughly 10–20 sections, wrap long headings sensibly, and expose both recipe ID and visible heading clearly enough to search/discuss screenshots.
   - Finish condition: verify the navigator against both private and business Workshop fixtures, confirm every link lands on the intended section and the labels reflect live fixture/registry data, run the appropriate repository validation plus `git diff --check` and `git status --short`, mark **2B** complete, and make one coherent commit.
+
+- [ ] **2C — Copy a rendered section screenshot to the clipboard**
+  - Add one small Design-Lab-only **Copy screenshot** control to each rendered section wrapper so Aykhan can capture that single section and paste it directly into a design/content chat without manually cropping a full-page screenshot. Reuse the shared Lab wrapper introduced for 2A rather than editing individual section renderers.
+  - Capture the section at the width in which it is currently being reviewed. In responsive preview modes, the copied image should represent that desktop/tablet/mobile composition rather than silently rendering a different full-width version. Crop to the section boundary only.
+  - The exported image should include the Lab-only recipe identifier/approval tint from 2A because that context is useful when sharing screenshots, but must exclude the screenshot button itself and unrelated Design Lab toolbar/navigation chrome. Do not alter the underlying recipe markup just to make capture easier.
+  - Implement capture entirely as Design Lab tooling. Use a small dependable DOM-to-PNG approach and the browser Clipboard API (`ClipboardItem` / `navigator.clipboard.write`) from the user's click/keyboard gesture. Do not introduce React or another client framework for this feature. Keep any capture dependency out of production page execution/output.
+  - Handle real rendering details: wait for relevant images/fonts before capture, preserve backgrounds/borders/illustrations closely enough for design review, and avoid a scale choice that creates impractically huge images for long sections. Current Workshop media is expected to be same-origin; fail clearly rather than producing a blank/partial screenshot if an asset cannot be captured.
+  - Feature-detect image clipboard support. On browsers where PNG clipboard writing is unavailable or rejected, provide a graceful fallback such as downloading the same PNG and show a concise status message instead of failing silently. Do not request clipboard permission before the user activates the control.
+  - Make the control keyboard-operable with a useful accessible name and an `aria-live` success/error status such as **Copied section image**. The control must never appear in production HTML/CSS, customer-facing accessibility output, sitemap content, or reusable production renderer markup.
+  - Finish condition: browser-test representative simple, image-heavy, long-form and interactive sections in Page Workshop at full-page and at least one constrained preview width; also verify an Approved Sections specimen if the shared wrapper exposes the control there. Confirm the copied/downloaded PNG has the right crop, includes the recipe ID context, excludes the capture control, and pastes successfully into a normal clipboard target on at least one supported browser. Run the appropriate repository validation plus `git diff --check` and `git status --short`, mark **2C** complete, and make one coherent commit.
