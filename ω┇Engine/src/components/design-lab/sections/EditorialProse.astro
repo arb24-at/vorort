@@ -1,0 +1,30 @@
+---
+import type { RecipeContent } from "../../../design-system/section-recipes";
+import WorkshopImage from "../WorkshopImage.astro";
+type Props = { id: string; content: RecipeContent<"explanation.editorial-prose"> };
+const { id, content } = Astro.props;
+---
+<section class="pw-rich-prose pw-section" id={id} data-recipe="explanation.editorial-prose" aria-labelledby={`${id}-title`} tabindex="-1">
+  <div class="container pw-rich-prose__container">
+    <header class="pw-rich-prose__intro">
+      <p class="pw-eyebrow">{content.eyebrow}</p>
+      <h2 id={`${id}-title`}>{content.title}</h2>
+      <p>{content.intro}</p>
+    </header>
+    <div class="pw-rich-prose__blocks">
+      {content.blocks.map((block, index) => (
+        <>
+          {block.type === "prose" && <div class="pw-rich-prose__prose pw-prose">{block.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>}
+          {block.type === "subheading" && <div class:list={["pw-rich-prose__subhead", block.emphasis === "band" && "pw-rich-prose__subhead--band"]}>
+            <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+            <div><h3>{block.title}</h3>{block.body && <p>{block.body}</p>}</div>
+          </div>}
+          {block.type === "columns" && <div class="pw-rich-prose__columns">{block.columns.map(column => <div>{column.title && <h3>{column.title}</h3>}<div class="pw-prose">{column.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div></div>)}</div>}
+          {block.type === "callout" && <aside class:list={["pw-rich-prose__callout", `pw-rich-prose__callout--${block.tone}`]}><h3>{block.title}</h3><p>{block.body}</p></aside>}
+          {block.type === "media" && <figure class:list={["pw-rich-prose__media", `pw-rich-prose__media--${block.placement ?? "wide"}`]}><WorkshopImage {...block.media} sizes="(max-width: 767px) 92vw, 760px" /></figure>}
+          {block.type === "table" && <div class="pw-rich-prose__table-wrap">{block.title && <h3>{block.title}</h3>}<div class="pw-rich-prose__table-scroll"><table><thead><tr>{block.columns.map(column => <th scope="col">{column}</th>)}</tr></thead><tbody>{block.rows.map(row => <tr>{row.map((cell, cellIndex) => cellIndex === 0 ? <th scope="row">{cell}</th> : <td>{cell}</td>)}</tr>)}</tbody></table></div></div>}
+        </>
+      ))}
+    </div>
+  </div>
+</section>

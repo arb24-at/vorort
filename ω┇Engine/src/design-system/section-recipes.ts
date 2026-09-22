@@ -17,6 +17,19 @@ const suppliedMedia = labelledMedia.extend({ src: media.shape.src.unwrap() });
 const paragraphs = z.array(text).min(1);
 const editorialHeading = { eyebrow: text, title: text, paragraphs };
 const sectionAction = z.object({ label: text, target: anchor }).strict();
+const editorialNote = z.object({
+  title: text,
+  body: text,
+  tone: z.enum(["quiet", "solid"]).optional(),
+}).strict();
+const editorialProseBlock = z.discriminatedUnion("type", [
+  z.object({ type: z.literal("prose"), paragraphs: z.array(text).min(1).max(4) }).strict(),
+  z.object({ type: z.literal("subheading"), title: text, body: text.optional(), emphasis: z.enum(["plain", "band"]).optional() }).strict(),
+  z.object({ type: z.literal("columns"), columns: z.array(z.object({ title: text.optional(), paragraphs: z.array(text).min(1).max(3) }).strict()).length(2) }).strict(),
+  z.object({ type: z.literal("callout"), tone: z.enum(["quiet", "solid", "outline"]), title: text, body: text }).strict(),
+  z.object({ type: z.literal("media"), media: suppliedMedia, placement: z.enum(["wide", "left", "right"]).optional() }).strict(),
+  z.object({ type: z.literal("table"), title: text.optional(), columns: z.array(text).min(2).max(4), rows: z.array(z.array(text).min(2).max(4)).min(2).max(8) }).strict(),
+]);
 
 // Human authoring guidance lives beside the machine-enforced content schema.
 // Density recommendations are advisory, not additional content constraints.
@@ -100,9 +113,37 @@ export const sectionRecipes = {
     name: "Editorial chapter with supporting media", kind: "explanation",
     purpose: "Develop a service topic through substantial prose, a relevant illustration and optional practical context.",
     recommendedPlacement: "Middle page / service topic chapters",
-    recommendedUse: "Give one subject room to be explained; consecutive chapters alternate their media relationship while keeping a consistent reading order.",
+    recommendedUse: "Give one subject room to be explained; when several chapters use this recipe, their media relationship should vary rather than repeat the same side-by-side composition.",
     renderer: "EditorialMedia.astro",
-    schema: z.object({ ...editorialHeading, media: suppliedMedia, caption: text, note: item.optional() }).strict(),
+    authoringGuidance: {
+      contentShape: "Eyebrow, title, substantial prose, one supporting image and an optional callout. The image uses meaningful alt text but no visible caption line by default.",
+      typicalRange: "Usually two to four paragraphs around one service topic, with one supporting image. Add a short callout only when it adds a boundary, practical note or useful emphasis rather than repeating the prose.",
+      fixed: "One focused topic, one supporting image and a readable prose-first relationship remain the core of the recipe. The image is not a gallery and visible image captions are not part of the standard composition.",
+      flexible: "Paragraph count and depth may vary. The callout may be omitted or use a quiet/transparent or solid emphasis treatment. When several editorial-media sections appear on one page, alternate left/right image placement by editorial-media occurrence to create rhythm; unrelated sections inserted earlier in the page must not flip that sequence. The renderer handles the variation rather than requiring authors to set layout classes.",
+      needsDesignReview: "Use Design review when the topic needs multiple images, nested subheadings, two-column prose, a table, several callouts or another richer block structure; use the editorial-prose recipe rather than forcing those relationships into this one.",
+      media: "Exactly one informative image is required with meaningful alt text. No visible caption is required or normally shown under the image.",
+      responsive: "Desktop may alternate image/text sides across repeated uses. Narrow screens return to one reading order: heading, image, prose and optional callout without changing the semantic sequence.",
+      accessibility: "Keep one meaningful section heading, normal paragraph flow and useful image alt text. Callouts must remain understandable without relying on fill colour alone.",
+    },
+    schema: z.object({ ...editorialHeading, media: suppliedMedia, note: editorialNote.optional() }).strict(),
+  }),
+  "explanation.editorial-prose": recipe({
+    name: "Rich editorial prose", kind: "explanation",
+    purpose: "Carry a large amount of explanatory content through varied but controlled editorial blocks without reducing it to cards or collapsible fragments.",
+    recommendedPlacement: "Between more structured service sections, especially after a comparison, diagram or topic index",
+    recommendedUse: "Use when a subject needs several paragraphs plus selective subheads, two-column passages, callouts, supporting images or a compact table while remaining one coherent article-like section.",
+    renderer: "EditorialProse.astro",
+    authoringGuidance: {
+      contentShape: "Eyebrow, title and introduction followed by a sequence of semantic editorial blocks: prose, subheading, two-column text, callout, image or compact table.",
+      typicalRange: "A substantial reading section normally uses four to eight blocks. Mix only the block types the subject actually needs; variation should support comprehension rather than become decoration.",
+      fixed: "The section remains one coherent article-like chapter with a clear heading hierarchy and visible reading order. Blocks are always visible and are not accordions, tabs or independent cards.",
+      flexible: "Authors may vary block order and quantity, use one- or two-column prose, choose plain or banded subheads, quiet/solid/outline callouts, place occasional images wide/left/right, and include a compact table when the information genuinely compares well.",
+      needsDesignReview: "Use Design review for more than two text columns, complex data tables, interactive controls, galleries, nested navigation, several unrelated subjects, or decorative block variation that no longer serves one coherent article.",
+      media: "Images are optional and should be used selectively. Each image needs meaningful alt text; visible captions are not required by this recipe.",
+      responsive: "All multi-column and side-media blocks collapse to a single source-ordered reading stream on narrow screens. Tables may scroll horizontally inside their own wrapper rather than forcing the page wider.",
+      accessibility: "Use semantic headings, paragraphs, tables and asides. Preserve source order across responsive layouts, keep table headers real text, and never communicate callout importance through colour alone.",
+    },
+    schema: z.object({ ...heading, blocks: z.array(editorialProseBlock).min(3).max(12) }).strict(),
   }),
   "hero.banner-art": recipe({
     name: "Banner with environmental artwork", kind: "hero",
@@ -175,6 +216,7 @@ export const sectionRecipes = {
     recommendedPlacement: "Late page, after the main service explanation and before the final contact section",
     recommendedUse: "Develop a small set of important customer questions with enough room for nuanced answers, optional supporting illustrations and a more authored article rhythm.",
     renderer: "EditorialAnswers.astro",
+    status: "approved",
     supersedes: "faq.accordion",
     authoringGuidance: {
       contentShape: "Eyebrow, title and introduction followed by three to six visible question chapters. Each question has one to three prose paragraphs and may optionally include one supporting illustration with a caption.",

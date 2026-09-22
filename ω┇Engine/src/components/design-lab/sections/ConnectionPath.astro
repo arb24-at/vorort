@@ -11,21 +11,34 @@ const { id, content } = Astro.props;
       <div class="pw-prose">{content.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>
     </div>
     <figure class="pw-path" aria-labelledby={`${id}-diagram`}>
-      <h3 id={`${id}-diagram`}>{content.diagramTitle}</h3>
-      <div class="pw-path__layout">
-        <div class="pw-path__source">
+      <div class="pw-path__header">
+        <div>
+          <p class="pw-path__kicker">Physical connection path</p>
+          <h3 id={`${id}-diagram`}>{content.diagramTitle}</h3>
+        </div>
+        <p class="pw-path__sequence" aria-hidden="true"><span>01</span> source <b>→</b> <span>02</span> route <b>→</b> <span>03</span> destinations</p>
+      </div>
+      <div class="pw-path__network">
+        <article class="pw-path__node pw-path__node--source">
+          <span class="pw-path__step" aria-hidden="true">01</span>
           <svg viewBox="0 0 96 72" class="pw-path__device" aria-hidden="true"><path d="M22 40V12m52 28V12M17 40h62v20H17z"/><path d="M25 50h4m8 0h4m8 0h4" class="pw-path__status"/></svg>
           <h4>{content.source.title}</h4><p>{content.source.body}</p>
-        </div>
-        <div class="pw-path__route">
+        </article>
+        <span class="pw-path__connector" aria-hidden="true"><i></i><b>→</b></span>
+        <article class="pw-path__node pw-path__node--route">
+          <span class="pw-path__step" aria-hidden="true">02</span>
           <svg viewBox="0 0 72 72" class="pw-path__device" aria-hidden="true"><path d="M15 8h42v56H15zM25 23h22v19H25zM31 23v7m5-7v7m5-7v7"/><path d="M36 42v24" class="pw-path__wire"/></svg>
           <h4>{content.route.title}</h4><p>{content.route.body}</p>
-        </div>
-        <ul class="pw-path__destinations">
-          {content.destinations.map(destination => <li><span class="pw-path__port" aria-hidden="true"></span><div><h4>{destination.title}</h4><p>{destination.body}</p></div></li>)}
-        </ul>
+        </article>
+        <span class="pw-path__connector" aria-hidden="true"><i></i><b>→</b></span>
+        <ol class="pw-path__destinations">
+          {content.destinations.map((destination, index) => <li>
+            <span class="pw-path__destination-number" aria-hidden="true">03.{index + 1}</span>
+            <div><h4>{destination.title}</h4><p>{destination.body}</p></div>
+          </li>)}
+        </ol>
       </div>
-      <figcaption>{content.caption}</figcaption>
+      <figcaption><strong>Planning note</strong><span>{content.caption}</span></figcaption>
     </figure>
     {content.note && <EditorialNote {...content.note} />}
   </div>

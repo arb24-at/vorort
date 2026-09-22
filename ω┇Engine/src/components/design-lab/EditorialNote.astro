@@ -1,8 +1,8 @@
 ---
-type Props = { title: string; body: string };
-const { title, body } = Astro.props;
+type Props = { title: string; body: string; tone?: "quiet" | "solid" };
+const { title, body, tone = "quiet" } = Astro.props;
 ---
-<aside class="pw-note">
+<aside class:list={["pw-note", `pw-note--${tone}`]}>
   <h3>{title}</h3>
   <p>{body}</p>
 </aside>

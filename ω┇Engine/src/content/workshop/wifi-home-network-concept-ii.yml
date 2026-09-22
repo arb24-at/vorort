@@ -107,6 +107,91 @@ sections:
         body: >-
           We test the agreed rooms and devices after the work. Building materials, interference and the
           devices themselves affect performance, so we do not promise a universal Wi-Fi speed or coverage guarantee.
+  - id: wifi-planning-notes
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: Wireless planning notes
+      title: What actually shapes Wi-Fi coverage
+      intro: >-
+        Coverage is not a property of the router alone. The rooms, building materials, wired routes and the
+        devices you care about all change what a useful wireless plan looks like.
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              A signal that looks strong in one room can become unreliable after several walls, around dense
+              building materials or where neighbouring networks compete for the same space. The useful question
+              is not simply how far a router can reach, but whether the devices that matter can work reliably
+              where you actually use them.
+            - >-
+              That is why planning starts with the home rather than a shopping list. We look at the internet
+              entry point, the current equipment, the rooms that matter and the practical routes available if a
+              wired connection would improve the result.
+        - type: callout
+          tone: quiet
+          title: A floor plan is useful, but the real rooms still decide the result
+          body: >-
+            Plans help identify likely routes and equipment positions. Final placement still depends on the actual
+            walls, furniture, sockets and devices in the home, so the design is checked against the real space.
+        - type: subheading
+          emphasis: band
+          title: Start with the building, not the box
+          body: A good plan joins the physical layout to the way the network is actually used.
+        - type: columns
+          columns:
+            - title: The building
+              paragraphs:
+                - >-
+                  Walls, room position, doorways and the location of the internet entry point limit where wireless
+                  equipment can work well. Existing Ethernet can open up stronger options for distant rooms.
+            - title: The way you use it
+              paragraphs:
+                - >-
+                  A fixed desk, television or NAS has different needs from a phone moving around the flat. The
+                  important devices and rooms help decide where reliability matters most.
+        - type: callout
+          tone: solid
+          title: More hardware is not the same as more coverage
+          body: >-
+            Adding another repeater or Mesh node can help, but only when its position and connection make sense.
+            Extra equipment placed into the same weak area can simply repeat the original problem.
+        - type: media
+          placement: right
+          media:
+            subject: home-office
+            src: /images/concept-ii/private/P3.png
+            alt: A connected workstation in a residential room, showing why the exact place of use matters to network planning.
+        - type: subheading
+          title: Where a cable changes the options
+          body: Ethernet does not replace Wi-Fi; it can give important fixed devices or access points a dependable path back to the network.
+        - type: prose
+          paragraphs:
+            - >-
+              A wired access point can be useful when coverage is needed well away from the router and a practical
+              cable route exists. The same connection can also serve a workstation, television or NAS directly,
+              reducing the number of important devices competing for wireless capacity.
+        - type: media
+          placement: left
+          media:
+            subject: cabling-home
+            src: /images/concept-ii/private/P5.png
+            alt: A planned Ethernet route reaching a home-office desk through a wall outlet.
+        - type: table
+          title: What we look at before choosing equipment
+          columns: [Check, Why it matters, What it can change]
+          rows:
+            - [Router position, The starting point shapes the whole wireless layout., Repositioning may solve more than buying a stronger router.]
+            - [Walls and room layout, Signal loss is different across real rooms and materials., Access-point or Mesh positions may need to move.]
+            - [Existing cable routes, Ethernet can provide a reliable path to distant rooms., A wired access point or direct device connection may become practical.]
+            - [Important devices, Fixed and mobile devices do not all need the same connection., The plan can prioritise the rooms and equipment that matter.]
+        - type: callout
+          tone: outline
+          title: The result is a plan, not a blanket guarantee
+          body: >-
+            We test the agreed rooms and devices in the real space. Building materials, interference and client
+            devices still affect performance, so the useful promise is an assessed and tested setup rather than a
+            universal speed or coverage claim.
   - id: ethernet-cabling
     kind: explanation
     recipe: explanation.connection-path
@@ -166,7 +251,6 @@ sections:
         subject: home-office
         src: /images/concept-ii/private/P3.png
         alt: A home-office workstation connected to the network within a lived-in apartment.
-      caption: The work area belongs in the network plan from the beginning.
       note:
         title: Device and workplace boundaries
         body: >-
@@ -197,9 +281,9 @@ sections:
         subject: storage-home
         src: /images/concept-ii/private/P4.png
         alt: A four-bay NAS on a shelf with connections to a laptop, tablet and television.
-      caption: Shared storage connects devices. Backup protects a separate copy of the files.
       note:
         title: A NAS is not automatically a backup
+        tone: solid
         body: >-
           If a file only exists on the NAS, moving it there has not created an independent backup. Shared
           storage also does not guarantee data recovery. Damaged or unreadable media needs a separately assessed approach.
@@ -228,7 +312,6 @@ sections:
         subject: upgrade-home
         src: /images/concept-ii/private/P6.png
         alt: A residential workspace during a move, with boxes and plans for future connections.
-      caption: Plan the useful connections before adding more equipment.
   - id: process
     kind: process
     recipe: process.staged-path

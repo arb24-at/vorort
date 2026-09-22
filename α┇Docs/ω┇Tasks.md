@@ -79,8 +79,36 @@ Use this board when a task is too large or risky to hand to Codex as one uninter
   - Finish condition: run the appropriate repository validation plus `git diff --check` and `git status --short`; mark **1C** complete only when the default page is materially shorter and more visual while every contract detail remains accessible. Stop and make one coherent commit before 1D.
 
 - [ ] **1D — Final QA and responsive refinement**
-  - Verify that Approved Sections still derives only from the canonical registry, shows only recipes that are currently approved, and excludes experimental ones. At the start of this stage `process.staged-path` is approved while `faq.accordion` has returned to experimental; specimen content must come from real Workshop consumers or the documented deterministic fallback.
+  - Verify that Approved Sections still derives only from the canonical registry, shows only recipes that are currently approved, and excludes experimental ones. At the start of this stage `process.staged-path` and `faq.editorial-answers` are approved while `faq.accordion` remains experimental; specimen content must come from real Workshop consumers or the documented deterministic fallback.
   - Review desktop and mobile behaviour for specimen clipping, excessive width, collapsed/expanded guidance readability, visual hierarchy, and growth beyond two recipes. Check keyboard/focus behaviour for the authoring disclosures and any interactive specimen that is actually approved at that time; preserve native semantics where possible.
   - Confirm approved-recipe guidance validation fails cleanly when required authoring guidance is missing, Lab routes remain out of the sitemap/production navigation, and production pages have not changed unexpectedly.
   - Fix small defects discovered by QA within this stage; do not reopen the approved design/content model unless an actual failure requires it.
   - Finish condition: run `npm run validate`, `git diff --check`, and `git status --short`, record the evidence in the normal handoff, mark **1D** complete, and make one coherent commit if the stage changes repository state.
+
+---
+
+## Task 2 — Design Lab section recipe identifiers
+
+**Goal:** Make every rendered section in Design Lab immediately identifiable by its canonical recipe ID without adding internal labels to production pages.
+
+**Roles**
+- Design:
+- Content & SEO:
+- Implementation: 2A, 2B
+- QA:
+
+- [ ] **2A — Add subtle recipe-ID labels to Design Lab sections**
+  - Add a small, deliberately low-emphasis label at the top-left edge of every rendered section in Design Lab that shows the exact canonical recipe ID, for example `faq.editorial-answers` or `explanation.editorial-media`. The label should be easy to read/copy when needed but visually quiet enough that it does not compete with the section itself.
+  - Apply the identifier consistently to Page Workshop section instances and other Design Lab section specimens where the same rendered-section wrapper is used. Prefer one shared Lab-only wrapper/decorator rather than editing every section renderer.
+  - The identifier is tooling chrome, not section content. It must never become part of reusable production renderer markup, production section CSS, production page output, sitemap content or customer-facing accessibility text. Keep it isolated to Design Lab rendering/shell code.
+  - Do not use the page-instance `id` as the primary label. Show the canonical recipe ID so Aykhan can identify, search and discuss candidate recipes reliably. If an instance ID is useful for debugging, it may appear secondarily without obscuring the recipe ID.
+  - Keep the label from changing the approved section's actual composition: it should not consume meaningful layout space, change section dimensions, block clicks, or overlap important content at desktop/mobile widths.
+  - Finish condition: verify labels on representative private/business Workshop sections and Approved Sections specimens, confirm production routes contain no Design Lab ID label or Lab-only class/markup, run the appropriate repository validation plus `git diff --check` and `git status --short`, mark **2A** complete, and make one coherent commit.
+
+- [ ] **2B — Add a Workshop section contents navigator**
+  - Add a compact dropdown/disclosure to the Page Workshop toolbar that lists the sections on the current fixture in page order and lets Aykhan jump directly to any rendered section anchor without scrolling through the whole page.
+  - Derive every entry from the current fixture and canonical recipe registry; do not maintain a second contents list. Display entries in the review-friendly form **`recipe.id — “Visible section heading”`**. Use the section content's visible title when present; for a section without one, use an honest fallback such as its instance ID or canonical recipe name rather than inventing copy.
+  - Keep the existing Workshop-page picker separate: one control changes the Workshop page, the new contents control navigates within the current page. Prefer native links/disclosure so section navigation works without JavaScript and preserves normal URL hash/deep-link behaviour.
+  - The navigator is Design Lab tooling only. It must not appear inside the reusable section canvas, responsive preview content, Approved Section specimen itself, production pages or customer-facing accessibility output.
+  - Design for long pages: the menu should remain usable with roughly 10–20 sections, wrap long headings sensibly, and expose both recipe ID and visible heading clearly enough to search/discuss screenshots.
+  - Finish condition: verify the navigator against both private and business Workshop fixtures, confirm every link lands on the intended section and the labels reflect live fixture/registry data, run the appropriate repository validation plus `git diff --check` and `git status --short`, mark **2B** complete, and make one coherent commit.

@@ -4,13 +4,13 @@ Last updated: 2026-09-22
 
 ## Current handoff
 
-- **Version and branch:** `2.2.10` in root `AGENTS.md`; local branch `main` was Git verified for Task 1C. The editorial Q&A Workshop addition is source/readback work from Drive; no new repository validation, browser verification, Git commit, push or deployment is claimed.
-- **Private Workshop:** the English home-network prototype now has eleven sections: editorial hero, five-topic index, Wi-Fi options, Ethernet connection diagram, home office, NAS, planning/troubleshooting, four-stage process, a new always-visible editorial Q&A candidate, the retained accordion FAQ for comparison, and enquiry. Content uses the repository's English research and canonical service facts; scope boundaries sit beside their relevant topics.
-- **Recipes:** `process.staged-path` remains approved. `faq.accordion` is experimental again. New experimental `faq.editorial-answers` supersedes it as the current Design candidate: all answers remain visible, questions read as article headings, and selected items may include supporting illustrations. Other newer private recipes and `contact.enquiry` remain experimental; nothing is deprecated.
+- **Version and branch:** `2.2.13` in root `AGENTS.md`; local branch `main` was Git verified for Task 1C. The current editorial explanation experiments are Drive source/readback work; no new repository validation, browser verification, Git commit, push or deployment is claimed.
+- **Private Workshop:** the English home-network prototype now has twelve sections: editorial hero, five-topic index, Wi-Fi options, the new rich editorial-prose Wi-Fi chapter, refined Ethernet connection path, three editorial-media chapters, four-stage process, approved always-visible editorial Q&A, retained experimental accordion FAQ for comparison, and enquiry. Content uses the repository's English research and canonical service facts; scope boundaries sit beside their relevant topics.
+- **Recipes:** `process.staged-path` and `faq.editorial-answers` are approved. `faq.accordion` remains experimental and is superseded by the approved editorial Q&A recipe; it has not been deprecated because Workshop comparison/migration is still active. Other newer private recipes and `contact.enquiry` remain experimental. `explanation.editorial-media` now carries explicit authoring guidance for automatic left/right rhythm, optional quiet/solid callouts and no visible image caption; new `explanation.editorial-prose` is the experimental long-form block candidate.
 - **Media:** P1–P6 reused with explicit image dimensions and responsive WebP derivatives; masters unchanged. P1 remains the accepted working reference, P2–P6 await Aykhan's acceptance, P7–P9 are deferred. Placement notes remain in `ω┇Media-Queue.md`.
 - **Verification:** Task 1C passed `npm run validate`: 31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, 86 invalid approved-guidance cases, experimental guidance migration/promotion, replacement/lifecycle/compatibility and derived usage checks. Built approval count now matches the registry instead of a stale zero-approval assertion. Base-aware internal links resolve; Lab robots/sitemap separation passes. `git diff --check` passed and `git status --short` was reviewed.
 - **Browser review:** Task 1C reviewed at 1440×1000 and 390×844 in collapsed and expanded states. Native guidance disclosures start closed, support Enter/Space with visible focus, preserve readable hierarchy and do not alter FAQ disclosure state. No horizontal overflow at either width. Desktop height is 3,056px collapsed versus 4,863px with both guidance panels open (about 37% shorter); specimen heights remain unchanged. All pre-existing authoring/usage markup was compared with HEAD and preserved apart from indentation.
-- **Next action:** review the revised `faq.editorial-answers` section directly before the existing accordion in the home-network Workshop. The second pass removes the repeated split-column structure: question headings now sit above answers, spacing is tighter, and optional illustrations alternate left/right/offset positions to create a less templated editorial rhythm. Task **1D** final QA should wait until Aykhan is ready to close this library pass. Historical RV-001 remains open for its broader review scope.
+- **Next action:** review `wifi-planning-notes` (`explanation.editorial-prose`), `ethernet-cabling` (`explanation.connection-path`) and the updated editorial-media instances in the private Workshop. Task **2A** adds Lab-only recipe labels and **2B** adds the `recipe.id — “Visible section heading”` contents navigator. Task **1D** final QA should wait until Aykhan is ready to close the library pass. Historical RV-001 remains open for its broader review scope.
 
 ## Cross-role requests
 
@@ -23,6 +23,12 @@ None.
 - Final brand/domain, production contact/legal facts, qualification evidence and Berlin travel policy remain future launch inputs tracked in `β┇Roadmap.md`.
 
 ## Pending repository verification
+
+### RV-004 — v2.2.13 editorial explanation experiments
+
+- **Source state:** Drive source/readback work adds `explanation.editorial-prose`, refines `explanation.connection-path`, expands `explanation.editorial-media` guidance/callout variation, removes its visible image captions, and queues Workshop contents navigation as Task 2B.
+- **Verify:** run the Workshop/registry validation plus `git diff --check` and `git status --short`. Confirm the new block schema and renderer compile, new stylesheet import resolves, existing editorial-media fixtures still validate after caption removal, and note tones do not alter unrelated consumers.
+- **Browser review:** inspect `wifi-planning-notes`, `ethernet-cabling`, `home-office`, `nas-storage` and `network-planning` at representative desktop/mobile widths. Check the connection diagram feels complete, rich-prose tables stay contained, side media collapses cleanly, alternating editorial-media composition remains readable, and no visible image-caption line remains under those three chapter images.
 
 ### RV-003 — v2.2.10 editorial Q&A Workshop candidate
 
@@ -39,6 +45,33 @@ None.
 - **Scope:** validate the existing v2.1.0 change first. Do not redesign, rewrite content or refactor unrelated code unless an actual failure requires it.
 
 ## Recent work
+
+### 2026-09-22 — ChatGPT — v2.2.13 completion audit
+
+- Audited the full request after the initial Drive pass. Confirmed Task 2B exists, the three editorial-media instances have no visible image captions, optional quiet/solid callouts are part of the recipe guidance, the connection-path renderer was materially refined, and the new rich editorial-prose experiment sits directly after `wifi-coverage`.
+- Corrected one fragility found in the audit: editorial-media left/right alternation now counts only editorial-media siblings, so inserting unrelated sections earlier in the Workshop does not unexpectedly flip the intended right/left/right rhythm. Added a quiet/transparent callout to `wifi-planning-notes` so the Workshop now demonstrates quiet, solid and outline callout treatments alongside banded/plain subheads, two-column prose, two images and a compact table.
+- These remain Drive source/readback changes under the same uncommitted v2.2.13 logical patch. Repository validation, browser verification, Git commit, push and deployment are still pending under RV-004.
+
+### 2026-09-22 — ChatGPT — v2.2.13 editorial explanation experiments
+
+- Added Task 2B for a live Workshop contents dropdown using `recipe.id — “Visible section heading”` entries derived from the current fixture/registry.
+- Refined `explanation.connection-path` into a more complete source → route → destinations path map with clearer stages, connector logic and destination cards.
+- Added experimental `explanation.editorial-prose` and a substantial `wifi-planning-notes` Workshop instance demonstrating normal prose, two-column text, styled subheads, quiet/solid/outline callouts, left/right media and a compact table.
+- Expanded `explanation.editorial-media` authoring guidance: repeated uses should alternate image/text sides, callouts are optional and may be quiet or solid, richer block structures should move to editorial-prose, and the standard recipe no longer shows a visible caption under its image.
+- These are Drive source/readback changes only; repository validation, browser verification, Git commit, push and deployment remain pending under RV-004.
+
+### 2026-09-22 — ChatGPT — v2.2.12 Design Lab recipe identifiers task
+
+- Added **Task 2A** to the universal task board: every rendered Design Lab section should expose a subtle top-left label with its canonical recipe ID so Aykhan can identify/search candidates directly in Page Workshop and section specimens.
+- The task explicitly requires a shared Lab-only decorator/wrapper and forbids leaking the identifier into reusable production renderer markup, customer-facing styles, accessibility text or production output.
+- This is a Drive documentation/task-board change only; no Astro implementation, repository validation, browser verification, Git commit, push or deployment is claimed.
+
+### 2026-09-22 — ChatGPT — v2.2.11 editorial Q&A approved
+
+- On Aykhan's explicit approval, promoted `faq.editorial-answers` to `approved` in the canonical recipe registry. Its approved contract keeps all questions/answers visible, supports three to six article-style Q&A chapters, and allows optional explanatory media without disclosure controls.
+- `faq.accordion` remains experimental and superseded but not deprecated while Workshop comparison/migration is still active. Task 1D expectations were updated to the new approval state.
+- Drive source changes were read back after writing. Repository validation, browser verification, Git commit, push and deployment have not been run for this approval patch.
+
 
 ### 2026-09-22 — ChatGPT — v2.2.10 editorial Q&A layout refinement
 
