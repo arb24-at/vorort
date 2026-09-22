@@ -115,6 +115,7 @@ export const sectionRecipes = {
     recommendedPlacement: "Middle page / service topic chapters",
     recommendedUse: "Give one subject room to be explained; when several chapters use this recipe, their media relationship should vary rather than repeat the same side-by-side composition.",
     renderer: "EditorialMedia.astro",
+    status: "approved",
     authoringGuidance: {
       contentShape: "Eyebrow, title, substantial prose, one supporting image and an optional callout. The image uses meaningful alt text but no visible caption line by default.",
       typicalRange: "Usually two to four paragraphs around one service topic, with one supporting image. Add a short callout only when it adds a boundary, practical note or useful emphasis rather than repeating the prose.",
@@ -134,10 +135,10 @@ export const sectionRecipes = {
     recommendedUse: "Use when a subject needs several paragraphs plus selective subheads, two-column passages, callouts, supporting images or a compact table while remaining one coherent article-like section.",
     renderer: "EditorialProse.astro",
     authoringGuidance: {
-      contentShape: "Eyebrow, title and introduction followed by a sequence of semantic editorial blocks: prose, subheading, two-column text, callout, image or compact table.",
+      contentShape: "Eyebrow, title and introduction followed by a sequence of semantic editorial blocks: prose, internal headings, two-column text, callouts, images or a compact table. Banded headings act as major internal chapter breaks; soft headings act as quieter subsection transitions.",
       typicalRange: "A substantial reading section normally uses four to eight blocks. Mix only the block types the subject actually needs; variation should support comprehension rather than become decoration.",
-      fixed: "The section remains one coherent article-like chapter with a clear heading hierarchy and visible reading order. Blocks are always visible and are not accordions, tabs or independent cards.",
-      flexible: "Authors may vary block order and quantity, use one- or two-column prose, choose plain or banded subheads, quiet/solid/outline callouts, place occasional images wide/left/right, and include a compact table when the information genuinely compares well.",
+      fixed: "The section remains one coherent article-like chapter with a clear heading hierarchy and visible reading order. Blocks are always visible and are not accordions, tabs or independent cards. Heading treatments must communicate hierarchy rather than alternate randomly for visual variety.",
+      flexible: "Authors may vary block order and quantity, use one- or two-column prose, use a banded chapter heading and/or a softer subsection heading where the hierarchy justifies it, choose quiet/filled/outline callouts, place occasional images wide/left/right, and include a compact table when the information genuinely compares well.",
       needsDesignReview: "Use Design review for more than two text columns, complex data tables, interactive controls, galleries, nested navigation, several unrelated subjects, or decorative block variation that no longer serves one coherent article.",
       media: "Images are optional and should be used selectively. Each image needs meaningful alt text; visible captions are not required by this recipe.",
       responsive: "All multi-column and side-media blocks collapse to a single source-ordered reading stream on narrow screens. Tables may scroll horizontally inside their own wrapper rather than forcing the page wider.",
