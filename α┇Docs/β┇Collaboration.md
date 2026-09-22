@@ -4,13 +4,13 @@ Last updated: 2026-09-22
 
 ## Current handoff
 
-- **Version and branch:** `2.2.7` in root `AGENTS.md`; local branch `main` was Git verified for Task 1B. This Drive-only task-board refinement is source/readback work; no new repository validation, Git commit, push or deployment is claimed.
+- **Version and branch:** `2.2.8` in root `AGENTS.md`; local branch `main` is Git verified. Task 1C is implemented, repository validated and browser verified; no push or deployment was performed.
 - **Private Workshop:** the English home-network prototype now has ten sections: editorial hero, five-topic index, Wi-Fi options, Ethernet connection diagram, home office, NAS, planning/troubleshooting, four-stage process, eight native FAQs and enquiry. Content uses the repository's English research and canonical service facts; scope boundaries sit beside their relevant topics.
 - **Recipes:** `process.staged-path` and `faq.accordion` are now explicitly approved for service pages across private and business Workshop contexts. The newer private recipes, `contact.enquiry`, and retained predecessor recipes remain experimental; nothing is deprecated.
 - **Media:** P1–P6 reused with explicit image dimensions and responsive WebP derivatives; masters unchanged. P1 remains the accepted working reference, P2–P6 await Aykhan's acceptance, P7–P9 are deferred. Placement notes remain in `ω┇Media-Queue.md`.
-- **Verification:** Task 1B passed `npm run validate`: 31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, 86 invalid approved-guidance cases, experimental guidance migration/promotion, replacement/lifecycle/compatibility and derived usage checks. Built approval count now matches the registry instead of a stale zero-approval assertion. Base-aware internal links resolve; Lab robots/sitemap separation passes. `git diff --check` passed and `git status --short` was reviewed.
-- **Browser review:** Task 1B Approved Sections was reviewed at 1440×1000 and 390×844. Both live specimens, their boundaries and guidance are readable; page width matches the viewport at both sizes. Mobile FAQ Enter/Space activation opens independent disclosures with visible focus. The v2.2.0 private canvas review remains historical; wider final QA belongs to 1C.
-- **Next action:** Tasks **1A** and **1B** are complete in `ω┇Tasks.md`. The next bounded coding stage is now **1C** (collapse dense authoring details by default); final QA moved to **1D**. Start neither stage unless Aykhan explicitly assigns it.
+- **Verification:** Task 1C passed `npm run validate`: 31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, 86 invalid approved-guidance cases, experimental guidance migration/promotion, replacement/lifecycle/compatibility and derived usage checks. Built approval count now matches the registry instead of a stale zero-approval assertion. Base-aware internal links resolve; Lab robots/sitemap separation passes. `git diff --check` passed and `git status --short` was reviewed.
+- **Browser review:** Task 1C reviewed at 1440×1000 and 390×844 in collapsed and expanded states. Native guidance disclosures start closed, support Enter/Space with visible focus, preserve readable hierarchy and do not alter FAQ disclosure state. No horizontal overflow at either width. Desktop height is 3,056px collapsed versus 4,863px with both guidance panels open (about 37% shorter); specimen heights remain unchanged. All pre-existing authoring/usage markup was compared with HEAD and preserved apart from indentation.
+- **Next action:** Tasks **1A–1C** are complete in `ω┇Tasks.md`. Stop here; final QA/refinement is **1D** and remains unstarted until Aykhan explicitly assigns it. Historical RV-001 remains open for its broader review scope.
 
 ## Cross-role requests
 
@@ -33,6 +33,11 @@ None.
 - **Scope:** validate the existing v2.1.0 change first. Do not redesign, rewrite content or refactor unrelated code unless an actual failure requires it.
 
 ## Recent work
+
+### 2026-09-22 — Codex — v2.2.8 Task 1C authoring disclosures
+
+- Wrapped each dense authoring/usage area in one native disclosure, closed by default, with a labelled summary, native triangle and explicit focus styling. Recipe identity, context and full rendered examples stay visible; all contract, lifecycle/replacement and usage information remains inside the expanded panel. No JavaScript was added.
+- Full `npm run validate` and Git diff/status checks passed. Desktop/mobile collapsed and expanded states, keyboard activation/focus, specimen sizing and independence from FAQ disclosure state were verified as recorded above. Task 1C is checked complete; 1D remains unstarted.
 
 ### 2026-09-22 — ChatGPT — v2.2.7 Approved Sections density follow-up
 

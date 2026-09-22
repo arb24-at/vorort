@@ -54,7 +54,14 @@
 .lab-specimen-caption strong { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; }
 .lab-specimen-canvas { border-radius: 0 0 var(--radius-md) var(--radius-md); }
 .lab-specimen-canvas > .concept-ii { border-radius: inherit; }
-.lab-authoring { padding-top: 2rem; }
+.lab-guidance { margin-top: 1rem; border: 1px solid var(--line-strong); border-radius: var(--radius-md); }
+.lab-guidance > summary { display: list-item; padding: 1.1rem 1.25rem; border-radius: var(--radius-md); background: var(--surface); cursor: pointer; font-weight: 700; line-height: 1.5; }
+.lab-guidance > summary::marker { color: var(--signal-dark); }
+.lab-guidance > summary:hover { color: var(--signal-dark); }
+.lab-guidance > summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; }
+.lab-guidance[open] > summary { border-bottom: 1px solid var(--line); border-radius: var(--radius-md) var(--radius-md) 0 0; }
+.lab-guidance-body { padding: 0 clamp(1rem, 2vw, 1.5rem) 1.5rem; }
+.lab-authoring { padding-top: 1.5rem; }
 .lab-authoring > h3, .lab-recipe-footer h3 { font-size: 1rem; margin: 0 0 1rem; }
 .lab-contract-rules { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin: 0; padding: 1.5rem; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
 .lab-contract-rules dt { font-weight: 800; margin-bottom: .65rem; }

@@ -70,7 +70,7 @@ Use this board when a task is too large or risky to hand to Codex as one uninter
   - Preserve `noindex, nofollow`, registry-derived approval, derived usage, base-aware links, static-first behaviour, and the separation between approval and production adoption. Do not add React solely for this.
   - Finish condition: validate the repository and inspect the affected Approved Sections page at representative desktop and mobile widths. Mark **1B** complete only when both approved recipes render as real, readable specimens with their authoring contracts. Stop and make one coherent commit before 1C.
 
-- [ ] **1C — Collapse dense authoring details by default**
+- [x] **1C — Collapse dense authoring details by default**
   - Keep each recipe's identity, approval state, short purpose/use, compact context metadata, and the full **Rendered example** visible. Do not collapse the specimen itself: the page must still show exactly what the approved section looks like without extra interaction.
   - Move the dense authoring/contract area below each specimen into one clearly labelled disclosure such as **Authoring guidance & usage**. It must be collapsed by default so the library scans visually first, especially once more approved recipes are added.
   - Use native HTML disclosure behaviour (`<details>` / `<summary>`) unless there is a demonstrated reason not to. The summary should have an obvious open/closed affordance and visible keyboard focus; no client framework or unnecessary JavaScript.
