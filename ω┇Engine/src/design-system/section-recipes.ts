@@ -130,6 +130,7 @@ export const sectionRecipes = {
     recommendedPlacement: "Middle page",
     recommendedUse: "Explain a four-stage working method or customer journey where sequence and handover matter.",
     renderer: "StagedPath.astro",
+    status: "approved",
     schema: z.object({ ...heading, steps: z.array(item).length(4) }).strict(),
   }),
   "outcome.scope-proof": recipe({
@@ -149,6 +150,7 @@ export const sectionRecipes = {
     recommendedPlacement: "Late page, after the core service explanation",
     recommendedUse: "Resolve independent practical questions that remain after the page has established scope, process, and boundaries.",
     renderer: "FaqAccordion.astro",
+    status: "approved",
     schema: z.object({ eyebrow: text, title: text, items: z.array(z.object({ question: text, answer: text }).strict()).min(1) }).strict(),
   }),
   "contact.enquiry": recipe({

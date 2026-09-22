@@ -4,13 +4,13 @@ Last updated: 2026-09-22
 
 ## Current handoff
 
-- **Version and branch:** `2.2.1` in root `AGENTS.md`; local branch `main` was previously verified. No new Git verification, commit, push or deployment is claimed by the v2.2.1 documentation patch.
+- **Version and branch:** `2.2.4` in root `AGENTS.md`; local branch `main` was previously verified. No new Git verification, commit, push or deployment is claimed for this Drive-only documentation/worklist patch.
 - **Private Workshop:** the English home-network prototype now has ten sections: editorial hero, five-topic index, Wi-Fi options, Ethernet connection diagram, home office, NAS, planning/troubleshooting, four-stage process, eight native FAQs and enquiry. Content uses the repository's English research and canonical service facts; scope boundaries sit beside their relevant topics.
-- **Recipes:** five new experimental recipes — `hero.editorial-art`, `scope.topic-index`, `explanation.options-guide`, `explanation.connection-path`, `explanation.editorial-media` (reused for three chapters). Retained `process.staged-path`, `faq.accordion`, `contact.enquiry`; predecessors remain available and experimental. Nothing is approved or deprecated.
+- **Recipes:** `process.staged-path` and `faq.accordion` are now explicitly approved for service pages across private and business Workshop contexts. The newer private recipes, `contact.enquiry`, and retained predecessor recipes remain experimental; nothing is deprecated.
 - **Media:** P1–P6 reused with explicit image dimensions and responsive WebP derivatives; masters unchanged. P1 remains the accepted working reference, P2–P6 await Aykhan's acceptance, P7–P9 are deferred. Placement notes remain in `ω┇Media-Queue.md`.
-- **Verification:** full repository validation previously passed for the v2.2.0 private Workshop implementation (31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, registry/lifecycle/usage checks). No repository validation was rerun for the v2.2.1 AGENTS-only governance patch because it does not affect application output.
-- **Browser review:** the v2.2.0 private canvas was previously reviewed at 1440, 768, 390 and 320px with the interaction/accessibility checks recorded below. No browser review was rerun for the v2.2.1 documentation-only patch.
-- **Next action:** Aykhan's visual review and iterative section/Approved Sections work. Keep unrelated historical verification below open until its stated scope is completed.
+- **Verification:** full repository validation previously passed for the v2.2.0 private Workshop implementation (31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, registry/lifecycle/usage checks). The v2.2.2 approval/status change is source/readback verified only; repository validation has not been rerun in this Chat.
+- **Browser review:** the v2.2.0 private canvas was previously reviewed at 1440, 768, 390 and 320px. No browser review was run for the v2.2.2 lifecycle-status change; Aykhan is using this approval as an Approved Sections UI check.
+- **Next action:** use the universal `ω┇Tasks.md` board. The next bounded coding stage is **Task 1A**; later stages 1B and 1C should only start when Aykhan explicitly assigns them.
 
 ## Cross-role requests
 
@@ -19,7 +19,7 @@ None.
 ## Awaiting Aykhan
 
 - Review/accept outstanding items in `ω┇Media-Queue.md` as they become relevant to page review.
-- Review the v2.2.0 private prototype: hero balance, topic navigation, chapter rhythm, diagram clarity and mobile/contact composition. Individual recipe approval remains an explicit, separate Aykhan decision.
+- Review the v2.2.0 private prototype: hero balance, topic navigation, chapter rhythm, diagram clarity and mobile/contact composition. Remaining recipe approvals stay explicit, separate Aykhan decisions.
 - Final brand/domain, production contact/legal facts, qualification evidence and Berlin travel policy remain future launch inputs tracked in `β┇Roadmap.md`.
 
 ## Pending repository verification
@@ -32,7 +32,24 @@ None.
 - **Contract checks:** confirm recipe guidance fields compile, `supersedes` rejects unknown/self/cross-kind/cyclic relationships, Approved Sections exposes pending replacement candidates, derived Workshop usage still works, and changing a recipe to `approved` no longer requires editing a fixed-count assertion.
 - **Scope:** validate the existing v2.1.0 change first. Do not redesign, rewrite content or refactor unrelated code unless an actual failure requires it.
 
+### RV-002 — v2.2.2 first Approved Sections lifecycle test
+
+- **Source state:** `process.staged-path` and `faq.accordion` were promoted to `approved` in the canonical recipe registry and read back successfully from Drive.
+- **Verify:** run `npm run validate` from `ω┇Engine/`, then `git diff --check` and `git status --short` from the repository root.
+- **Design Lab check:** open `/design-lab/approved/` and confirm exactly these two recipes appear as approved, with active usage derived from both current Workshop fixtures and no manually maintained approval list.
+
 ## Recent work
+
+### 2026-09-22 — ChatGPT — v2.2.4 universal staged task board
+
+- Replaced the job-specific Approved Sections worklist with universal `ω┇Tasks.md`, using stable numbered tasks and substantial lettered stages so Aykhan can assign work such as **Task 1A** without asking Codex to consume a whole multi-stage job at once.
+- Task 1 now has three commit-sized stages: 1A canonical authoring contract, 1B visual Approved Sections library, and 1C final QA/refinement. Only roles with actual future work are populated; unrelated role fields are left blank.
+- Root agent guidance now tells workers to load the task board only when a numbered stage is assigned or the handoff points there. Drive source changes were read back; no repository validation, browser review, Git commit, push or deployment is claimed.
+
+### 2026-09-22 — ChatGPT — v2.2.2 first Approved Sections lifecycle test
+
+- On Aykhan's explicit request, approved `process.staged-path` and `faq.accordion`; both are media-independent, already used in the private and business Workshop fixtures, and keep the existing semantic/content contracts unchanged.
+- Updated only lifecycle status in the canonical recipe registry plus project version/handoff metadata. No production adoption, copy migration, browser verification, Git verification, commit, push or deployment is claimed.
 
 ### 2026-09-22 — ChatGPT — v2.2.1 usage-efficient agent/tool policy
 

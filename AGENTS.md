@@ -1,5 +1,5 @@
 ---
-version: 2.2.1
+version: 2.2.4
 ---
 
 # VorOrt agent instructions
@@ -29,6 +29,7 @@ Always read this file first, then every active role file. After that, load only 
 - Read `α┇Docs/β┇Roadmap.md` when priority, sequencing, planned scope, or acceptance criteria matter.
 - Read `α┇Docs/β┇Collaboration.md` before changing project/repository state, when acting on a handoff, or when current cross-role requests, pending verification, or Aykhan decisions matter. Prefer the live sections over old history.
 - Read `α┇Docs/ω┇Media-Queue.md` when creating, integrating, reviewing, or waiting on media.
+- Read `α┇Docs/ω┇Tasks.md` when Aykhan assigns a numbered task/stage from that board or the live handoff explicitly points there. Work only the assigned stage unless he asks to continue.
 - Read target source/content files needed for the task. Do not preload unrelated repository files merely because they exist.
 
 Do not create a parallel roadmap, context system, role system, media tracker, or source of truth.
