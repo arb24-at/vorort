@@ -17,6 +17,16 @@ Activate Design for screenshot critique, visual-system work, section composition
 - Use real information relationships. Avoid meaningless technical decoration, unexplained diagrams, generic stock/generated technicians, and repeated card grids without semantic reason.
 - Treat content as part of composition but respect Content & SEO ownership of search intent and factual wording. If a visual change materially affects SEO-sensitive copy, activate Content & SEO and handle the issue rather than silently treating wording as decoration.
 
+### Framework-neutral design ambition
+
+Astro/static-first is an implementation strategy, not a visual ceiling. Do not lower design ambition or fall back to generic content-site patterns merely because the production framework is Astro.
+
+- Bring the same visual sophistication, composition thinking, responsive behavior, interaction design, and design-system quality you would expect from a polished React/Next.js, Vue, Svelte, or comparable modern web application when those ideas suit the page.
+- Translate useful framework-associated patterns into the simplest appropriate Astro-native implementation: semantic HTML, modern CSS/Grid, reusable Astro components/recipes, and minimal client JavaScript.
+- Use advanced layout, typography, layering, responsive recomposition, progressive disclosure, anchored navigation, meaningful hover/focus states, and restrained motion when they improve the experience; none of these require React by default.
+- Do not add React or another client framework solely to make a page feel modern or visually rich. Introduce an island/framework component only when genuine client-side state or interaction justifies the runtime cost.
+- When directing a coding agent, explicitly counter the common tendency to associate Astro/static sites with simpler visual work: ask for first-class product/design quality first, then implement that quality within the project's Astro/static-first constraints.
+
 ## Page Workshop and Approved Sections
 
 Canonical sources:

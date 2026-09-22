@@ -1,5 +1,5 @@
 ---
-version: 2.2.0
+version: 2.2.1
 ---
 
 # VorOrt agent instructions
@@ -49,6 +49,18 @@ Never claim shell validation, browser testing, Git status/diff/commit/push, depl
 
 When editing through Google Drive or another connected source, read the latest complete target immediately before editing, preserve unrelated work and repository structure, make only requested or evidence-backed changes, then read the written result back before claiming success.
 
+## Usage-efficient tool and validation strategy
+
+Agent/tool usage may be limited or rate-constrained, especially for coding agents such as Codex. Optimize for completing the task correctly, not for maximizing tool calls, screenshots, browser sessions, or repeated validation.
+
+- Use the cheapest reliable evidence that matches the risk of the change. Prefer targeted source inspection and focused checks during iteration; reserve broader validation for meaningful milestones or final verification.
+- Do not rerun the full validation suite after every small edit when a narrower check is sufficient. Batch related edits, run targeted checks while iterating, then run the appropriate broader validation once the change is materially complete or when risk justifies it.
+- Do not open the browser, capture screenshots, or test many viewport sizes as a ritual. Use browser review when rendered behavior, responsive composition, interaction, accessibility-visible state, or visual regression is actually relevant to the task.
+- When browser review is useful, inspect only the affected routes and representative viewport sizes needed to answer the task. Capture screenshots only when they materially aid comparison, diagnosis, approval, or handoff.
+- Reuse trustworthy evidence already gathered in the current task/run. Do not repeatedly re-check unchanged areas unless a later change could reasonably have affected them.
+- Documentation-only or narrowly scoped source changes normally do not require browser testing or unrelated build checks. Conversely, visual/responsive/interactive changes may justify desktop/mobile review and screenshots when they materially reduce uncertainty.
+- These efficiency rules are not hard caps. If deeper validation, browser work, screenshots, or additional investigation is genuinely needed to complete the task safely, perform it.
+
 ## Repository boundaries
 
 - `ω┇Engine/` owns the Astro application, dependencies, source, public assets, scripts, and generated build output.
@@ -88,7 +100,7 @@ Cross-role requests use stable IDs such as `CR-001`. Repository-verification req
 
 ## Commands and validation
 
-When local shell access is available, run application commands from `ω┇Engine/`:
+When local shell access is available, run application commands from `ω┇Engine/` as needed for the task:
 
 ```bash
 npm ci
@@ -96,7 +108,7 @@ npm run dev
 npm run validate
 ```
 
-Before considering a material repository change fully verified, run the applicable validation, confirm base-aware links/assets and relevant routes, and review `git diff --check` plus `git status --short`. Follow `α┇Docs/γ┇Roles┇QA.md` for review depth appropriate to the task.
+Validation depth must be proportional to the change. During iteration, prefer the smallest reliable check that can catch likely failures. Before considering a material repository change fully verified, run the applicable broader validation required by the task/risk, confirm relevant base-aware links/assets/routes when they could be affected, and review `git diff --check` plus `git status --short`. Do not perform unrelated browser or full-suite checks solely to satisfy a ritual. Follow `α┇Docs/γ┇Roles┇QA.md` for review depth appropriate to the task.
 
 ## Version and Git handoff
 

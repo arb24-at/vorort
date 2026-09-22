@@ -1,16 +1,16 @@
 # VorOrt collaboration handoff
 
-Last updated: 2026-09-11
+Last updated: 2026-09-22
 
 ## Current handoff
 
-- **Version and branch:** `2.2.0` in root `AGENTS.md`; local branch `main` verified. Aykhan explicitly requested a commit after implementation; no push or deployment is authorized by this handoff. His pre-existing Design role guidance edit is preserved and excluded from this implementation commit.
+- **Version and branch:** `2.2.1` in root `AGENTS.md`; local branch `main` was previously verified. No new Git verification, commit, push or deployment is claimed by the v2.2.1 documentation patch.
 - **Private Workshop:** the English home-network prototype now has ten sections: editorial hero, five-topic index, Wi-Fi options, Ethernet connection diagram, home office, NAS, planning/troubleshooting, four-stage process, eight native FAQs and enquiry. Content uses the repository's English research and canonical service facts; scope boundaries sit beside their relevant topics.
 - **Recipes:** five new experimental recipes — `hero.editorial-art`, `scope.topic-index`, `explanation.options-guide`, `explanation.connection-path`, `explanation.editorial-media` (reused for three chapters). Retained `process.staged-path`, `faq.accordion`, `contact.enquiry`; predecessors remain available and experimental. Nothing is approved or deprecated.
 - **Media:** P1–P6 reused with explicit image dimensions and responsive WebP derivatives; masters unchanged. P1 remains the accepted working reference, P2–P6 await Aykhan's acceptance, P7–P9 are deferred. Placement notes remain in `ω┇Media-Queue.md`.
-- **Verification:** full repository validation passes (31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, registry/lifecycle/usage checks). All 25 production HTML files and their referenced assets compare byte-for-byte with a fresh build of the pre-change Git revision; sitemap identical. Business canvas markup differs only in the shared Lab stylesheet filename. `/vorort/` resolution and Lab `noindex, nofollow` are preserved.
-- **Browser review:** private canvas reviewed at 1440, 768, 390 and 320px; no horizontal overflow or clipped paragraph/heading text found. Checked hero/index crops, chapter layout, vertical mobile diagram, form disclosure/fields, keyboard focus, topic anchors, FAQ Enter/Space behavior and empty-form validation. Fixed a private-only mobile-to-tablet disclosure visibility issue. All five chapter anchors and native FAQ interaction also work with scripts blocked by a verified CSP response. Workshop width control, business canvas and Approved Sections smoke-tested. Main text/button contrast pairs exceed 4.5:1; focus ring on white exceeds 3:1. Reduced-motion rules were reviewed in source; actual OS preference emulation was unavailable. Email-app launch and message sending were not performed; the shared enquiry script and production output are unchanged.
-- **Next action:** Aykhan's visual review of hero balance, topic navigation, chapter rhythm, diagram clarity and mobile/contact composition. Keep unrelated historical verification below open until its stated scope is completed.
+- **Verification:** full repository validation previously passed for the v2.2.0 private Workshop implementation (31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, registry/lifecycle/usage checks). No repository validation was rerun for the v2.2.1 AGENTS-only governance patch because it does not affect application output.
+- **Browser review:** the v2.2.0 private canvas was previously reviewed at 1440, 768, 390 and 320px with the interaction/accessibility checks recorded below. No browser review was rerun for the v2.2.1 documentation-only patch.
+- **Next action:** Aykhan's visual review and iterative section/Approved Sections work. Keep unrelated historical verification below open until its stated scope is completed.
 
 ## Cross-role requests
 
@@ -33,6 +33,11 @@ None.
 - **Scope:** validate the existing v2.1.0 change first. Do not redesign, rewrite content or refactor unrelated code unless an actual failure requires it.
 
 ## Recent work
+
+### 2026-09-22 — ChatGPT — v2.2.1 usage-efficient agent/tool policy
+
+- Added proportional validation and tool-use guidance to `AGENTS.md` for rate-limited agents such as Codex: targeted checks during iteration, broader validation at meaningful milestones, browser/screenshots only when they materially reduce uncertainty, and explicit permission to use deeper testing whenever the task genuinely requires it.
+- This was a documentation-only governance patch. Source/readback verification is expected; no application/browser/Git validation is implied by the change itself.
 
 ### 2026-09-11 — Codex — v2.2.0 private home-network Workshop
 
