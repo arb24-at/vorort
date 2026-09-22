@@ -31,7 +31,7 @@ export const workshopSchema = z.object({
     issue(["sections"], "A Workshop service page requires exactly one closing contact section");
   }
   fixture.sections.forEach((section, index) => {
-    if (section.recipe === "hero.banner-art" || section.recipe === "hero.editorial-art") {
+    if (section.recipe === "hero.banner-art" || section.recipe === "hero.editorial-art" || section.recipe === "comparison.hero-banner") {
       const parsed = getSectionRecipe(section.recipe).schema.safeParse(section.content);
       if (!parsed.success) return; // Preserve the original section-path validation issues.
       parsed.data.actions.forEach((action, actionIndex) => {

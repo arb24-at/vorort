@@ -4,8 +4,9 @@ Last updated: 2026-09-22
 
 ## Current handoff
 
-- **Version and branch:** `2.2.17` in root `AGENTS.md`; local branch `main` was Git verified for Task 1C. The current editorial explanation experiments are Drive source/readback work; no new repository validation, browser verification, Git commit, push or deployment is claimed.
-- **Private Workshop:** the English home-network prototype now has twelve sections: editorial hero, five-topic index, Wi-Fi options, the new rich editorial-prose Wi-Fi chapter, refined Ethernet connection path, three editorial-media chapters, four-stage process, approved always-visible editorial Q&A, retained experimental accordion FAQ for comparison, a redesigned always-visible direct-submit enquiry form, and shared Workshop footer chrome. Content uses the repository's English research and canonical service facts; scope boundaries sit beside their relevant topics.
+- **Version and branch:** `2.2.18` in root `AGENTS.md`; local branch `main` was Git verified for Task 1C. The current editorial explanation experiments are Drive source/readback work; no new repository validation, browser verification, Git commit, push or deployment is claimed.
+- **v2.2.18 correction:** the private `hero-frosted` comparison now uses experimental `comparison.hero-banner` with `kind: comparison`, so the Workshop retains exactly one semantic opening hero while still rendering the same `HeroBanner.astro` experiment immediately after it. Hero action-target validation covers the comparison specimen too.
+- **Private Workshop:** the English home-network prototype now has thirteen sections: editorial hero, a second frosted-banner hero comparison, five-topic index, Wi-Fi options, the new rich editorial-prose Wi-Fi chapter, refined Ethernet connection path, three editorial-media chapters, four-stage process, approved always-visible editorial Q&A, retained experimental accordion FAQ for comparison, a redesigned always-visible direct-submit enquiry form, and shared Workshop footer chrome. Content uses the repository's English research and canonical service facts; scope boundaries sit beside their relevant topics.
 - **Recipes:** `process.staged-path`, `faq.editorial-answers`, `explanation.editorial-media`, `explanation.options-guide`, `explanation.editorial-prose` and `explanation.connection-path` are approved. `faq.accordion` remains experimental and is superseded by the approved editorial Q&A recipe; it has not been deprecated because Workshop comparison/migration is still active. Other newer private recipes and `contact.enquiry` remain experimental; the enquiry recipe now has a tighter reusable-template contract: direct phone/WhatsApp/email actions remain visible, required and reply-channel-dependent fields validate inline, audience-known context is not redundantly asked, no default consent checkbox is used, and production delivery targets a configured direct endpoint rather than mailto. The options guide and rich editorial prose remain separate recipes that can be used independently or consecutively. `explanation.editorial-media` keeps its simpler one-image chapter contract, while the connection-path approval covers the full section composition and semantic path; its exact schematic artwork remains replaceable/refinable.
 - **Media:** P1–P6 reused with explicit image dimensions and responsive WebP derivatives; masters unchanged. P1 remains the accepted working reference, P2–P6 await Aykhan's acceptance, P7–P9 are deferred. Placement notes remain in `ω┇Media-Queue.md`.
 - **Verification:** Task 1C passed `npm run validate`: 31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, 86 invalid approved-guidance cases, experimental guidance migration/promotion, replacement/lifecycle/compatibility and derived usage checks. Built approval count now matches the registry instead of a stale zero-approval assertion. Base-aware internal links resolve; Lab robots/sitemap separation passes. `git diff --check` passed and `git status --short` was reviewed.
@@ -24,6 +25,12 @@ None.
 - Choose/authorize the production form submission provider/endpoint (including its data-processing/privacy implications) before direct enquiry delivery can be enabled on GitHub Pages.
 
 ## Pending repository verification
+
+### RV-008 — v2.2.18 frosted hero comparison
+
+- **Source state:** Drive source/readback work changes experimental `hero.banner-art` so the image receives one nearly transparent full-surface white frost layer and the introduction/actions sit directly over that frosted image rather than in an opaque glass rectangle. The private home-network Workshop keeps its existing `hero.editorial-art` first and adds a second `hero-frosted` comparison instance immediately after it using the same P1 artwork and copy. The business Workshop continues to use `hero.banner-art`.
+- **Verify:** run Workshop/registry validation plus `git diff --check` and `git status --short`. Confirm the extra private hero fixture validates, links still resolve, the frost overlay remains decorative, and the original private hero renderer/source is unchanged.
+- **Browser review:** inspect both business `hero` and private `hero-frosted` at desktop/tablet/mobile widths. Tune the CSS variables at the top of `hero.css` for frost alpha, blur, saturation, copy width and mobile frost strength; check text contrast, image visibility, CTA focus/hover, headline wrapping and no overflow.
 
 ### RV-007 — v2.2.17 business hero composition experiment
 
@@ -64,6 +71,19 @@ None.
 - **Scope:** validate the existing v2.1.0 change first. Do not redesign, rewrite content or refactor unrelated code unless an actual failure requires it.
 
 ## Recent work
+
+### 2026-09-22 — ChatGPT — v2.2.18 hero comparison schema correction
+
+- Corrected the private frost comparison after Astro rejected the fixture for having two `kind: hero` sections. Added experimental `comparison.hero-banner`, which reuses the same HeroBanner content schema and renderer but is explicitly Design-Lab comparison content rather than a second page hero.
+- Updated the Workshop action-target validation to cover that comparison recipe. The real `hero.editorial-art` remains the one semantic opening hero, while `hero-frosted` can still render immediately after it for visual comparison.
+- This is a corrective change within the same uncommitted v2.2.18 logical patch, so the project version was not bumped again. Drive source/readback verification is required; repository/browser/Git verification remains pending.
+
+
+### 2026-09-22 — ChatGPT — v2.2.18 frosted hero comparison
+
+- Corrected the hero experiment to match Aykhan's intended treatment: `hero.banner-art` now uses a nearly transparent white frost layer across the entire artwork and places the introduction plus CTAs directly over that image, while the large headline stays above inside the dark gradient hero shell.
+- Added a second private Workshop hero (`hero-frosted`) immediately after the existing polished editorial hero, reusing the same home-network copy and P1 artwork so both approaches can be judged side by side without overwriting the original.
+- Grouped the main visual tuning controls as CSS custom properties at the top of `hero.css`, including desktop/mobile frost alpha and blur, saturation, copy width and copy colour. Repository/browser/Git verification remains pending under RV-008.
 
 ### 2026-09-22 — ChatGPT — v2.2.17 centred business hero experiment
 

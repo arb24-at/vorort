@@ -30,18 +30,15 @@ const heroKind = media.subject;
           role="img"
         >
           {heroImageSrc ? (
-            <>
-              <img
-                class="c2-art__image"
-                src={heroImageSrc}
-                alt=""
-                aria-hidden="true"
-                loading="eager"
-                decoding="async"
-                fetchpriority="high"
-              />
-              <span class="c2-art__image-shade" aria-hidden="true"></span>
-            </>
+            <img
+              class="c2-art__image"
+              src={heroImageSrc}
+              alt=""
+              aria-hidden="true"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
           ) : (
             <>
               <ArtField />
@@ -49,6 +46,8 @@ const heroKind = media.subject;
             </>
           )}
         </div>
+
+        <span class="c2-hero__frost" aria-hidden="true"></span>
 
         <div class="c2-hero__glass">
           <p>{intro}</p>

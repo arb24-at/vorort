@@ -17,6 +17,10 @@ const suppliedMedia = labelledMedia.extend({ src: media.shape.src.unwrap() });
 const paragraphs = z.array(text).min(1);
 const editorialHeading = { eyebrow: text, title: text, paragraphs };
 const sectionAction = z.object({ label: text, target: anchor }).strict();
+const heroBannerContentSchema = z.object({ ...heading, media: labelledMedia,
+  actions: z.array(z.object({ label: text, target: anchor }).strict()).length(2),
+  highlights: z.array(text).min(1).max(4),
+}).strict();
 const editorialNote = z.object({
   title: text,
   body: text,
@@ -176,10 +180,15 @@ export const sectionRecipes = {
     recommendedPlacement: "Opening / first section",
     recommendedUse: "Introduce the service, establish its real-world context, and present the primary next actions.",
     renderer: "HeroBanner.astro",
-    schema: z.object({ ...heading, media: labelledMedia,
-      actions: z.array(z.object({ label: text, target: anchor }).strict()).length(2),
-      highlights: z.array(text).min(1).max(4),
-    }).strict(),
+    schema: heroBannerContentSchema,
+  }),
+  "comparison.hero-banner": recipe({
+    name: "Hero banner comparison specimen", kind: "comparison",
+    purpose: "Render the banner-hero structure inside a Workshop page without creating a second opening hero.",
+    recommendedPlacement: "Design Lab comparison only, immediately after the real opening hero when useful",
+    recommendedUse: "Compare an experimental hero treatment against the page's real opening hero while preserving the one-opening-hero Workshop contract.",
+    renderer: "HeroBanner.astro",
+    schema: heroBannerContentSchema,
   }),
   "scope.art-panels": recipe({
     name: "Service scope artwork panels", kind: "scope",
