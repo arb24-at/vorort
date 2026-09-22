@@ -255,6 +255,91 @@ sections:
           body: >-
             We check the agreed rooms, wired and wireless connections and storage access, then explain
             the essential setup in plain language.
+  - id: questions-editorial
+    kind: faq
+    recipe: faq.editorial-answers
+    content:
+      eyebrow: Questions, answered properly
+      title: Home-network questions deserve more than a one-line answer
+      intro: >-
+        Some decisions shape the whole network, so the useful answer is rarely just yes or no.
+        These are a few of the questions we would rather explain openly before you get in touch.
+      items:
+        - question: Can you improve my network without replacing everything?
+          paragraphs:
+            - >-
+              Often, yes. We start by looking at what is already there: the router and access points,
+              where they sit, how the rooms are connected, and which devices actually have a problem.
+              Useful equipment does not need to be replaced simply because something newer exists.
+            - >-
+              Sometimes the better fix is a change of position, configuration or cabling. If hardware
+              really is the limiting factor, we explain why and agree the replacement as part of the
+              project rather than treating a full refresh as the default answer.
+        - question: Is Mesh always better than a repeater or a wired access point?
+          paragraphs:
+            - >-
+              No. Mesh can be a practical way to cover several areas with a coordinated set of units,
+              but placement and the connection between those units still matter. Putting another node
+              directly into a dead zone does not remove the reason the signal is weak there.
+            - >-
+              Where Ethernet already exists, or can be installed sensibly, a wired access point may be
+              the stronger foundation for a distant room. The right choice depends on the property, the
+              existing equipment and the places where a dependable connection matters.
+          media:
+            subject: wifi
+            src: /images/concept-ii/private/P2.png
+            alt: A home-office desk and living area connected by subtle wireless signal paths.
+          caption: The layout of the home matters more than the label on the Wi-Fi box.
+        - question: Can Ethernet be installed in an existing apartment?
+          paragraphs:
+            - >-
+              Yes, where a practical route and the necessary access can be agreed. We look at where the
+              router or switch sits, which rooms need a fixed connection, and whether existing routes,
+              visible cabling or new outlets make sense for the property.
+            - >-
+              Installation details are discussed before work starts, including access and any associated
+              making-good. The route is planned for the actual apartment rather than promised as a standard
+              package that fits every building.
+          media:
+            subject: cabling-home
+            src: /images/concept-ii/private/P5.png
+            alt: An orange cable route connecting a home-office desk through a wall outlet.
+          caption: A useful cable route is planned around the real rooms, furniture and access available.
+        - question: Can the NAS also be used for backups?
+          paragraphs:
+            - >-
+              It can be part of a backup workflow, but a NAS is not automatically a complete backup
+              strategy. Shared storage and backup solve related but different problems: one makes files
+              available, while the other gives important data another recoverable copy.
+            - >-
+              We can discuss what needs another copy, where that copy should live and how the agreed
+              process will be checked. No storage arrangement can guarantee recovery from every failure,
+              and damaged or unreadable media needs a separately assessed approach.
+          media:
+            subject: storage-home
+            src: /images/concept-ii/private/P4.png
+            alt: A compact NAS sharing a connection with a laptop, tablet and television.
+          caption: Shared storage and backup can work together, but they are not the same thing.
+        - question: Can you guarantee strong Wi-Fi in every room?
+          paragraphs:
+            - >-
+              We do not give blanket coverage or speed guarantees. Walls, neighbouring networks, the
+              available cable routes and the client devices themselves all affect what is achievable in
+              a particular room.
+            - >-
+              We assess the home, plan suitable measures and test the rooms and devices agreed for the
+              project. That gives you a result checked in the real space rather than a generic promise
+              based on equipment specifications alone.
+        - question: What if the internet provider's line is faulty?
+          paragraphs:
+            - >-
+              A home-network problem and an internet-line problem can feel identical from the desk. We can
+              help separate the two by checking the relevant local network, router and connections and by
+              identifying whether the fault appears to sit inside or beyond the home.
+            - >-
+              Faults in the external connection or provider infrastructure ultimately need to be resolved
+              by the internet provider. The useful outcome is knowing which side of that boundary needs
+              attention instead of repeatedly changing equipment inside the home.
   - id: questions
     kind: faq
     recipe: faq.accordion

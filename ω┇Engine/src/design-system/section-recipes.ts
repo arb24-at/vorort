@@ -169,6 +169,33 @@ export const sectionRecipes = {
       boundariesHeading: text, boundaries: z.array(text).min(1),
     }).strict(),
   }),
+  "faq.editorial-answers": recipe({
+    name: "Editorial questions and answers", kind: "faq",
+    purpose: "Answer important service questions in an always-visible editorial reading flow rather than hiding answers behind disclosures.",
+    recommendedPlacement: "Late page, after the main service explanation and before the final contact section",
+    recommendedUse: "Develop a small set of important customer questions with enough room for nuanced answers, optional supporting illustrations and a more authored article rhythm.",
+    renderer: "EditorialAnswers.astro",
+    supersedes: "faq.accordion",
+    authoringGuidance: {
+      contentShape: "Eyebrow, title and introduction followed by three to six visible question chapters. Each question has one to three prose paragraphs and may optionally include one supporting illustration with a caption.",
+      typicalRange: "Usually four to six substantial questions. Answers should be long enough to explain the issue properly without becoming separate articles; use illustrations selectively where they clarify a physical setup, choice or relationship.",
+      fixed: "Questions and answers remain visible in the normal reading flow; there are no accordion or disclosure controls. Each item keeps a visible question number, a real heading and prose answer, and optional media stays subordinate to the answer.",
+      flexible: "Question count within the supported range, wording, answer depth, ordering and which items use media may vary to suit the service. Individual answers may be shorter or longer so the section does not become a repeated card pattern.",
+      needsDesignReview: "Use Design review when the material needs more than six major questions, nested subsections, comparison tables, interactive filtering, several images per answer, or another information relationship beyond editorial Q&A.",
+      media: "Media is optional per question and should explain something useful rather than decorate the page. Reuse the normal Workshop image contract with meaningful alt text and a concise caption.",
+      responsive: "Desktop uses a broad editorial question/answer rhythm with optional media beside the prose. Narrow screens become one continuous article stream in source order: number, question, answer and then supporting media.",
+      accessibility: "Keep every question as a real heading in a meaningful hierarchy and every answer present without interaction. Media needs meaningful alt text when informative; the section must remain understandable with images unavailable and without relying on number colour or decoration.",
+    },
+    schema: z.object({
+      ...heading,
+      items: z.array(z.object({
+        question: text,
+        paragraphs: z.array(text).min(1).max(3),
+        media: suppliedMedia.optional(),
+        caption: text.optional(),
+      }).strict()).min(3).max(6),
+    }).strict(),
+  }),
   "faq.accordion": recipe({
     name: "Expandable questions", kind: "faq",
     purpose: "Answer independent service questions without hiding the rest of the page.",

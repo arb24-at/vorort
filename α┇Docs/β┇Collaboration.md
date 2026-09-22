@@ -4,13 +4,13 @@ Last updated: 2026-09-22
 
 ## Current handoff
 
-- **Version and branch:** `2.2.9` in root `AGENTS.md`; local branch `main` is Git verified. Task 1C is implemented, repository validated and browser verified; no push or deployment was performed.
-- **Private Workshop:** the English home-network prototype now has ten sections: editorial hero, five-topic index, Wi-Fi options, Ethernet connection diagram, home office, NAS, planning/troubleshooting, four-stage process, eight native FAQs and enquiry. Content uses the repository's English research and canonical service facts; scope boundaries sit beside their relevant topics.
-- **Recipes:** `process.staged-path` remains approved. Aykhan withdrew approval from `faq.accordion`; it is experimental again and should not appear in Approved Sections. The newer private recipes, `contact.enquiry`, and retained predecessor recipes remain experimental; nothing is deprecated.
+- **Version and branch:** `2.2.10` in root `AGENTS.md`; local branch `main` was Git verified for Task 1C. The editorial Q&A Workshop addition is source/readback work from Drive; no new repository validation, browser verification, Git commit, push or deployment is claimed.
+- **Private Workshop:** the English home-network prototype now has eleven sections: editorial hero, five-topic index, Wi-Fi options, Ethernet connection diagram, home office, NAS, planning/troubleshooting, four-stage process, a new always-visible editorial Q&A candidate, the retained accordion FAQ for comparison, and enquiry. Content uses the repository's English research and canonical service facts; scope boundaries sit beside their relevant topics.
+- **Recipes:** `process.staged-path` remains approved. `faq.accordion` is experimental again. New experimental `faq.editorial-answers` supersedes it as the current Design candidate: all answers remain visible, questions read as article headings, and selected items may include supporting illustrations. Other newer private recipes and `contact.enquiry` remain experimental; nothing is deprecated.
 - **Media:** P1–P6 reused with explicit image dimensions and responsive WebP derivatives; masters unchanged. P1 remains the accepted working reference, P2–P6 await Aykhan's acceptance, P7–P9 are deferred. Placement notes remain in `ω┇Media-Queue.md`.
 - **Verification:** Task 1C passed `npm run validate`: 31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, 86 invalid approved-guidance cases, experimental guidance migration/promotion, replacement/lifecycle/compatibility and derived usage checks. Built approval count now matches the registry instead of a stale zero-approval assertion. Base-aware internal links resolve; Lab robots/sitemap separation passes. `git diff --check` passed and `git status --short` was reviewed.
 - **Browser review:** Task 1C reviewed at 1440×1000 and 390×844 in collapsed and expanded states. Native guidance disclosures start closed, support Enter/Space with visible focus, preserve readable hierarchy and do not alter FAQ disclosure state. No horizontal overflow at either width. Desktop height is 3,056px collapsed versus 4,863px with both guidance panels open (about 37% shorter); specimen heights remain unchanged. All pre-existing authoring/usage markup was compared with HEAD and preserved apart from indentation.
-- **Next action:** Tasks **1A–1C** are complete in `ω┇Tasks.md`. Before final QA, Design is iterating on a non-accordion editorial Q&A section for the Workshop. Final QA/refinement remains **1D** and should wait until Aykhan is ready to close this library pass. Historical RV-001 remains open for its broader review scope.
+- **Next action:** review the new `faq.editorial-answers` section directly before the existing accordion in the home-network Workshop and iterate on its reading rhythm, illustration balance and mobile composition. Task **1D** final QA should wait until Aykhan is ready to close this library pass. Historical RV-001 remains open for its broader review scope.
 
 ## Cross-role requests
 
@@ -24,6 +24,12 @@ None.
 
 ## Pending repository verification
 
+### RV-003 — v2.2.10 editorial Q&A Workshop candidate
+
+- **Source state:** new `faq.editorial-answers` recipe, renderer, stylesheet and home-network fixture instance were written and read back through Drive; the existing accordion remains immediately after it for side-by-side page review.
+- **Verify:** run the appropriate Workshop validation plus `git diff --check` and `git status --short`. Confirm the new recipe/fixture schema compiles, its renderer is discovered, existing image paths resolve, and no production route changes.
+- **Browser review:** inspect the home-network Workshop at representative desktop and mobile widths. Confirm every answer is visible without disclosure controls, question headings remain readable, optional illustrations do not dominate the prose, and the new section sits immediately before the accordion comparison section without overflow or broken spacing.
+
 ### RV-001 — v2.1.0 collaboration and Design Lab governance
 
 - **Source state:** originally verified through Drive; subsequent repository checks are recorded below.
@@ -33,6 +39,12 @@ None.
 - **Scope:** validate the existing v2.1.0 change first. Do not redesign, rewrite content or refactor unrelated code unless an actual failure requires it.
 
 ## Recent work
+
+### 2026-09-22 — ChatGPT — v2.2.10 editorial Q&A Workshop candidate
+
+- Added experimental `faq.editorial-answers` as an always-visible article-style Q&A recipe that supersedes the accordion candidate without deprecating it. The section supports three to six substantial visible question chapters, one to three prose paragraphs per answer and optional explanatory media; no answer is collapsible.
+- Added `EditorialAnswers.astro` and dedicated editorial-Q&A styling, then inserted a six-question home-network instance immediately before the retained accordion. The candidate reuses existing P2, P5 and P4 Workshop artwork for selected answers so Aykhan can compare an authored long-form rhythm against the accordion in the same page.
+- Drive source changes were read back. Repository validation, browser verification, Git commit, push and deployment remain pending under RV-003.
 
 ### 2026-09-22 — ChatGPT — v2.2.9 FAQ approval withdrawn
 
