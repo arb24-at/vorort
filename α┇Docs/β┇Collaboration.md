@@ -10,7 +10,7 @@ Last updated: 2026-09-22
 - **Media:** P1–P6 reused with explicit image dimensions and responsive WebP derivatives; masters unchanged. P1 remains the accepted working reference, P2–P6 await Aykhan's acceptance, P7–P9 are deferred. Placement notes remain in `ω┇Media-Queue.md`.
 - **Verification:** Task 1C passed `npm run validate`: 31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, 86 invalid approved-guidance cases, experimental guidance migration/promotion, replacement/lifecycle/compatibility and derived usage checks. Built approval count now matches the registry instead of a stale zero-approval assertion. Base-aware internal links resolve; Lab robots/sitemap separation passes. `git diff --check` passed and `git status --short` was reviewed.
 - **Browser review:** Task 1C reviewed at 1440×1000 and 390×844 in collapsed and expanded states. Native guidance disclosures start closed, support Enter/Space with visible focus, preserve readable hierarchy and do not alter FAQ disclosure state. No horizontal overflow at either width. Desktop height is 3,056px collapsed versus 4,863px with both guidance panels open (about 37% shorter); specimen heights remain unchanged. All pre-existing authoring/usage markup was compared with HEAD and preserved apart from indentation.
-- **Next action:** review the new `faq.editorial-answers` section directly before the existing accordion in the home-network Workshop and iterate on its reading rhythm, illustration balance and mobile composition. Task **1D** final QA should wait until Aykhan is ready to close this library pass. Historical RV-001 remains open for its broader review scope.
+- **Next action:** review the revised `faq.editorial-answers` section directly before the existing accordion in the home-network Workshop. The second pass removes the repeated split-column structure: question headings now sit above answers, spacing is tighter, and optional illustrations alternate left/right/offset positions to create a less templated editorial rhythm. Task **1D** final QA should wait until Aykhan is ready to close this library pass. Historical RV-001 remains open for its broader review scope.
 
 ## Cross-role requests
 
@@ -39,6 +39,11 @@ None.
 - **Scope:** validate the existing v2.1.0 change first. Do not redesign, rewrite content or refactor unrelated code unless an actual failure requires it.
 
 ## Recent work
+
+### 2026-09-22 — ChatGPT — v2.2.10 editorial Q&A layout refinement
+
+- Refined the experimental `faq.editorial-answers` renderer/styles after Aykhan review: removed the repeated question-left/answer-right composition, reduced heading scale and vertical spacing, and varied optional illustration placement across media-bearing answers while keeping all content always visible.
+- This remains part of the same uncommitted v2.2.10 Workshop candidate. Source edits are Drive/readback work only until repository/browser validation is run.
 
 ### 2026-09-22 — ChatGPT — v2.2.10 editorial Q&A Workshop candidate
 

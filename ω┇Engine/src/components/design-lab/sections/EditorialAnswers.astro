@@ -7,33 +7,39 @@ const { id, content } = Astro.props;
 <section class="pw-editorial-qa pw-section" id={id} data-recipe="faq.editorial-answers" aria-labelledby={`${id}-title`} tabindex="-1">
   <div class="container">
     <header class="pw-editorial-qa__intro">
-      <div>
-        <p class="pw-eyebrow">{content.eyebrow}</p>
-        <h2 id={`${id}-title`}>{content.title}</h2>
-      </div>
+      <p class="pw-eyebrow">{content.eyebrow}</p>
+      <h2 id={`${id}-title`}>{content.title}</h2>
       <p>{content.intro}</p>
     </header>
 
     <div class="pw-editorial-qa__items">
-      {content.items.map((item, index) => (
-        <article class:list={["pw-editorial-qa__item", item.media && "pw-editorial-qa__item--media"]}>
-          <div class="pw-editorial-qa__question">
-            <span class="pw-editorial-qa__number" aria-hidden="true">Q{String(index + 1).padStart(2, "0")}</span>
-            <h3>{item.question}</h3>
-          </div>
-          <div class="pw-editorial-qa__answer">
-            <div class="pw-prose">
-              {item.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      {content.items.map((item, index) => {
+        const mediaIndex = content.items.slice(0, index).filter(entry => entry.media).length;
+        const mediaLayout = item.media ? ["right", "left", "offset"][mediaIndex % 3] : null;
+        return (
+          <article class:list={[
+            "pw-editorial-qa__item",
+            item.media && "pw-editorial-qa__item--media",
+            mediaLayout && `pw-editorial-qa__item--media-${mediaLayout}`,
+          ]}>
+            <div class="pw-editorial-qa__question">
+              <span class="pw-editorial-qa__number" aria-hidden="true">Q{String(index + 1).padStart(2, "0")}</span>
+              <h3>{item.question}</h3>
             </div>
-            {item.media && (
-              <figure class="pw-editorial-qa__media">
-                <WorkshopImage {...item.media} sizes="(max-width: 767px) 92vw, 360px" />
-                {item.caption && <figcaption>{item.caption}</figcaption>}
-              </figure>
-            )}
-          </div>
-        </article>
-      ))}
+            <div class="pw-editorial-qa__answer">
+              <div class="pw-prose pw-editorial-qa__prose">
+                {item.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+              </div>
+              {item.media && (
+                <figure class="pw-editorial-qa__media">
+                  <WorkshopImage {...item.media} sizes="(max-width: 767px) 92vw, 420px" />
+                  {item.caption && <figcaption>{item.caption}</figcaption>}
+                </figure>
+              )}
+            </div>
+          </article>
+        );
+      })}
     </div>
   </div>
 </section>
