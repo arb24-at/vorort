@@ -175,7 +175,6 @@ export const sectionRecipes = {
     recommendedPlacement: "Late page, after the core service explanation",
     recommendedUse: "Resolve independent practical questions that remain after the page has established scope, process, and boundaries.",
     renderer: "FaqAccordion.astro",
-    status: "approved",
     authoringGuidance: {
       contentShape: "Eyebrow and title, followed by one or more question-and-answer items; each answer is plain paragraph text.",
       typicalRange: "Several focused questions with short paragraph answers are the normal range; avoid article-length answers. This is guidance, not a fixed question count or word limit.",
