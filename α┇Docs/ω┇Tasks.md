@@ -51,8 +51,8 @@ Use this board when a task is too large or risky to hand to Codex as one uninter
 **Roles**
 - Design:
 - Content & SEO:
-- Implementation: 1A, 1B
-- QA: 1C
+- Implementation: 1A, 1B, 1C
+- QA: 1D
 
 - [x] **1A — Add the canonical authoring contract**
   - Extend the canonical recipe definition in `ω┇Engine/src/design-system/section-recipes.ts` with one compact human-guidance structure. Keep existing Zod schemas as the machine-enforced content contract; do not create a second metadata file or separate approved-section catalogue.
@@ -70,9 +70,17 @@ Use this board when a task is too large or risky to hand to Codex as one uninter
   - Preserve `noindex, nofollow`, registry-derived approval, derived usage, base-aware links, static-first behaviour, and the separation between approval and production adoption. Do not add React solely for this.
   - Finish condition: validate the repository and inspect the affected Approved Sections page at representative desktop and mobile widths. Mark **1B** complete only when both approved recipes render as real, readable specimens with their authoring contracts. Stop and make one coherent commit before 1C.
 
-- [ ] **1C — Final QA and responsive refinement**
+- [ ] **1C — Collapse dense authoring details by default**
+  - Keep each recipe's identity, approval state, short purpose/use, compact context metadata, and the full **Rendered example** visible. Do not collapse the specimen itself: the page must still show exactly what the approved section looks like without extra interaction.
+  - Move the dense authoring/contract area below each specimen into one clearly labelled disclosure such as **Authoring guidance & usage**. It must be collapsed by default so the library scans visually first, especially once more approved recipes are added.
+  - Use native HTML disclosure behaviour (`<details>` / `<summary>`) unless there is a demonstrated reason not to. The summary should have an obvious open/closed affordance and visible keyboard focus; no client framework or unnecessary JavaScript.
+  - When expanded, preserve all existing guidance and derived information without loss: **Fixed / Flexible / Needs Design review**, content shape/range, media, responsive and accessibility guidance, lifecycle/replacement details, and Workshop usage links. Keep the internal information hierarchy readable rather than turning the disclosure into one undifferentiated text block.
+  - Review the collapsed and expanded states at representative desktop and mobile widths. Avoid layout jumps, horizontal overflow, clipped specimen content, or interaction ambiguity with the FAQ specimen's own disclosure controls.
+  - Finish condition: run the appropriate repository validation plus `git diff --check` and `git status --short`; mark **1C** complete only when the default page is materially shorter and more visual while every contract detail remains accessible. Stop and make one coherent commit before 1D.
+
+- [ ] **1D — Final QA and responsive refinement**
   - Verify that Approved Sections still derives only from the canonical registry, shows the two approved recipes and excludes experimental ones, and that specimen content comes from real Workshop consumers or the documented deterministic fallback.
-  - Review desktop and mobile behaviour for specimen clipping, excessive width, guidance readability, visual hierarchy, and growth beyond two recipes. Check keyboard/focus behaviour for the FAQ specimen and any new controls; preserve native semantics where possible.
+  - Review desktop and mobile behaviour for specimen clipping, excessive width, collapsed/expanded guidance readability, visual hierarchy, and growth beyond two recipes. Check keyboard/focus behaviour for both the authoring disclosures and the FAQ specimen; preserve native semantics where possible.
   - Confirm approved-recipe guidance validation fails cleanly when required authoring guidance is missing, Lab routes remain out of the sitemap/production navigation, and production pages have not changed unexpectedly.
   - Fix small defects discovered by QA within this stage; do not reopen the approved design/content model unless an actual failure requires it.
-  - Finish condition: run `npm run validate`, `git diff --check`, and `git status --short`, record the evidence in the normal handoff, mark **1C** complete, and make one coherent commit if the stage changes repository state.
+  - Finish condition: run `npm run validate`, `git diff --check`, and `git status --short`, record the evidence in the normal handoff, mark **1D** complete, and make one coherent commit if the stage changes repository state.
