@@ -63,7 +63,7 @@ Use this board when a task is too large or risky to hand to Codex as one uninter
   - Preserve existing lifecycle, audience/page-type compatibility, `supersedes`, derived usage, and production-separation rules. Add/adjust focused validation coverage as needed.
   - Finish condition: run the appropriate repository validation plus `git diff --check` and `git status --short`; mark **1A** complete only when the contract is implemented and validated. Stop and make one coherent commit before 1B.
 
-- [ ] **1B — Build the visual Approved Sections library**
+- [x] **1B — Build the visual Approved Sections library**
   - Rework `ω┇Engine/src/pages/design-lab/approved.astro` and Design Lab styling so each approved recipe contains a clearly bounded **Rendered example** showing the real Astro section implementation with representative content from an actual Workshop consumer. Reuse the same renderer/content path used by Workshop pages; do not duplicate section markup or maintain a second sample-content copy unless a deterministic fallback is genuinely required for an approved recipe with no current usage.
   - Make the section boundary visually obvious so a reviewer can see exactly what belongs to the approved recipe. Keep recipe identity outside the specimen. The page should feel like a visual design-system library rather than developer documentation.
   - Beside or below the specimen, show the useful human contract in a clear hierarchy: purpose/use, **Fixed / Flexible / Needs Design review**, content shape/range, supported audiences/page types, recommended placement, media/responsive/accessibility guidance, lifecycle/replacement state, and derived Workshop usages. Keep renderer filenames/raw Zod implementation details out of the primary UI.

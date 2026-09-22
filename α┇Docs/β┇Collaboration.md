@@ -4,13 +4,13 @@ Last updated: 2026-09-22
 
 ## Current handoff
 
-- **Version and branch:** `2.2.5` in root `AGENTS.md`; local branch `main` is Git verified. Task 1A is implemented and repository validated; no push or deployment was performed.
+- **Version and branch:** `2.2.6` in root `AGENTS.md`; local branch `main` is Git verified. Task 1B is implemented, repository validated and browser verified; no push or deployment was performed.
 - **Private Workshop:** the English home-network prototype now has ten sections: editorial hero, five-topic index, Wi-Fi options, Ethernet connection diagram, home office, NAS, planning/troubleshooting, four-stage process, eight native FAQs and enquiry. Content uses the repository's English research and canonical service facts; scope boundaries sit beside their relevant topics.
 - **Recipes:** `process.staged-path` and `faq.accordion` are now explicitly approved for service pages across private and business Workshop contexts. The newer private recipes, `contact.enquiry`, and retained predecessor recipes remain experimental; nothing is deprecated.
 - **Media:** P1–P6 reused with explicit image dimensions and responsive WebP derivatives; masters unchanged. P1 remains the accepted working reference, P2–P6 await Aykhan's acceptance, P7–P9 are deferred. Placement notes remain in `ω┇Media-Queue.md`.
-- **Verification:** Task 1A passed `npm run validate`: 31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, 86 invalid approved-guidance cases, experimental guidance migration/promotion, replacement/lifecycle/compatibility and derived usage checks. Built approval count now matches the registry instead of a stale zero-approval assertion. Base-aware internal links resolve; Lab robots/sitemap separation passes. `git diff --check` passed and `git status --short` was reviewed.
-- **Browser review:** the v2.2.0 private canvas was previously reviewed at 1440, 768, 390 and 320px. No browser review was run for the v2.2.2 lifecycle-status change; Aykhan is using this approval as an Approved Sections UI check.
-- **Next action:** Task **1A** is complete in `ω┇Tasks.md`. Stop here; **1B** (visual library) and **1C** (final QA/refinement) remain unstarted until explicitly assigned by Aykhan. No browser review was needed for the 1A registry/validation change.
+- **Verification:** Task 1B passed `npm run validate`: 31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, 86 invalid approved-guidance cases, experimental guidance migration/promotion, replacement/lifecycle/compatibility and derived usage checks. Built approval count now matches the registry instead of a stale zero-approval assertion. Base-aware internal links resolve; Lab robots/sitemap separation passes. `git diff --check` passed and `git status --short` was reviewed.
+- **Browser review:** Task 1B Approved Sections was reviewed at 1440×1000 and 390×844. Both live specimens, their boundaries and guidance are readable; page width matches the viewport at both sizes. Mobile FAQ Enter/Space activation opens independent disclosures with visible focus. The v2.2.0 private canvas review remains historical; wider final QA belongs to 1C.
+- **Next action:** Tasks **1A** and **1B** are complete in `ω┇Tasks.md`. Stop here; **1C** (final QA/refinement) remains unstarted until explicitly assigned by Aykhan.
 
 ## Cross-role requests
 
@@ -26,19 +26,19 @@ None.
 
 ### RV-001 — v2.1.0 collaboration and Design Lab governance
 
-- **Source state:** Drive changes were read back after writing; repository-shell evidence is not available in this Chat.
+- **Source state:** originally verified through Drive; subsequent repository checks are recorded below.
 - **Repository checks resolved in Task 1A:** `npm run validate`, `git diff --check` and `git status --short` ran successfully. Browser review below remains pending.
-- **Review:** open Page Workshop and Approved Sections in the local browser; confirm the Lab still renders at representative desktop/tablet/mobile widths and that no production route or visual output changed unexpectedly.
+- **Remaining review:** broader Page Workshop/tablet review and production visual regression checks remain pending. Approved Sections desktop/mobile review was completed in Task 1B; this does not close the wider historical request.
 - **Contract checks resolved in Task 1A:** guidance builds successfully, `supersedes` rejects unknown/self/cross-kind/cyclic relationships, derived Workshop usage passes, and approval checks use the canonical registry rather than a fixed count. Browser confirmation of replacement-candidate presentation remains pending.
 - **Scope:** validate the existing v2.1.0 change first. Do not redesign, rewrite content or refactor unrelated code unless an actual failure requires it.
 
-### RV-002 — v2.2.2 first Approved Sections lifecycle test
-
-- **Source state:** `process.staged-path` and `faq.accordion` were promoted to `approved` in the canonical recipe registry and read back successfully from Drive.
-- **Repository checks resolved in Task 1A:** full validation and Git checks passed, including registry-derived built approval count and Workshop usage. The browser check below remains pending.
-- **Design Lab check:** open `/design-lab/approved/` and confirm exactly these two recipes appear as approved, with active usage derived from both current Workshop fixtures and no manually maintained approval list.
-
 ## Recent work
+
+### 2026-09-22 — Codex — v2.2.6 Task 1B visual section library
+
+- Rebuilt Approved Sections around bounded real examples, canonical authoring guidance, compatibility, lifecycle/replacement state and derived Workshop usage. Each specimen uses the existing `WorkshopCanvas` renderer path with content from the first actual consumer in stable loader order; no duplicated samples, renderer markup or client framework were added.
+- Full `npm run validate` and Git diff/status checks passed. Browser verified at 1440×1000 and 390×844, including readable specimens/guidance, no horizontal overflow and mobile FAQ keyboard/focus behaviour. No production content, section implementation or approval state changed.
+- RV-002 is resolved: both approved recipes appear, each with derived private/business usage. Task 1B is checked complete; final QA/refinement in 1C remains unstarted. Current approved recipes both have consumers; future unused approvals fail with an explicit example requirement rather than silently inventing fallback content.
 
 ### 2026-09-22 — Codex — v2.2.5 Task 1A authoring contract
 

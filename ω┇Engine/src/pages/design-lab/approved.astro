@@ -1,44 +1,98 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
 import LabNavigation from "../../components/design-lab/LabNavigation.astro";
+import WorkshopCanvas from "../../components/design-lab/WorkshopCanvas.astro";
 import { recipesWithStatus, sectionRecipes, type RecipeId } from "../../design-system/section-recipes";
-import { getWorkshopPages, getWorkshopUsage } from "../../data/workshop";
+import { getWorkshopPages, getWorkshopUsage, workshopPath } from "../../data/workshop";
 import { withBase } from "../../utils/withBase";
 import "../../styles/design-lab.css";
-const approved = recipesWithStatus("approved");
 const pages = await getWorkshopPages();
+const approved = recipesWithStatus("approved").map(([id, recipe]) => {
+  // The loader provides a stable page order; use the first real occurrence.
+  // An unused recipe needs an explicit example decision, never invented content.
+  const fixture = pages.find(page => page.sections.some(section => section.recipe === id));
+  const section = fixture?.sections.find(section => section.recipe === id);
+  if (!fixture || !section) throw new Error(`Approved recipe ${id} needs a Workshop consumer for its rendered example`);
+  const anchor = `recipe-${id.replaceAll(".", "-")}`;
+  return {
+    id, recipe, fixture, section, anchor,
+    usage: getWorkshopUsage(pages, id as RecipeId),
+    replacements: Object.entries(sectionRecipes).filter(([, candidate]) => candidate.supersedes === id),
+  };
+});
 ---
-<MainLayout title="Approved Sections · Design Lab" canonicalPath="/design-lab/approved/" lang="en" robots="noindex, nofollow" showSiteChrome={false}>
+<MainLayout title="Approved Sections · Design Lab" description="Explore approved section designs, real Workshop examples and guidance for authoring content." canonicalPath="/design-lab/approved/" lang="en" robots="noindex, nofollow" showSiteChrome={false}>
   <div class="design-lab">
     <LabNavigation area="approved" />
-    <section class="lab-approved" data-approved-count={approved.length}>
-      <span class="lab-label">Governed section library</span>
-      <h1>Approved Sections</h1>
+    <div class="lab-approved" data-approved-count={approved.length}>
+      <header class="lab-library-intro">
+        <span class="lab-label">Section library</span>
+        <h1>Approved Sections</h1>
+        <p>See the design. Understand what can change.</p>
+        <p class="lab-library-note">Real examples from Page Workshop, with guidance for your next page. Section approval and production adoption are separate decisions.</p>
+        {approved.length > 0 && <nav class="lab-recipe-index" aria-label="Approved section recipes">
+          {approved.map(({ recipe, anchor }) => <a href={`#${anchor}`}>{recipe.name}<span aria-hidden="true"> ↓</span></a>)}
+        </nav>}
+      </header>
       {approved.length === 0 ? <div class="lab-empty">
         <h2>No approved sections yet.</h2>
-        <p>Sections appear here only after Aykhan explicitly approves their design and content contract. The current Page Workshop sections are experimental.</p>
-        <p>Review a section in a complete page before approving it for future production use.</p>
+        <p>Sections appear here only after Aykhan explicitly approves their design and content contract.</p>
         <a href={withBase("/design-lab/")}>Return to Page Workshop →</a>
       </div> : <div class="lab-approved-list">
-        {approved.map(([id, recipe]) => {
-          const usage = getWorkshopUsage(pages, id as RecipeId);
-          const replacements = Object.entries(sectionRecipes).filter(([, candidate]) => candidate.supersedes === id);
-          return <article>
-            <h2>{recipe.name}</h2>
-            <p><strong>Recipe ID:</strong> <code>{id}</code></p>
-            <p>{recipe.purpose}</p>
-            <p><strong>Recommended placement:</strong> {recipe.recommendedPlacement}</p>
-            <p><strong>Recommended use:</strong> {recipe.recommendedUse}</p>
-            {recipe.supersedes && <p><strong>Supersedes:</strong> <code>{recipe.supersedes}</code></p>}
-            {replacements.length > 0 && <>
-              <p><strong>Replacement {replacements.length === 1 ? "candidate" : "candidates"}:</strong></p>
-              <ul>{replacements.map(([replacementId, replacement]) => <li><code>{replacementId}</code> — {replacement.status}</li>)}</ul>
-            </>}
-            <p><strong>Active Workshop usage:</strong> {usage.length} {usage.length === 1 ? "page" : "pages"}. This count is derived from current Workshop fixtures; production usage is not connected yet.</p>
-            <ul>{usage.map(page => <li><a href={withBase(page.path)}>{page.title}</a></li>)}</ul>
+        {approved.map(({ id, recipe, fixture, section, anchor, usage, replacements }, index) => {
+          const guidance = recipe.authoringGuidance!;
+          return <article class="lab-recipe" id={anchor} aria-labelledby={`${anchor}-title`} data-library-recipe={id}>
+            <header class="lab-recipe-heading">
+              <div class="lab-recipe-identity"><span class="lab-recipe-number">{String(index + 1).padStart(2, "0")}</span><span class="lab-status">{recipe.status}</span><code>{id}</code></div>
+              <h2 id={`${anchor}-title`}>{recipe.name}</h2>
+              <p class="lab-recipe-purpose">{recipe.purpose}</p>
+              <p class="lab-recipe-use">{recipe.recommendedUse}</p>
+              <dl class="lab-recipe-fit">
+                <div><dt>Audiences</dt><dd>{recipe.audiences.join(" · ")}</dd></div>
+                <div><dt>Page types</dt><dd>{recipe.pageTypes.join(" · ")}</dd></div>
+                <div><dt>Recommended placement</dt><dd>{recipe.recommendedPlacement}</dd></div>
+              </dl>
+            </header>
+            <figure class="lab-specimen" aria-labelledby={`${anchor}-example`}>
+              <figcaption class="lab-specimen-caption">
+                <strong id={`${anchor}-example`}>Rendered example</strong>
+                <a href={`${withBase(workshopPath(fixture.page.id))}#${section.id}`}>{fixture.page.title}<span aria-hidden="true"> ↗</span></a>
+              </figcaption>
+              <div class="lab-specimen-canvas" data-example-page={fixture.page.id} data-example-section={section.id}>
+                <WorkshopCanvas fixture={fixture} sections={[{ ...section, id: `${anchor}-example-section` }]} />
+              </div>
+            </figure>
+            <div class="lab-authoring" aria-labelledby={`${anchor}-guidance`}>
+              <h3 id={`${anchor}-guidance`}>Authoring this section</h3>
+              <dl class="lab-contract-rules">
+                <div><dt>Fixed</dt><dd>{guidance.fixed}</dd></div>
+                <div><dt>Flexible</dt><dd>{guidance.flexible}</dd></div>
+                <div><dt>Needs Design review</dt><dd>{guidance.needsDesignReview}</dd></div>
+              </dl>
+              <dl class="lab-contract-details">
+                <div><dt>Content shape</dt><dd>{guidance.contentShape}</dd></div>
+                <div><dt>Typical range & density</dt><dd>{guidance.typicalRange}</dd></div>
+                <div><dt>Media requirements</dt><dd>{guidance.media}</dd></div>
+                <div><dt>Responsive behaviour</dt><dd>{guidance.responsive}</dd></div>
+                <div class="lab-contract-accessibility"><dt>Accessibility</dt><dd>{guidance.accessibility}</dd></div>
+              </dl>
+            </div>
+            <footer class="lab-recipe-footer">
+              <div>
+                <h3>Lifecycle & replacements</h3>
+                <p>Approved for the audiences and page types above. Production adoption requires a separate decision.</p>
+                {recipe.supersedes && <p>Supersedes <strong>{sectionRecipes[recipe.supersedes as RecipeId].name}</strong> <code>({recipe.supersedes})</code>.</p>}
+                {replacements.length > 0 ? <ul>{replacements.map(([replacementId, replacement]) => <li>{replacement.name} <code>({replacementId})</code> — {replacement.status}</li>)}</ul> : <p class="lab-library-note">No replacement candidates.</p>}
+              </div>
+              <div>
+                <h3>Used in Page Workshop <span class="lab-usage-count">{usage.length}</span></h3>
+                <ul class="lab-usage-list">{usage.map(page => <li><a href={withBase(page.path)}>{page.title}<span aria-hidden="true"> ↗</span></a><span>{page.audience}</span></li>)}</ul>
+                <p class="lab-library-note">Usage is derived from current Workshop pages. Production usage is not tracked here.</p>
+              </div>
+            </footer>
           </article>;
         })}
       </div>}
-    </section>
+    </div>
   </div>
 </MainLayout>
