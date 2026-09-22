@@ -485,7 +485,7 @@ sections:
       intro: >-
         Planning something new or improving what is already there? Tell us the important rooms, the devices
         you use and what you would like to work better. A short description is enough to start.
-      formIntro: This form opens your email app with your details so you can review and send your enquiry.
+      formIntro: Tell us how to reach you and what you need help with. Fields marked * are required.
       affectedPlaceholder: For example Wi-Fi coverage, Ethernet, a home office or NAS
       request: What does your home network need to do?
       requestPlaceholder: Describe the rooms, existing connections or symptoms, and what you would like to improve.
