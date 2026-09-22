@@ -29,7 +29,7 @@ const approved = recipesWithStatus("approved").map(([id, recipe]) => {
         <span class="lab-label">Section library</span>
         <h1>Approved Sections</h1>
         <p>See the design. Understand what can change.</p>
-        <p class="lab-library-note">Real examples from Page Workshop, with guidance for your next page. Section approval and production adoption are separate decisions.</p>
+        <p class="lab-library-note"><strong>Blueprints, not templates.</strong> Real Workshop examples show the approved structure and philosophy, but copy, imagery, density and element order may vary wherever the recipe guidance allows. Shape the section around the content rather than forcing content into the specimen. Section approval and production adoption are separate decisions.</p>
         {approved.length > 0 && <nav class="lab-recipe-index" aria-label="Approved section recipes">
           {approved.map(({ recipe, anchor }) => <a href={`#${anchor}`}>{recipe.name}<span aria-hidden="true"> ↓</span></a>)}
         </nav>}

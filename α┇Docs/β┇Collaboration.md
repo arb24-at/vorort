@@ -4,13 +4,13 @@ Last updated: 2026-09-22
 
 ## Current handoff
 
-- **Version and branch:** `2.2.13` in root `AGENTS.md`; local branch `main` was Git verified for Task 1C. The current editorial explanation experiments are Drive source/readback work; no new repository validation, browser verification, Git commit, push or deployment is claimed.
-- **Private Workshop:** the English home-network prototype now has twelve sections: editorial hero, five-topic index, Wi-Fi options, the new rich editorial-prose Wi-Fi chapter, refined Ethernet connection path, three editorial-media chapters, four-stage process, approved always-visible editorial Q&A, retained experimental accordion FAQ for comparison, and enquiry. Content uses the repository's English research and canonical service facts; scope boundaries sit beside their relevant topics.
-- **Recipes:** `process.staged-path`, `faq.editorial-answers` and `explanation.editorial-media` are approved. `faq.accordion` remains experimental and is superseded by the approved editorial Q&A recipe; it has not been deprecated because Workshop comparison/migration is still active. Other newer private recipes and `contact.enquiry` remain experimental. `explanation.editorial-media` now carries explicit authoring guidance for automatic left/right rhythm, optional quiet/solid callouts and no visible image caption; new `explanation.editorial-prose` is the experimental long-form block candidate.
+- **Version and branch:** `2.2.14` in root `AGENTS.md`; local branch `main` was Git verified for Task 1C. The current editorial explanation experiments are Drive source/readback work; no new repository validation, browser verification, Git commit, push or deployment is claimed.
+- **Private Workshop:** the English home-network prototype now has twelve sections: editorial hero, five-topic index, Wi-Fi options, the new rich editorial-prose Wi-Fi chapter, refined Ethernet connection path, three editorial-media chapters, four-stage process, approved always-visible editorial Q&A, retained experimental accordion FAQ for comparison, a redesigned always-visible enquiry form, and shared Workshop footer chrome. Content uses the repository's English research and canonical service facts; scope boundaries sit beside their relevant topics.
+- **Recipes:** `process.staged-path`, `faq.editorial-answers`, `explanation.editorial-media`, `explanation.options-guide`, `explanation.editorial-prose` and `explanation.connection-path` are approved. `faq.accordion` remains experimental and is superseded by the approved editorial Q&A recipe; it has not been deprecated because Workshop comparison/migration is still active. Other newer private recipes and `contact.enquiry` remain experimental; the enquiry recipe now has an explicit authoring contract and a Design-Lab-specific always-visible form treatment. The options guide and rich editorial prose remain separate recipes that can be used independently or consecutively. `explanation.editorial-media` keeps its simpler one-image chapter contract, while the connection-path approval covers the full section composition and semantic path; its exact schematic artwork remains replaceable/refinable.
 - **Media:** P1–P6 reused with explicit image dimensions and responsive WebP derivatives; masters unchanged. P1 remains the accepted working reference, P2–P6 await Aykhan's acceptance, P7–P9 are deferred. Placement notes remain in `ω┇Media-Queue.md`.
 - **Verification:** Task 1C passed `npm run validate`: 31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, 86 invalid approved-guidance cases, experimental guidance migration/promotion, replacement/lifecycle/compatibility and derived usage checks. Built approval count now matches the registry instead of a stale zero-approval assertion. Base-aware internal links resolve; Lab robots/sitemap separation passes. `git diff --check` passed and `git status --short` was reviewed.
 - **Browser review:** Task 1C reviewed at 1440×1000 and 390×844 in collapsed and expanded states. Native guidance disclosures start closed, support Enter/Space with visible focus, preserve readable hierarchy and do not alter FAQ disclosure state. No horizontal overflow at either width. Desktop height is 3,056px collapsed versus 4,863px with both guidance panels open (about 37% shorter); specimen heights remain unchanged. All pre-existing authoring/usage markup was compared with HEAD and preserved apart from indentation.
-- **Next action:** review `wifi-planning-notes` (`explanation.editorial-prose`), `ethernet-cabling` (`explanation.connection-path`) and the updated editorial-media instances in the private Workshop. Task **2A** adds Lab-only recipe labels and **2B** adds the `recipe.id — “Visible section heading”` contents navigator. Task **1D** final QA should wait until Aykhan is ready to close the library pass. Historical RV-001 remains open for its broader review scope.
+- **Next action:** review the new `contact` (`contact.enquiry`) closing section and whole-page Workshop footer together, then refine/approve the form if desired. Task **2A** adds Lab-only recipe labels with a subtle green/mint ID tint for approved recipes, and **2B** adds the `recipe.id — “Visible section heading”` contents navigator. Task **1D** final QA should wait until Aykhan is ready to close the library pass. Historical RV-001 remains open for its broader review scope.
 
 ## Cross-role requests
 
@@ -24,11 +24,17 @@ None.
 
 ## Pending repository verification
 
+### RV-005 — v2.2.14 contact and Workshop footer pass
+
+- **Source state:** Drive source/readback work makes the Workshop `contact.enquiry` form always visible in a new split closing composition, adds explicit experimental authoring guidance, renders shared Workshop-only footer chrome after full page canvases (but not Approved Section specimens), and documents the global blueprint-not-template philosophy in Project plus the Approved Sections intro.
+- **Verify:** run Workshop/registry validation plus `git diff --check` and `git status --short`. Confirm `WorkshopFooter.astro` and `contact-footer.css` resolve, `WorkshopCanvas` omits footer chrome when rendering subsection specimens, the mailto form still compiles, and no production component was modified.
+- **Browser review:** inspect the home-network Workshop at representative desktop/mobile widths. Check form labels/focus, field wrapping, direct contact links, footer hierarchy/legal links, no horizontal overflow, and a clean transition from the form into the footer.
+
 ### RV-004 — v2.2.13 editorial explanation experiments
 
-- **Source state:** Drive source/readback work adds `explanation.editorial-prose`, refines `explanation.connection-path`, expands `explanation.editorial-media` guidance/callout variation, removes its visible image captions, and queues Workshop contents navigation as Task 2B.
+- **Source state:** Drive source/readback work adds and approves `explanation.editorial-prose`, approves `explanation.options-guide` and `explanation.connection-path`, refines the connection-path into intro → full-width path → practical planning composition, expands `explanation.editorial-media` guidance/callout variation, removes its visible image captions, and queues Design Lab recipe IDs/approval tint plus Workshop contents navigation as Tasks 2A/2B.
 - **Verify:** run the Workshop/registry validation plus `git diff --check` and `git status --short`. Confirm the new block schema and renderer compile, new stylesheet import resolves, existing editorial-media fixtures still validate after caption removal, and note tones do not alter unrelated consumers.
-- **Browser review:** inspect `wifi-planning-notes`, `ethernet-cabling`, `home-office`, `nas-storage` and `network-planning` at representative desktop/mobile widths. Check the connection diagram feels complete, rich-prose tables stay contained, side media collapses cleanly, alternating editorial-media composition remains readable, and no visible image-caption line remains under those three chapter images.
+- **Browser review:** inspect `wifi-coverage`, `wifi-planning-notes`, `ethernet-cabling`, `home-office`, `nas-storage` and `network-planning` at representative desktop/mobile widths. Check the connection section's new post-diagram planning layer feels complete, rich-prose tables stay contained, side media collapses cleanly, alternating editorial-media composition remains readable, and no visible image-caption line remains under those three chapter images.
 
 ### RV-003 — v2.2.10 editorial Q&A Workshop candidate
 
@@ -45,6 +51,14 @@ None.
 - **Scope:** validate the existing v2.1.0 change first. Do not redesign, rewrite content or refactor unrelated code unless an actual failure requires it.
 
 ## Recent work
+
+### 2026-09-22 — ChatGPT — v2.2.14 contact/footer Workshop pass
+
+- Documented approved recipes as structural blueprints rather than frozen specimens: only explicitly fixed semantic/design constraints are mandatory; copy, imagery, density, treatments and element order may vary where guidance allows so Content & SEO can shape sections around meaning without cloning pages.
+- Rebuilt the experimental Workshop `contact.enquiry` renderer as an always-visible closing form with direct phone/WhatsApp/email routes, safety/consent guidance and service-specific prompt overrides; production `ContactSection.astro` remains untouched.
+- Added Workshop-only shared footer chrome after full page canvases. It is intentionally not a section recipe and is suppressed for Approved Sections specimen canvases. Added dedicated contact/footer styles and queued repository/browser verification under RV-005.
+
+- 2026-09-22 — Design: approved the options guide, rich editorial prose and connection-path recipes after Aykhan review; strengthened the connection-path lower planning composition and clarified that options-guide/editorial-prose are separate recipes that may be paired.
 
 ### 2026-09-22 — ChatGPT — v2.2.13 editorial prose polish and editorial-media approval
 

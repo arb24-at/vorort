@@ -1,9 +1,121 @@
 ---
-import ContactSection from "../../ContactSection.astro";
+import { siteConfig } from "../../../data/site";
 import type { Audience, RecipeContent } from "../../../design-system/section-recipes";
-type Props = { audience: Audience; locale: "en"; content: RecipeContent<"contact.enquiry"> };
-const { audience, locale, content } = Astro.props;
+
+type Props = {
+  id: string;
+  audience: Audience;
+  locale: "en";
+  content: RecipeContent<"contact.enquiry">;
+};
+
+const { id, audience, content } = Astro.props;
+const copy = {
+  title: content.title ?? "Tell us what you need help with.",
+  intro: content.intro ?? "A short description is enough for an initial review. You do not need to diagnose the problem yourself.",
+  formIntro: content.formIntro ?? "Share the essentials and review the message in your email app before sending.",
+  affectedPlaceholder: content.affectedPlaceholder ?? "For example Wi-Fi, a laptop, Microsoft 365 or a new setup",
+  request: content.request ?? "What do you need help with?",
+  requestPlaceholder: content.requestPlaceholder ?? "Describe what is happening, what should work, and anything important we should know before replying.",
+};
+const customerTypes = ["Private", "Home office / freelance", "Business"];
 ---
-<div data-recipe="contact.enquiry">
-  <ContactSection locale={locale} context={audience} copyOverrides={content} />
-</div>
+<section class="c2-contact" id={id} data-recipe="contact.enquiry">
+  <div class="container">
+    <div class="c2-contact__shell">
+      <div class="c2-contact__intro">
+        <span class="c2-eyebrow">Start a conversation</span>
+        <h2>{copy.title}</h2>
+        <p class="c2-contact__lede">{copy.intro}</p>
+
+        <div class="c2-contact__channels" aria-label="Direct contact options">
+          <a href={siteConfig.contact.phoneHref}>
+            <span>Phone</span>
+            <strong>{siteConfig.contact.phoneDisplay}</strong>
+          </a>
+          <a href={siteConfig.contact.whatsappHref}>
+            <span>WhatsApp</span>
+            <strong>Write a message</strong>
+          </a>
+          <a href={`mailto:${siteConfig.contact.email}`}>
+            <span>Email</span>
+            <strong>{siteConfig.contact.email}</strong>
+          </a>
+        </div>
+
+        <div class="c2-contact__expectations">
+          <p><span aria-hidden="true">01</span><span><strong>A short description is enough.</strong> We can ask the technical questions after we understand the situation.</span></p>
+          <p><span aria-hidden="true">02</span><span><strong>Costs stay explicit.</strong> If a paid diagnostic visit is useful, that is explained before it is arranged.</span></p>
+          <p><span aria-hidden="true">03</span><span><strong>Keep credentials private.</strong> Never send passwords, authentication codes, recovery codes or remote-access credentials.</span></p>
+        </div>
+      </div>
+
+      <div class="c2-contact__form-panel">
+        <div class="c2-contact__form-head">
+          <span class="c2-kicker">Enquiry form</span>
+          <h3>Send the essentials</h3>
+          <p>{copy.formIntro}</p>
+        </div>
+
+        <form class="c2-contact__form" action={`mailto:${siteConfig.contact.email}`} method="post" enctype="text/plain">
+          <div class="c2-contact__form-grid">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" autocomplete="name" placeholder="Your name" required />
+            </label>
+            <label>
+              <span>Phone or email</span>
+              <input type="text" name="contact" placeholder="How can we reach you?" required />
+            </label>
+            <label>
+              <span>Preferred contact</span>
+              <select name="preferred-contact">
+                <option>Phone</option>
+                <option>WhatsApp</option>
+                <option>Email</option>
+              </select>
+            </label>
+            <label>
+              <span>Postcode or district</span>
+              <input type="text" name="postcode" autocomplete="postal-code" placeholder="For example 10999 or Kreuzberg" />
+            </label>
+            <label>
+              <span>Context</span>
+              <select name="context">
+                {customerTypes.map((type, index) => <option selected={(audience === "private" && index === 0) || (audience === "business" && index === 2)}>{type}</option>)}
+              </select>
+            </label>
+            <label>
+              <span>Company name <small>optional</small></span>
+              <input type="text" name="company" autocomplete="organization" />
+            </label>
+            <label class="c2-contact__field-wide">
+              <span>Affected device or service</span>
+              <input type="text" name="affected" placeholder={copy.affectedPlaceholder} />
+            </label>
+            <label class="c2-contact__field-wide">
+              <span>Preferred appointment period <small>optional</small></span>
+              <input type="text" name="appointment-period" placeholder="For example weekday evening or Saturday" />
+            </label>
+            <label class="c2-contact__field-wide">
+              <span>{copy.request}</span>
+              <textarea name="request" rows="5" placeholder={copy.requestPlaceholder} required></textarea>
+            </label>
+          </div>
+
+          <div class="c2-contact__safety">
+            <span aria-hidden="true">!</span>
+            <p>Do not include passwords, authentication or recovery codes, payment-card details or remote-access credentials.</p>
+          </div>
+
+          <label class="c2-contact__consent">
+            <input type="checkbox" name="consent" required />
+            <span>I agree that my details may be used to respond to this enquiry.</span>
+          </label>
+
+          <button class="c2-contact__submit" type="submit">Prepare enquiry email <span aria-hidden="true">→</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

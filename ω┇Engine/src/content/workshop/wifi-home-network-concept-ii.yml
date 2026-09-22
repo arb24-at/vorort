@@ -225,11 +225,21 @@ sections:
       caption: >-
         A simplified relationship, not a wiring plan: destinations use their own suitable connections.
         The number of cables, outlets and switch ports is agreed for your setup.
-      note:
-        title: Agree the installation details first
+      planning:
+        title: Plan the route before the work starts
         body: >-
-          We assess possible routes and discuss access, visible cabling, outlets and any associated making-good
-          before the installation. The physical work is scoped for the actual property rather than promised as a standard package.
+          The diagram shows the relationship. The actual installation is agreed around the property, the access available
+          and the rooms or devices that need a dependable fixed connection.
+        items:
+          - title: Route & access
+            body: >-
+              We assess practical cable routes, existing paths and the access available before agreeing how the connection should travel.
+          - title: Outlets & positions
+            body: >-
+              We agree where fixed connections, outlets or access points need to end so the route supports the way the room is actually used.
+          - title: Finish & handover
+            body: >-
+              Any associated making-good is discussed before work. The agreed wired connections are tested and the essential setup is explained at handover.
   - id: home-office
     kind: explanation
     recipe: explanation.editorial-media

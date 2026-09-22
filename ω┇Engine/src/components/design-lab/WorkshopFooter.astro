@@ -1,0 +1,51 @@
+---
+import { legalNavigationEn, mainNavigationEn } from "../../data/navigation";
+import { siteConfig } from "../../data/site";
+import { withBase } from "../../utils/withBase";
+
+type Props = { locale: "en" };
+const { locale } = Astro.props;
+const year = new Date().getFullYear();
+---
+<footer class="c2-site-footer" data-workshop-chrome="footer" data-locale={locale}>
+  <div class="container">
+    <div class="c2-site-footer__top">
+      <div class="c2-site-footer__brand">
+        <span class="c2-site-footer__mark" aria-hidden="true">●</span>
+        <div>
+          <strong>{siteConfig.shortName}</strong>
+          <p>Practical IT support for private customers, home offices and businesses in Berlin.</p>
+        </div>
+      </div>
+      <div class="c2-site-footer__signals" aria-label="Service signals">
+        <span>On-site in Berlin</span>
+        <span>Remote where suitable</span>
+        <span>IT experience since 2008</span>
+      </div>
+    </div>
+
+    <div class="c2-site-footer__grid">
+      <nav aria-label="Footer navigation">
+        <h2>Explore</h2>
+        <ul>{mainNavigationEn.map(item => <li><a href={withBase(item.href)}>{item.label}</a></li>)}</ul>
+      </nav>
+      <section>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href={siteConfig.contact.phoneHref}>{siteConfig.contact.phoneDisplay}</a></li>
+          <li><a href={siteConfig.contact.whatsappHref}>WhatsApp</a></li>
+          <li><a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a></li>
+        </ul>
+      </section>
+      <section class="c2-site-footer__service">
+        <h2>How we work</h2>
+        <p>Start with the problem, not the product. We clarify scope, practical next steps and any paid diagnostic work before proceeding.</p>
+      </section>
+    </div>
+
+    <div class="c2-site-footer__bottom">
+      <span>© {year} {siteConfig.shortName}. All rights reserved.</span>
+      <span>{legalNavigationEn.map((item, index) => <>{index > 0 ? " · " : ""}<a href={withBase(item.href)}>{item.label}</a></>)}</span>
+    </div>
+  </div>
+</footer>

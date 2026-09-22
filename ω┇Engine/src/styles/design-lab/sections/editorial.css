@@ -112,6 +112,16 @@
 .pw-path figcaption { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .9rem; margin: 1.35rem 0 0; padding-top: 1.1rem; border-top: 1px solid #d6f7ee33; color: #b8cecf; font-size: .9rem; line-height: 1.55; }
 .pw-path figcaption strong { color: #9bd9c3; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
 
+.pw-connections__planning { display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.7fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; margin-top: 2.4rem; padding-top: 2.35rem; border-top: 1px solid #cbd6d7; }
+.pw-connections__planning-kicker { margin: 0 0 .55rem !important; color: var(--pw-accent) !important; font-size: .7rem !important; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.pw-connections__planning-copy h3 { margin: 0 0 .8rem; max-width: 16ch; color: var(--pw-text); font-size: clamp(1.45rem, 2.2vw, 2rem); line-height: 1.2; letter-spacing: -.03em; }
+.pw-connections__planning-copy > p:last-child { margin: 0; max-width: 38ch; color: var(--pw-muted); font-size: 1rem; line-height: 1.7; }
+.pw-connections__planning-items { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2.4vw, 2rem); margin: 0; padding: 0; list-style: none; }
+.pw-connections__planning-items li { min-width: 0; padding-top: 1rem; border-top: 2px solid var(--pw-accent); }
+.pw-connections__planning-items li > span { display: block; margin-bottom: .8rem; color: #338b70; font-size: .7rem; font-weight: 850; letter-spacing: .1em; }
+.pw-connections__planning-items h4 { margin: 0 0 .55rem; color: var(--pw-text); font-size: 1.05rem; line-height: 1.35; }
+.pw-connections__planning-items p { margin: 0; color: var(--pw-muted); font-size: .95rem; line-height: 1.65; }
+
 /* Consecutive chapters share the contract but alternate the editorial balance. */
 .pw-editorial { background: #f9faf9; }
 .pw-editorial + .pw-editorial { border-top: 1px solid #d8e0e1; }
@@ -177,6 +187,10 @@
   .pw-comparison__labels, .pw-option { grid-template-columns: .85fr 1fr 1fr; gap: 1rem; }
   .pw-path__network { grid-template-columns: minmax(0, 1fr) 30px minmax(0, 1fr) 30px minmax(0, 1.35fr); gap: .7rem; }
   .pw-path__node { padding: 1.05rem; }
+  .pw-connections__planning { grid-template-columns: 1fr; gap: 1.6rem; }
+  .pw-connections__planning-copy { display: grid; grid-template-columns: .8fr 1.2fr; gap: .5rem 2rem; align-items: start; }
+  .pw-connections__planning-copy .pw-connections__planning-kicker { grid-column: 1 / -1; }
+  .pw-connections__planning-copy h3, .pw-connections__planning-copy > p:last-child { margin: 0; }
   .pw-editorial__grid, .pw-editorial:nth-child(even of .pw-editorial) .pw-editorial__grid { gap: 0 2rem; }
   .concept-ii--private .c2-faq-grid { grid-template-columns: 1fr; gap: 2rem; }
   .concept-ii--private .contact-slab { grid-template-columns: 1fr; }
@@ -203,6 +217,9 @@
   .pw-path__connector i { flex: 1; border-top: 0; border-left: 2px solid #ff914d; }
   .pw-path__connector b { transform: rotate(90deg); font-size: 1rem; }
   .pw-path__destinations { padding-left: 1.5rem; }
+  .pw-connections__planning-copy { display: block; }
+  .pw-connections__planning-copy h3 { margin-bottom: .7rem; }
+  .pw-connections__planning-items { grid-template-columns: 1fr; gap: 1.1rem; }
   .pw-option { grid-template-columns: 1fr 1fr; gap: .8rem 1.5rem; }
   .pw-option h4 { grid-column: 1 / -1; font-size: 1.25rem; }
   .pw-option p strong { position: static; width: auto; height: auto; overflow: visible; clip-path: none; font-size: .8125rem; margin-bottom: .4rem; color: var(--pw-text); }

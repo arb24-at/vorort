@@ -1,6 +1,5 @@
 ---
 import type { RecipeContent } from "../../../design-system/section-recipes";
-import EditorialNote from "../EditorialNote.astro";
 type Props = { id: string; content: RecipeContent<"explanation.connection-path"> };
 const { id, content } = Astro.props;
 ---
@@ -40,6 +39,19 @@ const { id, content } = Astro.props;
       </div>
       <figcaption><strong>Planning note</strong><span>{content.caption}</span></figcaption>
     </figure>
-    {content.note && <EditorialNote {...content.note} />}
+    <div class="pw-connections__planning" aria-labelledby={`${id}-planning-title`}>
+      <div class="pw-connections__planning-copy">
+        <p class="pw-connections__planning-kicker">Installation planning</p>
+        <h3 id={`${id}-planning-title`}>{content.planning.title}</h3>
+        <p>{content.planning.body}</p>
+      </div>
+      <ol class="pw-connections__planning-items">
+        {content.planning.items.map((item, index) => <li>
+          <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+          <h4>{item.title}</h4>
+          <p>{item.body}</p>
+        </li>)}
+      </ol>
+    </div>
   </div>
 </section>
