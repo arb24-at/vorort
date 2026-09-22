@@ -18,6 +18,20 @@ const paragraphs = z.array(text).min(1);
 const editorialHeading = { eyebrow: text, title: text, paragraphs };
 const sectionAction = z.object({ label: text, target: anchor }).strict();
 
+// Human authoring guidance lives beside the machine-enforced content schema.
+// Density recommendations are advisory, not additional content constraints.
+const authoringGuidanceSchema = z.object({
+  contentShape: text,
+  typicalRange: text,
+  fixed: text,
+  flexible: text,
+  needsDesignReview: text,
+  media: text,
+  responsive: text,
+  accessibility: text,
+}).strict();
+export type AuthoringGuidance = z.infer<typeof authoringGuidanceSchema>;
+
 function recipe<S extends z.ZodTypeAny>(definition: {
   name: string;
   kind: string;
@@ -28,6 +42,7 @@ function recipe<S extends z.ZodTypeAny>(definition: {
   schema: S;
   status?: RecipeStatus;
   supersedes?: string;
+  authoringGuidance?: Partial<AuthoringGuidance>;
 }) {
   return {
     ...definition,
@@ -131,6 +146,16 @@ export const sectionRecipes = {
     recommendedUse: "Explain a four-stage working method or customer journey where sequence and handover matter.",
     renderer: "StagedPath.astro",
     status: "approved",
+    authoringGuidance: {
+      contentShape: "Eyebrow, title and intro, followed by exactly four stages, each with a title and body.",
+      typicalRange: "A short introduction and four concise stage explanations, usually a short heading and a short paragraph per stage.",
+      fixed: "Exactly four sequential stages in their reading order, with visible stage numbers and real-text titles and explanations.",
+      flexible: "Eyebrow, title, intro and each stage's wording and level of detail may vary to suit the service and audience.",
+      needsDesignReview: "Use Design review when the relationship is not sequential, needs branching or loops, or genuinely needs a different number of stages.",
+      media: "No media is required; the sequence and its labels are conveyed through real text.",
+      responsive: "The four-column sequence may reflow to two columns and then one. Preserve stage order and readable labels at every width.",
+      accessibility: "Keep the section heading and stage headings in a meaningful hierarchy. Preserve the same sequence in source and visual reading order; real-text numbers, titles and explanations must convey it without relying on colour or connecting lines.",
+    },
     schema: z.object({ ...heading, steps: z.array(item).length(4) }).strict(),
   }),
   "outcome.scope-proof": recipe({
@@ -151,6 +176,16 @@ export const sectionRecipes = {
     recommendedUse: "Resolve independent practical questions that remain after the page has established scope, process, and boundaries.",
     renderer: "FaqAccordion.astro",
     status: "approved",
+    authoringGuidance: {
+      contentShape: "Eyebrow and title, followed by one or more question-and-answer items; each answer is plain paragraph text.",
+      typicalRange: "Several focused questions with short paragraph answers are the normal range; avoid article-length answers. This is guidance, not a fixed question count or word limit.",
+      fixed: "Native, independent details/summary disclosure items: each question opens its own answer and multiple answers may remain open.",
+      flexible: "Eyebrow, title, question count, order and wording, and answer depth may vary within the simple question-and-answer shape.",
+      needsDesignReview: "Use Design review for complex nested answer structure, rich media, tables, categories, or a relationship other than independent questions and answers.",
+      media: "No media is required; questions and answers are real text. Rich media needs Design review.",
+      responsive: "The side-by-side heading and question list stack on narrow screens. Allow questions and answers to wrap naturally, retaining disclosure order and readable text without clipping.",
+      accessibility: "Use meaningful real-text questions as native summary labels. Preserve keyboard activation, visible focus and native expanded/collapsed semantics; each disclosure remains independently operable without JavaScript.",
+    },
     schema: z.object({ eyebrow: text, title: text, items: z.array(z.object({ question: text, answer: text }).strict()).min(1) }).strict(),
   }),
   "contact.enquiry": recipe({
@@ -172,6 +207,13 @@ export function validateRecipeRegistry() {
   for (const [id, recipe] of Object.entries(sectionRecipes)) {
     if (!recipe.recommendedPlacement.trim()) throw new Error(`Section recipe ${id} needs recommended placement guidance`);
     if (!recipe.recommendedUse.trim()) throw new Error(`Section recipe ${id} needs recommended use guidance`);
+    if (recipe.status === "approved") {
+      const guidance = authoringGuidanceSchema.safeParse(recipe.authoringGuidance);
+      if (!guidance.success) {
+        const fields = guidance.error.issues.map(issue => issue.path.join(".") || "authoringGuidance");
+        throw new Error(`Approved section recipe ${id} needs complete authoring guidance: ${fields.join(", ")}`);
+      }
+    }
     if (recipe.supersedes === id) throw new Error(`Section recipe ${id} cannot supersede itself`);
     if (recipe.supersedes && !Object.hasOwn(sectionRecipes, recipe.supersedes)) {
       throw new Error(`Section recipe ${id} supersedes unknown recipe: ${recipe.supersedes}`);

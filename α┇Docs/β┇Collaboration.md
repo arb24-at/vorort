@@ -4,13 +4,13 @@ Last updated: 2026-09-22
 
 ## Current handoff
 
-- **Version and branch:** `2.2.4` in root `AGENTS.md`; local branch `main` was previously verified. No new Git verification, commit, push or deployment is claimed for this Drive-only documentation/worklist patch.
+- **Version and branch:** `2.2.5` in root `AGENTS.md`; local branch `main` is Git verified. Task 1A is implemented and repository validated; no push or deployment was performed.
 - **Private Workshop:** the English home-network prototype now has ten sections: editorial hero, five-topic index, Wi-Fi options, Ethernet connection diagram, home office, NAS, planning/troubleshooting, four-stage process, eight native FAQs and enquiry. Content uses the repository's English research and canonical service facts; scope boundaries sit beside their relevant topics.
 - **Recipes:** `process.staged-path` and `faq.accordion` are now explicitly approved for service pages across private and business Workshop contexts. The newer private recipes, `contact.enquiry`, and retained predecessor recipes remain experimental; nothing is deprecated.
 - **Media:** P1–P6 reused with explicit image dimensions and responsive WebP derivatives; masters unchanged. P1 remains the accepted working reference, P2–P6 await Aykhan's acceptance, P7–P9 are deferred. Placement notes remain in `ω┇Media-Queue.md`.
-- **Verification:** full repository validation previously passed for the v2.2.0 private Workshop implementation (31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, registry/lifecycle/usage checks). The v2.2.2 approval/status change is source/readback verified only; repository validation has not been rerun in this Chat.
+- **Verification:** Task 1A passed `npm run validate`: 31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, 86 invalid approved-guidance cases, experimental guidance migration/promotion, replacement/lifecycle/compatibility and derived usage checks. Built approval count now matches the registry instead of a stale zero-approval assertion. Base-aware internal links resolve; Lab robots/sitemap separation passes. `git diff --check` passed and `git status --short` was reviewed.
 - **Browser review:** the v2.2.0 private canvas was previously reviewed at 1440, 768, 390 and 320px. No browser review was run for the v2.2.2 lifecycle-status change; Aykhan is using this approval as an Approved Sections UI check.
-- **Next action:** use the universal `ω┇Tasks.md` board. The next bounded coding stage is **Task 1A**; later stages 1B and 1C should only start when Aykhan explicitly assigns them.
+- **Next action:** Task **1A** is complete in `ω┇Tasks.md`. Stop here; **1B** (visual library) and **1C** (final QA/refinement) remain unstarted until explicitly assigned by Aykhan. No browser review was needed for the 1A registry/validation change.
 
 ## Cross-role requests
 
@@ -27,18 +27,23 @@ None.
 ### RV-001 — v2.1.0 collaboration and Design Lab governance
 
 - **Source state:** Drive changes were read back after writing; repository-shell evidence is not available in this Chat.
-- **Verify:** run `npm run validate` from `ω┇Engine/`, then `git diff --check` and `git status --short` from the repository root.
+- **Repository checks resolved in Task 1A:** `npm run validate`, `git diff --check` and `git status --short` ran successfully. Browser review below remains pending.
 - **Review:** open Page Workshop and Approved Sections in the local browser; confirm the Lab still renders at representative desktop/tablet/mobile widths and that no production route or visual output changed unexpectedly.
-- **Contract checks:** confirm recipe guidance fields compile, `supersedes` rejects unknown/self/cross-kind/cyclic relationships, Approved Sections exposes pending replacement candidates, derived Workshop usage still works, and changing a recipe to `approved` no longer requires editing a fixed-count assertion.
+- **Contract checks resolved in Task 1A:** guidance builds successfully, `supersedes` rejects unknown/self/cross-kind/cyclic relationships, derived Workshop usage passes, and approval checks use the canonical registry rather than a fixed count. Browser confirmation of replacement-candidate presentation remains pending.
 - **Scope:** validate the existing v2.1.0 change first. Do not redesign, rewrite content or refactor unrelated code unless an actual failure requires it.
 
 ### RV-002 — v2.2.2 first Approved Sections lifecycle test
 
 - **Source state:** `process.staged-path` and `faq.accordion` were promoted to `approved` in the canonical recipe registry and read back successfully from Drive.
-- **Verify:** run `npm run validate` from `ω┇Engine/`, then `git diff --check` and `git status --short` from the repository root.
+- **Repository checks resolved in Task 1A:** full validation and Git checks passed, including registry-derived built approval count and Workshop usage. The browser check below remains pending.
 - **Design Lab check:** open `/design-lab/approved/` and confirm exactly these two recipes appear as approved, with active usage derived from both current Workshop fixtures and no manually maintained approval list.
 
 ## Recent work
+
+### 2026-09-22 — Codex — v2.2.5 Task 1A authoring contract
+
+- Added canonical `authoringGuidance` with all eight requested guidance dimensions and concrete process/FAQ guidance. Approved recipes require complete, non-blank guidance; experimental recipes may remain incomplete. Existing content schemas, lifecycle, compatibility, replacement rules and production-adoption policy are preserved.
+- Added rejection and migration/promotion coverage; replaced the obsolete zero-approved assertion with a registry-derived built-count check. Full validation and Git diff/status checks passed as recorded above. Task 1A is checked complete; no library UI, renderer, fixture or production-page changes were made, and 1B/1C remain unstarted.
 
 ### 2026-09-22 — ChatGPT — v2.2.4 universal staged task board
 

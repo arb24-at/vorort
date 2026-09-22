@@ -98,9 +98,6 @@ for (const file of files) {
     if (/class="(?:site-header|site-footer|mobile-contact-dock)"/.test(contents)) {
       errors.push("Design Lab must not render customer-facing site chrome.");
     }
-    if (displayPath === "design-lab/approved/index.html" && !contents.includes('data-approved-count="0"')) {
-      errors.push("No recipes have been explicitly approved for the initial Design Lab migration.");
-    }
   } else if (contents.includes(`${basePath}design-lab/`)) {
     errors.push(`Customer page must not link to the internal Design Lab: ${displayPath}`);
   }

@@ -23,6 +23,35 @@ try {
   }));
   assert.equal(new Set(fixtures.map(f => f.page.id)).size, fixtures.length, "Fixture page IDs must be unique");
   assert.doesNotThrow(() => validateRecipeRegistry(), "Recipe guidance/replacement registry must be valid");
+  const approvedRecipes = recipesWithStatus("approved");
+  const approvedHtml = await fs.readFile(path.join(root, "dist/design-lab/approved/index.html"), "utf8");
+  assert.ok(approvedHtml.includes(`data-approved-count="${approvedRecipes.length}"`),
+    "Built Approved Sections count must match the canonical registry");
+  const guidanceFields = ["contentShape", "typicalRange", "fixed", "flexible", "needsDesignReview", "media", "responsive", "accessibility"];
+  let invalidGuidanceCases = 0;
+  for (const [id, recipe] of approvedRecipes) {
+    const originalGuidance = recipe.authoringGuidance;
+    const rejectsGuidance = guidance => {
+      recipe.authoringGuidance = guidance;
+      assert.throws(() => validateRecipeRegistry(), error =>
+        error.message.includes(`Approved section recipe ${id} needs complete authoring guidance`),
+      `Incomplete approved guidance accepted: ${id}`);
+      invalidGuidanceCases++;
+    };
+    try {
+      for (const absent of [undefined, null, {}]) rejectsGuidance(absent);
+      for (const field of guidanceFields) {
+        const missing = { ...originalGuidance };
+        delete missing[field];
+        rejectsGuidance(missing);
+        for (const invalid of ["", " \n\t ", null, 42]) {
+          rejectsGuidance({ ...originalGuidance, [field]: invalid });
+        }
+      }
+    } finally {
+      recipe.authoringGuidance = originalGuidance;
+    }
+  }
   const source = fixtures.find(f => f.sections[0].recipe === "hero.banner-art");
   assert.ok(source, "Lifecycle checks require an existing banner-art consumer");
   const invalid = [
@@ -76,17 +105,27 @@ try {
   const hero = sectionRecipes["hero.banner-art"];
   const originalStatus = hero.status;
   const originalAudiences = hero.audiences;
+  const originalGuidance = hero.authoringGuidance;
   assert.throws(() => recipeAllowedIn("__proto__", "workshop"), /Unknown section recipe/);
   hero.status = "experimental";
   assert.equal(recipeAllowedIn("hero.banner-art", "production"), false);
   assert.equal(recipeAllowedIn("hero.banner-art", "workshop"), true);
+  hero.authoringGuidance = undefined;
+  assert.doesNotThrow(() => validateRecipeRegistry(), "Experimental recipes may omit authoring guidance");
+  hero.authoringGuidance = { contentShape: "Migration in progress." };
+  assert.doesNotThrow(() => validateRecipeRegistry(), "Experimental recipes may carry partial authoring guidance");
   hero.status = "approved";
+  assert.throws(() => validateRecipeRegistry(), /hero\.banner-art needs complete authoring guidance/,
+    "Promoting an incomplete experimental recipe must fail");
+  hero.authoringGuidance = Object.fromEntries(guidanceFields.map(field => [field, `Test guidance for ${field}.`]));
+  assert.doesNotThrow(() => validateRecipeRegistry(), "Complete guidance permits validation after promotion without a fixed approval list");
   assert.equal(recipeAllowedIn("hero.banner-art", "production"), true);
   assert.ok(recipesWithStatus("approved").some(([id]) => id === "hero.banner-art"));
   hero.status = "deprecated";
   assert.equal(recipeAllowedIn("hero.banner-art", "production"), false);
   assert.equal(workshopSchema.safeParse(source).success, false);
   hero.status = originalStatus;
+  hero.authoringGuidance = originalGuidance;
   hero.audiences = [];
   assert.equal(workshopSchema.safeParse(source).success, false, "Incompatible audience accepted");
   hero.audiences = originalAudiences;
@@ -109,7 +148,7 @@ try {
     assert.deepEqual(getWorkshopUsage(fixtures, id).map(p => p.id).sort(), fixtures.filter(f => f.sections.some(s => s.recipe === id)).map(f => f.page.id).sort());
   }
   assert.equal(getWorkshopUsage([editorial], "explanation.editorial-media").length, 1, "Repeated editorial chapters count as one consuming page");
-  console.log(`Validated ${fixtures.length} Workshop fixtures, ${invalid.length * fixtures.length + editorialInvalid.length} invalid-content cases, recipe guidance/replacement relationships, lifecycle/compatibility policy and distinct-page usage.`);
+  console.log(`Validated ${fixtures.length} Workshop fixtures, ${invalid.length * fixtures.length + editorialInvalid.length} invalid-content cases, ${invalidGuidanceCases} invalid approved-guidance cases, experimental guidance migration/promotion, replacement relationships, lifecycle/compatibility policy and distinct-page usage.`);
 } finally {
   await fs.rm(temporary, { recursive: true, force: true });
 }

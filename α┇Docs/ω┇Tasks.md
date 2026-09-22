@@ -54,7 +54,7 @@ Use this board when a task is too large or risky to hand to Codex as one uninter
 - Implementation: 1A, 1B
 - QA: 1C
 
-- [ ] **1A — Add the canonical authoring contract**
+- [x] **1A — Add the canonical authoring contract**
   - Extend the canonical recipe definition in `ω┇Engine/src/design-system/section-recipes.ts` with one compact human-guidance structure. Keep existing Zod schemas as the machine-enforced content contract; do not create a second metadata file or separate approved-section catalogue.
   - The guidance must cover: content shape, typical content range/density, **Fixed**, **Flexible**, **Needs Design review**, media requirements, responsive behaviour, and recipe-specific accessibility guidance. Validation must require complete guidance before a recipe can be `approved`, while experimental recipes may remain incomplete during migration.
   - Populate the two currently approved recipes with concrete guidance:
@@ -76,4 +76,3 @@ Use this board when a task is too large or risky to hand to Codex as one uninter
   - Confirm approved-recipe guidance validation fails cleanly when required authoring guidance is missing, Lab routes remain out of the sitemap/production navigation, and production pages have not changed unexpectedly.
   - Fix small defects discovered by QA within this stage; do not reopen the approved design/content model unless an actual failure requires it.
   - Finish condition: run `npm run validate`, `git diff --check`, and `git status --short`, record the evidence in the normal handoff, mark **1C** complete, and make one coherent commit if the stage changes repository state.
-
