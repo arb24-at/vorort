@@ -1,6 +1,6 @@
 # VorOrt project documentation
 
-Last updated: 2026-09-22
+Last updated: 2026-09-24
 
 ## Purpose and operating facts
 
@@ -33,6 +33,16 @@ Do not advertise a hardware-repair workshop, guaranteed data recovery, emergency
 **Content contracts:** homepages provide a plain-language Berlin/on-site entrance and progressive trust; audience landings orient visitors and link to detailed services. Private pages lead with recognizable situations, scope, outcomes, process, boundaries and FAQs. Business pages lead with operational impact, then systems/dependencies, implementation, documentation and maintainability. Trust content explains necessary access, account/data protection, backup/change precautions, experience and verified qualifications. Each indexable service owns a distinct useful intent, truthful proof and an obvious contact path.
 
 Production copy and page-specific scope live in `ω┇Engine/src/content/services/`; the planning-only `ω┇Engine/src/data/seo-keywords.yml` owns keyword routing and research status. Do not regenerate copy from its provisional seeds or duplicate research logs here. German and English research remain independent. Protect service intent over search volume: hardware-repair keywords must not redefine computer support, normal migration must not imply recovery, and business provider terms must not imply a mandatory managed-service/SLA contract. Private landings remain orientation/conversion gateways rather than forced high-volume targets. Preserve canonical and alternate-language pairing; add substantial new pages only for distinct search intent or a genuine customer-information need.
+
+### Page planning and rewrite workflow
+
+The current production page structure is an interim implementation, not a composition template that future pages must preserve. Keep researched service truth, page ownership, useful search intent, route relationships and validated business boundaries, but do not preserve repeated bullet, checkbox, card or section patterns merely because they exist in the current production records.
+
+Once the Approved Sections library is sufficiently mature for the launch-site information needs, plan the rewrite through one concise repository page-blueprint overview before producing full copy. Each German and English launch-page blueprint should stay closer to a table of contents than a draft and record the page's job, main topics or customer questions, important search intent/keywords, service or trust boundaries, key internal-link relationships and the approved section recipes likely to express the material. The blueprint overview is a planning surface, not a second keyword database, approval registry or production-copy source: keyword/research status remains in `src/data/seo-keywords.yml`, durable service truth remains here, and recipe lifecycle/guidance remains in the canonical section registry.
+
+Aykhan reviews and adjusts those blueprints before long-form rewriting so page coverage, section choice/order, information density and cross-page relationships can be judged across the whole bilingual site. After that review, Content & SEO may choose, order and adapt compatible approved recipes within their authoring guidance, vary section rhythm and density according to the material, and use researched keywords naturally. Do not force content into an unsuitable recipe or recreate clone pages; when no approved recipe expresses the required information relationship well, return to Design rather than distorting the content. German and English remain independently authored.
+
+Production adoption is a separate implementation step after the reviewed blueprints have been expanded into complete content and Aykhan has approved the substantive result. Preserve established routes, SEO relationships and editable-content boundaries during that migration.
 
 ## Repository and application architecture
 
