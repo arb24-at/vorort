@@ -4,14 +4,14 @@ Last updated: 2026-09-22
 
 ## Current handoff
 
-- **Version and branch:** `2.2.21` in root `AGENTS.md`; local branch `main` was Git verified for Task 1C. The current editorial explanation experiments are Drive source/readback work; no new repository validation, browser verification, Git commit, push or deployment is claimed.
+- **Version and branch:** `2.2.22` in root `AGENTS.md`; local branch `main` was Git verified for Task 1C. The current editorial explanation experiments are Drive source/readback work; no new repository validation, browser verification, Git commit, push or deployment is claimed.
 - **v2.2.18 correction:** the private `hero-frosted` comparison now uses experimental `comparison.hero-banner` with `kind: comparison`, so the Workshop retains exactly one semantic opening hero while still rendering the same `HeroBanner.astro` experiment immediately after it. Hero action-target validation covers the comparison specimen too.
 - **Private Workshop:** the English home-network prototype now has fourteen sections: editorial hero, a second blur-overlay hero comparison, five-topic index, Wi-Fi options, the new rich editorial-prose Wi-Fi chapter, refined Ethernet connection path, three editorial-media chapters, four-stage process, approved always-visible editorial Q&A, retained experimental accordion FAQ for comparison, a redesigned always-visible direct-submit enquiry form, and shared Workshop footer chrome. Content uses the repository's English research and canonical service facts; scope boundaries sit beside their relevant topics.
 - **Recipes:** `process.staged-path`, `faq.editorial-answers`, `explanation.editorial-media`, `explanation.options-guide`, `explanation.editorial-prose` and `explanation.connection-path` are approved. `faq.accordion` remains experimental and is superseded by the approved editorial Q&A recipe; it has not been deprecated because Workshop comparison/migration is still active. Other newer private recipes and `contact.enquiry` remain experimental; the enquiry recipe now has a tighter reusable-template contract: direct phone/WhatsApp/email actions remain visible, required and reply-channel-dependent fields validate inline, audience-known context is not redundantly asked, no default consent checkbox is used, and production delivery targets a configured direct endpoint rather than mailto. The options guide and rich editorial prose remain separate recipes that can be used independently or consecutively. `explanation.editorial-media` keeps its simpler one-image chapter contract, while the connection-path approval covers the full section composition and semantic path; its exact schematic artwork remains replaceable/refinable.
 - **Media:** P1–P6 reused with explicit image dimensions and responsive WebP derivatives; masters unchanged. P1 remains the accepted working reference, P2–P6 await Aykhan's acceptance, P7–P9 are deferred. Placement notes remain in `ω┇Media-Queue.md`.
 - **Verification:** Task 1C passed `npm run validate`: 31 HTML pages, 23 sitemap URLs, 46 invalid-content cases, 86 invalid approved-guidance cases, experimental guidance migration/promotion, replacement/lifecycle/compatibility and derived usage checks. Built approval count now matches the registry instead of a stale zero-approval assertion. Base-aware internal links resolve; Lab robots/sitemap separation passes. `git diff --check` passed and `git status --short` was reviewed.
 - **Browser review:** Task 1C reviewed at 1440×1000 and 390×844 in collapsed and expanded states. Native guidance disclosures start closed, support Enter/Space with visible focus, preserve readable hierarchy and do not alter FAQ disclosure state. No horizontal overflow at either width. Desktop height is 3,056px collapsed versus 4,863px with both guidance panels open (about 37% shorter); specimen heights remain unchanged. All pre-existing authoring/usage markup was compared with HEAD and preserved apart from indentation.
-- **Next action:** review the v2.2.20 `hero.banner-art` / `comparison.hero-banner` refinement at desktop and mobile widths. The hero keeps the centred main title above an ultra-wide 8:3 image, moves the bright gradient behind that title, left-aligns the service eyebrow (mint on private), puts larger intro copy at the top of the image, removes the highlight-tag row, and uses direct image blur with a stronger hover/focus state while preserving the image radius. The image now reaches much closer to the hero edges with equal left/right/bottom padding. Compare the private `hero-frosted` specimen directly with the original `hero.editorial-art`, then decide whether this banner philosophy is worth approving/refining. Task **2A** adds Lab-only recipe labels with a subtle green/mint ID tint for approved recipes, **2B** adds the `recipe.id — “Visible section heading”` contents navigator, and **2C** adds a Lab-only per-section Copy screenshot control. Task **1D** final QA should wait until Aykhan is ready to close the library pass. Historical RV-001 remains open for its broader review scope.
+- **Next action:** review the private second hero comparison after the v2.2.22 readability refinement. Aykhan currently prefers this second `comparison.hero-banner` structure over the third comparison; the new local top scrim should make its overlay intro readable before hover without muting the artwork, while the stronger image blur remains a hover/focus enhancement. The third comparison stays in Workshop for now. Task **2A** adds Lab-only recipe labels with a subtle green/mint ID tint for approved recipes, **2B** adds the `recipe.id — “Visible section heading”` contents navigator, and **2C** adds a Lab-only per-section Copy screenshot control. Task **1D** final QA should wait until Aykhan is ready to close the library pass. Historical RV-001 remains open for its broader review scope.
 
 ## Cross-role requests
 
@@ -25,6 +25,12 @@ None.
 - Choose/authorize the production form submission provider/endpoint (including its data-processing/privacy implications) before direct enquiry delivery can be enabled on GitHub Pages.
 
 ## Pending repository verification
+
+### RV-012 — v2.2.22 second-hero readability scrim
+
+- **Source state:** Drive source/readback work changes only the private second `comparison.hero-banner` visual treatment: a subtle dark top-to-transparent scrim now sits between the artwork and overlay copy so the intro is readable before hover without whitening or desaturating the image. The scrim remains present during the existing stronger hover/focus blur. The third CTA-only comparison is intentionally unchanged.
+- **Verify:** run Workshop/registry validation plus `git diff --check` and `git status --short`. Confirm the change is CSS-only for the second private comparison and does not affect the third comparison or production routes.
+- **Browser review:** inspect the second private hero at desktop/mobile widths in normal, hover and keyboard-focus states. Check that normal-state artwork stays colourful, copy contrast is reliable, the scrim is not visibly box-like, and hover blur remains the dominant interaction rather than changing the scrim.
 
 ### RV-011 — v2.2.21 CTA-only hero comparison
 
@@ -89,6 +95,11 @@ None.
 - **Scope:** validate the existing v2.1.0 change first. Do not redesign, rewrite content or refactor unrelated code unless an actual failure requires it.
 
 ## Recent work
+
+### 2026-09-22 — ChatGPT — v2.2.22 second-hero readability scrim
+
+- Kept the second private hero comparison as the preferred structure and added a local dark top scrim only to that variant. The scrim fades to fully transparent through the image rather than washing the whole artwork, and remains in place while the existing hover/focus blur increases.
+- Added three top-level tuning variables for scrim strength/fade plus slightly stronger mobile values. The third CTA-only comparison remains untouched for side-by-side review. Repository/browser/Git verification remains pending under RV-012.
 
 ### 2026-09-22 — ChatGPT — v2.2.21 third hero comparison
 
