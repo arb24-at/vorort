@@ -4,10 +4,18 @@ import LabNavigation from "./LabNavigation.astro";
 import WorkshopCanvas from "./WorkshopCanvas.astro";
 import { workshopPath, workshopPreviewPath } from "../../data/workshop";
 import type { WorkshopFixture } from "../../design-system/workshop-schema";
+import { getSectionRecipe } from "../../design-system/section-recipes";
 import { withBase } from "../../utils/withBase";
 import "../../styles/design-lab.css";
 type Props = { fixture: WorkshopFixture; pages: WorkshopFixture[]; canonicalPath: string };
 const { fixture, pages, canonicalPath } = Astro.props;
+const contents = fixture.sections.map(section => ({
+  id: section.id,
+  recipe: section.recipe,
+  title: "title" in section.content && typeof section.content.title === "string"
+    ? section.content.title
+    : getSectionRecipe(section.recipe).name,
+}));
 ---
 <MainLayout title={`${fixture.page.title} · Page Workshop`} description="Internal page-level design experiments. No sections are approved for production automatically." canonicalPath={canonicalPath} lang={fixture.page.locale} robots="noindex, nofollow" showSiteChrome={false}>
   <div class="design-lab">
@@ -17,6 +25,14 @@ const { fixture, pages, canonicalPath } = Astro.props;
         <summary><span class="lab-label">Workshop page</span><strong>{fixture.page.title}</strong></summary>
         <nav aria-label="Workshop pages">
           {pages.map(({ page }) => <a href={withBase(workshopPath(page.id))} aria-current={page.id === fixture.page.id ? "page" : undefined}>{page.title}</a>)}
+        </nav>
+      </details>
+      <details class="lab-section-picker">
+        <summary>Sections <span class="lab-label">({contents.length})</span></summary>
+        <nav aria-label="Sections on this page">
+          <ol>
+            {contents.map(section => <li><a href={`#${section.id}`}><code>{section.recipe}</code> — “{section.title}”</a></li>)}
+          </ol>
         </nav>
       </details>
       <p class="lab-metadata"><span>{fixture.page.audience}</span> · {fixture.page.pageType} · {fixture.page.locale.toUpperCase()}</p>
@@ -42,9 +58,35 @@ const { fixture, pages, canonicalPath } = Astro.props;
   const stage = document.querySelector<HTMLElement>(".lab-frame-stage");
   const frame = stage?.querySelector<HTMLIFrameElement>("iframe");
   const status = document.querySelector<HTMLElement>(".lab-preview-status");
+  const sectionPicker = document.querySelector<HTMLDetailsElement>(".lab-section-picker");
   if (controls && full && stage && frame && status) {
     controls.hidden = false;
     let observer: ResizeObserver | undefined;
+    // Native hashes target the full canvas without JS. In constrained mode,
+    // scroll the same section in the visible, auto-height preview instead.
+    const jumpInPreview = () => {
+      if (stage.hidden || !location.hash) return;
+      let id: string;
+      try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+      const target = frame.contentDocument?.getElementById(id);
+      if (!target) return;
+      const offset = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+      const top = window.scrollY + frame.getBoundingClientRect().top + target.getBoundingClientRect().top - offset;
+      window.scrollTo({ top, behavior: "instant" });
+    };
+    sectionPicker?.addEventListener("click", event => {
+      const link = (event.target as HTMLElement).closest<HTMLAnchorElement>("a[href^='#']");
+      if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      sectionPicker.open = false;
+      if (!stage.hidden) {
+        // The matching anchor in the outer document is hidden in preview mode.
+        // Keep a shareable history entry while navigating the visible canvas.
+        event.preventDefault();
+        if (location.hash !== link.hash) history.pushState(null, "", link.hash);
+        jumpInPreview();
+      }
+    });
+    window.addEventListener("hashchange", jumpInPreview);
     frame.addEventListener("load", () => {
       observer?.disconnect();
       const body = frame.contentDocument?.body;
@@ -53,6 +95,7 @@ const { fixture, pages, canonicalPath } = Astro.props;
       observer = new ResizeObserver(fitHeight);
       observer.observe(body);
       fitHeight();
+      jumpInPreview();
     });
     controls.addEventListener("click", event => {
       const button = (event.target as HTMLElement).closest<HTMLButtonElement>("button[data-preview-width]");

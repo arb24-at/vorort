@@ -43,7 +43,7 @@ const expectedHtml = [
 
 const textExtensions = new Set([".css", ".html", ".js", ".svg", ".txt", ".xml"]);
 const errors = [];
-const reviewChrome = /lab-section-review|lab-recipe-label|data-lab-recipe/;
+const reviewChrome = /lab-section-review|lab-recipe-label|data-lab-recipe|lab-section-picker/;
 
 function walk(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {

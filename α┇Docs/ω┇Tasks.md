@@ -106,7 +106,7 @@ Use this board when a task is too large or risky to hand to Codex as one uninter
   - Keep the label from changing the approved section's actual composition: it should not consume meaningful layout space, change section dimensions, block clicks, or overlap important content at desktop/mobile widths.
   - Finish condition: verify labels on representative private/business Workshop sections and Approved Sections specimens, confirm production routes contain no Design Lab ID label or Lab-only class/markup, run the appropriate repository validation plus `git diff --check` and `git status --short`, mark **2A** complete, and make one coherent commit.
 
-- [ ] **2B — Add a Workshop section contents navigator**
+- [x] **2B — Add a Workshop section contents navigator**
   - Add a compact dropdown/disclosure to the Page Workshop toolbar that lists the sections on the current fixture in page order and lets Aykhan jump directly to any rendered section anchor without scrolling through the whole page.
   - Derive every entry from the current fixture and canonical recipe registry; do not maintain a second contents list. Display entries in the review-friendly form **`recipe.id — “Visible section heading”`**. Use the section content's visible title when present; for a section without one, use an honest fallback such as its instance ID or canonical recipe name rather than inventing copy.
   - Keep the existing Workshop-page picker separate: one control changes the Workshop page, the new contents control navigates within the current page. Prefer native links/disclosure so section navigation works without JavaScript and preserves normal URL hash/deep-link behaviour.
