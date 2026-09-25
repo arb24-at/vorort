@@ -12,6 +12,7 @@
     "validate": "npm run build && npm run validate:workshop && npm run validate:dist"
   },
   "dependencies": {
-    "astro": "^5.6.0"
+    "astro": "^5.6.0",
+    "html-to-image": "1.11.13"
   }
 }

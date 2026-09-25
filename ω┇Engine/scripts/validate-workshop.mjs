@@ -11,10 +11,17 @@ const temporary = await fs.mkdtemp(path.join(root, "node_modules/.workshop-check
 try {
   const modulePath = path.join(temporary, "contracts.mjs");
   await build({
-    stdin: { contents: 'export * from "./src/design-system/workshop-schema.ts"; export * from "./src/design-system/section-recipes.ts"; export * from "./src/data/workshop-usage.ts";', resolveDir: root, loader: "ts" },
+    stdin: { contents: 'export * from "./src/design-system/workshop-schema.ts"; export * from "./src/design-system/section-recipes.ts"; export * from "./src/data/workshop-usage.ts"; export { captureScale } from "./src/scripts/design-lab/section-capture.ts";', resolveDir: root, loader: "ts" },
     outfile: modulePath, bundle: true, platform: "node", format: "esm", packages: "external",
   });
   const { workshopSchema, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
+  const { captureScale } = await import(pathToFileURL(modulePath).href);
+  for (const [width, height] of [[390, 400], [1440, 800], [390, 10000], [3000, 20000], [20000, 3000]]) {
+    const scale = captureScale(width, height);
+    assert.ok(scale > 0 && scale <= 2, "Capture must retain a positive scale without excessive upscaling");
+    assert.ok(width * scale <= 8192 && height * scale <= 8192, "Capture must fit the canvas edge limit");
+    assert.ok(width * height * scale * scale <= 8_000_001, "Capture must fit the pixel budget");
+  }
   const folder = path.join(root, "src/content/workshop");
   const fixtures = await Promise.all((await fs.readdir(folder)).filter(file => /\.ya?ml$/.test(file)).map(async file => {
     const fixture = workshopSchema.parse(yaml.load(await fs.readFile(path.join(folder, file), "utf8")));

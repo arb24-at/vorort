@@ -10,5 +10,15 @@ const recipe = getSectionRecipe(recipeId);
   <div class="lab-section-review__chrome">
     <code class="lab-recipe-label">{recipeId}</code>
   </div>
+  <div class="lab-capture-tools" data-capture-exclude>
+    <button type="button" class="lab-capture-button" aria-label={`Copy screenshot of ${recipeId}`} hidden>Copy screenshot</button>
+    <span class="lab-capture-status" role="status" aria-live="polite"></span>
+    <a class="lab-capture-download" hidden>Download PNG</a>
+  </div>
   <slot />
 </div>
+
+<script>
+  import { setupSectionCapture } from "../../scripts/design-lab/section-capture";
+  setupSectionCapture();
+</script>

@@ -114,7 +114,7 @@ Use this board when a task is too large or risky to hand to Codex as one uninter
   - Design for long pages: the menu should remain usable with roughly 10–20 sections, wrap long headings sensibly, and expose both recipe ID and visible heading clearly enough to search/discuss screenshots.
   - Finish condition: verify the navigator against both private and business Workshop fixtures, confirm every link lands on the intended section and the labels reflect live fixture/registry data, run the appropriate repository validation plus `git diff --check` and `git status --short`, mark **2B** complete, and make one coherent commit.
 
-- [ ] **2C — Copy a rendered section screenshot to the clipboard**
+- [x] **2C — Copy a rendered section screenshot to the clipboard**
   - Add one small Design-Lab-only **Copy screenshot** control to each rendered section wrapper so Aykhan can capture that single section and paste it directly into a design/content chat without manually cropping a full-page screenshot. Reuse the shared Lab wrapper introduced for 2A rather than editing individual section renderers.
   - Capture the section at the width in which it is currently being reviewed. In responsive preview modes, the copied image should represent that desktop/tablet/mobile composition rather than silently rendering a different full-width version. Crop to the section boundary only.
   - The exported image should include the Lab-only recipe identifier/approval tint from 2A because that context is useful when sharing screenshots, but must exclude the screenshot button itself and unrelated Design Lab toolbar/navigation chrome. Do not alter the underlying recipe markup just to make capture easier.

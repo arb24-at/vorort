@@ -25,6 +25,13 @@
   background: #edf7f0;
   border-color: rgba(16, 185, 129, .12);
 }
+.lab-section-review:has(.lab-capture-button:not([hidden])) > .lab-section-review__chrome { max-width: calc(100% - 8rem); }
+.lab-capture-tools { position: absolute; top: 0; right: .5rem; z-index: 6; display: grid; justify-items: end; gap: .25rem; max-width: min(22rem, calc(100% - 1rem)); }
+.lab-capture-button, .lab-capture-status:not(:empty), .lab-capture-download { border: 1px solid #ccd4d9; border-radius: 3px; background: #f4f5f6; color: #354653; font: 400 11px/16px ui-sans-serif, system-ui, sans-serif; padding: .2rem .4rem; }
+.lab-capture-button { cursor: pointer; }
+.lab-capture-button:disabled { cursor: progress; }
+.lab-capture-status:empty, .lab-capture-tools [hidden] { display: none; }
+.lab-capture-download { text-decoration: underline; }
 
 /* Preserve the renderer's sibling-based editorial alternation through the
    review wrapper. Keep this adaptation out of reusable section styles. */

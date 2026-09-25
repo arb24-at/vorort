@@ -43,7 +43,7 @@ const expectedHtml = [
 
 const textExtensions = new Set([".css", ".html", ".js", ".svg", ".txt", ".xml"]);
 const errors = [];
-const reviewChrome = /lab-section-review|lab-recipe-label|data-lab-recipe|lab-section-picker/;
+const reviewChrome = /lab-section-review|lab-recipe-label|data-lab-recipe|lab-section-picker|lab-capture-|data-capture-exclude/;
 
 function walk(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
@@ -103,7 +103,7 @@ for (const file of files) {
     errors.push(`Customer page must not link to the internal Design Lab: ${displayPath}`);
   }
   if (!displayPath.startsWith("design-lab/") && reviewChrome.test(contents)) {
-    errors.push(`Design Lab section labels must not appear in customer HTML: ${displayPath}`);
+    errors.push(`Design Lab review controls must not appear in customer HTML: ${displayPath}`);
   }
   for (const match of contents.matchAll(/(?:href|src)="([^"]+)"/g)) {
     const url = match[1];
@@ -112,7 +112,7 @@ for (const file of files) {
     if (!fs.existsSync(target)) {
       errors.push(`Missing internal target in ${displayPath}: ${url}`);
     } else if (!displayPath.startsWith("design-lab/") && /\.(css|js)$/.test(target) && reviewChrome.test(fs.readFileSync(target, "utf8"))) {
-      errors.push(`Customer page must not load Design Lab section label assets: ${displayPath}: ${url}`);
+      errors.push(`Customer page must not load Design Lab review assets: ${displayPath}: ${url}`);
     }
   }
 }
