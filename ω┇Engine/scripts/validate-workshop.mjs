@@ -60,7 +60,7 @@ try {
     ["missing hero text", f => { delete f.sections[0].content.title; }],
     ["missing accessible hero media label", f => { delete f.sections[0].content.media.alt; }],
     ["arbitrary section CSS", f => { f.sections[1].content.className = "custom-grid"; }],
-    ["nested positioning", f => { f.sections[1].content.items[0].media.position = "20px"; }],
+    ["nested positioning", f => { f.sections.find(s => s.kind === "scope").content.items[0].media.position = "20px"; }],
     ["page styling", f => { f.page.columns = 5; }],
     ["duplicate section ID", f => { f.sections[1].id = f.sections[0].id; }],
     ["broken action target", f => { f.sections[0].content.actions[0].target = "missing"; }],

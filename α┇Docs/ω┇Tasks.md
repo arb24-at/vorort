@@ -97,7 +97,7 @@ Use this board when a task is too large or risky to hand to Codex as one uninter
 - Implementation: 2A, 2B, 2C
 - QA:
 
-- [ ] **2A — Add subtle recipe-ID labels to Design Lab sections**
+- [x] **2A — Add subtle recipe-ID labels to Design Lab sections**
   - Add a small, deliberately low-emphasis label at the top-left edge of every rendered section in Design Lab that shows the exact canonical recipe ID, for example `faq.editorial-answers` or `explanation.editorial-media`. The label should be easy to read/copy when needed but visually quiet enough that it does not compete with the section itself.
   - Use lifecycle state as subtle Lab-only styling on that identifier: approved recipes get a barely visible pale green/mint background (and, if useful, a similarly restrained border), while experimental recipes remain neutral. The tint should make approved sections recognisable during review without turning the ID into a prominent badge or changing the section design.
   - Apply the identifier consistently to Page Workshop section instances and other Design Lab section specimens where the same rendered-section wrapper is used. Prefer one shared Lab-only wrapper/decorator rather than editing every section renderer.
