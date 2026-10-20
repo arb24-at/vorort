@@ -1,0 +1,7 @@
+---
+import WorkshopFooter from "../WorkshopFooter.astro";
+
+type Props = { id: string; locale: "en" };
+const { id, locale } = Astro.props;
+---
+<WorkshopFooter id={id} locale={locale} />

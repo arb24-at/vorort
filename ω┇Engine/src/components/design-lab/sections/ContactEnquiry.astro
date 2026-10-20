@@ -12,9 +12,9 @@ type Props = {
 
 const { id, audience, content } = Astro.props;
 const copy = {
-  title: content.title ?? "Tell us what you need help with.",
-  intro: content.intro ?? "A short description is enough for an initial review. You do not need to diagnose the problem yourself.",
-  formIntro: content.formIntro ?? "Tell us how to reach you and what you need help with. Fields marked * are required.",
+  title: content.title ?? "Let’s talk about your IT needs",
+  intro: content.intro ?? "Tell us what you need help with. A short description is enough.",
+  formIntro: content.formIntro ?? "Just a few details so we can reply. * Required fields.",
   affectedPlaceholder: content.affectedPlaceholder ?? "For example Wi-Fi, a laptop, Microsoft 365 or a new setup",
   request: content.request ?? "What do you need help with?",
   requestPlaceholder: content.requestPlaceholder ?? "Describe what is happening, what should work, and anything important we should know before replying.",
@@ -31,41 +31,44 @@ const privacyHref = withBase("/datenschutz/");
         <h2>{copy.title}</h2>
         <p class="c2-contact__lede">{copy.intro}</p>
 
-        <div class="c2-contact__channels" aria-label="Direct contact options">
-          <a href={siteConfig.contact.phoneHref}>
-            <span class="c2-contact__channel-copy">
-              <small>Phone</small>
-              <strong>{siteConfig.contact.phoneDisplay}</strong>
-            </span>
-            <span class="c2-contact__channel-action">Call now</span>
-          </a>
-          <a href={siteConfig.contact.whatsappHref}>
-            <span class="c2-contact__channel-copy">
-              <small>WhatsApp</small>
-              <strong>{siteConfig.contact.phoneDisplay}</strong>
-            </span>
-            <span class="c2-contact__channel-action">Write a message</span>
-          </a>
-          <a href={`mailto:${siteConfig.contact.email}`}>
-            <span class="c2-contact__channel-copy">
-              <small>Email</small>
-              <strong>{siteConfig.contact.email}</strong>
-            </span>
-            <span class="c2-contact__channel-action">Write an email</span>
-          </a>
+        <div class="c2-contact__journey">
+          <p class="c2-contact__journey-label">A straightforward start</p>
+          <ol>
+            <li><span aria-hidden="true">01</span><strong>Share your situation</strong></li>
+            <li><span aria-hidden="true">02</span><strong>Clarify the details</strong></li>
+            <li><span aria-hidden="true">03</span><strong>Discuss next steps</strong></li>
+          </ol>
         </div>
 
-        <div class="c2-contact__expectations">
-          <p><span aria-hidden="true">01</span><span><strong>A short description is enough.</strong> We can ask the technical questions after we understand the situation.</span></p>
-          <p><span aria-hidden="true">02</span><span><strong>Costs stay explicit.</strong> If a paid diagnostic visit is useful, that is explained before it is arranged.</span></p>
-          <p><span aria-hidden="true">03</span><span><strong>Keep credentials private.</strong> Never send passwords, authentication codes, recovery codes or remote-access credentials.</span></p>
+        <div class="c2-contact__channels" aria-label="Direct contact options">
+          <a href={siteConfig.contact.phoneHref}>
+            <span class="c2-contact__channel-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.68 2.79a2 2 0 0 1-.45 2.11L9 10.85a16 16 0 0 0 4.15 4.15l1.23-1.23a2 2 0 0 1 2.11-.45c.89.33 1.83.56 2.79.68A2 2 0 0 1 22 16.92Z"/></svg>
+            </span>
+            <span class="c2-contact__channel-copy"><small>Call</small><strong>{siteConfig.contact.phoneDisplay}</strong></span>
+            <span class="c2-contact__channel-action" aria-hidden="true">↗</span>
+          </a>
+          <a href={siteConfig.contact.whatsappHref}>
+            <span class="c2-contact__channel-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 9 9 0 0 1-4-.95L3 21l1.95-5.5A9 9 0 0 1 4 11.5 8.5 8.5 0 1 1 21 11.5Z"/><path d="M9 9.5c1 2 2 3 4.5 4.5l1.5-1"/></svg>
+            </span>
+            <span class="c2-contact__channel-copy"><small>WhatsApp</small><strong>{siteConfig.contact.phoneDisplay}</strong></span>
+            <span class="c2-contact__channel-action" aria-hidden="true">↗</span>
+          </a>
+          <a class="c2-contact__channel-email" href={`mailto:${siteConfig.contact.email}`}>
+            <span class="c2-contact__channel-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </span>
+            <span class="c2-contact__channel-copy"><small>Email</small><strong>{siteConfig.contact.email}</strong></span>
+            <span class="c2-contact__channel-action" aria-hidden="true">↗</span>
+          </a>
         </div>
       </div>
 
       <div class="c2-contact__form-panel">
         <div class="c2-contact__form-head">
           <span class="c2-kicker">Enquiry form</span>
-          <h3>Send the essentials</h3>
+          <h3>Send an enquiry</h3>
           <p>{copy.formIntro}</p>
         </div>
 
@@ -95,56 +98,62 @@ const privacyHref = withBase("/datenschutz/");
               </select>
               <small class="c2-contact__error" data-error-for="preferred-contact" aria-live="polite"></small>
             </label>
-            <label>
-              <span>Email <b class="c2-contact__required" data-email-required aria-hidden="true">*</b><small data-email-optional hidden>optional</small></span>
+            <label class="c2-contact__field-wide" data-contact-email>
+              <span>Email <b class="c2-contact__required" data-email-required aria-hidden="true">*</b></span>
               <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required />
               <small class="c2-contact__error" data-error-for="email" aria-live="polite"></small>
             </label>
-            <label>
-              <span>Phone number <b class="c2-contact__required" data-phone-required aria-hidden="true" hidden>*</b><small data-phone-optional>optional</small></span>
-              <input type="tel" name="phone" autocomplete="tel" placeholder="For example +49 …" />
+            <label class="c2-contact__field-wide" data-contact-phone hidden>
+              <span>Phone number <b class="c2-contact__required" data-phone-required aria-hidden="true">*</b></span>
+              <input type="tel" name="phone" autocomplete="tel" placeholder="For example +49 …" disabled />
               <small class="c2-contact__error" data-error-for="phone" aria-live="polite"></small>
             </label>
-            <label>
-              <span>Postcode or district <small>optional</small></span>
-              <input type="text" name="postcode" autocomplete="postal-code" placeholder="For example 10999 or Kreuzberg" />
-              <small class="c2-contact__error" data-error-for="postcode" aria-live="polite"></small>
-            </label>
-            {audience === "business" ? (
-              <label>
-                <span>Company name <small>optional</small></span>
-                <input type="text" name="company" autocomplete="organization" />
-                <small class="c2-contact__error" data-error-for="company" aria-live="polite"></small>
-              </label>
-            ) : (
-              <label>
-                <span>Preferred appointment period <small>optional</small></span>
-                <input type="text" name="appointment-period" placeholder="For example weekday evening or Saturday" />
-                <small class="c2-contact__error" data-error-for="appointment-period" aria-live="polite"></small>
-              </label>
-            )}
-            <label class="c2-contact__field-wide">
-              <span>Affected device or service <small>optional</small></span>
-              <input type="text" name="affected" placeholder={copy.affectedPlaceholder} />
-              <small class="c2-contact__error" data-error-for="affected" aria-live="polite"></small>
-            </label>
-            {audience === "business" && (
-              <label class="c2-contact__field-wide">
-                <span>Preferred appointment period <small>optional</small></span>
-                <input type="text" name="appointment-period" placeholder="For example weekday evening or Saturday" />
-                <small class="c2-contact__error" data-error-for="appointment-period" aria-live="polite"></small>
-              </label>
-            )}
             <label class="c2-contact__field-wide">
               <span>{copy.request} <b class="c2-contact__required" aria-hidden="true">*</b></span>
-              <textarea name="request" rows="5" minlength="10" placeholder={copy.requestPlaceholder} required></textarea>
+              <textarea name="request" rows="4" minlength="10" placeholder={copy.requestPlaceholder} required></textarea>
               <small class="c2-contact__error" data-error-for="request" aria-live="polite"></small>
             </label>
           </div>
 
+          <details class="c2-contact__optional">
+            <summary><span>Add details (optional)</span><span class="c2-contact__optional-chevron" aria-hidden="true">⌄</span></summary>
+            <div class="c2-contact__form-grid c2-contact__optional-grid">
+              <label>
+                <span>Postcode or district <small>optional</small></span>
+                <input type="text" name="postcode" autocomplete="postal-code" placeholder="For example 10999 or Kreuzberg" />
+                <small class="c2-contact__error" data-error-for="postcode" aria-live="polite"></small>
+              </label>
+              {audience === "business" ? (
+                <label>
+                  <span>Company name <small>optional</small></span>
+                  <input type="text" name="company" autocomplete="organization" />
+                  <small class="c2-contact__error" data-error-for="company" aria-live="polite"></small>
+                </label>
+              ) : (
+                <label>
+                  <span>Preferred appointment period <small>optional</small></span>
+                  <input type="text" name="appointment-period" placeholder="For example weekday evening or Saturday" />
+                  <small class="c2-contact__error" data-error-for="appointment-period" aria-live="polite"></small>
+                </label>
+              )}
+              <label class="c2-contact__field-wide">
+                <span>Affected device or service <small>optional</small></span>
+                <input type="text" name="affected" placeholder={copy.affectedPlaceholder} />
+                <small class="c2-contact__error" data-error-for="affected" aria-live="polite"></small>
+              </label>
+              {audience === "business" && (
+                <label class="c2-contact__field-wide">
+                  <span>Preferred appointment period <small>optional</small></span>
+                  <input type="text" name="appointment-period" placeholder="For example weekday evening or Saturday" />
+                  <small class="c2-contact__error" data-error-for="appointment-period" aria-live="polite"></small>
+                </label>
+              )}
+            </div>
+          </details>
+
           <div class="c2-contact__safety">
             <span aria-hidden="true">!</span>
-            <p>Do not include passwords, authentication or recovery codes, payment-card details or remote-access credentials.</p>
+            <p>Never send passwords, authentication or recovery codes, payment-card details or remote-access credentials.</p>
           </div>
 
           <p class="c2-contact__privacy">Details submitted here are used to respond to your enquiry. <a href={privacyHref}>Privacy policy (German)</a>.</p>
@@ -170,9 +179,9 @@ const privacyHref = withBase("/datenschutz/");
     const email = form.elements.namedItem("email") as HTMLInputElement | null;
     const phone = form.elements.namedItem("phone") as HTMLInputElement | null;
     const emailRequired = form.querySelector<HTMLElement>("[data-email-required]");
-    const emailOptional = form.querySelector<HTMLElement>("[data-email-optional]");
     const phoneRequired = form.querySelector<HTMLElement>("[data-phone-required]");
-    const phoneOptional = form.querySelector<HTMLElement>("[data-phone-optional]");
+    const emailGroup = form.querySelector<HTMLElement>("[data-contact-email]");
+    const phoneGroup = form.querySelector<HTMLElement>("[data-contact-phone]");
 
     const setStatus = (message: string, state: "idle" | "success" | "error" = "idle") => {
       if (!status) return;
@@ -202,13 +211,15 @@ const privacyHref = withBase("/datenschutz/");
 
       email.required = needsEmail;
       phone.required = needsPhone;
+      email.disabled = !needsEmail;
+      phone.disabled = !needsPhone;
+      if (emailGroup) emailGroup.hidden = !needsEmail;
+      if (phoneGroup) phoneGroup.hidden = !needsPhone;
       email.setCustomValidity(needsEmail && !email.value.trim() ? "Add an email address if you prefer email." : "");
       phone.setCustomValidity(needsPhone && !phone.value.trim() ? "Add a phone number if you prefer phone or WhatsApp." : "");
 
       if (emailRequired) emailRequired.hidden = !needsEmail;
-      if (emailOptional) emailOptional.hidden = needsEmail;
       if (phoneRequired) phoneRequired.hidden = !needsPhone;
-      if (phoneOptional) phoneOptional.hidden = needsPhone;
       if (!needsEmail) clearFieldError(email);
       if (!needsPhone) clearFieldError(phone);
     };

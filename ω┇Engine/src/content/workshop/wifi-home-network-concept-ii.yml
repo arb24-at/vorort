@@ -517,11 +517,13 @@ sections:
     kind: contact
     recipe: contact.enquiry
     content:
-      title: Tell us about your home network
-      intro: >-
-        Planning something new or improving what is already there? Tell us the important rooms, the devices
-        you use and what you would like to work better. A short description is enough to start.
-      formIntro: Tell us how to reach you and what you need help with. Fields marked * are required.
+      title: Let's talk about your network
+      intro: Tell us what you need help with. A short description is enough.
+      formIntro: Just a few details so we can reply. * Required fields.
       affectedPlaceholder: For example Wi-Fi coverage, Ethernet, a home office or NAS
       request: What does your home network need to do?
       requestPlaceholder: Describe the rooms, existing connections or symptoms, and what you would like to improve.
+  - id: site-footer
+    kind: footer
+    recipe: footer.site
+    content: {}

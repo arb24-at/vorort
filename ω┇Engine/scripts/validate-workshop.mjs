@@ -77,8 +77,13 @@ try {
     ["unsafe media reference", f => { f.sections[0].content.media.src = "javascript:alert(1)"; }],
     ["incomplete staged path", f => { f.sections.find(s => s.kind === "process").content.steps.pop(); }],
     ["missing opening hero", f => { f.sections.shift(); }],
-    ["missing closing contact", f => { f.sections.pop(); }],
-    ["wrong shared contact anchor", f => { f.sections.at(-1).id = "enquiry"; }],
+    ["missing closing contact", f => { f.sections.splice(-2, 1); }],
+    ["wrong shared contact anchor", f => { f.sections.at(-2).id = "enquiry"; }],
+    ["missing closing footer", f => { f.sections.pop(); }],
+    ["wrong shared footer anchor", f => { f.sections.at(-1).id = "footer"; }],
+    ["footer before contact", f => { const footer = f.sections.pop(); f.sections.splice(-1, 0, footer); }],
+    ["duplicate footer", f => { f.sections.splice(-1, 0, { ...structuredClone(f.sections.at(-1)), id: "additional-footer" }); }],
+    ["arbitrary footer content", f => { f.sections.at(-1).content.note = "Custom footer"; }],
   ];
   for (const original of fixtures) {
     for (const [name, change] of invalid) {

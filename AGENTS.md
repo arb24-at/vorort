@@ -1,5 +1,5 @@
 ---
-version: 2.2.28
+version: 2.2.31
 ---
 
 # VorOrt agent instructions

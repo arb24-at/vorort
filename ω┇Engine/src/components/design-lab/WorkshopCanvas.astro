@@ -2,11 +2,10 @@
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 import { getSectionRecipe, sectionRecipes } from "../../design-system/section-recipes";
 import type { WorkshopFixture } from "../../design-system/workshop-schema";
-import WorkshopFooter from "./WorkshopFooter.astro";
 import SectionReview from "./SectionReview.astro";
 import "../../styles/design-lab/concept-ii.css";
-type Props = { fixture: WorkshopFixture; sections?: WorkshopFixture["sections"]; showFooter?: boolean };
-const { fixture, sections, showFooter = sections === undefined } = Astro.props;
+type Props = { fixture: WorkshopFixture; sections?: WorkshopFixture["sections"] };
+const { fixture, sections } = Astro.props;
 const renderedSections = sections ?? fixture.sections;
 const renderers = import.meta.glob<AstroComponentFactory>("./sections/*.astro", { eager: true, import: "default" });
 for (const [id, recipe] of Object.entries(sectionRecipes)) {
@@ -20,5 +19,4 @@ for (const [id, recipe] of Object.entries(sectionRecipes)) {
       <Renderer id={section.id} content={section.content} audience={fixture.page.audience} locale={fixture.page.locale} />
     </SectionReview>;
   })}
-  {showFooter && <WorkshopFooter locale={fixture.page.locale} />}
 </div>

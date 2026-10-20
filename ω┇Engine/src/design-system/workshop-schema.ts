@@ -23,12 +23,16 @@ export const workshopSchema = z.object({
       issue(["sections", index, "recipe"], "Recipe does not support this audience or page type");
     }
     if (section.kind === "contact" && section.id !== "contact") issue(["sections", index, "id"], "The shared English enquiry section requires the contact ID");
+    if (section.kind === "footer" && section.id !== "site-footer") issue(["sections", index, "id"], "The shared site footer requires the site-footer ID");
   });
   if (fixture.sections[0]?.kind !== "hero" || fixture.sections.filter(s => s.kind === "hero").length !== 1) {
     issue(["sections"], "A Workshop service page requires exactly one opening hero");
   }
-  if (fixture.sections.at(-1)?.kind !== "contact" || fixture.sections.filter(s => s.kind === "contact").length !== 1) {
-    issue(["sections"], "A Workshop service page requires exactly one closing contact section");
+  if (fixture.sections.at(-2)?.kind !== "contact" || fixture.sections.filter(s => s.kind === "contact").length !== 1) {
+    issue(["sections"], "A Workshop service page requires exactly one enquiry section immediately before the footer");
+  }
+  if (fixture.sections.at(-1)?.kind !== "footer" || fixture.sections.filter(s => s.kind === "footer").length !== 1) {
+    issue(["sections"], "A Workshop service page requires exactly one final site footer section");
   }
   fixture.sections.forEach((section, index) => {
     if (section.recipe === "hero.banner-art" || section.recipe === "hero.editorial-art" || section.recipe === "comparison.hero-banner" || section.recipe === "comparison.hero-banner-cta-overlay") {

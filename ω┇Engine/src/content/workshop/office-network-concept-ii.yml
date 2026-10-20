@@ -197,3 +197,7 @@ sections:
     kind: contact
     recipe: contact.enquiry
     content: {}
+  - id: site-footer
+    kind: footer
+    recipe: footer.site
+    content: {}

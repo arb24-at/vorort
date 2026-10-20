@@ -3,21 +3,22 @@ import { legalNavigationEn, mainNavigationEn } from "../../data/navigation";
 import { siteConfig } from "../../data/site";
 import { withBase } from "../../utils/withBase";
 
-type Props = { locale: "en" };
-const { locale } = Astro.props;
+type Props = { id: string; locale: "en" };
+const { id, locale } = Astro.props;
 const year = new Date().getFullYear();
 ---
-<footer class="c2-site-footer" data-workshop-chrome="footer" data-locale={locale}>
+<footer id={id} class="c2-site-footer" data-locale={locale}>
   <div class="container">
     <div class="c2-site-footer__top">
       <div class="c2-site-footer__brand">
         <span class="c2-site-footer__mark" aria-hidden="true">●</span>
         <div>
-          <strong>Practical IT support</strong>
-          <p>Practical IT support for private customers, home offices and businesses in Berlin.</p>
+          <span class="c2-site-footer__eyebrow">Practical IT support · Berlin</span>
+          <strong>Local help for the IT you rely on.</strong>
+          <p>For homes, home offices and small businesses — from everyday devices to connected workplaces.</p>
         </div>
       </div>
-      <div class="c2-site-footer__signals" aria-label="Service signals">
+      <div class="c2-site-footer__signals" aria-label="Service information">
         <span>On-site in Berlin</span>
         <span>Remote support where suitable</span>
         <span>IT experience since 2008</span>
@@ -25,27 +26,47 @@ const year = new Date().getFullYear();
     </div>
 
     <div class="c2-site-footer__grid">
-      <nav aria-label="Footer navigation">
+      <nav class="c2-site-footer__explore" aria-label="Footer navigation">
         <h2>Explore</h2>
         <ul>{mainNavigationEn.map(item => <li><a href={withBase(item.href)}>{item.label}</a></li>)}</ul>
       </nav>
-      <section>
-        <h2>Contact</h2>
+      <section class="c2-site-footer__contact" aria-labelledby="c2-site-footer-contact-title">
+        <h2 id="c2-site-footer-contact-title">Get in touch</h2>
         <ul>
-          <li><a href={siteConfig.contact.phoneHref}>{siteConfig.contact.phoneDisplay}</a></li>
-          <li><a href={siteConfig.contact.whatsappHref}>WhatsApp</a></li>
-          <li><a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a></li>
+          <li>
+            <a href={siteConfig.contact.phoneHref}>
+              <span class="c2-site-footer__contact-label">Phone</span>
+              <strong>{siteConfig.contact.phoneDisplay}</strong>
+              <span class="c2-site-footer__link-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href={siteConfig.contact.whatsappHref}>
+              <span class="c2-site-footer__contact-label">WhatsApp</span>
+              <strong>Send a message</strong>
+              <span class="c2-site-footer__link-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href={`mailto:${siteConfig.contact.email}`}>
+              <span class="c2-site-footer__contact-label">Email</span>
+              <strong>{siteConfig.contact.email}</strong>
+              <span class="c2-site-footer__link-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
         </ul>
       </section>
-      <section class="c2-site-footer__service">
-        <h2>How we work</h2>
-        <p>Start with the problem, not the product. We clarify scope, practical next steps and any paid diagnostic work before proceeding.</p>
+      <section class="c2-site-footer__service" aria-labelledby="c2-site-footer-approach-title">
+        <h2 id="c2-site-footer-approach-title">How we work</h2>
+        <p>Start with the situation, not a technical diagnosis. We clarify the scope and practical next steps before arranging any paid diagnostic work.</p>
       </section>
     </div>
 
     <div class="c2-site-footer__bottom">
       <span>© {year}. All rights reserved.</span>
-      <span>{legalNavigationEn.map((item, index) => <>{index > 0 ? " · " : ""}<a href={withBase(item.href)}>{item.label}</a></>)}</span>
+      <nav aria-label="Legal information">
+        {legalNavigationEn.map((item, index) => <>{index > 0 ? <span aria-hidden="true">·</span> : null}<a href={withBase(item.href)}>{item.label}</a></>)}
+      </nav>
     </div>
   </div>
 </footer>
