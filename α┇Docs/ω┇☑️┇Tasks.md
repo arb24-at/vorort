@@ -99,9 +99,9 @@ updated: 2026-10-20
 ## Bundle 4 — Independent English launch pages (after all German tasks)
 
 > [!todo] Goal
-> Rewrite English pages **only after Bundle 3**. Research and write for English-speaking audiences independently while preserving the established site relationships. For trust and legal pages with no current independent English route, make a grounded language-route decision and document it rather than manufacturing a path.
+> Default sequencing: rewrite English pages **only after Bundle 3**. **Explicit exception, 2026-10-20:** Aykhan assigned **4A** immediately after 3A, with close German/English coverage and independently written English SEO copy; automatic next-task selection remains 3B. Research and write for English-speaking audiences independently while preserving the established site relationships. For trust and legal pages with no current independent English route, make a grounded language-route decision and document it rather than manufacturing a path.
 
-- [ ] **4A — EN · Home networks / Wi-Fi**
+- [x] **4A — EN · Home networks / Wi-Fi**
   - **Route:** `/en/services/private/wifi-home-network/`
   - **Page job:** Pilot an expressive, technically accurate service chapter structure. Preserve the approved editorial hero, topic navigation and conversion path where they help; avoid repair or guaranteed-coverage promises.
   - **Execution:** Independent English authoring using the English intent and research; do not mechanically translate the German copy. Apply the common per-page acceptance contract, record every Design Lab change, verify, mark this item complete, commit once, report and stop.

@@ -202,7 +202,15 @@ try {
     assert.equal(getRecipeUsage(fixtures, serviceEntries, id).length, getWorkshopUsage(fixtures, id).length + expected);
   }
   assert.equal(getRecipeUsage([], [production], "explanation.editorial-prose").length, 1, "Repeated production chapters count as one page");
-  console.log(`Validated ${serviceEntries.length} service records, ${productionInvalid.length + 3} invalid production cases and combined derived usage.`);
+  const englishProduction = serviceEntries.find(service => service.id === "wifi-home-network-en");
+  assert.ok(englishProduction?.composition, "English home network service must adopt a validated composition");
+  const englishInvalid = structuredClone(englishProduction);
+  englishInvalid.composition.sections[0].content.actions[0].target = "kontakt";
+  assert.equal(serviceSchema.safeParse(englishInvalid).success, false, "English hero must reject the German contact anchor");
+  const englishUsage = getRecipeUsage([], [production, englishProduction], "explanation.editorial-prose");
+  assert.equal(englishUsage.length, 2, "Each independently authored locale counts as its own consuming page");
+  assert.equal(new Set(englishUsage.map(page => page.path)).size, 2, "Locale usage links must resolve to distinct routes");
+  console.log(`Validated ${serviceEntries.length} service records, ${productionInvalid.length + 4} invalid production cases and combined derived usage.`);
   console.log(`Validated ${fixtures.length} Workshop fixtures, ${invalid.length * fixtures.length + editorialInvalid.length} invalid-content cases, ${invalidGuidanceCases} invalid approved-guidance cases, experimental guidance migration/promotion, replacement relationships, lifecycle/compatibility policy and distinct-page usage.`);
 } finally {
   await fs.rm(temporary, { recursive: true, force: true });

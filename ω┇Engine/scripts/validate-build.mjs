@@ -149,6 +149,28 @@ for (const english of ["Physical connection path", "Installation planning", "Pla
   if (wifiHtml.includes(english)) errors.push(`Unlocalised connection diagram label: ${english}`);
 }
 
+const wifiEnHtml = fs.readFileSync(path.join(distRoot, "en/services/private/wifi-home-network/index.html"), "utf8");
+for (const required of [
+  '<html lang="en">',
+  `<link rel="canonical" href="${wifiAlternate}"`,
+  `<link rel="alternate" hreflang="de" href="${wifiCanonical}"`,
+  '<title>Home Network Setup in Berlin | Wi-Fi, Ethernet &amp; NAS</title>',
+  'data-service-page="wifi-home-network-en"',
+  'data-recipe="explanation.connection-path"',
+  'role="region" tabindex="0" aria-labelledby="wifi-coverage-table-2"',
+  'id="contact"', 'action="mailto:',
+  'Physical connection path', 'Planning note', 'Installation planning',
+]) {
+  if (!wifiEnHtml.includes(required)) errors.push(`English home-network page missing required output: ${required}`);
+}
+if ((wifiEnHtml.match(/<h1[ >]/g) ?? []).length !== 1) errors.push("English home-network page must have one h1");
+const wifiEnIds = [...wifiEnHtml.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
+if (new Set(wifiEnIds).size !== wifiEnIds.length) errors.push("English home-network page contains duplicate IDs");
+for (const match of wifiEnHtml.matchAll(/href="#([^"]+)"/g)) {
+  if (!wifiEnIds.includes(match[1])) errors.push(`English home-network anchor is missing: ${match[1]}`);
+}
+if (wifiEnHtml.includes('href="#kontakt"')) errors.push("English home-network contact links must use the English anchor");
+
 const sitemapPath = path.join(distRoot, "sitemap.xml");
 if (!fs.existsSync(sitemapPath)) {
   errors.push("Missing sitemap.xml");

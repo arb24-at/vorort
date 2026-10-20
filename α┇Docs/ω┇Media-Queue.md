@@ -62,8 +62,9 @@ Use the VorOrt private-service art language: premium tactile editorial illustrat
   - **Use in page:** `scope.topic-index` lead entry and `explanation.options-guide` Wi-Fi illustration
   - **Target path:** `ω┇Engine/public/images/concept-ii/private/P2.png`
   - **DE production request — Task 3A:** `WLAN & Mesh` in `scope.topic-index`, section `themen`, linking to `#wlan-mesh` on `/leistungen/privatpersonen/wlan-heimnetz/`. Retain the Workshop placements above; the German detail chapter uses real text and no additional image.
+  - **EN production reuse — Task 4A:** Same artwork in `scope.topic-index`, section `topics`, linking to `#wifi-coverage` on `/en/services/private/wifi-home-network/`. The English page follows the German composition and needs no separate artwork or generation request.
   - **Production crop:** lead topic image; broad desktop crop and compact mobile thumbnail. Supply a `4:3` master with the main subject near the centre, recognisable at 88px wide; allow generous crop-safe margins. Exact target remains `P2.png` above.
-  - **Queue note:** The existing candidate is authorised for the current German working draft. This unchecked request remains open for generation/replacement and explicit acceptance before publication; temporary integration is not media approval.
+  - **Queue note:** The existing candidate is authorised for the current German and English working drafts. This unchecked request remains open for generation/replacement and explicit acceptance before publication; temporary integration is not media approval.
   - **Prompt:**
 
 ```text
@@ -75,8 +76,9 @@ Use the VorOrt private-service art language: premium tactile editorial illustrat
   - **Use in page:** `scope.topic-index` and `explanation.editorial-media` home-office chapter
   - **Target path:** `ω┇Engine/public/images/concept-ii/private/P3.png`
   - **DE production request — Task 3A:** `Homeoffice & Geräte` in `scope.topic-index`, section `themen`, linking to `#homeoffice` on `/leistungen/privatpersonen/wlan-heimnetz/`. Retain the Workshop placements above; the German detail chapter uses real text and no additional image.
+  - **EN production reuse — Task 4A:** Same artwork in `scope.topic-index`, section `topics`, linking to `#home-office` on `/en/services/private/wifi-home-network/`. The English page follows the German composition and needs no separate artwork or generation request.
   - **Production crop:** supporting topic image; wide desktop strip and compact mobile thumbnail. Supply a `4:3` master with the main subject near the centre, recognisable at 88px wide; allow generous crop-safe margins. Exact target remains `P3.png` above.
-  - **Queue note:** The existing candidate is authorised for the current German working draft. This unchecked request remains open for generation/replacement and explicit acceptance before publication; temporary integration is not media approval.
+  - **Queue note:** The existing candidate is authorised for the current German and English working drafts. This unchecked request remains open for generation/replacement and explicit acceptance before publication; temporary integration is not media approval.
   - **Prompt:**
 
 ```text
@@ -88,8 +90,9 @@ Use the VorOrt private-service art language: premium tactile editorial illustrat
   - **Use in page:** `scope.topic-index` and `explanation.editorial-media` NAS chapter
   - **Target path:** `ω┇Engine/public/images/concept-ii/private/P4.png`
   - **DE production request — Task 3A:** `NAS & gemeinsame Dateien` in `scope.topic-index`, section `themen`, linking to `#nas-speicher` on `/leistungen/privatpersonen/wlan-heimnetz/`. Retain the Workshop placements above; the German detail chapter uses real text and no additional image.
+  - **EN production reuse — Task 4A:** Same artwork in `scope.topic-index`, section `topics`, linking to `#nas-storage` on `/en/services/private/wifi-home-network/`. The English page follows the German composition and needs no separate artwork or generation request.
   - **Production crop:** supporting topic image; wide desktop strip and compact mobile thumbnail. Supply a `4:3` master with the main subject near the centre, recognisable at 88px wide; allow generous crop-safe margins. Exact target remains `P4.png` above.
-  - **Queue note:** The existing candidate is authorised for the current German working draft. This unchecked request remains open for generation/replacement and explicit acceptance before publication; temporary integration is not media approval.
+  - **Queue note:** The existing candidate is authorised for the current German and English working drafts. This unchecked request remains open for generation/replacement and explicit acceptance before publication; temporary integration is not media approval.
   - **Prompt:**
 
 ```text
@@ -101,8 +104,9 @@ Use the VorOrt private-service art language: premium tactile editorial illustrat
   - **Use in page:** `scope.topic-index` Ethernet entry; the detailed chapter uses a code-native connection diagram
   - **Target path:** `ω┇Engine/public/images/concept-ii/private/P5.png`
   - **DE production request — Task 3A:** `Ethernet & Kabelwege` in `scope.topic-index`, section `themen`, linking to `#netzwerkverkabelung` on `/leistungen/privatpersonen/wlan-heimnetz/`. Retain the Workshop placements above; the German detail chapter uses real text and no additional image.
+  - **EN production reuse — Task 4A:** Same artwork in `scope.topic-index`, section `topics`, linking to `#ethernet-cabling` on `/en/services/private/wifi-home-network/`. The English page follows the German composition and needs no separate artwork or generation request.
   - **Production crop:** supporting topic image; wide desktop strip and compact mobile thumbnail. Supply a `4:3` master with the main subject near the centre, recognisable at 88px wide; allow generous crop-safe margins. Exact target remains `P5.png` above.
-  - **Queue note:** The existing candidate is authorised for the current German working draft. This unchecked request remains open for generation/replacement and explicit acceptance before publication; temporary integration is not media approval.
+  - **Queue note:** The existing candidate is authorised for the current German and English working drafts. This unchecked request remains open for generation/replacement and explicit acceptance before publication; temporary integration is not media approval.
   - **Prompt:**
 
 ```text
@@ -114,8 +118,9 @@ Use the VorOrt private-service art language: premium tactile editorial illustrat
   - **Use in page:** `scope.topic-index` and `explanation.editorial-media` planning chapter
   - **Target path:** `ω┇Engine/public/images/concept-ii/private/P6.png`
   - **DE production request — Task 3A:** `Umzug & Modernisierung` in `scope.topic-index`, section `themen`, linking to `#heimnetz-planen` on `/leistungen/privatpersonen/wlan-heimnetz/`. Retain the Workshop placements above; the German detail chapter uses real text and no additional image.
+  - **EN production reuse — Task 4A:** Same artwork in `scope.topic-index`, section `topics`, linking to `#network-planning` on `/en/services/private/wifi-home-network/`. The English page follows the German composition and needs no separate artwork or generation request.
   - **Production crop:** supporting topic image; wide desktop strip and compact mobile thumbnail. Supply a `4:3` master with the main subject near the centre, recognisable at 88px wide; allow generous crop-safe margins. Exact target remains `P6.png` above.
-  - **Queue note:** The existing candidate is authorised for the current German working draft. This unchecked request remains open for generation/replacement and explicit acceptance before publication; temporary integration is not media approval.
+  - **Queue note:** The existing candidate is authorised for the current German and English working drafts. This unchecked request remains open for generation/replacement and explicit acceptance before publication; temporary integration is not media approval.
   - **Prompt:**
 
 ```text
