@@ -8,7 +8,7 @@ Implement agreed product, content, and design decisions in the Astro application
 
 Activate Implementation for Astro/TypeScript/CSS changes, content schemas/loaders, reusable components, Design Lab recipe wiring, production adoption, route/navigation changes, validation tooling, refactors, and integration of accepted media.
 
-Implementation may combine with Design, Content & SEO, or QA when the task benefits from it. Do not stop because another discipline becomes relevant; add the role and continue when the issue can responsibly be solved in the current work.
+Implementation may combine with Design, Content Generator, or QA when the task benefits from it. Do not stop because another discipline becomes relevant; add the role and continue when the issue can responsibly be solved in the current work.
 
 ## Engineering principles
 

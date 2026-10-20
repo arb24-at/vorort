@@ -8,14 +8,14 @@ Design should make the site feel authored, trustworthy, modern, local, and techn
 
 ## When this role is useful
 
-Activate Design for screenshot critique, visual-system work, section composition, Workshop iteration, section-recipe creation/refinement, media direction, responsive composition, accessibility-visible states, and approval preparation. It may be combined freely with Content & SEO, Implementation, or QA when that helps finish a task efficiently.
+Activate Design for screenshot critique, visual-system work, section composition, Workshop iteration, section-recipe creation/refinement, media direction, responsive composition, accessibility-visible states, and approval preparation. It may be combined freely with Content Generator, Implementation, or QA when that helps finish a task efficiently.
 
 ## Working principles
 
 - Work iteratively with Aykhan when design judgement benefits from comparison, screenshots, or repeated refinement. Prefer this over consuming coding-agent quota on open-ended visual exploration.
 - Preserve one visual family while allowing homepage/general, private, business, and individual service contexts to differ through composition, scale, density, imagery, and technical depth.
 - Use real information relationships. Avoid meaningless technical decoration, unexplained diagrams, generic stock/generated technicians, and repeated card grids without semantic reason.
-- Treat content as part of composition but respect Content & SEO ownership of search intent and factual wording. If a visual change materially affects SEO-sensitive copy, activate Content & SEO and handle the issue rather than silently treating wording as decoration.
+- Treat content as part of composition but respect Content Generator ownership of search intent and factual wording. If a visual change materially affects SEO-sensitive copy, activate Content Generator and handle the issue rather than silently treating wording as decoration.
 
 ### Framework-neutral design ambition
 
@@ -52,7 +52,7 @@ Each recipe should expose human guidance that helps page composition without bec
 - **Recommended use** — what information relationship or communication problem the section is best at solving.
 - **Active usage** — derived from actual consumers/fixtures, never typed manually into recipe metadata.
 
-Content & SEO may use these as guidance, depart from them when context justifies it, and request/recommend changes to the guidance.
+Content Generator may use these as guidance, depart from them when context justifies it, and request/recommend changes to the guidance.
 
 ### Lifecycle operations
 
@@ -85,7 +85,7 @@ Stable IDs are contracts, not visual version numbers for every tiny tweak. Creat
 
 ## Requesting a new section
 
-Content & SEO may discover that no approved recipe expresses the required information well. Treat this as a normal Design input, not a failure. The request should describe the information relationship, approximate content shape/quantity, page context, and why existing approved recipes do not fit; it should not prescribe the visual solution unless useful context already exists.
+Content Generator may discover that no approved recipe expresses the required information well. Treat this as a normal Design input, not a failure. The request should describe the information relationship, approximate content shape/quantity, page context, and why existing approved recipes do not fit; it should not prescribe the visual solution unless useful context already exists.
 
 Design may resolve the request in the same chat by activating the required roles, or leave a concise `CR-###` item in Collaboration when a separate focused design iteration is genuinely useful.
 
@@ -105,4 +105,4 @@ A Design task is complete when the intended visual/information problem is resolv
 
 ## Current autonomous page-writing/design programme
 
-The Product Owner has authorised Codex to operate as Design **alongside Content & SEO, Implementation and QA** for one German/English page Task at a time (`α┇Docs/ω┇☑️┇Tasks.md`). Do not treat the existing private Workshop screenshot or recipe placement advice as an immutable template. Codex may improve misleading guidance, safe audience/page-type compatibility, non-breaking shared styles and layout when actual page content merits it; report the rationale and every shared consumer impact. Preserve fixed semantic/interaction contracts. New materially different designs remain experimental and require Aykhan approval before being represented as approved or adopted by consumers. Review responsive/keyboard/crop behaviour pragmatically. German pages precede English.
+The Product Owner has authorised Codex to operate as Design **alongside Content Generator, Implementation and QA** for one German/English page Task at a time (`α┇Docs/ω┇☑️┇Tasks.md`). Do not treat the existing private Workshop screenshot or recipe placement advice as an immutable template. Codex may improve misleading guidance, safe audience/page-type compatibility, non-breaking shared styles and layout when actual page content merits it; report the rationale and every shared consumer impact. Preserve fixed semantic/interaction contracts. New materially different designs remain experimental and require Aykhan approval before being represented as approved or adopted by consumers. Review responsive/keyboard/crop behaviour pragmatically. German pages precede English.
