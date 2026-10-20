@@ -49,6 +49,8 @@ cta:
   text: "One room, a new router or a larger plan: a few lines are enough to begin. The first conversation is free. We agree the work and costs with you, including any charge for a necessary diagnostic visit, before going ahead."
   prompt: "For example: Wi-Fi works in the living room but drops at my desk in the bedroom. I have the provider’s router and live in Neukölln. Please leave out passwords and access codes."
 composition:
+  experiment: "wifi-home-network-en-test"
+  relatedBefore: "final-contact"
   related:
     eyebrow: "Is the network only part of it?"
     title: "Help with the devices at either end."
@@ -57,10 +59,6 @@ composition:
       - "setup-data-transfer"
       - "computer-laptop"
       - "software-optimisation"
-  contact:
-    formIntro: "This form prepares an email in your mail app. Check it there and send it to complete your enquiry. No message is sent directly from this page."
-    affectedPlaceholder: "For example a router, bedroom Wi-Fi or a home-office connection"
-    request: "What would you like help with?"
   sections:
     - id: "introduction"
       kind: "hero"
@@ -78,6 +76,68 @@ composition:
             target: "contact"
           - label: "Explore the options"
             target: "topics"
+    - id: "everyday-situations"
+      kind: "recognition"
+      recipe: "recognition.situations"
+      content:
+        eyebrow: "When the connection gets in the way"
+        title: "It often starts with one everyday frustration."
+        intro: "You may know exactly what stops working, even if you do not know why. These are all useful starting points for a conversation."
+        items:
+          - title: "The bedroom is one room too far."
+            body: "Wi-Fi works beside the router, but a call or stream struggles at the other end of the flat. We can check coverage where you actually use it."
+          - title: "The new router is still in its box."
+            body: "You need it set up and your usual devices connected again. We look at the incoming connection and what can stay in use."
+          - title: "Your desk keeps dropping offline."
+            body: "The laptop connects, but work calls are unreliable. We can check the link at the desk, including the dock, adapter and available connection options."
+          - title: "The printer or TV will not join in."
+            body: "One device is awkward to connect or cannot be reached from the computer. We check its supported connections and how it fits the home network."
+          - title: "A move has changed where everything belongs."
+            body: "The router, desk and existing outlets no longer line up. We can work through practical positions and routes before you buy more equipment."
+    - id: "practical-help"
+      kind: "explanation"
+      recipe: "explanation.editorial-prose"
+      content:
+        eyebrow: "Practical help, at the right scale"
+        title: "Work with what you have. Change what helps."
+        intro: "We start with the rooms and devices you need to connect, then check the router, equipment positions and existing cables. The aim is to agree useful work for your home, whether that is one connection or a broader setup."
+        blocks:
+          - type: "columns"
+            columns:
+              - title: "For a specific problem"
+                paragraphs:
+                  - "We can set up a router, reconnect agreed devices or assess a weak room connection. Better configuration or placement may help; an access point or cable is considered where there is a practical reason for it."
+              - title: "For a planned installation"
+                paragraphs:
+                  - "We can plan Wi-Fi, network outlets and wired connections together, then install and configure what you agree. Existing equipment remains part of the plan where it is suitable. Hardware procurement is optional."
+          - type: "prose"
+            paragraphs:
+              - "You do not need to choose a Mesh system or draw up a network plan before contacting us. We explain the options and their limits in everyday terms."
+          - type: "callout"
+            tone: "quiet"
+            title: "Agree the next step first"
+            body: "Work is quoted individually. Any charge for a necessary diagnostic visit is explained before arranging it; extra equipment or work is discussed before proceeding."
+    - id: "quick-contact"
+      kind: "cta"
+      recipe: "cta.quick-contact"
+      content:
+        eyebrow: "An easy place to start"
+        title: "Talk through what you need."
+        body: "The first conversation is free. Tell us what is happening and what you already have. We discuss suitable next steps and costs, including any charge for a diagnostic visit, before arranging work."
+        callLabel: "Call about your home network"
+        enquiryLabel: "Prefer to write?"
+        enquiryTarget: "contact"
+    - id: "contact"
+      kind: "contact"
+      recipe: "contact.enquiry-email"
+      content:
+        title: "Tell us about your connection."
+        intro: "A few lines about the room, device or change you have in mind are enough. You do not need to diagnose the problem. We can clarify the details and discuss the next step with you."
+        formIntro: "This form prepares a draft in your email app. Review it and choose Send there to complete your enquiry. Nothing is sent directly from this page. * Required fields."
+        request: "What would you like help with?"
+        requestPlaceholder: "For example: Wi-Fi works in the living room but drops at my desk in the bedroom. I have the provider’s router and live in Neukölln. Please leave out passwords and access codes."
+        affectedPlaceholder: "For example a router, bedroom Wi-Fi or a home-office connection"
+        emailSubject: "Home network enquiry — Berlin"
     - id: "topics"
       kind: "scope"
       recipe: "scope.topic-index"
@@ -126,7 +186,7 @@ composition:
       recipe: "explanation.editorial-prose"
       content:
         eyebrow: "01 · Wi-Fi & Mesh"
-        title: "Better Wi-Fi starts with the room, not the box."
+        title: "Plan Wi-Fi around the rooms you use."
         intro: "A signal in the hallway tells you little about a video call at the back of the flat. Wi-Fi setup starts with where you use the connection, which devices need it and what is already in place."
         blocks:
           - type: "prose"
@@ -166,17 +226,17 @@ composition:
         paragraphs:
           - "Ethernet carries data over a network cable. It can suit a fixed desk, TV, NAS or an access point that would otherwise depend on a wireless link. Home network cabling can be a single useful run; it does not have to mean rewiring every room."
           - "For Ethernet installation, we check where the router or switch sits, where the connection should end and how a cable could get there. Existing routes and outlets may be reusable. A tidy surface-mounted route can sometimes be more practical than opening walls."
-        diagramTitle: "From the router to the place you use it"
-        caption: "One possible connection path. The actual route, outlets and connected equipment are agreed for your home."
+        diagramTitle: "From network ports to useful connection points"
+        caption: "This overview groups the cable routes: each wired device needs a separate run and network port. Routes, outlets and equipment are agreed for your home."
         source:
           title: "Router or switch"
-          body: "The starting point and available network ports."
+          body: "One available network port for each agreed wired connection."
         route:
-          title: "Cable route & outlet"
-          body: "An agreed run to a useful connection point."
+          title: "Cable runs & outlets"
+          body: "Separate cable runs to the agreed connection points."
         destinations:
           - title: "Desk or TV"
-            body: "A wired link for a fixed device."
+            body: "A dedicated connection for a fixed device."
           - title: "Wi-Fi access point"
             body: "A cable back to the rest of the network."
           - title: "NAS storage"
@@ -276,15 +336,15 @@ composition:
       recipe: "faq.editorial-answers"
       content:
         eyebrow: "A few things you may be wondering"
-        title: "Before you get in touch."
-        intro: "A short description is enough to start. These answers cover the practical questions that often come before a visit."
+        title: "Questions worth settling before a visit."
+        intro: "These practical details can affect the work, particularly in an existing home."
         items:
-          - question: "Is one router or one troublesome room enough of a job?"
+          - question: "Can you install Ethernet in a lived-in flat?"
             paragraphs:
-              - "Yes. You can ask about a new router, reconnecting everyday devices or Wi-Fi that struggles in one room. We start with that need and check your existing equipment; a whole-home replacement is not a condition of getting help."
-          - question: "Should I buy the equipment first?"
+              - "We check suitable routes and existing outlets first. A surface-mounted cable channel can sometimes provide a useful connection without opening walls. Permissions and any making-good are agreed before work, and electrical wiring is outside this service."
+          - question: "Can I keep my provider’s router?"
             paragraphs:
-              - "You can use equipment you already own if it is suitable. If you have not bought anything yet, describe what you need before choosing. We can recommend a practical approach and supply agreed hardware on request, with costs discussed first."
+              - "Often it can remain part of the setup. We check its ports, settings and compatibility with the agreed devices before recommending a change. Provider-owned equipment and the incoming connection are considered when planning the work."
           - question: "What will it cost, and when could you visit?"
             paragraphs:
               - "Work is quoted individually because the existing setup, cable routes and scope differ. The first conversation is free; any charge for a necessary diagnostic visit is explained before arranging it. Appointments are agreed individually. Evening or Saturday visits may be possible by agreement."
@@ -294,4 +354,13 @@ composition:
           - question: "What if the problem is with my internet provider?"
             paragraphs:
               - "We can help distinguish a problem inside the home network from one on the incoming connection. If the fault is in the provider’s network or line, the provider must handle it. A home-network visit does not repair that infrastructure."
-  contactAfter: "introduction"
+    - id: "final-contact"
+      kind: "cta"
+      recipe: "cta.quick-contact"
+      content:
+        eyebrow: "Ready for the next step?"
+        title: "Let’s start with your home."
+        body: "Tell us which connection needs attention, or what you are planning. Call us, or return to the same enquiry form above. A small job is welcome."
+        callLabel: "Discuss your next step"
+        enquiryLabel: "Return to the enquiry"
+        enquiryTarget: "contact"

@@ -18,7 +18,7 @@ const approved = recipesWithStatus("approved").map(([id, recipe]) => {
   if (!fixture || !section) throw new Error(`Approved recipe ${id} needs a Workshop consumer for its rendered example`);
   const anchor = `recipe-${id.replaceAll(".", "-")}`;
   return {
-    id, recipe, fixture, section, anchor,
+    id, recipe, fixture, section, anchor, sourceAnchor: "layout" in fixture.page ? `specimen-${section.id}` : section.id,
     usage: getRecipeUsage(pages, services, id as RecipeId),
     replacements: Object.entries(sectionRecipes).filter(([, candidate]) => candidate.supersedes === id),
   };
@@ -42,7 +42,7 @@ const approved = recipesWithStatus("approved").map(([id, recipe]) => {
         <p>Sections appear here only after Aykhan explicitly approves their design and content contract.</p>
         <a href={withBase("/design-lab/")}>Return to Page Workshop →</a>
       </div> : <div class="lab-approved-list">
-        {approved.map(({ id, recipe, fixture, section, anchor, usage, replacements }, index) => {
+        {approved.map(({ id, recipe, fixture, section, anchor, sourceAnchor, usage, replacements }, index) => {
           const guidance = recipe.authoringGuidance!;
           return <article class="lab-recipe" id={anchor} aria-labelledby={`${anchor}-title`} data-library-recipe={id}>
             <header class="lab-recipe-heading">
@@ -59,7 +59,7 @@ const approved = recipesWithStatus("approved").map(([id, recipe]) => {
             <figure class="lab-specimen" aria-labelledby={`${anchor}-example`}>
               <figcaption class="lab-specimen-caption">
                 <strong id={`${anchor}-example`}>Rendered example</strong>
-                <a href={`${withBase(workshopPath(fixture.page.id))}#${section.id}`}>{fixture.page.title}<span aria-hidden="true"> ↗</span></a>
+                <a href={`${withBase(workshopPath(fixture.page.id))}#${sourceAnchor}`}>{fixture.page.title}<span aria-hidden="true"> ↗</span></a>
               </figcaption>
               <div class="lab-specimen-canvas" data-example-page={fixture.page.id} data-example-section={section.id}>
                 <WorkshopCanvas fixture={fixture} sections={[{ ...section, id: `${anchor}-example-section` }]} />

@@ -1,18 +1,26 @@
 ---
-import type { WorkshopFixture } from "../../design-system/workshop-schema";
+import { isSpecimenWorkshop, type WorkshopFixture } from "../../design-system/workshop-schema";
+import { workshopPath } from "../../data/workshop-usage";
+import { withBase } from "../../utils/withBase";
 import SectionReview from "./SectionReview.astro";
 import RecipeSection from "../RecipeSection.astro";
-import RelatedServices from "../RelatedServices.astro";
 import "../../styles/design-lab/concept-ii.css";
+import "../../styles/design-lab/specimens.css";
 type Props = { fixture: WorkshopFixture; sections?: WorkshopFixture["sections"] };
 const { fixture, sections } = Astro.props;
 const renderedSections = sections ?? fixture.sections;
+const gallery = isSpecimenWorkshop(fixture);
 ---
 <div class:list={["concept-ii", `concept-ii--${fixture.page.audience}`]} data-workshop-page={fixture.page.id}>
-  {renderedSections.map(section => <>
-    {fixture.relatedServices?.before === section.id && <RelatedServices content={fixture.relatedServices} audience={fixture.page.audience} locale={fixture.page.locale} />}
-    <SectionReview recipeId={section.recipe}>
-      <RecipeSection section={section} audience={fixture.page.audience} locale={fixture.page.locale} context="workshop" />
+  {renderedSections.map(section => <SectionReview recipeId={section.recipe} specimen={gallery && !sections ? { id: section.id, ...fixture.specimenNotes[section.id] } : undefined}>
+      <RecipeSection section={section} audience={fixture.page.audience} locale={fixture.page.locale} context="workshop" anchorBase={sections ? withBase(workshopPath(fixture.page.id)) : undefined} specimen={gallery || Boolean(sections)} />
     </SectionReview>
-  </>)}
+  )}
+  {gallery && !sections && fixture.proposals.map(proposal => <section class="lab-proposal" id={`proposal-${proposal.id.replaceAll(".", "-")}`} data-proposal={proposal.id}>
+    <div class="container">
+      <p class="lab-proposal__state">Proposed · unregistered · no renderer</p>
+      <code>{proposal.id}</code><h2>{proposal.title}</h2>
+      <p>{proposal.rationale}</p><dl><div><dt>Suggested content</dt><dd>{proposal.contentShape}</dd></div><div><dt>Review question</dt><dd>{proposal.reviewQuestion}</dd></div></dl>
+    </div>
+  </section>)}
 </div>

@@ -1,0 +1,474 @@
+page:
+  id: "private-service-page"
+  locale: "en"
+  audience: "private"
+  pageType: "service"
+  title: "Private Service Page"
+  layout: "specimens"
+sections:
+  - id: "editorial-introduction"
+    kind: "hero"
+    recipe: "hero.editorial-art"
+    content:
+      eyebrow: "IT help at home · Example introduction"
+      title: "Practical help for the technology you use."
+      intro: "A new computer, software that needs setting up, files to bring across or a connection that needs attention. Begin with what you want to do and the equipment you already have. We can discuss suitable work and explain the next step."
+      media:
+        subject: "private-hero"
+        src: "/images/concept-ii/private/P1.png"
+        alt: "Illustrated home with a desk, living area and everyday connected devices."
+      actions:
+        - label: "Describe what you need"
+          target: "contact"
+        - label: "Explore the examples"
+          target: "service-options"
+  - id: "banner-introduction"
+    kind: "hero"
+    recipe: "hero.banner-art"
+    content:
+      eyebrow: "IT help at home · Example introduction"
+      title: "Make the technology fit your day."
+      intro: "A new computer, software that needs setting up, files to bring across or a connection that needs attention. Begin with what you want to do and the equipment you already have. We can discuss suitable work and explain the next step."
+      media:
+        subject: "private-hero"
+        src: "/images/concept-ii/private/P1.png"
+        alt: "Illustrated home with a desk, living area and everyday connected devices."
+      actions:
+        - label: "Describe what you need"
+          target: "contact"
+        - label: "Explore the examples"
+          target: "service-options"
+  - id: "banner-comparison"
+    kind: "comparison"
+    recipe: "comparison.hero-banner"
+    content:
+      eyebrow: "IT help at home · Example introduction"
+      title: "A different balance of image and explanation."
+      intro: "A new computer, software that needs setting up, files to bring across or a connection that needs attention. Begin with what you want to do and the equipment you already have. We can discuss suitable work and explain the next step."
+      media:
+        subject: "private-hero"
+        src: "/images/concept-ii/private/P1.png"
+        alt: "Illustrated home with a desk, living area and everyday connected devices."
+      actions:
+        - label: "Describe what you need"
+          target: "contact"
+        - label: "Explore the examples"
+          target: "service-options"
+  - id: "banner-actions-comparison"
+    kind: "comparison"
+    recipe: "comparison.hero-banner-cta-overlay"
+    content:
+      eyebrow: "IT help at home · Example introduction"
+      title: "Let the scene support the introduction."
+      intro: "A new computer, software that needs setting up, files to bring across or a connection that needs attention. Begin with what you want to do and the equipment you already have. We can discuss suitable work and explain the next step."
+      media:
+        subject: "private-hero"
+        src: "/images/concept-ii/private/P1.png"
+        alt: "Illustrated home with a desk, living area and everyday connected devices."
+      actions:
+        - label: "Describe what you need"
+          target: "contact"
+        - label: "Explore the examples"
+          target: "service-options"
+  - id: "recognisable-situations"
+    kind: "recognition"
+    recipe: "recognition.situations"
+    content:
+      eyebrow: "A familiar starting point"
+      title: "What is getting in your way?"
+      intro: "An everyday problem is enough to begin. These examples deliberately span different private services."
+      items:
+        - title: "A computer that has become difficult to use"
+          body: "Starting up takes longer, applications stop responding, or settings seem to change. Explain the symptom before deciding what kind of help is needed."
+        - title: "New equipment, familiar tasks"
+          body: "You want your own files, email and useful applications ready on a new computer, without carrying unnecessary clutter across."
+        - title: "One device will not connect"
+          body: "A printer or desk connection works differently from the rest. Check how the device is intended to connect before replacing equipment."
+        - title: "Software that needs a sensible setup"
+          body: "Installation is only the start: updates, accounts and compatibility can all affect whether an application is ready for everyday use."
+  - id: "scope-panels"
+    kind: "scope"
+    recipe: "scope.art-panels"
+    content:
+      eyebrow: "An alternative overview"
+      title: "Five areas of practical help."
+      intro: "An illustrated scope overview without chapter-navigation behaviour."
+      items:
+        - title: "Computer help"
+          media:
+            subject: "home-office"
+        - title: "Software setup"
+          media:
+            subject: "upgrade-home"
+        - title: "Files and accounts"
+          media:
+            subject: "storage-home"
+        - title: "Home connections"
+          media:
+            subject: "wifi"
+        - title: "New equipment"
+          media:
+            subject: "cabling-home"
+  - id: "service-options"
+    kind: "scope"
+    recipe: "scope.topic-index"
+    content:
+      eyebrow: "Explore the examples"
+      title: "Different subjects. Different ways to explain them."
+      intro: "This sample index links to independent explanation specimens below. A real service page would use its own coherent topics."
+      items:
+        - title: "Set up your computer"
+          body: "An example of varied prose with a useful comparison."
+          target: "everyday-setup"
+          media:
+            subject: "home-office"
+            src: "/images/concept-ii/private/P3.png"
+            alt: "Illustrated desk with a computer and everyday working equipment."
+        - title: "Bring your files along"
+          body: "A focused subject with supporting artwork."
+          target: "files-and-accounts"
+          media:
+            subject: "storage-home"
+            src: "/images/concept-ii/private/P4.png"
+            alt: "Illustrated storage and devices used to keep and share files."
+        - title: "Choose an approach"
+          body: "Two alternatives compared against the same criteria."
+          target: "software-choices"
+          media:
+            subject: "upgrade-home"
+            src: "/images/concept-ii/private/P6.png"
+            alt: "Illustrated room prepared for a change of equipment and connections."
+        - title: "Connect a fixed device"
+          body: "A physical path made clear with real-text labels."
+          target: "connected-devices"
+          media:
+            subject: "cabling-home"
+            src: "/images/concept-ii/private/P5.png"
+            alt: "Illustrated home network outlet and a planned cable route."
+        - title: "Plan the next change"
+          body: "An experimental lead-and-supporting panel structure."
+          target: "planning-examples"
+          media:
+            subject: "wifi"
+            src: "/images/concept-ii/private/P2.png"
+            alt: "Illustrated rooms and a wireless connection between them."
+  - id: "software-choices"
+    kind: "explanation"
+    recipe: "explanation.options-guide"
+    content:
+      eyebrow: "Understand the choice"
+      title: "Choose a useful next step for your software."
+      paragraphs:
+        - "An application problem may call for a configuration change, an update or an agreed reinstall. Start with the symptom and what you need the application to do."
+        - "These approaches are compared against the same criteria; neither is a universal recommendation."
+      media:
+        subject: "home-office"
+        src: "/images/concept-ii/private/P3.png"
+        alt: "Illustrated desk with a computer and everyday working equipment."
+      caption: "An illustrative workspace, not a recommended device or product."
+      comparisonTitle: "Two possible approaches"
+      fitLabel: "When it may fit"
+      considerationLabel: "What to check"
+      options:
+        - title: "Adjust the current setup"
+          fit: "The application is supported and the problem appears related to its settings or user profile."
+          consideration: "Compatibility, existing data and which changes can be made safely."
+        - title: "Install or reinstall agreed software"
+          fit: "A supported application needs a fresh installation or a replacement setup."
+          consideration: "Licensing, account access, saved data and the intended operating system."
+      note:
+        title: "Agree changes first"
+        body: "Explain any effects on settings or stored data before changing the setup."
+  - id: "connected-devices"
+    kind: "explanation"
+    recipe: "explanation.connection-path"
+    content:
+      eyebrow: "A physical relationship"
+      title: "Show how the connection reaches a device."
+      paragraphs:
+        - "A connection diagram is useful when the physical route matters. This standalone specimen uses a network example; it is not a mandatory section for every private service."
+      diagramTitle: "From a network port to a useful connection point"
+      caption: "Destination examples are alternatives; each wired device requires its own port and cable connection."
+      source:
+        title: "Router or switch"
+        body: "An available network port."
+      route:
+        title: "Cable and outlet"
+        body: "One planned route through the property."
+      destinations:
+        - title: "Workstation"
+          body: "A wired connection at the desk."
+        - title: "Access point"
+          body: "A connection for local Wi-Fi equipment."
+      planning:
+        title: "Keep the planning layer practical."
+        body: "Use the space after the diagram to explain decisions that affect the installation."
+        items:
+          - title: "Existing routes"
+            body: "Check whether suitable cable routes or outlets are already available."
+          - title: "Agreed work"
+            body: "Discuss the physical route, permissions and equipment before installation."
+  - id: "files-and-accounts"
+    kind: "explanation"
+    recipe: "explanation.editorial-media"
+    content:
+      eyebrow: "A focused subject"
+      title: "Bring the files you need to the new computer."
+      paragraphs:
+        - "A normal transfer starts with readable data and a clear idea of what should move. Documents, photos and account setup can be considered separately."
+        - "We agree which folders and accounts are involved and check the result on the destination computer. A separate backup remains useful before making changes."
+      media:
+        subject: "storage-home"
+        src: "/images/concept-ii/private/P4.png"
+        alt: "Illustrated storage and devices used to keep and share files."
+      note:
+        title: "Know the boundary"
+        body: "Damaged or unreadable storage is outside an ordinary transfer."
+        tone: "quiet"
+  - id: "application-setup"
+    kind: "explanation"
+    recipe: "explanation.editorial-media"
+    content:
+      eyebrow: "A second use of the same recipe"
+      title: "Set up an application for everyday use."
+      paragraphs:
+        - "A useful software setup considers the licence, operating system and the account you will use. Installation alone may leave important settings unfinished."
+        - "Check the agreed application with the person who will use it, then explain the settings that matter for their normal tasks."
+      media:
+        subject: "home-office"
+        src: "/images/concept-ii/private/P3.png"
+        alt: "Illustrated desk with a computer and everyday working equipment."
+      note:
+        title: "Supported software"
+        body: "Use properly licensed, supported applications."
+        tone: "solid"
+  - id: "everyday-setup"
+    kind: "explanation"
+    recipe: "explanation.editorial-prose"
+    content:
+      eyebrow: "Editorial flexibility"
+      title: "Make a new computer feel ready for your day."
+      intro: "A reading section can combine explanation, a small comparison and a practical note without becoming a grid of unrelated cards."
+      blocks:
+        - type: "prose"
+          paragraphs:
+            - "Start with the tasks, files and accounts that matter. Some settings can be carried across; others benefit from a clean setup. The right choice depends on the current computer and what is readable and supported."
+        - type: "subheading"
+          emphasis: "band"
+          title: "Keep the important parts in view."
+          body: "Use an internal heading only when it marks a genuine change of emphasis."
+        - type: "columns"
+          columns:
+            - title: "What should come across?"
+              paragraphs:
+                - "Agree the important folders and accounts before moving data."
+            - title: "What should be set up fresh?"
+              paragraphs:
+                - "Check compatible applications and licences instead of copying a system blindly."
+        - type: "media"
+          placement: "wide"
+          media:
+            subject: "upgrade-home"
+            src: "/images/concept-ii/private/P6.png"
+            alt: "Illustrated room prepared for a change of equipment and connections."
+        - type: "table"
+          title: "Two different setup decisions"
+          columns:
+            - "Decision"
+            - "Useful question"
+          rows:
+            - - "Files"
+              - "Which folders should be available on the new computer?"
+            - - "Applications"
+              - "Which supported tools do you actually use?"
+        - type: "callout"
+          tone: "outline"
+          title: "This is a block demonstration"
+          body: "A real chapter should use only the blocks its subject needs; this mix is not a required template."
+  - id: "planning-examples"
+    kind: "explanation"
+    recipe: "explanation.art-gallery"
+    content:
+      eyebrow: "Experimental visual explanation"
+      title: "Put the next change in context."
+      intro: "One lead panel and two supporting ideas demonstrate the gallery relationship, using three different everyday planning considerations."
+      items:
+        - eyebrow: "Start with the task"
+          title: "Know what should work"
+          body: "Describe the task and the equipment already available before drawing up a shopping list."
+          media:
+            subject: "home-office"
+        - eyebrow: "Consider the files"
+          title: "Keep important data in view"
+          body: "Think about readable source data and a separate backup before changing equipment."
+          media:
+            subject: "storage-home"
+        - eyebrow: "Consider the room"
+          title: "Leave practical connection points"
+          body: "A desk or device may need a different position or a useful existing outlet."
+          media:
+            subject: "upgrade-home"
+  - id: "scope-and-boundaries"
+    kind: "outcome"
+    recipe: "outcome.scope-proof"
+    content:
+      eyebrow: "Set expectations"
+      title: "Useful work, with a clear scope."
+      body: "Explain what the agreed job is intended to achieve and which tasks need a separate discussion. Keep the proof factual and modest."
+      media:
+        subject: "home-office"
+        alt: "Illustrative workspace placeholder."
+      includedHeading: "What the work can cover"
+      included:
+        - "Agreed setup and configuration"
+        - "Checking the result together"
+        - "Explaining useful settings"
+      boundariesHeading: "Discuss separately"
+      boundaries:
+        - "Additional equipment or work"
+        - "Damaged or unreadable storage"
+        - "Changes controlled by an employer’s IT team"
+  - id: "working-process"
+    kind: "process"
+    recipe: "process.staged-path"
+    content:
+      eyebrow: "A predictable process"
+      title: "From a first question to useful handover."
+      intro: "Keep the sequence clear enough for a small job as well as a planned setup."
+      steps:
+        - title: "Understand the need"
+          body: "Start with the task or symptom and the equipment already available."
+        - title: "Agree the scope"
+          body: "Discuss suitable work, costs and any paid diagnostic visit before arranging it."
+        - title: "Carry out the work"
+          body: "Install or configure what was agreed; discuss any additional work first."
+        - title: "Check and explain"
+          body: "Review the result together and explain important settings or remaining limits."
+  - id: "visible-questions"
+    kind: "faq"
+    recipe: "faq.editorial-answers"
+    content:
+      eyebrow: "Visible answers"
+      title: "A little clarity before getting in touch."
+      intro: "An editorial answer can explain a practical concern without hiding it behind a control."
+      items:
+        - question: "Do I need to know the technical cause?"
+          paragraphs:
+            - "No. Describe what you are trying to do and what happens instead. A clear everyday description is a useful starting point."
+        - question: "Should I buy equipment first?"
+          paragraphs:
+            - "Existing equipment can be considered before a purchase is recommended. If new hardware is useful, agree the choice and cost first."
+        - question: "What happens if more work is needed?"
+          paragraphs:
+            - "Additional work or equipment is discussed before proceeding. The initial scope should not silently expand."
+  - id: "expandable-questions"
+    kind: "faq"
+    recipe: "faq.accordion"
+    content:
+      eyebrow: "Experimental alternative"
+      title: "Independent short questions."
+      items:
+        - question: "Can more than one answer stay open?"
+          answer: "Yes. Each native disclosure is independent, so opening one does not close another."
+        - question: "When is this pattern worth considering?"
+          answer: "For genuinely independent, brief answers. Longer explanations are better reviewed in the visible editorial pattern above."
+  - id: "quick-invitation"
+    kind: "cta"
+    recipe: "cta.quick-contact"
+    content:
+      eyebrow: "An easy next step"
+      title: "Start with what you need help with."
+      body: "A short conversation can clarify the next step. Describe the device or task in your own words; you do not need to choose equipment before getting in touch."
+      callLabel: "Call to discuss your request"
+      enquiryLabel: "Use the enquiry form"
+      enquiryTarget: "contact"
+  - id: "direct-enquiry"
+    kind: "contact"
+    recipe: "contact.enquiry"
+    content:
+      title: "Describe the help you need."
+      intro: "A short description is enough to begin. We can clarify the details and discuss the next step."
+      formIntro: "Direct-delivery layout specimen. Sending is unavailable until an authorised endpoint and privacy configuration are in place. * Required fields."
+  - id: "contact"
+    kind: "contact"
+    recipe: "contact.enquiry-email"
+    content:
+      title: "Tell us what you would like to do."
+      intro: "One device, an application or a planned setup: describe the situation in your own words."
+      formIntro: "Prepare a draft in your email app, review the details and send it there. Nothing is sent directly by this page. * Required fields."
+      requestPlaceholder: "Describe the task, device or problem. Do not include passwords or access codes."
+      emailSubject: "Private service enquiry"
+  - id: "site-footer"
+    kind: "footer"
+    recipe: "footer.site"
+    content: {}
+specimenNotes:
+  editorial-introduction:
+    context: "Orientation across private services"
+    description: "Heading, explanation and actions stay separate from the artwork. Replace the subject and wording for each service; this is not a required customer-page script."
+  banner-introduction:
+    context: "Experimental hero alternative"
+    description: "Compare text over artwork with the approved editorial introduction. Check readability before hover and on mobile; the existing artwork is specimen material."
+  banner-comparison:
+    context: "Retained banner comparison experiment"
+    description: "Preserves the earlier scrim, blur and overlay comparison. This comparison ID is for design review, not an additional customer-page hero."
+  banner-actions-comparison:
+    context: "Retained CTA-only overlay experiment"
+    description: "Here the introduction moves above the image while the two actions remain over it. Compare at the same widths and with keyboard focus."
+  recognisable-situations:
+    context: "Recognition for computer, setup, software or connection pages"
+    description: "Use four to six meaningful situations on a substantial page. The text-only lines are intentionally richer than symptom tags; shorten the list for a narrower subject."
+  scope-panels:
+    context: "Experimental scope artwork pattern"
+    description: "Retains the superseded artwork-panel idea as a genuine experiment. Placeholder art is explicit; unlike the approved index, these panels are not links to chapters."
+  service-options:
+    context: "Navigation specimen, not a service catalogue"
+    description: "Each illustrated unit has one real destination. Topic count, order, featured subject and crop may vary within the approved contract."
+  software-choices:
+    context: "Comparison without ranking or product selling"
+    description: "One image, introductory prose and consistent comparison criteria. Use a table in rich prose when the information needs a denser comparison."
+  connected-devices:
+    context: "Standalone network example"
+    description: "Preserves the full-width source → route → destinations relationship. The caption must not imply a single cable creates several independent ports."
+  files-and-accounts:
+    context: "File-transfer chapter example"
+    description: "One focused subject and one supporting image. A quiet boundary note is optional. The next instance demonstrates the shared renderer’s alternating media placement."
+  application-setup:
+    context: "Software chapter example"
+    description: "The same contract handles a different service topic. Image/text sides alternate by editorial-media occurrence; unrelated sections must not change that sequence."
+  everyday-setup:
+    context: "New-device setup, with several permitted block types"
+    description: "Retains rich prose, banded headings, columns, optional media, a keyboard-scrollable table and a callout. Content density and block selection belong to the subject."
+  planning-examples:
+    context: "Lead-and-supporting artwork experiment"
+    description: "Preserves the earlier environmental-gallery design for review. Placeholder media is visible and not presented as accepted artwork."
+  scope-and-boundaries:
+    context: "Outcome and boundary experiment"
+    description: "Retains the existing scope-proof recipe without inventing credentials or customer proof. Decide whether the visual relationship is useful alongside the approved editorial alternatives."
+  working-process:
+    context: "Four-stage process specimen"
+    description: "Exactly four sequential stages. Vary the words and depth for the service, while retaining the order and handover."
+  visible-questions:
+    context: "Always-visible Q&A specimen"
+    description: "Three to six visible questions; answer length can vary. Optional media may explain a relationship, but no disclosure is part of this approved recipe."
+  expandable-questions:
+    context: "Retained accordion experiment"
+    description: "Still experimental and superseded by the approved editorial answers. Preserve native keyboard behaviour and independent open states; this is not an automatic production alternative."
+  quick-invitation:
+    context: "Reusable early or closing invitation"
+    description: "The same recipe can welcome a small request early or return to one enquiry later. Phone details come from site configuration, not from sample copy."
+  direct-enquiry:
+    context: "Approved direct-submit contract"
+    description: "Always-visible form and direct contact alternatives. The unavailable state is explicit. This approved recipe is not silently changed into a mail-client form."
+  contact:
+    context: "Experimental functional email-draft fallback"
+    description: "Shares the enquiry implementation but has a different, honest delivery contract. Compare field spacing, conditional reply requirements, inline errors and the explicit Prepare email draft action."
+  site-footer:
+    context: "Shared utility footer specimen"
+    description: "Navigation, contact and legal facts remain centrally sourced. This is one independent specimen at the end of the gallery, not proof that every preceding example forms one customer journey."
+proposals:
+  - id: "scope.proportionate-help"
+    title: "A compact explanation of proportionate help"
+    rationale: "Private services often need to explain a small targeted job and a fuller planned setup before contact. The approved prose recipe can express this today; a dedicated pattern might make that orientation more compact without reducing it to cards."
+    contentShape: "A short lead, two complementary narrative passages and one concise scope/cost reassurance. No artwork, fake packages or duplicated technical chapter."
+    reviewQuestion: "After reviewing real production prose, does this relationship deserve its own reusable design, or is the existing editorial contract flexible enough?"

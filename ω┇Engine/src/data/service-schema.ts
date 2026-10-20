@@ -110,9 +110,16 @@ export const serviceSchema = z
       if (!service.composition) {
         context.addIssue({ code: z.ZodIssueCode.custom, path: ["composition"], message: "Recipe service pages require a production composition" });
       } else {
-        validateProductionSections(service.composition.sections, service.audience, service.locale, (path, message) => {
+        validateProductionSections(service.composition.sections, {
+          id: service.id, translationId: service.translationId, slug: service.slug,
+          audience: service.audience, locale: service.locale,
+          experiment: "experiment" in service.composition ? service.composition.experiment : undefined,
+        }, (path, message) => {
           context.addIssue({ code: z.ZodIssueCode.custom, path: ["composition", "sections", ...path], message });
         });
+        if ("experiment" in service.composition && service.composition.sections.at(-1)?.id !== service.composition.relatedBefore) {
+          context.addIssue({ code: z.ZodIssueCode.custom, path: ["composition", "relatedBefore"], message: "The English test related services must precede the closing invitation" });
+        }
         const opening = service.composition.sections[0];
         if (opening?.recipe === "hero.editorial-art") {
           for (const field of ["eyebrow", "title", "intro"] as const) {

@@ -1,8 +1,9 @@
 ---
 import type { RecipeContent } from "../../../design-system/section-recipes";
 import WorkshopImage from "../WorkshopImage.astro";
-type Props = { id: string; content: RecipeContent<"scope.topic-index"> };
+type Props = { anchorBase?: string; id: string; content: RecipeContent<"scope.topic-index"> };
 const { id, content } = Astro.props;
+const anchorBase = Astro.props.anchorBase;
 ---
 <section class="pw-topics pw-section" id={id} data-recipe="scope.topic-index" aria-labelledby={`${id}-title`} tabindex="-1">
   <div class="container">
@@ -11,7 +12,7 @@ const { id, content } = Astro.props;
       <p>{content.intro}</p>
     </header>
     <nav class="pw-topics__grid" aria-labelledby={`${id}-title`}>
-      {content.items.map((item, index) => <a class="pw-topic" href={`#${item.target}`} aria-labelledby={`${id}-${index}-label`} aria-describedby={`${id}-${index}-description`}>
+      {content.items.map((item, index) => <a class="pw-topic" href={`${anchorBase ?? ""}#${item.target}`} aria-labelledby={`${id}-${index}-label`} aria-describedby={`${id}-${index}-description`}>
         <div class="pw-topic__image"><WorkshopImage {...item.media} sizes={index === 0 ? "(max-width: 599px) 88px, (max-width: 959px) 40vw, 470px" : "(max-width: 599px) 88px, (max-width: 959px) 100px, 340px"} /></div>
         <div class="pw-topic__copy">
           <span class="pw-topic__number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>

@@ -26,7 +26,7 @@ const copy = locale === "en"
 
 <script>
   const dock = document.querySelector<HTMLElement>(".mobile-contact-dock");
-  const contactSection = document.querySelector<HTMLElement>(".contact-section");
+  const contactSection = document.querySelector<HTMLElement>('.contact-section, [data-recipe="contact.enquiry"], [data-recipe="contact.enquiry-email"]');
   let contactIsVisible = false;
 
   const updateDock = () => {

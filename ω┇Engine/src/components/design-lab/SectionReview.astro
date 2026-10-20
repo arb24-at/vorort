@@ -2,14 +2,16 @@
 import { getSectionRecipe, type RecipeId } from "../../design-system/section-recipes";
 import "../../styles/design-lab/section-review.css";
 
-type Props = { recipeId: RecipeId };
-const { recipeId } = Astro.props;
+type Props = { recipeId: RecipeId; specimen?: { id: string; context: string; description: string } };
+const { recipeId, specimen } = Astro.props;
 const recipe = getSectionRecipe(recipeId);
 ---
-<div class="lab-section-review" data-lab-recipe={recipeId} data-lab-status={recipe.status}>
+<div class:list={["lab-section-review", {"lab-section-review--specimen": Boolean(specimen)}]} id={specimen ? `specimen-${specimen.id}` : undefined} data-lab-recipe={recipeId} data-lab-status={recipe.status}>
   <div class="lab-section-review__chrome">
     <code class="lab-recipe-label">{recipeId}</code>
+    {specimen && <span class="lab-specimen-state">{recipe.status}</span>}
   </div>
+  {specimen && <div class="lab-specimen-notes"><p><strong>{recipe.name}</strong> · {specimen.context}</p><p>{specimen.description}</p></div>}
   <div class="lab-capture-tools" data-capture-exclude>
     <button type="button" class="lab-capture-button" aria-label={`Copy screenshot of ${recipeId}`} hidden>Copy screenshot</button>
     <span class="lab-capture-status" role="status" aria-live="polite"></span>

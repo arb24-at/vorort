@@ -25,6 +25,10 @@ const editorialNote = z.object({
   body: text,
   tone: z.enum(["quiet", "solid"]).optional(),
 }).strict();
+const enquiryContentSchema = z.object({
+  title: text.optional(), intro: text.optional(), formIntro: text.optional(),
+  affectedPlaceholder: text.optional(), request: text.optional(), requestPlaceholder: text.optional(),
+}).strict();
 const editorialProseBlock = z.discriminatedUnion("type", [
   z.object({ type: z.literal("prose"), paragraphs: z.array(text).min(1).max(4) }).strict(),
   z.object({ type: z.literal("subheading"), title: text, body: text.optional(), emphasis: z.enum(["plain", "band"]).optional() }).strict(),
@@ -95,7 +99,7 @@ export const sectionRecipes = {
   "scope.topic-index": recipe({
     name: "Illustrated topic index", kind: "scope",
     purpose: "Help visitors choose a topic and jump directly to its full explanation.",
-    recommendedPlacement: "Immediately after the service introduction",
+    recommendedPlacement: "Before the detailed chapters, following initial orientation or an early enquiry",
     recommendedUse: "Orient readers on a substantial service page with a prominent lead topic and supporting illustrated chapter links.",
     renderer: "TopicIndex.astro",
     status: "approved",
@@ -180,12 +184,12 @@ export const sectionRecipes = {
     name: "Rich editorial prose", kind: "explanation",
     purpose: "Carry a large amount of explanatory content through varied but controlled editorial blocks without reducing it to cards or collapsible fragments.",
     recommendedPlacement: "Between more structured service sections, especially after a comparison, diagram or topic index",
-    recommendedUse: "Use when a subject needs several paragraphs plus selective subheads, two-column passages, callouts, supporting images or a compact table while remaining one coherent article-like section. It is an independent section recipe; it often follows an options guide well, but neither recipe depends on the other.",
+    recommendedUse: "Use for one coherent explanation, from a compact practical orientation before contact to a substantial technical chapter. Combine only the prose, subheads, columns, callouts, images or table the subject needs. It is independent of the options guide, although the two often work well in sequence.",
     renderer: "EditorialProse.astro",
     status: "approved",
     authoringGuidance: {
       contentShape: "Eyebrow, title and introduction followed by a sequence of semantic editorial blocks: prose, internal headings, two-column text, callouts, images or a compact table. Banded headings act as major internal chapter breaks; soft headings act as quieter subsection transitions.",
-      typicalRange: "A substantial reading section normally uses four to eight blocks. Mix only the block types the subject actually needs; variation should support comprehension rather than become decoration.",
+      typicalRange: "A compact orientation can use three purposeful blocks; a substantial reading section normally uses four to eight. Mix only the block types the subject needs; variation should support comprehension rather than become decoration.",
       fixed: "The section remains one coherent article-like chapter with a clear heading hierarchy and visible reading order. Blocks are always visible and are not accordions, tabs or independent cards. Heading treatments must communicate hierarchy rather than alternate randomly for visual variety.",
       flexible: "Authors may vary block order and quantity, use one- or two-column prose, use a banded chapter heading and/or a softer subsection heading where the hierarchy justifies it, choose quiet/filled/outline callouts, place occasional images wide/left/right, and include a compact table when the information genuinely compares well. The recipe can stand alone or follow another section such as an options guide; do not merge the two contracts merely because they are often useful together.",
       needsDesignReview: "Use Design review for more than two text columns, complex data tables, interactive controls, galleries, nested navigation, several unrelated subjects, or decorative block variation that no longer serves one coherent article.",
@@ -355,10 +359,26 @@ export const sectionRecipes = {
       responsive: "Desktop uses a concise invitation beside the form; mobile stacks a brief invitation and compact, clear Call/WhatsApp/Email actions above the form. Essential fields stay visible, and only the selected reply-channel field is shown. A native Add details disclosure hides optional inputs by default, not essential fields.",
       accessibility: "Use real labels, explicit required states, visible focus, inline validation errors and an announced submission status. Change the selected email/phone field's actual required/disabled and visible state together; inactive contact fields must not be submitted. The native optional disclosure remains keyboard accessible. Privacy notice and safety warning remain readable without interaction.",
     },
-    schema: z.object({
-      title: text.optional(), intro: text.optional(), formIntro: text.optional(),
-      affectedPlaceholder: text.optional(), request: text.optional(), requestPlaceholder: text.optional(),
-    }).strict(),
+    schema: enquiryContentSchema,
+  }),
+  "contact.enquiry-email": recipe({
+    name: "Enquiry with an email draft", kind: "contact",
+    status: "experimental",
+    purpose: "Offer a substantial enquiry form that prepares an email for the visitor to review and send in their own mail application.",
+    recommendedPlacement: "After meaningful service orientation; one enquiry per customer page",
+    recommendedUse: "Provide a functional fallback while direct delivery and its privacy arrangements are unresolved. Share the enquiry design without changing contact.enquiry's direct-submit contract.",
+    renderer: "ContactEnquiry.astro",
+    authoringGuidance: {
+      contentShape: "Service invitation, centrally sourced phone/WhatsApp/email, core name/reply channel/request fields, optional details and an email subject. Uses the same renderer as the direct enquiry.",
+      typicalRange: "A concise invitation and a clear explanation that the visitor must review and send the draft in their mail app. Keep technical detail outside the form.",
+      fixed: "Always-visible form; name, preferred reply channel, selected address/number and request required. Preparing a draft is not sending a message. No backend request or success claim; direct contact alternatives, privacy link and sensitive-data warning remain visible.",
+      flexible: "Service wording, email subject and optional context can vary; the form may follow the initial orientation or sit near the close. Keep the action label explicit about preparing an email.",
+      needsDesignReview: "Review before approval or general production adoption. Direct submission belongs to contact.enquiry; uploads, booking, payments or a different required-data contract need separate review.",
+      media: "No artwork; give the fields and contact choices room to read.",
+      responsive: "Balanced invitation and generous form columns on desktop; source-ordered invitation/actions followed by a full-width form on mobile.",
+      accessibility: "Real labels, conditional required/disabled fields, inline errors, visible focus and announced draft status. Preserve a native mailto fallback and never imply that opening a mail application delivered the enquiry.",
+    },
+    schema: enquiryContentSchema.extend({ emailSubject: text }),
   }),
   "footer.site": recipe({
     name: "Shared site footer", kind: "footer",

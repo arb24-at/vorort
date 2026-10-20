@@ -2,8 +2,9 @@
 import type { RecipeContent } from "../../../design-system/section-recipes";
 import { siteConfig } from "../../../data/site";
 import "../../../styles/design-lab/quick-contact.css";
-type Props = { id: string; content: RecipeContent<"cta.quick-contact"> };
+type Props = { anchorBase?: string; id: string; content: RecipeContent<"cta.quick-contact"> };
 const { id, content } = Astro.props;
+const anchorBase = Astro.props.anchorBase;
 ---
 <section class="c2-quick-contact" id={id} aria-labelledby={`${id}-title`} data-recipe="cta.quick-contact">
   <div class="container c2-quick-contact__grid">
@@ -17,7 +18,7 @@ const { id, content } = Astro.props;
         <span>{content.callLabel} <b aria-hidden="true">↗</b></span>
         <strong>{siteConfig.contact.phoneDisplay}</strong>
       </a>
-      <a class="c2-quick-contact__write" href={`#${content.enquiryTarget}`}>{content.enquiryLabel} <span aria-hidden="true">→</span></a>
+      <a class="c2-quick-contact__write" href={`${anchorBase ?? ""}#${content.enquiryTarget}`}>{content.enquiryLabel} <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>

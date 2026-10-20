@@ -1,6 +1,5 @@
 import { getCollection } from "astro:content";
 import type { WorkshopFixture } from "../design-system/workshop-schema";
-import { resolveWorkshopSource } from "../design-system/workshop-schema";
 export { getWorkshopUsage, workshopPath, workshopPreviewPath } from "./workshop-usage";
 
 export async function getWorkshopPages(): Promise<WorkshopFixture[]> {
@@ -12,8 +11,7 @@ export async function getWorkshopPages(): Promise<WorkshopFixture[]> {
     ids.add(data.page.id);
   }
   if (!entries.length) throw new Error("Page Workshop requires at least one validated page fixture");
-  const services = (await getCollection("services")).map(entry => entry.data);
-  return entries.map(entry => resolveWorkshopSource(entry.data, services)).sort((a, b) =>
+  return entries.map(entry => entry.data).sort((a, b) =>
     a.page.audience === b.page.audience ? a.page.title.localeCompare(b.page.title) : a.page.audience === "private" ? -1 : 1
   );
 }

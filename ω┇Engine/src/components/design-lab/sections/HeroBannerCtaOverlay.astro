@@ -2,12 +2,14 @@
 import type { RecipeContent } from "../../../design-system/section-recipes";
 import { withBase } from "../../../utils/withBase";
 import ArtField from "../ArtField.astro";
-type Props = { id: string; content: RecipeContent<"comparison.hero-banner-cta-overlay"> };
-const { id, content } = Astro.props;
+type Props = { anchorBase?: string; id: string; headingTag?: "h1" | "h2"; content: RecipeContent<"comparison.hero-banner-cta-overlay"> };
+const { id, content, headingTag = "h1" } = Astro.props;
+const Heading = headingTag;
 const { eyebrow, title, intro, media, actions } = content;
 const heroImageSrc = media.src ? withBase(media.src) : undefined;
 const heroArtLabel = media.alt;
 const heroKind = media.subject;
+const anchorBase = Astro.props.anchorBase;
 ---
 
 <section class="c2-hero c2-hero--cta-overlay-only" id={id} data-recipe="comparison.hero-banner-cta-overlay">
@@ -15,7 +17,7 @@ const heroKind = media.subject;
     <div class:list={["c2-hero__banner", { "c2-hero__banner--with-image": Boolean(heroImageSrc) }]}>
       <div class="c2-hero__copy">
         <span class="c2-eyebrow">{eyebrow}</span>
-        <h1>{title}</h1>
+        <Heading>{title}</Heading>
         <div class="c2-hero__intro-above">
           <p>{intro}</p>
         </div>
@@ -52,10 +54,10 @@ const heroKind = media.subject;
 
         <div class="c2-hero__actions-only">
           <div class="c2-hero__actions">
-            <a class="c2-button c2-button--signal" href={`#${actions[0].target}`}>
+            <a class="c2-button c2-button--signal" href={`${anchorBase ?? ""}#${actions[0].target}`}>
               <span>{actions[0].label}</span><b aria-hidden="true">↗</b>
             </a>
-            <a class="c2-button c2-button--ghost" href={`#${actions[1].target}`}>
+            <a class="c2-button c2-button--ghost" href={`${anchorBase ?? ""}#${actions[1].target}`}>
               <span>{actions[1].label}</span><b aria-hidden="true">↓</b>
             </a>
           </div>

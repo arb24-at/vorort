@@ -7,10 +7,14 @@ type Props = {
   id: string;
   audience: Audience;
   locale: "en";
-  content: RecipeContent<"contact.enquiry">;
+  content: RecipeContent<"contact.enquiry"> | RecipeContent<"contact.enquiry-email">;
+  recipeId?: "contact.enquiry" | "contact.enquiry-email";
+  source?: string;
 };
 
-const { id, audience, content } = Astro.props;
+const { id, audience, content, recipeId = "contact.enquiry", source = `workshop:${id}` } = Astro.props;
+const emailDraft = recipeId === "contact.enquiry-email";
+const emailSubject = "emailSubject" in content ? content.emailSubject : "Service enquiry";
 const copy = {
   title: content.title ?? "Let’s talk about your IT needs",
   intro: content.intro ?? "Tell us what you need help with. A short description is enough.",
@@ -23,12 +27,12 @@ const formEndpoint = import.meta.env.PUBLIC_CONTACT_FORM_ENDPOINT?.trim() ?? "";
 const customerContext = audience === "business" ? "Business" : "Private";
 const privacyHref = withBase("/datenschutz/");
 ---
-<section class="c2-contact" id={id} data-recipe="contact.enquiry">
+<section class:list={["c2-contact", { "c2-contact--email": emailDraft }]} id={id} data-recipe={recipeId} aria-labelledby={`${id}-title`}>
   <div class="container">
     <div class="c2-contact__shell">
       <div class="c2-contact__intro">
         <span class="c2-eyebrow">Start a conversation</span>
-        <h2>{copy.title}</h2>
+        <h2 id={`${id}-title`}>{copy.title}</h2>
         <p class="c2-contact__lede">{copy.intro}</p>
 
         <div class="c2-contact__journey">
@@ -68,20 +72,24 @@ const privacyHref = withBase("/datenschutz/");
       <div class="c2-contact__form-panel">
         <div class="c2-contact__form-head">
           <span class="c2-kicker">Enquiry form</span>
-          <h3>{formEndpoint ? "Send an enquiry" : "Enquiry form preview"}</h3>
+          <h3>{emailDraft ? "Prepare an email enquiry" : formEndpoint ? "Send an enquiry" : "Enquiry form preview"}</h3>
           <p>{copy.formIntro}</p>
         </div>
 
         <form
           class="c2-contact__form"
-          action={formEndpoint || undefined}
+          action={emailDraft ? `mailto:${siteConfig.contact.email}` : formEndpoint || undefined}
           method="post"
+          enctype={emailDraft ? "text/plain" : undefined}
           data-contact-form
           data-endpoint={formEndpoint}
+          data-delivery={emailDraft ? "email" : "direct"}
+          data-email={emailDraft ? siteConfig.contact.email : undefined}
+          data-subject={emailDraft ? emailSubject : undefined}
           novalidate
         >
           <input type="hidden" name="context" value={customerContext} />
-          <input type="hidden" name="source" value={`workshop:${id}`} />
+          {!emailDraft && <input type="hidden" name="source" value={source} />}
 
           <div class="c2-contact__form-grid">
             <label>
@@ -110,7 +118,7 @@ const privacyHref = withBase("/datenschutz/");
             </label>
             <label class="c2-contact__field-wide">
               <span>{copy.request} <b class="c2-contact__required" aria-hidden="true">*</b></span>
-              <textarea name="request" rows="4" minlength="10" placeholder={copy.requestPlaceholder} required></textarea>
+              <textarea name="request" rows={emailDraft ? "5" : "4"} minlength="10" placeholder={copy.requestPlaceholder} required></textarea>
               <small class="c2-contact__error" data-error-for="request" aria-live="polite"></small>
             </label>
           </div>
@@ -158,11 +166,11 @@ const privacyHref = withBase("/datenschutz/");
 
           <p class="c2-contact__privacy">Details submitted here are used to respond to your enquiry. <a href={privacyHref}>Privacy policy (German)</a>.</p>
 
-          <button class="c2-contact__submit" type="submit" disabled={!formEndpoint} aria-describedby={!formEndpoint ? `${id}-delivery-status` : undefined}>
-            <span data-submit-label>Send enquiry</span>
+          <button class="c2-contact__submit" type="submit" disabled={!emailDraft && !formEndpoint} aria-describedby={`${id}-delivery-status`}>
+            <span data-submit-label>{emailDraft ? "Prepare email draft" : "Send enquiry"}</span>
             <span aria-hidden="true">→</span>
           </button>
-          <p class="c2-contact__status" id={`${id}-delivery-status`} data-form-status role="status" aria-live="polite">{!formEndpoint && "Preview only: direct delivery is not connected. Please use the phone, WhatsApp or email links to get in touch."}</p>
+          <p class="c2-contact__status" id={`${id}-delivery-status`} data-form-status role="status" aria-live="polite">{emailDraft ? "Review and send the draft in your email app. If no app opens, use the email link or another contact option above." : !formEndpoint && "Preview only: direct delivery is not connected. Please use the phone, WhatsApp or email links to get in touch."}</p>
         </form>
       </div>
     </div>
@@ -170,6 +178,7 @@ const privacyHref = withBase("/datenschutz/");
 </section>
 
 <script>
+  import { enquiryEmailHref } from "../../../utils/enquiry-email";
   document.querySelectorAll<HTMLFormElement>("[data-contact-form]").forEach((form) => {
     const endpoint = form.dataset.endpoint?.trim() ?? "";
     const status = form.querySelector<HTMLElement>("[data-form-status]");
@@ -264,6 +273,13 @@ const privacyHref = withBase("/datenschutz/");
       if (firstInvalid) {
         setStatus("Please check the highlighted fields.", "error");
         firstInvalid.focus();
+        return;
+      }
+
+      if (form.dataset.delivery === "email") {
+        const entries = Array.from(new FormData(form).entries()).filter((entry): entry is [string, string] => typeof entry[1] === "string");
+        window.location.href = enquiryEmailHref(form.dataset.email!, form.dataset.subject!, entries);
+        setStatus("Your email app should open with a draft. Review it and choose Send there to complete the enquiry. Nothing has been sent by this page.");
         return;
       }
 

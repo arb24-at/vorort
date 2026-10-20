@@ -1,10 +1,12 @@
 ---
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 import { getSectionRecipe, recipeAllowedIn, sectionRecipes, type Audience, type RecipeSection } from "../design-system/section-recipes";
-type Props = { section: RecipeSection; audience: Audience; locale: "de" | "en"; context: "workshop" | "production" };
-const { section, audience, locale, context } = Astro.props;
+import { recipeAllowedForProduction, type ProductionRecipeContext } from "../design-system/production-policy";
+type Props = { section: RecipeSection; audience: Audience; locale: "de" | "en"; context: "workshop" | "production"; productionContext?: ProductionRecipeContext; specimen?: boolean; anchorBase?: string };
+const { section, audience, locale, context, productionContext, specimen = false, anchorBase } = Astro.props;
 const recipe = getSectionRecipe(section.recipe);
-if (!recipeAllowedIn(section.recipe, context) || !recipe.audiences.includes(audience) || !recipe.pageTypes.includes("service")) {
+const permitted = context === "production" ? recipeAllowedForProduction(section.recipe, productionContext) : recipeAllowedIn(section.recipe, context);
+if (!permitted || (productionContext && (productionContext.audience !== audience || productionContext.locale !== locale)) || !recipe.audiences.includes(audience) || !recipe.pageTypes.includes("service")) {
   throw new Error(`Recipe ${section.recipe} cannot render in ${context} for ${audience}`);
 }
 const renderers = import.meta.glob<AstroComponentFactory>("./design-lab/sections/*.astro", { eager: true, import: "default" });
@@ -14,4 +16,4 @@ for (const [id, entry] of Object.entries(sectionRecipes)) {
 const Renderer = renderers[`./design-lab/sections/${recipe.renderer}`];
 if (!Renderer) throw new Error(`Recipe ${section.recipe} has no Astro renderer: ${recipe.renderer}`);
 ---
-<Renderer id={section.id} content={section.content} audience={audience} locale={locale} />
+<Renderer anchorBase={anchorBase} id={section.id} content={section.content} audience={audience} locale={locale} recipeId={section.recipe} headingTag={specimen || section.kind === "comparison" ? "h2" : "h1"} source={context === "production" ? `service:${productionContext?.id}` : `workshop:${section.id}`} />

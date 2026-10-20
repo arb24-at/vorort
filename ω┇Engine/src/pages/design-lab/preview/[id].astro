@@ -1,4 +1,5 @@
 ---
+import { isSpecimenWorkshop } from "../../../design-system/workshop-schema";
 import MainLayout from "../../../layouts/MainLayout.astro";
 import WorkshopCanvas from "../../../components/design-lab/WorkshopCanvas.astro";
 import { getWorkshopPages, workshopPreviewPath } from "../../../data/workshop";
@@ -8,5 +9,6 @@ export async function getStaticPaths() {
 const { fixture } = Astro.props;
 ---
 <MainLayout title={`${fixture.page.title} · Experimental canvas`} canonicalPath={workshopPreviewPath(fixture.page.id)} lang={fixture.page.locale} robots="noindex, nofollow" showSiteChrome={false}>
+  {isSpecimenWorkshop(fixture) && <header class="lab-specimen-intro"><p class="lab-label">Independent reusable specimens</p><h1>{fixture.page.title}</h1><p>Explore private-service patterns and proposals. These examples are a design environment; complete customer journeys belong on production service pages.</p></header>}
   <WorkshopCanvas fixture={fixture} />
 </MainLayout>

@@ -3,26 +3,33 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import LabNavigation from "./LabNavigation.astro";
 import WorkshopCanvas from "./WorkshopCanvas.astro";
 import { workshopPath, workshopPreviewPath } from "../../data/workshop";
-import type { WorkshopFixture } from "../../design-system/workshop-schema";
+import { isSpecimenWorkshop, type WorkshopFixture } from "../../design-system/workshop-schema";
 import { getSectionRecipe } from "../../design-system/section-recipes";
 import { withBase } from "../../utils/withBase";
 import "../../styles/design-lab.css";
 type Props = { fixture: WorkshopFixture; pages: WorkshopFixture[]; canonicalPath: string };
 const { fixture, pages, canonicalPath } = Astro.props;
+const gallery = isSpecimenWorkshop(fixture);
 const contents = fixture.sections.map(section => ({
-  id: section.id,
+  id: gallery ? `specimen-${section.id}` : section.id,
   recipe: section.recipe,
-  title: "title" in section.content && typeof section.content.title === "string"
+  title: gallery ? `${getSectionRecipe(section.recipe).name} · ${fixture.specimenNotes[section.id].context}` : "title" in section.content && typeof section.content.title === "string"
     ? section.content.title
     : getSectionRecipe(section.recipe).name,
 }));
-if (fixture.relatedServices) contents.splice(contents.findIndex(section => section.id === fixture.relatedServices!.before), 0, {
-  id: "related-services", recipe: "Page navigation (existing shell)", title: fixture.relatedServices.title,
-});
+if (gallery) contents.push(...fixture.proposals.map(p => ({ id: `proposal-${p.id.replaceAll(".", "-")}`, recipe: `${p.id} · Proposed`, title: p.title })));
+const states = [...new Map(fixture.sections.map(s => [s.recipe, getSectionRecipe(s.recipe).status])).values()];
 ---
 <MainLayout title={`${fixture.page.title} · Page Workshop`} description="Internal page-level design experiments. No sections are approved for production automatically." canonicalPath={canonicalPath} lang={fixture.page.locale} robots="noindex, nofollow" showSiteChrome={false}>
   <div class="design-lab">
     <LabNavigation area="workshop" />
+    {gallery && <header class="lab-specimen-intro">
+      <p class="lab-label">Shared design environment · private services</p>
+      <h1>{fixture.page.title}</h1>
+      <p>Reusable sections for computer help, software, setup, data and home connections. These independent specimens show design choices and content flexibility. Complete customer journeys belong on the service pages.</p>
+      <p class="lab-specimen-counts">{states.filter(s => s === "approved").length} approved recipes · {states.filter(s => s === "experimental").length} experimental recipes · {fixture.proposals.length} proposed idea</p>
+      <p class="lab-specimen-intro__note">Registered states come from the recipe registry. Proposals below are ideas without an implementation. Nothing here grants production approval.</p>
+    </header>}
     <div class="lab-toolbar">
       <details class="lab-page-picker">
         <summary><span class="lab-label">Workshop page</span><strong>{fixture.page.title}</strong></summary>
@@ -31,7 +38,7 @@ if (fixture.relatedServices) contents.splice(contents.findIndex(section => secti
         </nav>
       </details>
       <details class="lab-section-picker">
-        <summary>Sections <span class="lab-label">({contents.length})</span></summary>
+        <summary>{gallery ? "Specimens & ideas" : "Sections"} <span class="lab-label">({contents.length})</span></summary>
         <nav aria-label="Sections on this page">
           <ol>
             {contents.map(section => <li><a href={`#${section.id}`}><code>{section.recipe}</code> — “{section.title}”</a></li>)}

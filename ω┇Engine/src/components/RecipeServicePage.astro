@@ -11,7 +11,9 @@ type Props = { service: LocalizedService };
 const { service } = Astro.props;
 const composition = service.composition;
 if (!composition) throw new Error(`Service ${service.id} requires a composition`);
-const contactCopy = { title: service.cta.title, intro: service.cta.text, requestPlaceholder: service.cta.prompt, ...composition.contact };
+const testing = "experiment" in composition;
+const productionContext = { id: service.id, translationId: service.translationId, slug: service.slug, locale: service.locale, audience: service.audience, experiment: testing ? composition.experiment : undefined };
+const contactCopy = { title: service.cta.title, intro: service.cta.text, requestPlaceholder: service.cta.prompt, ...(!testing ? composition.contact : {}) };
 const landing = service.locale === "de"
   ? `leistungen/${service.audience === "private" ? "privatpersonen" : "unternehmen"}/`
   : `en/services/${service.audience}/`;
@@ -23,10 +25,12 @@ const back = service.audience === "business"
   <div class:list={["concept-ii", `concept-ii--${service.audience}`, "recipe-service"]} data-service-page={service.id}>
     <div class="container recipe-service__back"><a href={withBase(landing)}>← {back}</a></div>
     {composition.sections.map(section => <>
-      <RecipeSection section={section} audience={service.audience} locale={service.locale} context="production" />
-      {composition.contactAfter === section.id && <ContactSection locale={service.locale} context={service.audience} copyOverrides={contactCopy} />}
+      {testing && composition.relatedBefore === section.id && <RelatedServices content={composition.related} audience={service.audience} locale={service.locale} />}
+      <RecipeSection section={section} audience={service.audience} locale={service.locale} context="production" productionContext={productionContext} />
     </>)}
-    <RelatedServices content={composition.related} audience={service.audience} locale={service.locale} />
-    {!composition.contactAfter && <ContactSection locale={service.locale} context={service.audience} copyOverrides={contactCopy} />}
+    {!testing && <>
+      <RelatedServices content={composition.related} audience={service.audience} locale={service.locale} />
+      <ContactSection locale={service.locale} context={service.audience} copyOverrides={contactCopy} />
+    </>}
   </div>
 </MainLayout>

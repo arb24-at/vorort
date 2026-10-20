@@ -346,3 +346,17 @@
   .c2-site-footer__contact ul { gap: .15rem; }
   .c2-site-footer__bottom { gap: .7rem; }
 }
+
+/* Email-draft variant: generous intake without altering approved direct forms. */
+.c2-contact--email .c2-contact__form-panel { padding: clamp(1.5rem, 3.4vw, 3rem); }
+.c2-contact--email .c2-contact__form-head p { font-size: 1rem; line-height: 1.65; }
+.c2-contact--email .c2-contact__form-grid { gap: 1.25rem; }
+.c2-contact--email .c2-contact__form label > span { font-size: .9375rem; line-height: 1.45; }
+.c2-contact--email :is(input, select, textarea) { font-size: 1rem; padding: .95rem 1rem; }
+.c2-contact--email textarea { min-height: 10rem; }
+.c2-contact--email .c2-contact__privacy,
+.c2-contact--email .c2-contact__status { font-size: .875rem; line-height: 1.6; }
+.c2-contact--email .c2-contact__optional summary { min-height: 52px; font-size: .9375rem; }
+@media (min-width: 981px) {
+  .c2-contact--email .c2-contact__shell { grid-template-columns: minmax(0, .78fr) minmax(0, 1fr); }
+}

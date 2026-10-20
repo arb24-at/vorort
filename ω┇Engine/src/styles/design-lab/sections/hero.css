@@ -76,7 +76,7 @@
 
 .concept-ii--private .c2-hero__copy .c2-eyebrow { color: var(--c2-mint); }
 
-.c2-hero h1 {
+.c2-hero :is(h1, h2) {
   max-width: 1120px;
   margin: .85rem auto 0;
   font-size: clamp(3.45rem, 4.65vw, 4.7rem);
@@ -255,7 +255,7 @@
 
 @media (max-width: 900px) {
   .c2-hero__banner { padding: 2.8rem var(--hero-edge-pad) var(--hero-edge-pad); }
-  .c2-hero h1 { font-size: clamp(3.15rem, 6.8vw, 4rem); }
+  .c2-hero :is(h1, h2) { font-size: clamp(3.15rem, 6.8vw, 4rem); }
   .c2-hero__glass { width: min(680px, calc(100% - 3rem)); }
 }
 
@@ -276,7 +276,7 @@
   .c2-hero__banner { padding: 2.2rem var(--hero-edge-pad) var(--hero-edge-pad); border-radius: 22px; }
   .c2-hero__copy { text-align: center; }
   .c2-hero .c2-eyebrow { max-width: 34ch; font-size: .68rem; line-height: 1.45; }
-  .c2-hero h1 {
+  .c2-hero :is(h1, h2) {
     max-width: 100%;
     margin: 1rem auto 0;
     font-size: clamp(2.75rem, 11.4vw, 3.65rem);
@@ -309,7 +309,7 @@
 
 @media (max-width: 420px) {
   .c2-hero__banner { padding-inline: .95rem; }
-  .c2-hero h1 { font-size: clamp(2.35rem, 10.7vw, 3rem); }
+  .c2-hero :is(h1, h2) { font-size: clamp(2.35rem, 10.7vw, 3rem); }
 }
 
 @media (prefers-reduced-motion: reduce) {

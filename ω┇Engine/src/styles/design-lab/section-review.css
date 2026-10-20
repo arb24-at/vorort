@@ -43,3 +43,15 @@
     grid-template-areas: "media heading" "media body";
   }
 }
+
+/* Independent specimens have readable review context outside the renderer. */
+.lab-section-review--specimen { border-top: 1px solid #bdcbd1; padding-top: 1.5rem; }
+.lab-section-review--specimen > .lab-section-review__chrome { position: static; display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin: 0 auto; width: min(1140px, calc(100% - 2rem)); line-height: 1.4; pointer-events: auto; }
+.lab-section-review--specimen .lab-recipe-label { font-size: .8rem; line-height: 1.6; }
+.lab-specimen-state { color: #715017; background: #fff0ce; border: 1px solid #dbc99e; border-radius: 1rem; padding: .1rem .65rem; font-size: .75rem; font-weight: 750; text-transform: capitalize; }
+[data-lab-status="approved"] > .lab-section-review__chrome > .lab-specimen-state { color: #225f49; background: #e6f4eb; border-color: #b4d5c4; }
+.lab-specimen-notes { width: min(1140px, calc(100% - 2rem)); margin: .6rem auto 1.5rem; color: #4b5f69; font-size: .9375rem; line-height: 1.6; }
+.lab-specimen-notes p { max-width: 85ch; margin: .3rem 0; }
+.lab-specimen-notes strong { color: #20313b; }
+.lab-section-review--specimen .lab-capture-tools { top: 1.5rem; }
+.lab-section-review--specimen:has(.lab-capture-button:not([hidden])) > .lab-section-review__chrome { max-width: none; padding-right: 8rem; }

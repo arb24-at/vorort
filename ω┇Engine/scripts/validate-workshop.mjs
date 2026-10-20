@@ -11,10 +11,10 @@ const temporary = await fs.mkdtemp(path.join(root, "node_modules/.workshop-check
 try {
   const modulePath = path.join(temporary, "contracts.mjs");
   await build({
-    stdin: { contents: 'export { serviceSchema } from "./src/data/service-schema.ts"; export * from "./src/design-system/workshop-schema.ts"; export * from "./src/design-system/section-recipes.ts"; export * from "./src/data/workshop-usage.ts"; export { captureScale } from "./src/scripts/design-lab/section-capture.ts";', resolveDir: root, loader: "ts" },
+    stdin: { contents: 'export { serviceSchema } from "./src/data/service-schema.ts"; export * from "./src/design-system/workshop-schema.ts"; export * from "./src/design-system/section-recipes.ts"; export * from "./src/data/workshop-usage.ts"; export * from "./src/design-system/production-policy.ts"; export { enquiryEmailHref } from "./src/utils/enquiry-email.ts"; export { captureScale } from "./src/scripts/design-lab/section-capture.ts";', resolveDir: root, loader: "ts" },
     outfile: modulePath, bundle: true, platform: "node", format: "esm", packages: "external",
   });
-  const { serviceSchema, getRecipeUsage, workshopSchema, resolveWorkshopSource, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
+  const { serviceSchema, getRecipeUsage, workshopSchema, recipeAllowedForProduction, isEnglishHomeNetworkTest, enquiryEmailHref, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
   const { captureScale } = await import(pathToFileURL(modulePath).href);
   for (const [width, height] of [[390, 400], [1440, 800], [390, 10000], [3000, 20000], [20000, 3000]]) {
     const scale = captureScale(width, height);
@@ -28,7 +28,7 @@ try {
   )));
   const folder = path.join(root, "src/content/workshop");
   const fixtures = await Promise.all((await fs.readdir(folder)).filter(file => /\.ya?ml$/.test(file)).map(async file => {
-    const fixture = resolveWorkshopSource(yaml.load(await fs.readFile(path.join(folder, file), "utf8")), serviceEntries);
+    const fixture = workshopSchema.parse(yaml.load(await fs.readFile(path.join(folder, file), "utf8")));
     assert.equal(fixture.page.id, file.replace(/\.ya?ml$/, ""), "Filename and semantic page ID must match");
     return fixture;
   }));
@@ -89,7 +89,7 @@ try {
     ["duplicate footer", f => { f.sections.splice(-1, 0, { ...structuredClone(f.sections.at(-1)), id: "additional-footer" }); }],
     ["arbitrary footer content", f => { f.sections.at(-1).content.note = "Custom footer"; }],
   ];
-  const closingFixtures = fixtures.filter(f => f.page.enquiryPlacement !== "early");
+  const closingFixtures = fixtures.filter(f => f.page.layout !== "specimens");
   for (const original of closingFixtures) {
     for (const [name, change] of invalid) {
       const fixture = structuredClone(original);
@@ -97,7 +97,7 @@ try {
       assert.equal(workshopSchema.safeParse(fixture).success, false, `Invalid fixture accepted (${original.page.id}): ${name}`);
     }
   }
-  const editorial = closingFixtures.find(f => f.sections.some(s => s.recipe === "scope.topic-index"));
+  const editorial = fixtures.find(f => f.sections.some(s => s.recipe === "scope.topic-index"));
   assert.ok(editorial, "The topic-index consumer must be exercised");
   const findContent = (fixture, id) => fixture.sections.find(s => s.recipe === id).content;
   const editorialInvalid = [
@@ -168,11 +168,10 @@ try {
   const production = serviceEntries.find(service => service.id === "wifi-home-network-de");
   assert.ok(production?.composition, "German home network service must adopt a validated composition");
   const productionInvalid = [
-    ["missing contact placement target", s => { s.composition.contactAfter = "missing"; }],
+    ["retired contact shortcut", s => { s.composition.contactAfter = "introduction"; }],
     ["missing composition", s => { delete s.composition; }],
     ["empty composition", s => { s.composition.sections = []; }],
     ["wrong template", s => { s.page.template = "standard"; }],
-    ["experimental hero", s => { s.composition.sections[0].recipe = "hero.banner-art"; }],
     ["duplicate production anchor", s => { s.composition.sections[1].id = s.composition.sections[0].id; }],
     ["reserved production anchor", s => { s.composition.sections[1].id = "kontakt"; }],
     ["missing production hero", s => { s.composition.sections.shift(); }],
@@ -212,51 +211,119 @@ try {
   const englishUsage = getRecipeUsage([], [production, englishProduction], "explanation.editorial-prose");
   assert.equal(englishUsage.length, 2, "Each independently authored locale counts as its own consuming page");
   assert.equal(new Set(englishUsage.map(page => page.path)).size, 2, "Locale usage links must resolve to distinct routes");
-  const pilot = fixtures.find(f => f.page.id === "wifi-home-network-blueprint-pilot");
-  assert.ok(pilot, "The complete blueprint pilot must be loaded");
-  assert.equal(pilot.sections.filter(s => s.recipe === "cta.quick-contact").length, 2);
-  assert.equal(getWorkshopUsage([pilot], "cta.quick-contact").length, 1, "Repeated quick contact counts once");
-  assert.equal(sectionRecipes["cta.quick-contact"].status, "experimental");
-  assert.equal(sectionRecipes["recognition.situations"].status, "experimental");
-  assert.equal(recipeAllowedIn("cta.quick-contact", "production"), false);
-  assert.equal(recipeAllowedIn("recognition.situations", "production"), false);
-  const pilotInvalid = [
-    ["missing enquiry", f => { f.sections = f.sections.filter(s => s.kind !== "contact"); }],
-    ["duplicate enquiry", f => { f.sections.splice(4, 0, structuredClone(f.sections.find(s => s.kind === "contact"))); }],
-    ["early enquiry after technical detail", f => { const i = f.sections.findIndex(s => s.kind === "contact"); f.sections.splice(-1, 0, f.sections.splice(i, 1)[0]); }],
-    ["implicit closing profile with early enquiry", f => { delete f.page.enquiryPlacement; }],
-    ["missing quick-contact target", f => { f.sections.find(s => s.recipe === "cta.quick-contact").content.enquiryTarget = "missing"; }],
-    ["quick contact pointing to a chapter", f => { f.sections.find(s => s.recipe === "cta.quick-contact").content.enquiryTarget = "wifi-coverage"; }],
-    ["duplicate quick-contact ID", f => { f.sections.find(s => s.id === "final-contact").id = "quick-contact"; }],
-    ["missing related insertion target", f => { f.relatedServices.before = "missing"; }],
-    ["related shell duplicates a recipe anchor", f => { f.sections.find(s => s.id === "final-contact").id = "related-services"; f.relatedServices.before = "related-services"; }],
-    ["CTA CSS in content", f => { f.sections.find(s => s.recipe === "cta.quick-contact").content.className = "big"; }],
+  const gallery = fixtures.find(f => f.page.id === "private-service-page");
+  assert.ok(gallery, "The general private-service gallery must exist");
+  assert.equal(gallery.page.title, "Private Service Page");
+  assert.equal(gallery.page.layout, "specimens");
+  assert.equal(fixtures.filter(f => f.page.audience === "private").length, 1, "Only one general private Workshop may remain");
+  const galleryHtml = await fs.readFile(path.join(root, "dist/design-lab/workshop/private-service-page/index.html"), "utf8");
+  for (const [id, recipe] of Object.entries(sectionRecipes)) {
+    if (recipe.status !== "deprecated" && recipe.audiences.includes("private")) {
+      assert.ok(gallery.sections.some(s => s.recipe === id), `Missing reusable private specimen: ${id}`);
+      assert.ok(galleryHtml.includes(`data-lab-recipe="${id}" data-lab-status="${recipe.status}"`), `Incorrect rendered lifecycle: ${id}`);
+    }
+  }
+  assert.equal(getWorkshopUsage([gallery], "explanation.editorial-media").length, 1, "Gallery variations count as one consumer");
+  const galleryInvalid = [
+    ["duplicate ID", f => { f.sections[1].id = f.sections[0].id; }],
+    ["unknown recipe", f => { f.sections[0].recipe = "hero.unknown"; }],
+    ["wrong kind", f => { f.sections[0].kind = "scope"; }],
+    ["missing specimen context", f => { delete f.specimenNotes[f.sections[0].id]; }],
+    ["orphan specimen context", f => { f.specimenNotes.missing = f.specimenNotes[f.sections[0].id]; }],
+    ["page CSS", f => { f.page.columns = 3; }],
+    ["specimen CSS", f => { f.specimenNotes[f.sections[0].id].className = "special"; }],
+    ["unsupported audience", f => { f.page.audience = "business"; }],
+    ["unreviewed locale", f => { f.page.locale = "de"; }],
+    ["fake source binding", f => { f.page.sourceService = "wifi-home-network-en"; }],
+    ["old source reference", f => { f.sections[0] = { fromServiceSection: "introduction" }; }],
+    ["registered proposal", f => { f.proposals[0].id = "cta.quick-contact"; }],
+    ["fake proposal approval", f => { f.proposals[0].status = "approved"; }],
+    ["duplicate proposal", f => { f.proposals.push(structuredClone(f.proposals[0])); }],
+    ["broken CTA anchor", f => { f.sections.find(s => s.recipe === "cta.quick-contact").content.enquiryTarget = "missing"; }],
   ];
-  for (const [name, change] of pilotInvalid) {
-    const fixture = structuredClone(pilot); change(fixture);
-    assert.equal(workshopSchema.safeParse(fixture).success, false, `Invalid pilot accepted: ${name}`);
+  for (const [name, change] of galleryInvalid) {
+    const fixture = structuredClone(gallery); change(fixture);
+    assert.equal(workshopSchema.safeParse(fixture).success, false, `Invalid gallery accepted: ${name}`);
   }
-  for (const recipe of ["cta.quick-contact", "recognition.situations"]) {
-    const service = structuredClone(englishProduction);
-    service.composition.sections.push(structuredClone(pilot.sections.find(s => s.recipe === recipe)));
-    assert.equal(serviceSchema.safeParse(service).success, false, `Experimental recipe leaked into production: ${recipe}`);
+  const englishContext = {
+    id: englishProduction.id, translationId: englishProduction.translationId,
+    slug: englishProduction.slug, audience: englishProduction.audience, locale: englishProduction.locale,
+    experiment: englishProduction.composition.experiment,
+  };
+  assert.equal(isEnglishHomeNetworkTest(englishContext), true);
+  const authorised = ["recognition.situations", "cta.quick-contact", "contact.enquiry-email"];
+  for (const recipe of authorised) {
+    const normallyApproved = sectionRecipes[recipe].status === "approved";
+    assert.equal(recipeAllowedIn(recipe, "production"), normallyApproved, "The default policy must follow registry approval");
+    assert.equal(recipeAllowedForProduction(recipe, englishContext), true);
+    for (const context of [undefined, { ...englishContext, experiment: undefined }, { ...englishContext, locale: "de" }, { ...englishContext, audience: "business" }, { ...englishContext, id: "computer-laptop-en" }, { ...englishContext, slug: "another-route" }, { ...englishContext, translationId: "another-service" }]) {
+      assert.equal(recipeAllowedForProduction(recipe, context), normallyApproved, `Unapproved exception escaped its exact English context: ${recipe}`);
+    }
+    const status = sectionRecipes[recipe].status;
+    try {
+      sectionRecipes[recipe].status = "deprecated";
+      assert.equal(recipeAllowedForProduction(recipe, englishContext), false);
+      assert.equal(serviceSchema.safeParse(englishProduction).success, false);
+    } finally { sectionRecipes[recipe].status = status; }
   }
-  const pilotSource = yaml.load(await fs.readFile(path.join(folder, "wifi-home-network-blueprint-pilot.yml"), "utf8"));
-  for (const [name, change] of [
-    ["unknown service", f => { f.page.sourceService = "missing-en"; }],
-    ["incompatible audience", f => { f.page.audience = "business"; }],
-    ["missing source section", f => { f.sections[0].fromServiceSection = "missing"; }],
-    ["duplicate source section", f => { f.sections.push(structuredClone(f.sections[0])); }],
-  ]) {
-    const fixture = structuredClone(pilotSource); change(fixture);
-    assert.throws(() => resolveWorkshopSource(fixture, serviceEntries), `Invalid source reference accepted: ${name}`);
+  const bannerStatus = sectionRecipes["hero.banner-art"].status;
+  try {
+    sectionRecipes["hero.banner-art"].status = "experimental";
+    assert.equal(recipeAllowedForProduction("hero.banner-art", englishContext), false, "The exception must not admit unlisted experiments");
+    const unapprovedHero = structuredClone(production);
+    unapprovedHero.composition.sections[0].recipe = "hero.banner-art";
+    assert.equal(serviceSchema.safeParse(unapprovedHero).success, false, "Default production must reject an experimental hero");
+  } finally { sectionRecipes["hero.banner-art"].status = bannerStatus; }
+  const boundaryStatus = sectionRecipes["outcome.scope-proof"].status;
+  try {
+    sectionRecipes["outcome.scope-proof"].status = "experimental";
+    const unlisted = structuredClone(englishProduction);
+    unlisted.composition.sections.splice(2, 0, structuredClone(gallery.sections.find(s => s.recipe === "outcome.scope-proof")));
+    assert.equal(serviceSchema.safeParse(unlisted).success, false, "English test must reject an unlisted experimental recipe");
+  } finally { sectionRecipes["outcome.scope-proof"].status = boundaryStatus; }
+  assert.equal(getRecipeUsage([], [englishProduction], "cta.quick-contact").length, 1, "Early/closing CTA counts one production consumer");
+  assert.equal(englishProduction.composition.sections.filter(s => s.kind === "contact").length, 1);
+  const englishTestInvalid = [
+    ["no experiment authorisation", s => { delete s.composition.experiment; }],
+    ["unknown experiment", s => { s.composition.experiment = "all-experiments"; }],
+    ["another service", s => { s.id = "computer-laptop-en"; s.translationId = "computer-laptop"; s.slug = "computer-laptop-help"; }],
+    ["another slug", s => { s.slug = "another-route"; }],
+    ["business audience", s => { s.audience = "business"; }],
+    ["form after hero", s => { s.composition.sections.splice(1, 0, s.composition.sections.splice(4, 1)[0]); }],
+    ["thin recognition", s => { s.composition.sections[1].content.items = s.composition.sections[1].content.items.slice(0, 3); }],
+    ["missing practical orientation", s => { s.composition.sections.splice(2, 1); }],
+    ["duplicate enquiry", s => { s.composition.sections.push({ ...structuredClone(s.composition.sections[4]), id: "second-enquiry" }); }],
+    ["missing enquiry", s => { s.composition.sections.splice(4, 1); }],
+    ["wrong enquiry anchor", s => { s.composition.sections[4].id = "enquiry"; }],
+    ["broken CTA target", s => { s.composition.sections[3].content.enquiryTarget = "wifi-coverage"; }],
+    ["missing closing CTA", s => { s.composition.sections.pop(); }],
+    ["missing related target", s => { s.composition.relatedBefore = "missing"; }],
+    ["duplicate instance ID", s => { s.composition.sections.at(-1).id = "quick-contact"; }],
+    ["missing email subject", s => { delete s.composition.sections[4].content.emailSubject; }],
+    ["silently changed direct-submit semantics", s => { s.composition.sections[4].recipe = "contact.enquiry"; delete s.composition.sections[4].content.emailSubject; }],
+  ];
+  for (const [name, change] of englishTestInvalid) {
+    const service = structuredClone(englishProduction); change(service);
+    assert.equal(serviceSchema.safeParse(service).success, false, `Invalid English test accepted: ${name}`);
   }
-  const changedService = structuredClone(englishProduction);
-  changedService.composition.sections.find(s => s.id === "wifi-coverage").content.intro = "Updated service copy flows into the pilot.";
-  const hydrated = resolveWorkshopSource(pilotSource, serviceEntries.map(s => s.id === changedService.id ? changedService : s));
-  assert.equal(hydrated.sections.find(s => s.id === "wifi-coverage").content.intro, "Updated service copy flows into the pilot.");
-  assert.equal(pilot.sections.find(s => s.id === "introduction").content.title, englishProduction.hero.title);
-  console.log(`Validated blueprint pilot: ${pilotInvalid.length} invalid compositions, 4 invalid source references, 2 experimental production rejections and live source hydration.`);
+  const draft = new URL(enquiryEmailHref("support@example.test", "Setup & connection", [["name", "Example & visitor"], ["email", "reader@example.test"], ["request", "First line\nSecond line?"], ["phone", ""], ["unknown", "ignored"], ["__proto__", "ignored"]]));
+  assert.equal(draft.protocol, "mailto:");
+  assert.equal(draft.pathname, "support@example.test");
+  assert.equal(draft.searchParams.get("subject"), "Setup & connection");
+  assert.equal(draft.searchParams.get("body"), "Name: Example & visitor\n\nEmail: reader@example.test\n\nRequest: First line\nSecond line?");
+  assert.equal([...draft.searchParams].length, 2, "User punctuation must remain encoded inside the two mailto fields");
+  const blueprintText = await fs.readFile(path.join(root, "../γ┇Blueprints/wifi-home-network-en-bp.md"), "utf8");
+  const blueprint = yaml.load(blueprintText.split("---")[1]);
+  assert.equal(blueprint["page-id"], englishProduction.translationId);
+  assert.equal(blueprint.locale, englishProduction.locale);
+  assert.equal(blueprint.route, "/en/services/private/wifi-home-network/");
+  assert.equal(blueprint["seo-reference"], "wifi-en");
+  assert.equal(blueprint["content-file-path"], "ω┇Engine/src/content/services/wifi-home-network/en.yml");
+  const plannedIds = [...blueprintText.matchAll(/^\*\*Instance ID:\*\* `([^`]+)`/gm)].map(m => m[1]);
+  const actualIds = englishProduction.composition.sections.flatMap(section => section.id === englishProduction.composition.relatedBefore ? ["related-services", section.id] : [section.id]);
+  assert.deepEqual(actualIds, plannedIds, "The actual English journey must match the refined blueprint");
+  console.log(`Validated private gallery: ${gallery.sections.length} specimens / ${new Set(gallery.sections.map(s => s.recipe)).size} recipes, ${galleryInvalid.length} invalid arrangements, unregistered proposal policy and independent examples.`);
+  console.log(`Validated English test: ${englishTestInvalid.length} invalid compositions, route-bound schema/runtime policy, email-draft encoding and blueprint relationships.`);
   console.log(`Validated ${serviceEntries.length} service records, ${productionInvalid.length + 4} invalid production cases and combined derived usage.`);
   console.log(`Validated ${fixtures.length} Workshop fixtures, ${invalid.length * closingFixtures.length + editorialInvalid.length} invalid-content cases, ${invalidGuidanceCases} invalid approved-guidance cases, experimental guidance migration/promotion, replacement relationships, lifecycle/compatibility policy and distinct-page usage.`);
 } finally {

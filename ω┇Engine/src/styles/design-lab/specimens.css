@@ -1,0 +1,11 @@
+.lab-specimen-intro { width: min(1140px, calc(100% - 2rem)); margin: 0 auto; padding-block: clamp(2rem, 5vw, 4rem); }
+.lab-specimen-intro h1 { margin: .8rem 0 1rem; font-size: clamp(2.3rem, 5vw, 4.5rem); line-height: 1.06; letter-spacing: -.05em; }
+.lab-specimen-intro > p { max-width: 78ch; line-height: 1.7; }
+.lab-specimen-counts { font-weight: 750; color: #225f49; }
+.lab-specimen-intro__note { color: #596775; font-size: .875rem; }
+.lab-proposal { padding: clamp(2.5rem, 6vw, 5rem) 0; background: #faf5e9; border-top: 1px dashed #b39b6b; color: #20313b; }
+.lab-proposal h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); line-height: 1.12; letter-spacing: -.04em; }
+.lab-proposal p, .lab-proposal dd { max-width: 78ch; line-height: 1.7; }
+.lab-proposal__state { font-size: .8rem; font-weight: 750; text-transform: uppercase; letter-spacing: .08em; color: #715017; }
+.lab-proposal dt { font-weight: 750; margin-top: 1rem; }
+.lab-proposal dd { margin: .3rem 0 0; }

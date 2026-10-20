@@ -34,7 +34,7 @@
 .pw-hero__surface { padding: clamp(1.25rem, 3.4vw, 3rem); background: radial-gradient(ellipse at 92% 8%, #264b4e 0, transparent 48%), var(--pw-night-deep); color: #f7faf9; border-radius: 28px; box-shadow: 0 18px 42px #0d212c1a; }
 .pw-hero__copy { display: grid; grid-template-columns: 1.35fr 1fr; align-items: end; gap: clamp(2rem, 4vw, 4rem); padding: .65rem .3rem 2.5rem; }
 .pw-hero .pw-eyebrow { max-width: 42ch; color: #9bd9c3; }
-.pw-hero h1 { max-width: 14ch; margin: 1.2rem 0 0; font-size: clamp(3rem, 5.2vw, 4.75rem); line-height: 1.02; letter-spacing: -.055em; text-wrap: balance; }
+.pw-hero :is(h1, h2) { max-width: 14ch; margin: 1.2rem 0 0; font-size: clamp(3rem, 5.2vw, 4.75rem); line-height: 1.02; letter-spacing: -.055em; text-wrap: balance; }
 .pw-hero__intro > p { color: #e0e9e9; max-width: 38ch; font-size: clamp(1.125rem, 1.55vw, 1.375rem); line-height: 1.65; margin: 0 0 1.75rem; }
 .pw-actions { display: flex; flex-wrap: wrap; gap: .65rem; }
 .pw-action { display: inline-flex; gap: 1.2rem; align-items: center; justify-content: space-between; min-height: 48px; padding: .8rem 1rem; border: 1px solid #aac3c34d; border-radius: 8px; font-size: .9375rem; line-height: 1.4; font-weight: 750; transition: background-color .18s, border-color .18s; }
@@ -168,7 +168,7 @@
 
 @media (max-width: 959px) {
   .pw-hero__copy { grid-template-columns: 1fr; gap: 1.75rem; padding-bottom: 2rem; }
-  .pw-hero h1 { max-width: 18ch; font-size: clamp(2.5rem, 6.9vw, 4rem); }
+  .pw-hero :is(h1, h2) { max-width: 18ch; font-size: clamp(2.5rem, 6.9vw, 4rem); }
   .pw-hero__intro { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.5rem; align-items: end; }
   .pw-hero__intro > p { margin-bottom: 0; }
   .pw-actions { flex-direction: column; }
@@ -236,7 +236,7 @@
   .pw-hero__surface { padding: 1.25rem 1rem 1rem; border-radius: 20px; }
   .pw-hero__copy { padding: .3rem .2rem 1.6rem; gap: 1.4rem; }
   .pw-hero .pw-eyebrow { font-size: .6875rem; letter-spacing: .09em; max-width: 34ch; }
-  .pw-hero h1 { font-size: clamp(2.15rem, 9.5vw, 3.2rem); max-width: 16ch; margin-top: 1rem; line-height: 1.06; letter-spacing: -.045em; }
+  .pw-hero :is(h1, h2) { font-size: clamp(2.15rem, 9.5vw, 3.2rem); max-width: 16ch; margin-top: 1rem; line-height: 1.06; letter-spacing: -.045em; }
   .pw-hero__intro { display: block; }
   .pw-hero__intro > p { font-size: 1.125rem; line-height: 1.65; margin-bottom: 1.3rem; }
   .pw-hero__art img { aspect-ratio: 16 / 10; object-position: center 57%; }
