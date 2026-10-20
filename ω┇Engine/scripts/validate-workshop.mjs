@@ -11,10 +11,10 @@ const temporary = await fs.mkdtemp(path.join(root, "node_modules/.workshop-check
 try {
   const modulePath = path.join(temporary, "contracts.mjs");
   await build({
-    stdin: { contents: 'export * from "./src/design-system/workshop-schema.ts"; export * from "./src/design-system/section-recipes.ts"; export * from "./src/data/workshop-usage.ts"; export { captureScale } from "./src/scripts/design-lab/section-capture.ts";', resolveDir: root, loader: "ts" },
+    stdin: { contents: 'export { serviceSchema } from "./src/data/service-schema.ts"; export * from "./src/design-system/workshop-schema.ts"; export * from "./src/design-system/section-recipes.ts"; export * from "./src/data/workshop-usage.ts"; export { captureScale } from "./src/scripts/design-lab/section-capture.ts";', resolveDir: root, loader: "ts" },
     outfile: modulePath, bundle: true, platform: "node", format: "esm", packages: "external",
   });
-  const { workshopSchema, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
+  const { serviceSchema, getRecipeUsage, workshopSchema, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
   const { captureScale } = await import(pathToFileURL(modulePath).href);
   for (const [width, height] of [[390, 400], [1440, 800], [390, 10000], [3000, 20000], [20000, 3000]]) {
     const scale = captureScale(width, height);
@@ -160,6 +160,49 @@ try {
     assert.deepEqual(getWorkshopUsage(fixtures, id).map(p => p.id).sort(), fixtures.filter(f => f.sections.some(s => s.recipe === id)).map(f => f.page.id).sort());
   }
   assert.equal(getWorkshopUsage([editorial], "explanation.editorial-media").length, 1, "Repeated editorial chapters count as one consuming page");
+  const serviceFolder = path.join(root, "src/content/services");
+  const serviceEntries = await Promise.all((await fs.readdir(serviceFolder, { withFileTypes: true })).filter(entry => entry.isDirectory()).flatMap(entry => ["de", "en"].map(async locale =>
+    serviceSchema.parse(yaml.load(await fs.readFile(path.join(serviceFolder, entry.name, `${locale}.yml`), "utf8")))
+  )));
+  const production = serviceEntries.find(service => service.id === "wifi-home-network-de");
+  assert.ok(production?.composition, "German home network service must adopt a validated composition");
+  const productionInvalid = [
+    ["missing composition", s => { delete s.composition; }],
+    ["empty composition", s => { s.composition.sections = []; }],
+    ["wrong template", s => { s.page.template = "standard"; }],
+    ["experimental hero", s => { s.composition.sections[0].recipe = "hero.banner-art"; }],
+    ["duplicate production anchor", s => { s.composition.sections[1].id = s.composition.sections[0].id; }],
+    ["reserved production anchor", s => { s.composition.sections[1].id = "kontakt"; }],
+    ["missing production hero", s => { s.composition.sections.shift(); }],
+    ["duplicate production hero", s => { s.composition.sections.push({ ...structuredClone(s.composition.sections[0]), id: "second-hero" }); }],
+    ["missing action target", s => { s.composition.sections[0].content.actions[0].target = "missing"; }],
+    ["wrong locale contact target", s => { s.composition.sections[0].content.actions[0].target = "contact"; }],
+    ["missing topic target", s => { s.composition.sections[1].content.items[0].target = "missing"; }],
+    ["non-chapter topic target", s => { s.composition.sections[1].content.items[0].target = "ablauf"; }],
+    ["duplicate topic target", s => { s.composition.sections[1].content.items[1].target = s.composition.sections[1].content.items[0].target; }],
+    ["production styling in copy", s => { s.composition.sections[2].content.className = "custom"; }],
+    ["divergent hero summary", s => { s.hero.title = "An unrelated page heading"; }],
+    ["duplicate shell contact", s => { s.composition.sections.push({ id: "extra-contact", kind: "contact", recipe: "contact.enquiry", content: {} }); }],
+  ];
+  for (const [name, change] of productionInvalid) {
+    const service = structuredClone(production);
+    change(service);
+    assert.equal(serviceSchema.safeParse(service).success, false, `Invalid production composition accepted: ${name}`);
+  }
+  const approvedHero = sectionRecipes["hero.editorial-art"];
+  for (const [field, invalidValue] of [["status", "deprecated"], ["audiences", []], ["pageTypes", []]]) {
+    const original = approvedHero[field];
+    try {
+      approvedHero[field] = invalidValue;
+      assert.equal(serviceSchema.safeParse(production).success, false, `Production must enforce ${field}`);
+    } finally { approvedHero[field] = original; }
+  }
+  for (const id of Object.keys(sectionRecipes)) {
+    const expected = serviceEntries.filter(service => service.composition?.sections.some(section => section.recipe === id)).length;
+    assert.equal(getRecipeUsage(fixtures, serviceEntries, id).length, getWorkshopUsage(fixtures, id).length + expected);
+  }
+  assert.equal(getRecipeUsage([], [production], "explanation.editorial-prose").length, 1, "Repeated production chapters count as one page");
+  console.log(`Validated ${serviceEntries.length} service records, ${productionInvalid.length + 3} invalid production cases and combined derived usage.`);
   console.log(`Validated ${fixtures.length} Workshop fixtures, ${invalid.length * fixtures.length + editorialInvalid.length} invalid-content cases, ${invalidGuidanceCases} invalid approved-guidance cases, experimental guidance migration/promotion, replacement relationships, lifecycle/compatibility policy and distinct-page usage.`);
 } finally {
   await fs.rm(temporary, { recursive: true, force: true });

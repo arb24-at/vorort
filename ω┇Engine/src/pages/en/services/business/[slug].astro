@@ -1,5 +1,5 @@
 ---
-import ServiceDetail from "../../../../components/ServiceDetail.astro";
+import ServicePage from "../../../../components/ServicePage.astro";
 import { getServices, type LocalizedService } from "../../../../data/services";
 
 export async function getStaticPaths() {
@@ -17,4 +17,4 @@ type Props = {
 const { service } = Astro.props;
 ---
 
-<ServiceDetail service={service} />
+<ServicePage service={service} />

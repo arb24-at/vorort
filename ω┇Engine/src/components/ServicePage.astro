@@ -1,0 +1,8 @@
+---
+import ServiceDetail from "./ServiceDetail.astro";
+import RecipeServicePage from "./RecipeServicePage.astro";
+import type { LocalizedService } from "../data/services";
+type Props = { service: LocalizedService };
+const { service } = Astro.props;
+---
+{service.page.template === "recipe-service" ? <RecipeServicePage service={service} /> : <ServiceDetail service={service} />}

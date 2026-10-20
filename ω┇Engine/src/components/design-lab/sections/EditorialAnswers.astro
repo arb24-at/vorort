@@ -1,8 +1,8 @@
 ---
 import type { RecipeContent } from "../../../design-system/section-recipes";
 import WorkshopImage from "../WorkshopImage.astro";
-type Props = { id: string; content: RecipeContent<"faq.editorial-answers"> };
-const { id, content } = Astro.props;
+type Props = { id: string; content: RecipeContent<"faq.editorial-answers">; locale?: "de" | "en" };
+const { id, content, locale = "en" } = Astro.props;
 ---
 <section class="pw-editorial-qa pw-section" id={id} data-recipe="faq.editorial-answers" aria-labelledby={`${id}-title`} tabindex="-1">
   <div class="container">
@@ -23,7 +23,7 @@ const { id, content } = Astro.props;
             mediaLayout && `pw-editorial-qa__item--media-${mediaLayout}`,
           ]}>
             <div class="pw-editorial-qa__question">
-              <span class="pw-editorial-qa__number" aria-hidden="true">Q{String(index + 1).padStart(2, "0")}</span>
+              <span class="pw-editorial-qa__number" aria-hidden="true">{locale === "de" ? "F" : "Q"}{String(index + 1).padStart(2, "0")}</span>
               <h3>{item.question}</h3>
             </div>
             <div class="pw-editorial-qa__answer">

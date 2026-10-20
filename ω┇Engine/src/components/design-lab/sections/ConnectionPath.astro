@@ -1,7 +1,10 @@
 ---
 import type { RecipeContent } from "../../../design-system/section-recipes";
-type Props = { id: string; content: RecipeContent<"explanation.connection-path"> };
-const { id, content } = Astro.props;
+type Props = { id: string; content: RecipeContent<"explanation.connection-path">; locale?: "de" | "en" };
+const { id, content, locale = "en" } = Astro.props;
+const copy = locale === "de"
+  ? { path: "Der Verbindungsweg", source: "Ausgangspunkt", route: "Kabelweg", destinations: "Ziele", note: "Für die Planung", planning: "Installation vorbereiten" }
+  : { path: "Physical connection path", source: "source", route: "route", destinations: "destinations", note: "Planning note", planning: "Installation planning" };
 ---
 <section class="pw-connections pw-section" id={id} data-recipe="explanation.connection-path" aria-labelledby={`${id}-title`} tabindex="-1">
   <div class="container">
@@ -12,10 +15,10 @@ const { id, content } = Astro.props;
     <figure class="pw-path" aria-labelledby={`${id}-diagram`}>
       <div class="pw-path__header">
         <div>
-          <p class="pw-path__kicker">Physical connection path</p>
+          <p class="pw-path__kicker">{copy.path}</p>
           <h3 id={`${id}-diagram`}>{content.diagramTitle}</h3>
         </div>
-        <p class="pw-path__sequence" aria-hidden="true"><span>01</span> source <b>→</b> <span>02</span> route <b>→</b> <span>03</span> destinations</p>
+        <p class="pw-path__sequence" aria-hidden="true"><span>01</span> {copy.source} <b>→</b> <span>02</span> {copy.route} <b>→</b> <span>03</span> {copy.destinations}</p>
       </div>
       <div class="pw-path__network">
         <article class="pw-path__node pw-path__node--source">
@@ -37,11 +40,11 @@ const { id, content } = Astro.props;
           </li>)}
         </ol>
       </div>
-      <figcaption><strong>Planning note</strong><span>{content.caption}</span></figcaption>
+      <figcaption><strong>{copy.note}</strong><span>{content.caption}</span></figcaption>
     </figure>
     <div class="pw-connections__planning" aria-labelledby={`${id}-planning-title`}>
       <div class="pw-connections__planning-copy">
-        <p class="pw-connections__planning-kicker">Installation planning</p>
+        <p class="pw-connections__planning-kicker">{copy.planning}</p>
         <h3 id={`${id}-planning-title`}>{content.planning.title}</h3>
         <p>{content.planning.body}</p>
       </div>

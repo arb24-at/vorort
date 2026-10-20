@@ -1,0 +1,17 @@
+---
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+import { getSectionRecipe, recipeAllowedIn, sectionRecipes, type Audience, type RecipeSection } from "../design-system/section-recipes";
+type Props = { section: RecipeSection; audience: Audience; locale: "de" | "en"; context: "workshop" | "production" };
+const { section, audience, locale, context } = Astro.props;
+const recipe = getSectionRecipe(section.recipe);
+if (!recipeAllowedIn(section.recipe, context) || !recipe.audiences.includes(audience) || !recipe.pageTypes.includes("service")) {
+  throw new Error(`Recipe ${section.recipe} cannot render in ${context} for ${audience}`);
+}
+const renderers = import.meta.glob<AstroComponentFactory>("./design-lab/sections/*.astro", { eager: true, import: "default" });
+for (const [id, entry] of Object.entries(sectionRecipes)) {
+  if (!renderers[`./design-lab/sections/${entry.renderer}`]) throw new Error(`Recipe ${id} has no Astro renderer: ${entry.renderer}`);
+}
+const Renderer = renderers[`./design-lab/sections/${recipe.renderer}`];
+if (!Renderer) throw new Error(`Recipe ${section.recipe} has no Astro renderer: ${recipe.renderer}`);
+---
+<Renderer id={section.id} content={section.content} audience={audience} locale={locale} />

@@ -66,7 +66,7 @@ async function buildServices(): Promise<LocalizedService[]> {
 
   const translationIds = new Set(localizedServices.map((service) => service.translationId));
   for (const service of localizedServices) {
-    for (const relatedId of service.expanded?.relatedServiceIds ?? []) {
+    for (const relatedId of service.composition?.related.serviceIds ?? service.expanded?.relatedServiceIds ?? []) {
       if (!translationIds.has(relatedId)) {
         throw new Error(
           `Related service ${relatedId} referenced by ${service.id} does not exist`
@@ -96,10 +96,10 @@ export async function getServices(
 export async function getRelatedServices(
   service: LocalizedService
 ): Promise<LocalizedService[]> {
-  if (!service.expanded) return [];
+  const relatedIds = service.composition?.related.serviceIds ?? service.expanded?.relatedServiceIds ?? [];
 
   const services = await loadServices();
-  return service.expanded.relatedServiceIds.map((translationId) => {
+  return relatedIds.map((translationId) => {
     const related = services.find(
       (candidate) =>
         candidate.translationId === translationId && candidate.locale === service.locale
@@ -115,20 +115,4 @@ export async function getRelatedServices(
   });
 }
 
-export function getServicePath(service: LocalizedService): string {
-  if (service.locale === "en") {
-    return `en/services/${service.audience}/${service.slug}/`;
-  }
-
-  const audiencePath = service.audience === "private" ? "privatpersonen" : "unternehmen";
-  return `leistungen/${audiencePath}/${service.slug}/`;
-}
-
-export function getAlternateServicePath(service: LocalizedService): string {
-  if (service.locale === "de") {
-    return `en/services/${service.audience}/${service.alternateSlug}/`;
-  }
-
-  const audiencePath = service.audience === "private" ? "privatpersonen" : "unternehmen";
-  return `leistungen/${audiencePath}/${service.alternateSlug}/`;
-}
+export { getServicePath, getAlternateServicePath } from "./service-paths";

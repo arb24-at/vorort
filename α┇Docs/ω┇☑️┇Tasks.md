@@ -11,7 +11,7 @@ updated: 2026-10-20
 > [!help]- Instructions
 > **One Codex run = one Task; verified → `[x]` → one local commit → report → stop.** This repository board follows Flow's **Task Bundle → Task → optional Subtask** layout and retains its own task IDs; it is not a `flow-3` Chain or another roadmap.
 >
-> - The first executable task is **3A**. `Work on the next task` means the earliest unchecked executable item in **Bundle 3**, then **Bundle 4**, preserving listed order: **finish all German tasks before English**. Do not jump ahead after a blocked task; report and stop.
+> - Task **3A** is complete; the next executable task is **3B**, in a separate run. `Work on the next task` means the earliest unchecked executable item in **Bundle 3**, then **Bundle 4**, preserving listed order: **finish all German tasks before English**. Do not jump ahead after a blocked task; report and stop.
 > - Each Task is one locale's one page, not a broad redesign sprint. A Codex run activates **Content & SEO + Design + Implementation + QA**; its scope is the selected page plus genuinely shared implementation/recipe fixes it requires. All four role guides and root `AGENTS.md` apply.
 > - Use the real current repository and `ω┇Engine/src/data/seo-keywords.yml` as research-routing authority; inspect the exact page's validated content and route, `α┇Docs/α┇Project.md` for service truth, and the registry `src/design-system/section-recipes.ts` for approved patterns. Content may be creatively restructured; section order, density and copy are not frozen.
 > - **Per-page acceptance contract:** form a concise page-specific content/SEO/design plan within the run; independently author the selected language; integrate the approved shared section patterns into the actual target route using validated editable content, maintain correct canonical/alternate-language/SEO relationships, preserve factual boundaries, base-aware links and functional contact paths, and inspect responsive/focus behaviour. Report the plan and rationale after completion. A separate advance blueprint-sign-off is not required for this explicitly authorised programme; final publication approval remains with the Product Owner.
@@ -43,7 +43,7 @@ updated: 2026-10-20
 > [!todo] Goal
 > Rewrite one **German** publication-route page per run and commit. This bundle must be completed before Bundle 4. Use the ten approved recipes creatively and improve their compatible shared implementation where real page content exposes flaws.
 
-- [ ] **3A — DE · Home networks / Wi-Fi**
+- [x] **3A — DE · Home networks / Wi-Fi**
   - **Route:** `/leistungen/privatpersonen/wlan-heimnetz/`
   - **Page job:** Pilot an expressive, technically accurate service chapter structure. Preserve the approved editorial hero, topic navigation and conversion path where they help; avoid repair or guaranteed-coverage promises.
   - **Execution:** German original; use formal **Sie** and German-specific researched intent; do not translate from English. Apply the common per-page acceptance contract, record every Design Lab change, verify, mark this item complete, commit once, report and stop.

@@ -1,0 +1,16 @@
+/* Production composition chrome; recipe visuals remain shared with Workshop. */
+.recipe-service { padding-top: 6rem; }
+.recipe-service__back { padding-top: 1.3rem; }
+.recipe-service__back a { display: inline-block; padding-block: .4rem; color: var(--pw-muted); font-size: .875rem; font-weight: 650; }
+.recipe-related { border-top: 1px solid var(--pw-rule); }
+.recipe-related h2 { max-width: 22ch; margin: .7rem 0 0; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.15; letter-spacing: -.04em; }
+.recipe-related__links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.recipe-related__links a { display: flex; flex-direction: column; align-items: start; border-top: 2px solid var(--pw-text); padding: 1.4rem 0 .5rem; }
+.recipe-related__links h3 { margin: 0; font-size: 1.25rem; color: var(--pw-text); }
+.recipe-related__links p { margin: .75rem 0 1.25rem; color: var(--pw-muted); line-height: 1.7; }
+.recipe-related__links span { margin-top: auto; color: var(--pw-accent); font-weight: 750; }
+.recipe-related__links a:hover h3 { color: var(--pw-accent); }
+.recipe-service a:focus-visible { outline: 3px solid var(--pw-accent); outline-offset: 5px; }
+@media (max-width: 767px) {
+  .recipe-related__links { grid-template-columns: 1fr; gap: 1.25rem; }
+}

@@ -121,6 +121,34 @@ for (const retired of ["en/services/private/wifi-home-network-ii/index.html", "e
   if (fs.existsSync(path.join(distRoot, retired))) errors.push(`Retired Concept II route is still generated: ${retired}`);
 }
 
+// First authorised production recipe consumer: check the actual customer route,
+// metadata, navigation and retained contact transport rather than a Lab preview.
+const wifiPath = "leistungen/privatpersonen/wlan-heimnetz/index.html";
+const wifiHtml = fs.readFileSync(path.join(distRoot, wifiPath), "utf8");
+const wifiCanonical = new URL(`${basePath}leistungen/privatpersonen/wlan-heimnetz/`, astroConfig.site).toString();
+const wifiAlternate = new URL(`${basePath}en/services/private/wifi-home-network/`, astroConfig.site).toString();
+for (const required of [
+  '<html lang="de">',
+  `<link rel="canonical" href="${wifiCanonical}"`,
+  `<link rel="alternate" hreflang="en" href="${wifiAlternate}"`,
+  '<title>Heimnetzwerk einrichten in Berlin: WLAN, Mesh &amp; NAS</title>',
+  'data-service-page="wifi-home-network-de"',
+  'data-recipe="explanation.connection-path"',
+  'role="region" tabindex="0" aria-labelledby="wlan-mesh-table-2"',
+  'id="kontakt"', 'action="mailto:',
+]) {
+  if (!wifiHtml.includes(required)) errors.push(`German home-network page missing required output: ${required}`);
+}
+if ((wifiHtml.match(/<h1[ >]/g) ?? []).length !== 1) errors.push("German home-network page must have one h1");
+const wifiIds = [...wifiHtml.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
+if (new Set(wifiIds).size !== wifiIds.length) errors.push("German home-network page contains duplicate IDs");
+for (const match of wifiHtml.matchAll(/href="#([^"]+)"/g)) {
+  if (!wifiIds.includes(match[1])) errors.push(`German home-network anchor is missing: ${match[1]}`);
+}
+for (const english of ["Physical connection path", "Installation planning", "Planning note"]) {
+  if (wifiHtml.includes(english)) errors.push(`Unlocalised connection diagram label: ${english}`);
+}
+
 const sitemapPath = path.join(distRoot, "sitemap.xml");
 if (!fs.existsSync(sitemapPath)) {
   errors.push("Missing sitemap.xml");

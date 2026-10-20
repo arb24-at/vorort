@@ -1,22 +1,14 @@
 ---
-import type { AstroComponentFactory } from "astro/runtime/server/index.js";
-import { getSectionRecipe, sectionRecipes } from "../../design-system/section-recipes";
 import type { WorkshopFixture } from "../../design-system/workshop-schema";
 import SectionReview from "./SectionReview.astro";
+import RecipeSection from "../RecipeSection.astro";
 import "../../styles/design-lab/concept-ii.css";
 type Props = { fixture: WorkshopFixture; sections?: WorkshopFixture["sections"] };
 const { fixture, sections } = Astro.props;
 const renderedSections = sections ?? fixture.sections;
-const renderers = import.meta.glob<AstroComponentFactory>("./sections/*.astro", { eager: true, import: "default" });
-for (const [id, recipe] of Object.entries(sectionRecipes)) {
-  if (!renderers[`./sections/${recipe.renderer}`]) throw new Error(`Recipe ${id} has no Astro renderer: ${recipe.renderer}`);
-}
 ---
 <div class:list={["concept-ii", `concept-ii--${fixture.page.audience}`]} data-workshop-page={fixture.page.id}>
-  {renderedSections.map(section => {
-    const Renderer = renderers[`./sections/${getSectionRecipe(section.recipe).renderer}`];
-    return <SectionReview recipeId={section.recipe}>
-      <Renderer id={section.id} content={section.content} audience={fixture.page.audience} locale={fixture.page.locale} />
-    </SectionReview>;
-  })}
+  {renderedSections.map(section => <SectionReview recipeId={section.recipe}>
+    <RecipeSection section={section} audience={fixture.page.audience} locale={fixture.page.locale} context="workshop" />
+  </SectionReview>)}
 </div>
