@@ -102,3 +102,7 @@ A Drive-connected Chat may iteratively edit Workshop fixtures, recipe metadata, 
 ## Completion standard
 
 A Design task is complete when the intended visual/information problem is resolved in source or clearly prepared for Aykhan's review, shared-vs-local design decisions are deliberate, responsive/accessibility implications have been considered, media dependencies are queued, and any unavailable repository verification is handed off without pretending it ran.
+
+## Current autonomous page-writing/design programme
+
+The Product Owner has authorised Codex to operate as Design **alongside Content & SEO, Implementation and QA** for one German/English page Task at a time (`α┇Docs/ω┇☑️┇Tasks.md`). Do not treat the existing private Workshop screenshot or recipe placement advice as an immutable template. Codex may improve misleading guidance, safe audience/page-type compatibility, non-breaking shared styles and layout when actual page content merits it; report the rationale and every shared consumer impact. Preserve fixed semantic/interaction contracts. New materially different designs remain experimental and require Aykhan approval before being represented as approved or adopted by consumers. Review responsive/keyboard/crop behaviour pragmatically. German pages precede English.

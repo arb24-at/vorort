@@ -44,7 +44,7 @@ When adding recommendation metadata, keep it advisory. Hard compatibility belong
 
 ## Production adoption
 
-Workshop approval and production adoption are separate events. Do not migrate production merely because a recipe became approved. Production adoption must preserve researched content, routes, bilingual pairing, SEO metadata, contact behavior, and any explicit migration scope.
+Workshop approval and production adoption are separate events. Do not migrate production merely because a recipe became approved. **For `α┇Docs/ω┇☑️┇Tasks.md` Bundles 3/4, Aykhan expressly authorises incremental adoption of compatible approved recipes and actual production-page rewriting for the named route/locale as a working draft, without a separate global blueprint stage.** Preserve researched content, routes, bilingual pairing, SEO metadata, contact behaviour, and all other production invariants; final editorial/legal/release approval remains separate.
 
 ## Media integration
 
@@ -59,3 +59,7 @@ A later QA/Codex validation task should validate the existing change, not reopen
 ## Completion standard
 
 Implementation is complete when the requested behavior/design/content integration exists in the correct shared/local source, unrelated work is preserved, source is read back where required, and available validation has been performed. Repository verification is a separate evidence level when the environment cannot provide it.
+
+## Current Codex Task implementation boundaries
+
+Work one Task/route/locale per run, use all four role guides, and commit only once after relevant checks. Extend existing Astro content schema/loader and approved recipe compatibility only as actually needed to express real page content, keeping code/layout separate from editable content. Do not introduce an unnecessary client framework or duplicate a page-specific renderer. Make justified non-breaking Design Lab adjustments and report cross-page impact; do not auto-approve new/breaking recipes. German before independently authored English. No auto-push or deployment.

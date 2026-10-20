@@ -1,5 +1,5 @@
 ---
-version: 2.2.31
+version: 2.2.32
 ---
 
 # VorOrt agent instructions
@@ -21,6 +21,18 @@ Role registry:
 - **Implementation** → `α┇Docs/γ┇Roles┇Implementation.md`
 - **QA** → `α┇Docs/γ┇Roles┇QA.md`
 
+## Authorised autonomous Codex bilingual page programme — 2026-10-20
+
+Aykhan authorises Codex to **rewrite the actual launch pages, one locale/page per run**, with a high standard of visual and editorial ambition. The execution queue is `α┇Docs/ω┇☑️┇Tasks.md`, modelled on Flow's **Task Bundle → Task → optional Subtask** format. It is a repository execution board, **not** a second roadmap or Flow Chain. `Work on the next task` means the first unchecked executable Task in German Bundle 3, then English Bundle 4. Do not silently skip blocked Tasks or begin another Task after committing. Existing completed Task IDs 1A–1C/2A–2C are archived in that file; historical Task 1D is pending, not falsely complete.
+
+**Roles and autonomy:** On these tasks Codex operates in **Content & SEO, Design, Implementation and QA together**, with authority to research within the project's existing sources, plan, write, redesign, implement, test and commit the **assigned page**, its validated content/metadata and any genuine shared code/Design Lab fixes needed. Read all four corresponding role files. Do not arbitrarily ask for handoffs between roles. German pages are completed first; only then start independently authored English pages. Existing researched search intent and page ownership are a foundation, not a fixed paragraph/section script. Use formal `Sie` in German, not mechanical translation in either direction.
+
+**Creativity with a real contract:** Maximise useful editorial and compositional freedom: length, pacing, order, media, hierarchy, layout, tables/illustrations and interaction may vary if truthful, accessible and purposeful. Approved recipe guidance defines the fixed **semantic/interaction** contract, not a frozen screenshot. Design Lab is new and experimental; Codex may directly improve **recommendedPlacement, recommendedUse, flexible guidance, non-breaking schemas/compatibility, responsive styles and shared implementations** when a real page exposes a problem. Record **every** affected recipe/contract/source and rationale in the per-task report and handoff. Do not invent an approval or silently make a breaking change to an approved consumer: material changes require a new experimental candidate and explicit Aykhan acceptance before promotion/migration. General/homepage/trust page coverage may need a deliberate schema/page-type extension; preserve already-approved consumers and derived usage.
+
+**Workflow and approvals:** This request expressly authorises a concise page-level plan and full draft/implementation **within the same Task without pausing for a separate blueprint review**. Existing global-blueprint-first instructions in Project/Content & SEO are superseded for this specific page-by-page programme; retain a brief page rationale/SEO coverage for the final report, not a duplicate roadmap. Work in real production page files/routes while preserving German/English pairs, base-aware links, semantic content data, metadata and truthful business constraints. Completing a Codex Task means source and applicable checks pass, **not** that Aykhan approved the final copy, new recipe, legal facts, launch, push or deployment. Production may remain unready until legal identity, direct form backend, media and release QA are resolved.
+
+**Per-run stop contract:** Check Git status and current version before editing. Work on exactly one assigned Task; if blocked, leave it unchecked, state the blocker, and stop. Otherwise apply relevant repository checks, desktop/mobile review when visual changes warrant it, mark its checkbox `[x]`, update the concise handoff, increment the root project version once for that logical commit (or reuse an existing uncommitted bump belonging to it), create **one local Git commit** with `VorOrt vX.Y.Z: message`, report page/locale, source changes, SEO decisions, recipe adaptations, verification, unresolved publication facts and the hash, then **STOP**. Never push or deploy by default. Preserve unrelated working-tree changes, and never touch `.git` internals.
+
 ## Context loading
 
 Always read this file first, then every active role file. After that, load only the project context needed for the task instead of preloading every document.
@@ -29,7 +41,7 @@ Always read this file first, then every active role file. After that, load only 
 - Read `α┇Docs/β┇Roadmap.md` when priority, sequencing, planned scope, or acceptance criteria matter.
 - Read `α┇Docs/β┇Collaboration.md` before changing project/repository state, when acting on a handoff, or when current cross-role requests, pending verification, or Aykhan decisions matter. Prefer the live sections over old history.
 - Read `α┇Docs/ω┇Media-Queue.md` when creating, integrating, reviewing, or waiting on media.
-- Read `α┇Docs/ω┇Tasks.md` when Aykhan assigns a numbered task/stage from that board or the live handoff explicitly points there. Work only the assigned stage unless he asks to continue.
+- Read `α┇Docs/ω┇☑️┇Tasks.md` for the Codex launch-page programme and when a task is assigned. Treat one numbered Task as one bounded run; `Work on the next task` picks the first unfinished executable German Task in Bundle 3, then the English Tasks in Bundle 4. Stop after its commit/report. The former `ω┇Tasks.md` was renamed/migrated, not duplicated.
 - Read target source/content files needed for the task. Do not preload unrelated repository files merely because they exist.
 
 Do not create a parallel roadmap, context system, role system, media tracker, or source of truth.

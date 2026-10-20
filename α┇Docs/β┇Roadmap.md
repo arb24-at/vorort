@@ -1,8 +1,8 @@
 # VorOrt repository roadmap
 
-Last updated: 2026-09-24
+Last updated: 2026-10-20
 
-Repository priorities and acceptance criteria live here; Aykhan's external Obsidian Chain remains the high-level roadmap. Stable contracts live in [α┇Project.md](α┇Project.md), current validation and handoff in [β┇Collaboration.md](β┇Collaboration.md).
+Repository priorities and acceptance criteria live here; Codex execution Tasks live in [`ω┇☑️┇Tasks.md`](ω┇☑️┇Tasks.md); Aykhan's external Obsidian Chain remains the high-level roadmap. Stable contracts live in [α┇Project.md](α┇Project.md), current validation and handoff in [β┇Collaboration.md](β┇Collaboration.md).
 
 ## Completed foundation — v2.0.1
 
@@ -14,40 +14,25 @@ Role-aware context loading, Design / Content & SEO / Implementation / QA role co
 
 The current Approved Sections library is already more mature than the original two-recipe foundation. Continue to use the canonical recipe registry and real Workshop consumers rather than creating a parallel approved-section catalogue or composition checklist.
 
-## Current cycle — finish the Approved Sections library and full-site design system
+## Current cycle — autonomous German-first page rewrites
 
-The immediate priority is to finish a reusable section system that can support the full launch site without forcing every page into the same cards, bullet lists or checklist rhythm. The existing private home-network and business office-network Workshop pages are working design contexts, not the final scope of the design programme.
+Aykhan's 2026-10-20 decision moves the priority from polishing the whole Design Lab before copy to **one Codex Task / page / locale** in the native repo execution file `ω┇☑️┇Tasks.md`. Ten recipes are approved; Design Lab is intentionally experimental and must mature through real production page use. Complete **all German existing launch pages first**, then independently author English pages; do not turn either language into template clones.
 
-1. **Continue Design Lab section review.** Refine remaining experimental candidates in realistic private and business contexts, reuse approved recipes where they fit, and create a new recipe only when the information relationship genuinely needs a different structure.
-2. **Approve useful section recipes explicitly.** Aykhan reviews each candidate in context, including its semantic/content contract, flexible versus fixed aspects, audience/page compatibility, responsive behaviour, interaction/accessibility and media needs. Promote only explicitly accepted recipes in the canonical registry.
-3. **Cover the other launch-page needs.** Ensure the approved library can support homepage, audience landings, contact, trust/legal and other launch-page content without turning every surface into a service-page composition. Infrastructure-like patterns may remain tighter templates; content-led recipes may allow broader authoring variation.
-4. **Review the library as one design system.** Remove, supersede or refine weak/redundant patterns; confirm shared typography, spacing, imagery direction, interaction states, navigation/chrome and mobile behaviour; keep recipe guidance as the primary composition reference rather than creating a duplicate manual catalogue.
-5. **Close the Design Lab tooling/QA work needed for practical review.** Complete the useful section-identification/navigation/screenshot workflow and final Approved Sections QA when Aykhan is ready to close this design-library pass.
+1. Start with the German home-network page as the first service pilot, then follow Bundle 3 in exact order, using existing route ownership and `src/data/seo-keywords.yml`. No repeated broad SEO research without a factual gap.
+2. In one focused Codex run, review the page job/intent and available approved recipes, make a concise plan, write substantive truthful copy and implement the actual validated production route with appropriate layout. No separate up-front site-wide blueprint approval gate applies to this expressly authorised programme.
+3. Codex has Content & SEO + Design + Implementation + QA authority to improve **non-breaking** Design Lab guidance, compatible patterns and shared styles based on real needs, with full source/impact disclosure after each task. New breaking recipes remain experimental until Aykhan approves them.
+4. Validate the finished page and affected shared consumers; mark one task complete, make one local versioned commit and **stop**. Keep German work separate from later English writing. No automatic push or deployment.
+5. After German completion, follow English Bundle 4 using independently researched intent and existing relationships. English trust/legal routes are not yet established; preserve the German legal authority or identify the necessary route decision rather than invent it.
 
-Acceptance: the Approved Sections library contains a useful, coherent set of explicitly accepted recipes for the launch-site information needs; authoring guidance clearly distinguishes fixed and flexible aspects; representative private/business/general contexts work on desktop and mobile; accessibility-visible behaviour is considered; and unresolved media or repository-verification work is tracked in the existing handoff/queue rather than hidden.
+Acceptance: each completed Task produces one validated, high-quality working page and concise report; no invented capability/SEO evidence, damaged shared approved contracts, uncontrolled locale-route changes or hidden QA debt. Aykhan retains page/design/launch approval.
 
-## Next cycle — create concise page blueprints, then rewrite the bilingual site
+## Parallel design-system and QA follow-through
 
-Page ownership and service boundaries are largely established, and the SEO routing source contains the current keyword/research status. Do not rewrite the old production pages section-by-section. Once the Approved Sections library is ready, first create a compact plan for every launch page so Aykhan can review the whole site before long-form copy is generated.
+Do not block content on optional visual perfection. Keep `faq.accordion` experimental, improve non-breaking approved recipes in place where justified, and track any genuinely missing general-page pattern. Deferred historic **Task 1D** (Approved Sections final QA) and remaining RV items retain their honest pending status in the board/handoff. Evaluate desktop/mobile accessibility, media and screenshot tooling in proportion to each real change.
 
-1. **Create one concise bilingual page-blueprint overview.** For every German and English launch page, record the page's job, main points/questions, important search intent and keywords, service boundaries, key internal links and the approved section recipes likely to express that material. Keep this close to a table of contents, not finished copy.
-2. **Review the blueprints manually with Aykhan.** Adjust coverage, page relationships, section choice/order, information density and cross-page overlap until the complete site makes sense as one system. Surface genuine research gaps from `src/data/seo-keywords.yml` here instead of automatically reopening already completed research.
-3. **Expand reviewed blueprints into full content.** Content & SEO may choose, order and adapt compatible approved recipes within their guidance, vary section rhythm between pages and use researched keywords naturally. Avoid recreating the current production pattern of repeated bullet lists, checkboxes or interchangeable card sections.
-4. **Keep German and English independently authored.** Preserve shared service truth and route relationships while allowing each language to follow its own search intent, wording and useful content depth.
-5. **Reconcile the whole site after drafting.** Review internal links, page ownership/cannibalisation, titles/descriptions, canonical/alternate-language relationships, contact paths and remaining metadata before Aykhan gives final substantive content approval.
+## Following cycle — bilingual reconciliation and publication readiness
 
-Acceptance: every launch page has an Aykhan-reviewed concise blueprint before full copy is finalised; the resulting German and English pages are useful and distinct, use approved recipes without becoming template clones, preserve truthful service boundaries, cover their intended search topics naturally and form a coherent site-wide journey.
-
-## Following cycle — adopt the approved page system in production
-
-Production currently remains separate from the Workshop recipe-composition flow. Adoption is a controlled implementation step after the page blueprints and rewritten content are ready.
-
-1. **Finish the validated content/page-composition model.** Extend the existing Markdown/content architecture only as needed to represent the approved production compositions while keeping layout/styling primitives in code and editable copy/data in validated records.
-2. **Map reviewed content into production routes.** Preserve the established German/English URLs, route pairing, navigation, SEO foundations and service boundaries. Production consumers should use only approved recipes where the recipe system is adopted.
-3. **Use Codex for implementation, not open-ended design.** Codex should implement the accepted compositions/content and surface unresolved decisions instead of inventing new visual patterns.
-4. **Review implementation drift before launch.** Compare production against the reviewed blueprints and final content, including responsive composition, shared design language, contact flow, metadata and the intended Markdown editing workflow.
-
-Acceptance: production routes implement the reviewed content/compositions without losing URL/SEO behaviour, approved design contracts or editable-content boundaries; appropriate repository validation and representative browser review pass before release work is considered complete.
+After Bundles 3/4, run the board's site-wide QA and launch decisions. Reconcile page ownership and cannibalisation, independent German/English content, metadata/canonicals/alternates, route/navigation integrity, contact paths, responsive presentation and Design Lab compatibility. Verify actual operator identity, branding, legal text, form backend/spam/privacy, domain/indexing and deployment before any live release decision. Completion of a page task or a local Git commit is **not** permission to deploy or assertion of publication readiness.
 
 ## Deferred implementation and launch requirements
 

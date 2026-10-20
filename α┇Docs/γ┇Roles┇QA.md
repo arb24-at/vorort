@@ -57,3 +57,7 @@ On completion, remove the active RV item and record the result briefly in Recent
 ## Completion standard
 
 QA is complete when the relevant evidence has actually been gathered, failures are either fixed or clearly scoped, unavailable checks are stated rather than assumed, and the result distinguishes technical verification from Aykhan's product/design approval.
+
+## Current one-page Codex acceptance
+
+For `α┇Docs/ω┇☑️┇Tasks.md` Bundles 3/4, verify the selected production route and locale plus any shared recipe/component change that could affect prior pages. Distinguish current edited-source/repository/browser evidence from older handoff results. Run appropriate `npm run validate`, `git diff --check`, `git status --short` and desktop/mobile checks where design changed. Confirm SEO/canonical/alternate/internal routes and genuine contact behavior, keep missing legal/backend facts explicitly unresolved, and mark the Task complete only when its defined scope is implemented and validated. A changed live page is still a working draft until Aykhan accepts it. After the one local commit, report and stop.
