@@ -1,0 +1,25 @@
+---
+import { getServices, getServicePath, type Audience, type Locale } from "../data/services";
+import type { z } from "astro/zod";
+import type { relatedServicesSchema } from "../design-system/production-composition";
+import { withBase } from "../utils/withBase";
+import "../styles/recipe-service.css";
+type Props = { content: z.infer<typeof relatedServicesSchema>; audience: Audience; locale: Locale };
+const { content, audience, locale } = Astro.props;
+const services = await getServices(audience, locale);
+const related = content.serviceIds.map(id => {
+  const service = services.find(item => item.translationId === id);
+  if (!service) throw new Error(`Missing related service: ${id} (${locale}, ${audience})`);
+  return service;
+});
+---
+<section class="section recipe-related" id="related-services" aria-labelledby="related-services-title">
+  <div class="container">
+    <header class="pw-section-intro">
+      <div><p class="pw-eyebrow">{content.eyebrow}</p><h2 id="related-services-title">{content.title}</h2></div>
+    </header>
+    <div class="recipe-related__links">
+      {related.map(item => <a href={withBase(getServicePath(item))}><h3>{item.navigation.label}</h3><p>{item.seo.description}</p><span>{content.linkLabel} <b aria-hidden="true">↗</b></span></a>)}
+    </div>
+  </div>
+</section>

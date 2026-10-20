@@ -2,7 +2,8 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import RecipeSection from "./RecipeSection.astro";
 import ContactSection from "./ContactSection.astro";
-import { getAlternateServicePath, getRelatedServices, getServicePath, type LocalizedService } from "../data/services";
+import RelatedServices from "./RelatedServices.astro";
+import { getAlternateServicePath, getServicePath, type LocalizedService } from "../data/services";
 import { withBase } from "../utils/withBase";
 import "../styles/design-lab/concept-ii.css";
 import "../styles/recipe-service.css";
@@ -10,7 +11,7 @@ type Props = { service: LocalizedService };
 const { service } = Astro.props;
 const composition = service.composition;
 if (!composition) throw new Error(`Service ${service.id} requires a composition`);
-const related = await getRelatedServices(service);
+const contactCopy = { title: service.cta.title, intro: service.cta.text, requestPlaceholder: service.cta.prompt, ...composition.contact };
 const landing = service.locale === "de"
   ? `leistungen/${service.audience === "private" ? "privatpersonen" : "unternehmen"}/`
   : `en/services/${service.audience}/`;
@@ -21,17 +22,11 @@ const back = service.audience === "business"
 <MainLayout title={service.seo.title} description={service.seo.description} canonicalPath={getServicePath(service)} lang={service.locale} alternatePath={getAlternateServicePath(service)}>
   <div class:list={["concept-ii", `concept-ii--${service.audience}`, "recipe-service"]} data-service-page={service.id}>
     <div class="container recipe-service__back"><a href={withBase(landing)}>← {back}</a></div>
-    {composition.sections.map(section => <RecipeSection section={section} audience={service.audience} locale={service.locale} context="production" />)}
-    <section class="section recipe-related" id="related-services" aria-labelledby="related-services-title">
-      <div class="container">
-        <header class="pw-section-intro">
-          <div><p class="pw-eyebrow">{composition.related.eyebrow}</p><h2 id="related-services-title">{composition.related.title}</h2></div>
-        </header>
-        <div class="recipe-related__links">
-          {related.map(item => <a href={withBase(getServicePath(item))}><h3>{item.navigation.label}</h3><p>{item.seo.description}</p><span>{composition.related.linkLabel} <b aria-hidden="true">↗</b></span></a>)}
-        </div>
-      </div>
-    </section>
-    <ContactSection locale={service.locale} context={service.audience} copyOverrides={{ title: service.cta.title, intro: service.cta.text, requestPlaceholder: service.cta.prompt, ...composition.contact }} />
+    {composition.sections.map(section => <>
+      <RecipeSection section={section} audience={service.audience} locale={service.locale} context="production" />
+      {composition.contactAfter === section.id && <ContactSection locale={service.locale} context={service.audience} copyOverrides={contactCopy} />}
+    </>)}
+    <RelatedServices content={composition.related} audience={service.audience} locale={service.locale} />
+    {!composition.contactAfter && <ContactSection locale={service.locale} context={service.audience} copyOverrides={contactCopy} />}
   </div>
 </MainLayout>

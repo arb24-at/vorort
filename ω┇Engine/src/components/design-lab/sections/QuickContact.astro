@@ -1,0 +1,23 @@
+---
+import type { RecipeContent } from "../../../design-system/section-recipes";
+import { siteConfig } from "../../../data/site";
+import "../../../styles/design-lab/quick-contact.css";
+type Props = { id: string; content: RecipeContent<"cta.quick-contact"> };
+const { id, content } = Astro.props;
+---
+<section class="c2-quick-contact" id={id} aria-labelledby={`${id}-title`} data-recipe="cta.quick-contact">
+  <div class="container c2-quick-contact__grid">
+    <div>
+      <p class="pw-eyebrow">{content.eyebrow}</p>
+      <h2 id={`${id}-title`}>{content.title}</h2>
+      <p class="c2-quick-contact__body">{content.body}</p>
+    </div>
+    <div class="c2-quick-contact__actions">
+      <a class="c2-quick-contact__call" href={siteConfig.contact.phoneHref}>
+        <span>{content.callLabel} <b aria-hidden="true">↗</b></span>
+        <strong>{siteConfig.contact.phoneDisplay}</strong>
+      </a>
+      <a class="c2-quick-contact__write" href={`#${content.enquiryTarget}`}>{content.enquiryLabel} <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>

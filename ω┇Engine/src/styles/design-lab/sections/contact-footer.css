@@ -245,6 +245,7 @@
 .c2-contact__submit:hover { background: #a43c04; transform: translateY(-1px); }
 .c2-contact__submit:focus-visible { outline: 3px solid #27795c; outline-offset: 3px; }
 .c2-contact__submit:disabled { cursor: wait; opacity: .7; transform: none; }
+[data-endpoint=""] .c2-contact__submit:disabled { cursor: not-allowed; }
 .c2-contact__submit > span:last-child { color: white; font-size: 1.25rem; }
 .c2-contact__status { margin: .65rem 0 0; font-size: .76rem; line-height: 1.45; }
 .c2-contact__status:empty { display: none; }

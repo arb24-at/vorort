@@ -16,6 +16,9 @@ const contents = fixture.sections.map(section => ({
     ? section.content.title
     : getSectionRecipe(section.recipe).name,
 }));
+if (fixture.relatedServices) contents.splice(contents.findIndex(section => section.id === fixture.relatedServices!.before), 0, {
+  id: "related-services", recipe: "Page navigation (existing shell)", title: fixture.relatedServices.title,
+});
 ---
 <MainLayout title={`${fixture.page.title} · Page Workshop`} description="Internal page-level design experiments. No sections are approved for production automatically." canonicalPath={canonicalPath} lang={fixture.page.locale} robots="noindex, nofollow" showSiteChrome={false}>
   <div class="design-lab">

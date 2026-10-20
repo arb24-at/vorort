@@ -2,14 +2,22 @@ import { z } from "astro/zod";
 import { getSectionRecipe, recipeAllowedIn, recipeSectionSchema, type Audience, type RecipeSection } from "./section-recipes";
 
 const text = z.string().trim().min(1);
+export const relatedServicesSchema = z.object({
+  eyebrow: text, title: text, linkLabel: text,
+  serviceIds: z.array(z.string().regex(/^[a-z0-9-]+$/)).min(2),
+}).strict();
 export const productionCompositionSchema = z.object({
   sections: z.array(recipeSectionSchema).min(2),
-  related: z.object({
-    eyebrow: text, title: text, linkLabel: text,
-    serviceIds: z.array(z.string().regex(/^[a-z0-9-]+$/)).min(2),
-  }).strict(),
+  related: relatedServicesSchema,
   contact: getSectionRecipe("contact.enquiry").schema,
-}).strict();
+  // Optional semantic placement of the existing email-preparation shell.
+  // Absence preserves the closing enquiry on existing pages.
+  contactAfter: z.string().regex(/^[a-z][a-z0-9-]*$/).optional(),
+}).strict().superRefine((composition, context) => {
+  if (composition.contactAfter && !composition.sections.some(section => section.id === composition.contactAfter)) {
+    context.addIssue({ code: z.ZodIssueCode.custom, path: ["contactAfter"], message: "Contact placement must name an existing section" });
+  }
+});
 
 // Production currently supplies its existing contact/footer as page chrome.
 // Share recipe contracts, not the Workshop's English-only page-shell contract.

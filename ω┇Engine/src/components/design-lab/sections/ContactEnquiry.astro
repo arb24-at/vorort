@@ -68,7 +68,7 @@ const privacyHref = withBase("/datenschutz/");
       <div class="c2-contact__form-panel">
         <div class="c2-contact__form-head">
           <span class="c2-kicker">Enquiry form</span>
-          <h3>Send an enquiry</h3>
+          <h3>{formEndpoint ? "Send an enquiry" : "Enquiry form preview"}</h3>
           <p>{copy.formIntro}</p>
         </div>
 
@@ -158,11 +158,11 @@ const privacyHref = withBase("/datenschutz/");
 
           <p class="c2-contact__privacy">Details submitted here are used to respond to your enquiry. <a href={privacyHref}>Privacy policy (German)</a>.</p>
 
-          <button class="c2-contact__submit" type="submit">
+          <button class="c2-contact__submit" type="submit" disabled={!formEndpoint} aria-describedby={!formEndpoint ? `${id}-delivery-status` : undefined}>
             <span data-submit-label>Send enquiry</span>
             <span aria-hidden="true">→</span>
           </button>
-          <p class="c2-contact__status" data-form-status role="status" aria-live="polite"></p>
+          <p class="c2-contact__status" id={`${id}-delivery-status`} data-form-status role="status" aria-live="polite">{!formEndpoint && "Preview only: direct delivery is not connected. Please use the phone, WhatsApp or email links to get in touch."}</p>
         </form>
       </div>
     </div>

@@ -14,7 +14,7 @@ try {
     stdin: { contents: 'export { serviceSchema } from "./src/data/service-schema.ts"; export * from "./src/design-system/workshop-schema.ts"; export * from "./src/design-system/section-recipes.ts"; export * from "./src/data/workshop-usage.ts"; export { captureScale } from "./src/scripts/design-lab/section-capture.ts";', resolveDir: root, loader: "ts" },
     outfile: modulePath, bundle: true, platform: "node", format: "esm", packages: "external",
   });
-  const { serviceSchema, getRecipeUsage, workshopSchema, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
+  const { serviceSchema, getRecipeUsage, workshopSchema, resolveWorkshopSource, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
   const { captureScale } = await import(pathToFileURL(modulePath).href);
   for (const [width, height] of [[390, 400], [1440, 800], [390, 10000], [3000, 20000], [20000, 3000]]) {
     const scale = captureScale(width, height);
@@ -22,9 +22,13 @@ try {
     assert.ok(width * scale <= 8192 && height * scale <= 8192, "Capture must fit the canvas edge limit");
     assert.ok(width * height * scale * scale <= 8_000_001, "Capture must fit the pixel budget");
   }
+  const serviceFolder = path.join(root, "src/content/services");
+  const serviceEntries = await Promise.all((await fs.readdir(serviceFolder, { withFileTypes: true })).filter(entry => entry.isDirectory()).flatMap(entry => ["de", "en"].map(async locale =>
+    serviceSchema.parse(yaml.load(await fs.readFile(path.join(serviceFolder, entry.name, `${locale}.yml`), "utf8")))
+  )));
   const folder = path.join(root, "src/content/workshop");
   const fixtures = await Promise.all((await fs.readdir(folder)).filter(file => /\.ya?ml$/.test(file)).map(async file => {
-    const fixture = workshopSchema.parse(yaml.load(await fs.readFile(path.join(folder, file), "utf8")));
+    const fixture = resolveWorkshopSource(yaml.load(await fs.readFile(path.join(folder, file), "utf8")), serviceEntries);
     assert.equal(fixture.page.id, file.replace(/\.ya?ml$/, ""), "Filename and semantic page ID must match");
     return fixture;
   }));
@@ -85,14 +89,15 @@ try {
     ["duplicate footer", f => { f.sections.splice(-1, 0, { ...structuredClone(f.sections.at(-1)), id: "additional-footer" }); }],
     ["arbitrary footer content", f => { f.sections.at(-1).content.note = "Custom footer"; }],
   ];
-  for (const original of fixtures) {
+  const closingFixtures = fixtures.filter(f => f.page.enquiryPlacement !== "early");
+  for (const original of closingFixtures) {
     for (const [name, change] of invalid) {
       const fixture = structuredClone(original);
       change(fixture);
       assert.equal(workshopSchema.safeParse(fixture).success, false, `Invalid fixture accepted (${original.page.id}): ${name}`);
     }
   }
-  const editorial = fixtures.find(f => f.sections.some(s => s.recipe === "scope.topic-index"));
+  const editorial = closingFixtures.find(f => f.sections.some(s => s.recipe === "scope.topic-index"));
   assert.ok(editorial, "The topic-index consumer must be exercised");
   const findContent = (fixture, id) => fixture.sections.find(s => s.recipe === id).content;
   const editorialInvalid = [
@@ -160,13 +165,10 @@ try {
     assert.deepEqual(getWorkshopUsage(fixtures, id).map(p => p.id).sort(), fixtures.filter(f => f.sections.some(s => s.recipe === id)).map(f => f.page.id).sort());
   }
   assert.equal(getWorkshopUsage([editorial], "explanation.editorial-media").length, 1, "Repeated editorial chapters count as one consuming page");
-  const serviceFolder = path.join(root, "src/content/services");
-  const serviceEntries = await Promise.all((await fs.readdir(serviceFolder, { withFileTypes: true })).filter(entry => entry.isDirectory()).flatMap(entry => ["de", "en"].map(async locale =>
-    serviceSchema.parse(yaml.load(await fs.readFile(path.join(serviceFolder, entry.name, `${locale}.yml`), "utf8")))
-  )));
   const production = serviceEntries.find(service => service.id === "wifi-home-network-de");
   assert.ok(production?.composition, "German home network service must adopt a validated composition");
   const productionInvalid = [
+    ["missing contact placement target", s => { s.composition.contactAfter = "missing"; }],
     ["missing composition", s => { delete s.composition; }],
     ["empty composition", s => { s.composition.sections = []; }],
     ["wrong template", s => { s.page.template = "standard"; }],
@@ -210,8 +212,53 @@ try {
   const englishUsage = getRecipeUsage([], [production, englishProduction], "explanation.editorial-prose");
   assert.equal(englishUsage.length, 2, "Each independently authored locale counts as its own consuming page");
   assert.equal(new Set(englishUsage.map(page => page.path)).size, 2, "Locale usage links must resolve to distinct routes");
+  const pilot = fixtures.find(f => f.page.id === "wifi-home-network-blueprint-pilot");
+  assert.ok(pilot, "The complete blueprint pilot must be loaded");
+  assert.equal(pilot.sections.filter(s => s.recipe === "cta.quick-contact").length, 2);
+  assert.equal(getWorkshopUsage([pilot], "cta.quick-contact").length, 1, "Repeated quick contact counts once");
+  assert.equal(sectionRecipes["cta.quick-contact"].status, "experimental");
+  assert.equal(sectionRecipes["recognition.situations"].status, "experimental");
+  assert.equal(recipeAllowedIn("cta.quick-contact", "production"), false);
+  assert.equal(recipeAllowedIn("recognition.situations", "production"), false);
+  const pilotInvalid = [
+    ["missing enquiry", f => { f.sections = f.sections.filter(s => s.kind !== "contact"); }],
+    ["duplicate enquiry", f => { f.sections.splice(4, 0, structuredClone(f.sections.find(s => s.kind === "contact"))); }],
+    ["early enquiry after technical detail", f => { const i = f.sections.findIndex(s => s.kind === "contact"); f.sections.splice(-1, 0, f.sections.splice(i, 1)[0]); }],
+    ["implicit closing profile with early enquiry", f => { delete f.page.enquiryPlacement; }],
+    ["missing quick-contact target", f => { f.sections.find(s => s.recipe === "cta.quick-contact").content.enquiryTarget = "missing"; }],
+    ["quick contact pointing to a chapter", f => { f.sections.find(s => s.recipe === "cta.quick-contact").content.enquiryTarget = "wifi-coverage"; }],
+    ["duplicate quick-contact ID", f => { f.sections.find(s => s.id === "final-contact").id = "quick-contact"; }],
+    ["missing related insertion target", f => { f.relatedServices.before = "missing"; }],
+    ["related shell duplicates a recipe anchor", f => { f.sections.find(s => s.id === "final-contact").id = "related-services"; f.relatedServices.before = "related-services"; }],
+    ["CTA CSS in content", f => { f.sections.find(s => s.recipe === "cta.quick-contact").content.className = "big"; }],
+  ];
+  for (const [name, change] of pilotInvalid) {
+    const fixture = structuredClone(pilot); change(fixture);
+    assert.equal(workshopSchema.safeParse(fixture).success, false, `Invalid pilot accepted: ${name}`);
+  }
+  for (const recipe of ["cta.quick-contact", "recognition.situations"]) {
+    const service = structuredClone(englishProduction);
+    service.composition.sections.push(structuredClone(pilot.sections.find(s => s.recipe === recipe)));
+    assert.equal(serviceSchema.safeParse(service).success, false, `Experimental recipe leaked into production: ${recipe}`);
+  }
+  const pilotSource = yaml.load(await fs.readFile(path.join(folder, "wifi-home-network-blueprint-pilot.yml"), "utf8"));
+  for (const [name, change] of [
+    ["unknown service", f => { f.page.sourceService = "missing-en"; }],
+    ["incompatible audience", f => { f.page.audience = "business"; }],
+    ["missing source section", f => { f.sections[0].fromServiceSection = "missing"; }],
+    ["duplicate source section", f => { f.sections.push(structuredClone(f.sections[0])); }],
+  ]) {
+    const fixture = structuredClone(pilotSource); change(fixture);
+    assert.throws(() => resolveWorkshopSource(fixture, serviceEntries), `Invalid source reference accepted: ${name}`);
+  }
+  const changedService = structuredClone(englishProduction);
+  changedService.composition.sections.find(s => s.id === "wifi-coverage").content.intro = "Updated service copy flows into the pilot.";
+  const hydrated = resolveWorkshopSource(pilotSource, serviceEntries.map(s => s.id === changedService.id ? changedService : s));
+  assert.equal(hydrated.sections.find(s => s.id === "wifi-coverage").content.intro, "Updated service copy flows into the pilot.");
+  assert.equal(pilot.sections.find(s => s.id === "introduction").content.title, englishProduction.hero.title);
+  console.log(`Validated blueprint pilot: ${pilotInvalid.length} invalid compositions, 4 invalid source references, 2 experimental production rejections and live source hydration.`);
   console.log(`Validated ${serviceEntries.length} service records, ${productionInvalid.length + 4} invalid production cases and combined derived usage.`);
-  console.log(`Validated ${fixtures.length} Workshop fixtures, ${invalid.length * fixtures.length + editorialInvalid.length} invalid-content cases, ${invalidGuidanceCases} invalid approved-guidance cases, experimental guidance migration/promotion, replacement relationships, lifecycle/compatibility policy and distinct-page usage.`);
+  console.log(`Validated ${fixtures.length} Workshop fixtures, ${invalid.length * closingFixtures.length + editorialInvalid.length} invalid-content cases, ${invalidGuidanceCases} invalid approved-guidance cases, experimental guidance migration/promotion, replacement relationships, lifecycle/compatibility policy and distinct-page usage.`);
 } finally {
   await fs.rm(temporary, { recursive: true, force: true });
 }

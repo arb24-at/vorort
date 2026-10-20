@@ -170,6 +170,29 @@ for (const match of wifiEnHtml.matchAll(/href="#([^"]+)"/g)) {
   if (!wifiEnIds.includes(match[1])) errors.push(`English home-network anchor is missing: ${match[1]}`);
 }
 if (wifiEnHtml.includes('href="#kontakt"')) errors.push("English home-network contact links must use the English anchor");
+if (wifiEnHtml.indexOf('id="contact"') > wifiEnHtml.indexOf('id="topics"')) errors.push("English production enquiry must precede the technical topic index");
+for (const recipe of ["recognition.situations", "cta.quick-contact"]) {
+  if (wifiEnHtml.includes(`data-recipe="${recipe}"`)) errors.push(`Experimental recipe leaked into production: ${recipe}`);
+}
+if (wifiHtml.indexOf('id="kontakt"') < wifiHtml.indexOf('id="related-services"')) errors.push("German closing enquiry must retain its position");
+
+const pilotHtml = fs.readFileSync(path.join(distRoot, "design-lab/preview/wifi-home-network-blueprint-pilot/index.html"), "utf8");
+const pilotIds = [...pilotHtml.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
+if (new Set(pilotIds).size !== pilotIds.length) errors.push("Blueprint pilot contains duplicate IDs");
+for (const match of pilotHtml.matchAll(/href="#([^"]+)"/g)) {
+  if (!pilotIds.includes(match[1])) errors.push(`Blueprint pilot anchor is missing: ${match[1]}`);
+}
+const pilotOrder = ["introduction", "everyday-situations", "quick-contact", "contact", "topics", "wifi-coverage", "ethernet-cabling", "home-office", "nas-storage", "network-planning", "installation", "questions", "related-services", "final-contact", "site-footer"];
+for (let index = 0; index < pilotOrder.length; index++) {
+  const position = pilotHtml.indexOf(`id="${pilotOrder[index]}"`);
+  if (position < 0 || (index && position <= pilotHtml.indexOf(`id="${pilotOrder[index - 1]}"`))) errors.push(`Blueprint journey order failed: ${pilotOrder[index]}`);
+}
+if ((pilotHtml.match(/data-recipe="cta.quick-contact"/g) ?? []).length !== 2) errors.push("Pilot requires two instances of the same quick-contact recipe");
+if ((pilotHtml.match(/<form\b[^>]*\bdata-contact-form\b/g) ?? []).length !== 1) errors.push("Pilot must contain exactly one enquiry form");
+if (pilotHtml.includes('data-endpoint=""') && (!pilotHtml.includes("Preview only: direct delivery is not connected.") || !/<button[^>]*type="submit"[^>]*disabled/.test(pilotHtml))) errors.push("Unconfigured pilot must show unavailable delivery and disable submission");
+for (const recipe of ["recognition.situations", "cta.quick-contact"]) {
+  if (!pilotHtml.includes(`data-lab-recipe="${recipe}" data-lab-status="experimental"`)) errors.push(`Pilot must retain actual experimental status: ${recipe}`);
+}
 
 const sitemapPath = path.join(distRoot, "sitemap.xml");
 if (!fs.existsSync(sitemapPath)) {

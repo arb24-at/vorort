@@ -2,13 +2,17 @@
 import type { WorkshopFixture } from "../../design-system/workshop-schema";
 import SectionReview from "./SectionReview.astro";
 import RecipeSection from "../RecipeSection.astro";
+import RelatedServices from "../RelatedServices.astro";
 import "../../styles/design-lab/concept-ii.css";
 type Props = { fixture: WorkshopFixture; sections?: WorkshopFixture["sections"] };
 const { fixture, sections } = Astro.props;
 const renderedSections = sections ?? fixture.sections;
 ---
 <div class:list={["concept-ii", `concept-ii--${fixture.page.audience}`]} data-workshop-page={fixture.page.id}>
-  {renderedSections.map(section => <SectionReview recipeId={section.recipe}>
-    <RecipeSection section={section} audience={fixture.page.audience} locale={fixture.page.locale} context="workshop" />
-  </SectionReview>)}
+  {renderedSections.map(section => <>
+    {fixture.relatedServices?.before === section.id && <RelatedServices content={fixture.relatedServices} audience={fixture.page.audience} locale={fixture.page.locale} />}
+    <SectionReview recipeId={section.recipe}>
+      <RecipeSection section={section} audience={fixture.page.audience} locale={fixture.page.locale} context="workshop" />
+    </SectionReview>
+  </>)}
 </div>
