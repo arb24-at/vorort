@@ -22,7 +22,7 @@ const back = service.audience === "business"
   : (service.locale === "de" ? "Alle Leistungen für Zuhause & Homeoffice" : "All home services");
 ---
 <MainLayout title={service.seo.title} description={service.seo.description} canonicalPath={getServicePath(service)} lang={service.locale} alternatePath={getAlternateServicePath(service)}>
-  <div class:list={["concept-ii", `concept-ii--${service.audience}`, "recipe-service"]} data-service-page={service.id}>
+  <div class:list={["concept-ii", `concept-ii--${service.audience}`, "recipe-service", { "recipe-service--compact": testing }]} data-service-page={service.id}>
     <div class="container recipe-service__back"><a href={withBase(landing)}>← {back}</a></div>
     {composition.sections.map(section => <>
       {testing && composition.relatedBefore === section.id && <RelatedServices content={composition.related} audience={service.audience} locale={service.locale} />}

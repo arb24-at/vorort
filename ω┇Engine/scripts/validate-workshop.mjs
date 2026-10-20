@@ -250,6 +250,14 @@ try {
     slug: englishProduction.slug, audience: englishProduction.audience, locale: englishProduction.locale,
     experiment: englishProduction.composition.experiment,
   };
+  // A specimen demonstrates blocks; focused chapters may select only one.
+  const proseSchema = sectionRecipes["explanation.editorial-prose"].schema;
+  const proseExample = englishProduction.composition.sections.find(s => s.recipe === "explanation.editorial-prose").content;
+  for (const count of [1, 2]) {
+    assert.equal(proseSchema.safeParse({ ...proseExample, blocks: proseExample.blocks.slice(0, count) }).success, true, `${count} meaningful prose blocks should be sufficient`);
+  }
+  assert.equal(proseSchema.safeParse({ ...proseExample, blocks: [] }).success, false, "An explanation still requires content beyond its introduction");
+  assert.equal(proseSchema.safeParse({ ...proseExample, blocks: [{ type: "arbitrary-layout" }] }).success, false, "Compact sections retain validated semantic blocks");
   assert.equal(isEnglishHomeNetworkTest(englishContext), true);
   const authorised = ["recognition.situations", "cta.quick-contact", "contact.enquiry-email"];
   for (const recipe of authorised) {

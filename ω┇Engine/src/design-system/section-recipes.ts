@@ -189,7 +189,7 @@ export const sectionRecipes = {
     status: "approved",
     authoringGuidance: {
       contentShape: "Eyebrow, title and introduction followed by a sequence of semantic editorial blocks: prose, internal headings, two-column text, callouts, images or a compact table. Banded headings act as major internal chapter breaks; soft headings act as quieter subsection transitions.",
-      typicalRange: "A compact orientation can use three purposeful blocks; a substantial reading section normally uses four to eight. Mix only the block types the subject needs; variation should support comprehension rather than become decoration.",
+      typicalRange: "Choose one to twelve blocks to fit the explanation. One or two can be enough for a focused section; longer chapters may need more. Workshop demonstrates available block types, not a required sequence or minimum amount of copy.",
       fixed: "The section remains one coherent article-like chapter with a clear heading hierarchy and visible reading order. Blocks are always visible and are not accordions, tabs or independent cards. Heading treatments must communicate hierarchy rather than alternate randomly for visual variety.",
       flexible: "Authors may vary block order and quantity, use one- or two-column prose, use a banded chapter heading and/or a softer subsection heading where the hierarchy justifies it, choose quiet/filled/outline callouts, place occasional images wide/left/right, and include a compact table when the information genuinely compares well. The recipe can stand alone or follow another section such as an options guide; do not merge the two contracts merely because they are often useful together.",
       needsDesignReview: "Use Design review for more than two text columns, complex data tables, interactive controls, galleries, nested navigation, several unrelated subjects, or decorative block variation that no longer serves one coherent article.",
@@ -197,7 +197,7 @@ export const sectionRecipes = {
       responsive: "All multi-column and side-media blocks collapse to a single source-ordered reading stream on narrow screens. Tables may scroll horizontally inside their own wrapper rather than forcing the page wider.",
       accessibility: "Use semantic headings, paragraphs, tables and asides. Preserve source order across responsive layouts, keep table headers real text, and never communicate callout importance through colour alone. A horizontally scrolling table region must have an accessible label, keyboard focus and visible focus treatment so every column is reachable.",
     },
-    schema: z.object({ ...heading, blocks: z.array(editorialProseBlock).min(3).max(12) }).strict(),
+    schema: z.object({ ...heading, blocks: z.array(editorialProseBlock).min(1).max(12) }).strict(),
   }),
   "hero.banner-art": recipe({
     name: "Banner with environmental artwork", kind: "hero",

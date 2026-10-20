@@ -157,13 +157,16 @@ for (const required of [
   '<title>Home Network Setup in Berlin | Wi-Fi, Ethernet &amp; NAS</title>',
   'data-service-page="wifi-home-network-en"',
   'data-recipe="explanation.connection-path"',
-  'role="region" tabindex="0" aria-labelledby="wifi-coverage-table-2"',
   'id="contact"', 'action="mailto:',
   'Physical connection path', 'Planning note', 'Installation planning',
 ]) {
   if (!wifiEnHtml.includes(required)) errors.push(`English home-network page missing required output: ${required}`);
 }
 if ((wifiEnHtml.match(/<h1[ >]/g) ?? []).length !== 1) errors.push("English home-network page must have one h1");
+// Editorial blocks may be selected/reordered; verify the accessible relationship,
+// rather than freezing the comparison table at a particular block index.
+const wifiTableLabel = wifiEnHtml.match(/role="region" tabindex="0" aria-labelledby="(wifi-coverage-table-\d+)"/)?.[1];
+if (!wifiTableLabel || !wifiEnHtml.includes(`<h3 id="${wifiTableLabel}">`)) errors.push("English Wi-Fi comparison needs a keyboard-scrollable region labelled by its heading");
 const wifiEnIds = [...wifiEnHtml.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
 if (new Set(wifiEnIds).size !== wifiEnIds.length) errors.push("English home-network page contains duplicate IDs");
 for (const match of wifiEnHtml.matchAll(/href="#([^"]+)"/g)) {
