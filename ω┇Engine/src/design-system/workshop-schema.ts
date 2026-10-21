@@ -24,15 +24,17 @@ function validateSections(fixture: PageSections, issue: Issue, specimens: boolea
     if (section.kind === "footer" && section.id !== "site-footer") issue(["sections", index, "id"], "The shared site footer requires the site-footer ID");
   });
   fixture.sections.forEach((section, index) => {
-    if (["hero.banner-art", "hero.editorial-art", "comparison.hero-banner", "comparison.hero-banner-cta-overlay"].includes(section.recipe)) {
-      const schema = section.recipe === "hero.editorial-art" ? getSectionRecipe("hero.editorial-art").schema : getSectionRecipe("hero.banner-art").schema;
+    if (["hero.service-intro", "hero.banner-art", "hero.editorial-art", "comparison.hero-banner", "comparison.hero-banner-cta-overlay"].includes(section.recipe)) {
+      const schema = section.recipe === "hero.service-intro" ? getSectionRecipe("hero.service-intro").schema
+        : section.recipe === "hero.editorial-art" ? getSectionRecipe("hero.editorial-art").schema
+        : getSectionRecipe("hero.banner-art").schema;
       const content = schema.safeParse(section.content);
       if (content.success) content.data.actions.forEach((action, i) => {
         if (!ids.has(action.target)) issue(["sections", index, "content", "actions", i, "target"], `Missing section target: ${action.target}`);
       });
     }
     if (section.recipe === "cta.quick-contact" && !fixture.sections.some(s => s.id === section.content.enquiryTarget && s.kind === "contact")) issue(["sections", index, "content", "enquiryTarget"], "Quick contact must target an enquiry specimen");
-    if (section.recipe === "scope.topic-index") {
+    if (section.recipe === "scope.topic-index" || section.recipe === "scope.chapter-links") {
       const targets = new Set<string>();
       section.content.items.forEach((item, i) => {
         if (!fixture.sections.some(s => s.id === item.target && s.kind === "explanation") || item.target === section.id || targets.has(item.target)) issue(["sections", index, "content", "items", i, "target"], "Topics require distinct existing explanation targets");

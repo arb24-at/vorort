@@ -15,7 +15,7 @@
   .recipe-related__links { grid-template-columns: 1fr; gap: 1.25rem; }
 }
 
-/* Compact reading rhythm, currently opted into by the authorised English test.
+/* Compact reading rhythm, opted into by the authorised English service pages.
    Section contracts and shared specimen/default-page spacing stay independent. */
 .recipe-service--compact { --section-pad: clamp(2rem, 3.6vw, 3.25rem); }
 .recipe-service--compact.concept-ii > :is(.pw-section, .c2-situations, .c2-process-section, .c2-contact, .c2-quick-contact) {

@@ -14,7 +14,7 @@ try {
     stdin: { contents: 'export { serviceSchema } from "./src/data/service-schema.ts"; export * from "./src/design-system/workshop-schema.ts"; export * from "./src/design-system/section-recipes.ts"; export * from "./src/data/workshop-usage.ts"; export * from "./src/design-system/production-policy.ts"; export { enquiryEmailHref } from "./src/utils/enquiry-email.ts"; export { captureScale } from "./src/scripts/design-lab/section-capture.ts";', resolveDir: root, loader: "ts" },
     outfile: modulePath, bundle: true, platform: "node", format: "esm", packages: "external",
   });
-  const { serviceSchema, getRecipeUsage, workshopSchema, recipeAllowedForProduction, isEnglishHomeNetworkTest, enquiryEmailHref, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
+  const { serviceSchema, getRecipeUsage, workshopSchema, recipeAllowedForProduction, isEnglishHomeNetworkTest, isEnglishComputerSupportPreview, enquiryEmailHref, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
   const { captureScale } = await import(pathToFileURL(modulePath).href);
   for (const [width, height] of [[390, 400], [1440, 800], [390, 10000], [3000, 20000], [20000, 3000]]) {
     const scale = captureScale(width, height);
@@ -320,6 +320,65 @@ try {
   assert.equal(draft.searchParams.get("subject"), "Setup & connection");
   assert.equal(draft.searchParams.get("body"), "Name: Example & visitor\n\nEmail: reader@example.test\n\nRequest: First line\nSecond line?");
   assert.equal([...draft.searchParams].length, 2, "User punctuation must remain encoded inside the two mailto fields");
+  const computer = serviceEntries.find(s => s.id === "computer-laptop-en");
+  assert.ok(computer?.composition, "English computer support must use canonical composition");
+  const computerContext = { id: computer.id, translationId: computer.translationId, slug: computer.slug, locale: computer.locale, audience: computer.audience, experiment: computer.composition.experiment };
+  assert.equal(isEnglishComputerSupportPreview(computerContext), true);
+  for (const id of ["hero.service-intro", "scope.chapter-links", "recognition.situations", "cta.quick-contact", "contact.enquiry-email"]) {
+    const approved = sectionRecipes[id].status === "approved";
+    assert.equal(recipeAllowedIn(id, "production"), approved, "Default approval rules remain independent of page permission");
+    assert.equal(recipeAllowedForProduction(id, computerContext), true);
+    for (const context of [undefined, { ...computerContext, experiment: undefined }, { ...computerContext, experiment: "wifi-home-network-en-test" }, { ...computerContext, id: "another-en" }, { ...computerContext, translationId: "another" }, { ...computerContext, slug: "another" }, { ...computerContext, locale: "de" }, { ...computerContext, audience: "business" }]) {
+      assert.equal(recipeAllowedForProduction(id, context), approved, `Computer page authorisation escaped its route: ${id}`);
+    }
+    const status = sectionRecipes[id].status;
+    try {
+      sectionRecipes[id].status = "deprecated";
+      assert.equal(recipeAllowedForProduction(id, computerContext), false);
+      assert.equal(serviceSchema.safeParse(computer).success, false);
+    } finally { sectionRecipes[id].status = status; }
+  }
+  for (const id of ["hero.service-intro", "scope.chapter-links"]) {
+    assert.equal(recipeAllowedForProduction(id, englishContext), sectionRecipes[id].status === "approved", "Home-network permission must not expand with the computer page");
+    const usage = getRecipeUsage(fixtures, serviceEntries, id);
+    assert.equal(usage.filter(p => p.context === "Production · EN").length, 1);
+    assert.ok(usage.some(p => p.path === "en/services/private/computer-laptop-help/"));
+  }
+  const computerInvalid = [
+    ["missing permission", s => { delete s.composition.experiment; }],
+    ["borrowed permission", s => { s.composition.experiment = "wifi-home-network-en-test"; }],
+    ["wrong route", s => { s.slug = "other-route"; }],
+    ["wrong locale", s => { s.id = "computer-laptop-de"; s.locale = "de"; }],
+    ["wrong audience", s => { s.audience = "business"; }],
+    ["duplicate anchor", s => { s.composition.sections[1].id = "introduction"; }],
+    ["broken hero target", s => { s.composition.sections[0].content.actions[0].target = "missing"; }],
+    ["missing preparation note", s => { delete s.composition.sections[0].content.note; }],
+    ["styling in hero", s => { s.composition.sections[0].content.className = "big"; }],
+    ["divergent hero summary", s => { s.hero.title = "An unrelated service heading"; }],
+    ["broken chapter target", s => { s.composition.sections[5].content.items[0].target = "missing"; }],
+    ["non-chapter destination", s => { s.composition.sections[5].content.items[0].target = "questions"; }],
+    ["duplicate chapter target", s => { s.composition.sections[5].content.items[1].target = s.composition.sections[5].content.items[0].target; }],
+    ["enquiry before orientation", s => { s.composition.sections.splice(1, 0, s.composition.sections.splice(4, 1)[0]); }],
+    ["second enquiry", s => { s.composition.sections.splice(5, 0, { ...structuredClone(s.composition.sections[4]), id: "extra-enquiry" }); }],
+    ["wrong enquiry destination", s => { s.composition.sections[3].content.enquiryTarget = "questions"; }],
+    ["unlisted experiment", s => { s.composition.sections.splice(6, 0, structuredClone(gallery.sections.find(s => s.recipe === "outcome.scope-proof"))); }],
+    ["wrong navigation recipe", s => { s.composition.sections.splice(5, 1); }],
+    ["missing closing invitation", s => { s.composition.sections.pop(); }],
+    ["changed delivery contract", s => { s.composition.sections[4].recipe = "contact.enquiry"; delete s.composition.sections[4].content.emailSubject; }],
+  ];
+  for (const [name, change] of computerInvalid) {
+    const service = structuredClone(computer); change(service);
+    assert.equal(serviceSchema.safeParse(service).success, false, `Invalid computer composition accepted: ${name}`);
+  }
+  for (const recipe of ["hero.service-intro", "scope.chapter-links"]) {
+    const specimen = structuredClone(gallery);
+    const entry = specimen.sections.find(s => s.recipe === recipe);
+    if (recipe === "hero.service-intro") entry.content.actions[0].target = "missing";
+    else entry.content.items[0].target = "missing";
+    assert.equal(workshopSchema.safeParse(specimen).success, false, `New specimen accepted a broken target: ${recipe}`);
+  }
+  assert.equal(getRecipeUsage([], [computer], "cta.quick-contact").length, 1, "Repeated computer CTAs count once");
+  console.log(`Validated computer support: ${computerInvalid.length} invalid compositions, two new shared specimens, route-bound schema/runtime authorisation and derived usage.`);
   const blueprintText = await fs.readFile(path.join(root, "../γ┇Blueprints/wifi-home-network-en-bp.md"), "utf8");
   const blueprint = yaml.load(blueprintText.split("---")[1]);
   assert.equal(blueprint["page-id"], englishProduction.translationId);

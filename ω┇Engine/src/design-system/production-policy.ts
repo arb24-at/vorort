@@ -15,9 +15,20 @@ export function isEnglishHomeNetworkTest(context?: ProductionRecipeContext) {
     && context.locale === "en" && context.audience === "private";
 }
 
+// Task 4B authorises these experiments for this service only. Registry lifecycle
+// and the default production approval rule remain independent of page adoption.
+export function isEnglishComputerSupportPreview(context?: ProductionRecipeContext) {
+  return context?.experiment === "computer-laptop-en-preview"
+    && context.id === "computer-laptop-en"
+    && context.translationId === "computer-laptop"
+    && context.slug === "computer-laptop-help"
+    && context.locale === "en" && context.audience === "private";
+}
+
 export function recipeAllowedForProduction(id: string, context?: ProductionRecipeContext) {
   if (recipeAllowedIn(id, "production")) return true;
-  return isEnglishHomeNetworkTest(context)
-    && getSectionRecipe(id).status === "experimental"
-    && ["recognition.situations", "cta.quick-contact", "contact.enquiry-email"].includes(id);
+  if (getSectionRecipe(id).status !== "experimental") return false;
+  if (isEnglishHomeNetworkTest(context)) return ["recognition.situations", "cta.quick-contact", "contact.enquiry-email"].includes(id);
+  return isEnglishComputerSupportPreview(context)
+    && ["hero.service-intro", "scope.chapter-links", "recognition.situations", "cta.quick-contact", "contact.enquiry-email"].includes(id);
 }

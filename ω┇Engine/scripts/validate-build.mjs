@@ -189,6 +189,28 @@ if (!wifiEnHtml.includes('data-delivery="email"') || !wifiEnHtml.includes("Prepa
 if (/<button[^>]*type="submit"[^>]*disabled/.test(wifiEnHtml)) errors.push("The email-draft fallback must remain usable without a direct endpoint");
 
 const privateHtml = fs.readFileSync(path.join(distRoot, "design-lab/workshop/private-service-page/index.html"), "utf8");
+const computerHtml = fs.readFileSync(path.join(distRoot, "en/services/private/computer-laptop-help/index.html"), "utf8");
+const computerPath = "en/services/private/computer-laptop-help/";
+const computerCanonical = new URL(`${basePath}${computerPath}`, astroConfig.site).toString();
+const computerAlternate = new URL(`${basePath}leistungen/privatpersonen/computer-laptop-hilfe/`, astroConfig.site).toString();
+for (const required of [
+  '<html lang="en">', '<title>Computer Support Berlin | Windows, Mac &amp; Laptop Help</title>',
+  `rel="canonical" href="${computerCanonical}"`,
+  `hreflang="de" href="${computerAlternate}"`,
+  'data-service-page="computer-laptop-en"', 'data-recipe="hero.service-intro"', 'data-recipe="scope.chapter-links"',
+  'data-delivery="email"', 'Prepare email draft', 'BitLocker', 'macOS',
+]) if (!computerHtml.includes(required)) errors.push(`Computer support missing required output: ${required}`);
+if ((computerHtml.match(/<h1[ >]/g) ?? []).length !== 1 || (computerHtml.match(/<form\b/g) ?? []).length !== 1) errors.push("Computer support needs one H1 and one enquiry form");
+if ((computerHtml.match(/data-recipe="cta.quick-contact"/g) ?? []).length !== 2) errors.push("Computer support needs early/closing canonical contact invitations");
+const computerIds = [...computerHtml.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]);
+if (computerIds.length !== new Set(computerIds).size) errors.push("Computer support contains duplicate IDs");
+for (const m of computerHtml.matchAll(/href="#([^"]+)"/g)) if (!computerIds.includes(m[1])) errors.push(`Computer support has a broken target: ${m[1]}`);
+for (const m of computerHtml.matchAll(/aria-labelledby="([^"]+)"/g)) for (const id of m[1].split(" ")) if (!computerIds.includes(id)) errors.push(`Computer support has a missing accessible label: ${id}`);
+const computerJourney = ["introduction", "everyday-situations", "practical-help", "quick-contact", "contact", "topics", "startup-problems", "slow-or-unstable", "account-access", "reinstallation-and-data", "working-process", "questions", "related-services", "final-contact"];
+for (let i = 0; i < computerJourney.length; i++) {
+  const position = computerHtml.indexOf(`id="${computerJourney[i]}"`);
+  if (position < 0 || (i && position <= computerHtml.indexOf(`id="${computerJourney[i - 1]}"`))) errors.push(`Computer support journey order failed: ${computerJourney[i]}`);
+}
 const privatePreview = fs.readFileSync(path.join(distRoot, "design-lab/preview/private-service-page/index.html"), "utf8");
 for (const [name, contents] of [["Workshop", privateHtml], ["Canvas", privatePreview]]) {
   if ((contents.match(/<h1[ >]/g) ?? []).length !== 1 || !contents.includes(">Private Service Page</h1>")) errors.push(`${name} needs one Private Service Page heading`);

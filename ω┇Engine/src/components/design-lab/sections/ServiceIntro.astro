@@ -1,0 +1,28 @@
+---
+import type { RecipeContent } from "../../../design-system/section-recipes";
+import "../../../styles/design-lab/sections/service-intro.css";
+type Props = { id: string; content: RecipeContent<"hero.service-intro">; headingTag?: "h1" | "h2"; anchorBase?: string };
+const { id, content, headingTag = "h1", anchorBase = "" } = Astro.props;
+const Heading = headingTag;
+---
+<section class="pw-service-intro" id={id} data-recipe="hero.service-intro" aria-labelledby={`${id}-title`}>
+  <div class="container">
+    <div class="pw-service-intro__surface">
+      <div class="pw-service-intro__copy">
+        <p class="pw-eyebrow">{content.eyebrow}</p>
+        <Heading id={`${id}-title`}>{content.title}</Heading>
+        <p class="pw-service-intro__lead">{content.intro}</p>
+        <div class="pw-actions">
+          {content.actions.map((action, index) => <a class:list={["pw-action", { "pw-action--primary": index === 0 }]} href={`${anchorBase}#${action.target}`}>
+            {action.label}<span aria-hidden="true">{index === 0 ? "↗" : "↓"}</span>
+          </a>)}
+        </div>
+      </div>
+      <aside class="pw-service-intro__note" aria-labelledby={`${id}-note`}>
+        <p id={`${id}-note`}><strong>{content.note.title}</strong></p>
+        <ul>{content.note.items.map(item => <li>{item}</li>)}</ul>
+        {content.note.footnote && <p class="pw-service-intro__footnote">{content.note.footnote}</p>}
+      </aside>
+    </div>
+  </div>
+</section>

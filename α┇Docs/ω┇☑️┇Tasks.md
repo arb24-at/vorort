@@ -5,7 +5,7 @@ module: vorort
 type: vorort-dev-tasks
 schema: 3
 created: 2026-10-20
-updated: 2026-10-20
+updated: 2026-10-21
 ---
 
 > [!help]- Instructions
@@ -99,13 +99,13 @@ updated: 2026-10-20
 ## Bundle 4 — Independent English launch pages (after all German tasks)
 
 > [!todo] Goal
-> Default sequencing: rewrite English pages **only after Bundle 3**. **Explicit exception, 2026-10-20:** Aykhan assigned **4A** immediately after 3A, with close German/English coverage and independently written English SEO copy; automatic next-task selection remains 3B. Research and write for English-speaking audiences independently while preserving the established site relationships. For trust and legal pages with no current independent English route, make a grounded language-route decision and document it rather than manufacturing a path.
+> Default sequencing: rewrite English pages **only after Bundle 3**. **Explicit exception, 2026-10-20:** Aykhan assigned **4A** immediately after 3A, with close German/English coverage and independently written English SEO copy; automatic next-task selection remains 3B. **Explicit exception, 2026-10-21:** Aykhan assigned **4B** with permission to adopt/develop experimental sections on the English computer-support route. Research and write for English-speaking audiences independently while preserving the established site relationships. For trust and legal pages with no current independent English route, make a grounded language-route decision and document it rather than manufacturing a path.
 
 - [x] **4A — EN · Home networks / Wi-Fi**
   - **Route:** `/en/services/private/wifi-home-network/`
   - **Page job:** Pilot an expressive, technically accurate service chapter structure. Preserve the approved editorial hero, topic navigation and conversion path where they help; avoid repair or guaranteed-coverage promises.
   - **Execution:** Independent English authoring using the English intent and research; do not mechanically translate the German copy. Apply the common per-page acceptance contract, record every Design Lab change, verify, mark this item complete, commit once, report and stop.
-- [ ] **4B — EN · Computer and laptop help**
+- [x] **4B — EN · Computer and laptop help**
   - **Route:** `/en/services/private/computer-laptop-help/`
   - **Page job:** Clarify fault diagnosis, troubleshooting and honest hardware-repair boundaries; make the problem-to-action journey distinct from software and data-transfer pages.
   - **Execution:** Independent English authoring using the English intent and research; do not mechanically translate the German copy. Apply the common per-page acceptance contract, record every Design Lab change, verify, mark this item complete, commit once, report and stop.

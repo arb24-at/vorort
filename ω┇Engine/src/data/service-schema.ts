@@ -121,7 +121,7 @@ export const serviceSchema = z
           context.addIssue({ code: z.ZodIssueCode.custom, path: ["composition", "relatedBefore"], message: "The English test related services must precede the closing invitation" });
         }
         const opening = service.composition.sections[0];
-        if (opening?.recipe === "hero.editorial-art") {
+        if (opening?.recipe === "hero.editorial-art" || opening?.recipe === "hero.service-intro") {
           for (const field of ["eyebrow", "title", "intro"] as const) {
             if (service.hero[field] !== opening.content[field]) context.addIssue({ code: z.ZodIssueCode.custom, path: ["hero", field], message: "Service summaries must match the composition hero" });
           }

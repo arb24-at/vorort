@@ -1,0 +1,10 @@
+.pw-chapter-links.pw-section { padding-block: clamp(2rem, 3.6vw, 3.25rem); background: #eef2f1; border-block: 1px solid var(--pw-rule); }
+.pw-chapter-links__list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: clamp(1.5rem, 4vw, 3.5rem); margin: 0; padding: 0; list-style: none; }
+.pw-chapter-links__list li { min-width: 0; border-top: 1px solid #aebfc0; }
+.pw-chapter-links__list a { display: grid; grid-template-columns: 1.75rem minmax(0,1fr) auto; gap: .75rem; height: 100%; padding: 1.25rem .2rem; }
+.pw-chapter-links__list h3 { margin: 0 0 .4rem; font-size: 1.2rem; line-height: 1.3; letter-spacing: -.025em; color: var(--pw-text); }
+.pw-chapter-links__list p { margin: 0; font-size: 1rem; line-height: 1.6; color: var(--pw-muted); }
+.pw-chapter-links__number { padding-top: .2rem; color: var(--pw-accent); font-size: .75rem; font-weight: 800; }
+.pw-chapter-links__arrow { color: var(--pw-accent); font-size: 1.25rem; }
+.pw-chapter-links__list a:hover h3 { color: var(--pw-accent); text-decoration: underline; text-underline-offset: .2em; }
+@media (max-width: 650px) { .pw-chapter-links__list { grid-template-columns: 1fr; } }

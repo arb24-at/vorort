@@ -22,6 +22,25 @@ sections:
           target: "contact"
         - label: "Explore the examples"
           target: "service-options"
+  - id: "text-introduction"
+    kind: "hero"
+    recipe: "hero.service-intro"
+    content:
+      eyebrow: "Private service · Introduction example"
+      title: "Help setting up your new computer"
+      intro: "Bring your everyday files, email and applications onto a new computer with practical help at home. We discuss what you want to keep, what needs setting up and how to make the handover understandable."
+      actions:
+        - label: "Discuss your setup"
+          target: "contact"
+        - label: "Explore the examples"
+          target: "chapter-navigation"
+      note:
+        title: "Useful details to have ready"
+        items:
+          - "The new computer and its power supply"
+          - "Which files and applications you use"
+          - "Any existing backup you want to bring across"
+        footnote: "A preparation note supports the introduction; it is not a diagnostic checklist or an extra form."
   - id: "banner-introduction"
     kind: "hero"
     recipe: "hero.banner-art"
@@ -152,6 +171,26 @@ sections:
             subject: "wifi"
             src: "/images/concept-ii/private/P2.png"
             alt: "Illustrated rooms and a wireless connection between them."
+  - id: "chapter-navigation"
+    kind: "scope"
+    recipe: "scope.chapter-links"
+    content:
+      eyebrow: "Optional deeper reading"
+      title: "Choose the explanation you need"
+      intro: "Text-only navigation can connect practical setup, software and file questions to independent chapter specimens."
+      items:
+        - title: "Computer setup"
+          body: "Use a varied explanation where the choices need detail."
+          target: "everyday-setup"
+        - title: "Files and accounts"
+          body: "Explain one focused subject with supporting artwork."
+          target: "files-and-accounts"
+        - title: "Software choices"
+          body: "Compare alternatives against the same useful criteria."
+          target: "software-choices"
+        - title: "Connected devices"
+          body: "Show how physical connections fit together."
+          target: "connected-devices"
   - id: "software-choices"
     kind: "explanation"
     recipe: "explanation.options-guide"
@@ -466,6 +505,12 @@ specimenNotes:
   site-footer:
     context: "Shared utility footer specimen"
     description: "Navigation, contact and legal facts remain centrally sourced. This is one independent specimen at the end of the gallery, not proof that every preceding example forms one customer journey."
+  text-introduction:
+    context: "Image-free introduction for a practical service"
+    description: "An Experimental alternative, not a replacement for the approved image-led hero. Copy/actions lead, with a subordinate preparation note. Check long titles, mobile reading order and note usefulness without recreating a full service page."
+  chapter-navigation:
+    context: "Text-first navigation without artwork dependencies"
+    description: "Two to six whole-entry links to real explanation specimens. Typography and rules establish hierarchy. Compare compact navigation with the approved illustrated index; neither is promoted or deprecated."
 proposals:
   - id: "scope.proportionate-help"
     title: "A compact explanation of proportionate help"

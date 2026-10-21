@@ -1,0 +1,23 @@
+---
+import type { RecipeContent } from "../../../design-system/section-recipes";
+import "../../../styles/design-lab/sections/chapter-links.css";
+type Props = { id: string; content: RecipeContent<"scope.chapter-links">; anchorBase?: string };
+const { id, content, anchorBase = "" } = Astro.props;
+---
+<section class="pw-chapter-links pw-section" id={id} data-recipe="scope.chapter-links" aria-labelledby={`${id}-title`} tabindex="-1">
+  <div class="container">
+    <header class="pw-section-intro">
+      <div><p class="pw-eyebrow">{content.eyebrow}</p><h2 id={`${id}-title`}>{content.title}</h2></div>
+      <p>{content.intro}</p>
+    </header>
+    <nav aria-labelledby={`${id}-title`}>
+      <ol class="pw-chapter-links__list">
+        {content.items.map((item, index) => <li><a href={`${anchorBase}#${item.target}`} aria-labelledby={`${id}-${index}-label`} aria-describedby={`${id}-${index}-description`}>
+          <span class="pw-chapter-links__number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+          <div><h3 id={`${id}-${index}-label`}>{item.title}</h3><p id={`${id}-${index}-description`}>{item.body}</p></div>
+          <span class="pw-chapter-links__arrow" aria-hidden="true">↘</span>
+        </a></li>)}
+      </ol>
+    </nav>
+  </div>
+</section>

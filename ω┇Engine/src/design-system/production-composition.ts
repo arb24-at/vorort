@@ -1,6 +1,6 @@
 import { z } from "astro/zod";
 import { getSectionRecipe, recipeSectionSchema, type RecipeSection } from "./section-recipes";
-import { isEnglishHomeNetworkTest, recipeAllowedForProduction, type ProductionRecipeContext } from "./production-policy";
+import { isEnglishHomeNetworkTest, isEnglishComputerSupportPreview, recipeAllowedForProduction, type ProductionRecipeContext } from "./production-policy";
 
 const text = z.string().trim().min(1);
 const anchor = z.string().regex(/^[a-z][a-z0-9-]*$/);
@@ -9,19 +9,21 @@ export const relatedServicesSchema = z.object({
   serviceIds: z.array(z.string().regex(/^[a-z0-9-]+$/)).min(2),
 }).strict();
 const common = { sections: z.array(recipeSectionSchema).min(2), related: relatedServicesSchema };
-// Existing pages retain their shell-owned closing contact. The isolated English
-// test owns one explicit recipe enquiry and a related-navigation insertion point.
+// Default pages retain their shell-owned closing contact. Explicitly authorised
+// English compositions own one recipe enquiry and a related-navigation position.
 export const productionCompositionSchema = z.union([
   z.object({ ...common, contact: getSectionRecipe("contact.enquiry").schema }).strict(),
-  z.object({ ...common, experiment: z.literal("wifi-home-network-en-test"), relatedBefore: anchor }).strict(),
+  z.object({ ...common, experiment: z.enum(["wifi-home-network-en-test", "computer-laptop-en-preview"]), relatedBefore: anchor }).strict(),
 ]);
 
 export function validateProductionSections(
   sections: RecipeSection[], context: ProductionRecipeContext,
   issue: (path: (string | number)[], message: string) => void,
 ) {
-  const testing = isEnglishHomeNetworkTest(context);
-  if (context.experiment && !testing) issue([], "This English test authorisation belongs only to the private English home-network route");
+  const homeNetworkTest = isEnglishHomeNetworkTest(context);
+  const computerSupportPreview = isEnglishComputerSupportPreview(context);
+  const testing = homeNetworkTest || computerSupportPreview;
+  if (context.experiment && !testing) issue([], "Experimental composition authorisation must match its exact service identity, locale, audience and slug");
   const contactId = context.locale === "de" ? "kontakt" : "contact";
   const reserved = new Set(["main-content", "kontakt", "contact", "site-footer", "related-services"]);
   const ids = new Set<string>();
@@ -44,14 +46,15 @@ export function validateProductionSections(
       || !before.some(s => s.id === "practical-help" && s.recipe === "explanation.editorial-prose")
       || !before.some(s => s.recipe === "cta.quick-contact")) issue([], "Meaningful recognition, practical help and a quick CTA must precede the enquiry");
     if (sections.filter(s => s.recipe === "cta.quick-contact").length !== 2 || sections.at(-1)?.recipe !== "cta.quick-contact") issue([], "The English test requires an early and closing quick-contact invitation");
-    if (sections.findIndex(s => s.recipe === "scope.topic-index") <= contactIndex) issue([], "The topic index must continue the page after the enquiry");
+    const indexRecipe = homeNetworkTest ? "scope.topic-index" : "scope.chapter-links";
+    if (sections.findIndex(s => s.recipe === indexRecipe) <= contactIndex) issue([], "Chapter navigation must continue the page after the enquiry");
   }
   sections.forEach((section, index) => {
-    if (section.recipe === "hero.editorial-art") section.content.actions.forEach((action, actionIndex) => {
+    if (section.recipe === "hero.editorial-art" || section.recipe === "hero.service-intro") section.content.actions.forEach((action, actionIndex) => {
       if (!ids.has(action.target) && action.target !== contactId) issue([index, "content", "actions", actionIndex, "target"], `Missing section target: ${action.target}`);
     });
     if (section.recipe === "cta.quick-contact" && section.content.enquiryTarget !== contactId) issue([index, "content", "enquiryTarget"], "Quick contact must target the single enquiry");
-    if (section.recipe === "scope.topic-index") {
+    if (section.recipe === "scope.topic-index" || section.recipe === "scope.chapter-links") {
       const targets = new Set<string>();
       section.content.items.forEach((item, itemIndex) => {
         const path = [index, "content", "items", itemIndex, "target"];

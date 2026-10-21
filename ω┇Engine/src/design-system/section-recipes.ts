@@ -76,6 +76,42 @@ function recipe<S extends z.ZodTypeAny>(definition: {
 // The single recipe contract: validation, renderer lookup and approval/impact views
 // all consume these records. A breaking content contract gets a new semantic ID.
 export const sectionRecipes = {
+  "hero.service-intro": recipe({
+    name: "Service introduction without artwork", kind: "hero", status: "experimental",
+    purpose: "Introduce practical service help with a prominent heading, two actions and a useful preparation note, without requiring artwork.",
+    recommendedPlacement: "Opening / first section",
+    recommendedUse: "Use when a clear explanation and useful intake context serve the visitor better than an environmental image.",
+    renderer: "ServiceIntro.astro",
+    authoringGuidance: {
+      contentShape: "Eyebrow, heading, introduction, two on-page actions, and one note with a title, two to four preparation items and an optional footnote.",
+      typicalRange: "A concise introduction and a genuinely useful note; do not repeat the service catalogue or the next recognition section.",
+      fixed: "One primary heading, two real anchor actions, and a subordinate preparation note. No required image, simulated diagnostic interface or invented proof.",
+      flexible: "Service wording, note subject/items and column proportions can vary. The note may explain useful enquiry details or what to have ready.",
+      needsDesignReview: "Review before approval. Inputs, live diagnostics, booking, more actions or a materially different note relationship need separate review.",
+      media: "No media. Typography, tonal contrast and a restrained accent establish the composition.",
+      responsive: "Heading, introduction and actions precede the note in source order; desktop columns become a compact single stream on phones.",
+      accessibility: "Use one real page heading, descriptive link labels, valid targets, visible focus and a labelled aside. The specimen may use H2 below the gallery H1.",
+    },
+    schema: z.object({ ...heading, actions: z.array(sectionAction).length(2), note: z.object({ title: text, items: z.array(text).min(2).max(4), footnote: text.optional() }).strict() }).strict(),
+  }),
+  "scope.chapter-links": recipe({
+    name: "Text chapter navigation", kind: "scope", status: "experimental",
+    purpose: "Offer concise, accessible navigation to deeper service explanations without requiring illustrations.",
+    recommendedPlacement: "Before detailed chapters, including after an early enquiry",
+    recommendedUse: "Use for two to six text-led topics whose destinations add detail beyond the opening service explanation.",
+    renderer: "ChapterLinks.astro",
+    authoringGuidance: {
+      contentShape: "Eyebrow, heading, brief introduction and two to six links, each with a topic title, short description and existing explanation target.",
+      typicalRange: "A short orientation and distinct topics. Describe the decision each chapter helps with rather than repeat its introduction.",
+      fixed: "Every complete entry is one real link to a distinct explanation chapter on the same page. There are no images, filters or hidden panels.",
+      flexible: "Topic count, wording, order, typography and columns may vary while preserving source order and the navigation relationship.",
+      needsDesignReview: "Review before approval. External destinations, nested navigation, interactive filtering or more than six topics require another design decision.",
+      media: "No media required; text must carry the meaning without decorative icons.",
+      responsive: "Multiple desktop columns stack in source order on mobile, with comfortable complete-entry tap targets.",
+      accessibility: "Use a labelled navigation landmark, real links, distinct names and visible focus; targets must exist and arrows/colour are supplementary.",
+    },
+    schema: z.object({ ...heading, items: z.array(item.extend({ target: anchor })).min(2).max(6) }).strict(),
+  }),
   "hero.editorial-art": recipe({
     name: "Editorial introduction with environmental artwork", kind: "hero",
     purpose: "Give a substantial service introduction and artwork their own readable space.",
