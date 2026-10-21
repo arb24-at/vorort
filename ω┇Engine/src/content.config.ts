@@ -1,6 +1,7 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { workshopSchema } from "./design-system/workshop-schema";
+import { audiencePageSchema } from "./design-system/audience-page-schema";
 import { serviceSchema } from "./data/service-schema";
 
 const services = defineCollection({
@@ -19,4 +20,8 @@ const workshop = defineCollection({
   schema: workshopSchema,
 });
 
-export const collections = { services, workshop };
+const audiencePages = defineCollection({
+  loader: glob({ pattern: "**/*.yml", base: "./src/content/audience-pages", generateId: ({ data }) => String(data.id) }),
+  schema: audiencePageSchema,
+});
+export const collections = { services, workshop, audiencePages };

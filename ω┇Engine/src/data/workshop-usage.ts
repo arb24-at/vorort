@@ -17,7 +17,8 @@ type ProductionConsumer = {
   composition?: { sections: { recipe: string }[] };
 };
 
-export function getRecipeUsage(pages: WorkshopFixture[], services: ProductionConsumer[], recipeId: RecipeId) {
+type AdditionalConsumer = { id: string; title: string; audience: "private" | "business"; locale: "de" | "en"; path: string; sections: { recipe: string }[] };
+export function getRecipeUsage(pages: WorkshopFixture[], services: ProductionConsumer[], recipeId: RecipeId, additional: AdditionalConsumer[] = []) {
   const workshop = getWorkshopUsage(pages, recipeId).map(page => ({ ...page, context: "Workshop" }));
   const production = services.filter(service => service.composition?.sections.some(section => section.recipe === recipeId))
     .map(service => ({
@@ -25,5 +26,6 @@ export function getRecipeUsage(pages: WorkshopFixture[], services: ProductionCon
       path: getServicePath(service),
       context: `Production · ${service.locale.toUpperCase()}`,
     }));
-  return [...workshop, ...production];
+  const otherPages = additional.filter(page => page.sections.some(section => section.recipe === recipeId)).map(page => ({ id: page.id, title: page.title, audience: page.audience, path: page.path, context: `Production · ${page.locale.toUpperCase()}` }));
+  return [...workshop, ...production, ...otherPages];
 }

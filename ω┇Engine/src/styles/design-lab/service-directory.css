@@ -1,0 +1,24 @@
+.pw-service-directory { background: #fffdf9; }
+.pw-service-directory__intro { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 5vw, 5rem); align-items: end; margin-bottom: 2rem; }
+.pw-service-directory__intro h2 { max-width: 19ch; }
+.pw-service-directory__intro > p { max-width: 56ch; margin: 0 0 1rem; color: var(--pw-muted); font-size: 1.0625rem; line-height: 1.7; }
+.pw-service-directory__entries { list-style: none; padding: 0; margin: 0; border-top: 2px solid var(--pw-text); }
+.pw-service-directory__entries > li { border-bottom: 1px solid var(--pw-rule); }
+.pw-service-directory__link { display: grid; grid-template-columns: 2rem minmax(0,.85fr) minmax(0,1.15fr) 2.25rem; gap: 1.5rem; padding: 2rem .5rem; color: var(--pw-text); transition: background-color .15s ease; }
+.pw-service-directory__link:hover { background: #eef3ef; }
+.pw-service-directory__link:focus-visible { outline: 3px solid var(--pw-accent); outline-offset: 3px; background: #eef3ef; }
+.pw-service-directory__number { padding-top: .35rem; color: var(--pw-accent); font-size: .75rem; font-weight: 800; letter-spacing: .1em; }
+.pw-service-directory__link h3 { font-size: clamp(1.45rem, 2.2vw, 2rem); line-height: 1.2; letter-spacing: -.03em; margin: 0; max-width: 18ch; }
+.pw-service-directory__body > p { margin: 0; color: var(--pw-muted); font-size: 1rem; line-height: 1.65; }
+.pw-service-directory__body ul { display: flex; flex-wrap: wrap; gap: .3rem 1rem; padding: 0; margin: .8rem 0; list-style: none; color: #48635d; font-size: .8125rem; line-height: 1.5; }
+.pw-service-directory__label { display: inline-block; color: var(--pw-accent); font-size: .875rem; font-weight: 750; }
+.pw-service-directory__arrow { font-size: 2rem; line-height: 1; }
+@media (max-width: 767px) {
+ .pw-service-directory__intro { grid-template-columns: 1fr; gap: .5rem; margin-bottom: 1rem; }
+ .pw-service-directory__link { grid-template-columns: 1.25rem minmax(0,1fr) 1.5rem; gap: .5rem .75rem; padding: 1.4rem 0; }
+ .pw-service-directory__link h3 { grid-column: 2; }
+ .pw-service-directory__arrow { grid-column: 3; grid-row: 1; font-size: 1.65rem; }
+ .pw-service-directory__body { grid-column: 2 / 4; }
+ .pw-service-directory__number { padding-top: .25rem; }
+}
+@media (prefers-reduced-motion: reduce) { .pw-service-directory__link { transition: none; } }

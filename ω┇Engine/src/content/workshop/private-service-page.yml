@@ -128,6 +128,23 @@ sections:
         - title: "New equipment"
           media:
             subject: "cabling-home"
+  - id: "service-directory"
+    kind: "scope"
+    recipe: "scope.service-directory"
+    content:
+      eyebrow: "Finding the right starting point"
+      title: "Different needs, useful destinations"
+      intro: "This navigation specimen shows descriptive service links. Use a few distinct choices, with enough context to make the destination clear; it is not a second complete customer page."
+      linkLabel: "Explore the service"
+      items:
+        - serviceId: "computer-laptop"
+          title: "Computer and laptop help"
+          body: "Investigating system, software and access problems on an existing device."
+          examples: ["Startup problems", "Everyday performance"]
+        - serviceId: "setup-data-transfer"
+          title: "Setting up a new computer"
+          body: "Choosing suitable equipment, moving normally readable files and reconnecting useful accounts and devices."
+          examples: ["New equipment", "Files and accounts"]
   - id: "service-options"
     kind: "scope"
     recipe: "scope.topic-index"
@@ -467,6 +484,10 @@ sections:
     recipe: "footer.site"
     content: {}
 specimenNotes:
+  service-directory:
+    context: "Experimental navigation pattern for audience gateways"
+    description: "Real locale-aware service links in editorial rows. Descriptions and examples make the choice useful without relying on a repeated card grid or extra artwork. The same shared renderer is used on the English private gateway."
+    presentation: "compact"
   compact-explanation:
     context: "Compact shared presentation · selected blocks, no required opening copy"
     description: "Approved rich-prose parent with independently Experimental native ordered and unordered lists. This cross-service specimen omits the eyebrow, introduction, columns, media and table; it is not a new approved section or a complete service page."

@@ -47,7 +47,7 @@ Family/source: `setup-data-transfer`.
 
 Family/source: `private gateway`.
 
-- [ ] **4E — EN · Private services landing** — `/en/services/private/`.
+- [x] **4E — EN · Private services landing** — `/en/services/private/`. Source/repository/browser verified in v2.3.2; new Experimental service-directory specimen and exact gateway trial. QA-E remains open.
 - [ ] **3E — DE · Private services landing** — `/leistungen/privatpersonen/`.
 
 ### Business networks / IT support

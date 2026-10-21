@@ -1,0 +1,27 @@
+---
+import type { Audience, RecipeContent } from "../../../design-system/section-recipes";
+import { getServices, getServicePath } from "../../../data/services";
+import { withBase } from "../../../utils/withBase";
+import "../../../styles/design-lab/service-directory.css";
+type Props = { id: string; audience: Audience; locale: "en" | "de"; content: RecipeContent<"scope.service-directory"> };
+const { id, audience, locale, content } = Astro.props;
+const services = await getServices(audience, locale);
+const entries = content.items.map(item => {
+  const service = services.find(service => service.translationId === item.serviceId);
+  if (!service) throw new Error(`Unknown ${audience}/${locale} service destination: ${item.serviceId}`);
+  return { ...item, href: withBase(getServicePath(service)) };
+});
+---
+<section class="pw-section pw-service-directory" id={id} aria-labelledby={`${id}-title`} data-recipe="scope.service-directory" tabindex="-1">
+  <div class="container">
+    <header class="pw-service-directory__intro"><div><p class="pw-eyebrow">{content.eyebrow}</p><h2 id={`${id}-title`}>{content.title}</h2></div><p>{content.intro}</p></header>
+    <ol class="pw-service-directory__entries" role="list">
+      {entries.map((entry, index) => <li><a class="pw-service-directory__link" href={entry.href}>
+        <span class="pw-service-directory__number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+        <h3>{entry.title}</h3>
+        <div class="pw-service-directory__body"><p>{entry.body}</p><ul role="list" aria-label={entry.title}>{entry.examples.map(example => <li>{example}</li>)}</ul><span class="pw-service-directory__label">{content.linkLabel}</span></div>
+        <span class="pw-service-directory__arrow" aria-hidden="true">↗</span>
+      </a></li>)}
+    </ol>
+  </div>
+</section>

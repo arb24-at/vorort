@@ -7,7 +7,7 @@ const { section, audience, locale, context, productionContext, specimen = false,
 const recipe = getSectionRecipe(section.recipe);
 const permitted = context === "production" ? recipeAllowedForProduction(section.recipe, productionContext) : recipeAllowedIn(section.recipe, context);
 const permittedBlocks = context === "production" ? blocksAllowedForProduction(section, productionContext) : usedRecipeBlocks(section).every(block => block.status !== "deprecated");
-if (!permitted || !permittedBlocks || (productionContext && (productionContext.audience !== audience || productionContext.locale !== locale)) || !recipe.audiences.includes(audience) || !recipe.pageTypes.includes("service")) {
+if (!permitted || !permittedBlocks || (productionContext && (productionContext.audience !== audience || productionContext.locale !== locale)) || !recipe.audiences.includes(audience) || !recipe.pageTypes.includes(productionContext?.pageType ?? "service")) {
   throw new Error(`Recipe ${section.recipe} cannot render in ${context} for ${audience}`);
 }
 const renderers = import.meta.glob<AstroComponentFactory>("./design-lab/sections/*.astro", { eager: true, import: "default" });

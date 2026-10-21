@@ -9,8 +9,9 @@
     "preview": "node ./node_modules/astro/astro.js preview",
     "validate:dist": "node scripts/validate-build.mjs",
     "validate:workshop": "node scripts/validate-workshop.mjs",
-    "validate": "npm run build && npm run validate:docs && npm run validate:workshop && npm run validate:dist",
-    "validate:docs": "node scripts/validate-docs.mjs"
+    "validate": "npm run build && npm run validate:docs && npm run validate:workshop && npm run validate:audience && npm run validate:dist",
+    "validate:docs": "node scripts/validate-docs.mjs",
+    "validate:audience": "node scripts/validate-audience.mjs"
   },
   "dependencies": {
     "astro": "^5.6.0",

@@ -65,6 +65,7 @@ All paths below are inside `ω┇Engine/`.
 | --- | --- |
 | `src/data/site.ts` | Central provisional identity/contact facts, districts and optional English-support messaging |
 | `src/content/services/<directory>/<locale>.yml` | Actual editable production copy, metadata and composition |
+| `src/content/audience-pages/`, `src/data/audience-pages.ts`, `src/design-system/audience-page-schema.ts` | Validated audience-gateway content and locale-aware service references |
 | `src/content.config.ts`, `src/data/service-schema.ts`, `services.ts`, `service-paths.ts` | Collection/schema, pairing, routes and resolution |
 | `src/data/seo-keywords.yml` | Planning-only research evidence, intent, exclusions and page ownership |
 | `src/design-system/section-recipes.ts` | Section/block definitions, lifecycle, schemas, renderer pointers and guidance |
@@ -81,6 +82,10 @@ All paths below are inside `ω┇Engine/`.
 Use strict semantic records. Default recipe-service pages use Approved sections/blocks and a shell enquiry. Explicit existing page trials in `production-policy.ts` permit only listed experiments on their exact identity/locale/audience/slug; no trial currently authorises the new list block. Future trials cite an approved blueprint/version and decision. Schema and rendering enforce permissions independently of lifecycle. One opening hero, one enquiry, compatible recipes, unique/reserved anchors and valid navigation remain enforced. Blueprint intent determines the rest of the journey, not a fixed Home Network pattern.
 
 Both home-network and computer-help locale pairs, plus English software, business networks and Microsoft 365 use recipe composition; other records retain their existing templates. Root hero summaries must match the opening recipe. Related IDs resolve through the real route map. The optional `contactAfter` places the legacy shell after orientation and requires further content. Compact presentation follows trial/early-enquiry composition, is shared with Lab, and does not depend on a service ID.
+
+## Audience gateways
+
+The English private gateway uses `AudiencePage.astro` and a validated `audience-pages/private/en.yml` record. Page identity/locale/audience and explicit trial permissions are checked separately from services. The shared hero, rich prose, staged process, visible FAQ, email enquiry and quick CTA safely support the `audience` page context; existing service consumers retain their contracts and output. New Experimental `scope.service-directory` resolves real service IDs to locale-aware editorial navigation rows, without artwork or nested links. Its generic Private Service Page specimen uses the same renderer. Approved Sections usage includes each audience locale once per recipe. No recipe or block was promoted.
 
 ## Design Lab and media
 

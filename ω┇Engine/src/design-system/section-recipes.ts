@@ -2,7 +2,7 @@ import { z } from "astro/zod";
 
 export type RecipeStatus = "experimental" | "approved" | "deprecated";
 export type Audience = "private" | "business";
-export type PageType = "service";
+export type PageType = "service" | "audience";
 
 const text = z.string().trim().min(1);
 const anchor = z.string().regex(/^[a-z][a-z0-9-]*$/, "Use a lowercase semantic section ID");
@@ -76,13 +76,14 @@ function recipe<S extends z.ZodTypeAny>(definition: {
   supersedes?: string;
   authoringGuidance?: Partial<AuthoringGuidance>;
   blocks?: Record<string, BlockDefinition>;
+  pageTypes?: readonly PageType[];
 }) {
   return {
     ...definition,
     status: definition.status ?? "experimental",
     supersedes: definition.supersedes ?? null,
     blocks: definition.blocks ?? {},
-    pageTypes: ["service"] as readonly PageType[],
+    pageTypes: definition.pageTypes ?? ["service"] as readonly PageType[],
     audiences: ["private", "business"] as readonly Audience[],
   };
 }
@@ -90,6 +91,27 @@ function recipe<S extends z.ZodTypeAny>(definition: {
 // The single recipe contract: validation, renderer lookup and approval/impact views
 // all consume these records. A breaking content contract gets a new semantic ID.
 export const sectionRecipes = {
+  "scope.service-directory": recipe({
+    name: "Editorial service directory", kind: "scope", status: "experimental",
+    pageTypes: ["service", "audience"],
+    purpose: "Route an everyday need to a real service through substantial, descriptive links.",
+    recommendedPlacement: "Near the opening of an audience gateway, before or after brief scope reassurance",
+    recommendedUse: "Help visitors choose a service without requiring them to diagnose the cause. Use editorial rows when the relationship is navigation rather than a comparison of products.",
+    renderer: "ServiceDirectory.astro",
+    authoringGuidance: {
+      contentShape: "Heading and intro, then two to six service entries: canonical service ID, short title, useful description and one to three examples. One shared link label.",
+      typicalRange: "A few distinct choices. Each description should explain which request belongs there; examples add scan value rather than repeat the description.",
+      fixed: "Every entry is one real service link, resolved for the page audience and locale. No invented routes, nested links, packages, pricing or pretend diagnostics.",
+      flexible: "Order, wording and examples follow the audience. Rows can be selected without treating the complete specimen as a required catalogue.",
+      needsDesignReview: "New destination types, grouped audiences, pricing comparisons or filters change the contract. This experiment is not Approved.",
+      media: "No artwork required; typography and navigation relationships carry the information.",
+      responsive: "Wide rows balance topic and explanation. Narrow screens put the description beneath its title and keep one large link target.",
+      accessibility: "Real headings, list semantics, descriptive link labels and visible focus. Arrow decoration is hidden; there are no nested interactive controls.",
+    },
+    schema: z.object({ ...heading, linkLabel: text, items: z.array(z.object({ serviceId: anchor, title: text, body: text, examples: z.array(text).min(1).max(3) }).strict()).min(2).max(6) }).strict().superRefine((content, context) => {
+      if (new Set(content.items.map(item => item.serviceId)).size !== content.items.length) context.addIssue({ code: z.ZodIssueCode.custom, path: ["items"], message: "Service destinations must be distinct" });
+    }),
+  }),
   "hero.service-intro": recipe({
     name: "Service introduction without artwork", kind: "hero", status: "experimental",
     purpose: "Introduce practical service help with a prominent heading, two actions and a useful preparation note, without requiring artwork.",
@@ -127,6 +149,7 @@ export const sectionRecipes = {
     schema: z.object({ ...heading, items: z.array(item.extend({ target: anchor })).min(2).max(6) }).strict(),
   }),
   "hero.editorial-art": recipe({
+    pageTypes: ["service", "audience"],
     name: "Editorial introduction with environmental artwork", kind: "hero",
     purpose: "Give a substantial service introduction and artwork their own readable space.",
     recommendedPlacement: "Opening / first section",
@@ -231,6 +254,7 @@ export const sectionRecipes = {
     schema: z.object({ ...editorialHeading, media: suppliedMedia, note: editorialNote.optional() }).strict(),
   }),
   "explanation.editorial-prose": recipe({
+    pageTypes: ["service", "audience"],
     name: "Rich editorial prose", kind: "explanation",
     purpose: "Carry a large amount of explanatory content through varied but controlled editorial blocks without reducing it to cards or collapsible fragments.",
     recommendedPlacement: "Between more structured service sections, especially after a comparison, diagram or topic index",
@@ -299,6 +323,7 @@ export const sectionRecipes = {
     schema: z.object({ ...heading, items: z.array(item).min(2).max(6) }).strict(),
   }),
   "cta.quick-contact": recipe({
+    pageTypes: ["service", "audience"],
     name: "Quick contact invitation", kind: "cta",
     status: "experimental",
     purpose: "Offer a low-pressure call or a return to the page's single enquiry form without repeating the form.",
@@ -318,6 +343,7 @@ export const sectionRecipes = {
     schema: z.object({ eyebrow: text, title: text, body: text, callLabel: text, enquiryLabel: text, enquiryTarget: anchor }).strict(),
   }),
   "process.staged-path": recipe({
+    pageTypes: ["service", "audience"],
     name: "Staged working path", kind: "process",
     purpose: "Explain the four stages from assessment to handover.",
     recommendedPlacement: "Middle page",
@@ -348,6 +374,7 @@ export const sectionRecipes = {
     }).strict(),
   }),
   "faq.editorial-answers": recipe({
+    pageTypes: ["service", "audience"],
     name: "Editorial questions and answers", kind: "faq",
     purpose: "Answer important service questions in an always-visible editorial reading flow rather than hiding answers behind disclosures.",
     recommendedPlacement: "Late page, after the main service explanation and before the final contact section",
@@ -413,6 +440,7 @@ export const sectionRecipes = {
     schema: enquiryContentSchema,
   }),
   "contact.enquiry-email": recipe({
+    pageTypes: ["service", "audience"],
     name: "Enquiry with an email draft", kind: "contact",
     status: "experimental",
     purpose: "Offer a substantial enquiry form that prepares an email for the visitor to review and send in their own mail application.",

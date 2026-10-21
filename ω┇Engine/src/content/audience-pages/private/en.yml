@@ -1,0 +1,144 @@
+id: private-landing-en
+translationId: private-landing
+locale: en
+audience: private
+seo:
+  title: "IT Support at Home in Berlin | Computers, Wi-Fi & Setup"
+  description: "Practical IT support at home in Berlin for computers, software, Wi-Fi and new-device setup. Find the right service or tell us what you need help with."
+experiment: private-landing-en-preview
+sections:
+  - id: introduction
+    kind: hero
+    recipe: hero.editorial-art
+    content:
+      eyebrow: "Homes & home offices · Berlin"
+      title: "IT support at home in Berlin"
+      intro: "A computer that will not start, Wi-Fi that does not reach your workspace, or a new laptop waiting to be set up. We help with the technology you use at home, starting with the equipment you already have. You can ask about one small task or a more complete setup."
+      media:
+        subject: private-hero
+        src: /images/concept-ii/private/P1.png
+        alt: "Illustration of a home with a computer desk, living space and everyday connected devices."
+      actions:
+        - label: "Find the right service"
+          target: services
+        - label: "Describe your request"
+          target: contact
+  - id: services
+    kind: scope
+    recipe: scope.service-directory
+    content:
+      eyebrow: "Four areas of practical help"
+      title: "What would you like help with?"
+      intro: "Choose the closest starting point for a fuller explanation. If the problem crosses several areas, or you are unsure what is causing it, you can simply describe the situation in the enquiry below."
+      linkLabel: "Explore this service"
+      items:
+        - serviceId: computer-laptop
+          title: "Computer & laptop help"
+          body: "For a Windows PC, laptop or Mac with startup problems, crashes, slow performance or blocked access. We investigate system and software causes before recommending changes."
+          examples: ["Startup problems", "Slow or unstable computers", "Account access"]
+        - serviceId: software-optimisation
+          title: "Software installation & help"
+          body: "Install or configure supported applications, resolve update problems and investigate conflicts. A single program can be the whole job; a full computer rebuild is not the default."
+          examples: ["Installing applications", "Update errors", "Software conflicts"]
+        - serviceId: wifi-home-network
+          title: "Wi-Fi & home networks"
+          body: "Improve Wi-Fi coverage, connect a home-office desk by cable, or set up shared devices and NAS storage. Planning starts with the rooms and equipment you already use."
+          examples: ["Wi-Fi & Mesh", "Ethernet cabling", "NAS & shared files"]
+        - serviceId: setup-data-transfer
+          title: "New computer setup & data transfer"
+          body: "Choose and set up a new PC, laptop or Mac. Bring across normally readable files, reconnect email and peripherals, and plan an independent backup."
+          examples: ["Choosing a computer", "Moving files", "Email & peripherals"]
+  - id: practical-help
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: "A manageable next step"
+      title: "Help with a single task or a wider setup"
+      intro: "You do not need a technical diagnosis or a shopping list before contacting us. Tell us what is difficult now, or what you want to be able to do. We can clarify the appropriate work with you."
+      blocks:
+        - type: columns
+          columns:
+            - title: "Start with what is already there"
+              paragraphs:
+                - "We look at the affected device, application or connection and the equipment around it. A settings change, a targeted repair or a better connection may be enough. New equipment is discussed when it serves the task."
+            - title: "Agree the work and costs"
+              paragraphs:
+                - "The initial conversation is free. Work is quoted individually, and any charge for a diagnostic visit is explained before it is arranged. Additional work, equipment or another appointment is agreed before we proceed."
+  - id: contact
+    kind: contact
+    recipe: contact.enquiry-email
+    content:
+      title: "Tell us what you need help with"
+      intro: "One device, several connected things, or a setup you are planning. A short description in your own words is enough to begin."
+      formIntro: "This form prepares a draft in your email app. Review the details and send it there; nothing is sent directly by this website. * Required fields."
+      affectedPlaceholder: "For example a Windows laptop, a Mac, software or home Wi-Fi"
+      request: "What would you like help with?"
+      requestPlaceholder: "Tell us what is happening or what you want to set up. Include your Berlin district and the device or service, if you know it."
+      emailSubject: "IT help at home in Berlin"
+  - id: home-office
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: "When more than one thing is involved"
+      title: "Help for connected devices and your home office"
+      blocks:
+        - type: prose
+          paragraphs:
+            - "A video call that drops does not always mean the laptop is faulty. A printer may depend on both the computer and the network. We consider those connections as far as the agreed work requires, rather than assuming that every symptom needs a separate purchase or installation."
+        - type: columns
+          columns:
+            - title: "Your home-office desk"
+              paragraphs:
+                - "A computer, monitor, dock, printer and internet connection should support the tasks you actually do. Setup can include suitable connections, email and accounts, shared storage or a backup where these are part of the request."
+            - title: "Equipment managed by an employer"
+              paragraphs:
+                - "Tell us if the device or account is controlled by your employer. Some changes need permission or the organisation’s IT team. We do not bypass those controls or promise access that depends on someone else."
+  - id: working-process
+    kind: process
+    recipe: process.staged-path
+    content:
+      eyebrow: "What happens next"
+      title: "From your enquiry to a useful handover"
+      intro: "On-site help in Berlin is the usual approach. Suitable remote work can also be considered when the task allows it."
+      steps:
+        - title: "Describe the need"
+          body: "Tell us the device or task, what happens instead, and your postcode or district. Mention important files or recent changes where relevant."
+        - title: "Clarify the next step"
+          body: "We discuss what can reasonably be assessed, the likely work and whether a visit or suitable remote help makes sense."
+        - title: "Carry out agreed work"
+          body: "We make the agreed changes and discuss meaningful risks or additional work before proceeding. Where appropriate, this includes considering a backup first."
+        - title: "Check and explain"
+          body: "We test the relevant functions and explain the changes, useful settings and any remaining limits or follow-up work."
+  - id: questions
+    kind: faq
+    recipe: faq.editorial-answers
+    content:
+      eyebrow: "Before you get in touch"
+      title: "A few practical questions"
+      intro: "You can start with an everyday description. These answers may help you decide what to include."
+      items:
+        - question: "Do I need to choose a service first?"
+          paragraphs:
+            - "No. The service pages are there if you want more detail. If you are unsure whether the problem is the computer, software or connection, tell us what you see and which task is affected."
+        - question: "Do you work with both Windows PCs and Macs?"
+          paragraphs:
+            - "Yes. We help with Windows and macOS system and software issues, and with setting up new computers. The available options depend on the device, supported software, account access and the condition of the data."
+        - question: "Can you repair a broken screen or recover a damaged drive?"
+          paragraphs:
+            - "Physical screen, charging-port, board and liquid-damage repairs are outside the advertised service. Damaged or unreadable storage needs specialist assessment. We explain these limits rather than promise a repair or successful recovery."
+        - question: "What should I send, and what should stay private?"
+          paragraphs:
+            - "The device model, visible error, when it started and your Berlin district are useful. Please do not send passwords, PINs, verification codes, recovery keys or remote-access credentials. Sensitive entries can be discussed and, where needed, made by you on the device."
+        - question: "Can I request an evening or Saturday appointment?"
+          paragraphs:
+            - "Mention the times that suit you. Appointments, including evenings or Saturdays where possible, are agreed individually. We do not promise immediate availability or a fixed response time."
+  - id: final-contact
+    kind: cta
+    recipe: cta.quick-contact
+    content:
+      eyebrow: "Your next step"
+      title: "Ask about your device or setup"
+      body: "Tell us what you need help with. You do not have to know the cause or decide which equipment to buy before the conversation."
+      callLabel: "Call to discuss your request"
+      enquiryLabel: "Return to the enquiry"
+      enquiryTarget: contact

@@ -1,0 +1,16 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import RecipeSection from "./RecipeSection.astro";
+import { audiencePath } from "../data/audience-paths";
+import type { AudiencePage } from "../design-system/audience-page-schema";
+import "../styles/design-lab/concept-ii.css";
+import "../styles/recipe-service.css";
+type Props = { page: AudiencePage };
+const { page } = Astro.props;
+const productionContext = { ...page, slug: page.audience, pageType: "audience" as const };
+---
+<MainLayout title={page.seo.title} description={page.seo.description} canonicalPath={audiencePath(page.audience, page.locale)} alternatePath={audiencePath(page.audience, page.locale === "en" ? "de" : "en")} lang={page.locale}>
+  <div class:list={["concept-ii", `concept-ii--${page.audience}`, "recipe-service", "pw-presentation--compact"]} data-audience-page={page.id}>
+    {page.sections.map(section => <RecipeSection section={section} audience={page.audience} locale={page.locale} context="production" productionContext={productionContext} />)}
+  </div>
+</MainLayout>

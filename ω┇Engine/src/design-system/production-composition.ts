@@ -32,7 +32,7 @@ export function validateProductionSections(
     const recipe = getSectionRecipe(section.recipe);
     if (!blocksAllowedForProduction(section, context)) issue([index, "content", "blocks"], "Every block requires approval or its own exact page permission; parent approval is insufficient");
     if (!recipeAllowedForProduction(section.recipe, context)) issue([index, "recipe"], "Production requires an approved recipe or the exact authorised page trial");
-    if (!recipe.audiences.includes(context.audience) || !recipe.pageTypes.includes("service")) issue([index, "recipe"], "Recipe does not support this audience or page type");
+    if (!recipe.audiences.includes(context.audience) || !recipe.pageTypes.includes(context.pageType ?? "service")) issue([index, "recipe"], "Recipe does not support this audience or page type");
     if (section.kind === "footer" || (section.kind === "contact" && !ownEnquiry)) issue([index, "recipe"], "Contact and footer are supplied by the production shell outside an authorised page trial");
   });
   if (sections[0]?.kind !== "hero" || sections.filter(section => section.kind === "hero").length !== 1) issue([], "A production service composition requires exactly one opening hero");
