@@ -9,7 +9,7 @@ navigation:
   group: device-home
   label: "Software-Installation & Optimierung"
 page:
-  template: guided-private
+  template: recipe-service
   technicalDepth: informative
   theme:
     variant: software
@@ -75,13 +75,13 @@ page:
         - "Zugänge geprüft"
         - "Übergabe erklärt"
 seo:
-  title: "Software installieren & PC optimieren Berlin"
-  description: "Software-Installation und PC-Optimierung in Berlin: Programme, Updates, Benutzerprofile, Konflikte und langsame Windows-Systeme verständlich lösen."
+  title: "Software installieren in Berlin | Programme & PC-Hilfe"
+  description: "Software installieren und einrichten in Berlin: Hilfe bei Programmfehlern, Updates, Softwarekonflikten und langsamen PCs – vor Ort und nachvollziehbar."
   intent: "Professionelle Hilfe in Berlin für Softwareinstallation, Softwarefehler oder einen langsamen PC finden."
 hero:
-  eyebrow: "Privatkunden & Homeoffice · Software"
-  title: "Software installieren und Computer sinnvoll optimieren"
-  intro: "Ein Programm lässt sich nicht installieren, ein Update bringt neue Fehler oder der Computer ist mit der Zeit unübersichtlich geworden? Wir prüfen Windows, Programme, Konten und Einstellungen als zusammenhängende Arbeitsumgebung und richten einen nachvollziehbaren Zustand ein."
+  eyebrow: "Software-Hilfe · Vor Ort in Berlin"
+  title: "Software installieren und Programmfehler beheben"
+  intro: "Ein Programm lässt sich nicht installieren, startet nach einem Update nicht mehr oder Ihr PC wird durch unnötige Software ausgebremst? Wir helfen bei Installation, Einrichtung und Fehlersuche für unterstützte, ordnungsgemäß lizenzierte Anwendungen. Dabei schauen wir auch auf Konten, Einstellungen und Abhängigkeiten, bevor wir Änderungen vornehmen."
 problems:
   eyebrow: "Woran Sie das Problem merken"
   title: "Nicht jede Softwarestörung hat dieselbe Ursache"
@@ -112,6 +112,185 @@ cta:
   title: "Softwareproblem kurz einordnen"
   text: "Schreiben Sie uns, welches Programm oder welche Funktion betroffen ist, was Sie sehen und seit wann das Problem besteht."
   prompt: "Hilfreich sind Programmname, Windows-Version, genaue Fehlermeldung und die letzte erkennbare Änderung."
+composition:
+  related:
+    eyebrow: "Wenn es um mehr als Programme geht"
+    title: "Computerprobleme oder ein neues Gerät?"
+    linkLabel: "Leistung ansehen"
+    serviceIds:
+      - computer-laptop
+      - setup-data-transfer
+  contact:
+    title: "Softwareproblem schildern"
+    intro: "Nennen Sie uns das Programm, den Fehler und das Gerät. Eine genaue technische Diagnose ist für die erste Anfrage nicht nötig."
+    formIntro: "Das Formular bereitet einen E-Mail-Entwurf vor. Prüfen und senden Sie ihn in Ihrem E-Mail-Programm selbst ab; diese Seite versendet nichts direkt. Bitte keine Passwörter, Lizenzschlüssel oder Sicherheitscodes angeben."
+    affectedPlaceholder: "Zum Beispiel Programm, Installer oder Windows-Anwendung"
+    request: "Was möchten Sie installieren oder wieder zum Laufen bringen?"
+  contactAfter: hilfe-ueberblick
+  sections:
+    - id: einstieg
+      kind: hero
+      recipe: hero.editorial-art
+      content:
+        eyebrow: "Software-Hilfe · Vor Ort in Berlin"
+        title: "Software installieren und Programmfehler beheben"
+        intro: "Ein Programm lässt sich nicht installieren, startet nach einem Update nicht mehr oder Ihr PC wird durch unnötige Software ausgebremst? Wir helfen bei Installation, Einrichtung und Fehlersuche für unterstützte, ordnungsgemäß lizenzierte Anwendungen. Dabei schauen wir auch auf Konten, Einstellungen und Abhängigkeiten, bevor wir Änderungen vornehmen."
+        media:
+          subject: private-hero
+          src: /images/concept-ii/private/P1.png
+          alt: "Illustration eines Wohn- und Arbeitsbereichs mit Computer und verbundenen Geräten."
+        actions:
+          - label: "Software-Hilfe anfragen"
+            target: kontakt
+          - label: "Häufige Probleme ansehen"
+            target: softwareprobleme
+    - id: softwareprobleme
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: "Typische Anlässe"
+        title: "Wenn Programme nicht installieren, starten oder richtig arbeiten"
+        intro: "Dieselbe Meldung kann verschiedene Ursachen haben. Beschreiben Sie, was genau nicht funktioniert und seit wann – wir prüfen anschließend die naheliegenden Zusammenhänge."
+        blocks:
+          - type: table
+            title: "Was Sie bemerken und was wir prüfen"
+            columns:
+              - "Beobachtung"
+              - "Mögliche Prüfpunkte"
+            rows:
+              - - "Installation wird abgebrochen"
+                - "Systemversion, Herstelleranforderungen, Berechtigungen und Reste älterer Installationen"
+              - - "Programm stürzt nach Update ab"
+                - "Versionen, Updateverlauf, Erweiterungen und verfügbare Reparaturoptionen"
+              - - "Anmeldung klappt in der App nicht"
+                - "Kontozustand, lokales Benutzerprofil, gespeicherte Einstellungen und erlaubte Zugangswege"
+              - - "Eine andere Anwendung verhält sich anders"
+                - "Standardprogramme, Zusatzmodule, Hintergrunddienste und sich störende Versionen"
+          - type: prose
+            paragraphs:
+              - "Wichtig ist die Aufgabe, die wieder möglich sein soll: eine Datei öffnen, ein Formular bearbeiten oder ein bestimmtes Programm starten. Eine Fehlermeldung allein ist noch kein Grund, das ganze System neu aufzusetzen."
+    - id: hilfe-ueberblick
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: "Was die Leistung umfasst"
+        title: "Eine Anwendung einrichten oder eine Störung gezielt beheben"
+        intro: "Auch eine einzelne Installation ist ein sinnvoller Auftrag. Bei mehreren Problemen stimmen wir ab, welche Anwendungen und Einstellungen tatsächlich dazugehören, statt den ganzen Computer unnötig umzubauen."
+        blocks:
+          - type: columns
+            columns:
+              - title: "Installieren und konfigurieren"
+                paragraphs:
+                  - "Wir prüfen die passende Version, gültige Lizenz und Voraussetzungen der Anwendung, installieren sie aus nachvollziehbarer Quelle und richten relevante Einstellungen für Ihre Nutzung ein. Danach testen wir die vereinbarte Aufgabe."
+              - title: "Fehler eingrenzen und aufräumen"
+                paragraphs:
+                  - "Bei Abstürzen, fehlgeschlagenen Updates, störenden Erweiterungen oder unnötigen Autostarts suchen wir nach Ursachen. Wir entfernen oder ändern Bestandteile erst, wenn klar ist, wovon andere Programme abhängen."
+          - type: callout
+            tone: quiet
+            title: "Kosten werden vorab besprochen"
+            body: "Das erste Gespräch ist kostenlos. Wir kalkulieren nach dem konkreten Auftrag; eine kostenpflichtige Diagnose vor Ort erklären wir, bevor sie vereinbart wird. Über zusätzliche Arbeiten entscheiden Sie vorab."
+    - id: installation-und-lizenzen
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: "Vor dem Installieren"
+        title: "Kompatibilität, Lizenzen und sinnvolle Einstellungen"
+        intro: "Ein Installationsprogramm herunterzuladen ist nicht dasselbe wie eine Anwendung richtig einzurichten. Sie muss zum Gerät, Betriebssystem, Benutzer und vorgesehenen Zweck passen."
+        blocks:
+          - type: columns
+            columns:
+              - title: "Voraussetzungen klären"
+                paragraphs:
+                  - "Wir schauen nach unterstützter Windows-Version, verfügbarem Speicher, benötigten Komponenten und gültiger Lizenz beziehungsweise Abonnement. Auch eine vorhandene Programmversion oder ein anderes Benutzerkonto kann eine Rolle spielen."
+              - title: "Im Alltag nutzbar machen"
+                paragraphs:
+                  - "Wir richten passende Standardprogramme, Dateizuordnungen und benötigte Verbindungen ein. Anschließend prüfen wir gemeinsam die relevante Funktion – beispielsweise Dokumente öffnen, drucken oder eine Anwendung mit dem richtigen Konto nutzen."
+          - type: callout
+            tone: outline
+            title: "Ältere und besondere Anwendungen"
+            body: "Alte Installationsdateien sind auf einem modernen System nicht automatisch unterstützt oder sicher. Wir prüfen die Abhängigkeiten und besprechen, ob ein Update, eine Alternative oder ein unveränderter Zustand sinnvoller ist. Fachanwendungen bewerten wir einzeln."
+    - id: updates-und-konflikte
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: "Wenn ein Programm plötzlich ausfällt"
+        title: "Updatefehler, Abstürze und Softwarekonflikte nachvollziehen"
+        intro: "Ein Problem nach einem Update kann durch das Update, eine Erweiterung, das Benutzerprofil oder eine gespeicherte Einstellung ausgelöst werden. Wir suchen nach dem konkreten Zusammenhang."
+        blocks:
+          - type: prose
+            paragraphs:
+              - "Wir prüfen Fehlermeldung, installierte Version, letzte Änderungen und betroffene Funktionen. Je nach Programm kommt eine unterstützte Reparatur, eine Konfigurationskorrektur, ein passendes Update oder eine geplante Neuinstallation infrage. Nicht jedes Programm bietet eine sichere Rücksetzfunktion; gespeicherte Einstellungen können betroffen sein."
+          - type: callout
+            tone: quiet
+            title: "Wichtige Daten und Einstellungen zuerst klären"
+            body: "Vor dem Entfernen oder Zurücksetzen besprechen wir benötigte Dateien, Einstellungen, Lizenzen und vorhandene Sicherungen. Ist ein Konto betroffen, nutzen wir nur vorgesehene Anmelde- oder Wiederherstellungswege."
+    - id: vorgehen
+      kind: process
+      recipe: process.staged-path
+      content:
+        eyebrow: "So arbeiten wir"
+        title: "Software ändern, ohne andere Aufgaben aus dem Blick zu verlieren"
+        intro: "Wie aufwendig eine Prüfung ausfällt, hängt vom Auftrag ab. Die einzelnen Schritte bleiben nachvollziehbar."
+        steps:
+          - title: "Aufgabe und Fehler klären"
+            body: "Wir erfassen Gerät, Programm, gewünschtes Ergebnis, Fehlermeldungen und Änderungen kurz vor der Störung."
+          - title: "Voraussetzungen prüfen"
+            body: "Wir besprechen Kompatibilität, Lizenzen, Benutzerrechte und wichtige Daten. Vor riskanteren Änderungen klären wir verfügbare Sicherungen oder Rückwege."
+          - title: "Gezielt umsetzen"
+            body: "Wir installieren, konfigurieren, reparieren oder entfernen nur die vereinbarten Bestandteile und prüfen die Wirkung wichtiger Schritte."
+          - title: "Gemeinsam testen und übergeben"
+            body: "Wir öffnen das Programm, prüfen betroffene Dateien, Konten oder Verbindungen und erklären das Ergebnis sowie verbleibende Grenzen."
+    - id: pc-optimierung
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: "Wenn der Computer langsam wirkt"
+        title: "PC optimieren, ohne eine bestimmte Beschleunigung zu versprechen"
+        intro: "Ein langsamer Start kann an vielen Dingen liegen: an überladenem Autostart, wenig freiem Speicher, anspruchsvollen Anwendungen oder begrenzter Hardware. Wir prüfen, was in Ihrem Fall beeinflusst werden kann."
+        blocks:
+          - type: columns
+            columns:
+              - title: "Softwareseitig sinnvoll aufräumen"
+                paragraphs:
+                  - "Wir können unnötige Autostarts, überholte oder doppelte Programme, Browser-Erweiterungen und Hintergrundprozesse untersuchen. Vor dem Entfernen klären wir, ob Sie bestimmte Funktionen oder gespeicherte Daten noch benötigen."
+              - title: "Grenzen klar benennen"
+                paragraphs:
+                  - "Eine Bereinigung kann vermeidbare Last reduzieren, aber weder einen Defekt reparieren noch ungeeignete Hardware oder nicht unterstützte Anwendungen zuverlässig ausgleichen. Wir nennen keine pauschalen Geschwindigkeitsgewinne."
+    - id: leistungsgrenzen
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: "Der richtige Leistungsbereich"
+        title: "Softwarehilfe, Computerprobleme und Datenumzug unterscheiden"
+        intro: "Hier geht es um Programme, Updates, Einstellungen und softwarebedingte Leistung. Eine physische Reparaturwerkstatt oder garantierte Wiederherstellung verlorener Dateien gehört nicht dazu."
+        blocks:
+          - type: prose
+            paragraphs:
+              - "Wenn Windows gar nicht mehr startet, das Betriebssystem grundsätzlich instabil ist oder ein größerer Fehler vermutet wird, passt möglicherweise unsere Computer- und Laptop-Hilfe besser. Für ein neues Gerät mit Einrichtung und Übernahme normal lesbarer Daten gibt es die Leistung Einrichtung und Datenumzug. Beschädigte oder unlesbare Speichermedien benötigen eine gesonderte Beurteilung."
+          - type: callout
+            tone: outline
+            title: "Unterstützte Software und berechtigter Zugang"
+            body: "Wir arbeiten mit legitimer, lizenzierter und unterstützter Software sowie autorisierten Konten. Wir installieren keine Raubkopien und versprechen weder Zugriff ohne notwendige Zugangsdaten noch die dauerhafte Funktion nicht mehr unterstützter Programme."
+    - id: fragen
+      kind: faq
+      recipe: faq.editorial-answers
+      content:
+        eyebrow: "Vor der Kontaktaufnahme"
+        title: "Häufige Fragen zu Installation und Optimierung"
+        intro: "Kurz erklärt, was bei einem Softwareauftrag wichtig ist."
+        items:
+          - question: "Helfen Sie auch bei einem einzelnen Programm?"
+            paragraphs:
+              - "Ja, sofern die Anwendung rechtmäßig lizenziert und mit dem Gerät kompatibel ist. Wir prüfen zuerst die Vorgaben des Herstellers und ob ältere Versionen, Benutzerkonten oder Lizenzen berücksichtigt werden müssen. Spezielle Fachsoftware besprechen wir im Einzelfall."
+          - question: "Muss dafür Windows neu installiert werden?"
+            paragraphs:
+              - "Nein, eine gezielte Programmreparatur oder Konfigurationsänderung ist oft angemessener. Ein Zurücksetzen oder Neuinstallieren des Betriebssystems wäre ein gesondert zu besprechender Schritt mit Auswirkungen auf Dateien, Programme und Einstellungen."
+          - question: "Wird mein PC durch eine Bereinigung auf jeden Fall schneller?"
+            paragraphs:
+              - "Nicht unbedingt. Wir können unnötige Hintergrundlast und veraltete Software prüfen. Wie schnell sich ein Computer anfühlt, hängt aber auch von Arbeitsspeicher, Datenträger, Prozessor und den verwendeten Programmen ab. Wir sagen offen, wenn Aufräumen vermutlich nicht reicht."
+          - question: "Was sollte ich in der Anfrage angeben?"
+            paragraphs:
+              - "Nennen Sie Programmname, Gerät und nach Möglichkeit die Windows-Version, die genaue Fehlermeldung und den Zeitpunkt des Problems. Schreiben Sie, welche Alltagsaufgabe nicht funktioniert. Passwörter, Lizenzschlüssel, Bestätigungscodes und Wiederherstellungsdaten senden Sie bitte nicht mit."
 expanded:
   situations:
     eyebrow: "Der passende Anlass"

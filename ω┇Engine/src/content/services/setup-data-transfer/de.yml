@@ -9,7 +9,7 @@ navigation:
   group: device-home
   label: "PC-Einrichtung & Datenumzug"
 page:
-  template: guided-private
+  template: recipe-service
   technicalDepth: informative
   theme:
     variant: workspace
@@ -78,13 +78,13 @@ page:
         - "Geräte verbunden"
         - "Übergabe geklärt"
 seo:
-  title: "Neuen PC einrichten & Daten übertragen Berlin"
-  description: "Neuen PC, Laptop oder Mac in Berlin auswählen und einrichten lassen, persönliche Daten übertragen sowie E-Mail, Backup, NAS und Geräte übernehmen."
+  title: "Neuen Computer einrichten in Berlin | Datenumzug"
+  description: "Neuen PC, Laptop oder Mac in Berlin auswählen und einrichten lassen. Wir helfen beim Übertragen lesbarer Daten, bei E-Mail, Druckern und einer passenden Sicherung."
   intent: "Hilfe bei Kaufberatung, Einrichtung und Datenübertragung auf einen neuen Windows-PC, Laptop oder Mac in Berlin finden."
 hero:
-  eyebrow: "Privatkunden & Homeoffice · Gerätewechsel"
-  title: "Neuen Computer auswählen, einrichten und Daten übernehmen"
-  intro: "Ein neuer Computer soll zu Ihrer Nutzung passen und danach nicht tagelang eingerichtet werden müssen. Wir beraten bei der Auswahl von Windows-PC, Laptop oder Mac, richten das neue Gerät ein und übernehmen die vereinbarten persönlichen Daten, E-Mail, Backup und angeschlossenen Geräte."
+  eyebrow: "Neuer PC oder Mac · Vor Ort in Berlin"
+  title: "Neuen Computer einrichten und Daten übernehmen"
+  intro: "Ein neuer Computer soll sich nach dem Auspacken auch im Alltag nutzen lassen. Wir helfen bei der Auswahl eines passenden Windows-PCs, Laptops oder Macs, richten das Gerät ein und übertragen die vereinbarten lesbaren Dateien sowie wichtige Einstellungen. Haben Sie den Computer schon gekauft, können wir direkt mit der Einrichtung beginnen."
 problems:
   eyebrow: "Typische Ausgangslagen"
   title: "Wenn ein Gerätewechsel mehr ist als Auspacken und Einschalten"
@@ -115,6 +115,198 @@ cta:
   title: "Gerätewechsel kurz beschreiben"
   text: "Nennen Sie altes Gerät, gewünschtes oder bereits gekauftes neues Gerät, Ihre typische Nutzung und ob Datenübernahme, Backup oder Kaufberatung benötigt werden."
   prompt: "Hilfreich sind Modell oder ungefähres Alter des alten Geräts, geplante Nutzung, vorhandene Sicherung und die Frage, ob das neue Gerät bereits gekauft wurde. Bitte keine Passwörter oder Wiederherstellungscodes senden."
+composition:
+  related:
+    eyebrow: "Weitere Hilfe für zu Hause"
+    title: "Geht es um eine Störung statt einen Gerätewechsel?"
+    linkLabel: "Leistung ansehen"
+    serviceIds:
+      - computer-laptop
+      - software-optimisation
+      - wifi-home-network
+  contact:
+    title: "Einrichtung oder Datenumzug anfragen"
+    intro: "Nennen Sie Ihr bisheriges Gerät, das neue Modell – falls schon vorhanden – und was Sie übernehmen möchten. Auch eine einzelne Einrichtungsfrage ist willkommen."
+    formIntro: "Das Formular erstellt einen Entwurf in Ihrem E-Mail-Programm. Bitte prüfen und senden Sie ihn dort selbst; die Website verschickt nichts direkt. Keine Passwörter, Bestätigungscodes oder Wiederherstellungsschlüssel mitsenden."
+    affectedPlaceholder: "Zum Beispiel neuer Windows-Laptop, PC oder MacBook"
+    request: "Was möchten Sie neu einrichten oder übertragen?"
+  contactAfter: leistungen
+  sections:
+    - id: einstieg
+      kind: hero
+      recipe: hero.editorial-art
+      content:
+        eyebrow: "Neuer PC oder Mac · Vor Ort in Berlin"
+        title: "Neuen Computer einrichten und Daten übernehmen"
+        intro: "Ein neuer Computer soll sich nach dem Auspacken auch im Alltag nutzen lassen. Wir helfen bei der Auswahl eines passenden Windows-PCs, Laptops oder Macs, richten das Gerät ein und übertragen die vereinbarten lesbaren Dateien sowie wichtige Einstellungen. Haben Sie den Computer schon gekauft, können wir direkt mit der Einrichtung beginnen."
+        media:
+          subject: home-office
+          src: /images/concept-ii/private/P3.png
+          alt: "Illustration eines häuslichen Arbeitsplatzes mit Laptop und Blick auf Berlin."
+        actions:
+          - label: "Gerätewechsel anfragen"
+            target: kontakt
+          - label: "Leistungen ansehen"
+            target: leistungen
+    - id: ausgangspunkt
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: "Vor dem Wechsel"
+        title: "Neuen Computer aussuchen oder vorhandenes Gerät einrichten"
+        intro: "Sie müssen nicht alle Schritte beauftragen. Wir steigen dort ein, wo Sie stehen – von der Kaufberatung bis zum Umzug der wichtigsten Dateien."
+        blocks:
+          - type: columns
+            columns:
+              - title: "Sie haben noch kein Gerät ausgewählt"
+                paragraphs:
+                  - "Wir sprechen über Ihre Aufgaben, Budget, Bildschirmgröße, Mobilität, notwendige Programme und vorhandenes Zubehör. Daraus ergibt sich, welcher Windows-PC, Laptop oder Mac sinnvoll passt. Eine Beschaffung können wir auf Wunsch gesondert vereinbaren."
+              - title: "Der neue Computer steht schon bereit"
+                paragraphs:
+                  - "Wir richten Benutzer, Updates und benötigte Programme ein und planen, welche Daten vom bisherigen Gerät übernommen werden. Dabei kann es sinnvoll sein, auch das vorhandene Backup zu prüfen oder neu zu organisieren."
+          - type: callout
+            tone: quiet
+            title: "Das bisherige Gerät zunächst behalten"
+            body: "Falls es noch funktioniert, halten Sie es mit Netzteil und gegebenenfalls externen Laufwerken bereit. Löschen oder verschenken Sie den alten Computer besser erst, wenn die vereinbarten Daten und Funktionen auf dem neuen geprüft wurden."
+    - id: leistungen
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: "Was wir übernehmen können"
+        title: "Windows oder macOS einrichten, Dateien übertragen und Geräte verbinden"
+        intro: "Wir stimmen den Umfang auf Ihren tatsächlichen Bedarf ab. Von der Einrichtung eines einzelnen Laptops bis zum Wechsel des gesamten häuslichen Arbeitsplatzes sind unterschiedliche Schritte möglich."
+        blocks:
+          - type: columns
+            columns:
+              - title: "Den Computer vorbereiten"
+                paragraphs:
+                  - "Wir richten Windows oder macOS, den vorgesehenen Benutzer und Updates ein. Wichtige Programme, Drucker, Scanner, Monitore oder Dockingstations können nach Absprache angeschlossen und überprüft werden."
+              - title: "Wichtige Daten und Konten übernehmen"
+                paragraphs:
+                  - "Wir übertragen vereinbarte, normal lesbare Dokumente, Bilder und persönliche Ordner und richten E-Mail- sowie Cloud-Konten erneut ein. Programme und Lizenzen müssen häufig separat installiert oder aktiviert werden, statt sich einfach kopieren zu lassen."
+          - type: callout
+            tone: quiet
+            title: "Datensicherung mitdenken"
+            body: "Ein abgeschlossener Datenumzug ist noch kein laufendes Backup. Wir können eine passende Sicherung mit externem Speicher, NAS, Time Machine oder einer geeigneten Windows-Lösung besprechen und einrichten."
+    - id: kaufberatung
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: "Kaufberatung für PC, Laptop und Mac"
+        title: "Gerät und Ausstattung nach Ihren Aufgaben auswählen"
+        intro: "Mehr Leistung auf dem Papier macht nicht automatisch den passendsten Computer. Wichtig sind Ihre Programme, Arbeitsweise und die Geräte, die weiter genutzt werden sollen."
+        blocks:
+          - type: prose
+            paragraphs:
+              - "Wir vergleichen praktische Fragen wie Desktop oder Laptop, Windows oder Mac, Bildschirmgröße, Arbeitsspeicher, Speicherplatz und Anschlüsse. Dabei beziehen wir ein, ob wichtige Anwendungen verfügbar sind und welches Zubehör kompatibel bleibt."
+          - type: columns
+            columns:
+              - title: "Vorhandene Geräte weiter nutzen"
+                paragraphs:
+                  - "Monitor, Drucker, externe Festplatte oder anderes Zubehör müssen nicht allein wegen des Computerwechsels ersetzt werden. Wir prüfen, ob Anschlüsse, Treiber und unterstützte Funktionen zum neuen Gerät passen."
+              - title: "Programme vor dem Kauf prüfen"
+                paragraphs:
+                  - "Fachanwendungen, Abonnements, Lizenzen und ältere Software können die Auswahl einschränken. Wir klären das frühzeitig, statt einen unveränderten Betrieb auf einem anderen System zu versprechen."
+    - id: datenuebertragung
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: "Daten auf den neuen PC übertragen"
+        title: "Vor dem Datenumzug festlegen, was wirklich mitkommen soll"
+        intro: "Ein guter Datenumzug beginnt mit einer Bestandsaufnahme: Welche Ordner werden gebraucht, wo liegen sie und wie sollen sie am neuen Computer wiederzufinden sein? Auch der Wechsel zwischen Windows und Mac ist nach Prüfung möglich."
+        blocks:
+          - type: table
+            title: "Was wir vor dem Übertragen klären"
+            columns:
+              - "Bereich"
+              - "Wichtige Fragen"
+            rows:
+              - - "Dokumente, Fotos und persönliche Dateien"
+                - "Welche normal lesbaren Ordner sind wichtig und wohin sollen sie auf dem neuen Gerät?"
+              - - "E-Mail und Cloud-Dateien"
+                - "Was liegt beim Anbieter, was lokal und was muss erneut angemeldet oder synchronisiert werden?"
+              - - "Programme und Lizenzen"
+                - "Gibt es unterstützte Installationsdateien, gültige Lizenzen und die benötigten Konten?"
+              - - "Windows- und Mac-Wechsel"
+                - "Sind Dateiformate, Kontozugänge und benötigte Anwendungen auf dem Zielsystem nutzbar?"
+          - type: callout
+            tone: quiet
+            title: "Datenumzug ist keine Datenrettung"
+            body: "Wir übernehmen normal lesbare Daten. Beschädigte oder nicht lesbare Datenträger erfordern eine andere, spezialisierte Bewertung. Wir versprechen keine Wiederherstellung fehlender Dateien und umgehen weder Passwörter noch Verschlüsselung."
+    - id: konten-und-zubehoer
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: "Damit der neue Computer im Alltag funktioniert"
+        title: "E-Mail, Programme, Drucker und weiteres Zubehör einrichten"
+        intro: "Ein kopierter Ordner allein macht noch keinen funktionierenden Arbeitsplatz. Entscheidend ist, ob die alltäglichen Aufgaben nach dem Wechsel wieder möglich sind."
+        blocks:
+          - type: columns
+            columns:
+              - title: "E-Mail und Benutzerkonten"
+                paragraphs:
+                  - "Wir können Outlook, Gmail und gängige deutsche E-Mail-Anbieter sowie relevante Cloud-Dienste erneut einrichten. Dabei prüfen wir, ob Nachrichten oder Dateien synchronisiert werden oder nur lokal gespeichert waren. Passwörter und Bestätigungscodes geben Sie möglichst selbst ein."
+              - title: "Programme und Peripherie"
+                paragraphs:
+                  - "Benötigte Programme werden nach Absprache rechtmäßig installiert und eingerichtet. Wir verbinden kompatible Drucker, Scanner, Monitore und Docks und erklären, falls alte Treiber oder bestimmte Programmlizenzen nicht mehr unterstützt werden."
+          - type: prose
+            paragraphs:
+              - "Zum Abschluss kontrollieren wir gemeinsam die vereinbarten Funktionen, etwa eine Datei öffnen, E-Mail abrufen, drucken oder auf den vorgesehenen Speicher zugreifen. Offene Punkte und geänderte Einstellungen benennen wir klar."
+    - id: backup-und-altgeraet
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: "Nach der Übernahme"
+        title: "Backup prüfen und über das alte Gerät entscheiden"
+        intro: "Bevor der bisherige Computer ausgemustert wird, sollten die wichtigen Dateien am neuen Ort geprüft sein. Eine passende Sicherung reduziert das Risiko, nach dem nächsten Defekt wieder von vorn beginnen zu müssen."
+        blocks:
+          - type: columns
+            columns:
+              - title: "Sicherung für die neuen Daten"
+                paragraphs:
+                  - "Je nach Umgebung können wir eine externe Festplatte, ein NAS, Time Machine oder eine geeignete Windows-Sicherung einrichten. Wir besprechen, welche Daten sie umfasst und wie Sie kontrollieren können, ob die Sicherung funktioniert."
+              - title: "Das alte Gerät nicht vorschnell löschen"
+                paragraphs:
+                  - "Sie können den alten Computer vorerst als Reserve behalten, nach Prüfung weitergeben oder später fachgerecht entsorgen lassen. Vor einem vereinbarten Zurücksetzen sprechen wir über sensible Dateien und Konten; eine Löschung erfolgt nicht automatisch."
+    - id: ablauf
+      kind: process
+      recipe: process.staged-path
+      content:
+        eyebrow: "Von der Planung bis zur Übergabe"
+        title: "So organisieren wir den Computerwechsel"
+        intro: "Der Umfang kann klein oder umfangreich sein. Welche Schritte nötig sind, klären wir passend zu den Geräten."
+        steps:
+          - title: "Ausgangslage schildern"
+            body: "Nennen Sie bisherigen Computer, gegebenenfalls das neue Gerät und Ihren Berliner Stadtteil. Wir besprechen, wofür Sie Unterstützung benötigen."
+          - title: "Daten und Kosten abstimmen"
+            body: "Wir klären wichtige lesbare Dateien, Programme, Konten und Backup-Fragen. Das erste Gespräch ist kostenlos; eine mögliche kostenpflichtige Diagnose vor Ort erklären wir vor der Vereinbarung."
+          - title: "Einrichten und übertragen"
+            body: "Wir bereiten das neue Gerät vor und übernehmen die vereinbarten Daten und Einstellungen. Zusätzlich nötige Arbeiten sprechen wir vorher ab."
+          - title: "Gemeinsam prüfen"
+            body: "Wir testen die wichtigen Aufgaben, erklären Änderungen und offene Grenzen und besprechen, was anschließend mit dem alten Gerät geschieht."
+    - id: fragen
+      kind: faq
+      recipe: faq.editorial-answers
+      content:
+        eyebrow: "Vor dem Termin"
+        title: "Häufige Fragen zu Einrichtung und Datenumzug"
+        intro: "Einige Dinge lassen sich schon vor dem Gerätewechsel gut planen."
+        items:
+          - question: "Helfen Sie auch vor dem Kauf eines neuen PCs oder Laptops?"
+            paragraphs:
+              - "Ja. Wir besprechen Ihre Aufgaben, notwendige Programme, Budget und die gewünschte Geräteart und helfen, geeignete Windows-PCs, Laptops oder Macs einzugrenzen. Sie können selbst kaufen oder eine gesonderte Beschaffung mit uns vereinbaren."
+          - question: "Können Sie Daten zwischen Windows und Mac übertragen?"
+            paragraphs:
+              - "Wir können einen Wechsel zwischen Windows und macOS planen und normal lesbare Dateien übernehmen. Programme und Einstellungen lassen sich aber nicht immer unverändert übertragen. Formate, Lizenzen und Kontozugänge müssen vorher geprüft werden."
+          - question: "Was ist, wenn der alte PC nicht mehr startet?"
+            paragraphs:
+              - "Zunächst muss geklärt werden, ob die benötigten Daten noch normal lesbar sind. Bei Startproblemen passt eventuell unsere Computer- und Laptop-Hilfe; beschädigte Speichermedien benötigen eine getrennte Bewertung. Eine Datenrettung können wir nicht zusagen."
+          - question: "Sind E-Mail, Programme und Drucker danach sofort nutzbar?"
+            paragraphs:
+              - "Wir vereinbaren, welche Konten, Programme und Geräte zum Auftrag gehören, richten unterstützte Komponenten ein und testen die relevanten Aufgaben. Für manche Programme sind neue Installationen, Lizenzen oder Anmeldungen erforderlich."
+          - question: "Was kosten Einrichtung und Datenübertragung?"
+            paragraphs:
+              - "Das hängt von Geräten, Datenumfang und Komplexität ab; wir erstellen individuelle Angebote. Das erste Gespräch ist kostenlos. Kostenpflichtige Diagnosebesuche, zusätzliche Geräte oder weitere Arbeit sprechen wir vorab mit Ihnen ab."
 expanded:
   situations:
     eyebrow: "Geeignete Aufträge"

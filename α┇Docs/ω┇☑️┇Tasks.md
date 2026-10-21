@@ -34,14 +34,14 @@ Family/source: `computer-laptop`.
 Family/source: `software-installation`.
 
 - [x] **4C — EN · Software installation / optimisation** — `/en/services/private/software-installation-optimisation/`. Source-complete in v2.2.41 (`604f5ff`); QA/RV-015 outstanding; blueprint approval pending.
-- [ ] **3C — DE · Software installation / optimisation** — `/leistungen/privatpersonen/software-installation-optimierung/`.
+- [x] **3C — DE · Software installation / optimisation** — `/leistungen/privatpersonen/software-installation-optimierung/`. Source/readback verified 2026-10-21; repository/browser/Git checks remain RV-017 and QA-C remains open.
 
 ### Setup and data transfer
 
 Family/source: `setup-data-transfer`.
 
-- [ ] **4D — EN · Setup and data transfer** — `/en/services/private/setup-data-transfer/`.
-- [ ] **3D — DE · Setup and data transfer** — `/leistungen/privatpersonen/einrichtung-datenumzug/`.
+- [x] **4D — EN · Setup and data transfer** — `/en/services/private/setup-data-transfer/`. Source/readback verified 2026-10-21; RV-018/QA-D open.
+- [x] **3D — DE · Setup and data transfer** — `/leistungen/privatpersonen/einrichtung-datenumzug/`. Source/readback verified 2026-10-21; RV-019/QA-D open.
 
 ### Private services landing
 
