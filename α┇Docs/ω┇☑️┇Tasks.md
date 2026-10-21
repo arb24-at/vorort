@@ -13,6 +13,8 @@ For all Chats and agents. Aykhan may edit priorities or name a Task directly. Us
 
 Research/site-wide approval and each bilingual blueprint precede new generation. All existing bilingual blueprint drafts remain pending. English first, German second; routine maintenance stays within approved meaning.
 
+> **Temporary initial-update exception (assigned 2026-10-21):** For this existing-page Content-creation pass only, complete unchecked tasks without waiting for site-wide or bilingual blueprint approval, and continue page by page in family order (EN then DE). Do not create or approve blueprints. Checked items remain source-complete, not QA-approved; the normal blueprint gate resumes after this pass.
+
 ### Home networks / Wi-Fi
 
 Family/source: `wifi-home-network`.
@@ -25,7 +27,7 @@ Family/source: `wifi-home-network`.
 Family/source: `computer-laptop`.
 
 - [x] **4B — EN · Computer and laptop help** — `/en/services/private/computer-laptop-help/`. Historical source work retained; separate QA outstanding.
-- [ ] **3B — DE · Computer and laptop help** — `/leistungen/privatpersonen/computer-laptop-hilfe/`.
+- [x] **3B — DE · Computer and laptop help** — `/leistungen/privatpersonen/computer-laptop-hilfe/`. Source-complete; repository and desktop/mobile review verified for v2.3.1. RV-016 technical checks resolved; QA-B remains open for Aykhan’s review.
 
 ### Software installation / optimisation
 

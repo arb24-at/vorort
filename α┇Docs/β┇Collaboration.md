@@ -4,10 +4,13 @@ Keep current state and unresolved work here. Durable facts belong in Project, pr
 
 ## Current handoff
 
+- **Initial existing-page exception (2026-10-21):** Aykhan authorised finishing unchecked Content-creation tasks before creating/approving site-wide or bilingual blueprints. This applies only to existing-page initial updates; completed initial updates are preserved, QA remains separate, and the usual blueprint cycle resumes afterwards. No pending blueprint or Design Lab status is approved.
+- **3B · German Computer & Laptop Help / v2.3.1:** nine Approved recipe instances, meaningful symptom/scope orientation before the German mail-app enquiry, then startup, performance, account/BitLocker, data/reinstallation, process and visible FAQs. Scope and researched `computer-laptop-de` intent retained. Codex review removed unused legacy storyboard/expanded bodies; no shared recipe/renderer or English content changed. Technical RV-016 checks are resolved; QA-B and P3 artwork acceptance remain separate.
+
 - **v2.3.0 workflow migration:** six roles under `β┇Roles`, research → site-wide approval → bilingual page approval → EN then DE source work → separate QA. The task board is agent-neutral; completed work is preserved, software **4C** is source-complete with QA open. No page blueprint or new recipe/block is approved by this migration.
 - **Planning drafts:** merged `wifi-home-network-bp.md` v0.5, converted `software-installation-bp.md` v0.2, actual site-wide review draft and reusable detailed template. Current German/English adoption differs from the targets; no customer copy changed.
 - **Shared design:** optional prose eyebrow/intro, flexible block count/order, independent block lifecycle, Experimental native list, generic compact specimen and shared presentation variant. Exact existing trial permissions retained; no production page is authorised for the list. See Implementation role/source map for files and extension method.
-- **Current evidence:** source migration and final repository/browser results are recorded in Recent work below. Existing page QA and historical RV obligations remain open unless a precise subcheck is explicitly resolved. No push/deployment.
+- **Current evidence:** source migration and final repository/browser results are recorded in Recent work below. Existing page QA and historical RV obligations remain open unless a precise subcheck is explicitly resolved. Aykhan explicitly authorised the v2.3.1 push; prior evidence does not imply a new deployment.
 
 ## Cross-role requests
 
@@ -15,7 +18,7 @@ None awaiting a separate worker. Use Tasks for the next bounded assignment rathe
 
 ## Awaiting Aykhan
 
-1. Review/approve the **site-wide blueprint**, then individual bilingual drafts as ready. Workflow approval is not approval of these draft contents or retroactive approval of old page experiments.
+1. **After the temporary initial-update pass**, review/approve the site-wide blueprint, then individual bilingual drafts as ready. This interim source task does not approve those drafts or retroactively approve old page experiments.
 2. Review existing EN Home Network, computer support, software, business networks and Microsoft 365 through their QA tasks. Decide separately on Experimental `hero.service-intro`, `scope.chapter-links`, `recognition.situations`, `cta.quick-contact`, `contact.enquiry-email` and the new prose `list` block. Existing registered states remain unchanged.
 3. Decide whether Proposed `scope.proportionate-help` deserves implementation. It remains unregistered, with no renderer. Review compact specimen and block flexibility as reusable design, not customer-copy approval.
 4. Accept outstanding artwork in Media Queue. Specifically assess software's generic P1 image and provisional home-network topic artwork.
@@ -36,6 +39,8 @@ Grouped by current implementation, with historical IDs retained for traceability
 A worker resolving one row should name its actual subchecks/evidence and retain the remainder. Do not recreate already-resolved RV-002. No unavailable check is silently passed by shortening this file.
 
 ## Recent work
+
+- **v2.3.1 / Task 3B review:** `npm run validate` passed against an isolated committed baseline plus 3B (31 HTML pages, 23 sitemap URLs, 14 records and both Workshops), excluding concurrent 3C work. Browser verified at 1440×1000 and 390×844: one H1/form, valid unique anchors, German/English metadata pairing, early contact/deeper continuation, related/return paths, P3 crop, mobile dock/disclosure and visible keyboard focus/table access; no overflow or Lab controls. Form honestly prepares an email draft, not direct delivery. RV-016 technical scope resolved; existing legacy form/privacy/backend and public-fact dependencies remain. Aykhan explicitly authorised commit/push for web preview; no page/recipe/blueprint approval is inferred.
 
 - **v2.3.0:** documentation shortened from approximately 45,900 to 20,300 words (56%), including retained complete media prompts and the new template. Six role files consolidated; three locale-only blueprints retired into two bilingual drafts. No customer copy, service record, SEO evidence, recipe approval or media acceptance changed.
 - **Repository validated:** `npm run validate` passed: 31 HTML pages, 23 sitemap URLs, 14 service records, both Workshops, document/source/SEO pointers, flexible journeys, contact placements, block lifecycle/permissions, derived usage and existing guidance/replacement contracts. A focused rebuild/Workshop/static recheck passed after fixing Lab-only label spacing. All 25 non-Lab HTML pages matched the pre-change baseline for customer text, links/routes, metadata, anchors, form fields and media (stylesheet hashes excluded).
