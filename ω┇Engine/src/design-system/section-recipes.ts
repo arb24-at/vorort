@@ -113,6 +113,7 @@ export const sectionRecipes = {
     }),
   }),
   "hero.service-intro": recipe({
+    pageTypes: ["service", "audience"],
     name: "Service introduction without artwork", kind: "hero", status: "experimental",
     purpose: "Introduce practical service help with a prominent heading, two actions and a useful preparation note, without requiring artwork.",
     recommendedPlacement: "Opening / first section",

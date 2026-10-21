@@ -1,0 +1,151 @@
+id: business-landing-en
+translationId: business-landing
+locale: en
+audience: business
+seo:
+  title: "IT Support Berlin | Practical IT Services for Businesses"
+  description: "IT support in Berlin for business networks, Microsoft 365, Google Workspace and workplace problems. One-off projects and optional recurring support."
+experiment: business-landing-en-preview
+sections:
+  - id: introduction
+    kind: hero
+    recipe: hero.service-intro
+    content:
+      eyebrow: "Business IT · On site in Berlin"
+      title: "IT support for your business in Berlin"
+      intro: "When connections fail, email stops working or a new office needs setting up, the work around it is affected too. We help small and growing businesses resolve specific IT problems and plan practical improvements—from one workplace to the network and shared services behind it."
+      actions:
+        - label: "Explore our IT services"
+          target: services
+        - label: "Discuss your requirement"
+          target: contact
+      note:
+        title: "A useful starting point"
+        items:
+          - "Tell us what is affected and how it interrupts the work."
+          - "Mention your Berlin location and any important dates."
+          - "Existing equipment and providers can be part of the solution."
+        footnote: "You can commission a one-off job. A long-term support contract is not required."
+  - id: practical-help
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: "Support shaped around the task"
+      title: "Resolve a problem or plan your next change"
+      intro: "A single printer, account or workstation problem can be enough to get in touch. We establish who is affected, what depends on the system and which changes are justified. For a larger project, the same approach helps define a manageable scope."
+      blocks:
+        - type: columns
+          columns:
+            - title: "Help with existing workplace IT"
+              paragraphs:
+                - "We investigate unreliable computers and software, office Wi-Fi, shared devices, email and access problems. Where several systems are involved, we look at their connections and identify which part of the work needs us, your provider or another responsible party."
+            - title: "New workplaces and planned projects"
+              paragraphs:
+                - "An office move, additional desks or a cloud migration needs more than individual devices. We can plan the relevant network, accounts, shared files and peripherals together, recommend suitable hardware and arrange procurement when agreed."
+        - type: callout
+          tone: quiet
+          title: "Recurring support is an option"
+          body: "Targeted troubleshooting, installation and upgrades can be standalone engagements. If ongoing maintenance is useful, its scope is discussed separately. It does not come with an assumed monitoring service or response-time commitment."
+  - id: services
+    kind: scope
+    recipe: scope.service-directory
+    content:
+      eyebrow: "Explore the technical areas"
+      title: "Business IT services, explained in detail"
+      intro: "Start with the area closest to your request. These pages explain the practical decisions and dependencies; you can also contact us about work that crosses several of them."
+      linkLabel: "Explore this service"
+      items:
+        - serviceId: network-it-support
+          title: "Office networks & IT infrastructure"
+          body: "Plan a new office network or improve an existing installation. Cabling, managed hardware, business Wi-Fi, NAS and authorised remote access are considered as parts of the same infrastructure."
+          examples: ["Network cabling", "Business Wi-Fi", "NAS & VPN"]
+        - serviceId: microsoft-365-workplaces
+          title: "Microsoft 365 & workplace setup"
+          body: "Set up users and workplaces, resolve Outlook or Teams problems, and organise shared files and permissions. Migrations and changes are planned around existing accounts, data and working practices."
+          examples: ["Outlook & Teams", "Users & permissions", "Workplace migration"]
+        - serviceId: google-workspace-cloud
+          title: "Google Workspace & business email"
+          body: "Set up or improve business Gmail, domains, users and shared files. We help connect Workspace to your devices and existing systems, with migration or coexistence work where it fits the project."
+          examples: ["Gmail & domains", "Shared Drives", "Setup & migration"]
+  - id: contact
+    kind: contact
+    recipe: contact.enquiry-email
+    content:
+      title: "Tell us what your business needs"
+      intro: "Describe the issue or planned change, the people or systems affected and your Berlin location. You do not need a complete technical specification to start."
+      formIntro: "This form prepares a draft in your email app. Review it and send it there; this website does not send the enquiry directly. * Required fields."
+      affectedPlaceholder: "For example office Wi-Fi, Outlook, a shared drive or a new workplace"
+      request: "What needs attention or what are you planning?"
+      requestPlaceholder: "Describe the effect on your work, the systems involved and any important dates. Please leave passwords and other access credentials out."
+      emailSubject: "Business IT enquiry in Berlin"
+  - id: planning-changes
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: "Working with an existing business"
+      title: "Plan the change around the people who rely on it"
+      intro: "Replacing a router, moving email or changing access can affect work beyond the original request. Before consequential changes, we agree the intended result and the conditions needed to carry them out responsibly."
+      blocks:
+        - type: columns
+          columns:
+            - title: "Access, responsibility and timing"
+              paragraphs:
+                - "We clarify who can authorise the work, which account or system access is needed and whether an existing IT team, landlord or provider is involved. Necessary interruptions and suitable appointment windows are discussed in advance."
+            - title: "Data, testing and handover"
+              paragraphs:
+                - "For changes that could affect important data, we consider an appropriate backup or fallback first. We check the agreed functions afterwards and document relevant settings, access ownership and remaining work so the result can be maintained."
+        - type: prose
+          paragraphs:
+            - "The initial conversation is free. Work is quoted individually; where investigation is needed first, any paid diagnostic visit is explained before it is arranged. Additional work, hardware, licences or return visits are agreed before proceeding."
+  - id: working-process
+    kind: process
+    recipe: process.staged-path
+    content:
+      eyebrow: "A clear way to begin"
+      title: "From the business requirement to handover"
+      intro: "On-site work in Berlin is the usual starting point for physical infrastructure and workplace setup. Suitable remote tasks can be considered as part of the agreed work."
+      steps:
+        - title: "Understand the requirement"
+          body: "We clarify the problem or project, operational impact, existing systems and people responsible for decisions."
+        - title: "Agree scope and conditions"
+          body: "We identify the work, access, dependencies and likely interruption. Scope, costs and any diagnostic step are discussed before a commitment."
+        - title: "Carry out the changes"
+          body: "We implement the agreed work and coordinate necessary steps with the relevant people or providers. New requirements are discussed rather than assumed."
+        - title: "Test and hand over"
+          body: "We check relevant functions, explain the changes and provide useful documentation or next steps within the project scope."
+  - id: questions
+    kind: faq
+    recipe: faq.editorial-answers
+    content:
+      eyebrow: "Before you get in touch"
+      title: "Questions about business IT support"
+      intro: "The right arrangement depends on your systems, the task and the consequences of a change. These are useful points to clarify early."
+      items:
+        - question: "Can we ask for help with one specific problem?"
+          paragraphs:
+            - "Yes. A workstation, printer, account or connection issue can be a standalone job. You do not need to sign up for ongoing IT management or commission a larger installation."
+        - question: "Do you work alongside an existing IT team or provider?"
+          paragraphs:
+            - "Where the responsibilities and access can be agreed, yes. Tell us who already manages the environment. We define our part of the work and any dependencies rather than make unauthorised changes to someone else’s systems."
+        - question: "How do you decide whether our business is a suitable fit?"
+          paragraphs:
+            - "By the technical scope, complexity, operational risk and whether the work can be supported responsibly. There is no published employee or device limit. Server, specialist or particularly sensitive environments need an individual assessment."
+        - question: "Can you help us choose and obtain equipment?"
+          paragraphs:
+            - "Yes, where agreed as part of the project. We consider compatibility, existing infrastructure and the intended use before recommending equipment. Procurement, licences and installation are included only in the agreed scope."
+        - question: "Do you offer emergency or guaranteed response times?"
+          paragraphs:
+            - "There is no advertised 24-hour response, SLA or guaranteed restoration time. Tell us the business impact and any important deadline so we can discuss fit and an available appointment without promising an outcome before assessment."
+        - question: "What information is useful for the first conversation?"
+          paragraphs:
+            - "Your Berlin location, the affected workflow, device or service names, recent changes and important dates. A brief description is enough. Please do not send passwords, recovery codes or remote-access credentials."
+  - id: final-contact
+    kind: cta
+    recipe: cta.quick-contact
+    content:
+      eyebrow: "A practical next step"
+      title: "Discuss your IT problem or project"
+      body: "Whether it is a single fault or a planned office change, tell us what needs to work and what is getting in the way. We can clarify the next step together."
+      callLabel: "Call about your business IT"
+      enquiryLabel: "Return to the enquiry"
+      enquiryTarget: contact

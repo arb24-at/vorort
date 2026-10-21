@@ -4,6 +4,8 @@ Keep current state and unresolved work here. Durable facts belong in Project, pr
 
 ## Current handoff
 
+- **4I / v2.3.4 · English business gateway:** Eight source-driven sections: text hero with preparation note, practical one-off/project scope, three real service destinations, enquiry, change planning, process, visible FAQ and return CTA. Researched business-landing-en owns IT support Berlin; no managed-service, emergency or credential claims. Next reserved page is 3I.
+
 - **3E / v2.3.3 · German private gateway:** Natural German eight-section counterpart with formal Sie, four locale-aware service choices and useful scope before the single enquiry. Shared ContactEnquiry now localises interface, feedback and email-draft labels by locale while preserving English. Exact private-landing-de trial only; no lifecycle changes. Next reserved page is 4I.
 
 - **Six gateway/homepage updates assigned to Codex (2026-10-21):** 4E → 3E → 4I → 3I → 4J → 3J. Work is reserved for this Chat, starting with English private services; the parallel content Chat should preserve these six assignments. Each page receives its own review and local versioned commit. The initial-update blueprint exception applies; no blueprint approval or deployment is implied.
@@ -44,6 +46,8 @@ Grouped by current implementation, with historical IDs retained for traceability
 A worker resolving one row should name its actual subchecks/evidence and retain the remainder. Do not recreate already-resolved RV-002. No unavailable check is silently passed by shortening this file.
 
 ## Recent work
+
+- **v2.3.4 / 4I:** Isolated npm run validate passed against 7b7bbdf plus 4I, excluding parallel service work: 31 HTML pages, 23 sitemap URLs, 14 service records, 3 audience records and both Workshops. Browser reviewed at 1440×1000 and 390×844: text hero/note, directory, one honest enquiry, optional business/company context, keyboard disclosure and no overflow. Compatible audience context added to existing Experimental hero.service-intro; renderer/schema unchanged, exact business-landing-en trial only. QA-I and existing publication dependencies remain open; no push/deployment.
 
 - **v2.3.3 / 3E:** Isolated npm run validate passed against b9ebd41 plus 3E, excluding parallel service edits: 31 HTML pages, 23 sitemap URLs, 14 service records, 2 audience records and both Workshops. Desktop/mobile 1440×1000 and 390×844 reviewed: German text, hero, directory, no overflow, single email-draft enquiry, phone/email switching and keyboard optional-details disclosure; mobile dock retained. German draft encoding and interface checks added. QA-E, artwork, operator/contact/legal and backend/privacy dependencies remain open; no push/deployment.
 
