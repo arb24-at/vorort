@@ -85,7 +85,7 @@ Both home-network and computer-help locale pairs, plus English software, busines
 
 ## Audience gateways
 
-Both private gateways and the English business gateway use `AudiencePage.astro` and validated `audience-pages/` records. Page identity/locale/audience and explicit trial permissions are checked separately from services. The shared editorial hero, Experimental text introduction, rich prose, staged process, visible FAQ, email enquiry and quick CTA safely support the `audience` page context; existing service consumers retain their contracts and output. New Experimental `scope.service-directory` resolves real service IDs to locale-aware editorial navigation rows, without artwork or nested links. Its generic Private Service Page specimen uses the same renderer. Approved Sections usage includes each audience locale once per recipe. No recipe or block was promoted.
+All four private/business gateways use `AudiencePage.astro` and validated bilingual `audience-pages/` records. Page identity/locale/audience and explicit trial permissions are checked separately from services. The shared editorial hero, Experimental text introduction, rich prose, staged process, visible FAQ, email enquiry and quick CTA safely support the `audience` page context; existing service consumers retain their contracts and output. New Experimental `scope.service-directory` resolves real service IDs to locale-aware editorial navigation rows, without artwork or nested links. Its generic Private Service Page specimen uses the same renderer. Approved Sections usage includes each audience locale once per recipe. No recipe or block was promoted.
 
 ## Design Lab and media
 

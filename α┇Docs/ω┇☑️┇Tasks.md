@@ -76,7 +76,7 @@ Family/source: `google-workspace`.
 Family/source: `business gateway`.
 
 - [x] **4I — EN · Business services landing** — `/en/services/business/`. Source/repository/browser verified in v2.3.4; separate family QA remains open.
-- [ ] **3I — DE · Business services landing** — `/leistungen/unternehmen/`.
+- [x] **3I — DE · Business services landing** — `/leistungen/unternehmen/`. Source/repository/browser verified in v2.3.5; separate family QA remains open.
 
 ### Homepage
 

@@ -1,0 +1,151 @@
+id: business-landing-de
+translationId: business-landing
+locale: de
+audience: business
+seo:
+  title: "IT-Dienstleister Berlin | IT-Service für Unternehmen"
+  description: "IT-Dienstleister in Berlin für Büronetzwerke, Microsoft 365, Google Workspace und Arbeitsplatz-IT. Einzelne Aufträge, Projekte und optionale laufende Betreuung."
+experiment: business-landing-de-preview
+sections:
+  - id: einstieg
+    kind: hero
+    recipe: hero.service-intro
+    content:
+      eyebrow: "IT für Unternehmen · Vor Ort in Berlin"
+      title: "Ihr IT-Dienstleister in Berlin"
+      intro: "Wenn Verbindungen ausfallen, E-Mails nicht ankommen oder ein neues Büro eingerichtet werden soll, betrifft das den gesamten Arbeitsablauf. Wir unterstützen kleine und wachsende Unternehmen bei konkreten IT-Problemen und geplanten Verbesserungen: vom einzelnen Arbeitsplatz bis zum Netzwerk und den gemeinsam genutzten Diensten."
+      actions:
+        - label: "IT-Leistungen ansehen"
+          target: leistungen
+        - label: "Anliegen besprechen"
+          target: kontakt
+      note:
+        title: "So können Sie beginnen"
+        items:
+          - "Beschreiben Sie, was betroffen ist und wie es Ihre Arbeit beeinträchtigt."
+          - "Nennen Sie Ihren Berliner Standort und wichtige Termine."
+          - "Vorhandene Geräte und Dienstleister können Teil der Lösung bleiben."
+        footnote: "Auch ein einzelner Auftrag ist möglich. Ein langfristiger Betreuungsvertrag ist keine Voraussetzung."
+  - id: praktische-hilfe
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: "Der Auftrag richtet sich nach Ihrem Bedarf"
+      title: "IT-Probleme lösen und Veränderungen sinnvoll planen"
+      intro: "Ein Problem mit einem Drucker, Konto oder Arbeitsplatz genügt für eine Anfrage. Wir klären, wer betroffen ist, welche Systeme zusammenhängen und welche Änderungen sinnvoll sind. Bei größeren Vorhaben hilft dieselbe Herangehensweise, einen überschaubaren Projektumfang festzulegen."
+      blocks:
+        - type: columns
+          columns:
+            - title: "Unterstützung im laufenden Betrieb"
+              paragraphs:
+                - "Wir untersuchen unzuverlässige Computer und Programme, Büro-WLAN, gemeinsame Geräte sowie E-Mail- und Zugriffsprobleme. Sind mehrere Systeme beteiligt, betrachten wir deren Verbindungen und klären, welche Arbeit bei uns, Ihrem Anbieter oder einer anderen zuständigen Stelle liegt."
+            - title: "Neue Arbeitsplätze und geplante Projekte"
+              paragraphs:
+                - "Ein Büroumzug, zusätzliche Schreibtische oder ein Wechsel von Cloud-Diensten erfordern mehr als einzelne Geräte. Wir können Netzwerk, Konten, gemeinsame Dateien und Zubehör zusammen planen, passende Hardware empfehlen und die Beschaffung nach Vereinbarung übernehmen."
+        - type: callout
+          tone: quiet
+          title: "Laufende Betreuung bleibt eine Option"
+          body: "Gezielte Fehlerbehebung, Einrichtung und Modernisierung können eigenständige Aufträge sein. Wenn regelmäßige Wartung sinnvoll ist, besprechen wir deren Umfang separat. Eine automatische Überwachung oder zugesagte Reaktionszeit ist damit nicht vorausgesetzt."
+  - id: leistungen
+    kind: scope
+    recipe: scope.service-directory
+    content:
+      eyebrow: "Technische Bereiche im Überblick"
+      title: "Unsere IT-Leistungen für Unternehmen"
+      intro: "Wählen Sie den Bereich, der Ihrer Anfrage am nächsten kommt. Die Detailseiten erläutern praktische Entscheidungen und Abhängigkeiten. Sie können sich ebenso mit einem Anliegen melden, das mehrere Bereiche verbindet."
+      linkLabel: "Mehr zu dieser Leistung"
+      items:
+        - serviceId: network-it-support
+          title: "Büronetzwerke & IT-Infrastruktur"
+          body: "Ein neues Büronetzwerk planen oder eine bestehende Installation verbessern. Verkabelung, verwaltete Netzwerkgeräte, Business-WLAN, NAS und autorisierter Fernzugriff werden als zusammengehörige Infrastruktur betrachtet."
+          examples: ["Netzwerkverkabelung", "Business-WLAN", "NAS & VPN"]
+        - serviceId: microsoft-365-workplaces
+          title: "Microsoft 365 & Arbeitsplätze"
+          body: "Benutzer und Arbeitsplätze einrichten, Outlook- oder Teams-Probleme untersuchen und gemeinsame Dateien sowie Berechtigungen organisieren. Migrationen und Änderungen richten sich nach Ihren vorhandenen Konten, Daten und Arbeitsabläufen."
+          examples: ["Outlook & Teams", "Benutzer & Berechtigungen", "Arbeitsplatzmigration"]
+        - serviceId: google-workspace-cloud
+          title: "Google Workspace & geschäftliche E-Mail"
+          body: "Gmail für Unternehmen, Domains, Benutzer und gemeinsame Dateien einrichten oder verbessern. Wir verbinden Workspace mit Ihren Geräten und bestehenden Systemen; bei Bedarf gehört eine abgestimmte Migration oder parallele Nutzung dazu."
+          examples: ["Gmail & Domains", "Geteilte Ablagen", "Einrichtung & Migration"]
+  - id: kontakt
+    kind: contact
+    recipe: contact.enquiry-email
+    content:
+      title: "Was benötigt Ihr Unternehmen?"
+      intro: "Beschreiben Sie das Problem oder die geplante Veränderung, betroffene Personen oder Systeme und Ihren Berliner Standort. Eine vollständige technische Spezifikation ist für den ersten Kontakt nicht nötig."
+      formIntro: "Das Formular bereitet einen Entwurf in Ihrem E-Mail-Programm vor. Prüfen und senden Sie ihn dort ab. Diese Website versendet Ihre Anfrage nicht direkt. * Pflichtfelder."
+      affectedPlaceholder: "Zum Beispiel Büro-WLAN, Outlook, gemeinsame Dateien oder ein neuer Arbeitsplatz"
+      request: "Was funktioniert nicht oder was planen Sie?"
+      requestPlaceholder: "Beschreiben Sie die Auswirkungen auf Ihre Arbeit, beteiligte Systeme und wichtige Termine. Bitte geben Sie keine Passwörter oder andere Zugangsdaten an."
+      emailSubject: "Anfrage zur Unternehmens-IT in Berlin"
+  - id: veraenderungen-planen
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: "Arbeiten an bestehenden Systemen"
+      title: "Änderungen mit Rücksicht auf Ihren Betrieb planen"
+      intro: "Ein neuer Router, ein E-Mail-Umzug oder geänderte Zugriffsrechte können mehr beeinflussen als das ursprüngliche Anliegen. Vor folgenreichen Änderungen vereinbaren wir das gewünschte Ergebnis und klären die Voraussetzungen für eine verantwortbare Umsetzung."
+      blocks:
+        - type: columns
+          columns:
+            - title: "Zugriff, Zuständigkeit und Zeitpunkt"
+              paragraphs:
+                - "Wir klären, wer die Arbeit freigeben kann, welcher System- oder Kontozugang nötig ist und ob eine bestehende IT-Abteilung, Vermieter oder Anbieter beteiligt sind. Erforderliche Unterbrechungen und passende Terminfenster stimmen wir vorher mit Ihnen ab."
+            - title: "Daten, Prüfung und Übergabe"
+              paragraphs:
+                - "Könnten wichtige Daten betroffen sein, berücksichtigen wir zunächst eine geeignete Sicherung oder Rückfallmöglichkeit. Anschließend prüfen wir die vereinbarten Funktionen und dokumentieren relevante Einstellungen, die Zuständigkeit für Zugänge und verbleibende Arbeit im Projektumfang."
+        - type: prose
+          paragraphs:
+            - "Das erste Gespräch ist kostenlos. Die Arbeit wird individuell angeboten. Ist zunächst eine Untersuchung nötig, erklären wir mögliche Kosten für einen Diagnosetermin vor der Vereinbarung. Zusätzliche Arbeit, Hardware, Lizenzen oder weitere Besuche stimmen wir vorab ab."
+  - id: ablauf
+    kind: process
+    recipe: process.staged-path
+    content:
+      eyebrow: "Ein klarer Einstieg"
+      title: "Von Ihrem Bedarf bis zur Übergabe"
+      intro: "Für physische Infrastruktur und die Einrichtung von Arbeitsplätzen ist die Arbeit vor Ort in Berlin meist der Ausgangspunkt. Geeignete Aufgaben lassen sich nach Absprache auch per Fernzugriff bearbeiten."
+      steps:
+        - title: "Bedarf verstehen"
+          body: "Wir klären Problem oder Vorhaben, Auswirkungen auf den Betrieb, vorhandene Systeme und zuständige Ansprechpersonen."
+        - title: "Umfang und Voraussetzungen vereinbaren"
+          body: "Arbeit, Zugänge, Abhängigkeiten und mögliche Unterbrechungen werden eingeordnet. Umfang, Kosten und eine gegebenenfalls nötige Diagnose besprechen wir vor der Beauftragung."
+        - title: "Änderungen umsetzen"
+          body: "Wir führen die vereinbarte Arbeit aus und stimmen nötige Schritte mit beteiligten Personen oder Anbietern ab. Neue Anforderungen werden besprochen und nicht stillschweigend vorausgesetzt."
+        - title: "Prüfen und übergeben"
+          body: "Wir kontrollieren relevante Funktionen, erklären die Änderungen und übergeben nützliche Dokumentation oder nächste Schritte im vereinbarten Umfang."
+  - id: fragen
+    kind: faq
+    recipe: faq.editorial-answers
+    content:
+      eyebrow: "Vor Ihrer Anfrage"
+      title: "Fragen zum IT-Service für Unternehmen"
+      intro: "Welche Zusammenarbeit passt, hängt von Ihren Systemen, der Aufgabe und den Folgen einer Änderung ab. Diese Punkte helfen bei der ersten Einordnung."
+      items:
+        - question: "Können wir Hilfe für ein einzelnes Problem beauftragen?"
+          paragraphs:
+            - "Ja. Ein Arbeitsplatz-, Drucker-, Konto- oder Verbindungsproblem kann ein eigenständiger Auftrag sein. Eine laufende IT-Betreuung oder größere Installation ist dafür keine Voraussetzung."
+        - question: "Arbeiten Sie mit unserer IT-Abteilung oder unserem Dienstleister zusammen?"
+          paragraphs:
+            - "Ja, wenn Zuständigkeiten und Zugänge abgestimmt werden können. Sagen Sie uns, wer die Umgebung bereits betreut. Wir legen unseren Anteil und die Abhängigkeiten fest und ändern fremdverwaltete Systeme nicht ohne die nötige Freigabe."
+        - question: "Wie beurteilen Sie, ob unser Unternehmen zu Ihrem Angebot passt?"
+          paragraphs:
+            - "Nach technischem Umfang, Komplexität, Betriebsrisiko und der Frage, ob sich die Arbeit verantwortlich umsetzen und unterstützen lässt. Eine veröffentlichte Mitarbeiter- oder Gerätegrenze gibt es nicht. Server, Spezialumgebungen oder besonders sensible Systeme brauchen eine individuelle Prüfung."
+        - question: "Können Sie bei Geräteauswahl und Beschaffung helfen?"
+          paragraphs:
+            - "Ja, als vereinbarter Teil eines Projekts. Vor einer Empfehlung betrachten wir Kompatibilität, bestehende Infrastruktur und den geplanten Einsatz. Beschaffung, Lizenzen und Installation gehören nur im abgestimmten Umfang dazu."
+        - question: "Bieten Sie einen Notdienst oder garantierte Reaktionszeiten?"
+          paragraphs:
+            - "Ein 24-Stunden-Service, SLA oder eine garantierte Wiederherstellungszeit wird nicht angeboten. Beschreiben Sie die Auswirkungen und wichtige Fristen, damit wir Eignung und einen verfügbaren Termin besprechen können. Vor einer Prüfung lässt sich kein bestimmtes Ergebnis zusagen."
+        - question: "Welche Angaben helfen beim ersten Gespräch?"
+          paragraphs:
+            - "Ihr Berliner Standort, der betroffene Arbeitsablauf, Geräte- oder Dienstnamen, kürzliche Änderungen und wichtige Termine. Eine kurze Beschreibung genügt. Bitte senden Sie keine Passwörter, Wiederherstellungscodes oder Fernzugangsdaten."
+  - id: abschliessender-kontakt
+    kind: cta
+    recipe: cta.quick-contact
+    content:
+      eyebrow: "Der nächste Schritt"
+      title: "Besprechen wir Ihr IT-Problem oder Projekt"
+      body: "Ein einzelner Fehler oder eine geplante Büroveränderung: Beschreiben Sie uns, was funktionieren soll und was gerade im Weg steht. Gemeinsam klären wir den nächsten Schritt."
+      callLabel: "Zur Unternehmens-IT anrufen"
+      enquiryLabel: "Zurück zur Anfrage"
+      enquiryTarget: kontakt
