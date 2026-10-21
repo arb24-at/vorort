@@ -26,12 +26,8 @@ function validateSections(fixture: PageSections, issue: Issue, specimens: boolea
     if (section.kind === "footer" && section.id !== "site-footer") issue(["sections", index, "id"], "The shared site footer requires the site-footer ID");
   });
   fixture.sections.forEach((section, index) => {
-    if (["hero.service-intro", "hero.banner-art", "hero.editorial-art", "comparison.hero-banner", "comparison.hero-banner-cta-overlay"].includes(section.recipe)) {
-      const schema = section.recipe === "hero.service-intro" ? getSectionRecipe("hero.service-intro").schema
-        : section.recipe === "hero.editorial-art" ? getSectionRecipe("hero.editorial-art").schema
-        : getSectionRecipe("hero.banner-art").schema;
-      const content = schema.safeParse(section.content);
-      if (content.success) content.data.actions.forEach((action, i) => {
+    if ((section.kind === "hero" || section.kind === "comparison") && "actions" in section.content) {
+      section.content.actions.forEach((action, i) => {
         if (!ids.has(action.target)) issue(["sections", index, "content", "actions", i, "target"], `Missing section target: ${action.target}`);
       });
     }

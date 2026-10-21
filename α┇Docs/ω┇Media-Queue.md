@@ -44,6 +44,8 @@ P1–P6 are reused in the current private pass. P2–P6 remain candidates pendin
 
 ## Current media tasks
 
+- [ ] **Homepage illustration · context/crop review (4J/3J):** Existing `ω┇Engine/public/images/technical-field-berlin.jpg`, provisionally reused in `hero.local-support` and its generic Workshop specimen. No new image requested or generated. Desktop shows the central desk/router/printer in a tall crop; mobile shows the broader home-office/workplace scene at roughly 1.6:1. Review suitability for the mixed home/business introduction and both crops before accepting this use. The original file is unchanged; the shared image component generates responsive WebP derivatives.
+
 ### Private home-network page
 
 - [x] **P1 — Private hero: whole-home network overview**

@@ -1,0 +1,26 @@
+---
+import type { RecipeContent } from "../../../design-system/section-recipes";
+import { audiencePath } from "../../../data/audience-paths";
+import { withBase } from "../../../utils/withBase";
+import "../../../styles/design-lab/audience-paths.css";
+type Props = { id: string; content: RecipeContent<"scope.audience-paths">; locale: "en" | "de" };
+const { id, content, locale } = Astro.props;
+---
+<section class="pw-section pw-audience-paths" id={id} aria-labelledby={`${id}-title`} data-recipe="scope.audience-paths" tabindex="-1">
+  <div class="container">
+    <div class="pw-section-intro">
+      <div><p class="pw-eyebrow">{content.eyebrow}</p><h2 id={`${id}-title`}>{content.title}</h2></div>
+      <p>{content.intro}</p>
+    </div>
+    <ul class="pw-audience-paths__list" role="list">
+      {content.items.map((item, index) => <li>
+        <a class:list={["pw-audience-paths__link", `pw-audience-paths__link--${item.audience}`]} href={withBase(audiencePath(item.audience, locale))}>
+          <span class="pw-audience-paths__number" aria-hidden="true">0{index + 1}</span>
+          <h3>{item.title}</h3><p>{item.body}</p>
+          <ul class="pw-audience-paths__examples" role="list">{item.examples.map(example => <li>{example}</li>)}</ul>
+          <span class="pw-audience-paths__action">{item.linkLabel}<span aria-hidden="true">↗</span></span>
+        </a>
+      </li>)}
+    </ul>
+  </div>
+</section>

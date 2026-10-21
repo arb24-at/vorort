@@ -5,6 +5,7 @@ import WorkshopCanvas from "../../components/design-lab/WorkshopCanvas.astro";
 import { recipesWithStatus, sectionRecipes, type RecipeId } from "../../design-system/section-recipes";
 import { getWorkshopPages, workshopPath } from "../../data/workshop";
 import { getRecipeUsage } from "../../data/workshop-usage";
+import { getHomePages, homePath } from "../../data/home-pages";
 import { getAudiencePages } from "../../data/audience-pages";
 import { audiencePath } from "../../data/audience-paths";
 import { getServices } from "../../data/services";
@@ -13,6 +14,7 @@ import "../../styles/design-lab.css";
 const pages = await getWorkshopPages();
 const services = (await Promise.all([getServices("private", "de"), getServices("business", "de"), getServices("private", "en"), getServices("business", "en")])).flat();
 const audiencePages = (await getAudiencePages()).map(page => ({ id: page.id, title: page.seo.title, audience: page.audience, locale: page.locale, path: audiencePath(page.audience, page.locale), sections: page.sections }));
+const homePages = (await getHomePages()).map(page => ({ id: page.id, title: page.seo.title, audience: page.audience, locale: page.locale, path: homePath(page.locale), sections: page.sections }));
 const approved = recipesWithStatus("approved").map(([id, recipe]) => {
   // The loader provides a stable page order; use the first real occurrence.
   // An unused recipe needs an explicit example decision, never invented content.
@@ -22,7 +24,7 @@ const approved = recipesWithStatus("approved").map(([id, recipe]) => {
   const anchor = `recipe-${id.replaceAll(".", "-")}`;
   return {
     id, recipe, fixture, section, anchor, sourceAnchor: "layout" in fixture.page ? `specimen-${section.id}` : section.id,
-    usage: getRecipeUsage(pages, services, id as RecipeId, audiencePages),
+    usage: getRecipeUsage(pages, services, id as RecipeId, [...audiencePages, ...homePages]),
     replacements: Object.entries(sectionRecipes).filter(([, candidate]) => candidate.supersedes === id),
   };
 });

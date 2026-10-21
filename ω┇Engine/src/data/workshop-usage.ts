@@ -17,7 +17,7 @@ type ProductionConsumer = {
   composition?: { sections: { recipe: string }[] };
 };
 
-type AdditionalConsumer = { id: string; title: string; audience: "private" | "business"; locale: "de" | "en"; path: string; sections: { recipe: string }[] };
+type AdditionalConsumer = { id: string; title: string; audience: "private" | "business" | "general"; locale: "de" | "en"; path: string; sections: { recipe: string }[] };
 export function getRecipeUsage(pages: WorkshopFixture[], services: ProductionConsumer[], recipeId: RecipeId, additional: AdditionalConsumer[] = []) {
   const workshop = getWorkshopUsage(pages, recipeId).map(page => ({ ...page, context: "Workshop" }));
   const production = services.filter(service => service.composition?.sections.some(section => section.recipe === recipeId))

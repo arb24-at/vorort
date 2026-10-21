@@ -1,0 +1,21 @@
+.pw-local-hero { padding-block: 1.5rem 1rem; }
+.pw-local-hero__surface { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); overflow: hidden; background: var(--pw-night-deep); color: #f7faf9; border-radius: 24px; }
+.pw-local-hero__copy { padding: clamp(1.5rem, 4vw, 3.5rem); }
+.pw-local-hero .pw-eyebrow { color: #b2e2ce; }
+.pw-local-hero :is(h1,h2) { margin: .9rem 0 1.35rem; max-width: 13ch; font-size: clamp(2.75rem, 5.1vw, 4.6rem); letter-spacing: -.055em; line-height: 1.05; text-wrap: balance; }
+.pw-local-hero__lead { margin: 0 0 1.5rem; max-width: 50ch; color: #e1ebea; font-size: clamp(1.0625rem, 1.35vw, 1.2rem); line-height: 1.65; }
+.pw-local-hero__image { position: relative; min-height: 28rem; }
+.pw-local-hero__image img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: 49% center; }
+.pw-local-hero__facts { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: .75rem 2rem; margin: 0; padding: 1.1rem clamp(1.5rem, 4vw, 3.5rem); border-top: 1px solid #ffffff30; list-style: none; color: #d8ece2; font-size: .9rem; font-weight: 650; }
+.pw-local-hero__facts li { display: flex; align-items: center; gap: .6rem; }
+.pw-local-hero__facts li::before { content: ""; width: .35rem; height: .35rem; border-radius: 50%; background: #a7dabd; }
+.pw-local-hero__language { display: flex; flex-wrap: wrap; gap: .4rem 1.25rem; margin-top: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--pw-rule); font-size: .875rem; line-height: 1.5; color: var(--pw-muted); }
+.pw-local-hero__language strong { color: var(--pw-text); }
+.pw-local-hero a:focus-visible { outline: 3px solid #fff; outline-offset: 5px; }
+@media (max-width: 800px) {
+  .pw-local-hero__surface { grid-template-columns: 1fr; border-radius: 18px; }
+  .pw-local-hero :is(h1,h2) { max-width: 16ch; font-size: clamp(2.5rem, 9vw, 3.75rem); }
+  .pw-local-hero__image { min-height: 0; height: auto; max-height: 24rem; aspect-ratio: 1.6; }
+  .pw-local-hero__facts { gap: .6rem 1.5rem; }
+}
+@media (max-width: 480px) { .pw-local-hero .pw-actions { flex-direction: column; } }

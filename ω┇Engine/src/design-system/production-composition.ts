@@ -41,7 +41,7 @@ export function validateProductionSections(
     if (enquiries.length !== 1 || enquiries[0]?.recipe !== "contact.enquiry-email") issue([], "An authorised trial requires exactly one truthful email-draft enquiry");
   }
   sections.forEach((section, index) => {
-    if (section.recipe === "hero.editorial-art" || section.recipe === "hero.service-intro") section.content.actions.forEach((action, actionIndex) => {
+    if (section.kind === "hero" && "actions" in section.content) section.content.actions.forEach((action, actionIndex) => {
       if (!ids.has(action.target) && action.target !== contactId) issue([index, "content", "actions", actionIndex, "target"], `Missing section target: ${action.target}`);
     });
     if (section.recipe === "cta.quick-contact" && section.content.enquiryTarget !== contactId) issue([index, "content", "enquiryTarget"], "Quick contact must target the single enquiry");

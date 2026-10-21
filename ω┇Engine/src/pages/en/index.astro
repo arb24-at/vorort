@@ -1,15 +1,6 @@
 ---
-import HomeExperience from "../../components/HomeExperience.astro";
-import MainLayout from "../../layouts/MainLayout.astro";
-import { siteConfig } from "../../data/site";
+import HomePage from "../../components/HomePage.astro";
+import { getHomePage } from "../../data/home-pages";
+const page = await getHomePage("en");
 ---
-
-<MainLayout
-  title={`English-speaking IT Support in Berlin | ${siteConfig.defaultTitleSuffix}`}
-  description="English-speaking on-site IT support throughout Berlin for private customers, home offices and small businesses: computers, software, networks, Microsoft 365 and Google Workspace."
-  canonicalPath="en/"
-  lang="en"
-  alternatePath=""
->
-  <HomeExperience locale="en" />
-</MainLayout>
+<HomePage page={page} />

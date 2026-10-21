@@ -1,8 +1,8 @@
 import { z } from "astro/zod";
 
 export type RecipeStatus = "experimental" | "approved" | "deprecated";
-export type Audience = "private" | "business";
-export type PageType = "service" | "audience";
+export type Audience = "private" | "business" | "general";
+export type PageType = "service" | "audience" | "home";
 
 const text = z.string().trim().min(1);
 const anchor = z.string().regex(/^[a-z][a-z0-9-]*$/, "Use a lowercase semantic section ID");
@@ -77,6 +77,7 @@ function recipe<S extends z.ZodTypeAny>(definition: {
   authoringGuidance?: Partial<AuthoringGuidance>;
   blocks?: Record<string, BlockDefinition>;
   pageTypes?: readonly PageType[];
+  audiences?: readonly Audience[];
 }) {
   return {
     ...definition,
@@ -84,13 +85,53 @@ function recipe<S extends z.ZodTypeAny>(definition: {
     supersedes: definition.supersedes ?? null,
     blocks: definition.blocks ?? {},
     pageTypes: definition.pageTypes ?? ["service"] as readonly PageType[],
-    audiences: ["private", "business"] as readonly Audience[],
+    audiences: definition.audiences ?? ["private", "business"] as readonly Audience[],
   };
 }
 
 // The single recipe contract: validation, renderer lookup and approval/impact views
 // all consume these records. A breaking content contract gets a new semantic ID.
 export const sectionRecipes = {
+  "hero.local-support": recipe({
+    name: "Local support introduction", kind: "hero", status: "experimental",
+    pageTypes: ["service", "audience", "home"], audiences: ["private", "business", "general"],
+    purpose: "Introduce a local service with plain-language scope, two useful actions, factual context and one environmental image.",
+    recommendedPlacement: "Opening section of a local-service entrance",
+    recommendedUse: "Use when visitors need to understand the location, audience and practical service before choosing a more detailed path.",
+    renderer: "LocalSupportHero.astro",
+    authoringGuidance: {
+      contentShape: "Eyebrow, heading, introduction, exactly two section actions, two to four verified facts and a supplied image with descriptive alternative text.",
+      typicalRange: "A concise explanation and short factual statements. Keep detailed service choices in the following section.",
+      fixed: "One main heading, real on-page actions, factual context without invented badges or guarantees, and an informative image separate from the copy.",
+      flexible: "Wording, local context, selected facts, crop and proportions can vary. Central language-support messaging remains controlled by site configuration.",
+      needsDesignReview: "Experimental. A booking interface, customer proof, pricing or a new interaction needs its own review; no approval is inherited from another hero.",
+      media: "One existing environmental image; no decorative image collection or live location map is required.",
+      responsive: "Desktop copy and image share a surface. Mobile keeps heading, explanation and actions before the image; facts follow in reading order.",
+      accessibility: "One real page heading, meaningful image alternative text, native links, visible focus and no text over the image.",
+    },
+    schema: z.object({ ...heading, actions: z.array(sectionAction).length(2), facts: z.array(text).min(2).max(4), image: z.object({ src: media.shape.src.unwrap(), alt: text }).strict() }).strict(),
+  }),
+  "scope.audience-paths": recipe({
+    name: "Home and business pathways", kind: "scope", status: "experimental",
+    pageTypes: ["service", "home"], audiences: ["private", "business", "general"],
+    purpose: "Help mixed-audience visitors choose between real home and business service gateways.",
+    recommendedPlacement: "After a broad introduction, before deeper service information or contact",
+    recommendedUse: "Offer two substantial routes with everyday context rather than make visitors diagnose a technical category.",
+    renderer: "AudiencePaths.astro",
+    authoringGuidance: {
+      contentShape: "Heading and intro, then exactly two distinct audience destinations with a title, explanation, two to four examples and a descriptive link label.",
+      typicalRange: "Enough context to choose the appropriate audience. Link to the gateway instead of duplicating its complete service directory.",
+      fixed: "One private and one business destination, resolved through the canonical locale route helper. No arbitrary external links or nested controls.",
+      flexible: "Audience wording, examples, order and panel proportions can vary without changing the destinations or their meaning.",
+      needsDesignReview: "Experimental. Additional audiences, filters or service-level destination types need a separate contract review.",
+      media: "No imagery required. Typography, rules and restrained tonal contrast distinguish the paths.",
+      responsive: "Two desktop paths become one stream on narrow screens. Each complete entry remains a single large link target.",
+      accessibility: "A labelled section, native list, meaningful headings, descriptive links and visible keyboard focus; arrows are decorative.",
+    },
+    schema: z.object({ ...heading, items: z.array(z.object({ audience: z.enum(["private", "business"]), title: text, body: text, examples: z.array(text).min(2).max(4), linkLabel: text }).strict()).length(2) }).strict().superRefine((content, context) => {
+      if (new Set(content.items.map(item => item.audience)).size !== 2) context.addIssue({ code: z.ZodIssueCode.custom, path: ["items"], message: "Provide distinct private and business paths" });
+    }),
+  }),
   "scope.service-directory": recipe({
     name: "Editorial service directory", kind: "scope", status: "experimental",
     pageTypes: ["service", "audience"],
@@ -255,7 +296,8 @@ export const sectionRecipes = {
     schema: z.object({ ...editorialHeading, media: suppliedMedia, note: editorialNote.optional() }).strict(),
   }),
   "explanation.editorial-prose": recipe({
-    pageTypes: ["service", "audience"],
+    pageTypes: ["service", "audience", "home"],
+    audiences: ["private", "business", "general"],
     name: "Rich editorial prose", kind: "explanation",
     purpose: "Carry a large amount of explanatory content through varied but controlled editorial blocks without reducing it to cards or collapsible fragments.",
     recommendedPlacement: "Between more structured service sections, especially after a comparison, diagram or topic index",
@@ -324,7 +366,8 @@ export const sectionRecipes = {
     schema: z.object({ ...heading, items: z.array(item).min(2).max(6) }).strict(),
   }),
   "cta.quick-contact": recipe({
-    pageTypes: ["service", "audience"],
+    pageTypes: ["service", "audience", "home"],
+    audiences: ["private", "business", "general"],
     name: "Quick contact invitation", kind: "cta",
     status: "experimental",
     purpose: "Offer a low-pressure call or a return to the page's single enquiry form without repeating the form.",
@@ -344,7 +387,8 @@ export const sectionRecipes = {
     schema: z.object({ eyebrow: text, title: text, body: text, callLabel: text, enquiryLabel: text, enquiryTarget: anchor }).strict(),
   }),
   "process.staged-path": recipe({
-    pageTypes: ["service", "audience"],
+    pageTypes: ["service", "audience", "home"],
+    audiences: ["private", "business", "general"],
     name: "Staged working path", kind: "process",
     purpose: "Explain the four stages from assessment to handover.",
     recommendedPlacement: "Middle page",
@@ -375,7 +419,8 @@ export const sectionRecipes = {
     }).strict(),
   }),
   "faq.editorial-answers": recipe({
-    pageTypes: ["service", "audience"],
+    pageTypes: ["service", "audience", "home"],
+    audiences: ["private", "business", "general"],
     name: "Editorial questions and answers", kind: "faq",
     purpose: "Answer important service questions in an always-visible editorial reading flow rather than hiding answers behind disclosures.",
     recommendedPlacement: "Late page, after the main service explanation and before the final contact section",
@@ -441,7 +486,8 @@ export const sectionRecipes = {
     schema: enquiryContentSchema,
   }),
   "contact.enquiry-email": recipe({
-    pageTypes: ["service", "audience"],
+    pageTypes: ["service", "audience", "home"],
+    audiences: ["private", "business", "general"],
     name: "Enquiry with an email draft", kind: "contact",
     status: "experimental",
     purpose: "Offer a substantial enquiry form that prepares an email for the visitor to review and send in their own mail application.",

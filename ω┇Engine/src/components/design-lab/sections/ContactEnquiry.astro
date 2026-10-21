@@ -26,7 +26,7 @@ const copy = {
   requestPlaceholder: content.requestPlaceholder ?? ui.defaultRequestPlaceholder,
 };
 const formEndpoint = import.meta.env.PUBLIC_CONTACT_FORM_ENDPOINT?.trim() ?? "";
-const customerContext = audience === "business" ? "Business" : "Private";
+const customerContext = audience === "business" ? "Business" : audience === "private" ? "Private" : "General";
 const privacyHref = withBase("/datenschutz/");
 ---
 <section class:list={["c2-contact", { "c2-contact--email": emailDraft }]} id={id} data-recipe={recipeId} aria-labelledby={`${id}-title`}>

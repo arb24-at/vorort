@@ -4,6 +4,8 @@ Keep current state and unresolved work here. Durable facts belong in Project, pr
 
 ## Current handoff
 
+- **4J / v2.3.6 · English homepage:** Eight shared sections: local-service hero, home/business paths, practical scope, one enquiry, process at the preserved approach anchor, access/data precautions, visible FAQ and return CTA. The home page has its own validated mixed-audience record/context; it does not masquerade as a private service. English SEO SERP review supports broad local help/orientation; no Planner volume claim. Next reserved page is 3J.
+
 - **3I / v2.3.5 · German business gateway:** Natural German counterpart to 4I, with researched business-landing-de IT-Dienstleister intent, eight sections and one localised enquiry after useful scope/service orientation. Exact German trial reuses existing text hero, directory, prose, process, FAQ and contact implementations. No recipe/schema or English output changed. Next reserved page is 4J.
 
 - **4I / v2.3.4 · English business gateway:** Eight source-driven sections: text hero with preparation note, practical one-off/project scope, three real service destinations, enquiry, change planning, process, visible FAQ and return CTA. Researched business-landing-en owns IT support Berlin; no managed-service, emergency or credential claims. Next reserved page is 3I.
@@ -53,6 +55,8 @@ Grouped by current implementation, with historical IDs retained for traceability
 A worker resolving one row should name its actual subchecks/evidence and retain the remainder. Do not recreate already-resolved RV-002. No unavailable check is silently passed by shortening this file.
 
 ## Recent work
+
+- **v2.3.6 / 4J:** npm run validate passed on the committed 56d7854 baseline plus 4J: 31 HTML pages, 23 sitemap URLs, 14 service records, 4 gateways, 1 homepage and both Workshops. A focused rebuild/Workshop/home/static recheck passed after responsive WebP reuse and alt-text correction. Browser reviewed at 1440×1000 and 390×844: split hero/crops, balanced then stacked audience paths, valid links, visible keyboard focus, enquiry dock, empty-form validation/focus, and no overflow. Design Lab derives Experimental labels for both new specimens. A refreshed-baseline comparison preserved text, links, metadata, media and form fields on all 24 other customer pages, including the newly committed service changes. QA-J and publication facts/backend/privacy/media acceptance remain open; no push/deployment.
 
 - **v2.3.5 / 3I:** Isolated npm run validate passed against 131b0ed plus 3I, excluding parallel service work: 31 HTML pages, 23 sitemap URLs, 14 service records, all 4 audience records and both Workshops. Browser reviewed at 1440×1000 and 390×844: German heading flow, hero/note, local service links, no overflow, one email-draft form, optional company context and keyboard disclosure; mobile dock retained. QA-I and existing artwork/operator/contact/legal/backend/privacy dependencies remain open; no push/deployment.
 

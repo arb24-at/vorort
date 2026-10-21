@@ -32,7 +32,7 @@ pages:
 - id: home-en
   route: /en/
   locale: en
-  researchStatus: provisional-seed
+  researchStatus: serp-reviewed-2026-10-21
   primary: IT help Berlin
   useful:
   - English IT help Berlin
@@ -49,7 +49,7 @@ pages:
   - 24/7 IT support Berlin
   - free tech support Berlin
   - enterprise IT consultancy Berlin
-  note: "`IT support Berlin` is now owned by the researched English business-services landing. The homepage keeps a broader provisional mixed-audience `IT help Berlin` role until homepage-specific English research is completed."
+  note: "English SERP review on 2026-10-21 of local on-site/home/business IT-help wording found provider pages grouping everyday computer, connection and workplace requests, with a clear location and home/business orientation (https://service.eeenation.com/en/it-service-berlin and https://computerhilfe.city/berlin/?lang=en, search-result extracts; direct fetch unavailable). This supports the mixed-audience entrance and plain-language service paths, not a search-volume or ranking claim. No homepage-specific Keyword Planner volumes exist; the descriptive primary IT help Berlin remains provisional as a demand target. Broad IT support Berlin stays with the researched business gateway and detailed troubleshooting/setup intents stay with service pages. English-service wording remains centrally controlled."
 - id: private-landing-de
   route: /leistungen/privatpersonen/
   locale: de

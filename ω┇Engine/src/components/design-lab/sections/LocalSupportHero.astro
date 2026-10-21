@@ -1,0 +1,27 @@
+---
+import type { RecipeContent } from "../../../design-system/section-recipes";
+import WorkshopImage from "../WorkshopImage.astro";
+import { siteConfig } from "../../../data/site";
+import "../../../styles/design-lab/local-support.css";
+type Props = { id: string; content: RecipeContent<"hero.local-support">; locale: "en" | "de"; headingTag?: "h1" | "h2"; anchorBase?: string };
+const { id, content, locale, headingTag = "h1", anchorBase = "" } = Astro.props;
+const Heading = headingTag;
+const language = siteConfig.languageSupport[locale];
+---
+<section class="pw-local-hero" id={id} aria-labelledby={`${id}-title`} data-recipe="hero.local-support">
+  <div class="container">
+    <div class="pw-local-hero__surface">
+      <div class="pw-local-hero__copy">
+        <p class="pw-eyebrow">{content.eyebrow}</p>
+        <Heading id={`${id}-title`}>{content.title}</Heading>
+        <p class="pw-local-hero__lead">{content.intro}</p>
+        <div class="pw-actions">
+          {content.actions.map((action, index) => <a class:list={["pw-action", { "pw-action--primary": index === 0 }]} href={`${anchorBase}#${action.target}`}>{action.label}<span aria-hidden="true">{index === 0 ? "↗" : "↓"}</span></a>)}
+        </div>
+      </div>
+      <div class="pw-local-hero__image"><WorkshopImage {...content.image} sizes="(max-width: 800px) 92vw, (max-width: 1200px) 42vw, 510px" eager /></div>
+      <ul class="pw-local-hero__facts" role="list">{content.facts.map(fact => <li>{fact}</li>)}</ul>
+    </div>
+    {siteConfig.languageSupport.enabled && <aside class="pw-local-hero__language" aria-label={language.title}><strong>{language.title}</strong><span>{language.text}</span></aside>}
+  </div>
+</section>

@@ -1,0 +1,16 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import RecipeSection from "./RecipeSection.astro";
+import { homePath } from "../data/home-pages";
+import type { HomePage } from "../design-system/home-page-schema";
+import "../styles/design-lab/concept-ii.css";
+import "../styles/recipe-service.css";
+type Props = { page: HomePage };
+const { page } = Astro.props;
+const productionContext = { ...page, slug: "home", pageType: "home" as const };
+---
+<MainLayout title={page.seo.title} description={page.seo.description} canonicalPath={homePath(page.locale)} alternatePath={homePath(page.locale === "en" ? "de" : "en")} lang={page.locale}>
+  <div class="concept-ii recipe-service pw-presentation--compact" data-home-page={page.id}>
+    {page.sections.map(section => <RecipeSection section={section} audience="general" locale={page.locale} context="production" productionContext={productionContext} />)}
+  </div>
+</MainLayout>

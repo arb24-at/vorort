@@ -6,6 +6,40 @@ page:
   title: "Private Service Page"
   layout: "specimens"
 sections:
+  - id: local-support-introduction
+    kind: hero
+    recipe: hero.local-support
+    content:
+      eyebrow: "Local support · Entrance example"
+      title: "Practical IT help where you use it"
+      intro: "Introduce the local service in everyday language before asking the visitor to choose a detailed topic. Explain the setting, useful scope and next step without promising a result or adding a technical intake form."
+      actions:
+        - label: "Choose a service path"
+          target: audience-pathways
+        - label: "Describe a request"
+          target: contact
+      facts: ["On-site help in Berlin", "Scope agreed before work"]
+      image:
+        src: /images/technical-field-berlin.jpg
+        alt: "Illustrated home-office and workplace rooms with computers and network equipment."
+  - id: audience-pathways
+    kind: scope
+    recipe: scope.audience-paths
+    content:
+      eyebrow: "Mixed-audience entrance · Example"
+      title: "Choose the setting that fits"
+      intro: "Two substantial paths explain who the help is for. They link to real audience gateways rather than create another complete customer journey inside the Workshop."
+      items:
+        - audience: private
+          title: "Home and home office"
+          body: "Explain everyday devices, personal files and connected rooms. Use selected examples to help readers recognise whether this path fits."
+          examples: ["Computer setup", "Home connections"]
+          linkLabel: "Explore home services"
+        - audience: business
+          title: "Business and workplace"
+          body: "Explain work shared by people, devices and accounts. Keep the emphasis on practical business needs and the real gateway destination."
+          examples: ["Workplace setup", "Shared systems"]
+          linkLabel: "Explore business services"
   - id: "editorial-introduction"
     kind: "hero"
     recipe: "hero.editorial-art"
@@ -484,6 +518,14 @@ sections:
     recipe: "footer.site"
     content: {}
 specimenNotes:
+  local-support-introduction:
+    context: "Local-service entrance or broad gateway"
+    description: "Experimental split introduction with an environmental image, verified facts and centrally controlled language note. Same implementation as the English homepage; no lifecycle promotion."
+    presentation: compact
+  audience-pathways:
+    context: "Mixed audience choosing a real gateway"
+    description: "Experimental home/business paths with canonical locale-aware links. Judge source order, descriptive links, balanced content and mobile stacking independently of the hero."
+    presentation: compact
   service-directory:
     context: "Experimental navigation pattern for audience gateways"
     description: "Real locale-aware service links in editorial rows. Descriptions and examples make the choice useful without relying on a repeated card grid or extra artwork. The same shared renderer is used on the English private gateway."

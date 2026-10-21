@@ -5,6 +5,7 @@ import { withBase } from "../../../utils/withBase";
 import "../../../styles/design-lab/service-directory.css";
 type Props = { id: string; audience: Audience; locale: "en" | "de"; content: RecipeContent<"scope.service-directory"> };
 const { id, audience, locale, content } = Astro.props;
+if (audience === "general") throw new Error("A service directory requires a specific audience");
 const services = await getServices(audience, locale);
 const entries = content.items.map(item => {
   const service = services.find(service => service.translationId === item.serviceId);

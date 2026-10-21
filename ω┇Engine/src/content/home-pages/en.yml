@@ -1,0 +1,134 @@
+id: home-en
+translationId: home
+locale: en
+audience: general
+seo:
+  title: "IT Help in Berlin | On-Site Computer & Workplace Help"
+  description: "Practical IT help on site in Berlin for homes, home offices and businesses. Computers, software, Wi-Fi and workplace IT, with clear scope and an easy first enquiry."
+experiment: home-en-preview
+sections:
+  - id: introduction
+    kind: hero
+    recipe: hero.local-support
+    content:
+      eyebrow: "Local IT help · Berlin"
+      title: "IT help in Berlin, at home and at work"
+      intro: "A computer that will not start, unreliable Wi-Fi or an office that needs setting up. We help you understand the problem, agree useful work and get the relevant devices and services working together. Start with what you need to do; you do not need a technical diagnosis."
+      actions:
+        - label: "Find the right help"
+          target: services
+        - label: "Describe your request"
+          target: contact
+      facts: ["On site in Berlin", "IT experience since 2008", "Free initial conversation"]
+      image:
+        src: /images/technical-field-berlin.jpg
+        alt: "Illustrated Berlin home office and small workplace with computers, a router and printers."
+  - id: services
+    kind: scope
+    recipe: scope.audience-paths
+    content:
+      eyebrow: "Choose a starting point"
+      title: "Help for your home or your business"
+      intro: "The setting helps us understand what matters: your everyday devices and files, or the people and systems that keep a workplace running. Each path explains the services in more detail."
+      items:
+        - audience: private
+          title: "At home & in your home office"
+          body: "For computer and software problems, Wi-Fi that needs attention, or a new PC or Mac to set up. We consider the equipment you already use and help with a single task as well as a wider setup."
+          examples: ["Computer & laptop help", "Software", "Wi-Fi & home networks", "Setup & data transfer"]
+          linkLabel: "Explore help at home"
+        - audience: business
+          title: "For businesses & small teams"
+          body: "For day-to-day workplace problems, office changes and IT projects. Networks, shared devices, email and collaboration are considered around your workflows, existing systems and responsibilities."
+          examples: ["Office networks", "Microsoft 365", "Google Workspace", "Workplace IT"]
+          linkLabel: "Explore business IT services"
+  - id: practical-help
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: "A straightforward first step"
+      title: "You can ask about one small job"
+      intro: "A program that needs installing, a printer that no longer connects or a new desk to prepare can be enough to get in touch. We also plan larger installations and upgrades, but the work starts with your actual need."
+      blocks:
+        - type: columns
+          columns:
+            - title: "Existing equipment comes first"
+              paragraphs:
+                - "We look at what is already there and what is getting in the way. A setting, connection or targeted change may be enough. Where new equipment or a broader change would help, we explain the reason and agree it with you."
+            - title: "Scope and costs are discussed"
+              paragraphs:
+                - "The initial conversation is free. Work is quoted individually; any paid diagnostic visit is explained before it is arranged. Additional work, equipment or another appointment is agreed before we proceed. A long-term support contract is not required."
+  - id: contact
+    kind: contact
+    recipe: contact.enquiry-email
+    content:
+      title: "Tell us what you need help with"
+      intro: "Describe what is happening or what you want to set up. Your Berlin district, the device or service and any important dates help us understand the next step."
+      formIntro: "This form prepares a draft in your email app. Review it and send it there; nothing is sent directly by this website. * Required fields."
+      affectedPlaceholder: "For example a Windows laptop, home Wi-Fi, Outlook or an office network"
+      request: "What would you like help with?"
+      requestPlaceholder: "Tell us what you need to do, what happens instead and where in Berlin you need help. If it concerns a business, mention the affected workflow or team."
+      emailSubject: "IT help enquiry in Berlin"
+  - id: approach
+    kind: process
+    recipe: process.staged-path
+    content:
+      eyebrow: "How we work"
+      title: "Understand the need, agree the work, check the result"
+      intro: "On-site help lets us see the device and its surroundings together. Suitable remote work can also be considered. We choose the approach with you after clarifying the request."
+      steps:
+        - title: "Describe the situation"
+          body: "Tell us the task or problem in your own words. We ask for the details needed to understand the request and assess the next step."
+        - title: "Agree an approach"
+          body: "We discuss the likely work, costs and whether a visit, suitable remote help or a diagnostic appointment makes sense."
+        - title: "Carry out the work"
+          body: "We make the agreed changes. Meaningful risks, dependencies and additional work are discussed before proceeding."
+        - title: "Test and explain"
+          body: "We check the relevant functions and explain useful settings, changes and any remaining limits or next steps."
+  - id: devices-and-data
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: "Your equipment, accounts and files"
+      title: "Clear agreement before consequential changes"
+      blocks:
+        - type: columns
+          columns:
+            - title: "Only the access needed for the task"
+              paragraphs:
+                - "We clarify which device or account access is needed for the agreed work. If an employer, IT team or provider manages the system, their permissions and responsibilities matter. We do not bypass those controls."
+            - title: "Consider the data before changing it"
+              paragraphs:
+                - "Before work that could affect important files or settings, we discuss a suitable backup or fallback where appropriate. Please do not send passwords or recovery codes in an enquiry; sensitive entries can be made by you on the device when needed."
+  - id: questions
+    kind: faq
+    recipe: faq.editorial-answers
+    content:
+      eyebrow: "Before you get in touch"
+      title: "A few useful answers"
+      intro: "You can start with a short description. These answers explain the practical arrangements and the limits of the service."
+      items:
+        - question: "Where do you provide on-site help?"
+          paragraphs:
+            - "We accept requests across Berlin, at home or at a business workplace. Include your postcode or district so we can discuss the location, appointment and any travel arrangements with you."
+        - question: "Do I need to know what is causing the problem?"
+          paragraphs:
+            - "No. Say what you are trying to do, what happens instead and when it started. A visible error message or device name can help, but you do not need to diagnose the issue or choose new equipment first."
+        - question: "Can you help remotely?"
+          paragraphs:
+            - "Suitable software, account and configuration tasks may be possible remotely by agreement. Physical connections, installation and some diagnostic work need an on-site visit. We clarify which approach fits the request."
+        - question: "Do you offer hardware repairs or damaged-drive recovery?"
+          paragraphs:
+            - "Component-level repairs, broken screens, charging ports, board faults and liquid damage are outside the advertised service. Damaged or unreadable storage needs specialist assessment. Computer help focuses on system, software and legitimate access issues; data transfer covers normally readable files."
+        - question: "How are appointments and costs agreed?"
+          paragraphs:
+            - "Tell us the times that suit you and any important deadline. Weekdays, evenings or Saturdays may be possible by agreement. We discuss scope and an individual quotation, or explain a paid diagnostic step where needed. There is no promise of immediate availability or a fixed response time."
+  - id: final-contact
+    kind: cta
+    recipe: cta.quick-contact
+    content:
+      eyebrow: "Ready to begin?"
+      title: "Describe your IT problem or plan"
+      body: "One device, a home office or a business setup: a short explanation is enough to start the conversation."
+      callLabel: "Call about your request"
+      enquiryLabel: "Return to the enquiry"
+      enquiryTarget: contact

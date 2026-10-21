@@ -14,6 +14,11 @@ type Trial = {
 // version and Aykhan's decision here, listing recipe and parent/block IDs.
 const serviceExperiments = ["hero.service-intro", "scope.chapter-links", "recognition.situations", "cta.quick-contact", "contact.enquiry-email"];
 export const productionTrials: Record<string, Trial> = {
+  "home-en-preview": {
+    id: "home-en", translationId: "home", slug: "home", locale: "en", audience: "general", pageType: "home",
+    authorisation: "Aykhan’s six existing gateway/homepage assignment, Task 4J under the initial-update exception, resumed 2026-10-21.",
+    recipes: ["hero.local-support", "scope.audience-paths", "contact.enquiry-email", "cta.quick-contact"], blocks: [],
+  },
   "business-landing-de-preview": {
     id: "business-landing-de", translationId: "business-landing", slug: "business", locale: "de", audience: "business", pageType: "audience",
     authorisation: "Aykhan’s six existing gateway/homepage assignment, Task 3I under the initial-update exception, 2026-10-21.",
