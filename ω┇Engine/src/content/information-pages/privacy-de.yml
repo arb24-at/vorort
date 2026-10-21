@@ -1,0 +1,241 @@
+id: privacy-de
+kind: privacy
+locale: de
+publication: draft
+seo:
+  title: Datenschutzerklärung | Website & Anfragen — Entwurf
+  description: >-
+    Datenschutzentwurf zum aktuellen Stand mit GitHub Pages, Google Fonts und E-Mail-Entwürfen für
+    Anfragen. Betreiber-, Anbieter- und Aufbewahrungsangaben sind noch offen.
+header:
+  eyebrow: Datenschutz · Arbeitsentwurf
+  title: Datenschutzerklärung
+  intro: >-
+    Dieser Entwurf beschreibt den aktuellen technischen Aufbau der Website und die Wege für
+    Anfragen. Die Identität des Verantwortlichen, Kommunikationsanbieter und weitere
+    Verarbeitungsangaben sind noch nicht bestätigt. Der Text ist keine vollständige,
+    veröffentlichungsfertige Datenschutzerklärung. Die deutsche Fassung bleibt die maßgebliche
+    rechtliche Quelle.
+sections:
+  - id: verantwortlicher
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Wer ist verantwortlich?
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              [Erforderlich: vollständiger rechtlicher Name, Niederlassungsanschrift und
+              tatsächlich verwendete Kontakt-E-Mail des Verantwortlichen. Angaben zu Vertretung
+              oder Datenschutzbeauftragten nur ergänzen, wenn anwendbar.]
+            - >-
+              Die beispielhaften Angaben an anderen Stellen dieser Entwurfswebsite sind keine
+              verifizierten Angaben zum Verantwortlichen.
+  - id: hosting
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Bereitstellung der Website und Hosting
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Die aktuelle statische Website wird über GitHub Pages unter
+              arb24-at.github.io/vorort/ bereitgestellt. Beim Laden einer Seite werden Anfragen an
+              den Hostingdienst übermittelt. GitHub erklärt, dass IP-Adressen von Besuchern zu
+              Sicherheitszwecken protokolliert und gespeichert werden – auch ohne Anmeldung bei
+              GitHub.
+            - >-
+              [Bestätigen: tatsächlicher Hostingempfänger und vertragliche Rolle, Zweck und
+              Rechtsgrundlage, betroffene Anfrageinformationen, Speicherdauer oder Kriterien sowie
+              gegebenenfalls Angaben zu internationalen Übermittlungen. Diese Einzelheiten ergeben
+              sich nicht aus dem Repository.]
+            - >-
+              Im aktuellen Quellcode ist kein Website-Analysedienst implementiert. Daraus folgt
+              nicht, dass der Hostinganbieter keine technischen Daten verarbeitet.
+  - id: schriftarten
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Von Google geladene Schriftarten
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Das gemeinsame Stylesheet fordert derzeit die Schriftarten Manrope und Space Grotesk
+              über fonts.googleapis.com an. Zur Schriftauslieferung gehört üblicherweise auch
+              fonts.gstatic.com. Durch diese externen Anfragen erhält der Schriftdienst technische
+              Verbindungsinformationen, darunter die für den Abruf verwendete IP-Adresse.
+            - >-
+              [Empfänger, Rechtsgrundlage und gegebenenfalls Informationen zu internationalen
+              Übermittlungen für diese Einbindung bestätigen – oder die technische Umsetzung vor
+              Fertigstellung der Erklärung ändern und prüfen.]
+            - >-
+              Die Schriftarten werden derzeit nicht lokal selbst gehostet. Der Entwurf behauptet
+              deshalb nicht, dass sämtliche Ressourcen ohne Verbindung zu Google ausgeliefert
+              werden.
+  - id: anfrageformular
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Eine Anfrage im E-Mail-Programm vorbereiten
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Die Kundenformulare verwenden einen E-Mail-Entwurf. Je nach Formular geben Sie
+              Namen, eine E-Mail-Adresse oder Telefonnummer für die Antwort, den gewünschten
+              Kontaktweg und Ihr Anliegen an. Ort, Unternehmen, Gerät oder Dienst sowie
+              Terminwünsche können optional hinzukommen. Das Formular kann außerdem den Privat-
+              oder Unternehmenskontext kennzeichnen.
+            - >-
+              Die Website bereitet eine Nachricht für Ihr E-Mail-Programm vor. Sie prüfen und
+              versenden sie dort selbst. Ein Website-Backend für den Formularversand oder eine
+              Website-Anfragedatenbank ist nicht konfiguriert. Ihr E-Mail-Programm und dessen
+              Anbieter verarbeiten anschließend den Entwurf und eine von Ihnen versandte
+              Nachricht.
+            - >-
+              Geben Sie keine Passwörter, Anmelde- oder Wiederherstellungscodes, Fernzugangsdaten
+              oder sonstigen vertraulichen Unterlagen ein. Einige ältere Formulare enthalten eine
+              verpflichtende Einwilligungscheckbox. Deren rechtlicher Zweck und die Grundlage der
+              Anfrageverarbeitung müssen noch bestätigt werden.
+  - id: direkte-kontaktwege
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: E-Mail, Telefon und WhatsApp
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              E-Mail- und Telefonlinks öffnen das passende Programm. WhatsApp wird über einen
+              gewöhnlichen externen Link angeboten, nicht als eingebettetes Chat-Widget. Wenn Sie
+              diesen Weg wählen, öffnen Sie einen vom Anbieter kontrollierten Dienst. Sie können
+              stattdessen einen anderen Kontaktweg nutzen.
+            - >-
+              Sobald eine Nachricht oder ein Anruf beim Unternehmen eingeht, richtet sich die
+              weitere Verarbeitung nach den tatsächlich verwendeten Kommunikationsdiensten und
+              Unterlagen des Betreibers.
+            - >-
+              [Bestätigen: E-Mail- und Telefonanbieter, WhatsApp-Konto und geschäftliche
+              Einrichtung, Empfänger und Zugriffsberechtigte, mögliche internationale
+              Übermittlungen sowie ob und wie Korrespondenz oder Anrufdaten gespeichert und
+              gelöscht werden.]
+  - id: zwecke-und-aufbewahrung
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Zwecke, Rechtsgrundlagen und Aufbewahrung
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Anfrageangaben sollen der Klärung Ihres Anliegens und der Besprechung möglicher
+              Arbeiten dienen. Für die abschließende Prüfung kommt bei vertragsbezogenen Anfragen
+              Art. 6 Abs. 1 lit. b DSGVO infrage. Andere Kommunikation benötigt eine zum Zweck
+              passende Grundlage und gegebenenfalls eine Interessenabwägung. Tatsächliche
+              gesetzliche Aufbewahrungspflichten sind gesondert zu berücksichtigen.
+            - >-
+              [Erforderlich: Rechtsgrundlage je Verarbeitungszweck, gegebenenfalls berechtigte
+              Interessen sowie aussagekräftige Aufbewahrungsfristen oder Löschkriterien für
+              Anfragen, beauftragte Arbeiten und gesetzlich aufzubewahrende Unterlagen bestätigen.
+              Der Entwurf behauptet keine feste Löschfrist.]
+            - >-
+              Die Angaben sind freiwillig. Für eine gewünschte Antwort werden jedoch ein nutzbarer
+              Kontaktweg und eine Beschreibung des Anliegens benötigt. Geben Sie nur so viele
+              personenbezogene Informationen an, wie die erste Anfrage erfordert.
+  - id: speicher-und-einbindungen
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Cookies, Browserspeicher und weitere Einbindungen
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Der aktuelle Quellcode der Kundenseiten enthält keine Analyse- oder Werbeskripte,
+              nicht notwendigen Cookies oder Nutzung von localStorage beziehungsweise
+              sessionStorage. Das Formular speichert keine Entwürfe in einem von der Website
+              verwalteten Browserspeicher. Browserfunktionen, Ihr E-Mail-Programm und externe
+              Dienste haben eigenes Verhalten.
+            - >-
+              [Vor Veröffentlichung das tatsächliche Netzwerk- und Speicherverhalten im Browser
+              sowie Änderungen an Hosting, Formularen, Schriftarten oder Dritteinbindungen prüfen.
+              Diese Quellcodeprüfung ist keine Garantie für die gesamte eigenständige Verarbeitung
+              aller Anbieter.]
+  - id: ihre-rechte
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Ihre Rechte und Beschwerden
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Je nach Verarbeitung und geltenden Voraussetzungen können Sie Auskunft,
+              Berichtigung, Löschung, Einschränkung oder Datenübertragbarkeit verlangen und einer
+              Verarbeitung widersprechen. Beruht eine Verarbeitung auf Einwilligung, kann diese
+              für die Zukunft widerrufen werden. Sie können sich außerdem bei einer zuständigen
+              Datenschutzaufsichtsbehörde beschweren.
+            - >-
+              [Erforderlich: verifizierten Kontakt des Verantwortlichen für Anliegen ergänzen;
+              zuständige Aufsicht anhand der tatsächlichen Niederlassung bestätigen.] Die Berliner
+              Datenschutzaufsicht stellt für Angelegenheiten in ihrem Zuständigkeitsbereich einen
+              Beschwerdeweg bereit.
+            - >-
+              Die fertige Erklärung muss gegebenenfalls relevante automatisierte Entscheidungen
+              oder Profiling und weitere nach der tatsächlichen Verarbeitung nötige Informationen
+              behandeln. Eine solche Funktion ist im aktuellen Website-Quellcode nicht
+              implementiert.
+  - id: stand-des-entwurfs
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Stand des Entwurfs und Änderungen
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Technischer Quellstand geprüft am 21. Oktober 2026. Bei Änderungen an Umsetzung,
+              Anbietern oder betrieblichen Abläufen muss diese Erklärung angepasst werden. Ein
+              direkter Websiteversand darf nicht allein auf Grundlage dieses Entwurfs aktiviert
+              werden: Anbieter, Datenschutzbedingungen, Aufbewahrung und Zustellverhalten
+              benötigen eine gesondert bestätigte Konfiguration.
+draftNotice:
+  title: Was die Website derzeit verwendet
+  body: >-
+    Die Website liegt auf GitHub Pages und lädt Schriftarten von Google. Kundenformulare bereiten
+    eine Nachricht in Ihrem eigenen E-Mail-Programm vor; sie versenden nichts über einen
+    Website-Backenddienst. Im aktuellen Quellcode der Kundenseiten sind keine Analysewerkzeuge
+    oder nicht notwendigen Tracking-Speicher implementiert.
+missingFacts:
+  - >-
+    Verifizierte Identität und Kontakt des Verantwortlichen; gegebenenfalls Vertretung oder
+    Datenschutzbeauftragte.
+  - >-
+    Hostingempfänger, vertragliche Rolle, Rechtsgrundlage, Aufbewahrung und
+    Übermittlungsregelungen.
+  - >-
+    Google-Fonts-Empfänger und Prüfung von Rechtsgrundlage/Übermittlungen bei derzeit externer
+    Einbindung.
+  - >-
+    Tatsächliche E-Mail-, Telefon- und WhatsApp-Anbieter/Konfiguration sowie
+    Kommunikationsempfänger.
+  - Zweckbezogene Rechtsgrundlagen, berechtigte Interessen und Aufbewahrungs-/Löschkriterien.
+  - Browserprüfung zu Netzwerk/Speicher, zuständige Aufsicht und abschließende rechtliche Prüfung.
+  - Rechtlicher Zweck der verpflichtenden Einwilligungscheckbox in älteren Formularen.
+references:
+  - label: GitHub Pages — Protokollierung von Besucher-IP-Adressen (Englisch)
+    href: >-
+      https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection
+  - label: GitHub — Allgemeine Datenschutzerklärung (Englisch)
+    href: https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement
+  - label: Google Fonts — Häufige Fragen
+    href: https://fonts.google.com/faq
+  - label: Datenschutz-Grundverordnung — Amtlicher Text
+    href: https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32016R0679
+  - label: Europäischer Datenschutzausschuss — Rechte betroffener Personen (Englisch)
+    href: https://www.edpb.europa.eu/sme/be-compliant/respect-individuals-rights_en
+  - label: Berliner Datenschutzaufsicht — Beschwerde einreichen
+    href: https://www.datenschutz-berlin.de/buergerinnen-und-buerger/beschwerde

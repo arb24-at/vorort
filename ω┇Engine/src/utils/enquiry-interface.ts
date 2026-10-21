@@ -36,7 +36,7 @@ const en = {
   "affected": "Affected device or service",
   "safety": "Never send passwords, authentication or recovery codes, payment-card details or remote-access credentials.",
   "privacy": "Details submitted here are used to respond to your enquiry.",
-  "privacyLink": "Privacy policy (German)",
+  "privacyLink": "Privacy notice",
   "draftButton": "Prepare email draft",
   "sendButton": "Send enquiry",
   "draftStatus": "Review and send the draft in your email app. If no app opens, use the email link or another contact option above.",

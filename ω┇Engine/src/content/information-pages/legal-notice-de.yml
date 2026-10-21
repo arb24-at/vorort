@@ -1,0 +1,119 @@
+id: legal-notice-de
+kind: legal-notice
+locale: de
+publication: draft
+seo:
+  title: Impressum | Anbieterangaben — Arbeitsentwurf
+  description: >-
+    Arbeitsentwurf des Impressums. Verifizierte Angaben zum Betreiber, zur Anschrift und zum
+    Kontakt fehlen noch. Vor der Veröffentlichung müssen die Angaben ergänzt werden.
+header:
+  eyebrow: Rechtliches · Arbeitsentwurf
+  title: Impressum
+  intro: >-
+    Dieser Entwurf zeigt, welche Angaben zum Websitebetreiber noch bestätigt werden müssen. Er ist
+    unvollständig und noch nicht zur Veröffentlichung als fertiges Impressum geeignet. Die
+    deutsche Fassung ist die maßgebliche rechtliche Quelle.
+sections:
+  - id: anbieter
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Anbieter dieser Website
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              [Erforderlich: vollständiger rechtlicher Name des Betreibers und vollständige, zur
+              Veröffentlichung geeignete Niederlassungsanschrift.]
+            - >-
+              Die rechtliche Identität des Betreibers und eine gegebenenfalls zusätzliche
+              eingetragene Geschäftsbezeichnung werden erst nach Bestätigung ergänzt.
+  - id: kontaktangaben
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Unmittelbarer Kontakt
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              [Erforderlich: eine tatsächlich verwendete E-Mail-Adresse und bestätigte Angaben zur
+              unmittelbaren Kommunikation.]
+            - >-
+              Die zentral eingetragene Beispieltelefonnummer, Anschrift und E-Mail-Adresse sind
+              keine verifizierten Kontaktdaten des Betreibers.
+  - id: register-und-kennnummern
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Register- und Identifikationsangaben
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              [Bestätigen, ob ein Handelsregistereintrag oder ein anderer einschlägiger
+              Registereintrag besteht; gegebenenfalls Register und Nummer ergänzen.]
+            - >-
+              [Eine gegebenenfalls zugeteilte Umsatzsteuer-Identifikationsnummer oder
+              Wirtschafts-Identifikationsnummer bestätigen. Keine persönliche Steuernummer
+              eintragen.]
+            - >-
+              Angaben zu Rechtsform, Vertretung, behördlicher Zulassung oder reglementierten
+              Berufen werden nur aufgenommen, soweit sie für den tatsächlichen Betreiber und die
+              Tätigkeit zutreffen.
+  - id: verbraucherschlichtung
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Verbraucherstreitbeilegung
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              [Bestätigen, ob eine Bereitschaft oder Verpflichtung zur Teilnahme an einem
+              Verfahren vor einer Verbraucherschlichtungsstelle besteht und welche
+              Informationspflichten anwendbar sind. Falls erforderlich, zuständige Stelle und
+              Angaben ergänzen.]
+            - >-
+              Eine Entscheidung zur Teilnahme liegt noch nicht vor. Der Entwurf behauptet deshalb
+              weder eine Teilnahme noch eine Ablehnung oder Befreiung.
+  - id: redaktionelle-verantwortung
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Zusätzliche Verantwortungsangaben
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              [Prüfen, ob das tatsächliche Angebot journalistisch-redaktionelle Inhalte enthält,
+              für die eine zusätzliche verantwortliche Person nach § 18 Abs. 2 MStV zu benennen
+              ist.]
+            - >-
+              Diese bedingte Pflicht wird weder mit einem erfundenen Namen ausgefüllt noch allein
+              wegen gewöhnlicher Leistungsbeschreibungen als anwendbar behandelt.
+draftNotice:
+  title: Die Betreiberangaben sind noch offen
+  body: >-
+    Beispielhafte Identitäts-, Adress- und Kontaktdaten an anderen Stellen der Website sind nicht
+    als rechtliche Angaben verifiziert und werden hier bewusst nicht übernommen.
+missingFacts:
+  - >-
+    Vollständiger rechtlicher Betreibername und zur Veröffentlichung geeignete
+    Niederlassungsanschrift.
+  - Verifizierte tatsächlich verwendete E-Mail-Adresse und direkte Kontaktangaben.
+  - >-
+    Zutreffende Rechtsform, Register- und zugeteilte
+    Umsatzsteuer-/Wirtschafts-Identifikationsangaben.
+  - >-
+    Verbraucherschlichtung, Teilnahmeverpflichtungen und gegebenenfalls redaktionelle
+    Verantwortungsangaben.
+references:
+  - label: § 5 DDG — Allgemeine Informationspflichten
+    href: https://www.gesetze-im-internet.de/ddg/__5.html
+  - label: § 36 VSBG — Allgemeine Informationspflicht
+    href: https://www.gesetze-im-internet.de/vsbg/__36.html
+  - label: § 18 MStV — Amtliche Berliner Rechtsquelle
+    href: >-
+      https://gesetze.berlin.de/bsbe/?query=DOKNR%3Ajlr-NNLBE00004926NN00000000043&source=PermaLink

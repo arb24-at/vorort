@@ -11,7 +11,7 @@ Preserve existing source-complete pages and explicit trial permissions while rev
 ## Publication dependencies
 
 - Verified public brand/domain, operator/address/contact details, qualifications and Berlin travel policy.
-- Grounded trust/legal content and deliberate English-facing legal/trust treatment.
+- Review the completed working-methods pair and finish the incomplete German legal/privacy sources plus their English companion drafts. English routes are decided; verified operator and processing facts remain necessary.
 - Authorised form provider/backend, spam controls, delivery/error testing and privacy/retention disclosures. Mail-app fallback remains truthful until then.
 - Accepted media for intended crops and context.
 - Domain/HTTPS, redirects, canonicals, sitemap/indexing and Search Console; measurement only with a suitable privacy basis.

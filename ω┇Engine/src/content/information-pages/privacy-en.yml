@@ -1,0 +1,222 @@
+id: privacy-en
+kind: privacy
+locale: en
+publication: draft
+seo:
+  title: Privacy Notice | Website & Enquiries — Working Draft
+  description: >-
+    Working privacy draft reflecting the current static website, GitHub Pages, Google Fonts and
+    email-draft enquiries. Operator, provider and retention details remain incomplete.
+header:
+  eyebrow: Privacy · Working draft
+  title: Privacy notice
+  intro: >-
+    This draft describes the website’s current technical setup and enquiry paths. The controller’s
+    identity, communication providers and several processing details have not yet been confirmed.
+    It is not a complete publication-ready privacy notice. The German version remains
+    authoritative.
+sections:
+  - id: controller
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Who is responsible?
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              [Required: the controller’s full legal name, establishment address and operative
+              contact email. Confirm any representative or data protection officer details only if
+              applicable.]
+            - >-
+              The example details elsewhere in this draft website are not verified controller
+              information.
+  - id: website-hosting
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Website delivery and hosting
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              The current website is a static site hosted through GitHub Pages at
+              arb24-at.github.io/vorort/. Loading a page requires requests to the hosting service.
+              GitHub states that it logs and stores visitors’ IP addresses for security purposes,
+              including visitors who are not signed in to GitHub.
+            - >-
+              [Confirm the actual hosting recipient and contractual role, processing purpose and
+              lawful basis, relevant request information, storage period or criteria, and any
+              international-transfer arrangements. The repository does not establish these
+              details.]
+            - >-
+              No website analytics service is implemented in the current source. This does not
+              mean that the hosting provider processes no technical data.
+  - id: web-fonts
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Fonts loaded from Google
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              The shared stylesheet currently requests the Manrope and Space Grotesk fonts through
+              fonts.googleapis.com. Font delivery normally also involves fonts.gstatic.com. These
+              external requests allow the font service to receive technical connection
+              information, including the IP address used to request the files.
+            - >-
+              [Confirm the responsible recipient, lawful basis and any international-transfer
+              information for this integration, or change and verify the implementation before
+              finalising the notice.]
+            - >-
+              The fonts are not currently self-hosted. This draft does not claim that all website
+              resources are delivered without a connection to Google.
+  - id: enquiry-form
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Preparing an enquiry in your email app
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              The customer enquiry forms use an email-draft flow. Depending on the form, you
+              provide your name, a reply address or phone number, preferred contact method and
+              request, with optional location, company, device or service and appointment details.
+              The form may also identify whether the enquiry concerns private or business help.
+            - >-
+              The website prepares a message for your email application. You review and send it
+              there. There is no configured website form-delivery backend or website enquiry
+              database. Your email application and provider then handle the draft and any message
+              you choose to send.
+            - >-
+              Do not include passwords, authentication or recovery codes, remote-access
+              credentials or other sensitive records in an enquiry. Some older forms include a
+              required consent checkbox. Its legal purpose and the basis for processing enquiries
+              still need confirmation.
+  - id: direct-contact
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Email, telephone and WhatsApp
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Email and telephone links open the appropriate application. WhatsApp is offered
+              through an ordinary external link, rather than an embedded chat widget. Choosing it
+              opens a service controlled by its provider. You can use another contact route
+              instead.
+            - >-
+              After a message or call reaches the business, the actual communication services and
+              records used by the operator determine further processing.
+            - >-
+              [Confirm the email and telephone providers, WhatsApp business/account setup,
+              recipients and access, any international-transfer arrangements, and whether and how
+              correspondence or call records are retained and deleted.]
+  - id: purposes-and-retention
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Purposes, legal bases and retention
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Enquiry information is intended to clarify your request and discuss possible work.
+              For final review, contract-related enquiries may fall under Article 6(1)(b) GDPR;
+              other communications require a purpose-specific basis and, where relevant, an
+              assessment of legitimate interests. Actual statutory record-keeping must be
+              addressed separately.
+            - >-
+              [Required: confirm the actual basis for each processing purpose, any legitimate
+              interests, and meaningful retention periods or deletion criteria for enquiries,
+              accepted work and legally retained records. No fixed deletion period is asserted in
+              this draft.]
+            - >-
+              Entering information is voluntary, but a usable reply method and an explanation of
+              the request are needed if you want a response. Do not provide more personal
+              information than the initial enquiry needs.
+  - id: storage-and-integrations
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Cookies, browser storage and other integrations
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              The current customer-page source contains no analytics, advertising code,
+              non-essential cookies, localStorage or sessionStorage use. The form does not save
+              drafts into website-managed browser storage. Browser features, your email
+              application and external services have their own behaviour.
+            - >-
+              [Before publication, confirm the rendered network and browser-storage behaviour and
+              any changes to hosting, forms, fonts or third-party integrations. This source audit
+              is not a guarantee about every provider’s independent processing.]
+  - id: your-rights
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Your rights and complaints
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Depending on the processing and applicable conditions, you can request access,
+              correction, erasure, restriction or portability, and object to processing. Where
+              processing relies on consent, it can be withdrawn for the future. You may also
+              complain to a competent data protection authority.
+            - >-
+              [Required: a verified controller contact for requests. Confirm the competent
+              authority based on the actual establishment.] The Berlin data protection authority
+              provides a complaint route for matters within its responsibility.
+            - >-
+              The final notice must also confirm any relevant automated decision-making or
+              profiling and provide any further information required by the actual processing. No
+              such feature is implemented in the current website source.
+  - id: notice-status
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Draft status and changes
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Technical source reviewed on 21 October 2026. This notice needs updating when the
+              implementation, providers or business processing changes. Direct website delivery
+              must not be enabled on the strength of this draft: its provider, privacy terms,
+              retention and delivery behaviour need a separate confirmed configuration.
+draftNotice:
+  title: What the website currently does
+  body: >-
+    The website is hosted on GitHub Pages and loads fonts from Google. Its customer enquiry forms
+    prepare a message in your own email app; they do not send it through a website backend. No
+    analytics or non-essential tracking storage is implemented in the current customer-page
+    source.
+missingFacts:
+  - >-
+    Verified controller identity and contact; applicable representative or data protection
+    officer.
+  - Hosting recipient, contractual role, lawful basis, retention and transfer arrangements.
+  - Google Fonts recipient and lawful basis/transfer assessment for current external loading.
+  - Actual email, telephone and WhatsApp providers/account setup and communication recipients.
+  - Purpose-specific legal bases, legitimate interests and retention/deletion criteria.
+  - Rendered network/storage verification, competent authority and final legal review.
+  - Legal purpose of the required consent checkbox in older forms.
+references:
+  - label: GitHub Pages — visitor IP logging
+    href: >-
+      https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection
+  - label: GitHub General Privacy Statement
+    href: https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement
+  - label: Google Fonts FAQ
+    href: https://fonts.google.com/faq
+  - label: General Data Protection Regulation — official text
+    href: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679
+  - label: European Data Protection Board — individual rights
+    href: https://www.edpb.europa.eu/sme/be-compliant/respect-individuals-rights_en
+  - label: Berlin data protection authority — complaints (German)
+    href: https://www.datenschutz-berlin.de/buergerinnen-und-buerger/beschwerde

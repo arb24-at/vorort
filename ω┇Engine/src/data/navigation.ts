@@ -21,10 +21,10 @@ export const mainNavigationEn: NavItem[] = [
 
 export const legalNavigation: NavItem[] = [
   { label: "Impressum", href: "impressum/" },
-  { label: "Datenschutzerklaerung", href: "datenschutz/" }
+  { label: "Datenschutzerklärung", href: "datenschutz/" }
 ];
 
 export const legalNavigationEn: NavItem[] = [
-  { label: "Legal notice (German)", href: "impressum/" },
-  { label: "Privacy policy (German)", href: "datenschutz/" }
+  { label: "Legal notice", href: "en/legal-notice/" },
+  { label: "Privacy notice", href: "en/privacy/" }
 ];

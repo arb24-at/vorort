@@ -13,7 +13,7 @@ For all Chats and agents. Aykhan may edit priorities or name a Task directly. Us
 
 Research/site-wide approval and each bilingual blueprint precede new generation. All existing bilingual blueprint drafts remain pending. English first, German second; routine maintenance stays within approved meaning.
 
-> **Temporary initial-update exception (assigned 2026-10-21):** For this existing-page Content-creation pass only, complete unchecked tasks without waiting for site-wide or bilingual blueprint approval, and continue page by page in family order (EN then DE). Do not create or approve blueprints. Checked items remain source-complete, not QA-approved; the normal blueprint gate resumes after this pass.
+> **Temporary initial-update exception (assigned 2026-10-21):** For this existing-page Content-creation pass only, complete unchecked tasks without waiting for site-wide or bilingual blueprint approval, and continue page by page in family order (EN then DE). Do not create or approve blueprints. All non-legal initial updates are now source-complete; 4L/3L/4M/3M remain incomplete because the required facts are not ready. Aykhan explicitly authorised paired drafts and the three English information routes. Checked items are not QA-approved; the normal blueprint gate resumes for future work.
 
 ### Home networks / Wi-Fi
 
@@ -96,15 +96,15 @@ Family/source: `trust`.
 
 Family/source: `legal notice`.
 
-- [ ] **4L — EN · Legal notice** — `German legal source; English treatment decision pending`.
-- [ ] **3L — DE · Legal notice** — `/impressum/`.
+- [ ] **4L — EN · Legal notice** — `/en/legal-notice/`. Paired draft prepared and technically verified in v2.3.15; incomplete pending verified operator/contact and applicable legal facts. German source remains authoritative.
+- [ ] **3L — DE · Legal notice** — `/impressum/`. Draft prepared and technically verified in v2.3.15; incomplete pending verified operator/contact and applicable legal facts.
 
 ### Privacy policy
 
 Family/source: `privacy`.
 
-- [ ] **4M — EN · Privacy policy** — `German legal source; English treatment decision pending`.
-- [ ] **3M — DE · Privacy policy** — `/datenschutz/`.
+- [ ] **4M — EN · Privacy policy** — `/en/privacy/`. Paired draft prepared and technically verified in v2.3.15; incomplete pending controller, provider, legal-basis, retention/transfer and rendered network/storage facts. German source remains authoritative.
+- [ ] **3M — DE · Privacy policy** — `/datenschutz/`. Draft prepared and technically verified in v2.3.15; incomplete pending controller, provider, legal-basis, retention/transfer and rendered network/storage facts.
 
 ## QA bundle · Page review with Aykhan
 

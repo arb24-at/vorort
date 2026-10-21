@@ -53,24 +53,35 @@ try {
     assert.ok(output.includes(`href="${contact}"`), "Information header/dock must use the real locale homepage enquiry");
     for (const reference of page.references ?? []) {
       const expectedHref = reference.href.startsWith("https://") ? reference.href : `${base}${reference.href}`;
-      assert.ok(output.includes(`href="${expectedHref.replaceAll("&", "&amp;")}"`), `Reference URL must be preserved: ${reference.href}`);
+      assert.ok(output.replaceAll("&amp;", "&").includes(`href="${expectedHref}"`), `Reference URL must be preserved: ${reference.href}`);
     }
     const canonical = new URL(`${base}/${route}`, authority).href;
     assert.ok(output.includes(`<link rel="canonical" href="${canonical}"`));
     assert.ok(output.includes(`hreflang="${page.locale === "en" ? "de" : "en"}"`));
+    if (page.locale === "en" && page.kind !== "trust") {
+      const sourcePath = `${base}/${informationPath(page.kind, "de")}`;
+      assert.ok(output.includes(`href="${sourcePath}"`), "English legal/privacy pages retain the German source link");
+      if (page.publication === "draft") assert.ok(output.includes(page.kind === "privacy" ? "completed privacy notice" : "completed legal notice"));
+    }
     let previous = -1;
     for (const section of page.sections) { const at = output.indexOf(`id="${section.id}"`); assert.ok(at > previous); previous = at; }
     if (page.publication === "draft") {
       assert.ok(output.includes('name="robots" content="noindex, nofollow"'));
       assert.ok(output.includes('class="information-status"'));
       assert.ok(!sitemap.includes(`<loc>${canonical}</loc>`), "Incomplete legal drafts must not be advertised in the sitemap");
-      for (const fact of page.missingFacts) assert.ok(output.includes(fact.replaceAll("&", "&amp;")), "Outstanding facts must stay visible");
+      for (const fact of page.missingFacts) assert.ok(output.replaceAll("&amp;", "&").includes(fact), "Outstanding facts must stay visible");
       const taskBoard = await fs.readFile(path.join(root, "../α┇Docs/ω┇☑️┇Tasks.md"), "utf8");
       const taskId = `${page.locale === "en" ? "4" : "3"}${page.kind === "legal-notice" ? "L" : "M"}`;
       if (page.kind !== "trust") assert.ok(taskBoard.includes(`- [ ] **${taskId} —`), "Draft legal tasks must remain incomplete");
     } else assert.ok(sitemap.includes(`<loc>${canonical}</loc>`));
     const consumer = { id: page.id, title: page.seo.title, audience: "general", locale: page.locale, path: route, sections: page.sections };
     assert.equal(getRecipeUsage([], [], "explanation.editorial-prose", [consumer]).length, 1);
+  }
+  // New English privacy paths are shared by production and Lab enquiry consumers.
+  for (const [locale, route] of [["en", "en/"], ["de", ""]]) {
+    const home = await fs.readFile(path.join(root, "dist", route, "index.html"), "utf8");
+    const privacy = `${base}/${informationPath("privacy", locale)}`;
+    assert.ok(home.includes(`class="c2-contact__privacy"`) && home.includes(`href="${privacy}"`));
   }
   console.log(`Validated ${pages.length} information page(s): approved-only blocks, 15 negative contracts, unique IDs, source order, locale contact fallbacks, draft disclosure/indexing and derived usage.`);
 } finally { await fs.rm(temporary, { recursive: true, force: true }); }
