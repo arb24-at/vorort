@@ -1,16 +1,20 @@
 ---
-import { getSectionRecipe, type RecipeId } from "../../design-system/section-recipes";
+import { getSectionRecipe, usedRecipeBlocks, type RecipeSection } from "../../design-system/section-recipes";
 import "../../styles/design-lab/section-review.css";
 
-type Props = { recipeId: RecipeId; specimen?: { id: string; context: string; description: string } };
-const { recipeId, specimen } = Astro.props;
+import type { Presentation } from "../../design-system/presentation";
+type Props = { section: RecipeSection; specimen?: { id: string; context: string; description: string; presentation?: Presentation } };
+const { section, specimen } = Astro.props;
+const recipeId = section.recipe;
+const blocks = [...new Map(usedRecipeBlocks(section).map(block => [block.id, block])).values()];
 const recipe = getSectionRecipe(recipeId);
 ---
-<div class:list={["lab-section-review", {"lab-section-review--specimen": Boolean(specimen)}]} id={specimen ? `specimen-${specimen.id}` : undefined} data-lab-recipe={recipeId} data-lab-status={recipe.status}>
+<div class:list={["lab-section-review", {"lab-section-review--specimen": Boolean(specimen), "pw-presentation--compact": specimen?.presentation === "compact"}]} id={specimen ? `specimen-${specimen.id}` : undefined} data-lab-recipe={recipeId} data-lab-status={recipe.status}>
   <div class="lab-section-review__chrome">
     <code class="lab-recipe-label">{recipeId}</code>
     {specimen && <span class="lab-specimen-state">{recipe.status}</span>}
   </div>
+  {blocks.length > 0 && <p class="lab-block-states" aria-label="Block lifecycle">{blocks.map(block => <span data-lab-block={block.id} data-block-status={block.status}><code>{block.type}</code> · {block.status}</span>)}</p>}
   {specimen && <div class="lab-specimen-notes"><p><strong>{recipe.name}</strong> · {specimen.context}</p><p>{specimen.description}</p></div>}
   <div class="lab-capture-tools" data-capture-exclude>
     <button type="button" class="lab-capture-button" aria-label={`Copy screenshot of ${recipeId}`} hidden>Copy screenshot</button>

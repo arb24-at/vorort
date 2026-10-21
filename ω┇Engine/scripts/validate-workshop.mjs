@@ -14,7 +14,7 @@ try {
     stdin: { contents: 'export { serviceSchema } from "./src/data/service-schema.ts"; export * from "./src/design-system/workshop-schema.ts"; export * from "./src/design-system/section-recipes.ts"; export * from "./src/data/workshop-usage.ts"; export * from "./src/design-system/production-policy.ts"; export { enquiryEmailHref } from "./src/utils/enquiry-email.ts"; export { captureScale } from "./src/scripts/design-lab/section-capture.ts";', resolveDir: root, loader: "ts" },
     outfile: modulePath, bundle: true, platform: "node", format: "esm", packages: "external",
   });
-  const { serviceSchema, getRecipeUsage, workshopSchema, recipeAllowedForProduction, isEnglishHomeNetworkTest, isEnglishComputerSupportPreview, isEnglishBusinessNetworkPreview, isEnglishMicrosoft365Preview, enquiryEmailHref, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
+  const { serviceSchema, getRecipeUsage, workshopSchema, blocksAllowedForProduction, productionTrials, usedRecipeBlocks, editorialProseBlocks, recipeAllowedForProduction, isEnglishHomeNetworkTest, isEnglishComputerSupportPreview, isEnglishBusinessNetworkPreview, isEnglishMicrosoft365Preview, enquiryEmailHref, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
   const { captureScale } = await import(pathToFileURL(modulePath).href);
   for (const [width, height] of [[390, 400], [1440, 800], [390, 10000], [3000, 20000], [20000, 3000]]) {
     const scale = captureScale(width, height);
@@ -168,7 +168,7 @@ try {
   const production = serviceEntries.find(service => service.id === "wifi-home-network-de");
   assert.ok(production?.composition, "German home network service must adopt a validated composition");
   const productionInvalid = [
-    ["retired contact shortcut", s => { s.composition.contactAfter = "introduction"; }],
+    ["shell contact too early", s => { s.composition.contactAfter = "introduction"; }],
     ["missing composition", s => { delete s.composition; }],
     ["empty composition", s => { s.composition.sections = []; }],
     ["wrong template", s => { s.page.template = "standard"; }],
@@ -297,14 +297,10 @@ try {
     ["another service", s => { s.id = "computer-laptop-en"; s.translationId = "computer-laptop"; s.slug = "computer-laptop-help"; }],
     ["another slug", s => { s.slug = "another-route"; }],
     ["business audience", s => { s.audience = "business"; }],
-    ["form after hero", s => { s.composition.sections.splice(1, 0, s.composition.sections.splice(4, 1)[0]); }],
-    ["thin recognition", s => { s.composition.sections[1].content.items = s.composition.sections[1].content.items.slice(0, 3); }],
-    ["missing practical orientation", s => { s.composition.sections.splice(2, 1); }],
     ["duplicate enquiry", s => { s.composition.sections.push({ ...structuredClone(s.composition.sections[4]), id: "second-enquiry" }); }],
     ["missing enquiry", s => { s.composition.sections.splice(4, 1); }],
     ["wrong enquiry anchor", s => { s.composition.sections[4].id = "enquiry"; }],
     ["broken CTA target", s => { s.composition.sections[3].content.enquiryTarget = "wifi-coverage"; }],
-    ["missing closing CTA", s => { s.composition.sections.pop(); }],
     ["missing related target", s => { s.composition.relatedBefore = "missing"; }],
     ["duplicate instance ID", s => { s.composition.sections.at(-1).id = "quick-contact"; }],
     ["missing email subject", s => { delete s.composition.sections[4].content.emailSubject; }],
@@ -359,12 +355,9 @@ try {
     ["broken chapter target", s => { s.composition.sections[5].content.items[0].target = "missing"; }],
     ["non-chapter destination", s => { s.composition.sections[5].content.items[0].target = "questions"; }],
     ["duplicate chapter target", s => { s.composition.sections[5].content.items[1].target = s.composition.sections[5].content.items[0].target; }],
-    ["enquiry before orientation", s => { s.composition.sections.splice(1, 0, s.composition.sections.splice(4, 1)[0]); }],
     ["second enquiry", s => { s.composition.sections.splice(5, 0, { ...structuredClone(s.composition.sections[4]), id: "extra-enquiry" }); }],
     ["wrong enquiry destination", s => { s.composition.sections[3].content.enquiryTarget = "questions"; }],
     ["unlisted experiment", s => { s.composition.sections.splice(6, 0, structuredClone(gallery.sections.find(s => s.recipe === "outcome.scope-proof"))); }],
-    ["wrong navigation recipe", s => { s.composition.sections.splice(5, 1); }],
-    ["missing closing invitation", s => { s.composition.sections.pop(); }],
     ["changed delivery contract", s => { s.composition.sections[4].recipe = "contact.enquiry"; delete s.composition.sections[4].content.emailSubject; }],
   ];
   for (const [name, change] of computerInvalid) {
@@ -445,18 +438,79 @@ try {
     assert.ok(getRecipeUsage(fixtures, serviceEntries, id).some(p => p.path === "en/services/business/microsoft-365-workplaces/"));
   }
   console.log(`Validated Microsoft 365: ${microsoftInvalid.length} invalid compositions, exact schema/runtime whitelist, lifecycle safeguards and distinct usage.`);
-  const blueprintText = await fs.readFile(path.join(root, "../γ┇Blueprints/wifi-home-network-en-bp.md"), "utf8");
-  const blueprint = yaml.load(blueprintText.split("---")[1]);
-  assert.equal(blueprint["page-id"], englishProduction.translationId);
-  assert.equal(blueprint.locale, englishProduction.locale);
-  assert.equal(blueprint.route, "/en/services/private/wifi-home-network/");
-  assert.equal(blueprint["seo-reference"], "wifi-en");
-  assert.equal(blueprint["content-file-path"], "ω┇Engine/src/content/services/wifi-home-network/en.yml");
-  const plannedIds = [...blueprintText.matchAll(/^\*\*Instance ID:\*\* `([^`]+)`/gm)].map(m => m[1]);
-  const actualIds = englishProduction.composition.sections.flatMap(section => section.id === englishProduction.composition.relatedBefore ? ["related-services", section.id] : [section.id]);
-  assert.deepEqual(actualIds, plannedIds, "The actual English journey must match the refined blueprint");
+  // Blueprint approval controls journeys; code enforces semantics, not one pilot.
+  const validJourneys = [
+    ["three recognition situations", s => { s.composition.sections[1].content.items = s.composition.sections[1].content.items.slice(0, 3); }],
+    ["renamed scope ID", s => { s.composition.sections[2].id = "help-and-scope"; }],
+    ["no recognition section", s => { s.composition.sections.splice(1, 1); }],
+    ["one invitation", s => { s.composition.sections.splice(3, 1); }],
+    ["no forced closing invitation", s => { s.composition.sections.pop(); s.composition.relatedBefore = "questions"; }],
+    ["chapter links before enquiry", s => { s.composition.sections.splice(2, 0, s.composition.sections.splice(5, 1)[0]); }],
+  ];
+  for (const [name, change] of validJourneys) {
+    const candidate = structuredClone(englishProduction); change(candidate);
+    assert.equal(serviceSchema.safeParse(candidate).success, true, `Valid flexible journey rejected: ${name}`);
+  }
+  const software = serviceEntries.find(s => s.id === "software-optimisation-en");
+  assert.equal(serviceSchema.safeParse(software).success, true, "Existing software early-contact composition must stay valid");
+  for (const target of ["missing", "introduction", software.composition.sections.at(-1).id]) {
+    const candidate = structuredClone(software); candidate.composition.contactAfter = target;
+    assert.equal(serviceSchema.safeParse(candidate).success, false, `Invalid shell contact position accepted: ${target}`);
+  }
+  const laterContact = structuredClone(software);
+  laterContact.composition.contactAfter = "installation-choices";
+  assert.equal(serviceSchema.safeParse(laterContact).success, true, "A valid alternative shell contact position must be supported");
+
+  const compactSpecimen = gallery.sections.find(s => s.id === "compact-explanation");
+  assert.ok(compactSpecimen, "Compact list variation needs a real generic specimen");
+  assert.equal(gallery.specimenNotes[compactSpecimen.id].presentation, "compact");
+  assert.equal(sectionRecipes[compactSpecimen.recipe].status, "approved");
+  assert.equal(editorialProseBlocks.list.status, "experimental");
+  assert.ok(approvedHtml.includes('data-library-block="explanation.editorial-prose/list" data-block-status="experimental"'), "Approved Sections must show the independent Experimental palette entry");
+  assert.equal(galleryHtml.includes('data-lab-block="explanation.editorial-prose/list" data-block-status="experimental"'), true, "List status must be visible independently of Approved parent");
+  assert.match(galleryHtml, /class="[^"]*pw-presentation--compact/);
+  assert.match(galleryHtml, /<ol class="pw-rich-prose__list">/);
+  assert.match(galleryHtml, /<ul class="pw-rich-prose__list">/);
+  assert.equal(usedRecipeBlocks(compactSpecimen).filter(b => b.status === "experimental").length, 2);
+  assert.equal(blocksAllowedForProduction(compactSpecimen), false, "Approved parent cannot approve its list");
+  assert.equal(blocksAllowedForProduction(compactSpecimen, englishContext), false, "Section trial does not authorise unlisted blocks");
+  const withList = structuredClone(englishProduction);
+  withList.composition.sections.splice(2, 0, structuredClone(compactSpecimen));
+  assert.equal(serviceSchema.safeParse(withList).success, false, "Unauthorised experimental block must fail production schema");
+  const trial = productionTrials[englishContext.experiment];
+  const savedBlocks = trial.blocks;
+  try {
+    // Simulate a future recorded approval in the canonical permission table.
+    trial.blocks = ["explanation.editorial-prose/list"];
+    assert.equal(blocksAllowedForProduction(compactSpecimen, englishContext), true);
+    assert.equal(serviceSchema.safeParse(withList).success, true);
+    for (const context of [undefined, { ...englishContext, locale: "de" }, { ...englishContext, audience: "business" }, { ...englishContext, experiment: undefined }, { ...englishContext, slug: "other" }, { ...englishContext, id: "other-en" }, { ...englishContext, translationId: "other" }]) {
+      assert.equal(blocksAllowedForProduction(compactSpecimen, context), false, "Block permission escaped its exact page identity");
+    }
+    editorialProseBlocks.list.status = "deprecated";
+    assert.equal(blocksAllowedForProduction(compactSpecimen, englishContext), false);
+    assert.equal(serviceSchema.safeParse(withList).success, false);
+    assert.equal(workshopSchema.safeParse(gallery).success, false);
+  } finally {
+    trial.blocks = savedBlocks;
+    editorialProseBlocks.list.status = "experimental";
+  }
+  for (const content of [
+    { title: "A meaningful heading", blocks: [{ type: "prose", paragraphs: ["A useful explanation."] }] },
+    { title: "A longer explanation", blocks: Array.from({ length: 15 }, () => ({ type: "prose", paragraphs: ["A distinct supported block."] })) },
+    { title: "Reordered selection", blocks: [...compactSpecimen.content.blocks].reverse() },
+  ]) assert.equal(proseSchema.safeParse(content).success, true, "Supported combinations and optional intros must remain flexible");
+  for (const content of [
+    { title: "", blocks: compactSpecimen.content.blocks },
+    { title: "Unknown block", blocks: [{ type: "invented" }] },
+    { title: "Empty list", blocks: [{ type: "list", ordered: false, items: [] }] },
+    { title: "Blank item", blocks: [{ type: "list", ordered: true, items: [" "] }] },
+    { title: "Fake approval", blocks: [{ type: "list", ordered: false, items: ["Item"], status: "approved" }] },
+  ]) assert.equal(proseSchema.safeParse(content).success, false, "Invalid/unknown blocks and content-supplied approval must fail");
+  assert.throws(() => usedRecipeBlocks({ ...compactSpecimen, content: { blocks: [{ type: "__proto__" }] } }), /Unknown block/);
+  console.log(`Validated flexible journeys, shell-contact placements, independent block lifecycle and exact block permissions.`);
   console.log(`Validated private gallery: ${gallery.sections.length} specimens / ${new Set(gallery.sections.map(s => s.recipe)).size} recipes, ${galleryInvalid.length} invalid arrangements, unregistered proposal policy and independent examples.`);
-  console.log(`Validated English test: ${englishTestInvalid.length} invalid compositions, route-bound schema/runtime policy, email-draft encoding and blueprint relationships.`);
+  console.log(`Validated English test: ${englishTestInvalid.length} invalid compositions, route-bound schema/runtime policy, email-draft encoding.`);
   console.log(`Validated ${serviceEntries.length} service records, ${productionInvalid.length + 4} invalid production cases and combined derived usage.`);
   console.log(`Validated ${fixtures.length} Workshop fixtures, ${invalid.length * closingFixtures.length + editorialInvalid.length} invalid-content cases, ${invalidGuidanceCases} invalid approved-guidance cases, experimental guidance migration/promotion, replacement relationships, lifecycle/compatibility policy and distinct-page usage.`);
 } finally {

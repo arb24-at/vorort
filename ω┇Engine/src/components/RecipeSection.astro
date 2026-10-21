@@ -1,12 +1,13 @@
 ---
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
-import { getSectionRecipe, recipeAllowedIn, sectionRecipes, type Audience, type RecipeSection } from "../design-system/section-recipes";
-import { recipeAllowedForProduction, type ProductionRecipeContext } from "../design-system/production-policy";
+import { getSectionRecipe, recipeAllowedIn, sectionRecipes, type Audience, type RecipeSection, usedRecipeBlocks } from "../design-system/section-recipes";
+import { blocksAllowedForProduction, recipeAllowedForProduction, type ProductionRecipeContext } from "../design-system/production-policy";
 type Props = { section: RecipeSection; audience: Audience; locale: "de" | "en"; context: "workshop" | "production"; productionContext?: ProductionRecipeContext; specimen?: boolean; anchorBase?: string };
 const { section, audience, locale, context, productionContext, specimen = false, anchorBase } = Astro.props;
 const recipe = getSectionRecipe(section.recipe);
 const permitted = context === "production" ? recipeAllowedForProduction(section.recipe, productionContext) : recipeAllowedIn(section.recipe, context);
-if (!permitted || (productionContext && (productionContext.audience !== audience || productionContext.locale !== locale)) || !recipe.audiences.includes(audience) || !recipe.pageTypes.includes("service")) {
+const permittedBlocks = context === "production" ? blocksAllowedForProduction(section, productionContext) : usedRecipeBlocks(section).every(block => block.status !== "deprecated");
+if (!permitted || !permittedBlocks || (productionContext && (productionContext.audience !== audience || productionContext.locale !== locale)) || !recipe.audiences.includes(audience) || !recipe.pageTypes.includes("service")) {
   throw new Error(`Recipe ${section.recipe} cannot render in ${context} for ${audience}`);
 }
 const renderers = import.meta.glob<AstroComponentFactory>("./design-lab/sections/*.astro", { eager: true, import: "default" });

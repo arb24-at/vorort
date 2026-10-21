@@ -1,6 +1,6 @@
 # VorOrt media queue
 
-This is Aykhan's operational queue for images and other media that must be produced or explicitly accepted before use. It is not a design source of truth and not an asset catalogue. Source/fixtures own actual media references; Design owns visual direction; Content & SEO creates media needs when composing pages.
+This is Aykhan's operational queue for images and other media that must be produced or explicitly accepted before use. It is not a design source of truth and not an asset catalogue. Source/fixtures own actual media references; Design owns visual direction; Content Generator and Design record media needs when composing pages.
 
 Checkbox meaning:
 
@@ -18,7 +18,7 @@ The private hero is the accepted working art reference: premium tactile editoria
 - Keep private scenes softer and domestic; business scenes more structured and infrastructural. Maintain one family of materials, palette and illustration quality.
 - Avoid impossible geometry, floating/duplicated objects, unterminated cables, random clutter, excessive symmetry, generic SaaS dashboards, cyber shields/hackers, server-room clichés and stock people. No embedded text, labels or fake UI.
 - Keep important subjects readable through responsive crops. Reserve calm areas near copy; place busy visual detail away from text and frame edges. Hero art needs a broad quiet content zone; larger panels should support copy beside/below them or a restrained caption without heavy overlays.
-- When available, reuse a stable image reference/style or seed across the set. The individual prompts below inherit these shared rules.
+- When available, reuse a stable image reference/style or seed across the set. Each prompt below must also state the relevant rules explicitly so it works without this document.
 
 ## Existing private file slots
 

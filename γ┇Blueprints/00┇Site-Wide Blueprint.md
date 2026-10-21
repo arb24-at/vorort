@@ -1,14 +1,16 @@
 ---
 kind: site-map
-status: structure-example
+status: review-draft
 scope: vorort
 last-reviewed: 2026-10-20
-owner: Product Owner approval pending
+blueprint-version: 0.2
+approval: pending-product-owner-review
+owner: Aykhan
 ---
 
-# Site-wide blueprint — structure example
+# Site-wide blueprint — review draft
 
-> **Purpose:** The site's editorial map: what each page owns, how visitors travel between pages, and which important questions still need a destination. This is a **structure proposal**, not a roadmap, SEO research log, task board, approval record, or instruction to publish pages. Routes and keyword ownership below reflect the existing planning sources; proposed relationships are illustrative and require review.
+> **Purpose:** The site's editorial map: what each page owns, how visitors travel between pages, and which important questions still need a destination. This is a **reviewable site plan**, not a roadmap, SEO research log, task board, approval record, or instruction to publish pages. Routes and keyword ownership below reflect the existing planning sources; the ownership and link relationships below are proposed for approval.
 
 ## 1. Site promise and visitor journeys
 
@@ -20,7 +22,7 @@ owner: Product Owner approval pending
 
 **Journey C — Search arrival:** Relevant detailed service → quick recognition of the problem → explanation of options/scope → contextually related page where appropriate → enquiry.
 
-**Language:** German `/` and independently authored English `/en/`. They should describe the same truthful service, but headlines, priorities, and phrasing may differ with independently researched intent. Locale counterparts are connected by canonical/alternate-language metadata; not every German-only general/legal page must automatically acquire an English counterpart.
+**Language:** German `/` and independently authored English `/en/`. They should describe the same truthful service, but the planned information and section purposes are shared; headlines and phrasing follow natural locale writing and distinct research. Locale counterparts are connected by canonical/alternate-language metadata; not every German-only general/legal page must automatically acquire an English counterpart.
 
 ## 2. Page ownership inventory
 
@@ -41,7 +43,7 @@ Use each `seo-keywords.yml` ID for the existing research/routing record. Routes 
 | Trust / working with data | `/datensicherheit-zertifizierungen/` · `trust-de` | **No verified equivalent in the SEO map** | Explain responsible data, access and backup practices; never imply unverified certifications |
 | Legal notice & privacy | `/impressum/`, `/datenschutz/` | Existing footer currently links to German notices | Legal obligations; verify operator/contact/privacy before launch, not SEO landing pages |
 
-**Status rule:** A route in this map is not evidence of final copy approval, release readiness, or even a completed page blueprint. Existing content records and live source own implementation state.
+**Status rule:** A route in this map is not evidence of QA completion, release readiness, or even a completed page blueprint. Existing content records and live source own implementation state.
 
 ## 3. Topic ownership and adjacent-page decisions
 
@@ -73,28 +75,23 @@ Use each `seo-keywords.yml` ID for the existing research/routing record. Routes 
 
 **Link quality rule:** Link where the next page answers a real question, with descriptive anchor text. The quantity of links is not a ranking objective. Do not create cross-language, nonexistent or placeholder destinations. Verify rendered links against existing recipes and implementation capabilities; blueprint wishes are not proof that inline links are currently supported.
 
-## 5. Blueprint portfolio
+## 5. Blueprint portfolio and authoring decisions
 
-**Naming convention (proposal):** `<identity>-<locale>-bp.md`, one per locale where page-specific decisions differ; link them by a common page identity. Keep the map's page inventory stable and give full section-by-section treatment in the individual blueprints, not here.
+Use one detailed bilingual `<actual-content-directory>-bp.md` per service. Existing review drafts: [Home networks](wifi-home-network-bp.md) and [Software installation](software-installation-bp.md). Use [the detailed template](Template┇Bilingual%20Page%20Blueprint.md) for remaining families. Directory and translation ID are both explicit; e.g. `office-network` owns translation ID `network-it-support`. Non-service pages link their actual source files.
 
-**Initial example:** `wifi-home-network-de-bp.md` — structure for the existing German Wi-Fi/home-network route. The English counterpart should reuse confirmed service facts and site relationships while following `wifi-en` research independently.
+The site map is approved first; page drafts can then be reviewed individually. English precedes German generation after that page's approval. Both convey the same planned meaning, with per-section EN/DE SEO guidance. Supported blocks are flexible; word ranges are guidance. Specified experiments require exact page trial permissions and keep their lifecycle. Routine refinements do not reopen blueprint review; changes to intent, service scope, journey or essential interactions do.
 
-**Page-level information expected:** audience and job; precise content/search ownership; service boundaries; ordered section decisions with canonical recipe IDs; rough per-section word ranges; permitted blocks/creative latitude; contextual link placement; visual/media purpose; conversion path; open decisions; acceptance checks.
+## 6. Evidence and current adoption
 
-## 6. Connections to authoritative project sources
+`seo-keywords.yml` owns evidence status and Keyword Planner findings. Preserve existing research; investigate gaps rather than restarting the whole map. Both `wifi-en` and `wifi-de` retain researched-2026-09-03 Keyword Planner evidence. `software-en` and `software-de` remain provisional seeds; software terms in its draft are coverage proposals rather than volume-backed findings. Research & SEO should investigate those gaps without downgrading existing research.
 
-- `AGENTS.md` and `α┇Docs/α┇Project.md` — business/service truth and current execution rules.
-- `ω┇Engine/src/data/seo-keywords.yml` — canonical keyword routing, search-intent research status, harmful intents. Never copy volume research into this map.
-- `ω┇Engine/src/design-system/section-recipes.ts` — canonical recipe lifecycle, approval, semantics, block schema and flexible authoring contract. This map must never declare new approval.
-- `ω┇Engine/src/content/services/` — validated production copy and locale-specific service data.
-- `α┇Docs/ω┇Media-Queue.md` — real media requests and acceptance, not duplicated here.
-- `α┇Docs/β┇Roadmap.md` and `α┇Docs/ω┇☑️┇Tasks.md` — priority and execution; this map must not become a second task queue.
+Current production records remain authoritative for rendered content/routes. The new bilingual drafts are targets, not proof of German/English parity. Existing authorised English experiments continue independently of this pending map. Project owns business truth, Tasks owns sequence, Media Queue owns asset acceptance and Collaboration owns active verification.
 
-## 7. Review questions for the structure (not implementation tasks)
+## 7. Decisions for Aykhan
 
-1. Should all individual blueprints use a small fixed set of field labels, or should a section be allowed to omit fields it does not need?
-2. Would you prefer a graph-style overview alongside the inventory table?
-3. Should we retain one page blueprint per locale or use a shared bilingual skeleton with locale-specific SEO appendices? The example uses the former for clarity.
-4. Should optional new pages such as NAS be captured in this map as *candidates*, or only after their distinct intent is proven?
+1. Approve or revise this ownership map and contact journey as the site-wide baseline.
+2. Confirm the proposed separation of NAS guidance from any future independent NAS page; no new route is created.
+3. Choose the English trust/legal treatment when those blueprints are prepared. German legal sources remain current destinations.
+4. Review the two bilingual page drafts individually after the site-wide decision. Their experimental choices, contact/localisation dependencies and media questions remain pending.
 
-**Approval:** Structure draft only. No production or workflow documents were changed, and no page is approved by this file.
+**Approval:** Pending. No page/section/block promotion, customer-copy migration or publication follows from creating this draft.

@@ -1,3 +1,4 @@
+import yaml from "js-yaml";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -173,17 +174,11 @@ for (const match of wifiEnHtml.matchAll(/href="#([^"]+)"/g)) {
   if (!wifiEnIds.includes(match[1])) errors.push(`English home-network anchor is missing: ${match[1]}`);
 }
 if (wifiEnHtml.includes('href="#kontakt"')) errors.push("English home-network contact links must use the English anchor");
-if (wifiEnHtml.indexOf('id="contact"') > wifiEnHtml.indexOf('id="topics"')) errors.push("English production enquiry must precede the technical topic index");
 if (wifiHtml.indexOf('id="kontakt"') < wifiHtml.indexOf('id="related-services"')) errors.push("German closing enquiry must retain its position");
-const journeyOrder = ["introduction", "everyday-situations", "practical-help", "quick-contact", "contact", "topics", "wifi-coverage", "ethernet-cabling", "home-office", "nas-storage", "network-planning", "installation", "questions", "related-services", "final-contact"];
-for (let index = 0; index < journeyOrder.length; index++) {
-  const position = wifiEnHtml.indexOf(`id="${journeyOrder[index]}"`);
-  if (position < 0 || (index && position <= wifiEnHtml.indexOf(`id="${journeyOrder[index - 1]}"`))) errors.push(`English journey order failed: ${journeyOrder[index]}`);
-}
+
 for (const recipe of ["recognition.situations", "cta.quick-contact", "contact.enquiry-email"]) {
   if (!wifiEnHtml.includes(`data-recipe="${recipe}"`)) errors.push(`Authorised English recipe is missing: ${recipe}`);
 }
-if ((wifiEnHtml.match(/data-recipe="cta.quick-contact"/g) ?? []).length !== 2) errors.push("English test requires two instances of the same quick-contact recipe");
 if ((wifiEnHtml.match(/<form\b/g) ?? []).length !== 1) errors.push("English test requires exactly one enquiry form");
 if (!wifiEnHtml.includes('data-delivery="email"') || !wifiEnHtml.includes("Prepare email draft")) errors.push("English enquiry must explain its functional mail-app fallback");
 if (/<button[^>]*type="submit"[^>]*disabled/.test(wifiEnHtml)) errors.push("The email-draft fallback must remain usable without a direct endpoint");
@@ -201,16 +196,11 @@ for (const required of [
   'data-delivery="email"', 'Prepare email draft', 'BitLocker', 'macOS',
 ]) if (!computerHtml.includes(required)) errors.push(`Computer support missing required output: ${required}`);
 if ((computerHtml.match(/<h1[ >]/g) ?? []).length !== 1 || (computerHtml.match(/<form\b/g) ?? []).length !== 1) errors.push("Computer support needs one H1 and one enquiry form");
-if ((computerHtml.match(/data-recipe="cta.quick-contact"/g) ?? []).length !== 2) errors.push("Computer support needs early/closing canonical contact invitations");
 const computerIds = [...computerHtml.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]);
 if (computerIds.length !== new Set(computerIds).size) errors.push("Computer support contains duplicate IDs");
 for (const m of computerHtml.matchAll(/href="#([^"]+)"/g)) if (!computerIds.includes(m[1])) errors.push(`Computer support has a broken target: ${m[1]}`);
 for (const m of computerHtml.matchAll(/aria-labelledby="([^"]+)"/g)) for (const id of m[1].split(" ")) if (!computerIds.includes(id)) errors.push(`Computer support has a missing accessible label: ${id}`);
-const computerJourney = ["introduction", "everyday-situations", "practical-help", "quick-contact", "contact", "topics", "startup-problems", "slow-or-unstable", "account-access", "reinstallation-and-data", "working-process", "questions", "related-services", "final-contact"];
-for (let i = 0; i < computerJourney.length; i++) {
-  const position = computerHtml.indexOf(`id="${computerJourney[i]}"`);
-  if (position < 0 || (i && position <= computerHtml.indexOf(`id="${computerJourney[i - 1]}"`))) errors.push(`Computer support journey order failed: ${computerJourney[i]}`);
-}
+
 const businessHtml = fs.readFileSync(path.join(distRoot, "en/services/business/network-it-support/index.html"), "utf8");
 for (const required of [
   '<html lang="en">', '<title>Network Infrastructure Berlin | Office Cabling &amp; Wi-Fi</title>',
@@ -221,17 +211,12 @@ for (const required of [
   'en/services/business/microsoft-365-workplaces/', 'en/services/business/google-workspace-cloud/',
 ]) if (!businessHtml.includes(required)) errors.push(`Business network missing required output: ${required}`);
 if ((businessHtml.match(/<h1[ >]/g) ?? []).length !== 1 || (businessHtml.match(/<form\b/g) ?? []).length !== 1) errors.push("Business network needs one H1 and one enquiry form");
-if ((businessHtml.match(/data-recipe="cta.quick-contact"/g) ?? []).length !== 2) errors.push("Business network needs two canonical contact invitations");
 if (/<button[^>]*type="submit"[^>]*disabled/.test(businessHtml)) errors.push("Business email draft must remain usable without a direct endpoint");
 const businessIds = [...businessHtml.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]);
 if (businessIds.length !== new Set(businessIds).size) errors.push("Business network contains duplicate IDs");
 for (const m of businessHtml.matchAll(/href="#([^"]+)"/g)) if (!businessIds.includes(m[1])) errors.push(`Business network has a broken target: ${m[1]}`);
 for (const m of businessHtml.matchAll(/aria-labelledby="([^"]+)"/g)) for (const id of m[1].split(" ")) if (!businessIds.includes(id)) errors.push(`Business network has a missing accessible label: ${id}`);
-const businessJourney = ["introduction", "office-situations", "practical-help", "quick-contact", "contact", "topics", "network-cabling", "business-wifi", "network-hardware", "shared-storage", "remote-access", "working-process", "questions", "related-services", "final-contact"];
-for (let i = 0; i < businessJourney.length; i++) {
-  const position = businessHtml.indexOf(`id="${businessJourney[i]}"`);
-  if (position < 0 || (i && position <= businessHtml.indexOf(`id="${businessJourney[i - 1]}"`))) errors.push(`Business network journey order failed: ${businessJourney[i]}`);
-}
+
 const microsoftHtml = fs.readFileSync(path.join(distRoot, "en/services/business/microsoft-365-workplaces/index.html"), "utf8");
 for (const required of [
   '<html lang="en">', '<title>Microsoft 365 Support Berlin | Setup, Outlook &amp; Teams</title>',
@@ -242,16 +227,42 @@ for (const required of [
   'en/services/business/network-it-support/', 'en/services/business/google-workspace-cloud/', 'data-columns="2"',
 ]) if (!microsoftHtml.includes(required)) errors.push(`Microsoft 365 missing required output: ${required}`);
 if ((microsoftHtml.match(/<h1[ >]/g) ?? []).length !== 1 || (microsoftHtml.match(/<form\b/g) ?? []).length !== 1) errors.push("Microsoft 365 needs one H1 and one enquiry form");
-if ((microsoftHtml.match(/data-recipe="cta.quick-contact"/g) ?? []).length !== 2) errors.push("Microsoft 365 needs two canonical contact invitations");
 if (/<button[^>]*type="submit"[^>]*disabled/.test(microsoftHtml)) errors.push("Microsoft 365 email draft must be usable without a direct endpoint");
 const microsoftIds = [...microsoftHtml.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]);
 if (microsoftIds.length !== new Set(microsoftIds).size) errors.push("Microsoft 365 contains duplicate IDs");
 for (const m of microsoftHtml.matchAll(/href="#([^"]+)"/g)) if (!microsoftIds.includes(m[1])) errors.push(`Microsoft 365 has a broken target: ${m[1]}`);
 for (const m of microsoftHtml.matchAll(/aria-labelledby="([^"]+)"/g)) for (const id of m[1].split(" ")) if (!microsoftIds.includes(id)) errors.push(`Microsoft 365 has a missing accessible label: ${id}`);
-const microsoftJourney = ["introduction", "workplace-situations", "practical-help", "quick-contact", "contact", "topics", "accounts-and-workplaces", "outlook-and-email", "collaboration-and-files", "migration-and-changes", "working-process", "questions", "related-services", "final-contact"];
-for (let i = 0; i < microsoftJourney.length; i++) {
-  const position = microsoftHtml.indexOf(`id="${microsoftJourney[i]}"`);
-  if (position < 0 || (i && position <= microsoftHtml.indexOf(`id="${microsoftJourney[i - 1]}"`))) errors.push(`Microsoft 365 journey order failed: ${microsoftJourney[i]}`);
+
+// Production order follows canonical source, including shells. It is not a
+// universal section script. These checks also cover the newer software option.
+for (const folder of fs.readdirSync(path.join(engineRoot, "src/content/services"), { withFileTypes: true }).filter(entry => entry.isDirectory()).map(entry => entry.name)) {
+  for (const locale of ["en", "de"]) {
+    const sourcePath = path.join(engineRoot, "src/content/services", folder, `${locale}.yml`);
+    const service = yaml.load(fs.readFileSync(sourcePath, "utf8"));
+    if (!service.composition) continue;
+    const composition = service.composition;
+    const route = locale === "en" ? `en/services/${service.audience}/${service.slug}/` : `leistungen/${service.audience === "private" ? "privatpersonen" : "unternehmen"}/${service.slug}/`;
+    const output = fs.readFileSync(path.join(distRoot, route, "index.html"), "utf8");
+    const expected = composition.sections.flatMap(section => [
+      ...(composition.relatedBefore === section.id ? ["related-services"] : []), section.id,
+      ...(composition.contactAfter === section.id ? [locale === "en" ? "contact" : "kontakt"] : []),
+    ]);
+    if (!composition.experiment) expected.push("related-services", ...(!composition.contactAfter ? [locale === "en" ? "contact" : "kontakt"] : []));
+    let previous = -1;
+    for (const id of expected) {
+      const position = output.indexOf(`id="${id}"`);
+      if (position < 0 || position <= previous) errors.push(`${service.id} does not render source order: ${id}`);
+      previous = position;
+    }
+    if ((output.match(/<form\b/g) ?? []).length !== 1 || (output.match(/<h1[ >]/g) ?? []).length !== 1) errors.push(`${service.id} must render one form and H1`);
+    const ids = [...output.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]);
+    if (ids.length !== new Set(ids).size) errors.push(`${service.id} has duplicate IDs`);
+    for (const m of output.matchAll(/href="#([^"]+)"/g)) if (!ids.includes(m[1])) errors.push(`${service.id} has missing target: ${m[1]}`);
+    for (const m of output.matchAll(/aria-labelledby="([^"]+)"/g)) for (const id of m[1].split(" ")) if (!ids.includes(id)) errors.push(`${service.id} has missing accessible label: ${id}`);
+    const hasCompact = composition.experiment || composition.contactAfter;
+    if (output.includes("pw-presentation--compact") !== Boolean(hasCompact)) errors.push(`${service.id} has wrong shared presentation context`);
+    if (/data-lab-block=|data-block-status=|lab-block-states/.test(output)) errors.push(`${service.id} leaked block review labels`);
+  }
 }
 const privatePreview = fs.readFileSync(path.join(distRoot, "design-lab/preview/private-service-page/index.html"), "utf8");
 for (const [name, contents] of [["Workshop", privateHtml], ["Canvas", privatePreview]]) {

@@ -19,13 +19,14 @@ const pairsWithRightMedia = (index: number) => {
 <section class="pw-rich-prose pw-section" id={id} data-recipe="explanation.editorial-prose" aria-labelledby={`${id}-title`} tabindex="-1">
   <div class="container pw-rich-prose__container">
     <header class="pw-rich-prose__intro">
-      <p class="pw-eyebrow">{content.eyebrow}</p>
+      {content.eyebrow && <p class="pw-eyebrow">{content.eyebrow}</p>}
       <h2 id={`${id}-title`}>{content.title}</h2>
-      <p>{content.intro}</p>
+      {content.intro && <p class="pw-rich-prose__lead">{content.intro}</p>}
     </header>
     <div class="pw-rich-prose__blocks">
       {content.blocks.map((block, index) => (
         <>
+          {block.type === "list" && (block.ordered ? <ol class="pw-rich-prose__list">{block.items.map(item => <li>{item}</li>)}</ol> : <ul class="pw-rich-prose__list">{block.items.map(item => <li>{item}</li>)}</ul>)}
           {block.type === "prose" && <div class="pw-rich-prose__prose pw-prose">{block.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>}
           {block.type === "subheading" && <div class:list={["pw-rich-prose__subhead", block.emphasis === "band" && "pw-rich-prose__subhead--band"]}>
             <span aria-hidden="true">{subheadingNumbers.get(index)}</span>

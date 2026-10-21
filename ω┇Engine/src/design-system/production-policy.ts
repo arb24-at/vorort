@@ -1,54 +1,52 @@
-import { getSectionRecipe, recipeAllowedIn, type Audience } from "./section-recipes";
+import { getSectionRecipe, recipeAllowedIn, type Audience, type RecipeSection, usedRecipeBlocks } from "./section-recipes";
 
 export type ProductionRecipeContext = {
   id: string; translationId: string; slug: string;
   locale: "de" | "en"; audience: Audience; experiment?: string;
 };
-
-// Aykhan's local English test authorisation. This is not recipe approval, a
-// general experimental context, or permission for another route to opt in.
-export function isEnglishHomeNetworkTest(context?: ProductionRecipeContext) {
-  return context?.experiment === "wifi-home-network-en-test"
-    && context.id === "wifi-home-network-en"
-    && context.translationId === "wifi-home-network"
-    && context.slug === "wifi-home-network"
-    && context.locale === "en" && context.audience === "private";
+type Trial = {
+  id: string; translationId: string; slug: string; locale: "de" | "en"; audience: Audience;
+  authorisation: string; recipes: readonly string[]; blocks: readonly string[];
+};
+// Exact page permissions, never lifecycle approval. These historical direct
+// assignments remain valid; the new bilingual drafts do not claim approval.
+// Add future trials only after recorded blueprint approval: cite its path,
+// version and Aykhan's decision here, listing recipe and parent/block IDs.
+const serviceExperiments = ["hero.service-intro", "scope.chapter-links", "recognition.situations", "cta.quick-contact", "contact.enquiry-email"];
+export const productionTrials: Record<string, Trial> = {
+  "wifi-home-network-en-test": {
+    id: "wifi-home-network-en", translationId: "wifi-home-network", slug: "wifi-home-network", locale: "en", audience: "private",
+    authorisation: "Aykhan's explicitly assigned English Home Network correction, v2.2.36; retained existing permission, not approval of blueprint v0.5.",
+    recipes: ["recognition.situations", "cta.quick-contact", "contact.enquiry-email"], blocks: [],
+  },
+  "computer-laptop-en-preview": {
+    id: "computer-laptop-en", translationId: "computer-laptop", slug: "computer-laptop-help", locale: "en", audience: "private",
+    authorisation: "Aykhan's named Task 4B, v2.2.38.", recipes: serviceExperiments, blocks: [],
+  },
+  "business-network-en-preview": {
+    id: "network-it-support-en", translationId: "network-it-support", slug: "network-it-support", locale: "en", audience: "business",
+    authorisation: "Aykhan's named Task 4F, v2.2.39.", recipes: serviceExperiments, blocks: [],
+  },
+  "microsoft-365-en-preview": {
+    id: "microsoft-365-workplaces-en", translationId: "microsoft-365-workplaces", slug: "microsoft-365-workplaces", locale: "en", audience: "business",
+    authorisation: "Aykhan's named Task 4G, v2.2.40.", recipes: serviceExperiments, blocks: [],
+  },
+};
+export function productionTrial(context?: ProductionRecipeContext) {
+  if (!context?.experiment || !Object.hasOwn(productionTrials, context.experiment)) return undefined;
+  const trial = productionTrials[context.experiment];
+  return trial.id === context.id && trial.translationId === context.translationId && trial.slug === context.slug
+    && trial.locale === context.locale && trial.audience === context.audience ? trial : undefined;
 }
-
-// Task 4B authorises these experiments for this service only. Registry lifecycle
-// and the default production approval rule remain independent of page adoption.
-export function isEnglishComputerSupportPreview(context?: ProductionRecipeContext) {
-  return context?.experiment === "computer-laptop-en-preview"
-    && context.id === "computer-laptop-en"
-    && context.translationId === "computer-laptop"
-    && context.slug === "computer-laptop-help"
-    && context.locale === "en" && context.audience === "private";
-}
-
-// Named Task 4F continues the English page experiment. Only this business route
-// may reuse these existing experiments; this is adoption, not recipe approval.
-export function isEnglishBusinessNetworkPreview(context?: ProductionRecipeContext) {
-  return context?.experiment === "business-network-en-preview"
-    && context.id === "network-it-support-en"
-    && context.translationId === "network-it-support"
-    && context.slug === "network-it-support"
-    && context.locale === "en" && context.audience === "business";
-}
-
-// Task 4G continues the same bounded English service-page experiment. The
-// Microsoft page cannot lend its permission to another service or locale.
-export function isEnglishMicrosoft365Preview(context?: ProductionRecipeContext) {
-  return context?.experiment === "microsoft-365-en-preview"
-    && context.id === "microsoft-365-workplaces-en"
-    && context.translationId === "microsoft-365-workplaces"
-    && context.slug === "microsoft-365-workplaces"
-    && context.locale === "en" && context.audience === "business";
-}
+export const isEnglishHomeNetworkTest = (c?: ProductionRecipeContext) => c?.experiment === "wifi-home-network-en-test" && Boolean(productionTrial(c));
+export const isEnglishComputerSupportPreview = (c?: ProductionRecipeContext) => c?.experiment === "computer-laptop-en-preview" && Boolean(productionTrial(c));
+export const isEnglishBusinessNetworkPreview = (c?: ProductionRecipeContext) => c?.experiment === "business-network-en-preview" && Boolean(productionTrial(c));
+export const isEnglishMicrosoft365Preview = (c?: ProductionRecipeContext) => c?.experiment === "microsoft-365-en-preview" && Boolean(productionTrial(c));
 
 export function recipeAllowedForProduction(id: string, context?: ProductionRecipeContext) {
-  if (recipeAllowedIn(id, "production")) return true;
-  if (getSectionRecipe(id).status !== "experimental") return false;
-  if (isEnglishHomeNetworkTest(context)) return ["recognition.situations", "cta.quick-contact", "contact.enquiry-email"].includes(id);
-  return (isEnglishComputerSupportPreview(context) || isEnglishBusinessNetworkPreview(context) || isEnglishMicrosoft365Preview(context))
-    && ["hero.service-intro", "scope.chapter-links", "recognition.situations", "cta.quick-contact", "contact.enquiry-email"].includes(id);
+  return recipeAllowedIn(id, "production") || (getSectionRecipe(id).status === "experimental" && Boolean(productionTrial(context)?.recipes.includes(id)));
+}
+export function blocksAllowedForProduction(section: RecipeSection, context?: ProductionRecipeContext) {
+  return usedRecipeBlocks(section).every(block => block.status === "approved"
+    || (block.status === "experimental" && Boolean(productionTrial(context)?.blocks.includes(block.id))));
 }

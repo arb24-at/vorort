@@ -32,7 +32,7 @@ const approved = recipesWithStatus("approved").map(([id, recipe]) => {
         <span class="lab-label">Section library</span>
         <h1>Approved Sections</h1>
         <p>See the design. Understand what can change.</p>
-        <p class="lab-library-note"><strong>Blueprints, not templates.</strong> Real Workshop examples show the approved structure and philosophy, but copy, imagery, density and element order may vary wherever the recipe guidance allows. Shape the section around the content rather than forcing content into the specimen. Section approval and production adoption are separate decisions.</p>
+        <p class="lab-library-note"><strong>Choose the blocks your content needs.</strong> Select, reorder, repeat or omit supported blocks while keeping the section’s meaning and interactions. Examples demonstrate possibilities. Each block keeps its own lifecycle: an Experimental addition does not inherit its parent’s approval. Page trials and recipe promotion remain separate decisions.</p>
         {approved.length > 0 && <nav class="lab-recipe-index" aria-label="Approved section recipes">
           {approved.map(({ recipe, anchor }) => <a href={`#${anchor}`}>{recipe.name}<span aria-hidden="true"> ↓</span></a>)}
         </nav>}
@@ -70,6 +70,14 @@ const approved = recipesWithStatus("approved").map(([id, recipe]) => {
               <div class="lab-guidance-body">
                 <div class="lab-authoring" aria-labelledby={`${anchor}-guidance`}>
                   <h3 id={`${anchor}-guidance`}>Authoring this section</h3>
+                  {Object.keys(recipe.blocks).length > 0 && <div class="lab-block-palette">
+                    <h4>Available blocks</h4>
+                    <p>Use only what helps the explanation. Experimental blocks need their own page authorisation.</p>
+                    <ul>{Object.entries(recipe.blocks).map(([type, block]) => <li data-library-block={`${id}/${type}`} data-block-status={block.status}>
+                      <div><strong>{block.name}</strong> <code>{type}</code> · <span>{block.status}</span></div>
+                      <p>{block.purpose}</p>
+                    </li>)}</ul>
+                  </div>}
                   <dl class="lab-contract-rules">
                     <div><dt>Fixed</dt><dd>{guidance.fixed}</dd></div>
                     <div><dt>Flexible</dt><dd>{guidance.flexible}</dd></div>

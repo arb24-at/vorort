@@ -324,6 +324,31 @@ sections:
           tone: "outline"
           title: "This is a block demonstration"
           body: "A real chapter should use only the blocks its subject needs; this mix is not a required template."
+  - id: "compact-explanation"
+    kind: "explanation"
+    recipe: "explanation.editorial-prose"
+    content:
+      title: "Preparing for a setup visit"
+      blocks:
+        - type: "prose"
+          paragraphs:
+            - "A short preparation section can use only the blocks its subject needs. Here the paragraph introduces a sequence, followed by a separate set of useful details. An eyebrow and lead paragraph are deliberately omitted."
+        - type: "list"
+          ordered: true
+          items:
+            - "Describe what you want the device or application to do."
+            - "Identify the equipment and software already available."
+            - "Agree the work and any preparation before the visit."
+        - type: "callout"
+          tone: "quiet"
+          title: "Keep sensitive details private"
+          body: "Preparation does not require sending passwords, authentication codes or payment information."
+        - type: "list"
+          ordered: false
+          items:
+            - "The device model and operating system"
+            - "A brief description of the request or error"
+            - "Existing equipment or backups relevant to the work"
   - id: "planning-examples"
     kind: "explanation"
     recipe: "explanation.art-gallery"
@@ -442,6 +467,10 @@ sections:
     recipe: "footer.site"
     content: {}
 specimenNotes:
+  compact-explanation:
+    context: "Compact shared presentation · selected blocks, no required opening copy"
+    description: "Approved rich-prose parent with independently Experimental native ordered and unordered lists. This cross-service specimen omits the eyebrow, introduction, columns, media and table; it is not a new approved section or a complete service page."
+    presentation: "compact"
   editorial-introduction:
     context: "Orientation across private services"
     description: "Heading, explanation and actions stay separate from the artwork. Replace the subject and wording for each service; this is not a required customer-page script."

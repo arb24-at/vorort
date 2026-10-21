@@ -1,136 +1,84 @@
 ---
-version: 2.2.41
+version: 2.3.0
 ---
 
-# VorOrt agent instructions
+# VorOrt worker instructions
 
-These instructions apply to every worker on the project: ChatGPT Project chats, repository coding agents, and other AI tools. `VorOrt` is an internal project name. Do not introduce it as the public brand unless Aykhan explicitly chooses it.
+Read this first. These rules apply equally to ChatGPT Chats working through Google Drive and repository agents. `VorOrt` is an internal project name; only Aykhan may choose it as a public brand.
 
-## Roles and task routing
+## Workflow and authority
 
-Aykhan may assign one or more roles for a task. If he does not, select the minimum useful roles from the registry below and continue. State the active role(s) briefly before material work when useful for clarity.
+Aykhan is Product Owner and the only approval authority. The normal stages are separate Chats, with supporting roles combined when useful:
 
-Roles describe primary expertise and ownership; they are not hard permission boundaries. Do not stop useful work merely because another role becomes relevant. Add that role, read its role file, and continue when doing so is a reasonable way to complete the task. Create a cross-role request only when a separate focused task or conversation is genuinely useful, not for minor work the current worker can responsibly handle.
+| Stage | Role and instructions | Deliverable |
+| --- | --- | --- |
+| α | [Research & SEO](β┇Roles/α┇Research%20&%20SEO.md) | Evidence, intent and page ownership |
+| β | [Blueprint Architect](β┇Roles/β┇Blueprint%20Architect.md) | Site-wide map, then detailed bilingual page blueprint |
+| γ | [Content Generator](β┇Roles/γ┇Content%20Generator.md) | English, then German source content |
+| δ | [Design](β┇Roles/δ┇Design.md) | Composition, reusable sections/blocks and responsive quality |
+| ε | [Implementation](β┇Roles/ε┇Implementation.md) | Validated content and shared application changes |
+| ζ | [QA](β┇Roles/ζ┇QA.md) | Separate review with Aykhan and verification evidence |
 
-Aykhan is the Product Owner and final approval authority. This is not a selectable worker role. A worker may review, recommend, implement, validate, or mark something ready for Aykhan's review, but may not invent Aykhan's approval.
+1. Research supports the site-wide blueprint; obtain Aykhan's recorded approval before page authoring.
+2. Use **one detailed bilingual blueprint per page family**. Individual blueprints can be approved as ready; do not wait for the whole portfolio. Record the approved version and decision reference in that file.
+3. Approved meaning authorises English creation, then German, including explicitly identified Experimental recipes/blocks for that page. This permits a trial, **not lifecycle promotion**. Canonical registry states remain unchanged until Aykhan separately approves them.
+4. Content, design and implementation follow the approved purpose, scope, journey and essential interactions. Routine wording, selected supported blocks and compatible design refinements can change without another blueprint gate. Meaningful changes to those commitments return to blueprint review. Record new experimental additions for review rather than treating container approval as permission.
+5. QA is a separate task with Aykhan. Pages remain work in progress; there is no permanent final-page approval gate. Later revision cycles receive new bounded tasks/bundles.
 
-Role registry:
+This process replaces the former autonomous German-first, one-pass programme and its English-only workflow exceptions. Historical completed work and explicit existing production trial permissions remain valid; pending blueprints are not retroactively approved. A named current assignment overrides queue order, not approval truth. The explicit v2.3.0 workflow/Design Lab migration is authorised without approving its page-blueprint drafts.
 
-- **Blueprint Architect** → `β┇Roles/α┇Blueprint Architect.md`
-- **Design** → `α┇Docs/γ┇Roles┇Design.md`
-- **Content Generator** → `β┇Roles/β┇Content Generator.md`
-- **Implementation** → `α┇Docs/γ┇Roles┇Implementation.md`
-- **QA** → `α┇Docs/γ┇Roles┇QA.md`
+## Start, scope and sources
 
-## Authorised autonomous Codex bilingual page programme — 2026-10-20
+Read every active role file, then only relevant context. Select the minimum useful roles when none are assigned. Roles are expertise, not hard permission boundaries.
 
-Aykhan authorises Codex to **rewrite the actual launch pages, one locale/page per run**, with a high standard of visual and editorial ambition. The execution queue is `α┇Docs/ω┇☑️┇Tasks.md`, modelled on Flow's **Task Bundle → Task → optional Subtask** format. It is a repository execution board, **not** a second roadmap or Flow Chain. `Work on the next task` means the first unchecked executable Task in German Bundle 3, then English Bundle 4. Do not silently skip blocked Tasks or begin another Task after committing. Existing completed Task IDs 1A–1C/2A–2C are archived in that file; historical Task 1D is pending, not falsely complete.
+| Source | Read when / authority |
+| --- | --- |
+| `α┇Docs/α┇Project.md` | Business/service truth, constraints and architecture pointers |
+| `α┇Docs/ω┇☑️┇Tasks.md` | Assignment, priority, completion; all Chats and agents use this board |
+| `α┇Docs/β┇Collaboration.md` | Before changing source: current handoff, decisions and pending checks |
+| `γ┇Blueprints/` | Site-wide and matching bilingual page plan; inspect approval/version and actual content pointers |
+| `α┇Docs/β┇Roadmap.md` | Direction, deferred capabilities and release dependencies |
+| `α┇Docs/ω┇Media-Queue.md` | Media requests, standalone prompts and acceptance |
+| `ω┇Engine/src/data/seo-keywords.yml` | Keyword evidence/status and locale ownership |
+| `ω┇Engine/src/design-system/section-recipes.ts` | Recipe/block lifecycle, schemas, compatibility and flexible guidance |
 
-**Roles and autonomy:** On these tasks Codex operates in **Content Generator, Design, Implementation and QA together**, with authority to research within the project's existing sources, plan, write, redesign, implement, test and commit the **assigned page**, its validated content/metadata and any genuine shared code/Design Lab fixes needed. Read all four corresponding role files. Do not arbitrarily ask for handoffs between roles. German pages are completed first; only then start independently authored English pages. Existing researched search intent and page ownership are a foundation, not a fixed paragraph/section script. Use formal `Sie` in German, not mechanical translation in either direction.
+Read current target content and affected shared consumers before editing. Do not create another roadmap, approval catalogue, media tracker or content store. Do not edit the external Obsidian Chain unless requested.
 
-**Creativity with a real contract:** Maximise useful editorial and compositional freedom: length, pacing, order, media, hierarchy, layout, tables/illustrations and interaction may vary if truthful, accessible and purposeful. Approved recipe guidance defines the fixed **semantic/interaction** contract, not a frozen screenshot. Design Lab is new and experimental; Codex may directly improve **recommendedPlacement, recommendedUse, flexible guidance, non-breaking schemas/compatibility, responsive styles and shared implementations** when a real page exposes a problem. Record **every** affected recipe/contract/source and rationale in the per-task report and handoff. Do not invent an approval or silently make a breaking change to an approved consumer: material changes require a new experimental candidate and explicit Aykhan acceptance before promotion/migration. General/homepage/trust page coverage may need a deliberate schema/page-type extension; preserve already-approved consumers and derived usage.
+## Work and evidence
 
-**Workflow and approvals:** This request expressly authorises a concise page-level plan and full draft/implementation **within the same Task without pausing for a separate blueprint review**. Existing global-blueprint-first instructions in Project/Content Generator are superseded for this specific page-by-page programme; retain a brief page rationale/SEO coverage for the final report, not a duplicate roadmap. Work in real production page files/routes while preserving German/English pairs, base-aware links, semantic content data, metadata and truthful business constraints. Completing a Codex Task means source and applicable checks pass, **not** that Aykhan approved the final copy, new recipe, legal facts, launch, push or deployment. Production may remain unready until legal identity, direct form backend, media and release QA are resolved.
+Chats may edit canonical content, schemas, components, renderers and shared styles through Drive. Read the complete latest target immediately before editing, preserve unrelated changes, then fetch/read back the result. Shared changes need rationale, affected consumers and verification scope. Missing shell/browser access does not prevent source completion.
 
-**Per-run stop contract:** Check Git status and current version before editing. Work on exactly one assigned Task; if blocked, leave it unchecked, state the blocker, and stop. Otherwise apply relevant repository checks, desktop/mobile review when visual changes warrant it, mark its checkbox `[x]`, update the concise handoff, increment the root project version once for that logical commit (or reuse an existing uncommitted bump belonging to it), create **one local Git commit** with `VorOrt vX.Y.Z: message`, report page/locale, source changes, SEO decisions, recipe adaptations, verification, unresolved publication facts and the hash, then **STOP**. Never push or deploy by default. Preserve unrelated working-tree changes, and never touch `.git` internals.
+Use evidence terms literally:
 
-## Context loading
+- **Source/readback verified:** written source was read back successfully.
+- **Repository validated:** the stated commands actually passed.
+- **Browser verified:** rendered behaviour was inspected at stated sizes/conditions.
+- **Git verified:** the stated Git actions actually ran.
+- **Deployed verified:** the deployed result was checked after deployment.
 
-Always read this file first, then every active role file. After that, load only the project context needed for the task instead of preloading every document.
+Never substitute one for another. If unavailable, add a narrow `RV-###` item to Collaboration with affected files, checks and known risks. Source-complete content tasks may be checked while QA remains open. Do not invent a build, commit, delivery, approval or launch.
 
-- Read `α┇Docs/α┇Project.md` when durable product, service, content, architecture, design, routing, deployment, or production facts matter. Read the relevant sections rather than unrelated material when the environment supports selective reading.
-- Read `α┇Docs/β┇Roadmap.md` when priority, sequencing, planned scope, or acceptance criteria matter.
-- Read `α┇Docs/β┇Collaboration.md` before changing project/repository state, when acting on a handoff, or when current cross-role requests, pending verification, or Aykhan decisions matter. Prefer the live sections over old history.
-- Read `α┇Docs/ω┇Media-Queue.md` when creating, integrating, reviewing, or waiting on media.
-- Read `α┇Docs/ω┇☑️┇Tasks.md` for the Codex launch-page programme and when a task is assigned. Treat one numbered Task as one bounded run; `Work on the next task` picks the first unfinished executable German Task in Bundle 3, then the English Tasks in Bundle 4. Stop after its commit/report. The former `ω┇Tasks.md` was renamed/migrated, not duplicated.
-- Read target source/content files needed for the task. Do not preload unrelated repository files merely because they exist.
+## Shared design and implementation
 
-Do not create a parallel roadmap, context system, role system, media tracker, or source of truth.
+Approved sections are **flexible block palettes, not mandatory specimen layouts**. Select, reorder, repeat and omit supported blocks while preserving semantic/accessibility/interaction contracts. New blocks carry their own lifecycle; an Experimental block inside an Approved section stays Experimental. Unregistered ideas are Proposed and unimplemented.
 
-## Environment awareness and evidence
+Compatible refinements retain shared IDs and propagate to consumers. Document effects. Changes to meaning or required fields need affected-consumer review **before migration**; preserve the predecessor, develop a new Experimental identity where material, then migrate deliberately after Aykhan's decision. No silent approval or breaking replacement.
 
-Determine available capabilities yourself: repository filesystem, shell, browser automation, Google Drive, web research, image generation, or other tools. Missing one capability does not by itself block work that can be completed safely with the capabilities that are available.
+Prefer Astro-native static HTML/CSS and minimal JavaScript. Inspect existing components/tokens/contracts first. Keep editable copy/facts in validated records and named presentation variants in the shared design layer; no arbitrary CSS controls in content. Preserve routes, locale pairing, base-aware links/assets, forms and unrelated consumers.
 
-Use precise evidence language:
+## Repository and validation
 
-- **Source/readback verified** means the changed source was written and read back successfully.
-- **Repository validated** means the required repository commands actually ran and passed.
-- **Browser verified** means the relevant rendered page was actually reviewed in a browser at the stated sizes/conditions.
-- **Git verified** means the stated Git command actually ran against the repository.
-- **Deployed verified** means the deployed site was actually checked after deployment.
+- `ω┇Engine/`: application, dependencies, assets and ignored build output.
+- `α┇Docs/`: project documents; `β┇Roles/`: all role instructions; `γ┇Blueprints/`: planning documents.
+- `.github/workflows/astro.yml` stays at repository root. Never touch `.git` internals.
+- With shell access, inspect Git status and canonical version before edits. Preserve unrelated work.
 
-Never claim shell validation, browser testing, Git status/diff/commit/push, deployment, or any environment-specific check unless it was actually performed. A Drive-connected Chat may complete source changes and readback verification without shell access; record remaining repository checks under Pending repository verification rather than treating the task as blocked.
+Run application commands from `ω┇Engine/`: `npm ci` when dependencies need installation, `npm run dev` for preview, `npm run validate` for material application changes. Prefer focused checks during iteration; one broader final run normally suffices. Browser review is required when responsive/visual/interaction behaviour changes, using representative affected routes and desktop/mobile sizes. Do not repeat unchanged checks without a reason. Before committing, run `git diff --check` and `git status --short`.
 
-When editing through Google Drive or another connected source, read the latest complete target immediately before editing, preserve unrelated work and repository structure, make only requested or evidence-backed changes, then read the written result back before claiming success.
+## Finish and Git handoff
 
-## Usage-efficient tool and validation strategy
+Complete exactly the assigned bounded task, update its source-completion or QA checkbox accurately, and leave a concise handoff. If blocked by an approval/fact, leave the dependent work incomplete and name the blocker. Do not silently skip to another task.
 
-Agent/tool usage may be limited or rate-constrained, especially for coding agents such as Codex. Optimize for completing the task correctly, not for maximizing tool calls, screenshots, browser sessions, or repeated validation.
+Canonical version is this file's frontmatter. Only Aykhan changes major `X`; substantial updates increment `Y` and reset `Z`, patches increment `Z`. One logical local commit gets one bump; reuse a bump already belonging to it. Commit format: `VorOrt vX.Y.Z: message`. A Drive Chat without Git leaves the commit/version action explicitly for the repository worker; do not create repeated bumps for one pending change.
 
-- Use the cheapest reliable evidence that matches the risk of the change. Prefer targeted source inspection and focused checks during iteration; reserve broader validation for meaningful milestones or final verification.
-- Do not rerun the full validation suite after every small edit when a narrower check is sufficient. Batch related edits, run targeted checks while iterating, then run the appropriate broader validation once the change is materially complete or when risk justifies it.
-- Do not open the browser, capture screenshots, or test many viewport sizes as a ritual. Use browser review when rendered behavior, responsive composition, interaction, accessibility-visible state, or visual regression is actually relevant to the task.
-- When browser review is useful, inspect only the affected routes and representative viewport sizes needed to answer the task. Capture screenshots only when they materially aid comparison, diagnosis, approval, or handoff.
-- Reuse trustworthy evidence already gathered in the current task/run. Do not repeatedly re-check unchanged areas unless a later change could reasonably have affected them.
-- Documentation-only or narrowly scoped source changes normally do not require browser testing or unrelated build checks. Conversely, visual/responsive/interactive changes may justify desktop/mobile review and screenshots when they materially reduce uncertainty.
-- These efficiency rules are not hard caps. If deeper validation, browser work, screenshots, or additional investigation is genuinely needed to complete the task safely, perform it.
-
-## Repository boundaries
-
-- `ω┇Engine/` owns the Astro application, dependencies, source, public assets, scripts, and generated build output.
-- `α┇Docs/` owns stable project documentation, roles, handoffs, and the media-production queue.
-- `.github/workflows/astro.yml` must remain at the repository root for GitHub Actions.
-- The external Obsidian Chain remains the high-level project roadmap. Do not edit it unless Aykhan explicitly requests it.
-- Preserve unrelated user changes. Inspect `git status` before editing when local repository shell access is available.
-- Do not modify `.git` internals.
-
-## Shared implementation principles
-
-- Prefer Astro-native, static-first solutions and minimal client JavaScript.
-- Inspect existing layouts, components, section recipes, tokens, and styles before creating new implementation.
-- Reuse genuine shared concepts through reusable Astro components, section recipes, tokens, and shared styles; do not force meaningfully different compositions into giant conditional components.
-- Keep editable content in validated content records. Keep implementation-specific classes, arbitrary dimensions, and styling controls out of content unless a documented contract explicitly requires them.
-- Preserve approved production behavior and design unless the task authorizes change.
-
-## Product invariants
-
-- The service is positioned as a normal local Berlin IT business. Do not mention a waitlist, Baku, or delayed availability.
-- German is served at `/`; English is independently authored under `/en/`.
-- English-speaking technical service is real but its public messaging is centrally controlled.
-- Public branding, contact details, legal identity, qualifications, and badges remain provisional until verified.
-- Never publish invented customers, pricing, availability, response-time guarantees, qualifications, or security/compliance claims.
-
-## Collaboration and handoffs
-
-Use `α┇Docs/β┇Collaboration.md` as a live coordination surface, not a second roadmap or permanent diary. Its active areas are:
-
-- **Current handoff** — concise current state.
-- **Cross-role requests** — targeted work that genuinely benefits from another role/chat.
-- **Awaiting Aykhan** — decisions or assets only Aykhan can supply/approve.
-- **Pending repository verification** — source-complete changes still needing shell/browser/Git checks.
-- **Recent work** — only brief recent material changes; durable decisions move to Project, priorities to Roadmap, and old history remains in Git.
-
-Cross-role requests use stable IDs such as `CR-001`. Repository-verification requests use IDs such as `RV-001`. Remove resolved items from the active sections after preserving any durable consequence in the correct source of truth.
-
-## Commands and validation
-
-When local shell access is available, run application commands from `ω┇Engine/` as needed for the task:
-
-```bash
-npm ci
-npm run dev
-npm run validate
-```
-
-Validation depth must be proportional to the change. During iteration, prefer the smallest reliable check that can catch likely failures. Before considering a material repository change fully verified, run the applicable broader validation required by the task/risk, confirm relevant base-aware links/assets/routes when they could be affected, and review `git diff --check` plus `git status --short`. Do not perform unrelated browser or full-suite checks solely to satisfy a ritual. Follow `α┇Docs/γ┇Roles┇QA.md` for review depth appropriate to the task.
-
-## Version and Git handoff
-
-The frontmatter `version` in this file is the canonical project version.
-
-- Only Aykhan may change the major `X` version.
-- Increment `Y` for a major project update and reset `Z` to `0`; increment `Z` for a minor change or patch.
-- One logical Git commit receives one version bump. If an uncommitted bump already belongs to the same intended commit, reuse it.
-- Commit messages use exactly `VorOrt vX.Y.Z: message` and must match this file's version.
-- Never claim a commit, push, status check, diff check, or deployment happened unless it actually did.
-- If no commit was completed, state that clearly and provide the ready versioned commit message using the version already recorded here.
+Report source changes, blueprint/SEO/design decisions, shared impact, actual evidence, outstanding dependencies and commit hash (or explicitly no commit). Then stop. **Never push, deploy or start the next task by default.**

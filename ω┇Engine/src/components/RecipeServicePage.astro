@@ -7,6 +7,7 @@ import { getAlternateServicePath, getServicePath, type LocalizedService } from "
 import { withBase } from "../utils/withBase";
 import "../styles/design-lab/concept-ii.css";
 import "../styles/recipe-service.css";
+import { servicePresentation } from "../design-system/presentation";
 type Props = { service: LocalizedService };
 const { service } = Astro.props;
 const composition = service.composition;
@@ -25,7 +26,7 @@ const back = service.audience === "business"
   : (service.locale === "de" ? "Alle Leistungen für Zuhause & Homeoffice" : "All home services");
 ---
 <MainLayout title={service.seo.title} description={service.seo.description} canonicalPath={getServicePath(service)} lang={service.locale} alternatePath={getAlternateServicePath(service)}>
-  <div class:list={["concept-ii", `concept-ii--${service.audience}`, "recipe-service", { "recipe-service--compact": testing || service.id === "software-optimisation-en" }]} data-service-page={service.id}>
+  <div class:list={["concept-ii", `concept-ii--${service.audience}`, "recipe-service", { "pw-presentation--compact": servicePresentation(composition) === "compact" }]} data-service-page={service.id}>
     <div class="container recipe-service__back"><a href={withBase(landing)}>← {back}</a></div>
     {composition.sections.map(section => <>
       {testing && composition.relatedBefore === section.id && <RelatedServices content={composition.related} audience={service.audience} locale={service.locale} />}

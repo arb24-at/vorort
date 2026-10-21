@@ -1,5 +1,6 @@
 import { z } from "astro/zod";
-import { getSectionRecipe, recipeAllowedIn, recipeSectionSchema, sectionRecipes } from "./section-recipes";
+import { presentationVariants } from "./presentation";
+import { getSectionRecipe, recipeAllowedIn, recipeSectionSchema, sectionRecipes, usedRecipeBlocks } from "./section-recipes";
 
 const text = z.string().trim().min(1);
 const anchor = z.string().regex(/^[a-z][a-z0-9-]*$/);
@@ -18,6 +19,7 @@ function validateSections(fixture: PageSections, issue: Issue, specimens: boolea
     if (ids.has(section.id) || section.id === "main-content") issue(["sections", index, "id"], `Duplicate or reserved section ID: ${section.id}`);
     ids.add(section.id);
     const recipe = getSectionRecipe(section.recipe);
+    if (usedRecipeBlocks(section).some(block => block.status === "deprecated")) issue(["sections", index, "content", "blocks"], "Deprecated blocks cannot be used even inside approved sections");
     if (!recipeAllowedIn(section.recipe, "workshop")) issue(["sections", index, "recipe"], "Deprecated recipes cannot be selected for Workshop pages");
     if (!recipe.audiences.includes(fixture.page.audience) || !recipe.pageTypes.includes(fixture.page.pageType)) issue(["sections", index, "recipe"], "Recipe does not support this audience or page type");
     if (!specimens && section.kind === "contact" && section.id !== "contact") issue(["sections", index, "id"], "The shared English enquiry requires the contact ID");
@@ -52,7 +54,7 @@ const journeyWorkshopSchema = base.superRefine((fixture, context) => {
   if (fixture.sections.at(-1)?.kind !== "footer" || fixture.sections.filter(s => s.kind === "footer").length !== 1) issue(["sections"], "A Workshop service page requires exactly one final site footer");
 });
 
-const specimenNotes = z.object({ context: text, description: text }).strict();
+const specimenNotes = z.object({ context: text, description: text, presentation: z.enum(presentationVariants).optional() }).strict();
 const proposal = z.object({
   id: z.string().regex(/^[a-z][a-z0-9-]*\.[a-z][a-z0-9-]*$/),
   title: text, rationale: text, contentShape: text, reviewQuestion: text,

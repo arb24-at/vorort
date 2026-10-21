@@ -3,7 +3,7 @@
 .pw-rich-prose__container { width: min(1040px, calc(100% - 2rem)); }
 .pw-rich-prose__intro { max-width: 780px; margin-bottom: clamp(1.8rem, 3vw, 2.6rem); }
 .pw-rich-prose__intro h2 { max-width: 20ch; margin-bottom: 1rem; }
-.pw-rich-prose__intro > p:last-child { max-width: 66ch; margin: 0; color: var(--pw-muted); }
+.pw-rich-prose__intro > .pw-rich-prose__lead { max-width: 66ch; margin: 0; color: var(--pw-muted); }
 .pw-rich-prose__blocks {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -90,3 +90,8 @@
   .pw-rich-prose__media img { aspect-ratio: 4 / 3; }
   .pw-rich-prose__callout { padding: 1rem; }
 }
+
+/* Native list experiment shares the prose measure and responsive source order. */
+.pw-rich-prose__list { grid-column: 1 / -1; max-width: 70ch; margin: 0; padding-left: 1.5rem; color: var(--pw-muted); line-height: 1.7; }
+.pw-rich-prose__list li + li { margin-top: .5rem; }
+.pw-rich-prose__list li::marker { color: var(--pw-accent); font-weight: 750; }

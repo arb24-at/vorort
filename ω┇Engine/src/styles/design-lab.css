@@ -97,3 +97,9 @@
   .lab-page-picker { flex-basis: 100%; }
   .lab-preview-controls { width: 100%; }
 }
+/* Canonical block palette inside the existing authoring disclosure. */
+.lab-block-palette ul { list-style: none; padding: 0; display: grid; gap: .7rem; }
+.lab-block-palette li { padding: .75rem 1rem; border: 1px solid #c8d4d7; border-radius: .4rem; }
+.lab-block-palette li p { margin: .35rem 0 0; }
+.lab-block-palette [data-block-status="experimental"] { border-color: #c6a969; background: #fff7e6; }
+.lab-block-palette li span { font-weight: 700; text-transform: capitalize; }

@@ -117,8 +117,8 @@ export const serviceSchema = z
         }, (path, message) => {
           context.addIssue({ code: z.ZodIssueCode.custom, path: ["composition", "sections", ...path], message });
         });
-        if ("experiment" in service.composition && service.composition.sections.at(-1)?.id !== service.composition.relatedBefore) {
-          context.addIssue({ code: z.ZodIssueCode.custom, path: ["composition", "relatedBefore"], message: "The English test related services must precede the closing invitation" });
+        if ("experiment" in service.composition && !service.composition.sections.some(section => section.id === service.composition.relatedBefore)) {
+          context.addIssue({ code: z.ZodIssueCode.custom, path: ["composition", "relatedBefore"], message: "Related services must be inserted before an existing section" });
         }
         const contactAfter = "contactAfter" in service.composition ? service.composition.contactAfter : undefined;
         if (contactAfter) {

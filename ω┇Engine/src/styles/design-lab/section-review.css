@@ -55,3 +55,8 @@
 .lab-specimen-notes strong { color: #20313b; }
 .lab-section-review--specimen .lab-capture-tools { top: 1.5rem; }
 .lab-section-review--specimen:has(.lab-capture-button:not([hidden])) > .lab-section-review__chrome { max-width: none; padding-right: 8rem; }
+
+.lab-block-states { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: .4rem; width: min(1140px, calc(100% - 2rem)); margin: .6rem auto; font-size: .75rem; color: #405363; }
+.lab-block-states span { padding: .2rem .5rem; border: 1px solid #bdcbd1; border-radius: .25rem; background: #f6f8f8; }
+.lab-block-states [data-block-status="experimental"] { color: #715017; background: #fff0ce; border-color: #dbc99e; }
+.lab-section-review:not(.lab-section-review--specimen):has(> .lab-block-states) { padding-top: 1.3rem; }

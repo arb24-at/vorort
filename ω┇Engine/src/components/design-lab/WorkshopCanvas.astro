@@ -12,7 +12,7 @@ const renderedSections = sections ?? fixture.sections;
 const gallery = isSpecimenWorkshop(fixture);
 ---
 <div class:list={["concept-ii", `concept-ii--${fixture.page.audience}`]} data-workshop-page={fixture.page.id}>
-  {renderedSections.map(section => <SectionReview recipeId={section.recipe} specimen={gallery && !sections ? { id: section.id, ...fixture.specimenNotes[section.id] } : undefined}>
+  {renderedSections.map(section => <SectionReview section={section} specimen={gallery && !sections ? { id: section.id, ...fixture.specimenNotes[section.id] } : undefined}>
       <RecipeSection section={section} audience={fixture.page.audience} locale={fixture.page.locale} context="workshop" anchorBase={sections ? withBase(workshopPath(fixture.page.id)) : undefined} specimen={gallery || Boolean(sections)} />
     </SectionReview>
   )}

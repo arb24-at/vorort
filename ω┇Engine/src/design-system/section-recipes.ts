@@ -29,13 +29,25 @@ const enquiryContentSchema = z.object({
   title: text.optional(), intro: text.optional(), formIntro: text.optional(),
   affectedPlaceholder: text.optional(), request: text.optional(), requestPlaceholder: text.optional(),
 }).strict();
-const editorialProseBlock = z.discriminatedUnion("type", [
-  z.object({ type: z.literal("prose"), paragraphs: z.array(text).min(1).max(4) }).strict(),
-  z.object({ type: z.literal("subheading"), title: text, body: text.optional(), emphasis: z.enum(["plain", "band"]).optional() }).strict(),
-  z.object({ type: z.literal("columns"), columns: z.array(z.object({ title: text.optional(), paragraphs: z.array(text).min(1).max(3) }).strict()).length(2) }).strict(),
-  z.object({ type: z.literal("callout"), tone: z.enum(["quiet", "solid", "outline"]), title: text, body: text }).strict(),
-  z.object({ type: z.literal("media"), media: suppliedMedia, placement: z.enum(["wide", "left", "right"]).optional() }).strict(),
-  z.object({ type: z.literal("table"), title: text.optional(), columns: z.array(text).min(2).max(4), rows: z.array(z.array(text).min(2).max(4)).min(2).max(8) }).strict(),
+// Block lifecycle is independent of its containing section. Existing blocks
+// retain the section's recorded approval; new additions default to experimental.
+type BlockDefinition = { name: string; purpose: string; status: RecipeStatus; schema: z.ZodTypeAny };
+function block<S extends z.ZodTypeAny>(name: string, purpose: string, schema: S, status: RecipeStatus = "experimental") {
+  return { name, purpose, schema, status };
+}
+export const editorialProseBlocks = {
+  prose: block("Paragraphs", "A continuous explanation in normal reading order.", z.object({ type: z.literal("prose"), paragraphs: z.array(text).min(1).max(4) }).strict(), "approved"),
+  subheading: block("Internal heading", "A meaningful subsection, with optional supporting text.", z.object({ type: z.literal("subheading"), title: text, body: text.optional(), emphasis: z.enum(["plain", "band"]).optional() }).strict(), "approved"),
+  columns: block("Two-column prose", "Two related explanations which retain their source order on mobile.", z.object({ type: z.literal("columns"), columns: z.array(z.object({ title: text.optional(), paragraphs: z.array(text).min(1).max(3) }).strict()).length(2) }).strict(), "approved"),
+  callout: block("Callout", "A subordinate note whose meaning does not depend on colour.", z.object({ type: z.literal("callout"), tone: z.enum(["quiet", "solid", "outline"]), title: text, body: text }).strict(), "approved"),
+  media: block("Illustration", "A supplied informative image with meaningful alternative text.", z.object({ type: z.literal("media"), media: suppliedMedia, placement: z.enum(["wide", "left", "right"]).optional() }).strict(), "approved"),
+  table: block("Comparison table", "A real comparison with column and row headers.", z.object({ type: z.literal("table"), title: text.optional(), columns: z.array(text).min(2).max(4), rows: z.array(z.array(text).min(2).max(4)).min(2).max(8) }).strict(), "approved"),
+  list: block("Native list", "Related items or an ordered sequence; plain text in a native ul or ol.", z.object({ type: z.literal("list"), ordered: z.boolean(), items: z.array(text).min(1) }).strict()),
+};
+const editorialProseBlock = z.union([
+  editorialProseBlocks.prose.schema, editorialProseBlocks.subheading.schema,
+  editorialProseBlocks.columns.schema, editorialProseBlocks.callout.schema,
+  editorialProseBlocks.media.schema, editorialProseBlocks.table.schema, editorialProseBlocks.list.schema,
 ]);
 
 // Human authoring guidance lives beside the machine-enforced content schema.
@@ -63,11 +75,13 @@ function recipe<S extends z.ZodTypeAny>(definition: {
   status?: RecipeStatus;
   supersedes?: string;
   authoringGuidance?: Partial<AuthoringGuidance>;
+  blocks?: Record<string, BlockDefinition>;
 }) {
   return {
     ...definition,
     status: definition.status ?? "experimental",
     supersedes: definition.supersedes ?? null,
+    blocks: definition.blocks ?? {},
     pageTypes: ["service"] as readonly PageType[],
     audiences: ["private", "business"] as readonly Audience[],
   };
@@ -223,9 +237,10 @@ export const sectionRecipes = {
     recommendedUse: "Use for one coherent explanation, from a compact practical orientation before contact to a substantial technical chapter. Combine only the prose, subheads, columns, callouts, images or table the subject needs. It is independent of the options guide, although the two often work well in sequence.",
     renderer: "EditorialProse.astro",
     status: "approved",
+    blocks: editorialProseBlocks,
     authoringGuidance: {
-      contentShape: "Eyebrow, title and introduction followed by a sequence of semantic editorial blocks: prose, internal headings, two-column text, callouts, images or a compact table. Banded headings act as major internal chapter breaks; soft headings act as quieter subsection transitions.",
-      typicalRange: "Choose one to twelve blocks to fit the explanation. One or two can be enough for a focused section; longer chapters may need more. Workshop demonstrates available block types, not a required sequence or minimum amount of copy.",
+      contentShape: "A meaningful title, optional eyebrow and introduction, then selected semantic blocks: prose, internal headings, two-column text, callouts, images, tables or the separately Experimental native list. Banded headings mark major internal breaks; soft headings mark quieter transitions.",
+      typicalRange: "Choose as many useful blocks as the explanation needs. One or two can be enough; no section-wide block ceiling applies. Select, reorder, repeat or omit supported blocks. Workshop is a palette, not a minimum-content checklist.",
       fixed: "The section remains one coherent article-like chapter with a clear heading hierarchy and visible reading order. Blocks are always visible and are not accordions, tabs or independent cards. Heading treatments must communicate hierarchy rather than alternate randomly for visual variety.",
       flexible: "Authors may vary block order and quantity, use one- or two-column prose, use a banded chapter heading and/or a softer subsection heading where the hierarchy justifies it, choose quiet/filled/outline callouts, place occasional images wide/left/right, and include a compact table when the information genuinely compares well. The recipe can stand alone or follow another section such as an options guide; do not merge the two contracts merely because they are often useful together.",
       needsDesignReview: "Use Design review for more than two text columns, complex data tables, interactive controls, galleries, nested navigation, several unrelated subjects, or decorative block variation that no longer serves one coherent article.",
@@ -233,7 +248,7 @@ export const sectionRecipes = {
       responsive: "All multi-column and side-media blocks collapse to a single source-ordered reading stream on narrow screens. Two-column text tables fit the available width; wider tables retain horizontal scrolling inside their own labelled wrapper rather than forcing the page wider.",
       accessibility: "Use semantic headings, paragraphs, tables and asides. Preserve source order across responsive layouts, keep table headers real text, and never communicate callout importance through colour alone. A horizontally scrolling table region must have an accessible label, keyboard focus and visible focus treatment so every column is reachable.",
     },
-    schema: z.object({ ...heading, blocks: z.array(editorialProseBlock).min(1).max(12) }).strict(),
+    schema: z.object({ eyebrow: text.optional(), title: text, intro: text.optional(), blocks: z.array(editorialProseBlock).min(1) }).strict(),
   }),
   "hero.banner-art": recipe({
     name: "Banner with environmental artwork", kind: "hero",
@@ -441,6 +456,9 @@ export type RecipeId = keyof typeof sectionRecipes;
 
 export function validateRecipeRegistry() {
   for (const [id, recipe] of Object.entries(sectionRecipes)) {
+    for (const [type, definition] of Object.entries(recipe.blocks)) {
+      if (!definition.name.trim() || !definition.purpose.trim() || !["experimental", "approved", "deprecated"].includes(definition.status)) throw new Error(`Invalid block metadata: ${id}/${type}`);
+    }
     if (!recipe.recommendedPlacement.trim()) throw new Error(`Section recipe ${id} needs recommended placement guidance`);
     if (!recipe.recommendedUse.trim()) throw new Error(`Section recipe ${id} needs recommended use guidance`);
     if (recipe.status === "approved") {
@@ -483,6 +501,16 @@ export type RecipeContent<K extends RecipeId> = z.infer<(typeof sectionRecipes)[
 export type RecipeSection = { [K in RecipeId]: {
   id: string; kind: string; recipe: K; content: RecipeContent<K>;
 } }[RecipeId];
+
+export function usedRecipeBlocks(section: RecipeSection) {
+  const definitions = getSectionRecipe(section.recipe).blocks;
+  if (!("blocks" in section.content)) return [];
+  return section.content.blocks.map(value => {
+    const definition = Object.hasOwn(definitions, value.type) ? definitions[value.type] : undefined;
+    if (!definition) throw new Error(`Unknown block: ${section.recipe}/${value.type}`);
+    return { id: `${section.recipe}/${value.type}`, type: value.type, ...definition };
+  });
+}
 
 export function getSectionRecipe<K extends RecipeId>(id: K): (typeof sectionRecipes)[K];
 export function getSectionRecipe(id: string): (typeof sectionRecipes)[RecipeId];
