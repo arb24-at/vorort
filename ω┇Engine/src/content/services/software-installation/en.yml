@@ -4,176 +4,287 @@ locale: en
 audience: private
 order: 2
 slug: software-installation-optimisation
-purpose: "Installation, configuration and optimisation of software for home users and home-office workplaces."
+purpose: Software installation, application troubleshooting and considered PC optimisation for Berlin homes and
+  home offices.
 navigation:
   group: device-home
-  label: "Software installation & optimisation"
+  label: Software installation & optimisation
 page:
-  template: guided-private
+  template: recipe-service
   technicalDepth: informative
   theme:
     variant: software
-    state: "Conflicting applications, warnings and settings move into a stable and understandable working state."
-    title: "Bring software from conflict to a controlled state"
-    description: "Applications, accounts and system settings are treated as one working environment rather than isolated parts."
-  storyboard:
-    - role: situation
-      composition: wide
-      visualState: conflict
-      eyebrow: "What is happening"
-      title: "The error on screen is evidence, not a diagnosis"
-      text: "An application may refuse to open, a sign-in may loop or the computer may become slower after every restart. We begin with the behaviour you can describe and the task you need to regain."
-      points:
-        - "Capture the exact message or unreliable behaviour"
-        - "Note recent updates, installations or account changes"
-        - "Define the everyday task that needs to work again"
-      callouts:
-        - "Application will not open"
-        - "Sign-in keeps repeating"
-        - "Slower after an update"
-    - role: investigation
-      composition: text-left
-      visualState: dependencies
-      eyebrow: "Trace the relationship"
-      title: "Software rarely works in isolation"
-      text: "Rather than reinstalling the visible application by default, we examine versions, the user profile, available system resources and connected services. This separates an application fault from a wider dependency problem."
-      points:
-        - "Compare versions, updates and system requirements"
-        - "Check the user profile, sign-in and relevant permissions"
-        - "Assess startup load, storage and intrusive add-ons"
-      callouts:
-        - "Version compatible?"
-        - "Account access"
-        - "Missing dependency"
-        - "Storage running low"
-    - role: intervention
-      composition: system
-      visualState: controlled-change
-      eyebrow: "Make a controlled change"
-      title: "Every action needs a reason and a checkpoint"
-      text: "Before installing, removing or rebuilding anything, we agree what must remain available and whether backup or recovery options need checking. Only the agreed parts are changed, with the result observed at each step."
-      points:
-        - "Clarify important files and recovery options first"
-        - "Use legitimate software from a traceable source"
-        - "Apply changes in stages and verify the response"
-      callouts:
-        - "Backup confirmed"
-        - "Installation running"
-        - "Settings checked"
-    - role: outcome
-      composition: text-right
-      visualState: verified
-      eyebrow: "Hand over a working state"
-      title: "The real workflow is the final test"
-      text: "A successful launch is not enough on its own. Within the agreed scope, we check sign-in, important files, printing and the everyday task, then explain the resulting setup and any sensible next step."
-      points:
-        - "Open the important applications and files together"
-        - "Test sign-in, printing or cloud access where relevant"
-        - "Explain the changes and practical next steps clearly"
-      callouts:
-        - "Applications opened"
-        - "Access checked"
-        - "Handover explained"
+    state: Applications, updates, user settings and startup behaviour are assessed before targeted software changes.
+    title: Software that works for your everyday tasks
+    description: Install suitable applications, investigate conflicts and simplify software without promising
+      a universal speed boost.
 seo:
-  title: "Software Installation & PC Optimisation Berlin"
-  description: "Software installation and PC optimisation in Berlin for application errors, updates, user profiles, conflicts and slow Windows computers."
-  intent: "Find practical Berlin support for software installation, application errors or a slow PC."
+  title: Software Installation Help Berlin | PC Optimisation
+  description: Software installation help in Berlin for legitimate applications, update errors, conflicts and
+    slow PCs. Careful checks, practical configuration and handover.
+  intent: Find local software installation help and troubleshooting in Berlin, with considered PC optimisation
+    for home or home-office use.
 hero:
-  eyebrow: "Home & home office · Software"
-  title: "Software installation and practical computer optimisation"
-  intro: "An application may refuse to install, an update may disrupt a familiar routine, or the computer may have become cluttered over time. We examine Windows, applications, accounts and settings as one environment, then establish a working state you can understand."
+  eyebrow: Software support · Berlin homes & home offices
+  title: Software installation help in Berlin
+  intro: A program will not install, an update has broken an everyday task, or your PC has become crowded with
+    software you no longer use. We help install and configure legitimate applications, investigate conflicts and
+    make considered changes to the setup you already have. The aim is a working task and an understandable handover—not
+    a promise that every computer can be made faster.
 problems:
-  eyebrow: "What you may notice"
-  title: "The message on screen is only the starting point"
-  intro: "A software failure may come from the application, a user profile, an update or an older dependency. We begin with what changed and what no longer works."
+  eyebrow: Start with the symptom
+  title: When applications stop cooperating
+  intro: Useful clues include the exact error, a recent update and whether the problem affects one application
+    or several.
   items:
-    - "An application will not install, open or complete an update"
-    - "Crashes or unfamiliar warnings started after a recent change"
-    - "The computer feels slow without one obvious cause"
-    - "Old versions, trial software and startup items have accumulated"
-    - "Email, cloud storage and desktop applications no longer work together cleanly"
-    - "A user profile or sign-in behaves differently from what you expect"
+  - An installer stops, asks for a missing component or rejects the operating system
+  - An application crashes, freezes or refuses to open after an update
+  - Two programs, add-ons or default settings interfere with one another
+  - An account, profile or permission blocks normal application use
 included:
-  eyebrow: "Useful scope"
-  title: "A stable setup, not just a completed installer"
-  intro: "The application has to fit the device, operating system, user and real task. We agree the work first and check the relevant workflow afterwards."
+  eyebrow: Practical software help
+  title: Installation, troubleshooting and sensible clean-up
+  intro: We check the device, supported version and licence, agree the scope, change only what is needed and test
+    the actual task.
   items:
-    - "Installation and initial configuration of legitimate, licensed applications"
-    - "Windows, driver and application updates followed by functional checks"
-    - "Investigation of conflicts, error messages and unreliable application launches"
-    - "Removal of unnecessary startup items, outdated versions and intrusive add-ons"
-    - "Configuration of user profiles, default applications and workplace tools"
-    - "A practical handover covering updates, accounts and sensible backup steps"
+  - Install and configure suitable, licensed applications
+  - Investigate failed installations, update errors and program conflicts
+  - Review startup applications and unnecessary software cautiously
+  - Check account-related settings, dependencies and everyday workflows
 outcome:
-  eyebrow: "The intended result"
-  title: "A cleaner computer that supports the way you work"
-  text: "The agreed applications should work, important settings should make sense and avoidable conflicts should be reduced. We do not promise a generic speed boost: unsuitable hardware, damaged data or unsupported software may set the real limit, and we will explain that plainly."
+  eyebrow: A realistic outcome
+  title: A tested task and a clear explanation
+  text: We check the agreed application and workflow, explain what changed and identify remaining limits. Hardware
+    faults, unsupported programs and damaged data may prevent the outcome you hoped for; a faster PC or recovered
+    files cannot be guaranteed.
 cta:
-  title: "Give us the software context"
-  text: "Tell us which application or function is affected, what you see on screen and when the behaviour began."
-  prompt: "The application name, Windows version, exact message and most recent change are especially useful."
-expanded:
-  situations:
-    eyebrow: "When this service fits"
-    title: "For a software environment that needs installing, stabilising or simplifying"
-    intro: "This page is for a specific software task or a computer whose applications and settings have become difficult to manage. A whole-device move belongs on the setup and data-transfer page."
-    items:
-      - title: "A new application"
-        text: "A purchased or work-related program needs to be installed, updated and configured for the person who will actually use it."
-      - title: "A change caused trouble"
-        text: "After an update, reinstall or account change, a familiar application no longer opens reliably or behaves as it did before."
-      - title: "A sluggish computer"
-        text: "Startup items, old versions, limited free space or background applications have made everyday tasks noticeably slower."
-      - title: "An untidy workplace"
-        text: "Applications, accounts, file locations and defaults have grown over time and need to be simplified without an unnecessary full rebuild."
-  process:
-    eyebrow: "From conflict to order"
-    title: "Changes are made in steps that can be checked"
-    intro: "Before removing or reinstalling anything, we clarify the purpose, available licences, important files and likely dependencies. That keeps the reason for each change visible."
-    steps:
-      - title: "Understand the request"
-        text: "We record the message, desired outcome, device, user and any recent event that may have changed the system."
-      - title: "Protect what matters"
-        text: "Where appropriate and possible, we check the relevant files, recovery options and necessary access before making changes."
-      - title: "Make targeted changes"
-        text: "We install, update or remove only the agreed parts and check how the system responds."
-      - title: "Test the real task"
-        text: "Application launch, files, printing, sign-in and the important everyday workflow are checked against the agreed scope."
-  proof:
-    eyebrow: "Relevant experience"
-    title: "Software support with the wider system in view"
-    text: "IT experience since 2008 and hands-on work with Windows, workplace applications, accounts, email and cloud services help us look beyond a single error dialog when the evidence points elsewhere."
-    items:
-      - "Windows and device drivers"
-      - "Microsoft 365 and Office"
-      - "Email and user accounts"
-      - "Cloud storage and backups"
-      - "Printers and peripherals"
-      - "Specialist workplace software assessed individually"
-  boundaries:
-    eyebrow: "Responsible boundaries"
-    title: "What must be clear before work begins"
-    items:
-      - "We do not install pirated, modified or otherwise unlicensed software."
-      - "Unsupported applications or operating systems cannot always be kept safe or reliable."
-      - "Software optimisation cannot reliably compensate for unsuitable or failing hardware."
-      - "Recovery of missing or damaged data is not a guaranteed part of this service."
-      - "Passwords, sign-in codes and recovery codes must never be sent through the enquiry form."
-  faqs:
-    - question: "Can you install a specific application for me?"
-      answer: "Often, yes. We first check that the application comes from a legitimate source, that a suitable licence is available and that the device and Windows version meet its requirements. Specialist applications are assessed individually."
-    - question: "Will optimisation definitely make my computer faster?"
-      answer: "No responsible service can promise that in every case. We can investigate unnecessary load, faulty startup behaviour and software conflicts. If hardware or damaged data is the actual constraint, we explain the options clearly."
-    - question: "Does Windows have to be reinstalled?"
-      answer: "Not by default. A clean installation is one possible route, used only when targeted repair or cleanup is unlikely to produce a sensible result. Backup, scope and the work needed afterwards are discussed first."
-    - question: "Can you also help with email, Microsoft 365 or cloud storage?"
-      answer: "Yes, when the task belongs to a personal or home-office workplace. Deeper user, permission and team structures are covered through the dedicated Microsoft 365 and Google Workspace business services."
-    - question: "Can software be installed remotely?"
-      answer: "Some clearly bounded tasks suit remote assistance. An on-site visit is often the safer choice when the system state is unclear, several devices are involved or preparatory checks are needed. We decide that during the free initial conversation."
-    - question: "What information should I provide first?"
-      answer: "The application name, device, Windows version, exact message and what happened immediately before the problem are useful. Do not send passwords, licence keys or authentication codes through the enquiry form."
-  relatedServiceIds:
+  title: Describe your software problem
+  text: Tell us which program or task needs attention. The initial conversation is free; we explain the proposed
+    work and any charge for a diagnostic visit before arranging it. You can call, use WhatsApp or prepare a written
+    enquiry.
+  prompt: 'For example: the application''s name, your Windows version, the exact error and what changed recently.
+    Never include passwords, licence keys or sign-in or recovery codes.'
+composition:
+  contactAfter: practical-help
+  related:
+    eyebrow: Related services
+    title: If the problem involves more than one application
+    linkLabel: Explore the service
+    serviceIds:
     - computer-laptop
     - setup-data-transfer
-    - wifi-home-network
-
+  contact:
+    title: Ask about software installation or troubleshooting
+    intro: Tell us which application or computer task needs help. You can also call or use WhatsApp. The form
+      prepares an email draft for you to review and send; it does not send anything directly.
+    formIntro: Complete the details below and use your own email app to review and send the enquiry. Please do
+      not include passwords, licence keys or security codes.
+    affectedPlaceholder: For example, a Windows app, installer or conflicting program
+    request: What is not working or what would you like installed?
+    requestPlaceholder: 'For example: my application stopped opening after an update. I use Windows 11 and the
+      message says ... (no passwords or codes).'
+  sections:
+  - id: introduction
+    kind: hero
+    recipe: hero.editorial-art
+    content:
+      eyebrow: Software support · Berlin homes & home offices
+      title: Software installation help in Berlin
+      intro: A program will not install, an update has broken an everyday task, or your PC has become crowded
+        with software you no longer use. We help install and configure legitimate applications, investigate conflicts
+        and make considered changes to the setup you already have. The aim is a working task and an understandable
+        handover—not a promise that every computer can be made faster.
+      media:
+        subject: private-hero
+        src: /images/concept-ii/private/P1.png
+        alt: Illustration of an everyday home workspace with a computer and connected devices.
+      actions:
+      - label: Ask about your software
+        target: contact
+      - label: What can we help with?
+        target: software-problems
+  - id: software-problems
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: Recognise the problem
+      title: Software will not install, open or behave as expected
+      intro: Different symptoms need different checks. The problem may be the application itself, an operating-system
+        requirement, an account setting or something introduced by a recent change. You do not need to identify
+        the cause before contacting us.
+      blocks:
+      - type: table
+        title: Common symptoms and useful starting points
+        columns:
+        - What you notice
+        - What we would investigate
+        rows:
+        - - Installation stops
+          - Windows version, publisher requirements, permissions and incomplete earlier installations
+        - - The app crashes after an update
+          - The update history, application version, plug-ins and supported repair options
+        - - Sign-in works elsewhere but not in the app
+          - Account status, local profile, saved settings and the permitted access route
+        - - Another program changes its behaviour
+          - Default applications, add-ons, background components and conflicting versions
+      - type: prose
+        paragraphs:
+        - We begin with the task you need to perform and what changed shortly before the problem appeared. An
+          error message is a clue rather than proof that everything must be reinstalled.
+  - id: practical-help
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: What we can do
+      title: Software setup and fixes tailored to the actual task
+      intro: One application that needs setting up is a valid job. So is a confusing combination of programs,
+        accounts and settings. We agree a proportionate scope rather than treating every issue as a full PC rebuild.
+      blocks:
+      - type: columns
+        columns:
+        - title: Install and configure
+          paragraphs:
+          - Check legitimate licensing, compatible versions and the publisher's installation requirements. Set
+            up the application, its updates and useful defaults for the person using it.
+        - title: Diagnose and simplify
+          paragraphs:
+          - Investigate unreliable launches, updates, conflicting add-ons and unnecessary startup applications.
+            Remove or change items only after checking what depends on them.
+      - type: callout
+        tone: quiet
+        title: Costs and changes are discussed first
+        body: The first conversation is free. Work is quoted individually, and any paid diagnostic visit is explained
+          before it is arranged. We agree further work before proceeding.
+  - id: installation-choices
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: Before an installation
+      title: Compatibility, licences and setup choices
+      intro: Downloading an installer is often the simplest part. An application must be suitable for the operating
+        system, device and user, and it must come from a legitimate publisher or trusted distributor.
+      blocks:
+      - type: columns
+        columns:
+        - title: Before installing
+          paragraphs:
+          - We check the supported Windows version, available storage, required components and licence or subscription
+            status. We clarify which account is authorised to use the software and whether another version is
+            already present.
+        - title: Making it useful
+          paragraphs:
+          - We configure appropriate defaults, file associations and relevant integrations, then test the task
+            that matters—opening a document, printing, signing in or using the required application feature.
+      - type: callout
+        tone: outline
+        title: Older or specialist software
+        body: An old installer is not automatically compatible or safe on a newer system. We assess support and
+          dependencies before recommending an update, an alternative or no change.
+  - id: updates-conflicts
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: When something changes
+      title: Application crashes, failed updates and software conflicts
+      intro: A crash after an update does not necessarily mean the update was the only cause. A plug-in, user
+        profile, missing dependency or saved configuration can produce a similar symptom.
+      blocks:
+      - type: prose
+        paragraphs:
+        - We check the precise failure, installed version and recent changes, then choose the least disruptive
+          sensible route. That might be an application repair, a supported update, restoring a setting, resolving
+          a conflicting add-on or a carefully planned reinstall. Repair and reset options are not available for
+          every program, and a reset may change saved preferences.
+      - type: callout
+        tone: quiet
+        title: Do not remove the evidence too early
+        body: We discuss important settings, files, licences and available backups before uninstalling or resetting
+          software. When account access is involved, the owner must use a legitimate sign-in or recovery route.
+  - id: working-method
+    kind: process
+    recipe: process.staged-path
+    content:
+      eyebrow: Our approach
+      title: How we make software changes carefully
+      intro: The order depends on the task, but each stage should leave a clear reason for the next action.
+      steps:
+      - title: Identify the real task
+        body: Record what fails, the exact warning if there is one, the relevant device and what changed recently.
+      - title: Check suitability and safeguards
+        body: Review compatibility, licensing, permissions and important files. Discuss available backup or recovery
+          options before riskier changes.
+      - title: Make the agreed change
+        body: Install, configure, repair or remove only the justified components, checking behaviour after each
+          meaningful step.
+      - title: Test and hand over
+        body: Open the application, check the agreed account, files or connections, and explain the result plus
+          any remaining limitations.
+  - id: pc-optimisation
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: When a computer feels slow
+      title: PC optimisation without unrealistic speed promises
+      intro: A slow start or delayed application can have several causes. An overfilled startup list is one possibility;
+        low free storage, demanding software, a failing drive or limited hardware may be more important.
+      blocks:
+      - type: columns
+        columns:
+        - title: What we can inspect
+          paragraphs:
+          - Unneeded startup items, duplicate or obsolete applications, browser extensions and background processes.
+            We also check whether a clean-up would disturb a program or account you still need.
+        - title: What a clean-up cannot promise
+          paragraphs:
+          - Removing software may reduce avoidable load, but it cannot make incompatible applications supported,
+            repair failing components or guarantee a measurable increase in speed. Any hardware issue needs its
+            own assessment.
+  - id: service-limits
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: The right kind of help
+      title: Software support, device help and data transfer are different jobs
+      intro: This page covers applications, updates, configuration and software-related performance. It is not
+        a hardware-repair service or a guarantee that missing files can be restored.
+      blocks:
+      - type: prose
+        paragraphs:
+        - For broader computer startup, operating-system or hardware-fault symptoms, see the related Computer
+          & Laptop Help service below. For preparing a new computer and moving normal, readable files and accounts
+          between devices, see Setup & Data Transfer. Damaged or inaccessible media require a separately assessed
+          recovery route.
+      - type: callout
+        tone: outline
+        title: Access and supported software
+        body: We work with legitimate, licensed and supported software and authorised accounts. We do not ask
+          for passwords, licence keys, one-time sign-in codes or recovery codes in a form, and we cannot promise
+          to bypass access protection.
+  - id: software-questions
+    kind: faq
+    recipe: faq.editorial-answers
+    content:
+      eyebrow: Practical questions
+      title: Questions about software installation and optimisation
+      intro: A few decisions are worth clarifying before an installation or repair.
+      items:
+      - question: Can you install one particular application?
+        paragraphs:
+        - Yes, where the software is legitimate, licensed and compatible with the device. We first check the publisher's
+          requirements and whether any existing version, account or licence needs attention. Specialist applications
+          are assessed individually.
+      - question: Is reinstalling Windows the normal solution?
+        paragraphs:
+        - No. A targeted change is often more proportionate. A wider operating-system reset or reinstall would
+          require a separate discussion about its risks, backups, applications and settings; it is not an automatic
+          part of installing a program.
+      - question: Will cleaning up software definitely speed up my PC?
+        paragraphs:
+        - Not necessarily. We can check avoidable background load and unused software, but performance also depends
+          on storage health, memory, processor demands and the applications you run. We explain when software
+          changes are unlikely to solve the underlying problem.
+      - question: What should I include in an enquiry?
+        paragraphs:
+        - Name the application, device or Windows version where known, the exact error and when it started. Tell
+          us which everyday task is affected. Do not send a password, licence key, verification code or account-recovery
+          information.

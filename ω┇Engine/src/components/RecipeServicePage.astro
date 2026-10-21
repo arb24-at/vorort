@@ -12,6 +12,9 @@ const { service } = Astro.props;
 const composition = service.composition;
 if (!composition) throw new Error(`Service ${service.id} requires a composition`);
 const testing = "experiment" in composition;
+// Approved-only pages can place the existing, truthful mailto enquiry after
+// meaningful orientation rather than only at the very end.
+const contactAfter = "contactAfter" in composition ? composition.contactAfter : undefined;
 const productionContext = { id: service.id, translationId: service.translationId, slug: service.slug, locale: service.locale, audience: service.audience, experiment: testing ? composition.experiment : undefined };
 const contactCopy = { title: service.cta.title, intro: service.cta.text, requestPlaceholder: service.cta.prompt, ...(!testing ? composition.contact : {}) };
 const landing = service.locale === "de"
@@ -22,15 +25,24 @@ const back = service.audience === "business"
   : (service.locale === "de" ? "Alle Leistungen für Zuhause & Homeoffice" : "All home services");
 ---
 <MainLayout title={service.seo.title} description={service.seo.description} canonicalPath={getServicePath(service)} lang={service.locale} alternatePath={getAlternateServicePath(service)}>
-  <div class:list={["concept-ii", `concept-ii--${service.audience}`, "recipe-service", { "recipe-service--compact": testing }]} data-service-page={service.id}>
+  <div class:list={["concept-ii", `concept-ii--${service.audience}`, "recipe-service", { "recipe-service--compact": testing || service.id === "software-optimisation-en" }]} data-service-page={service.id}>
     <div class="container recipe-service__back"><a href={withBase(landing)}>← {back}</a></div>
     {composition.sections.map(section => <>
       {testing && composition.relatedBefore === section.id && <RelatedServices content={composition.related} audience={service.audience} locale={service.locale} />}
       <RecipeSection section={section} audience={service.audience} locale={service.locale} context="production" productionContext={productionContext} />
+      {!testing && contactAfter === section.id && <ContactSection locale={service.locale} context={service.audience} copyOverrides={contactCopy} />}
     </>)}
     {!testing && <>
       <RelatedServices content={composition.related} audience={service.audience} locale={service.locale} />
-      <ContactSection locale={service.locale} context={service.audience} copyOverrides={contactCopy} />
+      {!contactAfter && <ContactSection locale={service.locale} context={service.audience} copyOverrides={contactCopy} />}
+      {contactAfter && <section class="section recipe-service__return" aria-label={service.cta.title}>
+        <div class="container">
+          <span class="eyebrow">{service.locale === "de" ? "Nächster Schritt" : "Next step"}</span>
+          <h2 class="section-title">{service.cta.title}</h2>
+          <p>{service.cta.text}</p>
+          <a class="btn btn-primary" href={service.locale === "de" ? "#kontakt" : "#contact"}>{service.locale === "de" ? "Zur Anfrage" : "Return to the enquiry"}</a>
+        </div>
+      </section>}
     </>}
   </div>
 </MainLayout>

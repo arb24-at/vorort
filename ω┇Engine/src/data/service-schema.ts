@@ -120,6 +120,19 @@ export const serviceSchema = z
         if ("experiment" in service.composition && service.composition.sections.at(-1)?.id !== service.composition.relatedBefore) {
           context.addIssue({ code: z.ZodIssueCode.custom, path: ["composition", "relatedBefore"], message: "The English test related services must precede the closing invitation" });
         }
+        const contactAfter = "contactAfter" in service.composition ? service.composition.contactAfter : undefined;
+        if (contactAfter) {
+          const contactPosition = service.composition.sections.findIndex(
+            section => section.id === contactAfter,
+          );
+          if (contactPosition < 2 || contactPosition >= service.composition.sections.length - 1) {
+            context.addIssue({
+              code: z.ZodIssueCode.custom,
+              path: ["composition", "contactAfter"],
+              message: "A shell-owned enquiry must follow at least two useful sections and leave further content to read",
+            });
+          }
+        }
         const opening = service.composition.sections[0];
         if (opening?.recipe === "hero.editorial-art" || opening?.recipe === "hero.service-intro") {
           for (const field of ["eyebrow", "title", "intro"] as const) {

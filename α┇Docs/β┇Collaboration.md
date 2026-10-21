@@ -4,6 +4,8 @@ Last updated: 2026-10-21
 
 ## Current handoff
 
+- **Separate English-only Drive working draft (2026-10-21):** Software Installation & Optimisation `/en/services/private/software-installation-optimisation/` was revised independently of the Codex queue. `γ┇Blueprints/software-installation-en-bp.md` v0.1 and canonical `software-installation/en.yml` now describe nine **Approved** recipe instances, a purposeful early **existing production-shell mailto enquiry** after `practical-help`, then software-specific chapters and a final return link. The `contactAfter` opt-in is non-breaking and keeps all other consumers' original contact position; no Experimental production exception or registry change. The blueprint, locale source, schema, composition contract and renderer have Drive readback evidence only, not a build, browser review or Git verification. RV-015 below owns the checks. No project version, task checkbox, commit, push or deployment.
+
 - **Version / assignment:** `2.2.40`, branch `main`; Aykhan explicitly selected **4G**, `/en/services/business/microsoft-365-workplaces/`, after 4F. Implemented/validated and checked complete. One local commit, report, stop; no push/deploy or next task. The automatic queue still begins at 3B. Five separately synced role edits are preserved outside this commit.
 - **Page / SEO:** canonical `microsoft-365/en.yml` replaces its guided storyboard/expanded body with 14 rendered sections: text hero → four workplace situations → practical scope/authorised access → quick CTA → one enquiry → four chapter links → accounts/workplaces → Outlook/email → Teams/OneDrive/SharePoint → migration → process → six visible FAQs → related services → closing CTA. About 410 opening words provide context before contact. Existing `microsoft-365-en` primary **Microsoft 365 support Berlin**; natural Office 365/setup/Outlook/file-sharing/migration coverage. English SERP follow-up recorded in SEO source, without invented volumes. Title “Microsoft 365 Support Berlin | Setup, Outlook & Teams”; route, identity, canonical/German alternate and actual network/Workspace links preserved.
 - **Scope / shared adoption:** practical one-off setup and troubleshooting, suitable licences, authorised access and assessed migration; clear local-service vs Microsoft/provider boundaries. Reuses Approved prose/process/visible Q&A and five existing Experimental sections. Exact `microsoft-365-en-preview` plus ID/translation/slug/locale/business audience is enforced in `production-policy.ts` / `production-composition.ts` and existing runtime rendering. Other permissions/default approval policy remain independent. No recipe/schema-content contract, lifecycle state, renderer, style, fixture, dependency or artwork changes. Existing compact rhythm and fitting two-column table are reused; usage derives this additional page once per recipe. Project's v2.2.40 entry records rationale, technical sources and effects.
@@ -16,6 +18,8 @@ Last updated: 2026-10-21
 None.
 
 ## Awaiting Aykhan
+
+- Review and decide separately on the English Software Installation blueprint v0.1 and the revised real page as a **working draft**. Confirm whether the shared generic home-workspace hero illustration is suitable and whether the mid-page existing mailto form/late return journey is sufficiently comfortable. Do not infer recipe approval or publication.
 
 - Review the v2.2.40 English Microsoft 365 page and its bounded adoption of existing Experimental recipes. Page/design acceptance and publication remain separate decisions.
 
@@ -30,6 +34,14 @@ None.
 - Choose/authorize the production form submission provider/endpoint (including its data-processing/privacy implications) before direct enquiry delivery can be enabled on GitHub Pages.
 
 ## Pending repository verification
+
+### RV-015 — EN Software Installation page / contact position / regression
+
+- **Scope and evidence:** Independent Drive-only change for `ω┇Engine/src/content/services/software-installation/en.yml`, `src/design-system/production-composition.ts`, `src/data/service-schema.ts`, `src/components/RecipeServicePage.astro` and new `γ┇Blueprints/software-installation-en-bp.md` v0.1. Four existing files were read immediately before the changes and re-fetched afterwards; local byte comparisons matched all four updated sources. Blueprint re-fetch matched its recorded content. `β┇Collaboration.md` separately records this handoff. No repository shell, Git or browser test is claimed.
+- **Repository checks needed:** `npm run validate` in `ω┇Engine/`; check all service and workshop schema consumers, exactly one English software H1, unique #contact, the `contactAfter` anchor requires at least two preceding sections and a meaningful continuation, exactly one inserted shell contact and final content-driven return link. Confirm only Approved recipes are used and no experimental policy/registry/default/DE changes were made. Verify canonical+German alternate, base-aware related Computer & Laptop Help and Setup & Data Transfer links, SEO length and all existing service summary/translation contracts.
+- **Browser checks needed:** compare the target page around 1440px and 390px (plus responsive boundary as needed); inspect hero/illustration suitability, symptom table overflow, compact prose rhythm, substantial form prominence, mobile details/disclosure, keyboard focus, anchor jumps, sticky contact dock, no duplicate form, four stages, visible FAQs, related links and final return. Confirm the form prepares an email draft for the visitor to send, not direct delivery. Review other representative Approved-only private pages to confirm default bottom contact is unchanged.
+- **Repo handoff:** Run `git diff --check` and `git status --short` against the real working tree, reconcile any concurrent edits, and prepare a normal versioned commit only under separate repository authorisation. Do not infer a version bump, successful commit, push or deployment from this Drive source revision.
+
 
 ### RV-014 — v2.2.31 footer-as-section and approval
 
@@ -113,6 +125,11 @@ None.
 - **Scope:** validate the existing v2.1.0 change first. Do not redesign, rewrite content or refactor unrelated code unless an actual failure requires it.
 
 ## Recent work
+
+### 2026-10-21 — Drive-connected five-role working draft — English software installation
+
+- Created `software-installation-en-bp.md` v0.1 and independently rewrote the one English software service record with nine Approved sections. Added a narrow optional shell contact placement in shared composition/schema/renderer and a page-local final return to contact. Current mailto wording and contact choices remain truthful, German/workshop/business/canonical recipe policy untouched. Exact source readback matched; repository/build/browser/Git verification is RV-015. No task-queue action, approval, project version bump or deployment.
+
 
 ### 2026-10-21 — Codex — v2.2.40 Task 4G English Microsoft 365
 
