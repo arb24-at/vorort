@@ -232,6 +232,27 @@ for (let i = 0; i < businessJourney.length; i++) {
   const position = businessHtml.indexOf(`id="${businessJourney[i]}"`);
   if (position < 0 || (i && position <= businessHtml.indexOf(`id="${businessJourney[i - 1]}"`))) errors.push(`Business network journey order failed: ${businessJourney[i]}`);
 }
+const microsoftHtml = fs.readFileSync(path.join(distRoot, "en/services/business/microsoft-365-workplaces/index.html"), "utf8");
+for (const required of [
+  '<html lang="en">', '<title>Microsoft 365 Support Berlin | Setup, Outlook &amp; Teams</title>',
+  `rel="canonical" href="${new URL(`${basePath}en/services/business/microsoft-365-workplaces/`, astroConfig.site)}"`,
+  `hreflang="de" href="${new URL(`${basePath}leistungen/unternehmen/microsoft-365-arbeitsplaetze/`, astroConfig.site)}"`,
+  'data-service-page="microsoft-365-workplaces-en"', 'data-recipe="hero.service-intro"', 'data-recipe="scope.chapter-links"',
+  'data-delivery="email"', 'name="context" value="Business"', 'name="company"', 'Prepare email draft',
+  'en/services/business/network-it-support/', 'en/services/business/google-workspace-cloud/', 'data-columns="2"',
+]) if (!microsoftHtml.includes(required)) errors.push(`Microsoft 365 missing required output: ${required}`);
+if ((microsoftHtml.match(/<h1[ >]/g) ?? []).length !== 1 || (microsoftHtml.match(/<form\b/g) ?? []).length !== 1) errors.push("Microsoft 365 needs one H1 and one enquiry form");
+if ((microsoftHtml.match(/data-recipe="cta.quick-contact"/g) ?? []).length !== 2) errors.push("Microsoft 365 needs two canonical contact invitations");
+if (/<button[^>]*type="submit"[^>]*disabled/.test(microsoftHtml)) errors.push("Microsoft 365 email draft must be usable without a direct endpoint");
+const microsoftIds = [...microsoftHtml.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]);
+if (microsoftIds.length !== new Set(microsoftIds).size) errors.push("Microsoft 365 contains duplicate IDs");
+for (const m of microsoftHtml.matchAll(/href="#([^"]+)"/g)) if (!microsoftIds.includes(m[1])) errors.push(`Microsoft 365 has a broken target: ${m[1]}`);
+for (const m of microsoftHtml.matchAll(/aria-labelledby="([^"]+)"/g)) for (const id of m[1].split(" ")) if (!microsoftIds.includes(id)) errors.push(`Microsoft 365 has a missing accessible label: ${id}`);
+const microsoftJourney = ["introduction", "workplace-situations", "practical-help", "quick-contact", "contact", "topics", "accounts-and-workplaces", "outlook-and-email", "collaboration-and-files", "migration-and-changes", "working-process", "questions", "related-services", "final-contact"];
+for (let i = 0; i < microsoftJourney.length; i++) {
+  const position = microsoftHtml.indexOf(`id="${microsoftJourney[i]}"`);
+  if (position < 0 || (i && position <= microsoftHtml.indexOf(`id="${microsoftJourney[i - 1]}"`))) errors.push(`Microsoft 365 journey order failed: ${microsoftJourney[i]}`);
+}
 const privatePreview = fs.readFileSync(path.join(distRoot, "design-lab/preview/private-service-page/index.html"), "utf8");
 for (const [name, contents] of [["Workshop", privateHtml], ["Canvas", privatePreview]]) {
   if ((contents.match(/<h1[ >]/g) ?? []).length !== 1 || !contents.includes(">Private Service Page</h1>")) errors.push(`${name} needs one Private Service Page heading`);

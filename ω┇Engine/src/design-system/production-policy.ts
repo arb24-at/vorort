@@ -35,10 +35,20 @@ export function isEnglishBusinessNetworkPreview(context?: ProductionRecipeContex
     && context.locale === "en" && context.audience === "business";
 }
 
+// Task 4G continues the same bounded English service-page experiment. The
+// Microsoft page cannot lend its permission to another service or locale.
+export function isEnglishMicrosoft365Preview(context?: ProductionRecipeContext) {
+  return context?.experiment === "microsoft-365-en-preview"
+    && context.id === "microsoft-365-workplaces-en"
+    && context.translationId === "microsoft-365-workplaces"
+    && context.slug === "microsoft-365-workplaces"
+    && context.locale === "en" && context.audience === "business";
+}
+
 export function recipeAllowedForProduction(id: string, context?: ProductionRecipeContext) {
   if (recipeAllowedIn(id, "production")) return true;
   if (getSectionRecipe(id).status !== "experimental") return false;
   if (isEnglishHomeNetworkTest(context)) return ["recognition.situations", "cta.quick-contact", "contact.enquiry-email"].includes(id);
-  return (isEnglishComputerSupportPreview(context) || isEnglishBusinessNetworkPreview(context))
+  return (isEnglishComputerSupportPreview(context) || isEnglishBusinessNetworkPreview(context) || isEnglishMicrosoft365Preview(context))
     && ["hero.service-intro", "scope.chapter-links", "recognition.situations", "cta.quick-contact", "contact.enquiry-email"].includes(id);
 }

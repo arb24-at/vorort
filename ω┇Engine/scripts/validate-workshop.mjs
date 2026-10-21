@@ -14,7 +14,7 @@ try {
     stdin: { contents: 'export { serviceSchema } from "./src/data/service-schema.ts"; export * from "./src/design-system/workshop-schema.ts"; export * from "./src/design-system/section-recipes.ts"; export * from "./src/data/workshop-usage.ts"; export * from "./src/design-system/production-policy.ts"; export { enquiryEmailHref } from "./src/utils/enquiry-email.ts"; export { captureScale } from "./src/scripts/design-lab/section-capture.ts";', resolveDir: root, loader: "ts" },
     outfile: modulePath, bundle: true, platform: "node", format: "esm", packages: "external",
   });
-  const { serviceSchema, getRecipeUsage, workshopSchema, recipeAllowedForProduction, isEnglishHomeNetworkTest, isEnglishComputerSupportPreview, isEnglishBusinessNetworkPreview, enquiryEmailHref, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
+  const { serviceSchema, getRecipeUsage, workshopSchema, recipeAllowedForProduction, isEnglishHomeNetworkTest, isEnglishComputerSupportPreview, isEnglishBusinessNetworkPreview, isEnglishMicrosoft365Preview, enquiryEmailHref, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
   const { captureScale } = await import(pathToFileURL(modulePath).href);
   for (const [width, height] of [[390, 400], [1440, 800], [390, 10000], [3000, 20000], [20000, 3000]]) {
     const scale = captureScale(width, height);
@@ -341,7 +341,8 @@ try {
   for (const id of ["hero.service-intro", "scope.chapter-links"]) {
     assert.equal(recipeAllowedForProduction(id, englishContext), sectionRecipes[id].status === "approved", "Home-network permission must not expand with the computer page");
     const usage = getRecipeUsage(fixtures, serviceEntries, id);
-    assert.equal(usage.filter(p => p.context === "Production · EN").length, 2);
+    assert.equal(usage.filter(p => p.context === "Production · EN").length,
+      serviceEntries.filter(s => s.locale === "en" && s.composition?.sections.some(section => section.recipe === id)).length);
     assert.ok(usage.some(p => p.path === "en/services/private/computer-laptop-help/"));
   }
   const computerInvalid = [
@@ -412,6 +413,38 @@ try {
   assert.equal(getRecipeUsage([], [business], "cta.quick-contact").length, 1, "Repeated business invitations count as one consumer");
   assert.ok(getRecipeUsage(fixtures, serviceEntries, "hero.service-intro").some(p => p.path === "en/services/business/network-it-support/"));
   console.log(`Validated business network: ${businessInvalid.length} invalid compositions, exact schema/runtime whitelist, deprecated rejection and distinct production usage.`);
+  const microsoft = serviceEntries.find(s => s.id === "microsoft-365-workplaces-en");
+  assert.ok(microsoft?.composition, "Microsoft 365 must use a complete canonical composition");
+  const microsoftContext = { id: microsoft.id, translationId: microsoft.translationId, slug: microsoft.slug, locale: microsoft.locale, audience: microsoft.audience, experiment: microsoft.composition.experiment };
+  assert.equal(isEnglishMicrosoft365Preview(microsoftContext), true);
+  for (const [id, recipe] of Object.entries(sectionRecipes)) {
+    assert.equal(recipeAllowedForProduction(id, microsoftContext), recipe.status === "approved" || (recipe.status === "experimental" && businessExperiments.includes(id)), `Microsoft 365 runtime whitelist mismatch: ${id}`);
+  }
+  for (const id of businessExperiments) {
+    const approved = sectionRecipes[id].status === "approved";
+    assert.equal(recipeAllowedIn(id, "production"), approved, "Page adoption must not change the default approval rule");
+    for (const context of [undefined, { ...microsoftContext, experiment: undefined }, { ...microsoftContext, experiment: "business-network-en-preview" }, { ...microsoftContext, experiment: "computer-laptop-en-preview" }, { ...microsoftContext, experiment: "wifi-home-network-en-test" }, { ...microsoftContext, id: "another-en" }, { ...microsoftContext, translationId: "another" }, { ...microsoftContext, slug: "another" }, { ...microsoftContext, locale: "de" }, { ...microsoftContext, audience: "private" }]) {
+      assert.equal(recipeAllowedForProduction(id, context), approved, `Microsoft 365 permission escaped its identity: ${id}`);
+    }
+    const status = sectionRecipes[id].status;
+    try {
+      sectionRecipes[id].status = "deprecated";
+      assert.equal(recipeAllowedForProduction(id, microsoftContext), false);
+      assert.equal(serviceSchema.safeParse(microsoft).success, false);
+    } finally { sectionRecipes[id].status = status; }
+  }
+  const microsoftInvalid = [...businessInvalid, ["borrowed network permission", s => { s.composition.experiment = "business-network-en-preview"; }]];
+  for (const [name, change] of microsoftInvalid) {
+    const candidate = structuredClone(microsoft);
+    if (name === "wrong audience") candidate.audience = "private";
+    else change(candidate);
+    assert.equal(serviceSchema.safeParse(candidate).success, false, `Invalid Microsoft 365 composition accepted: ${name}`);
+  }
+  for (const id of ["cta.quick-contact", "explanation.editorial-prose"]) {
+    assert.equal(getRecipeUsage([], [microsoft], id).length, 1, "Repeated Microsoft 365 sections count as one page per recipe");
+    assert.ok(getRecipeUsage(fixtures, serviceEntries, id).some(p => p.path === "en/services/business/microsoft-365-workplaces/"));
+  }
+  console.log(`Validated Microsoft 365: ${microsoftInvalid.length} invalid compositions, exact schema/runtime whitelist, lifecycle safeguards and distinct usage.`);
   const blueprintText = await fs.readFile(path.join(root, "../γ┇Blueprints/wifi-home-network-en-bp.md"), "utf8");
   const blueprint = yaml.load(blueprintText.split("---")[1]);
   assert.equal(blueprint["page-id"], englishProduction.translationId);

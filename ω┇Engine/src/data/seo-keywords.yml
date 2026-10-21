@@ -373,7 +373,7 @@ pages:
 - id: microsoft-365-en
   route: /en/services/business/microsoft-365-workplaces/
   locale: en
-  researchStatus: serp-reviewed-2026-09-02
+  researchStatus: serp-reviewed-2026-10-21
   primary: Microsoft 365 support Berlin
   useful:
   - Microsoft 365 support for business Berlin
@@ -398,6 +398,7 @@ pages:
   notes:
   - 'English SERP review 2026-09-02: generic support intent is heavily mixed with Microsoft self-service and admin help, while Berlin provider pages quickly move into enterprise-style migration, governance, Intune, compliance and managed services.'
   - 'No English Keyword Planner volume has been assumed from the German research; use the page to qualify support by business context, Berlin and practical workplace outcomes.'
+  - 'Follow-up 2026-10-21: the English query still mixes Microsoft official help with local commercial service intent. https://wernecke.it/en/services/microsoft-365/ confirms provider terminology around setup, existing environments, users, Outlook/Exchange, Teams, OneDrive/SharePoint and migration. Treat it as search-language evidence, not evidence of our capabilities or a copy template. Retain Microsoft 365 support Berlin as owner, with Office 365 support and practical setup/migration as secondary language. No new English search volumes or enterprise/partner credentials are inferred.'
 - id: google-workspace-de
   route: /leistungen/unternehmen/google-workspace-cloud/
   locale: de

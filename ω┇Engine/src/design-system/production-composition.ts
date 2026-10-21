@@ -1,6 +1,6 @@
 import { z } from "astro/zod";
 import { getSectionRecipe, recipeSectionSchema, type RecipeSection } from "./section-recipes";
-import { isEnglishHomeNetworkTest, isEnglishComputerSupportPreview, isEnglishBusinessNetworkPreview, recipeAllowedForProduction, type ProductionRecipeContext } from "./production-policy";
+import { isEnglishHomeNetworkTest, isEnglishComputerSupportPreview, isEnglishBusinessNetworkPreview, isEnglishMicrosoft365Preview, recipeAllowedForProduction, type ProductionRecipeContext } from "./production-policy";
 
 const text = z.string().trim().min(1);
 const anchor = z.string().regex(/^[a-z][a-z0-9-]*$/);
@@ -13,7 +13,7 @@ const common = { sections: z.array(recipeSectionSchema).min(2), related: related
 // English compositions own one recipe enquiry and a related-navigation position.
 export const productionCompositionSchema = z.union([
   z.object({ ...common, contact: getSectionRecipe("contact.enquiry").schema }).strict(),
-  z.object({ ...common, experiment: z.enum(["wifi-home-network-en-test", "computer-laptop-en-preview", "business-network-en-preview"]), relatedBefore: anchor }).strict(),
+  z.object({ ...common, experiment: z.enum(["wifi-home-network-en-test", "computer-laptop-en-preview", "business-network-en-preview", "microsoft-365-en-preview"]), relatedBefore: anchor }).strict(),
 ]);
 
 export function validateProductionSections(
@@ -22,7 +22,7 @@ export function validateProductionSections(
 ) {
   const homeNetworkTest = isEnglishHomeNetworkTest(context);
   const computerSupportPreview = isEnglishComputerSupportPreview(context);
-  const testing = homeNetworkTest || computerSupportPreview || isEnglishBusinessNetworkPreview(context);
+  const testing = homeNetworkTest || computerSupportPreview || isEnglishBusinessNetworkPreview(context) || isEnglishMicrosoft365Preview(context);
   if (context.experiment && !testing) issue([], "Experimental composition authorisation must match its exact service identity, locale, audience and slug");
   const contactId = context.locale === "de" ? "kontakt" : "contact";
   const reserved = new Set(["main-content", "kontakt", "contact", "site-footer", "related-services"]);

@@ -103,6 +103,8 @@ updated: 2026-10-21
 
 > **Explicit exception, 2026-10-21:** Aykhan selected **4F** by ID after 4B. The English business-network page is implemented and validated in v2.2.39. This named selection does not complete skipped tasks or change automatic queue order.
 
+> **Explicit selection, 2026-10-21:** Aykhan then assigned **4G**. The English Microsoft 365 page is implemented/validated in v2.2.40; other unchecked tasks remain pending and automatic queue order is unchanged.
+
 - [x] **4A — EN · Home networks / Wi-Fi**
   - **Route:** `/en/services/private/wifi-home-network/`
   - **Page job:** Pilot an expressive, technically accurate service chapter structure. Preserve the approved editorial hero, topic navigation and conversion path where they help; avoid repair or guaranteed-coverage promises.
@@ -127,7 +129,7 @@ updated: 2026-10-21
   - **Route:** `/en/services/business/network-it-support/`
   - **Page job:** Pilot a business service chapter that conveys infrastructure competence without implying enterprise security, SLAs or mandatory managed contracts.
   - **Execution:** Independent English authoring using the English intent and research; do not mechanically translate the German copy. Apply the common per-page acceptance contract, record every Design Lab change, verify, mark this item complete, commit once, report and stop.
-- [ ] **4G — EN · Microsoft 365 workplaces**
+- [x] **4G — EN · Microsoft 365 workplaces**
   - **Route:** `/en/services/business/microsoft-365-workplaces/`
   - **Page job:** Address practical workplace setup, accounts, collaboration and migration only within grounded capabilities and lawful licensing.
   - **Execution:** Independent English authoring using the English intent and research; do not mechanically translate the German copy. Apply the common per-page acceptance contract, record every Design Lab change, verify, mark this item complete, commit once, report and stop.
