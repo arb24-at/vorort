@@ -48,6 +48,10 @@ const en = {
   "disconnected": "Direct form delivery is not connected in this Design Lab build yet. Please use phone, WhatsApp or email for now.",
   "sending": "Sending…",
   "success": "Thanks — your enquiry has been sent. We will reply using your preferred contact method.",
+  "requiredField": "Please fill in this field.",
+  "invalidEmail": "Please enter a valid email address.",
+  "shortField": "Please use at least {min} characters.",
+  "invalidField": "Please check this entry.",
   "failed": "We could not send your enquiry. Please try again or use phone, WhatsApp or email."
 };
 const de = {
@@ -99,6 +103,21 @@ const de = {
   "disconnected": "Der direkte Formularversand ist noch nicht eingerichtet. Bitte nutzen Sie Telefon, WhatsApp oder E-Mail.",
   "sending": "Wird gesendet…",
   "success": "Vielen Dank – Ihre Anfrage wurde versendet. Wir antworten über den gewünschten Kontaktweg.",
+  "requiredField": "Bitte füllen Sie dieses Feld aus.",
+  "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+  "shortField": "Bitte verwenden Sie mindestens {min} Zeichen.",
+  "invalidField": "Bitte prüfen Sie diese Angabe.",
   "failed": "Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder nutzen Sie Telefon, WhatsApp oder E-Mail."
 };
 export const enquiryInterface = (locale: "en" | "de" = "en") => locale === "de" ? de : en;
+
+// Keep native browser messages in English consumers; German pages must not
+// inherit English errors from an English-language browser profile.
+export function enquiryFieldError(locale: "en" | "de", validity: { customError?: boolean; valueMissing?: boolean; typeMismatch?: boolean; tooShort?: boolean }, browserMessage: string, minimum = 0) {
+  if (locale === "en" || validity.customError) return browserMessage;
+  const ui = enquiryInterface(locale);
+  if (validity.valueMissing) return ui.requiredField;
+  if (validity.typeMismatch) return ui.invalidEmail;
+  if (validity.tooShort && minimum > 0) return ui.shortField.replace("{min}", String(minimum));
+  return ui.invalidField;
+}

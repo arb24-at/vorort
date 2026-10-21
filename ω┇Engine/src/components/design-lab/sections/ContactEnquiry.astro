@@ -182,7 +182,7 @@ const privacyHref = withBase("/datenschutz/");
 
 <script>
   import { enquiryEmailHref } from "../../../utils/enquiry-email";
-  import { enquiryInterface } from "../../../utils/enquiry-interface";
+  import { enquiryInterface, enquiryFieldError } from "../../../utils/enquiry-interface";
   document.querySelectorAll<HTMLFormElement>("[data-contact-form]").forEach((form) => {
     const locale = form.dataset.locale === "de" ? "de" : "en";
     const ui = enquiryInterface(locale);
@@ -216,7 +216,7 @@ const privacyHref = withBase("/datenschutz/");
     const showFieldError = (field: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement) => {
       field.setAttribute("aria-invalid", "true");
       const error = errorNodeFor(field);
-      if (error) error.textContent = field.validationMessage;
+      if (error) error.textContent = enquiryFieldError(locale, field.validity, field.validationMessage, "minLength" in field ? field.minLength : 0);
     };
 
     const syncContactRequirement = () => {

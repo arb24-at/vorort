@@ -12,7 +12,7 @@ pages:
 - id: home-de
   route: /
   locale: de
-  researchStatus: provisional-seed
+  researchStatus: serp-reviewed-2026-10-21
   primary: it hilfe berlin
   useful:
   - it hilfe vor ort berlin
@@ -29,6 +29,7 @@ pages:
   - datenrettung berlin
   - 24h it service berlin
   - kostenloser computer support
+  note: "German SERP review on 2026-10-21 of IT-Hilfe Berlin and local on-site/private/business wording found mixed-audience provider entrances grouping computers, networks and workplace services. The directly reviewed provider https://singersch-it-service.de/ separates concrete service areas and explains on-site/remote work and the first enquiry. This supports a broad local orientation page, not copying that provider’s wider service promises. No homepage-specific Keyword Planner volumes exist; primary IT Hilfe Berlin remains provisional as a demand target. IT-Dienstleister provider intent stays with the researched business gateway, while PC Hilfe, Heimnetzwerk einrichten and new-device setup belong to the corresponding detailed pages."
 - id: home-en
   route: /en/
   locale: en

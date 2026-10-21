@@ -1,14 +1,6 @@
 ---
-import HomeExperience from "../components/HomeExperience.astro";
-import MainLayout from "../layouts/MainLayout.astro";
-import { siteConfig } from "../data/site";
+import HomePage from "../components/HomePage.astro";
+import { getHomePage } from "../data/home-pages";
+const page = await getHomePage("de");
 ---
-
-<MainLayout
-  title={`IT-Service vor Ort in Berlin | ${siteConfig.defaultTitleSuffix}`}
-  description="Verständlicher IT-Service vor Ort in ganz Berlin für Privatpersonen, Homeoffice und kleine Unternehmen. Computer, Software, Netzwerke, Microsoft 365 und Google Workspace."
-  canonicalPath=""
-  alternatePath="en/"
->
-  <HomeExperience locale="de" />
-</MainLayout>
+<HomePage page={page} />

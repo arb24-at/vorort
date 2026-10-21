@@ -83,7 +83,7 @@ Family/source: `business gateway`.
 Family/source: `homepage`.
 
 - [x] **4J — EN · Homepage** — `/en/`. Source/repository/browser verified in v2.3.6; separate family QA remains open.
-- [ ] **3J — DE · Homepage** — `/`.
+- [x] **3J — DE · Homepage** — `/`. Source/repository/browser verified in v2.3.7; separate family QA remains open.
 
 ### Trust and working methods
 

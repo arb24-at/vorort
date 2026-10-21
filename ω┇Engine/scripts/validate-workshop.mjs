@@ -11,10 +11,10 @@ const temporary = await fs.mkdtemp(path.join(root, "node_modules/.workshop-check
 try {
   const modulePath = path.join(temporary, "contracts.mjs");
   await build({
-    stdin: { contents: 'export { serviceSchema } from "./src/data/service-schema.ts"; export * from "./src/design-system/workshop-schema.ts"; export * from "./src/design-system/section-recipes.ts"; export * from "./src/data/workshop-usage.ts"; export * from "./src/design-system/production-policy.ts"; export { enquiryEmailHref } from "./src/utils/enquiry-email.ts"; export { captureScale } from "./src/scripts/design-lab/section-capture.ts";', resolveDir: root, loader: "ts" },
+    stdin: { contents: 'export { serviceSchema } from "./src/data/service-schema.ts"; export * from "./src/design-system/workshop-schema.ts"; export * from "./src/design-system/section-recipes.ts"; export * from "./src/data/workshop-usage.ts"; export * from "./src/design-system/production-policy.ts"; export { enquiryEmailHref } from "./src/utils/enquiry-email.ts"; export { enquiryFieldError } from "./src/utils/enquiry-interface.ts"; export { captureScale } from "./src/scripts/design-lab/section-capture.ts";', resolveDir: root, loader: "ts" },
     outfile: modulePath, bundle: true, platform: "node", format: "esm", packages: "external",
   });
-  const { serviceSchema, getRecipeUsage, workshopSchema, blocksAllowedForProduction, productionTrials, usedRecipeBlocks, editorialProseBlocks, recipeAllowedForProduction, isEnglishHomeNetworkTest, isEnglishComputerSupportPreview, isEnglishBusinessNetworkPreview, isEnglishMicrosoft365Preview, enquiryEmailHref, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
+  const { serviceSchema, getRecipeUsage, workshopSchema, blocksAllowedForProduction, productionTrials, usedRecipeBlocks, editorialProseBlocks, recipeAllowedForProduction, isEnglishHomeNetworkTest, isEnglishComputerSupportPreview, isEnglishBusinessNetworkPreview, isEnglishMicrosoft365Preview, enquiryEmailHref, enquiryFieldError, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
   const { captureScale } = await import(pathToFileURL(modulePath).href);
   for (const [width, height] of [[390, 400], [1440, 800], [390, 10000], [3000, 20000], [20000, 3000]]) {
     const scale = captureScale(width, height);
@@ -316,6 +316,11 @@ try {
   assert.equal(draft.searchParams.get("subject"), "Setup & connection");
   assert.equal(draft.searchParams.get("body"), "Name: Example & visitor\n\nEmail: reader@example.test\n\nRequest: First line\nSecond line?");
   assert.equal([...draft.searchParams].length, 2, "User punctuation must remain encoded inside the two mailto fields");
+  assert.equal(enquiryFieldError("de", { valueMissing: true }, "Please fill in this field."), "Bitte füllen Sie dieses Feld aus.");
+  assert.equal(enquiryFieldError("de", { typeMismatch: true }, "Browser email error"), "Bitte geben Sie eine gültige E-Mail-Adresse ein.");
+  assert.equal(enquiryFieldError("de", { tooShort: true }, "Browser length error", 10), "Bitte verwenden Sie mindestens 10 Zeichen.");
+  assert.equal(enquiryFieldError("de", { customError: true }, "Bereits lokalisierte Meldung"), "Bereits lokalisierte Meldung");
+  assert.equal(enquiryFieldError("en", { valueMissing: true }, "Native browser message"), "Native browser message");
   const germanDraft = new URL(enquiryEmailHref("support@example.test", "Anfrage & Einrichtung", [["name", "Beispiel"], ["preferred-contact", "Phone"], ["phone", "+49 30"], ["context", "Private"], ["request", "WLAN prüfen"]], "de"));
   assert.equal(germanDraft.searchParams.get("subject"), "Anfrage & Einrichtung");
   assert.equal(germanDraft.searchParams.get("body"), "Name: Beispiel\n\nGewünschter Kontaktweg: Telefon\n\nTelefon: +49 30\n\nKundenbereich: Privat\n\nAnliegen: WLAN prüfen");

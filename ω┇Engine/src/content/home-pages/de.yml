@@ -1,0 +1,134 @@
+id: home-de
+translationId: home
+locale: de
+audience: general
+seo:
+  title: "IT-Hilfe Berlin | Vor Ort für Privatkunden & Unternehmen"
+  description: "Praktische IT-Hilfe vor Ort in Berlin für zu Hause, Homeoffice und Unternehmen. Computer, Software, WLAN und Arbeitsplatz-IT – mit klaren Absprachen."
+experiment: home-de-preview
+sections:
+  - id: einstieg
+    kind: hero
+    recipe: hero.local-support
+    content:
+      eyebrow: "IT-Hilfe vor Ort · Berlin"
+      title: "IT-Hilfe in Berlin, zu Hause und im Betrieb"
+      intro: "Der Computer startet nicht, das WLAN bricht ab oder ein neues Büro soll eingerichtet werden. Wir unterstützen bei konkreten Technikproblemen und geplanten Einrichtungen. Erzählen Sie uns, was funktionieren soll; eine technische Diagnose brauchen Sie dafür nicht."
+      actions:
+        - label: "Passende Hilfe finden"
+          target: leistungen
+        - label: "Anliegen beschreiben"
+          target: kontakt
+      facts: ["Vor Ort in Berlin", "IT-Erfahrung seit 2008", "Kostenloses Erstgespräch"]
+      image:
+        src: /images/technical-field-berlin.jpg
+        alt: "Illustration eines Berliner Homeoffice und kleinen Arbeitsbereichs mit Computern, Router und Druckern."
+  - id: leistungen
+    kind: scope
+    recipe: scope.audience-paths
+    content:
+      eyebrow: "Ein passender Einstieg"
+      title: "Hilfe für zu Hause und Ihr Unternehmen"
+      intro: "Für persönliche Geräte und Dateien finden Sie hier ebenso Unterstützung wie für vernetzte Arbeitsplätze und gemeinsam genutzte Dienste. Die beiden Einstiege führen zu den jeweiligen Leistungen."
+      items:
+        - audience: private
+          title: "Zu Hause & im Homeoffice"
+          body: "Bei Computer- und Softwareproblemen, einem WLAN mit Schwächen oder einem neuen PC oder Mac, der eingerichtet werden soll. Wir berücksichtigen Ihre vorhandene Technik und helfen bei einer einzelnen Aufgabe ebenso wie bei einer größeren Einrichtung."
+          examples: ["Computer- & Laptop-Hilfe", "Software", "WLAN & Heimnetzwerk", "Einrichtung & Datenumzug"]
+          linkLabel: "Leistungen für zu Hause ansehen"
+        - audience: business
+          title: "Für Unternehmen & kleine Teams"
+          body: "Bei IT-Problemen im Arbeitsalltag, Veränderungen im Büro und technischen Projekten. Netzwerke, gemeinsame Geräte, E-Mail und Zusammenarbeit werden passend zu Ihren Abläufen, bestehenden Systemen und Zuständigkeiten betrachtet."
+          examples: ["Büronetzwerke", "Microsoft 365", "Google Workspace", "Arbeitsplatz-IT"]
+          linkLabel: "IT-Leistungen für Unternehmen ansehen"
+  - id: praktische-hilfe
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: "Ein unkomplizierter Anfang"
+      title: "Auch mit einer kleinen Aufgabe können Sie sich melden"
+      intro: "Ein Programm installieren, einen Drucker wieder verbinden oder einen neuen Schreibtisch ausstatten: Das kann bereits ein Auftrag sein. Wir planen auch größere Installationen und Modernisierungen. Ausgangspunkt bleibt aber das, was Sie tatsächlich benötigen."
+      blocks:
+        - type: columns
+          columns:
+            - title: "Vorhandene Technik zuerst betrachten"
+              paragraphs:
+                - "Wir prüfen, was bereits vorhanden ist und was die Nutzung erschwert. Eine Einstellung, Verbindung oder gezielte Änderung kann genügen. Wenn neue Geräte oder eine größere Umstellung sinnvoll sind, erklären wir den Grund und stimmen das Vorgehen mit Ihnen ab."
+            - title: "Umfang und Kosten vorher besprechen"
+              paragraphs:
+                - "Das erste Gespräch ist kostenlos. Die Arbeit wird individuell angeboten; mögliche Kosten für einen Diagnosetermin erklären wir vor der Vereinbarung. Zusätzliche Arbeit, Geräte oder weitere Termine stimmen wir vorher ab. Ein laufender Betreuungsvertrag ist keine Voraussetzung."
+  - id: kontakt
+    kind: contact
+    recipe: contact.enquiry-email
+    content:
+      title: "Wobei benötigen Sie Hilfe?"
+      intro: "Beschreiben Sie, was passiert oder was Sie einrichten möchten. Ihr Berliner Bezirk, das betroffene Gerät oder der Dienst und wichtige Termine helfen dabei, den nächsten Schritt einzuordnen."
+      formIntro: "Das Formular bereitet einen Entwurf in Ihrem E-Mail-Programm vor. Prüfen und senden Sie ihn dort ab. Diese Website versendet Ihre Anfrage nicht direkt. * Pflichtfelder."
+      affectedPlaceholder: "Zum Beispiel Windows-Laptop, WLAN zu Hause, Outlook oder ein Büronetzwerk"
+      request: "Was möchten Sie besprechen?"
+      requestPlaceholder: "Was soll funktionieren, was passiert stattdessen und wo in Berlin benötigen Sie Hilfe? Bei einer Unternehmensanfrage nennen Sie gern den betroffenen Arbeitsablauf oder das Team."
+      emailSubject: "Anfrage zur IT-Hilfe in Berlin"
+  - id: arbeitsweise
+    kind: process
+    recipe: process.staged-path
+    content:
+      eyebrow: "So arbeiten wir"
+      title: "Bedarf verstehen, Arbeit vereinbaren und Ergebnis prüfen"
+      intro: "Vor Ort lassen sich ein Gerät und seine Umgebung zusammen betrachten. Für geeignete Aufgaben kommt auch Fernhilfe infrage. Nach der ersten Einordnung klären wir mit Ihnen, welcher Weg sinnvoll ist."
+      steps:
+        - title: "Situation schildern"
+          body: "Beschreiben Sie Aufgabe oder Problem in Ihren eigenen Worten. Wir fragen nach den Angaben, die für die Einordnung und den nächsten Schritt nötig sind."
+        - title: "Vorgehen vereinbaren"
+          body: "Wir besprechen absehbare Arbeit und Kosten sowie die Frage, ob ein Besuch, geeignete Fernhilfe oder zunächst ein Diagnosetermin passt."
+        - title: "Arbeit durchführen"
+          body: "Wir nehmen die vereinbarten Änderungen vor. Relevante Risiken, Abhängigkeiten und zusätzliche Arbeit werden vorab besprochen."
+        - title: "Prüfen und erklären"
+          body: "Wir kontrollieren die betroffenen Funktionen und erläutern hilfreiche Einstellungen, Änderungen sowie verbleibende Grenzen oder nächste Schritte."
+  - id: geraete-und-daten
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: "Ihre Geräte, Konten und Dateien"
+      title: "Klare Absprachen vor folgenreichen Änderungen"
+      blocks:
+        - type: columns
+          columns:
+            - title: "Nur die nötigen Zugänge"
+              paragraphs:
+                - "Wir klären, welcher Geräte- oder Kontozugang für den Auftrag erforderlich ist. Verwaltet ein Arbeitgeber, eine IT-Abteilung oder ein Anbieter das System, berücksichtigen wir deren Freigaben und Zuständigkeiten. Diese Vorgaben werden nicht umgangen."
+            - title: "Daten vor Änderungen berücksichtigen"
+              paragraphs:
+                - "Vor Arbeiten, die wichtige Dateien oder Einstellungen betreffen könnten, besprechen wir bei Bedarf eine geeignete Sicherung oder Rückfallmöglichkeit. Senden Sie keine Passwörter oder Wiederherstellungscodes in einer Anfrage. Sensible Eingaben können Sie bei Bedarf selbst am Gerät vornehmen."
+  - id: fragen
+    kind: faq
+    recipe: faq.editorial-answers
+    content:
+      eyebrow: "Vor Ihrer Anfrage"
+      title: "Antworten auf häufige Fragen"
+      intro: "Eine kurze Beschreibung genügt für den ersten Kontakt. Diese Antworten erläutern praktische Fragen und die Grenzen des Angebots."
+      items:
+        - question: "Wo bieten Sie Hilfe vor Ort an?"
+          paragraphs:
+            - "Wir nehmen Anfragen aus ganz Berlin an, für zu Hause oder den Arbeitsplatz im Unternehmen. Nennen Sie Ihre Postleitzahl oder Ihren Bezirk, damit wir Ort, Termin und die Anfahrt mit Ihnen besprechen können."
+        - question: "Muss ich die Ursache des Problems kennen?"
+          paragraphs:
+            - "Nein. Beschreiben Sie, was Sie machen möchten, was stattdessen passiert und seit wann das Problem besteht. Eine sichtbare Fehlermeldung oder ein Gerätename kann helfen. Sie müssen weder selbst eine Diagnose stellen noch vorab neue Technik auswählen."
+        - question: "Ist Unterstützung per Fernzugriff möglich?"
+          paragraphs:
+            - "Geeignete Software-, Konto- und Einstellungsaufgaben lassen sich nach Vereinbarung gegebenenfalls aus der Ferne bearbeiten. Physische Verbindungen, Installationen und manche Prüfungen brauchen einen Besuch vor Ort. Wir klären, welcher Weg zu Ihrem Anliegen passt."
+        - question: "Reparieren Sie Hardware oder retten Sie beschädigte Datenträger?"
+          paragraphs:
+            - "Bauteilreparaturen, defekte Displays, Ladebuchsen, Platinen- und Flüssigkeitsschäden gehören nicht zum angebotenen Umfang. Beschädigte oder nicht lesbare Speicher brauchen eine spezialisierte Prüfung. Computerhilfe betrifft System, Software und legitime Zugangsprobleme; ein Datenumzug umfasst normal lesbare Dateien."
+        - question: "Wie werden Termine und Kosten vereinbart?"
+          paragraphs:
+            - "Nennen Sie passende Zeiträume und wichtige Fristen. Werktags, abends oder samstags können Termine nach Absprache möglich sein. Wir besprechen den Umfang und ein individuelles Angebot oder erklären einen nötigen kostenpflichtigen Diagnoseschritt. Eine sofortige Verfügbarkeit oder feste Antwortzeit wird nicht zugesagt."
+  - id: abschliessender-kontakt
+    kind: cta
+    recipe: cta.quick-contact
+    content:
+      eyebrow: "Der nächste Schritt"
+      title: "Beschreiben Sie Ihr IT-Problem oder Vorhaben"
+      body: "Ein einzelnes Gerät, Ihr Homeoffice oder die IT im Unternehmen: Eine kurze Erklärung reicht, um das Gespräch zu beginnen."
+      callLabel: "Anliegen telefonisch besprechen"
+      enquiryLabel: "Zurück zur Anfrage"
+      enquiryTarget: kontakt
