@@ -62,7 +62,7 @@ Family/source: `office-network`.
 Family/source: `microsoft-365`.
 
 - [x] **4G — EN · Microsoft 365 workplaces** — `/en/services/business/microsoft-365-workplaces/`. Historical source work retained; separate QA outstanding.
-- [ ] **3G — DE · Microsoft 365 workplaces** — `/leistungen/unternehmen/microsoft-365-arbeitsplaetze/`.
+- [x] **3G — DE · Microsoft 365 workplaces** — `/leistungen/unternehmen/microsoft-365-arbeitsplaetze/`. Existing source from 503239d refined and source/repository/browser verified in v2.3.12; QA-G remains open.
 
 ### Google Workspace / cloud
 

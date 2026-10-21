@@ -219,7 +219,9 @@ composition:
         tone: quiet
         title: Berechtigungen bewusst vergeben
         body: Nicht jeder braucht Zugriff auf jedes Postfach oder jeden Ordner. Wir klären Rollen und Freigaben mit einer
-          verantwortlichen Person, statt aus Bequemlichkeit pauschale Administratorrechte zu vergeben.
+          verantwortlichen Person, statt aus Bequemlichkeit pauschale Administratorrechte zu vergeben. Im vereinbarten
+          Umfang prüfen wir auch die Mehrfaktor-Authentifizierung und vorhandene Wiederherstellungsoptionen mit den
+          berechtigten Verantwortlichen; eine Wiederherstellung geschützter Zugänge können wir nicht garantieren.
       - type: prose
         paragraphs:
         - Beim Ausscheiden eines Mitarbeiters sind Zugriffsänderungen, die Behandlung wichtiger Arbeitsdateien und die
@@ -288,7 +290,9 @@ composition:
         title: Bei bestehenden Strukturen vorsichtig vorgehen
         body: Das Verschieben von Dateien oder Umstellen von Berechtigungen kann vorhandene Links, synchronisierte Ordner
           und Arbeitsabläufe verändern. Vor umfangreicheren Änderungen klären wir wichtige Beteiligte, Abhängigkeiten
-          und vorhandene Sicherungen.
+          und vorhandene Sicherungen. Synchronisierung ersetzt keine unabhängige Sicherung. Eine zusätzliche Backup-Lösung
+          wird gesondert vereinbart; Cloud-Speicher und Aufbewahrungsfunktionen allein sind keine Garantie, dass sich
+          jede Datei wiederherstellen lässt.
   - id: migration-und-aenderungen
     kind: explanation
     recipe: explanation.editorial-prose
@@ -314,7 +318,9 @@ composition:
         title: Abstimmung vor dem Wechsel
         body: Der Ablauf, ein gegebenenfalls nötiges Wartungsfenster, eine Kopie der wichtigen Daten und nachvollziehbare
           Tests werden vor der Durchführung vereinbart. Wir versprechen keine unterbrechungsfreie oder vollständige Migration
-          ohne Prüfung der Quellsysteme und Lizenzen.
+          ohne Prüfung der Quellsysteme und Lizenzen. Komplexe Projekte mit unternehmensweiten Governance-, Compliance-
+          oder besonderen Sicherheitsanforderungen benötigen eine gesonderte fachliche Prüfung durch entsprechend
+          spezialisierte Dienstleister.
       - type: prose
         paragraphs:
         - Nach dem Wechsel prüfen wir mit den betroffenen Personen vereinbarte Funktionen wie Anmeldung, E-Mail-Versand
