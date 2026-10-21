@@ -168,6 +168,7 @@ Use the VorOrt private-service art language: premium tactile editorial illustrat
   - **Suggested source ratio:** `16:9` or `5:3`
   - **Use in page:** hero banner artwork
   - **Target path:** `ω┇Engine/public/images/concept-ii/business/B1.png`
+  - **Current Google Workspace use:** B1 does not exist. Both production locales provisionally reuse `technical-field-berlin.jpg` through the shared responsive image component (v2.3.10), with broad desktop/mobile crops and truthful workplace alt text. This fixes a missing-asset build failure; it does not accept either artwork for this service. Review the existing fallback or supply/accept B1 before release.
   - **Prompt:**
 
 ```text

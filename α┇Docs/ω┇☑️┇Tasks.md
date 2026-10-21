@@ -68,8 +68,8 @@ Family/source: `microsoft-365`.
 
 Family/source: `google-workspace`.
 
-- [ ] **4H — EN · Google Workspace / cloud** — `/en/services/business/google-workspace-cloud/`.
-- [ ] **3H — DE · Google Workspace / cloud** — `/leistungen/unternehmen/google-workspace-cloud/`.
+- [x] **4H — EN · Google Workspace / cloud** — `/en/services/business/google-workspace-cloud/`. Existing source from 503239d reviewed and repaired in v2.3.10; repository/browser verified, QA-H remains open.
+- [x] **3H — DE · Google Workspace / cloud** — `/leistungen/unternehmen/google-workspace-cloud/`. Existing source from 8dcbe0a reviewed and repaired in v2.3.10; repository/browser verified, QA-H remains open.
 
 ### Business services landing
 

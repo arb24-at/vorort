@@ -150,8 +150,8 @@ composition:
         actually works.
       media:
         subject: business-hero
-        src: /images/concept-ii/business/B1.png
-        alt: Illustrated small-office work area with desks, devices and network connections.
+        src: /images/technical-field-berlin.jpg
+        alt: Illustrated home-office and small workplace with computers, a router and printers.
       actions:
       - label: Discuss your Workspace request
         target: contact

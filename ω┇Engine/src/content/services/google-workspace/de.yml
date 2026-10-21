@@ -134,8 +134,8 @@ composition:
         braucht.
       media:
         subject: business-hero
-        src: /images/concept-ii/business/B1.png
-        alt: Illustration einer kleinen Büroumgebung mit Arbeitsplätzen, Geräten und Netzwerkverbindungen.
+        src: /images/technical-field-berlin.jpg
+        alt: Illustrierter Homeoffice- und kleiner Bürobereich mit Computern, Router und Druckern.
       actions:
       - label: Google-Workspace-Anliegen besprechen
         target: kontakt

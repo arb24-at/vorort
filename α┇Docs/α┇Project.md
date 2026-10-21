@@ -82,7 +82,7 @@ All paths below are inside `ω┇Engine/`.
 
 Use strict semantic records. Default recipe-service pages use Approved sections/blocks and a shell enquiry. Explicit existing page trials in `production-policy.ts` permit only listed experiments on their exact identity/locale/audience/slug; no trial currently authorises the new list block. Future trials cite an approved blueprint/version and decision. Schema and rendering enforce permissions independently of lifecycle. One opening hero, one enquiry, compatible recipes, unique/reserved anchors and valid navigation remain enforced. Blueprint intent determines the rest of the journey, not a fixed Home Network pattern.
 
-All private service locale pairs, plus English business networks and Microsoft 365, use recipe composition; other service records retain their existing templates. Root hero summaries must match the opening recipe. Related IDs resolve through the real route map. The optional `contactAfter` places the legacy shell after orientation and requires further content. Compact presentation follows trial/early-enquiry composition, is shared with Lab, and does not depend on a service ID.
+All private service locale pairs, both Google Workspace locales and both Microsoft 365 locales use recipe composition; English business networks also use it, with German network migration next. Other service records retain their existing templates. Root hero summaries must match the opening recipe. Related IDs resolve through the real route map. The optional `contactAfter` places the legacy shell after orientation and requires further content. Compact presentation follows trial/early-enquiry composition, is shared with Lab, and does not depend on a service ID.
 
 ## Audience gateways
 
