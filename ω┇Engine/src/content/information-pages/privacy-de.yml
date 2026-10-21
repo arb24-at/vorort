@@ -11,11 +11,9 @@ header:
   eyebrow: Datenschutz · Arbeitsentwurf
   title: Datenschutzerklärung
   intro: >-
-    Dieser Entwurf beschreibt den aktuellen technischen Aufbau der Website und die Wege für
-    Anfragen. Die Identität des Verantwortlichen, Kommunikationsanbieter und weitere
-    Verarbeitungsangaben sind noch nicht bestätigt. Der Text ist keine vollständige,
-    veröffentlichungsfertige Datenschutzerklärung. Die deutsche Fassung bleibt die maßgebliche
-    rechtliche Quelle.
+    Dieser Entwurf beschreibt die Website und ihre Anfrageformulare. Die Identität des
+    Verantwortlichen, Kommunikationsanbieter und weitere Verarbeitungsangaben müssen noch bestätigt
+    werden. Die Erklärung ist unvollständig und muss vor der Veröffentlichung geprüft werden.
 sections:
   - id: verantwortlicher
     kind: explanation
@@ -36,7 +34,7 @@ sections:
     kind: explanation
     recipe: explanation.editorial-prose
     content:
-      title: Bereitstellung der Website und Hosting
+      title: "Hosting und Seitenaufrufe"
       blocks:
         - type: prose
           paragraphs:
@@ -114,9 +112,8 @@ sections:
               diesen Weg wählen, öffnen Sie einen vom Anbieter kontrollierten Dienst. Sie können
               stattdessen einen anderen Kontaktweg nutzen.
             - >-
-              Sobald eine Nachricht oder ein Anruf beim Unternehmen eingeht, richtet sich die
-              weitere Verarbeitung nach den tatsächlich verwendeten Kommunikationsdiensten und
-              Unterlagen des Betreibers.
+              Nach dem Eingang einer Nachricht oder eines Anrufs hängt die weitere Verarbeitung von
+              den tatsächlichen Kommunikationsdiensten und Unterlagen des Betreibers ab.
             - >-
               [Bestätigen: E-Mail- und Telefonanbieter, WhatsApp-Konto und geschäftliche
               Einrichtung, Empfänger und Zugriffsberechtigte, mögliche internationale
@@ -154,11 +151,11 @@ sections:
         - type: prose
           paragraphs:
             - >-
-              Der aktuelle Quellcode der Kundenseiten enthält keine Analyse- oder Werbeskripte,
-              nicht notwendigen Cookies oder Nutzung von localStorage beziehungsweise
-              sessionStorage. Das Formular speichert keine Entwürfe in einem von der Website
-              verwalteten Browserspeicher. Browserfunktionen, Ihr E-Mail-Programm und externe
-              Dienste haben eigenes Verhalten.
+              Im aktuellen Quellcode der Kundenseiten sind keine Analyse- oder Werbeskripte und
+              keine nicht notwendigen Cookies implementiert. Auch localStorage oder sessionStorage
+              werden dort nicht verwendet. Das Formular speichert keine Entwürfe in einem von der
+              Website verwalteten Browserspeicher. Browserfunktionen, Ihr E-Mail-Programm und
+              externe Dienste haben eigenes Verhalten.
             - >-
               [Vor Veröffentlichung das tatsächliche Netzwerk- und Speicherverhalten im Browser
               sowie Änderungen an Hosting, Formularen, Schriftarten oder Dritteinbindungen prüfen.

@@ -34,14 +34,14 @@ Family/source: `computer-laptop`.
 Family/source: `software-installation`.
 
 - [x] **4C — EN · Software installation / optimisation** — `/en/services/private/software-installation-optimisation/`. Source-complete in v2.2.41 (`604f5ff`); QA/RV-015 outstanding; blueprint approval pending.
-- [x] **3C — DE · Software installation / optimisation** — `/leistungen/privatpersonen/software-installation-optimierung/`. Source/readback verified 2026-10-21; repository/browser/Git checks remain RV-017 and QA-C remains open.
+- [x] **3C — DE · Software installation / optimisation** — `/leistungen/privatpersonen/software-installation-optimierung/`. Source-complete; repository and representative desktop/mobile checks updated in v2.3.17. Remaining RV-017 design/form/media decisions and QA-C stay open.
 
 ### Setup and data transfer
 
 Family/source: `setup-data-transfer`.
 
-- [x] **4D — EN · Setup and data transfer** — `/en/services/private/setup-data-transfer/`. Source/readback verified 2026-10-21; RV-018/QA-D open.
-- [x] **3D — DE · Setup and data transfer** — `/leistungen/privatpersonen/einrichtung-datenumzug/`. Source/readback verified 2026-10-21; RV-019/QA-D open.
+- [x] **4D — EN · Setup and data transfer** — `/en/services/private/setup-data-transfer/`. Source-complete; repository and representative desktop/mobile checks updated in v2.3.17. Remaining RV-018 form/media decisions and QA-D stay open.
+- [x] **3D — DE · Setup and data transfer** — `/leistungen/privatpersonen/einrichtung-datenumzug/`. Source-complete; repository and representative desktop/mobile checks updated in v2.3.17. Remaining RV-019 form/media decisions and QA-D stay open.
 
 ### Private services landing
 
@@ -128,6 +128,7 @@ Each task covers the family’s source-complete EN/DE pages as they become avail
 
 - [ ] **1D — Historical Approved Sections / Design Lab QA** — Retained unfinished ID. Review registry/block lifecycle, guidance/usage, Workshop/Approved specimens, tablet/responsive behaviour, focus/disclosures, capture/clipboard/download and wider production regressions. Consolidated RV IDs remain in Collaboration.
 - [x] **5C — Shared footer adoption** — Explicitly assigned/approved by Aykhan on 2026-10-21. Canonical `footer.site` specimen and shared EN/DE footer adopted on all customer pages; source/repository and representative desktop/mobile review verified in v2.3.16. Does not close 1D or page/release QA.
+- [x] **5D — Bilingual consistency and editorial refinement** — Explicit maintenance assignment, 2026-10-21: compare and implement all 13 EN/DE page pairs, combine useful detail, align each pair’s composition/contact experience and improve natural copy. Preserve routes, SEO evidence, service boundaries, draft legal status and independent recipe lifecycle. Source/readback, repository validation and desktop/mobile checks completed in v2.3.17; separate QA-A–M and publication remain open.
 - [ ] **5A — Bilingual site-wide consistency and production QA** — Ownership/cannibalisation, shared meaning with local SEO, metadata/links, truthful scope, accessibility, media, layout and form paths across revised pages.
 - [ ] **5B — Publication readiness decision** — Operator/contact/brand/legal facts, media, backend/privacy/spam/delivery, domain/indexing, dependencies and release health. Only Aykhan authorises release; no automatic push/deployment.
 

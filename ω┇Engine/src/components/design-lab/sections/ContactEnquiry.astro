@@ -167,7 +167,7 @@ const privacyHref = withBase(locale === "en" ? "/en/privacy/" : "/datenschutz/")
             <p>{ui.safety}</p>
           </div>
 
-          <p class="c2-contact__privacy">{ui.privacy} <a href={privacyHref}>{ui.privacyLink}</a>.</p>
+          <p class="c2-contact__privacy">{emailDraft ? ui.draftPrivacy : ui.privacy} <a href={privacyHref}>{ui.privacyLink}</a>.</p>
 
           <button class="c2-contact__submit" type="submit" disabled={!emailDraft && !formEndpoint} aria-describedby={`${id}-delivery-status`}>
             <span data-submit-label>{emailDraft ? ui.draftButton : ui.sendButton}</span>

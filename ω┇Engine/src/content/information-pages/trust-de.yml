@@ -11,10 +11,10 @@ header:
   eyebrow: Unsere Arbeitsweise
   title: So gehen wir mit Ihren Geräten und Daten um
   intro: >-
-    Bei IT-Hilfe kann Zugriff auf persönliche Dateien, geschäftliche Systeme oder Konten nötig
-    sein. Wir erklären, welche Zugriffe gebraucht werden, stimmen die Arbeit mit Ihnen ab und
-    machen wichtige Änderungen nachvollziehbar. Hier erfahren Sie, worauf es vor einem Termin, bei
-    der Arbeit und bei der Übergabe ankommt.
+    Bei IT-Hilfe kann Zugriff auf persönliche Dateien, geschäftliche Systeme oder Konten nötig sein.
+    Wir erklären die benötigten Zugriffe, stimmen die Arbeit mit Ihnen ab und erläutern wichtige
+    Änderungen. Hier erfahren Sie, was Sie vor einem Termin, während der Arbeit und bei der Übergabe
+    erwartet.
 sections:
   - id: vor-der-arbeit
     kind: explanation
@@ -105,10 +105,9 @@ sections:
         - type: prose
           paragraphs:
             - >-
-              Nach der Arbeit prüfen wir die relevanten Funktionen anhand der vereinbarten
-              Aufgabe. Ob ein Computer wieder startet, eine Verbindung funktioniert oder ein
-              freigegebener Ordner erreichbar ist, sollte sich in Ihrer tatsächlichen Nutzung
-              zeigen.
+              Nach der Arbeit prüfen wir die relevanten Funktionen anhand der vereinbarten Aufgabe.
+              Dabei prüfen wir, ob Sie Computer, Verbindung oder gemeinsamen Ordner für die Aufgabe
+              nutzen können, die Anlass für den Auftrag war.
             - >-
               Wir erläutern die wichtigen Änderungen, benötigte Einstellungen und verbleibende
               Grenzen oder nächste Schritte. Gehört eine Dokumentation zum Auftrag, soll sie Ihnen
@@ -129,10 +128,9 @@ sections:
               Hilfe mit Windows und macOS, Microsoft 365, Google Workspace, Heim- und
               Büronetzwerke sowie die Einrichtung neuer Geräte.
             - >-
-              Erfahrung hilft dabei, die richtigen Fragen zu stellen. Ob ein Auftrag passt, hängt
-              dennoch von der konkreten Aufgabe ab. Hat Ihr Unternehmen besondere Vorgaben für
-              Zugriffe, Freigaben oder Dokumentation, nennen Sie diese bitte zu Beginn. So können
-              wir die Arbeiten verantwortungsvoll einschätzen.
+              Hat Ihr Unternehmen besondere Vorgaben für Zugriffe, Freigaben oder Dokumentation,
+              nennen Sie diese bitte zu Beginn. So können wir prüfen, ob der Auftrag zu unserem
+              Angebot passt und welche Absprachen nötig sind.
 nextStep:
   title: Ihre Umgebung oder besondere Anforderungen besprechen
   body: >-

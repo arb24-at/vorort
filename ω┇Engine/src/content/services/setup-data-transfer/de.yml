@@ -84,7 +84,7 @@ seo:
 hero:
   eyebrow: "Neuer PC oder Mac · Vor Ort in Berlin"
   title: "Neuen Computer einrichten und Daten übernehmen"
-  intro: "Ein neuer Computer soll sich nach dem Auspacken auch im Alltag nutzen lassen. Wir helfen bei der Auswahl eines passenden Windows-PCs, Laptops oder Macs, richten das Gerät ein und übertragen die vereinbarten lesbaren Dateien sowie wichtige Einstellungen. Haben Sie den Computer schon gekauft, können wir direkt mit der Einrichtung beginnen."
+  intro: "Wir helfen bei der Auswahl und Einrichtung eines Windows-PCs, Laptops oder Macs, übertragen vereinbarte lesbare Dateien und verbinden E-Mail und Zubehör. Haben Sie den Computer bereits gekauft, beginnen wir mit der Einrichtung. Auch Kaufberatung oder eine einzelne Einrichtungsaufgabe können ein eigener Auftrag sein."
 problems:
   eyebrow: "Typische Ausgangslagen"
   title: "Wenn ein Gerätewechsel mehr ist als Auspacken und Einschalten"
@@ -138,7 +138,7 @@ composition:
       content:
         eyebrow: "Neuer PC oder Mac · Vor Ort in Berlin"
         title: "Neuen Computer einrichten und Daten übernehmen"
-        intro: "Ein neuer Computer soll sich nach dem Auspacken auch im Alltag nutzen lassen. Wir helfen bei der Auswahl eines passenden Windows-PCs, Laptops oder Macs, richten das Gerät ein und übertragen die vereinbarten lesbaren Dateien sowie wichtige Einstellungen. Haben Sie den Computer schon gekauft, können wir direkt mit der Einrichtung beginnen."
+        intro: "Wir helfen bei der Auswahl und Einrichtung eines Windows-PCs, Laptops oder Macs, übertragen vereinbarte lesbare Dateien und verbinden E-Mail und Zubehör. Haben Sie den Computer bereits gekauft, beginnen wir mit der Einrichtung. Auch Kaufberatung oder eine einzelne Einrichtungsaufgabe können ein eigener Auftrag sein."
         media:
           subject: home-office
           src: /images/concept-ii/private/P3.png
@@ -153,7 +153,7 @@ composition:
       recipe: explanation.editorial-prose
       content:
         eyebrow: "Vor dem Wechsel"
-        title: "Neuen Computer aussuchen oder vorhandenes Gerät einrichten"
+        title: "Hilfe vor dem Kauf und bei der Einrichtung"
         intro: "Sie müssen nicht alle Schritte beauftragen. Wir steigen dort ein, wo Sie stehen – von der Kaufberatung bis zum Umzug der wichtigsten Dateien."
         blocks:
           - type: columns
@@ -201,7 +201,7 @@ composition:
               - "Wir vergleichen praktische Fragen wie Desktop oder Laptop, Windows oder Mac, Bildschirmgröße, Arbeitsspeicher, Speicherplatz und Anschlüsse. Dabei beziehen wir ein, ob wichtige Anwendungen verfügbar sind und welches Zubehör kompatibel bleibt."
           - type: columns
             columns:
-              - title: "Vorhandene Geräte weiter nutzen"
+              - title: "Vorhandenes Zubehör weiterverwenden"
                 paragraphs:
                   - "Monitor, Drucker, externe Festplatte oder anderes Zubehör müssen nicht allein wegen des Computerwechsels ersetzt werden. Wir prüfen, ob Anschlüsse, Treiber und unterstützte Funktionen zum neuen Gerät passen."
               - title: "Programme vor dem Kauf prüfen"
@@ -212,7 +212,7 @@ composition:
       recipe: explanation.editorial-prose
       content:
         eyebrow: "Daten auf den neuen PC übertragen"
-        title: "Vor dem Datenumzug festlegen, was wirklich mitkommen soll"
+        title: "Welche Dateien und Konten sollen übernommen werden?"
         intro: "Ein guter Datenumzug beginnt mit einer Bestandsaufnahme: Welche Ordner werden gebraucht, wo liegen sie und wie sollen sie am neuen Computer wiederzufinden sein? Auch der Wechsel zwischen Windows und Mac ist nach Prüfung möglich."
         blocks:
           - type: table
@@ -231,7 +231,7 @@ composition:
                 - "Sind Dateiformate, Kontozugänge und benötigte Anwendungen auf dem Zielsystem nutzbar?"
           - type: callout
             tone: quiet
-            title: "Datenumzug ist keine Datenrettung"
+            title: "Grenzen beim Datenumzug"
             body: "Wir übernehmen normal lesbare Daten. Beschädigte oder nicht lesbare Datenträger erfordern eine andere, spezialisierte Bewertung. Wir versprechen keine Wiederherstellung fehlender Dateien und umgehen weder Passwörter noch Verschlüsselung."
     - id: konten-und-zubehoer
       kind: explanation
@@ -274,7 +274,7 @@ composition:
       content:
         eyebrow: "Von der Planung bis zur Übergabe"
         title: "So organisieren wir den Computerwechsel"
-        intro: "Der Umfang kann klein oder umfangreich sein. Welche Schritte nötig sind, klären wir passend zu den Geräten."
+        intro: "Welche Schritte nötig sind, hängt von Ihren Geräten und den gewünschten Daten ab. Den Umfang vereinbaren wir vorab."
         steps:
           - title: "Ausgangslage schildern"
             body: "Nennen Sie bisherigen Computer, gegebenenfalls das neue Gerät und Ihren Berliner Stadtteil. Wir besprechen, wofür Sie Unterstützung benötigen."

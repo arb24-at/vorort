@@ -29,7 +29,7 @@ sections:
     content:
       eyebrow: "Choose a starting point"
       title: "Help for your home or your business"
-      intro: "The setting helps us understand what matters: your everyday devices and files, or the people and systems that keep a workplace running. Each path explains the services in more detail."
+      intro: "Choose help for your personal devices and home office, or support for your business systems and team. Each page explains the relevant services and how to make an enquiry."
       items:
         - audience: private
           title: "At home & in your home office"
@@ -73,7 +73,7 @@ sections:
     recipe: process.staged-path
     content:
       eyebrow: "How we work"
-      title: "Understand the need, agree the work, check the result"
+      title: "How we agree, carry out and check the work"
       intro: "On-site help lets us see the device and its surroundings together. Suitable remote work can also be considered. We choose the approach with you after clarifying the request."
       steps:
         - title: "Describe the situation"
@@ -81,7 +81,7 @@ sections:
         - title: "Agree an approach"
           body: "We discuss the likely work, costs and whether a visit, suitable remote help or a diagnostic appointment makes sense."
         - title: "Carry out the work"
-          body: "We make the agreed changes. Meaningful risks, dependencies and additional work are discussed before proceeding."
+          body: "We make the agreed changes. We discuss relevant risks, dependencies and additional work before proceeding."
         - title: "Test and explain"
           body: "We check the relevant functions and explain useful settings, changes and any remaining limits or next steps."
   - id: devices-and-data
@@ -89,7 +89,7 @@ sections:
     recipe: explanation.editorial-prose
     content:
       eyebrow: "Your equipment, accounts and files"
-      title: "Clear agreement before consequential changes"
+      title: "Check data and access before making changes"
       blocks:
         - type: columns
           columns:

@@ -29,7 +29,7 @@ sections:
     content:
       eyebrow: "Ein passender Einstieg"
       title: "Hilfe für zu Hause und Ihr Unternehmen"
-      intro: "Für persönliche Geräte und Dateien finden Sie hier ebenso Unterstützung wie für vernetzte Arbeitsplätze und gemeinsam genutzte Dienste. Die beiden Einstiege führen zu den jeweiligen Leistungen."
+      intro: "Wählen Sie Hilfe für Ihre persönlichen Geräte und Ihr Homeoffice oder Unterstützung für die Systeme und Mitarbeitenden Ihres Unternehmens. Auf den jeweiligen Seiten finden Sie Leistungen und Kontaktmöglichkeiten."
       items:
         - audience: private
           title: "Zu Hause & im Homeoffice"
@@ -73,7 +73,7 @@ sections:
     recipe: process.staged-path
     content:
       eyebrow: "So arbeiten wir"
-      title: "Bedarf verstehen, Arbeit vereinbaren und Ergebnis prüfen"
+      title: "So vereinbaren, erledigen und prüfen wir die Arbeit"
       intro: "Vor Ort lassen sich ein Gerät und seine Umgebung zusammen betrachten. Für geeignete Aufgaben kommt auch Fernhilfe infrage. Nach der ersten Einordnung klären wir mit Ihnen, welcher Weg sinnvoll ist."
       steps:
         - title: "Situation schildern"
@@ -89,7 +89,7 @@ sections:
     recipe: explanation.editorial-prose
     content:
       eyebrow: "Ihre Geräte, Konten und Dateien"
-      title: "Klare Absprachen vor folgenreichen Änderungen"
+      title: "Daten und Zugriffe vor Änderungen klären"
       blocks:
         - type: columns
           columns:

@@ -27,10 +27,10 @@ seo:
 hero:
   eyebrow: Software support · Berlin homes & home offices
   title: Software installation help in Berlin
-  intro: A program will not install, an update has broken an everyday task, or your PC has become crowded with
-    software you no longer use. We help install and configure legitimate applications, investigate conflicts and
-    make considered changes to the setup you already have. The aim is a working task and an understandable handover—not
-    a promise that every computer can be made faster.
+  intro: >-
+    If a program will not install, crashes after an update or slows down your PC, we can check the
+    cause and agree a suitable fix. We install and configure supported, properly licensed
+    applications and test the functions you need.
 problems:
   eyebrow: Start with the symptom
   title: When applications stop cooperating
@@ -90,10 +90,10 @@ composition:
     content:
       eyebrow: Software support · Berlin homes & home offices
       title: Software installation help in Berlin
-      intro: A program will not install, an update has broken an everyday task, or your PC has become crowded
-        with software you no longer use. We help install and configure legitimate applications, investigate conflicts
-        and make considered changes to the setup you already have. The aim is a working task and an understandable
-        handover—not a promise that every computer can be made faster.
+      intro: >-
+        If a program will not install, crashes after an update or slows down your PC, we can check
+        the cause and agree a suitable fix. We install and configure supported, properly licensed
+        applications and test the functions you need.
       media:
         subject: private-hero
         src: /images/concept-ii/private/P1.png
@@ -136,9 +136,10 @@ composition:
     recipe: explanation.editorial-prose
     content:
       eyebrow: What we can do
-      title: Software setup and fixes tailored to the actual task
-      intro: One application that needs setting up is a valid job. So is a confusing combination of programs,
-        accounts and settings. We agree a proportionate scope rather than treating every issue as a full PC rebuild.
+      title: "Software installation and troubleshooting"
+      intro: >-
+        You can ask us to set up one application or investigate problems involving several programs
+        and accounts. We agree which applications and settings need attention before making changes.
       blocks:
       - type: columns
         columns:
@@ -197,7 +198,7 @@ composition:
           every program, and a reset may change saved preferences.
       - type: callout
         tone: quiet
-        title: Do not remove the evidence too early
+        title: "Check files and settings before uninstalling"
         body: We discuss important settings, files, licences and available backups before uninstalling or resetting
           software. When account access is involved, the owner must use a legitimate sign-in or recovery route.
   - id: working-method
@@ -224,7 +225,7 @@ composition:
     recipe: explanation.editorial-prose
     content:
       eyebrow: When a computer feels slow
-      title: PC optimisation without unrealistic speed promises
+      title: "PC optimisation: startup, storage and background apps"
       intro: A slow start or delayed application can have several causes. An overfilled startup list is one possibility;
         low free storage, demanding software, a failing drive or limited hardware may be more important.
       blocks:
@@ -244,16 +245,17 @@ composition:
     recipe: explanation.editorial-prose
     content:
       eyebrow: The right kind of help
-      title: Software support, device help and data transfer are different jobs
+      title: "When to choose computer help or data transfer"
       intro: This page covers applications, updates, configuration and software-related performance. It is not
         a hardware-repair service or a guarantee that missing files can be restored.
       blocks:
       - type: prose
         paragraphs:
-        - For broader computer startup, operating-system or hardware-fault symptoms, see the related Computer
-          & Laptop Help service below. For preparing a new computer and moving normal, readable files and accounts
-          between devices, see Setup & Data Transfer. Damaged or inaccessible media require a separately assessed
-          recovery route.
+        - >-
+          For startup, operating-system or account-access problems, see Computer & Laptop Help
+          below. For a new computer and the transfer of normally readable files, see Setup & Data
+          Transfer. Physical faults need a hardware-repair specialist; damaged or unreadable storage
+          needs a separate recovery assessment.
       - type: callout
         tone: outline
         title: Access and supported software

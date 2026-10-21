@@ -11,9 +11,8 @@ header:
   eyebrow: Legal information · Working draft
   title: Legal notice
   intro: >-
-    This draft sets out the information that must be confirmed for the website operator. It is
-    incomplete and is not yet a publication-ready legal notice. The German version is the
-    authoritative legal source.
+    This draft is incomplete. The listed operator and contact details must be verified and completed
+    before publication.
 sections:
   - id: operator
     kind: explanation
@@ -37,7 +36,7 @@ sections:
       blocks:
         - type: prose
           paragraphs:
-            - "[Required: an operative email address and confirmed means of direct communication.]"
+            - "[Required: a working email address and confirmed means of direct communication.]"
             - >-
               The centrally configured demonstration phone number, address and email must not be
               treated as the operator’s verified contact details.
@@ -86,8 +85,8 @@ sections:
               requiring an additional named person under section 18(2) of the German Interstate
               Media Treaty.]
             - >-
-              This conditional requirement should not be filled with an invented name or
-              automatically treated as applicable to ordinary service descriptions.
+              Whether this additional requirement applies to the actual website still needs to be
+              confirmed.
 draftNotice:
   title: Operator information is still missing
   body: >-
@@ -95,8 +94,8 @@ draftNotice:
     verified legal details and are deliberately not repeated here.
 missingFacts:
   - Full legal operator name and establishment address suitable for publication.
-  - Verified operative email address and direct contact details.
-  - Applicable legal-form, register and assigned tax/business identification details.
+  - "Verified working email address and direct contact details."
+  - "Applicable legal-form, register and assigned VAT/business identification details."
   - >-
     Consumer conciliation participation, obligations and any applicable editorial-responsibility
     information.

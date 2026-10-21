@@ -23,7 +23,7 @@ const anchorBase = Astro.props.anchorBase;
           </div>
         </div>
       </div>
-      <div class="pw-hero__art">
+      <div class="pw-hero__art" data-subject={content.media.subject}>
         <WorkshopImage {...content.media} sizes="(max-width: 767px) 100vw, (max-width: 1200px) 92vw, 1080px" eager />
       </div>
     </div>

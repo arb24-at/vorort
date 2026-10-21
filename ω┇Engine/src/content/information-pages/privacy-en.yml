@@ -11,10 +11,9 @@ header:
   eyebrow: Privacy · Working draft
   title: Privacy notice
   intro: >-
-    This draft describes the website’s current technical setup and enquiry paths. The controller’s
-    identity, communication providers and several processing details have not yet been confirmed.
-    It is not a complete publication-ready privacy notice. The German version remains
-    authoritative.
+    This draft describes the website and its enquiry forms. The controller’s identity, communication
+    providers and several processing details still need confirmation. The notice is incomplete and
+    must be checked before publication.
 sections:
   - id: controller
     kind: explanation
@@ -25,8 +24,8 @@ sections:
         - type: prose
           paragraphs:
             - >-
-              [Required: the controller’s full legal name, establishment address and operative
-              contact email. Confirm any representative or data protection officer details only if
+              [Required: the controller’s full legal name, establishment address and working contact
+              email. Confirm any representative or data protection officer details only if
               applicable.]
             - >-
               The example details elsewhere in this draft website are not verified controller
@@ -35,7 +34,7 @@ sections:
     kind: explanation
     recipe: explanation.editorial-prose
     content:
-      title: Website delivery and hosting
+      title: "Hosting and page requests"
       blocks:
         - type: prose
           paragraphs:
@@ -109,8 +108,8 @@ sections:
               opens a service controlled by its provider. You can use another contact route
               instead.
             - >-
-              After a message or call reaches the business, the actual communication services and
-              records used by the operator determine further processing.
+              After the business receives a message or call, further processing depends on the
+              operator’s actual communication services and records.
             - >-
               [Confirm the email and telephone providers, WhatsApp business/account setup,
               recipients and access, any international-transfer arrangements, and whether and how

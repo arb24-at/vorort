@@ -77,6 +77,7 @@ Use the VorOrt private-service art language: premium tactile editorial illustrat
   - **Suggested source ratio:** `4:3`
   - **Use in page:** `scope.topic-index` and `explanation.editorial-media` home-office chapter
   - **Target path:** `ω┇Engine/public/images/concept-ii/private/P3.png`
+  - **Bilingual computer-help reuse — 2026-10-21:** Both `/en/services/private/computer-laptop-help/` and `/leistungen/privatpersonen/computer-laptop-hilfe/` use this existing workspace illustration in `hero.editorial-art`. Preserve the computer/desk in the broad desktop and compact mobile crops. This adds no generation request and does not accept the candidate.
   - **DE production request — Task 3A:** `Homeoffice & Geräte` in `scope.topic-index`, section `themen`, linking to `#homeoffice` on `/leistungen/privatpersonen/wlan-heimnetz/`. Retain the Workshop placements above; the German detail chapter uses real text and no additional image.
   - **EN production reuse — Task 4A:** Same artwork in `scope.topic-index`, section `topics`, linking to `#home-office` on `/en/services/private/wifi-home-network/`. The English page follows the German composition and needs no separate artwork or generation request.
   - **Production crop:** supporting topic image; wide desktop strip and compact mobile thumbnail. Supply a `4:3` master with the main subject near the centre, recognisable at 88px wide; allow generous crop-safe margins. Exact target remains `P3.png` above.

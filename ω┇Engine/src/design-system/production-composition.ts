@@ -13,7 +13,7 @@ const common = { sections: z.array(recipeSectionSchema).min(2), related: related
 // trial compositions own one recipe enquiry and a related-navigation position.
 export const productionCompositionSchema = z.union([
   z.object({ ...common, contact: getSectionRecipe("contact.enquiry").schema, contactAfter: anchor.optional() }).strict(),
-  z.object({ ...common, experiment: z.enum(["wifi-home-network-en-test", "computer-laptop-en-preview", "business-network-en-preview", "business-network-de-preview", "microsoft-365-en-preview", "microsoft-365-de-preview"]), relatedBefore: anchor }).strict(),
+  z.object({ ...common, experiment: z.enum(["wifi-home-network-en-test", "wifi-home-network-de-preview", "computer-laptop-en-preview", "computer-laptop-de-preview", "business-network-en-preview", "business-network-de-preview", "microsoft-365-en-preview", "microsoft-365-de-preview"]), relatedBefore: anchor }).strict(),
 ]);
 
 export function validateProductionSections(

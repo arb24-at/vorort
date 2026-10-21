@@ -158,7 +158,6 @@ for (const required of [
   '<title>Heimnetzwerk einrichten in Berlin: WLAN, Mesh &amp; NAS</title>',
   'data-service-page="wifi-home-network-de"',
   'data-recipe="explanation.connection-path"',
-  'role="region" tabindex="0" aria-labelledby="wlan-mesh-table-2"',
   'id="kontakt"', 'action="mailto:',
 ]) {
   if (!wifiHtml.includes(required)) errors.push(`German home-network page missing required output: ${required}`);
@@ -197,7 +196,9 @@ for (const match of wifiEnHtml.matchAll(/href="#([^"]+)"/g)) {
   if (!wifiEnIds.includes(match[1])) errors.push(`English home-network anchor is missing: ${match[1]}`);
 }
 if (wifiEnHtml.includes('href="#kontakt"')) errors.push("English home-network contact links must use the English anchor");
-if (wifiHtml.indexOf('id="kontakt"') < wifiHtml.indexOf('id="related-services"')) errors.push("German closing enquiry must retain its position");
+const wifiDeTableLabel = wifiHtml.match(/role="region" tabindex="0" aria-labelledby="(wlan-mesh-table-\d+)"/)?.[1];
+if (!wifiDeTableLabel || !wifiHtml.includes(`<h3 id="${wifiDeTableLabel}">`)) errors.push("German Wi-Fi comparison needs an accessible labelled scroll region");
+if (!(wifiHtml.indexOf('id="praktische-hilfe"') < wifiHtml.indexOf('id="kontakt"') && wifiHtml.indexOf('id="kontakt"') < wifiHtml.indexOf('id="themen"'))) errors.push("German home-network enquiry must follow orientation and precede deeper chapters");
 
 for (const recipe of ["recognition.situations", "cta.quick-contact", "contact.enquiry-email"]) {
   if (!wifiEnHtml.includes(`data-recipe="${recipe}"`)) errors.push(`Authorised English recipe is missing: ${recipe}`);
@@ -215,7 +216,7 @@ for (const required of [
   '<html lang="en">', '<title>Computer Support Berlin | Windows, Mac &amp; Laptop Help</title>',
   `rel="canonical" href="${computerCanonical}"`,
   `hreflang="de" href="${computerAlternate}"`,
-  'data-service-page="computer-laptop-en"', 'data-recipe="hero.service-intro"', 'data-recipe="scope.chapter-links"',
+  'data-service-page="computer-laptop-en"', 'data-recipe="hero.editorial-art"', 'data-recipe="scope.chapter-links"',
   'data-delivery="email"', 'Prepare email draft', 'BitLocker', 'macOS',
 ]) if (!computerHtml.includes(required)) errors.push(`Computer support missing required output: ${required}`);
 if ((computerHtml.match(/<h1[ >]/g) ?? []).length !== 1 || (computerHtml.match(/<form\b/g) ?? []).length !== 1) errors.push("Computer support needs one H1 and one enquiry form");

@@ -3,7 +3,7 @@ kind: page-blueprint
 status: review-draft
 service-directory: software-installation
 page-id: software-optimisation
-blueprint-version: 0.2
+blueprint-version: 0.3
 approval: pending-product-owner-review
 approved-version: null
 approval-reference: null
@@ -24,7 +24,7 @@ locales:
 
 # Bilingual blueprint · Software installation and optimisation
 
-**Review draft, approval pending.** Converts the English v0.1 working draft into a shared EN/DE plan. English source exists; German remains a different legacy composition. This target does not approve or migrate either locale. The unknown German Drive URL is deliberately null; use the verified repository path until a real file link is available.
+**Review draft, approval pending.** Converts the English v0.1 working draft into a shared EN/DE plan. Both locales now implement the corresponding Approved recipe composition through separately assigned source work. This target remains unapproved; implementation does not supply blueprint approval. The unknown German Drive URL is deliberately null; use the verified repository path until a real file link is available.
 
 ## Shared brief
 
@@ -208,11 +208,11 @@ No experimental production adoption is requested by this plan. The new list bloc
 
 ## Links, adoption and implementation dependencies
 
-Use related canonical IDs `computer-laptop` and `setup-data-transfer`; preserve the distinction between whole-device software/system support and component repair. The current English boundary wording routes hardware-fault symptoms to Computer Help despite that page not advertising hardware diagnosis; QA-C must reconcile this rather than amplifying it in German. Installation decisions concern suitability before work; update conflicts concern failure after changes; process concerns the customer engagement. Keep those different reader jobs.
+Use related canonical IDs `computer-laptop` and `setup-data-transfer`; preserve the distinction between whole-device software/system support and component repair. The v2.3.17 editorial pass corrected the former English hardware-fault cross-reference: Computer Help covers system/software/access issues; physical faults require a hardware specialist. Installation decisions concern suitability before work; update conflicts concern failure after changes; process concerns the customer engagement. Keep those different reader jobs.
 
-**Current EN:** nine Approved recipe instances and three shell functions (enquiry, related, return) in the existing route. `contactAfter: practical-help` inserts the legacy form. The return shell has no instance ID today; do not claim `return-to-contact` already exists. **Current DE:** legacy source at the linked path; the shared target remains unimplemented. Existing summaries/routes/translation ID stay intact. No production copy is changed by converting this blueprint.
+**Current EN:** nine Approved recipe instances and three shell functions (enquiry, related, return) in the existing route. `contactAfter: practical-help` inserts the legacy form. The return shell has no instance ID today; do not claim `return-to-contact` already exists. **Current DE:** corresponding nine Approved instances with localised anchors and the same legacy shell functions; `contactAfter: hilfe-ueberblick` places the enquiry after orientation. Both locales have since received the v2.3.17 bilingual editorial pass. The overview remains authoring guidance, not an assertion that German uses the English instance IDs. Existing routes/translation ID and pending approval stay intact.
 
-**Contact decision:** this plan documents the existing mailto shell, not a live direct endpoint. It opens on desktop and currently closes into a disclosure below 739px; its combined contact/context fields, consent checkbox and privacy/safety presentation differ from the intended shared enquiry experience. Review with Aykhan before migration or adopting it as a universal standard. A switch to `contact.enquiry-email` changes the planned interaction/experiment scope and must return to blueprint review; German interface support is not yet implemented there. Direct delivery also needs authorised backend/privacy configuration.
+**Contact decision:** this plan documents the existing mailto shell, not a live direct endpoint. It opens on desktop and currently closes into a disclosure below 739px; its combined contact/context fields, consent checkbox and privacy/safety presentation differ from the intended shared enquiry experience. Review with Aykhan before migration or adopting it as a universal standard. A switch to `contact.enquiry-email` changes the planned interaction/experiment scope and must return to blueprint review; Shared German interface and validation support exists, but does not itself authorise a software-page experiment. Direct delivery also needs authorised backend/privacy configuration.
 
 P1 is a generic home environment illustration, not proof of customer work or a software-specific accepted asset. Review its fit through the existing media process. No extra chapter images are needed. Target copy can become more compact by removing repeated limits rather than adding new decorative blocks.
 
@@ -221,3 +221,5 @@ P1 is a generic home environment illustration, not proof of customer work or a s
 Confirm sufficient useful orientation before contact, comfortable desktop/mobile form, meaningful continuation, native table/focus behaviour, mobile dock, one form/H1/contact anchor, true mailto transport, valid `contactAfter`, base-aware related routes and unchanged default consumers. Research & SEO must resolve provisional evidence; Aykhan must review this bilingual plan and the form/media choices. Source completion is not QA approval or publication.
 
 **Version note:** v0.2 preserves the useful eleven-part English guide, adds explicit German meaning/SEO/source relationships and corrects shell-return/contact implementation claims. It adds no experiment permission, new service or customer-copy migration.
+
+**v0.3 factual update:** records current German adoption, the resolved hardware-routing wording and existing German enquiry support. Journey guidance, provisional keyword status, content-file links and pending approval are unchanged; the legacy-form/media decisions remain open.

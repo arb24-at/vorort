@@ -11,8 +11,8 @@ header:
   eyebrow: Our working methods
   title: How we work with your devices and data
   intro: >-
-    IT help can involve personal files, business systems and accounts. We explain what access is needed,
-    agree the work with you and make important changes understandable. Here is what to consider before an
+    IT help can involve personal files, business systems and accounts. We clarify the access needed,
+    agree the work with you and explain important changes. Here is what to expect before an
     appointment, during the work and at handover.
 sections:
   - id: before-work
@@ -97,9 +97,9 @@ sections:
         - type: prose
           paragraphs:
             - >-
-              After the work, we test the relevant functions with the agreed task in mind. A computer
-              starting again, a working connection or access to a shared folder should be checked in the
-              way you actually use it.
+              After the work, we test the relevant functions with the agreed task in mind. We check
+              that you can use the computer, connection or shared folder for the task that prompted
+              the request.
             - >-
               We explain the important changes, settings you need and any remaining limits or next steps.
               Where documentation is part of the agreed work, it should help you or the responsible IT
@@ -118,9 +118,9 @@ sections:
               connected services. The current offer includes Windows and macOS help, Microsoft 365,
               Google Workspace, home and office networks, and new-device setup.
             - >-
-              Experience helps us ask useful questions, but the right fit still depends on the task. If
-              your organisation has particular access, approval or documentation requirements, mention
-              them at the start so we can assess the work responsibly.
+              If your organisation has particular access, approval or documentation requirements,
+              tell us at the start. We can then assess whether the task fits the service and what
+              arrangements are needed.
 nextStep:
   title: Discuss your setup or a specific requirement
   body: >-

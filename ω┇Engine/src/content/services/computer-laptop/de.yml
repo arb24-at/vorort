@@ -58,203 +58,378 @@ cta:
   text: "Nennen Sie Gerät, sichtbares Symptom und – falls bekannt – die letzte Änderung. Wir ordnen ein, ob ein Vor-Ort-Termin, weitere Prüfung oder ein anderer Weg sinnvoll ist."
   prompt: "Bitte senden Sie keine Passwörter, PINs, BitLocker-Schlüssel, Bestätigungscodes oder andere Zugangsdaten über das Anfrageformular."
 composition:
+  experiment: computer-laptop-de-preview
+  relatedBefore: abschluss-kontakt
   related:
-    eyebrow: "Weitere Hilfe für zu Hause"
-    title: "Wenn es um Einrichtung, Programme oder das Heimnetz geht"
-    linkLabel: "Leistung ansehen"
+    eyebrow: Weitere Hilfe für zu Hause
+    title: Wenn es um Einrichtung, Programme oder das Heimnetz geht
+    linkLabel: Leistung ansehen
     serviceIds:
       - setup-data-transfer
       - software-optimisation
       - wifi-home-network
-  contact:
-    title: "Computerproblem schildern"
-    intro: "Nennen Sie uns das Gerät, das sichtbare Problem und Ihren Berliner Stadtteil. Sie müssen die Ursache nicht kennen."
-    formIntro: "Das Formular bereitet eine Nachricht in Ihrem E-Mail-Programm vor. Prüfen und senden Sie die E-Mail dort selbst ab; die Website verschickt nichts direkt. Bitte keine Passwörter, PINs oder Wiederherstellungsschlüssel angeben."
-    affectedPlaceholder: "Zum Beispiel Windows-Laptop, PC oder MacBook"
-    request: "Was passiert mit Ihrem Computer?"
-  contactAfter: hilfe-ueberblick
   sections:
     - id: einstieg
       kind: hero
       recipe: hero.editorial-art
       content:
-        eyebrow: "PC- & Mac-Hilfe · Vor Ort in Berlin"
-        title: "PC-Hilfe für Windows und Mac in Berlin"
-        intro: "Ihr Computer startet nicht, ist plötzlich langsam oder bleibt bei der Anmeldung hängen? Wir unterstützen Sie vor Ort in Berlin bei Windows- und macOS-Problemen. Wir prüfen zuerst das Fehlerbild, besprechen mögliche Schritte und berücksichtigen wichtige persönliche Daten, bevor wir etwas verändern."
+        eyebrow: PC- & Mac-Hilfe · Vor Ort in Berlin
+        title: PC-Hilfe für Windows und Mac in Berlin
+        intro: >-
+          Ihr Computer startet nicht, ist plötzlich langsam oder bleibt bei der Anmeldung hängen?
+          Wir unterstützen Sie vor Ort in Berlin bei Windows- und macOS-Problemen. Wir prüfen zuerst
+          das Fehlerbild, besprechen mögliche Schritte und berücksichtigen wichtige persönliche
+          Daten, bevor wir etwas verändern.
         media:
           subject: home-office
           src: /images/concept-ii/private/P3.png
-          alt: "Illustration eines häuslichen Computerarbeitsplatzes."
+          alt: Illustration eines häuslichen Computerarbeitsplatzes.
         actions:
-          - label: "Computerhilfe anfragen"
+          - label: Computerhilfe anfragen
             target: kontakt
-          - label: "Was wir prüfen"
-            target: hilfe-ueberblick
+          - label: Mehr zur Computerhilfe
+            target: themen
     - id: typische-probleme
-      kind: explanation
-      recipe: explanation.editorial-prose
+      kind: recognition
+      recipe: recognition.situations
       content:
-        eyebrow: "Womit Sie sich melden können"
-        title: "Wenn der PC nicht startet oder der Alltag am Rechner stockt"
-        intro: "Ein Fehlercode ist keine Voraussetzung für eine Anfrage. Beschreiben Sie, was Sie sehen und seit wann das Problem besteht."
-        blocks:
-          - type: columns
-            columns:
-              - title: "Start, Abstürze und Geschwindigkeit"
-                paragraphs:
-                  - "Windows fährt nicht hoch, ein Mac bleibt beim Start hängen oder der Computer startet immer wieder neu. Auch ein PC, der plötzlich sehr langsam geworden ist, Anwendungen einfriert oder nach einem Update Fehler zeigt, gehört zu den typischen Anlässen."
-              - title: "Programme, Sicherheit und Anmeldung"
-                paragraphs:
-                  - "Unerwünschte Pop-ups, veränderte Browser-Einstellungen oder Softwarekonflikte können die Nutzung stören. Manchmal liegt das Hindernis am Anmeldebildschirm, an einem Microsoft- oder Apple-Konto oder an einer BitLocker-Abfrage."
-          - type: callout
-            tone: quiet
-            title: "Was Sie vor der Anfrage notieren können"
-            body: "Hilfreich sind Windows oder Mac, die angezeigte Meldung, der Zeitpunkt des ersten Fehlers und mögliche Änderungen davor. Zugangsdaten und Wiederherstellungsschlüssel bleiben bei Ihnen."
+        eyebrow: Womit Sie sich melden können
+        title: Bei diesen Computerproblemen helfen wir
+        intro: >-
+          Beschreiben Sie, was passiert, ob Sie Windows oder macOS nutzen, wie alt der Computer
+          ungefähr ist und was sich zuletzt verändert hat. Die Ursache müssen Sie nicht kennen.
+        items:
+          - title: Der Computer startet nicht richtig
+            body: >-
+              Er erreicht den Desktop nicht, startet immer wieder neu oder bleibt bei einer Fehler-
+              oder Wiederherstellungsanzeige hängen.
+          - title: Einfache Aufgaben dauern plötzlich lange
+            body: >-
+              Schon die Anmeldung, das Öffnen des Browsers oder der Wechsel zwischen Programmen
+              braucht deutlich mehr Zeit als früher.
+          - title: Abstürze und Fehler unterbrechen die Arbeit
+            body: >-
+              Ein Update schlägt fehl, eine Anwendung reagiert nicht mehr oder Windows
+              beziehungsweise macOS läuft nicht zuverlässig.
+          - title: Pop-ups oder unerwünschte Programme erscheinen
+            body: >-
+              Der Browser leitet Sie um, unbekannte Programme öffnen sich oder das Verhalten des
+              Computers hat sich auffällig verändert.
+          - title: Anmeldung oder Wiederherstellung blockiert den Zugang
+            body: >-
+              Ein vergessenes Passwort, ein Kontoproblem oder eine BitLocker-Abfrage verhindert die
+              normale Nutzung.
     - id: hilfe-ueberblick
       kind: explanation
       recipe: explanation.editorial-prose
       content:
-        eyebrow: "Unser Leistungsbereich"
-        title: "System und Software prüfen, bevor etwas neu installiert wird"
-        intro: "Wir suchen nach einer sinnvollen Lösung für das konkrete Problem – vom einzelnen Programmfehler bis zum nicht startenden Betriebssystem. Auch kleine, einmalige Anliegen sind willkommen."
+        eyebrow: Unser Leistungsbereich
+        title: System und Software prüfen, bevor etwas neu installiert wird
+        intro: >-
+          Wir suchen nach einer sinnvollen Lösung für das konkrete Problem – vom einzelnen
+          Programmfehler bis zum nicht startenden Betriebssystem. Auch kleine, einmalige Anliegen
+          sind willkommen.
         blocks:
           - type: columns
             columns:
-              - title: "Windows und macOS"
+              - title: Windows und macOS
                 paragraphs:
-                  - "Wir prüfen Startverhalten, Updates, Einstellungen, Programme und Stabilität. Je nach Befund können wir eine Konfiguration korrigieren, störende Software entfernen, Systemfunktionen reparieren oder eine vereinbarte Neuinstallation durchführen."
-              - title: "Konten und vorhandene Wiederherstellungswege"
+                  - >-
+                    Wir prüfen Startverhalten, Updates, Einstellungen, Programme und Stabilität. Je
+                    nach Befund können wir eine Konfiguration korrigieren, störende Software
+                    entfernen, Systemfunktionen reparieren oder eine vereinbarte Neuinstallation
+                    durchführen.
+              - title: Konten und vorhandene Wiederherstellungswege
                 paragraphs:
-                  - "Bei Anmeldeproblemen helfen wir, die vorgesehenen Wiederherstellungsoptionen für Ihr eigenes Gerät oder Konto zu nutzen. Bei BitLocker prüfen wir, wo ein bereits vorhandener passender Schlüssel liegen könnte; Schutzmechanismen werden nicht umgangen."
+                  - >-
+                    Bei Anmeldeproblemen helfen wir, die vorgesehenen Wiederherstellungsoptionen für
+                    Ihr eigenes Gerät oder Konto zu nutzen. Bei BitLocker prüfen wir, wo ein bereits
+                    vorhandener passender Schlüssel liegen könnte; Schutzmechanismen werden nicht
+                    umgangen.
           - type: callout
             tone: quiet
-            title: "Keine Hardware-Reparaturwerkstatt"
-            body: "Display-, Ladebuchsen-, Mainboard- und Flüssigkeitsschäden gehören nicht zu unserem beworbenen Angebot. Deuten die Symptome auf einen physischen Defekt oder nicht lesbare Datenträger hin, besprechen wir die Grenze und den passenden nächsten Schritt, statt eine Reparatur zu versprechen."
+            title: Daten und Leistungsgrenzen vorab klären
+            body: >-
+              Vor Änderungen mit möglichen Folgen für Ihre Dateien besprechen wir wichtige Daten,
+              lesbare Kopien und vorhandene Backups. Display-, Ladebuchsen-, Mainboard- und
+              Flüssigkeitsschäden benötigen eine Hardware-Fachwerkstatt. Beschädigte oder unlesbare
+              Datenträger gehören nicht zur normalen Computerhilfe.
+    - id: kurzer-kontakt
+      kind: cta
+      recipe: cta.quick-contact
+      content:
+        eyebrow: Anliegen besprechen
+        title: Was passiert mit Ihrem Computer?
+        body: >-
+          Das erste Gespräch ist kostenlos. Rufen Sie an oder schildern Sie das Problem unten im
+          Formular. Eine kostenpflichtige Diagnose vor Ort erklären wir, bevor wir einen Termin
+          vereinbaren.
+        callLabel: Computerproblem telefonisch besprechen
+        enquiryLabel: Problem schriftlich schildern
+        enquiryTarget: kontakt
+    - id: kontakt
+      kind: contact
+      recipe: contact.enquiry-email
+      content:
+        title: Computerhilfe anfragen
+        intro: >-
+          Nennen Sie das Fehlerbild, Ihren Berliner Stadtteil und Änderungen kurz vor dem ersten
+          Auftreten. Eine technische Diagnose ist für die Anfrage nicht nötig.
+        formIntro: >-
+          Das Formular bereitet einen Entwurf in Ihrem E-Mail-Programm vor. Prüfen und senden Sie
+          die Nachricht dort selbst; die Website versendet nichts direkt. * Pflichtfelder.
+        request: Was passiert mit Ihrem Computer?
+        requestPlaceholder: >-
+          Zum Beispiel: Mein Windows-Laptop startet vor der Anmeldung immer wieder neu, seit ein
+          Update installiert wurde. Ich wohne in Charlottenburg. Bitte keine Passwörter, PINs oder
+          Wiederherstellungsschlüssel senden.
+        affectedPlaceholder: Zum Beispiel Windows-Laptop, Desktop-PC oder MacBook
+        emailSubject: Computerhilfe – Anfrage aus Berlin
+    - id: themen
+      kind: scope
+      recipe: scope.chapter-links
+      content:
+        eyebrow: Mehr zum Leistungsumfang
+        title: Mehr zu Computerproblemen und Wiederherstellung
+        intro: >-
+          Sie können direkt anfragen oder genauer nachlesen, was wir bei Startproblemen, langsamen
+          Geräten und geschützten Zugängen prüfen.
+        items:
+          - title: Startprobleme
+            body: Welche Prüfungen bei Windows und macOS infrage kommen.
+            target: startprobleme
+          - title: Tempo, Abstürze und Schadsoftware
+            body: Wie wir Fehler eingrenzen, bevor wir Änderungen vorschlagen.
+            target: langsamer-computer
+          - title: Passwörter und Wiederherstellungsschlüssel
+            body: Vorgesehene Zugangswege und die Grenzen geschützter Konten.
+            target: konto-und-bitlocker
+          - title: Neuinstallation und Dateien
+            body: Was vor größeren Eingriffen geklärt werden muss.
+            target: neuinstallation-und-daten
     - id: startprobleme
       kind: explanation
       recipe: explanation.editorial-prose
       content:
-        eyebrow: "PC startet nicht · Mac startet nicht"
-        title: "Wenn Windows oder macOS nicht mehr richtig startet"
-        intro: "Entscheidend ist, wie weit das Gerät kommt: Bleibt der Bildschirm schwarz, erscheint eine Fehlermeldung oder beginnt der Start immer wieder von vorn? Daraus ergeben sich unterschiedliche Prüfungen."
+        eyebrow: PC startet nicht · Mac startet nicht
+        title: Wenn Windows oder macOS nicht mehr richtig startet
+        intro: >-
+          Entscheidend ist, wie weit das Gerät kommt: Bleibt der Bildschirm schwarz, erscheint eine
+          Fehlermeldung oder beginnt der Start immer wieder von vorn? Daraus ergeben sich
+          unterschiedliche Prüfungen.
         blocks:
           - type: columns
             columns:
-              - title: "Windows-PC und Laptop"
+              - title: Windows-PC und Laptop
                 paragraphs:
-                  - "Wir sehen uns den Startvorgang, vorausgegangene Updates oder Softwareänderungen und die verfügbaren Windows-Wiederherstellungsoptionen an. Ob eine Systemreparatur möglich ist, lässt sich erst nach der Eingrenzung beurteilen."
-              - title: "Mac und macOS"
+                  - >-
+                    Wir sehen uns den Startvorgang, vorausgegangene Updates oder Softwareänderungen
+                    und die verfügbaren Windows-Wiederherstellungsoptionen an. Ob eine
+                    Systemreparatur möglich ist, lässt sich erst nach der Eingrenzung beurteilen.
+              - title: Mac und macOS
                 paragraphs:
-                  - "Bei Macs prüfen wir den sichtbaren Start- und Anmeldezustand sowie die auf diesem Gerät verfügbaren macOS-Wiederherstellungswege. Geräteschutz, Verschlüsselung und der Zustand des Speichers können den weiteren Weg begrenzen."
+                  - >-
+                    Bei Macs prüfen wir den sichtbaren Start- und Anmeldezustand sowie die auf
+                    diesem Gerät verfügbaren macOS-Wiederherstellungswege. Geräteschutz,
+                    Verschlüsselung und der Zustand des Speichers können den weiteren Weg begrenzen.
           - type: prose
             paragraphs:
-              - "Wenn wichtige Dateien nicht erreichbar sind, sollte vor einem Zurücksetzen oder einer Neuinstallation geklärt werden, welche Daten noch lesbar sind. Zeichnet sich ein Hardwaredefekt ab, empfehlen wir eine geeignete Fachstelle oder besprechen einen Gerätewechsel."
+              - >-
+                Wenn wichtige Dateien nicht erreichbar sind, sollte vor einem Zurücksetzen oder
+                einer Neuinstallation geklärt werden, welche Daten noch lesbar sind. Zeichnet sich
+                ein Hardwaredefekt ab, empfehlen wir eine geeignete Fachstelle oder besprechen einen
+                Gerätewechsel.
     - id: langsamer-computer
       kind: explanation
       recipe: explanation.editorial-prose
       content:
-        eyebrow: "Tempo und Zuverlässigkeit"
-        title: "Wenn der Computer langsam ist, abstürzt oder sich ungewöhnlich verhält"
-        intro: "Ein langsamer Laptop muss nicht automatisch ersetzt werden. Wir betrachten zuerst, welche Aufgaben betroffen sind und was sich verändert hat."
+        eyebrow: Tempo und Zuverlässigkeit
+        title: Langsamer Computer, Abstürze und unerwünschte Software
+        intro: >-
+          Ein langsamer Laptop muss nicht automatisch ersetzt werden. Wir betrachten zuerst, welche
+          Aufgaben betroffen sind und was sich verändert hat.
         blocks:
           - type: prose
             paragraphs:
-              - "Wir überprüfen unter anderem Autostart-Programme, Speicherplatz, Hintergrundprozesse, ausstehende Aktualisierungen und mögliche Softwarekonflikte. Danach schlagen wir passende Änderungen vor und testen die Funktionen, die zuvor Schwierigkeiten gemacht haben."
+              - >-
+                Wir überprüfen unter anderem Autostart-Programme, Speicherplatz,
+                Hintergrundprozesse, ausstehende Aktualisierungen und mögliche Softwarekonflikte.
+                Danach schlagen wir passende Änderungen vor und testen die Funktionen, die zuvor
+                Schwierigkeiten gemacht haben.
           - type: columns
             columns:
-              - title: "Fehler nach Updates oder Änderungen"
+              - title: Fehler nach Updates oder Änderungen
                 paragraphs:
-                  - "Wenn Anwendungen nach einer Installation ausfallen oder das System instabil wird, prüfen wir die zeitliche Verbindung und betroffene Einstellungen. Oft ist eine gezielte Korrektur sinnvoller als eine vollständige Neuinstallation."
-              - title: "Schadsoftware und verdächtige Programme"
+                  - >-
+                    Wenn Anwendungen nach einer Installation ausfallen oder das System instabil
+                    wird, prüfen wir die zeitliche Verbindung und betroffene Einstellungen. Oft ist
+                    eine gezielte Korrektur sinnvoller als eine vollständige Neuinstallation.
+              - title: Schadsoftware und verdächtige Programme
                 paragraphs:
-                  - "Wir können unerwünschte Software, Browser-Umleitungen und Hinweise auf Schadsoftware untersuchen und eine Bereinigung oder Neuinstallation besprechen. Möglicherweise betroffene Online-Konten betrachten wir getrennt."
+                  - >-
+                    Wir können unerwünschte Software, Browser-Umleitungen und Hinweise auf
+                    Schadsoftware untersuchen und eine Bereinigung oder Neuinstallation besprechen.
+                    Möglicherweise betroffene Online-Konten betrachten wir getrennt.
           - type: callout
             tone: quiet
-            title: "Was eine Bereinigung nicht beweist"
-            body: "Nach dem Entfernen auffälliger Programme lässt sich nicht pauschal bestätigen, dass alle Dateien und Konten unberührt geblieben sind. Forensische Untersuchungen und umfassende Unternehmens-Cybersicherheit sind nicht Teil dieser privaten Computerhilfe."
+            title: Was eine Bereinigung nicht beweist
+            body: >-
+              Nach dem Entfernen auffälliger Programme lässt sich nicht pauschal bestätigen, dass
+              alle Dateien und Konten unberührt geblieben sind. Forensische Untersuchungen und
+              umfassende Unternehmens-Cybersicherheit sind nicht Teil dieser privaten Computerhilfe.
     - id: konto-und-bitlocker
       kind: explanation
       recipe: explanation.editorial-prose
       content:
-        eyebrow: "Anmeldung und geschützter Zugang"
-        title: "Hilfe bei vergessenem Passwort, Konto und BitLocker"
-        intro: "Ob Windows-PIN, Mac-Anmeldung, Microsoft-Konto oder Apple Account: Die Wiederherstellung hängt davon ab, welcher Zugang betroffen ist und welche Nachweise oder Optionen noch verfügbar sind."
+        eyebrow: Anmeldung und geschützter Zugang
+        title: Hilfe bei vergessenem Passwort, Konto und BitLocker
+        intro: >-
+          Ob Windows-PIN, Mac-Anmeldung, Microsoft-Konto oder Apple Account: Die Wiederherstellung
+          hängt davon ab, welcher Zugang betroffen ist und welche Nachweise oder Optionen noch
+          verfügbar sind.
         blocks:
           - type: columns
             columns:
-              - title: "Passwort, PIN und Account"
+              - title: Passwort, PIN und Account
                 paragraphs:
-                  - "Wir unterscheiden die Geräteanmeldung vom Online-Konto und prüfen gemeinsam die vorgesehenen Wiederherstellungswege. Je nach Situation können Kontobestätigung, ein vertrauenswürdiges Gerät oder ein vorhandener Wiederherstellungsschlüssel erforderlich sein. Ein Zugangserfolg lässt sich nicht garantieren."
-              - title: "BitLocker-Wiederherstellung"
+                  - >-
+                    Wir unterscheiden die Geräteanmeldung vom Online-Konto und prüfen gemeinsam die
+                    vorgesehenen Wiederherstellungswege. Je nach Situation können Kontobestätigung,
+                    ein vertrauenswürdiges Gerät oder ein vorhandener Wiederherstellungsschlüssel
+                    erforderlich sein. Ein Zugangserfolg lässt sich nicht garantieren.
+              - title: BitLocker-Wiederherstellung
                 paragraphs:
-                  - "Fordert Windows einen BitLocker-Schlüssel an, helfen wir, einen vorhandenen Schlüssel im passenden Microsoft- oder Organisationskonto, in gesicherten Unterlagen oder einer gespeicherten Datei zu suchen und abzugleichen. Einen verlorenen Schlüssel können wir nicht neu erzeugen; die Verschlüsselung wird nicht umgangen."
+                  - >-
+                    Fordert Windows einen BitLocker-Schlüssel an, helfen wir, einen vorhandenen
+                    Schlüssel im passenden Microsoft- oder Organisationskonto, in gesicherten
+                    Unterlagen oder einer gespeicherten Datei zu suchen und abzugleichen. Einen
+                    verlorenen Schlüssel können wir nicht neu erzeugen; die Verschlüsselung wird
+                    nicht umgangen.
           - type: callout
             tone: quiet
-            title: "Bitte keine Zugangsdaten schicken"
-            body: "Passwörter, PINs, Bestätigungscodes und Wiederherstellungsschlüssel gehören nicht ins Anfrageformular. Falls eine Eingabe nötig wird, nehmen Sie sie möglichst selbst am Gerät vor. Bei einem verwalteten Arbeitsgerät kann die zuständige IT-Abteilung erforderlich sein."
+            title: Bitte keine Zugangsdaten schicken
+            body: >-
+              Passwörter, PINs, Bestätigungscodes und Wiederherstellungsschlüssel gehören nicht ins
+              Anfrageformular. Falls eine Eingabe nötig wird, nehmen Sie sie möglichst selbst am
+              Gerät vor. Bei einem verwalteten Arbeitsgerät kann die zuständige IT-Abteilung
+              erforderlich sein.
     - id: neuinstallation-und-daten
       kind: explanation
       recipe: explanation.editorial-prose
       content:
-        eyebrow: "Vor größeren Änderungen"
-        title: "Neuinstallation nur mit Blick auf Daten und Zugänge"
-        intro: "Manchmal ist eine Neuinstallation von Windows oder macOS sinnvoll. Vorher besprechen wir, was gesichert werden kann und was danach wieder eingerichtet werden muss."
+        eyebrow: Vor größeren Änderungen
+        title: Neuinstallation nur mit Blick auf Daten und Zugänge
+        intro: >-
+          Manchmal ist eine Neuinstallation von Windows oder macOS sinnvoll. Vorher besprechen wir,
+          was gesichert werden kann und was danach wieder eingerichtet werden muss.
         blocks:
           - type: table
-            title: "Was vor einer Neuinstallation wichtig ist"
+            title: Was vor einer Neuinstallation wichtig ist
             columns:
-              - "Bereich"
-              - "Worüber wir sprechen"
+              - Bereich
+              - Worüber wir sprechen
             rows:
-              - - "Persönliche Dateien"
-                - "Welche Daten benötigt werden, ob sie normal lesbar sind und wohin eine vereinbarte Kopie möglich ist."
-              - - "Programme und Konten"
-                - "Welche Anwendungen, Lizenzen und Anmeldungen nach dem Eingriff erneut benötigt werden."
-              - - "Verschlüsselung und Wiederherstellung"
-                - "Ob die erforderlichen Zugangsdaten und vorhandenen Schlüssel verfügbar sind. Eine Neuinstallation entsperrt keine zuvor verschlüsselten Dateien."
+              - - Persönliche Dateien
+                - >-
+                  Welche Daten benötigt werden, ob sie normal lesbar sind und wohin eine vereinbarte
+                  Kopie möglich ist.
+              - - Programme und Konten
+                - >-
+                  Welche Anwendungen, Lizenzen und Anmeldungen nach dem Eingriff erneut benötigt
+                  werden.
+              - - Verschlüsselung und Wiederherstellung
+                - >-
+                  Ob die erforderlichen Zugangsdaten und vorhandenen Schlüssel verfügbar sind. Eine
+                  Neuinstallation entsperrt keine zuvor verschlüsselten Dateien.
           - type: callout
             tone: quiet
-            title: "Datenübertragung ist keine Datenrettung"
-            body: "Das Sichern normal lesbarer Dateien unterscheidet sich von der Wiederherstellung beschädigter oder unlesbarer Datenträger. Spezial-Datenrettung gehört nicht zu dieser Leistung, und ein Ergebnis kann nicht zugesagt werden."
+            title: Datenübertragung ist keine Datenrettung
+            body: >-
+              Das Sichern normal lesbarer Dateien unterscheidet sich von der Wiederherstellung
+              beschädigter oder unlesbarer Datenträger. Spezial-Datenrettung gehört nicht zu dieser
+              Leistung, und ein Ergebnis kann nicht zugesagt werden.
           - type: prose
             paragraphs:
-              - "Wenn weitere Arbeiten an einem älteren Gerät wenig sinnvoll erscheinen, sagen wir das offen. Die Auswahl und Einrichtung eines neuen Computers und der reguläre Datenumzug können anschließend als eigene Leistung vereinbart werden."
+              - >-
+                Wenn weitere Arbeiten an einem älteren Gerät wenig sinnvoll erscheinen, sagen wir
+                das offen. Die Auswahl und Einrichtung eines neuen Computers und der reguläre
+                Datenumzug können anschließend als eigene Leistung vereinbart werden.
     - id: ablauf
       kind: process
       recipe: process.staged-path
       content:
-        eyebrow: "Von der Anfrage bis zur Übergabe"
-        title: "So läuft die Computerhilfe ab"
-        intro: "Sie erfahren vor jedem größeren Schritt, was wir vorhaben und welche Folgen oder Kosten damit verbunden sind."
+        eyebrow: Von der Anfrage bis zur Übergabe
+        title: So läuft die Computerhilfe ab
+        intro: >-
+          Sie erfahren vor jedem größeren Schritt, was wir vorhaben und welche Folgen oder Kosten
+          damit verbunden sind.
         steps:
-          - title: "Problem schildern"
-            body: "Beschreiben Sie Gerät, Fehlermeldung, Veränderungen und Ihren Berliner Stadtteil. Wir klären, ob ein Besuch, Fernhilfe oder ein anderer Weg passend erscheint."
-          - title: "Prüfen und besprechen"
-            body: "Wir sehen uns die Situation an, sprechen über Datenrisiken und schlagen einen nachvollziehbaren Weg vor. Eine möglicherweise kostenpflichtige Diagnose vor Ort erläutern wir vor der Terminvereinbarung."
-          - title: "Vereinbarte Schritte umsetzen"
-            body: "Wir führen die besprochenen Änderungen durch. Zusätzliche Arbeit, benötigte Geräte oder weitere Termine stimmen wir vorher ab."
-          - title: "Funktion testen"
-            body: "Wir prüfen die betroffenen Funktionen und erklären, was geändert wurde, welche Grenzen bestehen und ob weitere Schritte sinnvoll sind."
+          - title: Problem schildern
+            body: >-
+              Beschreiben Sie Gerät, Fehlermeldung, Veränderungen und Ihren Berliner Stadtteil. Wir
+              klären, ob ein Besuch, Fernhilfe oder ein anderer Weg passend erscheint.
+          - title: Prüfen und besprechen
+            body: >-
+              Wir sehen uns die Situation an, sprechen über Datenrisiken und schlagen einen
+              nachvollziehbaren Weg vor. Eine möglicherweise kostenpflichtige Diagnose vor Ort
+              erläutern wir vor der Terminvereinbarung.
+          - title: Vereinbarte Schritte umsetzen
+            body: >-
+              Wir führen die besprochenen Änderungen durch. Zusätzliche Arbeit, benötigte Geräte
+              oder weitere Termine stimmen wir vorher ab.
+          - title: Funktion testen
+            body: >-
+              Wir prüfen die betroffenen Funktionen und erklären, was geändert wurde, welche Grenzen
+              bestehen und ob weitere Schritte sinnvoll sind.
     - id: fragen
       kind: faq
       recipe: faq.editorial-answers
       content:
-        eyebrow: "Vor der Kontaktaufnahme"
-        title: "Häufige Fragen zur PC-Hilfe in Berlin"
-        intro: "Ein paar praktische Antworten zu Kosten, Terminen und den nächsten Schritten."
+        eyebrow: Vor der Kontaktaufnahme
+        title: Häufige Fragen zur PC-Hilfe in Berlin
+        intro: Ein paar praktische Antworten zu Kosten, Terminen und den nächsten Schritten.
         items:
-          - question: "Was kostet die Computer- und Laptop-Hilfe?"
+          - question: Was kostet die Computer- und Laptop-Hilfe?
             paragraphs:
-              - "Die Kosten hängen vom Fehler und dem Umfang der Arbeit ab; wir erstellen individuelle Angebote. Das erste Gespräch ist kostenlos. Falls ein Diagnosebesuch kostenpflichtig ist, erläutern wir das vor der Vereinbarung. Zusätzliche Arbeiten werden separat abgesprochen."
-          - question: "Kommen Sie zu mir nach Hause?"
+              - >-
+                Die Kosten hängen vom Fehler und dem Umfang der Arbeit ab; wir erstellen
+                individuelle Angebote. Das erste Gespräch ist kostenlos. Falls ein Diagnosebesuch
+                kostenpflichtig ist, erläutern wir das vor der Vereinbarung. Zusätzliche Arbeiten
+                werden separat abgesprochen.
+          - question: Kommen Sie zu mir nach Hause?
             paragraphs:
-              - "Ja, Hilfe vor Ort in Berlin ist unser übliches Modell. Für manche Softwareprobleme kann Fernhilfe ausreichen. Wenn der PC nicht startet oder keine Verbindung hat, ist eine Prüfung vor Ort oft sinnvoller."
-          - question: "Muss alles beim ersten Besuch fertig werden?"
+              - >-
+                Ja, Hilfe vor Ort in Berlin ist unser übliches Modell. Für manche Softwareprobleme
+                kann Fernhilfe ausreichen. Wenn der PC nicht startet oder keine Verbindung hat, ist
+                eine Prüfung vor Ort oft sinnvoller.
+          - question: Muss alles beim ersten Besuch fertig werden?
             paragraphs:
-              - "Nicht unbedingt. Längere Prüfungen oder Neuinstallationen können außerhalb des Vor-Ort-Termins praktikabler sein. Eine Mitnahme und spätere Rückgabe des Computers ist nach Absprache möglich; die Bedingungen klären wir zuvor."
-          - question: "Was sollte ich für die Prüfung bereithalten?"
+              - >-
+                Nicht unbedingt. Längere Prüfungen oder Neuinstallationen können außerhalb des
+                Vor-Ort-Termins praktikabler sein. Eine Mitnahme und spätere Rückgabe des Computers
+                ist nach Absprache möglich; die Bedingungen klären wir zuvor.
+          - question: Was sollte ich für die Prüfung bereithalten?
             paragraphs:
-              - "Halten Sie nach Möglichkeit Computer, Netzteil und eine angezeigte Fehlermeldung bereit. Sagen Sie uns, wenn bestimmte Dateien besonders wichtig sind oder es bereits eine Datensicherung gibt. Geheimnisse und Wiederherstellungsschlüssel senden Sie bitte nicht über die Website."
-          - question: "Sind Termine abends oder samstags möglich?"
+              - >-
+                Halten Sie nach Möglichkeit Computer, Netzteil und eine angezeigte Fehlermeldung
+                bereit. Sagen Sie uns, wenn bestimmte Dateien besonders wichtig sind oder es bereits
+                eine Datensicherung gibt. Geheimnisse und Wiederherstellungsschlüssel senden Sie
+                bitte nicht über die Website.
+          - question: Sind Termine abends oder samstags möglich?
             paragraphs:
-              - "Termine werden individuell vereinbart; je nach Absprache kommen auch Abende oder Samstage infrage. Nennen Sie Ihren zeitlichen Rahmen in der Anfrage. Eine sofortige Verfügbarkeit können wir nicht zusagen."
+              - >-
+                Termine werden individuell vereinbart; je nach Absprache kommen auch Abende oder
+                Samstage infrage. Nennen Sie Ihren zeitlichen Rahmen in der Anfrage. Eine sofortige
+                Verfügbarkeit können wir nicht zusagen.
+    - id: abschluss-kontakt
+      kind: cta
+      recipe: cta.quick-contact
+      content:
+        eyebrow: Nächster Schritt
+        title: Beschreiben Sie Ihr Computerproblem
+        body: >-
+          Schildern Sie, was beim Benutzen des Computers passiert. Wir besprechen, ob System-,
+          Software- oder Kontohilfe passt und welcher nächste Schritt sinnvoll ist.
+        callLabel: Computerproblem telefonisch besprechen
+        enquiryLabel: Zurück zur Anfrage
+        enquiryTarget: kontakt

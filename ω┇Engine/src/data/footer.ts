@@ -5,7 +5,7 @@ import type { Locale } from "./services";
 export const footerCopy = {
   en: {
     eyebrow: "Practical IT support · Berlin",
-    title: "Local help for the IT you rely on.",
+    title: "IT support for your home or business.",
     intro: "For homes, home offices and small businesses — from everyday devices to connected workplaces.",
     signals: ["On-site in Berlin", "Remote support where suitable", "IT experience since 2008"],
     serviceInformation: "Service information",
@@ -17,7 +17,7 @@ export const footerCopy = {
   },
   de: {
     eyebrow: "Praktische IT-Hilfe · Berlin",
-    title: "IT-Hilfe für Ihren Alltag und Ihren Betrieb.",
+    title: "IT-Hilfe für zu Hause und Ihr Unternehmen.",
     intro: "Für Privathaushalte, Homeoffice und kleine Unternehmen — von einzelnen Geräten bis zu vernetzten Arbeitsplätzen.",
     signals: ["Vor Ort in Berlin", "Fernunterstützung nach Absprache", "IT-Erfahrung seit 2008"],
     serviceInformation: "Informationen zum Service",

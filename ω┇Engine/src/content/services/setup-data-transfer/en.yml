@@ -84,7 +84,7 @@ seo:
 hero:
   eyebrow: "New PCs & Macs · On site in Berlin"
   title: "New computer setup and data transfer in Berlin"
-  intro: "Replacing a computer is more than switching it on. We can help choose a suitable Windows PC, laptop or Mac, prepare the new device and move the agreed files and everyday settings from the old one. If you have already bought it, we can start with setup and transfer instead."
+  intro: "We help choose and set up a Windows PC, laptop or Mac, transfer the agreed readable files and reconnect email and equipment. If you have already bought the computer, we can start with setup. Buying advice or a single setup task can also be a separate job."
 problems:
   eyebrow: "Typical situations"
   title: "When replacing a computer involves more than unboxing it"
@@ -138,7 +138,7 @@ composition:
       content:
         eyebrow: "New PCs & Macs · On site in Berlin"
         title: "New computer setup and data transfer in Berlin"
-        intro: "Replacing a computer is more than switching it on. We can help choose a suitable Windows PC, laptop or Mac, prepare the new device and move the agreed files and everyday settings from the old one. If you have already bought it, we can start with setup and transfer instead."
+        intro: "We help choose and set up a Windows PC, laptop or Mac, transfer the agreed readable files and reconnect email and equipment. If you have already bought the computer, we can start with setup. Buying advice or a single setup task can also be a separate job."
         media:
           subject: home-office
           src: /images/concept-ii/private/P3.png
@@ -153,7 +153,7 @@ composition:
       recipe: explanation.editorial-prose
       content:
         eyebrow: "Where are you in the process?"
-        title: "Choosing a device or ready to move from the old one"
+        title: "Help before or after you buy a computer"
         intro: "Some people need help deciding what to buy. Others have a boxed computer and want their familiar working setup back. We begin at the point you have reached."
         blocks:
           - type: columns
@@ -173,7 +173,7 @@ composition:
       recipe: explanation.editorial-prose
       content:
         eyebrow: "What we can do"
-        title: "Setup, readable files, email and everyday equipment"
+        title: "Set up the computer, transfer files and reconnect devices"
         intro: "We agree which parts of the change you want help with. You do not need a full migration package if the immediate job is just setting up a new laptop."
         blocks:
           - type: columns
@@ -181,7 +181,7 @@ composition:
               - title: "Prepare the new computer"
                 paragraphs:
                   - "Set up Windows or macOS, the intended user and system updates. We can configure important software, printers, monitors, docks and other supported peripherals where these are part of the agreed job."
-              - title: "Bring across what matters"
+              - title: "Transfer files and reconnect accounts"
                 paragraphs:
                   - "Move agreed, normally readable documents, photos and personal folders; reconnect email and cloud accounts and check how the new device accesses them. Applications and licences may need separate installation or reactivation rather than being copied as files."
           - type: callout
@@ -201,10 +201,10 @@ composition:
               - "We can compare the practical trade-offs of a desktop, laptop and Mac or Windows computer: screen size, mobility, memory and storage needs, connections for existing accessories and whether essential software is supported. We discuss likely changes before you commit to a purchase."
           - type: columns
             columns:
-              - title: "Keep what still works"
+              - title: "Existing monitors, printers and storage"
                 paragraphs:
                   - "A monitor, printer or storage device may be worth keeping if its connections and drivers are supported. We check compatibility rather than treating a device change as a reason to replace every accessory."
-              - title: "Know what needs separate attention"
+              - title: "Software and licences to check before buying"
                 paragraphs:
                   - "Subscriptions, specialist applications, licence transfers and older software can affect the decision. We assess these before promising that the new computer will reproduce every function of the old one."
     - id: moving-files
@@ -212,7 +212,7 @@ composition:
       recipe: explanation.editorial-prose
       content:
         eyebrow: "The data transfer"
-        title: "Agree what moves before copying anything"
+        title: "Which files and accounts need to move?"
         intro: "A migration works best when the important files, their locations and the destination have been identified. Windows-to-Windows, Mac-to-Mac and cross-platform moves can need different methods."
         blocks:
           - type: table
@@ -231,7 +231,7 @@ composition:
                 - "File formats, account access and application compatibility between Windows and macOS."
           - type: callout
             tone: quiet
-            title: "Unreadable data needs a different service"
+            title: "Limits of normal data transfer"
             body: "Moving readable files is not specialist recovery from a damaged or unreadable drive. We do not promise to recover missing data, unlock inaccessible accounts or bypass encryption. Let us know before anyone resets or erases the old device."
     - id: accounts-peripherals
       kind: explanation

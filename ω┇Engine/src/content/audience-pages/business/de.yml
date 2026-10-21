@@ -13,7 +13,7 @@ sections:
     content:
       eyebrow: "IT für Unternehmen · Vor Ort in Berlin"
       title: "Ihr IT-Dienstleister in Berlin"
-      intro: "Wenn Verbindungen ausfallen, E-Mails nicht ankommen oder ein neues Büro eingerichtet werden soll, betrifft das den gesamten Arbeitsablauf. Wir unterstützen kleine und wachsende Unternehmen bei konkreten IT-Problemen und geplanten Verbesserungen: vom einzelnen Arbeitsplatz bis zum Netzwerk und den gemeinsam genutzten Diensten."
+      intro: "Unzuverlässige Verbindungen, fehlende E-Mails oder ein Büroumzug können die tägliche Arbeit unterbrechen. Wir unterstützen kleine und wachsende Unternehmen in Berlin bei IT-Problemen und geplanten Änderungen – vom einzelnen Computer bis zum Netzwerk und den gemeinsam genutzten Diensten."
       actions:
         - label: "IT-Leistungen ansehen"
           target: leistungen
@@ -84,7 +84,7 @@ sections:
     content:
       eyebrow: "Arbeiten an bestehenden Systemen"
       title: "Änderungen mit Rücksicht auf Ihren Betrieb planen"
-      intro: "Ein neuer Router, ein E-Mail-Umzug oder geänderte Zugriffsrechte können mehr beeinflussen als das ursprüngliche Anliegen. Vor folgenreichen Änderungen vereinbaren wir das gewünschte Ergebnis und klären die Voraussetzungen für eine verantwortbare Umsetzung."
+      intro: "Ein neuer Router, ein E-Mail-Umzug oder geänderte Zugriffsrechte können weitere Arbeitsabläufe beeinflussen. Vor Änderungen an genutzten Systemen klären wir das gewünschte Ergebnis, Zugänge, Abhängigkeiten und ein passendes Zeitfenster."
       blocks:
         - type: columns
           columns:
@@ -102,7 +102,7 @@ sections:
     recipe: process.staged-path
     content:
       eyebrow: "Ein klarer Einstieg"
-      title: "Von Ihrem Bedarf bis zur Übergabe"
+      title: "So planen, erledigen und prüfen wir die Arbeit"
       intro: "Für physische Infrastruktur und die Einrichtung von Arbeitsplätzen ist die Arbeit vor Ort in Berlin meist der Ausgangspunkt. Geeignete Aufgaben lassen sich nach Absprache auch per Fernzugriff bearbeiten."
       steps:
         - title: "Bedarf verstehen"

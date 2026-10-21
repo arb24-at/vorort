@@ -12,7 +12,7 @@ sections:
     recipe: hero.editorial-art
     content:
       eyebrow: "Für zu Hause & Ihr Homeoffice · Berlin"
-      title: "IT-Hilfe für Ihren Alltag zu Hause"
+      title: "IT-Hilfe zu Hause in Berlin"
       intro: "Der Computer startet nicht, das WLAN reicht nicht bis zum Schreibtisch oder ein neuer Laptop wartet auf die Einrichtung. Wir helfen Ihnen mit der Technik, die Sie zu Hause nutzen, und schauen zuerst auf die vorhandenen Geräte. Auch mit einer einzelnen, kleinen Aufgabe können Sie sich an uns wenden."
       media:
         subject: private-hero
@@ -54,7 +54,7 @@ sections:
     content:
       eyebrow: "Ein überschaubarer nächster Schritt"
       title: "Hilfe bei einer einzelnen Aufgabe oder einer größeren Einrichtung"
-      intro: "Sie brauchen weder eine technische Diagnose noch eine Einkaufsliste, bevor Sie uns kontaktieren. Erzählen Sie, was gerade schwierig ist oder was Sie künftig mit Ihrer Technik machen möchten. Gemeinsam klären wir, welche Arbeit sinnvoll ist."
+      intro: "Sie müssen weder die Ursache kennen noch neue Geräte auswählen, bevor Sie uns kontaktieren. Beschreiben Sie das Problem oder die geplante Einrichtung. Danach klären wir gemeinsam einen passenden nächsten Schritt."
       blocks:
         - type: columns
           columns:
@@ -84,7 +84,7 @@ sections:
       blocks:
         - type: prose
           paragraphs:
-            - "Ein abbrechender Videoanruf bedeutet nicht zwangsläufig, dass der Laptop defekt ist. Ein Drucker hängt möglicherweise sowohl vom Computer als auch vom Netzwerk ab. Wir berücksichtigen diese Zusammenhänge im vereinbarten Umfang, statt für jedes Symptom einen eigenen Gerätekauf vorauszusetzen."
+            - "Ein abbrechender Videoanruf kann am Laptop, am WLAN oder an der Internetverbindung liegen. Ein Drucker hängt möglicherweise vom Computer und vom Netzwerk ab. Wir prüfen die betroffenen Geräte und Verbindungen gemeinsam im vereinbarten Umfang."
         - type: columns
           columns:
             - title: "Ihr Arbeitsplatz zu Hause"
@@ -98,7 +98,7 @@ sections:
     recipe: process.staged-path
     content:
       eyebrow: "Nach Ihrer Anfrage"
-      title: "Vom Anliegen bis zur verständlichen Übergabe"
+      title: "So vereinbaren und erledigen wir die Arbeit"
       intro: "Üblicherweise helfen wir vor Ort in Berlin. Für geeignete Aufgaben lässt sich auch eine Unterstützung per Fernzugriff besprechen."
       steps:
         - title: "Anliegen schildern"

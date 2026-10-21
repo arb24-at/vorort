@@ -149,7 +149,7 @@ composition:
       recipe: explanation.editorial-prose
       content:
         eyebrow: "Typische Anlässe"
-        title: "Wenn Programme nicht installieren, starten oder richtig arbeiten"
+        title: "Wenn Programme sich nicht installieren lassen oder nicht richtig funktionieren"
         intro: "Dieselbe Meldung kann verschiedene Ursachen haben. Beschreiben Sie, was genau nicht funktioniert und seit wann – wir prüfen anschließend die naheliegenden Zusammenhänge."
         blocks:
           - type: table
@@ -229,7 +229,7 @@ composition:
       recipe: process.staged-path
       content:
         eyebrow: "So arbeiten wir"
-        title: "Software ändern, ohne andere Aufgaben aus dem Blick zu verlieren"
+        title: "So prüfen und ändern wir Ihre Software"
         intro: "Wie aufwendig eine Prüfung ausfällt, hängt vom Auftrag ab. Die einzelnen Schritte bleiben nachvollziehbar."
         steps:
           - title: "Aufgabe und Fehler klären"
@@ -245,7 +245,7 @@ composition:
       recipe: explanation.editorial-prose
       content:
         eyebrow: "Wenn der Computer langsam wirkt"
-        title: "PC optimieren, ohne eine bestimmte Beschleunigung zu versprechen"
+        title: "PC optimieren: Autostart, Speicherplatz und Programme"
         intro: "Ein langsamer Start kann an vielen Dingen liegen: an überladenem Autostart, wenig freiem Speicher, anspruchsvollen Anwendungen oder begrenzter Hardware. Wir prüfen, was in Ihrem Fall beeinflusst werden kann."
         blocks:
           - type: columns
@@ -261,7 +261,7 @@ composition:
       recipe: explanation.editorial-prose
       content:
         eyebrow: "Der richtige Leistungsbereich"
-        title: "Softwarehilfe, Computerprobleme und Datenumzug unterscheiden"
+        title: "Wann Computerhilfe oder Datenumzug besser passt"
         intro: "Hier geht es um Programme, Updates, Einstellungen und softwarebedingte Leistung. Eine physische Reparaturwerkstatt oder garantierte Wiederherstellung verlorener Dateien gehört nicht dazu."
         blocks:
           - type: prose

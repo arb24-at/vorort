@@ -3,7 +3,7 @@ kind: page-blueprint
 status: review-draft
 service-directory: wifi-home-network
 page-id: wifi-home-network
-blueprint-version: 0.5
+blueprint-version: 0.6
 approval: pending-product-owner-review
 approved-version: null
 approval-reference: null
@@ -43,7 +43,7 @@ The same purpose/order applies to both locales. IDs may be localised as mapped b
 | 01 | Introduction | `introduction` | `einstieg` | `hero.editorial-art` · Approved |
 | 02 | Everyday situations | `everyday-situations` | `alltagssituationen` | `recognition.situations` · Experimental |
 | 03 | Practical help | `practical-help` | `praktische-hilfe` | `explanation.editorial-prose` · Approved |
-| 04 | Quick contact | `quick-contact` | `kontakt-kurz` | `cta.quick-contact` · Experimental |
+| 04 | Quick contact | `quick-contact` | `kurzer-kontakt` | `cta.quick-contact` · Experimental |
 | 05 | Enquiry | `contact` | `kontakt` | `contact.enquiry-email` · Experimental |
 | 06 | Topic navigation | `topics` | `themen` | `scope.topic-index` · Approved |
 | 07 | Wi-Fi and Mesh | `wifi-coverage` | `wlan-mesh` | `explanation.editorial-prose` · Approved |
@@ -54,7 +54,7 @@ The same purpose/order applies to both locales. IDs may be localised as mapped b
 | 12 | Working process | `installation` | `ablauf` | `process.staged-path` · Approved |
 | 13 | Questions | `questions` | `fragen` | `faq.editorial-answers` · Approved |
 | 14 | Related services | `related-services` | `related-services` | `RelatedServices shell` · Shell |
-| 15 | Return to contact | `final-contact` | `kontakt-abschluss` | `cta.quick-contact` · Experimental |
+| 15 | Return to contact | `final-contact` | `abschluss-kontakt` | `cta.quick-contact` · Experimental |
 
 ## 01 · Introduction
 
@@ -91,7 +91,7 @@ The same purpose/order applies to both locales. IDs may be localised as mapped b
 
 ## 04 · Quick contact
 
-**Instance IDs:** EN `quick-contact` · DE `kontakt-kurz`. **Recipe:** `cta.quick-contact` · **Experimental**.
+**Instance IDs:** EN `quick-contact` · DE `kurzer-kontakt`. **Recipe:** `cta.quick-contact` · **Experimental**.
 
 - **Purpose / reader question:** Act conveniently without reading the full guide. Ready to act or continue reading?
 - **Required meaning and useful questions:** Offer an easy call or return to the same written enquiry. Avoid lengthy reassurance and unsupported scheduling or response promises.
@@ -109,7 +109,7 @@ The same purpose/order applies to both locales. IDs may be localised as mapped b
 - **Suggested blocks and freedom:** Exactly one form. Preserve labelled required fields, conditional email/phone, disabled inactive channel, optional context, privacy link and safety notice. Keep direct contact alternatives. Existing block approval is separate from any new addition; no new list trial is requested in this draft.
 - **English SEO coverage:** Natural network-specific prompt; no keyword filling.
 - **German SEO coverage:** Natürliche Frage zu Räumen, Geräten und Anliegen; keine Keyword-Liste.
-- **Length / media / review:** Short prompts words as useful. EN implementation exists. German interface/localised email fields must be implemented and reviewed before DE adoption; the current renderer is English-only. Direct-submit contact.enquiry remains a separate Approved contract with backend/privacy dependency.
+- **Length / media / review:** Short prompts words as useful. Both locale implementations exist with localised interface, feedback and email fields. They prepare a draft; no direct delivery is configured. Direct-submit contact.enquiry remains a separate Approved contract with backend/privacy dependency.
 
 ## 06 · Topic navigation
 
@@ -212,7 +212,7 @@ The same purpose/order applies to both locales. IDs may be localised as mapped b
 
 ## 15 · Return to contact
 
-**Instance IDs:** EN `final-contact` · DE `kontakt-abschluss`. **Recipe:** `cta.quick-contact` · **Experimental**.
+**Instance IDs:** EN `final-contact` · DE `abschluss-kontakt`. **Recipe:** `cta.quick-contact` · **Experimental**.
 
 - **Purpose / reader question:** Act after reading the deeper guide. Optional investigation and next step.
 - **Required meaning and useful questions:** Offer a concise return to the same enquiry/contact choices. No new fields or duplicated form.
@@ -225,12 +225,14 @@ The same purpose/order applies to both locales. IDs may be localised as mapped b
 
 Hero actions and topic links use the mapped anchors; all early/closing contact invitations point to the single locale enquiry. Deeper subjects may recur after the form only with new practical information. Related services use canonical IDs and locale routing. No new NAS route or extra customer image is planned.
 
-**Current EN:** all 15 planned instances/shells render, with historical explicit permission `wifi-home-network-en-test` for recognition, quick CTA and email-draft enquiry. Approval of this merged draft remains pending; it does not expand that scope. **Current DE:** approved hero, topic index, technical chapters, process and visible FAQ, then related services and legacy closing contact. Recognition/practical opening, early form and repeated CTA are target changes, not completed adoption. Keep the current German source untouched until an approved blueprint and exact locale trial/localisation exist.
+**Current implementation (v2.3.17):** both locales render the 15-part journey (14 recipe instances plus related services). EN retains `wifi-home-network-en-test`; DE uses exact `wifi-home-network-de-preview`, separately authorised by Aykhan’s bilingual consistency assignment on 2026-10-21. The German technical explanations and anchors are retained alongside the early localised email-draft enquiry. This factual adoption update does not approve this draft or replace Product Owner review.
 
-**Experimental trial request when approved:** `recognition.situations`, `cta.quick-contact` and `contact.enquiry-email`, exact home-network page in each locale. Approval would authorise those trials only, without promotion. No Experimental prose list is requested. German contact UI/email fields need localisation and review; supported audience/schema alone does not make the existing English renderer German. Direct submission remains outside this fallback plan until backend/privacy approval.
+**Existing trial scope:** `recognition.situations`, `cta.quick-contact` and `contact.enquiry-email`, on each exact authorised home-network identity only. Those permissions do not promote the recipes. No Experimental prose list is requested. German interface/validation and shared transport have received technical review; broader reader/design QA remains open. Direct submission remains outside this fallback plan until backend/privacy approval.
 
 ## Review decisions and checks
 
-Review the shared 15-part journey, sufficient opening content, proportional depth and compact rhythm; cut repetition rather than filling budgets. Confirm truthful contact transport, German localisation plan and artwork acceptance. Inspect one H1, one enquiry, source/anchor order, topic targets, diagram stacking, table keyboard scrolling, desktop/mobile crop/focus/dock and no Lab chrome. Keep source-complete historical tasks separate from these pending plan/adoption decisions.
+Review the shared 15-part journey, sufficient opening content, proportional depth and compact rhythm; cut repetition rather than filling budgets. Review the implemented contact wording/localisation and decide artwork acceptance. Inspect one H1, one enquiry, source/anchor order, topic targets, diagram stacking, table keyboard scrolling, desktop/mobile crop/focus/dock and no Lab chrome. Keep source-complete historical tasks separate from these pending plan/adoption decisions.
 
 **Version note:** v0.5 merges locale plans, preserves current anchors, adds practical scope before German contact, aligns contact transport and replaces obsolete Proposed CTA labels with the actual Experimental registry state. Existing SEO evidence and content-file links are retained. No approval or customer-copy change is made here.
+
+**v0.6 factual update:** records the explicitly assigned bilingual implementation and actual German CTA IDs; removes obsolete English-only renderer claims. Planning meaning, SEO evidence, content-file links and pending approval are unchanged.

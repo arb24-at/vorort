@@ -90,9 +90,9 @@ composition:
         eyebrow: Business accounts, email & collaboration
         title: Microsoft 365 support in Berlin
         intro: >-
-          We help Berlin businesses set up Microsoft 365, solve everyday problems and make planned changes.
-          Whether one colleague cannot use Outlook or your team needs accounts and shared files ready for
-          work, we look at the workplace as well as the cloud services.
+          We help Berlin businesses set up Microsoft 365, solve everyday problems and make planned
+          changes. Whether one colleague cannot use Outlook or your team needs accounts and shared
+          files ready for work, we look at the workplace as well as the cloud services.
         actions:
           - label: Ask about Microsoft 365
             target: contact
@@ -110,27 +110,27 @@ composition:
       recipe: recognition.situations
       content:
         eyebrow: Does this sound familiar?
-        title: Help with the tasks your team needs to get done
+        title: Common Microsoft 365 problems and planned changes
         intro: >-
-          You can ask about one problem, an additional workplace or a wider change. Tell us what people need
-          to be able to do.
+          You can ask about one problem, an additional workplace or a wider change. Tell us what
+          people need to be able to do.
         items:
           - title: A new colleague needs to get started
             body: >-
-              Their account, email, applications and shared folders need to be ready, with access that fits
-              the role.
+              Their account, email, applications and shared folders need to be ready, with access
+              that fits the role.
           - title: Outlook or email is getting in the way
             body: >-
-              Messages are not syncing, sign-in keeps failing or somebody cannot use the shared mailbox they
-              need.
+              Messages are not syncing, sign-in keeps failing or somebody cannot use the shared
+              mailbox they need.
           - title: Shared files have become confusing
             body: >-
-              A document opens for one colleague but not another, OneDrive shows sync problems or nobody is
-              sure which copy to use.
+              A document opens for one colleague but not another, OneDrive shows sync problems or
+              nobody is sure which copy to use.
           - title: You are planning a move to Microsoft 365
             body: >-
-              Email or files need moving from an existing service, and you want to understand the work and its
-              effect on the business first.
+              Email or files need moving from an existing service, and you want to understand the
+              work and its effect on the business first.
     - id: practical-help
       kind: explanation
       recipe: explanation.editorial-prose
@@ -138,23 +138,32 @@ composition:
         eyebrow: What the service includes
         title: Microsoft 365 support for the whole workplace
         intro: >-
-          An email or file-access problem may involve the account, application, permissions or computer. We
-          trace the relevant connections, explain the findings and agree the work with you.
+          An email or file-access problem may involve the account, application, permissions or
+          computer. We trace the relevant connections, explain the findings and agree the work with
+          you.
         blocks:
           - type: columns
             columns:
               - title: Setup and specific problems
                 paragraphs:
                   - >-
-                    We can configure accounts and applications, resolve common email or synchronisation
-                    issues, and organise access to shared work. Existing Microsoft 365 environments are
-                    welcome; you do not need to start again or take on a maintenance contract.
+                    We can configure accounts and applications, resolve common email or
+                    synchronisation issues, and organise access to shared work. Existing Microsoft
+                    365 environments are welcome; you do not need to start again or take on a
+                    maintenance contract.
               - title: Agreed access and changes
                 paragraphs:
                   - >-
-                    We establish who can authorise work on the business account and which access the task
-                    needs. Changes to live users, sharing or domains are discussed before they are made.
-                    Licences and any additional work are agreed separately.
+                    We establish who can authorise work on the business account and which access the
+                    task needs. Changes to live users, sharing or domains are discussed before they
+                    are made. Licences and any additional work are agreed separately.
+          - type: callout
+            tone: quiet
+            title: One-off support is available
+            body: >-
+              Setup, troubleshooting and planned changes can be separate jobs. Recurring
+              administration is agreed independently. Microsoft or your subscription provider
+              remains responsible for its own product, billing and platform support.
     - id: quick-contact
       kind: cta
       recipe: cta.quick-contact
@@ -162,8 +171,8 @@ composition:
         eyebrow: Start with a short conversation
         title: What is your team trying to do?
         body: >-
-          The first conversation is free. Call about the problem, or describe it below. If a paid diagnostic
-          visit is needed, we explain the charge before arranging it.
+          The first conversation is free. Call about the problem, or describe it below. If a paid
+          diagnostic visit is needed, we explain the charge before arranging it.
         callLabel: Call about Microsoft 365
         enquiryLabel: Describe your request
         enquiryTarget: contact
@@ -173,16 +182,16 @@ composition:
       content:
         title: Tell us what your team needs
         intro: >-
-          Include the affected service, roughly how many people are involved, and what should work afterwards.
-          Mention any important dates or recent changes.
+          Include the affected service, roughly how many people are involved, and what should work
+          afterwards. Mention any important dates or recent changes.
         formIntro: >-
-          Prepare a draft in your email app, then review and send it there. This page does not send it
-          directly. * Required fields.
+          Prepare a draft in your email app, then review and send it there. This page does not send
+          it directly. * Required fields.
         request: What do you need help with in Microsoft 365?
         requestPlaceholder: >-
-          For example: A new colleague starts next month. We use Microsoft 365 and need Outlook, Teams and
-          access to the right shared folders set up on a Windows laptop. Our office is in Schöneberg. Please
-          leave out passwords and verification codes.
+          For example: A new colleague starts next month. We use Microsoft 365 and need Outlook,
+          Teams and access to the right shared folders set up on a Windows laptop. Our office is in
+          Schöneberg. Please leave out passwords and verification codes.
         affectedPlaceholder: For example Outlook, Teams, OneDrive, SharePoint or a new Windows workplace
         emailSubject: Microsoft 365 support enquiry — Berlin
     - id: topics
@@ -192,8 +201,8 @@ composition:
         eyebrow: More about the work
         title: Explore Microsoft 365 setup and support
         intro: >-
-          You can get in touch now, or read more about accounts, email, collaboration and planned changes.
-          Each area is considered in the context of the services you actually use.
+          You can get in touch now, or read more about accounts, email, collaboration and planned
+          changes. Each area is considered in the context of the services you actually use.
         items:
           - title: Accounts and workplace setup
             body: Users, licences, applications and appropriate access for the role.
@@ -214,30 +223,38 @@ composition:
         eyebrow: Users, licences and applications
         title: Microsoft 365 accounts and workplace setup
         intro: >-
-          A new starter needs more than a login. Their account, email, applications and file access should
-          match the work they will do and the computer they will use.
+          A new starter needs more than a login. Their account, email, applications and file access
+          should match the work they will do and the computer they will use.
         blocks:
           - type: columns
             columns:
               - title: The business account
                 paragraphs:
                   - >-
-                    We can create or adjust users and groups, assign suitable available licences and configure
-                    the agreed access. We review which services the subscription includes; desktop
-                    applications and Teams availability depend on the actual plan.
+                    We can create or adjust users and groups, assign suitable available licences and
+                    configure the agreed access. We review which services the subscription includes;
+                    desktop applications and Teams availability depend on the actual plan.
               - title: The Windows workplace
                 paragraphs:
                   - >-
-                    We set up the supported Microsoft 365 applications, connect the intended work account and
-                    check email and file access on the computer. If a sign-in problem spans Windows and the
-                    cloud account, both can be considered within the agreed scope.
+                    We set up the supported Microsoft 365 applications, connect the intended work
+                    account and check email and file access on the computer. If a sign-in problem
+                    spans Windows and the cloud account, both can be considered within the agreed
+                    scope.
           - type: callout
             tone: quiet
             title: Access should follow the person’s role
             body: >-
-              We consider multi-factor authentication, recovery options and the permissions needed for the
-              task. When someone changes role or leaves, access and responsibility for their work need
-              reviewing. Routine users should not need administrator rights simply to reach shared files.
+              We review permissions, multi-factor authentication and available recovery options with
+              the authorised people. Routine users should not need administrator rights just to use
+              shared files. Protected access remains subject to legitimate verification and recovery
+              requirements.
+          - type: prose
+            paragraphs:
+              - >-
+                When a colleague leaves, access changes, responsibility for their work files and
+                continued use of their mailbox are separate decisions. We agree these with the
+                responsible people and check what the existing organisation and subscription allow.
     - id: outlook-and-email
       kind: explanation
       recipe: explanation.editorial-prose
@@ -245,31 +262,38 @@ composition:
         eyebrow: Outlook and Exchange Online
         title: Outlook and business email support
         intro: >-
-          When email stops working, we establish who is affected and where the problem appears. An Outlook
-          configuration issue on one computer needs different checks from a problem affecting the whole
-          organisation.
+          When email stops working, we establish who is affected and where the problem appears. An
+          Outlook configuration issue on one computer needs different checks from a problem
+          affecting the whole organisation.
         blocks:
           - type: columns
             columns:
               - title: Outlook and synchronisation
                 paragraphs:
                   - >-
-                    We can check the account connection, application setup, profile and synchronisation
-                    behaviour. Comparing the desktop application with the web mailbox can help identify which
-                    part of the setup needs attention.
+                    We can check the account connection, application setup, profile and
+                    synchronisation behaviour. Comparing the desktop application with the web
+                    mailbox can help identify which part of the setup needs attention.
               - title: Shared mailboxes and calendars
                 paragraphs:
                   - >-
-                    A shared business address may need different people to read messages and send replies.
-                    Mailbox access and permission to send from that address are separate settings; we check
-                    the intended use and test the agreed functions.
+                    A shared business address may need different people to read messages and send
+                    replies. Mailbox access and permission to send from that address are separate
+                    settings; we check the intended use and test the agreed functions.
           - type: prose
             paragraphs:
               - >-
-                Business email can also depend on domain settings and the service itself. Where relevant, we
-                review the Microsoft 365 configuration and service-health information before changing a
-                working setup. Domain or mail-routing changes are planned with the responsible account holder
-                or provider.
+                Business email can also depend on domain settings and the service itself. Where
+                relevant, we review the Microsoft 365 configuration and service-health information
+                before changing a working setup. Domain or mail-routing changes are planned with the
+                responsible account holder or provider.
+          - type: callout
+            tone: quiet
+            title: When the fault is with a provider
+            body: >-
+              A Microsoft, email-hosting or domain-provider fault may need that provider’s support.
+              We can help identify the responsible service and explain the findings, but cannot
+              promise when an external service will be restored.
     - id: collaboration-and-files
       kind: explanation
       recipe: explanation.editorial-prose
@@ -277,9 +301,9 @@ composition:
         eyebrow: Teams, OneDrive and SharePoint
         title: Teams, OneDrive and SharePoint support
         intro: >-
-          A useful file structure starts with who needs to work on the information and who should remain
-          responsible for it. We help review locations, membership, sharing links and synchronisation so
-          colleagues can use the right files.
+          A useful file structure starts with who needs to work on the information and who should
+          remain responsible for it. We help review locations, membership, sharing links and
+          synchronisation so colleagues can use the right files.
         blocks:
           - type: table
             title: How the file services fit together
@@ -289,30 +313,32 @@ composition:
             rows:
               - - OneDrive
                 - >-
-                  An individual’s work files, with selected sharing where needed. Business-wide files need an
-                  agreed home and owner.
+                  An individual’s work files, with selected sharing where needed. Business-wide
+                  files need an agreed home and owner.
               - - SharePoint
                 - >-
-                  Shared team libraries where several people need continuing access to the same business
-                  information.
+                  Shared team libraries where several people need continuing access to the same
+                  business information.
               - - Teams
                 - >-
-                  Conversations, meetings and access to shared work. Files in Teams channels are stored in
-                  SharePoint.
+                  Conversations, meetings and access to shared work. Files in Teams channels are
+                  stored in SharePoint.
           - type: prose
             paragraphs:
               - >-
-                We can organise Teams membership, review who may view or edit files, and investigate missing
-                access or OneDrive sync problems. A link, team membership and a local synced folder are
-                different parts of the experience; we check the actual location and permissions before making
-                changes.
+                We can organise Teams membership, review who may view or edit files, and investigate
+                missing access or OneDrive sync problems. A link, team membership and a local synced
+                folder are different parts of the experience; we check the actual location and
+                permissions before making changes.
           - type: callout
             tone: solid
             title: Synchronisation is not an independent backup
             body: >-
-              Before moving or reorganising important files, we discuss existing protection and recovery
-              arrangements. Any separate backup work is scoped explicitly. Retention, permissions and cloud
-              storage do not justify a blanket promise that information can always be restored.
+              Moving files or changing permissions can affect existing links, synced folders and
+              working routines. We clarify the people and dependencies involved and review
+              protection and recovery arrangements first. Synchronisation is not an independent
+              backup; separate backup work is agreed explicitly, without promising that every file
+              can always be restored.
     - id: migration-and-changes
       kind: explanation
       recipe: explanation.editorial-prose
@@ -320,30 +346,38 @@ composition:
         eyebrow: Review before committing
         title: Moving email and files to Microsoft 365
         intro: >-
-          Moving email or files is a project with dependencies. We assess the source service, available
-          access, users, data and required result before confirming what can be migrated and how.
+          Moving email or files is a project with dependencies. We assess the source service,
+          available access, users, data and required result before confirming what can be migrated
+          and how.
         blocks:
           - type: columns
             columns:
               - title: Email and account dependencies
                 paragraphs:
                   - >-
-                    The review can include mailboxes, shared addresses, calendars, domain control and the way
-                    people sign in. Existing providers or administrators may need to supply access or complete
-                    part of the change.
+                    The review can include mailboxes, shared addresses, calendars, domain control
+                    and the way people sign in. Existing providers or administrators may need to
+                    supply access or complete part of the change.
               - title: Files and everyday working habits
                 paragraphs:
                   - >-
-                    We clarify the files to move, their destination, required permissions and how people will
-                    find them afterwards. Existing links, folder structures and synchronised copies may need
-                    attention as part of the change.
+                    We clarify the files to move, their destination, required permissions and how
+                    people will find them afterwards. Existing links, folder structures and
+                    synchronised copies may need attention as part of the change.
           - type: callout
             tone: outline
             title: Agree what will move, and how it will be checked
             body: >-
-              We define the scope, licensing, timing, data precautions and any expected interruption. The plan
-              includes agreed checks and a clear point for switching over. Large, complex or enterprise
-              governance, compliance and high-security projects need a separate specialist assessment.
+              We define the scope, licensing, timing, data precautions and any expected
+              interruption. The plan includes agreed checks and a clear point for switching over.
+              Large, complex or enterprise governance, compliance and high-security projects need a
+              separate specialist assessment.
+          - type: prose
+            paragraphs:
+              - >-
+                After a change, we check the agreed sign-in, email and file-access functions with
+                the affected users. We record remaining tasks and who is responsible for them as
+                part of the handover.
     - id: working-process
       kind: process
       recipe: process.staged-path
@@ -351,25 +385,25 @@ composition:
         eyebrow: From enquiry to handover
         title: How Microsoft 365 support is arranged
         intro: >-
-          The amount of investigation follows the request. A single workplace problem and a migration need
-          different levels of planning, with the same clear agreement about the work.
+          The amount of investigation follows the request. A single workplace problem and a
+          migration need different levels of planning, with the same clear agreement about the work.
         steps:
           - title: Describe the need
             body: >-
-              Explain the symptom or intended change, affected people, services and timing. We clarify whether
-              on-site or remote work makes sense.
+              Explain the symptom or intended change, affected people, services and timing. We
+              clarify whether on-site or remote work makes sense.
           - title: Review and agree
             body: >-
-              Check the relevant environment and authorised access, then agree the work, costs and any
-              interruption. Diagnostic visit charges are explained in advance.
+              Check the relevant environment and authorised access, then agree the work, costs and
+              any interruption. Diagnostic visit charges are explained in advance.
           - title: Configure or make the change
             body: >-
-              Carry out the agreed setup, troubleshooting or migration steps. Additional work or licences are
-              discussed before proceeding.
+              Carry out the agreed setup, troubleshooting or migration steps. Additional work or
+              licences are discussed before proceeding.
           - title: Test and hand over
             body: >-
-              Check the affected sign-in, email, applications or shared files with the relevant users. Explain
-              important changes, limits and ongoing responsibilities.
+              Check the affected sign-in, email, applications or shared files with the relevant
+              users. Explain important changes, limits and ongoing responsibilities.
     - id: questions
       kind: faq
       recipe: faq.editorial-answers
@@ -381,41 +415,41 @@ composition:
           - question: Can you help with an existing setup or a single problem?
             paragraphs:
               - >-
-                Yes. A blocked Outlook connection, a new user or missing file access can be a standalone
-                request. Ongoing maintenance is optional and discussed separately. You do not need a
-                managed-service contract to ask for help.
-          - question: Do you also help with Office 365?
+                Yes. A blocked Outlook connection, a new user or missing file access can be a
+                standalone request. Ongoing maintenance is optional and discussed separately. You do
+                not need a managed-service contract to ask for help.
+          - question: Do you help with Office 365, and will we need new licences?
             paragraphs:
               - >-
-                Yes. People still use Office 365 when describing their business setup. We establish the actual
-                subscription, applications and services in use, then define the support around them. This page
+                Yes. Office 365 is still commonly used to describe business applications and
+                services. We check your actual subscription and the functions you need, then explain
+                any additional licence requirement before purchases or changes are agreed. This page
                 covers business workplaces rather than personal or Family subscriptions.
-          - question: Will we need new licences or a different subscription?
+          - question: Can you work with our existing administrator?
             paragraphs:
               - >-
-                That depends on the services you need and what you already have. We review the existing
-                licences and explain any additional requirement before changes or purchases are agreed.
-                Support work and licence costs are agreed explicitly; we do not assume every plan includes
-                every application.
+                Yes, where the responsible people agree. Existing domain, Microsoft 365 or device
+                administrators may need to authorise or carry out part of the work. Administrative
+                changes require legitimate access and the necessary approval.
           - question: Is support on site in Berlin or remote?
             paragraphs:
               - >-
-                On-site work in Berlin is the usual model when the computer and workplace are part of the
-                problem. Some account, email or file-access tasks may be suitable remotely. The location,
-                method and appointment are agreed for the actual request.
+                On-site work in Berlin is the usual model when the computer and workplace are part
+                of the problem. Some account, email or file-access tasks may be suitable remotely.
+                The location, method and appointment are agreed for the actual request.
           - question: How much does support cost?
             paragraphs:
               - >-
-                We quote individually according to the request and environment. The first conversation is
-                free. We explain any paid diagnostic visit before arranging it and agree extra work or
-                licences before proceeding.
+                We quote individually according to the request and environment. The first
+                conversation is free. We explain any paid diagnostic visit before arranging it and
+                agree extra work or licences before proceeding.
           - question: Is this Microsoft’s own customer support?
             paragraphs:
               - >-
-                No. This is a local IT service for practical business setup, troubleshooting and planned
-                changes. Microsoft or your subscription provider may need to handle billing, account ownership
-                or a cloud-service fault. We can help identify when the next step belongs with them, without
-                promising a particular response or resolution time.
+                No. This is a local IT service for practical business setup, troubleshooting and
+                planned changes. Microsoft or your subscription provider may need to handle billing,
+                account ownership or a cloud-service fault. We can help identify when the next step
+                belongs with them, without promising a particular response or resolution time.
     - id: final-contact
       kind: cta
       recipe: cta.quick-contact
@@ -423,8 +457,8 @@ composition:
         eyebrow: Discuss the next step
         title: Ask about the Microsoft 365 help you need
         body: >-
-          Tell us what is not working or what you want to change. A short description of the task, affected
-          people and any important dates is enough to begin.
+          Tell us what is not working or what you want to change. A short description of the task,
+          affected people and any important dates is enough to begin.
         callLabel: Call about your request
         enquiryLabel: Return to the enquiry form
         enquiryTarget: contact

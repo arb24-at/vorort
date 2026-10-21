@@ -77,320 +77,411 @@ composition:
     title: Netzwerk und andere Cloud-Dienste mitdenken
     linkLabel: Leistung ansehen
     serviceIds:
-    - network-it-support
-    - google-workspace-cloud
+      - network-it-support
+      - google-workspace-cloud
   sections:
-  - id: einstieg
-    kind: hero
-    recipe: hero.service-intro
-    content:
-      eyebrow: Für Unternehmen · Konten, E-Mail und Zusammenarbeit
-      title: Microsoft 365 Support für Unternehmen in Berlin
-      intro: Wir helfen Berliner Unternehmen bei Microsoft 365 – von einem nicht funktionierenden Outlook-Postfach bis
-        zur Einrichtung neuer Arbeitsplätze und geplanter Umstellungen. Dabei betrachten wir Konten, Anwendungen, Berechtigungen
-        und die betroffenen Geräte zusammen, statt nur an einem einzelnen Programm zu arbeiten.
-      actions:
-      - label: Microsoft 365 anfragen
-        target: kontakt
-      - label: Leistungsbereiche ansehen
-        target: themen
-      note:
-        title: Hilfreich für eine erste Einordnung
+    - id: einstieg
+      kind: hero
+      recipe: hero.service-intro
+      content:
+        eyebrow: Für Unternehmen · Konten, E-Mail und Zusammenarbeit
+        title: Microsoft 365 Support für Unternehmen in Berlin
+        intro: >-
+          Wir helfen Berliner Unternehmen bei Microsoft 365 – von einem nicht funktionierenden
+          Outlook-Postfach bis zur Einrichtung neuer Arbeitsplätze und geplanter Umstellungen. Dabei
+          betrachten wir Konten, Anwendungen, Berechtigungen und die betroffenen Geräte zusammen,
+          statt nur an einem einzelnen Programm zu arbeiten.
+        actions:
+          - label: Microsoft 365 anfragen
+            target: kontakt
+          - label: Leistungsbereiche ansehen
+            target: themen
+        note:
+          title: Hilfreich für eine erste Einordnung
+          items:
+            - Welche Programme oder Dienste betroffen sind
+            - Wie viele Personen oder Arbeitsplätze Unterstützung benötigen
+            - Ob ein Fehler neu auftritt oder eine Änderung geplant ist
+          footnote: >-
+            Bitte keine Kennwörter, MFA-Codes oder Wiederherstellungsdaten über das Formular
+            übermitteln.
+    - id: alltagssituationen
+      kind: recognition
+      recipe: recognition.situations
+      content:
+        eyebrow: Wobei wir helfen
+        title: Typische Microsoft-365-Probleme und geplante Änderungen
+        intro: >-
+          Sie müssen nicht wissen, ob das Problem am Benutzerkonto, an Outlook oder an einer
+          Einstellung liegt. Ein einzelner Vorfall ist ebenso ein Anlass für Unterstützung wie ein
+          geplanter Wechsel.
         items:
-        - Welche Programme oder Dienste betroffen sind
-        - Wie viele Personen oder Arbeitsplätze Unterstützung benötigen
-        - Ob ein Fehler neu auftritt oder eine Änderung geplant ist
-        footnote: Bitte keine Kennwörter, MFA-Codes oder Wiederherstellungsdaten über das Formular übermitteln.
-  - id: alltagssituationen
-    kind: recognition
-    recipe: recognition.situations
-    content:
-      eyebrow: Wobei wir helfen
-      title: Wenn Microsoft 365 den Arbeitsalltag aufhält
-      intro: Sie müssen nicht wissen, ob das Problem am Benutzerkonto, an Outlook oder an einer Einstellung liegt. Ein
-        einzelner Vorfall ist ebenso ein Anlass für Unterstützung wie ein geplanter Wechsel.
-      items:
-      - title: Ein neuer Arbeitsplatz muss bereit sein
-        body: Eine neue Mitarbeiterin oder ein neuer Mitarbeiter benötigt Zugang zu E-Mail, Microsoft-365-Anwendungen
-          und den richtigen Teamdateien.
-      - title: Outlook oder geschäftliche E-Mail funktioniert nicht
-        body: Die Anmeldung schlägt fehl, Nachrichten synchronisieren nicht oder ein gemeinsames Postfach ist nur für
-          manche Personen erreichbar.
-      - title: Teams und gemeinsame Dateien sind unübersichtlich
-        body: In OneDrive oder SharePoint fehlen Dateien, Berechtigungen passen nicht oder Kollegen arbeiten unbeabsichtigt
-          an verschiedenen Kopien.
-      - title: Eine Umstellung steht an
-        body: Postfächer, Dateien oder Benutzer sollen von einer vorhandenen Lösung zu Microsoft 365 wechseln, ohne den
-          laufenden Betrieb aus dem Blick zu verlieren.
-  - id: leistungen
-    kind: explanation
-    recipe: explanation.editorial-prose
-    content:
-      eyebrow: Praktische Unterstützung
-      title: Microsoft 365 im Zusammenspiel mit dem Arbeitsplatz
-      intro: 'Ein sichtbarer Fehler kann an mehreren Stellen entstehen: beim Konto, der Lizenz, den Berechtigungen, der
-        Anwendung oder am Gerät. Wir grenzen den Zusammenhang ein und stimmen die benötigten Änderungen mit Ihnen ab.'
-      blocks:
-      - type: columns
-        columns:
-        - title: Einrichtung und Störungsbehebung
-          paragraphs:
-          - Wir richten Benutzer und passende Zugriffe ein, verbinden unterstützte Anwendungen mit bestehenden Arbeitsplätzen
-            und untersuchen Probleme bei Anmeldung, E-Mail und Dateisynchronisierung. Auch kleine, einmalige Aufgaben
-            sind willkommen.
-        - title: Änderungen mit klarer Freigabe
-          paragraphs:
-          - Vor Eingriffen klären wir, wer Konten und Einstellungen im Unternehmen verwalten darf und welche Zugänge wirklich
-            benötigt werden. Wir besprechen Auswirkungen auf laufende Nutzer, Daten und Lizenzen, bevor wir etwas ändern.
-      - type: callout
-        tone: quiet
-        title: Keine langfristige Betreuung erforderlich
-        body: Sie müssen weder einen vollständigen Plattformwechsel noch einen Wartungsvertrag beauftragen. Wiederkehrende
-          Betreuung ist auf Wunsch ein eigenes Thema; Microsofts eigene Produkt- und Abonnementbetreuung ersetzen wir
-          nicht.
-  - id: kurze-anfrage
-    kind: cta
-    recipe: cta.quick-contact
-    content:
-      eyebrow: Unkompliziert beginnen
-      title: Welche Aufgabe soll wieder funktionieren?
-      body: Beschreiben Sie uns das Problem oder das geplante Vorhaben. Das erste Gespräch ist kostenlos; falls ein Diagnosebesuch
-        kostenpflichtig wäre, besprechen wir das vorher.
-      callLabel: Microsoft-365-Anliegen telefonisch besprechen
-      enquiryLabel: Anliegen schriftlich schildern
-      enquiryTarget: kontakt
-  - id: kontakt
-    kind: contact
-    recipe: contact.enquiry-email
-    content:
-      title: Microsoft-365-Anfrage für Ihr Unternehmen
-      intro: Teilen Sie uns mit, welche Dienste oder Mitarbeiter betroffen sind, was Sie erreichen möchten und in welchem
-        Berliner Stadtteil Sie Unterstützung benötigen. Ein grober Umfang genügt zum Einstieg.
-      formIntro: Das Formular öffnet einen vorbereiteten Entwurf in Ihrer E-Mail-Anwendung. Prüfen und versenden Sie die
-        Nachricht dort selbst; über diese Website wird nichts direkt übermittelt. * Pflichtfelder.
-      request: Wobei benötigen Sie Unterstützung mit Microsoft 365?
-      requestPlaceholder: 'Zum Beispiel: Bei zwei neuen Arbeitsplätzen sollen Outlook, Teams und gemeinsame Ordner eingerichtet
-        werden. Unser Büro liegt in Kreuzberg. Bitte keine Passwörter oder Sicherheitscodes senden.'
-      affectedPlaceholder: Zum Beispiel Outlook, Teams, OneDrive, SharePoint oder Windows-Arbeitsplatz
-      emailSubject: Microsoft 365 Support – Anfrage aus Berlin
-  - id: themen
-    kind: scope
-    recipe: scope.chapter-links
-    content:
-      eyebrow: Mehr zum Leistungsumfang
-      title: Einrichtung, E-Mail, Dateien und geplante Änderungen
-      intro: Nach Ihrer Anfrage können Sie hier genauer nachlesen, welche Zusammenhänge wir bei typischen Aufgaben prüfen
-        und worauf es vor einer Umstellung ankommt.
-      items:
-      - title: Benutzer und Arbeitsplätze
-        body: Konten, Lizenzen, Anwendungen und Rechte passend zur Aufgabe.
-        target: konten-und-arbeitsplaetze
-      - title: Outlook und geschäftliche E-Mail
-        body: Verbindungsprobleme, Postfächer, Kalender und Domains.
-        target: outlook-und-email
-      - title: Teams, OneDrive und SharePoint
-        body: Dateiablage, Zusammenarbeit, Freigaben und Synchronisation.
-        target: zusammenarbeit-und-dateien
-      - title: Migration und Umstellung
-        body: Abhängigkeiten, Zeitplanung, Tests und Übergabe vor einem Wechsel.
-        target: migration-und-aenderungen
-  - id: konten-und-arbeitsplaetze
-    kind: explanation
-    recipe: explanation.editorial-prose
-    content:
-      eyebrow: Benutzer, Lizenzen und Anwendungen
-      title: Neue Mitarbeiter und Microsoft-365-Arbeitsplätze einrichten
-      intro: Für einen einsatzfähigen Arbeitsplatz reicht das Anlegen eines Kontos selten aus. Postfach, Anwendungen und
-        Datei-Zugriff müssen zu den tatsächlichen Aufgaben und dem vorhandenen Gerät passen.
-      blocks:
-      - type: columns
-        columns:
-        - title: Benutzer und Zugriffsgruppen
-          paragraphs:
-          - Wir richten neue Benutzer ein oder passen bestehende Konten und Gruppen an. Dabei prüfen wir, welche Funktionen
-            bereits lizenziert sind und wer auf welche Arbeitsbereiche zugreifen darf. Die tatsächlichen Microsoft-365-Pläne
-            bestimmen den möglichen Umfang.
-        - title: Anwendungen am Windows-Arbeitsplatz
-          paragraphs:
-          - Wir verbinden das vorgesehene Geschäfts- oder Schulkonto mit unterstützten Microsoft-365-Anwendungen, richten
-            Outlook ein und prüfen den Zugriff auf die vereinbarten Dienste. Bei Bedarf beziehen wir Windows-Anmeldung
-            und lokale Geräteeinstellungen in die Prüfung ein.
-      - type: callout
-        tone: quiet
-        title: Berechtigungen bewusst vergeben
-        body: Nicht jeder braucht Zugriff auf jedes Postfach oder jeden Ordner. Wir klären Rollen und Freigaben mit einer
-          verantwortlichen Person, statt aus Bequemlichkeit pauschale Administratorrechte zu vergeben. Im vereinbarten
-          Umfang prüfen wir auch die Mehrfaktor-Authentifizierung und vorhandene Wiederherstellungsoptionen mit den
-          berechtigten Verantwortlichen; eine Wiederherstellung geschützter Zugänge können wir nicht garantieren.
-      - type: prose
-        paragraphs:
-        - Beim Ausscheiden eines Mitarbeiters sind Zugriffsänderungen, die Behandlung wichtiger Arbeitsdateien und die
-          weitere Erreichbarkeit von Postfächern getrennte Entscheidungen. Welche Schritte möglich und sinnvoll sind,
-          hängt von der vorhandenen Organisation und ihren Vereinbarungen ab.
-  - id: outlook-und-email
-    kind: explanation
-    recipe: explanation.editorial-prose
-    content:
-      eyebrow: Outlook und Exchange Online
-      title: Outlook und geschäftliche E-Mail wieder zuverlässig nutzen
-      intro: Wir prüfen zunächst, ob eine Störung nur einen Computer, einen Benutzer oder mehrere Postfächer betrifft.
-        So lässt sich besser unterscheiden, ob die Ursache in Outlook, bei der Anmeldung oder im E-Mail-Dienst liegt.
-      blocks:
-      - type: columns
-        columns:
-        - title: Outlook, Anmeldung und Synchronisation
-          paragraphs:
-          - Ein Konto wird wiederholt abgefragt, ein Profil zeigt alte Nachrichten oder Änderungen erscheinen nicht auf
-            allen Geräten? Wir prüfen Verbindung, Profil, Anwendung und Synchronisationsverhalten und gleichen den Befund
-            bei Bedarf mit dem Webpostfach ab.
-        - title: Gemeinsame Postfächer und Kalender
-          paragraphs:
-          - Für eine gemeinsame Adresse benötigen Teammitglieder je nach Aufgabe Lese- und eigene Sende-Berechtigungen.
-            Wir prüfen die gewünschte Aufgabenteilung und testen, ob der Zugriff und das Versenden mit der richtigen Absenderadresse
-            funktionieren.
-      - type: prose
-        paragraphs:
-        - Auch eine geschäftliche Domain kann für die E-Mail-Zustellung entscheidend sein. Wenn wir DNS- oder Mail-Einstellungen
-          anpassen sollen, klären wir zunächst den bestehenden Provider, die berechtigte Verwaltung und die möglichen
-          Auswirkungen auf den laufenden Nachrichtenverkehr.
-      - type: callout
-        tone: quiet
-        title: Ausfälle beim Anbieter
-        body: Liegt die Ursache bei Microsoft oder einem externen E-Mail-/Domainanbieter, können wir die Situation einordnen
-          und mit Ihnen die zuständige Supportstelle identifizieren. Eine Behebung fremder Dienste oder eine bestimmte
-          Wiederherstellungszeit können wir nicht zusagen.
-  - id: zusammenarbeit-und-dateien
-    kind: explanation
-    recipe: explanation.editorial-prose
-    content:
-      eyebrow: Teams · OneDrive · SharePoint
-      title: Gemeinsame Dateien verständlich organisieren und Zugriffe klären
-      intro: Bei gemeinsamen Dateien geht es nicht allein darum, ob sich ein Dokument öffnen lässt. Wichtig sind ein nachvollziehbarer
-        Ablageort, passende Berechtigungen und Klarheit darüber, welche Version gemeinsam genutzt wird.
-      blocks:
-      - type: table
-        title: Welche Microsoft-365-Dienste welche Aufgabe unterstützen
-        columns:
-        - Dienst
-        - Praktischer Einsatz
-        rows:
-        - - OneDrive
-          - Persönliche Arbeitsdateien, die bei Bedarf gezielt geteilt werden; nicht automatisch die gemeinsame Firmenablage.
-        - - SharePoint
-          - Gemeinsam genutzte Dokumentbibliotheken mit geregelter Mitgliedschaft und laufender Verantwortung für Inhalte.
-        - - Teams
-          - Besprechungen, Kommunikation und Zusammenarbeit; Dateien in Standardkanälen werden über SharePoint bereitgestellt.
-      - type: prose
-        paragraphs:
-        - Wir prüfen Teammitgliedschaften, SharePoint-Rechte, Freigabelinks, Ordner und Synchronisation. Falls bisher
-          private OneDrive-Verzeichnisse für gemeinsame Firmenunterlagen genutzt werden, besprechen wir einen geeigneteren
-          Ablageort und die nötigen Zugriffsänderungen.
-      - type: callout
-        tone: quiet
-        title: Bei bestehenden Strukturen vorsichtig vorgehen
-        body: Das Verschieben von Dateien oder Umstellen von Berechtigungen kann vorhandene Links, synchronisierte Ordner
-          und Arbeitsabläufe verändern. Vor umfangreicheren Änderungen klären wir wichtige Beteiligte, Abhängigkeiten
-          und vorhandene Sicherungen. Synchronisierung ersetzt keine unabhängige Sicherung. Eine zusätzliche Backup-Lösung
-          wird gesondert vereinbart; Cloud-Speicher und Aufbewahrungsfunktionen allein sind keine Garantie, dass sich
-          jede Datei wiederherstellen lässt.
-  - id: migration-und-aenderungen
-    kind: explanation
-    recipe: explanation.editorial-prose
-    content:
-      eyebrow: Vor einem Umzug prüfen
-      title: E-Mail, Dateien oder Benutzer zu Microsoft 365 umstellen
-      intro: Ein Wechsel zu Microsoft 365 betrifft häufig Daten, Konten, Domains und Gewohnheiten im Team. Bevor Umfang
-        oder Termin feststehen, prüfen wir Ausgangssystem, Zugriffsmöglichkeiten und das gewünschte Ergebnis.
-      blocks:
-      - type: columns
-        columns:
-        - title: E-Mail und Domains
-          paragraphs:
-          - Welche Postfächer, gemeinsamen Adressen, Kalender und Geräte sind beteiligt? Wir erfassen benötigte Berechtigungen,
-            die Domainverwaltung sowie Abhängigkeiten zum bisherigen Dienstleister. Manche Schritte erfordern die Freigabe
-            oder Mitwirkung anderer Administratoren.
-        - title: Dateien und Zusammenarbeit
-          paragraphs:
-          - Wir besprechen, welche Daten übernommen werden, wo sie künftig liegen sollen, welche Nutzer sie brauchen und
-            wie sich Links oder Synchronisationspfade verändern. Nicht jede alte Freigabe lässt sich unverändert übertragen.
-      - type: callout
-        tone: outline
-        title: Abstimmung vor dem Wechsel
-        body: Der Ablauf, ein gegebenenfalls nötiges Wartungsfenster, eine Kopie der wichtigen Daten und nachvollziehbare
-          Tests werden vor der Durchführung vereinbart. Wir versprechen keine unterbrechungsfreie oder vollständige Migration
-          ohne Prüfung der Quellsysteme und Lizenzen. Komplexe Projekte mit unternehmensweiten Governance-, Compliance-
-          oder besonderen Sicherheitsanforderungen benötigen eine gesonderte fachliche Prüfung durch entsprechend
-          spezialisierte Dienstleister.
-      - type: prose
-        paragraphs:
-        - Nach dem Wechsel prüfen wir mit den betroffenen Personen vereinbarte Funktionen wie Anmeldung, E-Mail-Versand
-          und Empfang sowie Zugriff auf relevante Dateien. Noch offene Aufgaben und Zuständigkeiten werden festgehalten.
-  - id: ablauf
-    kind: process
-    recipe: process.staged-path
-    content:
-      eyebrow: Von der Anfrage bis zur Übergabe
-      title: So gehen wir bei Microsoft-365-Aufgaben vor
-      intro: Ein einzelnes Outlook-Problem braucht weniger Vorbereitung als die Umstellung einer Umgebung. In beiden Fällen
-        bleibt nachvollziehbar, was geprüft, vereinbart und verändert wird.
-      steps:
-      - title: Anliegen klären
-        body: Sie nennen betroffene Benutzer, Geräte und Dienste sowie das gewünschte Ergebnis. Wir besprechen, ob Hilfe
-          vor Ort oder remote sinnvoll ist.
-      - title: Umgebung und Aufwand prüfen
-        body: Wir klären Berechtigungen, Lizenzen und Abhängigkeiten und stimmen den Umfang ab. Eine möglicherweise kostenpflichtige
-          Diagnose vor Ort besprechen wir vorab.
-      - title: Vereinbarte Arbeit umsetzen
-        body: Wir beheben die Störung oder führen die geplante Einrichtung beziehungsweise Umstellung durch. Zusätzliche
-          Lizenzen, Maßnahmen oder Termine stimmen wir vorher ab.
-      - title: Prüfen und übergeben
-        body: Wir testen die betroffenen Funktionen, erläutern Änderungen und offene Punkte und halten die vereinbarten
-          Zuständigkeiten verständlich fest.
-  - id: fragen
-    kind: faq
-    recipe: faq.editorial-answers
-    content:
-      eyebrow: Häufige Fragen
-      title: Was Unternehmen vor einer Microsoft-365-Anfrage wissen möchten
-      intro: Einige praktische Fragen zu einzelnen Problemen, Lizenzen und Zusammenarbeit mit der bestehenden IT.
-      items:
-      - question: Können Sie auch bei einem einzigen Outlook- oder Zugriffsproblem helfen?
-        paragraphs:
-        - Ja. Eine blockierte Anmeldung, ein neu einzurichtender Nutzer oder fehlender Zugriff auf einen Ordner kann ein
-          eigenständiger Auftrag sein. Eine laufende Betreuung oder ein Managed-Service-Vertrag ist nicht Voraussetzung.
-      - question: Ist Office 365 dasselbe wie Microsoft 365?
-        paragraphs:
-        - Office 365 wird häufig noch als Bezeichnung für geschäftliche Anwendungen und Dienste verwendet. Wir schauen
-          uns das tatsächlich eingesetzte Abonnement und die verfügbaren Funktionen an. Hier geht es um Arbeitsplätze
-          im Unternehmen, nicht um Family- oder Studentenangebote.
-      - question: Brauchen wir neue Microsoft-365-Lizenzen?
-        paragraphs:
-        - Nicht unbedingt. Wir prüfen, welche Abonnements vorhanden sind und welche Funktionen für das Vorhaben gebraucht
-          werden. Wenn zusätzliche oder andere Lizenzen sinnvoll sind, stimmen wir das vor dem Kauf oder der Umstellung
-          ab.
-      - question: Können Sie mit unserem bisherigen Administrator zusammenarbeiten?
-        paragraphs:
-        - Ja, soweit die beteiligten Verantwortlichen zustimmen. Bestehende Domain-, Microsoft-365- oder Geräteadministratoren
-          können für die Freigabe und Durchführung einzelner Schritte notwendig sein. Ohne berechtigten Zugang nehmen
-          wir keine administrativen Änderungen vor.
-      - question: Helfen Sie vor Ort in Berlin oder auch aus der Ferne?
-        paragraphs:
-        - Vor-Ort-Unterstützung in Berlin ist unser normales Arbeitsmodell. Je nach Problem und freigegebenem Zugriff
-          kann eine Fernprüfung sinnvoll sein. Bei Umstellungen und neuen Arbeitsplätzen vereinbaren wir die passende
-          Vorgehensweise individuell.
-      - question: Was kostet die Unterstützung?
-        paragraphs:
-        - Das erste Gespräch ist kostenlos. Danach richtet sich ein individuelles Angebot nach dem tatsächlichen Umfang;
-          wir veröffentlichen keine pauschalen Stunden- oder Paketpreise. Wenn eine Diagnose vor Ort berechnet würde,
-          erläutern wir das vor der Terminvereinbarung.
-  - id: naechster-schritt
-    kind: cta
-    recipe: cta.quick-contact
-    content:
-      eyebrow: Nächster Schritt
-      title: Ihr Microsoft-365-Anliegen gemeinsam eingrenzen
-      body: 'Ob ein Konto hakt, ein neues Team beginnt oder ein Umzug geplant wird: Eine kurze Beschreibung reicht, um
-        das weitere Vorgehen zu besprechen. Senden Sie keine Passwörter oder Sicherheitscodes.'
-      callLabel: Telefonisch Kontakt aufnehmen
-      enquiryLabel: Zurück zur Anfrage
-      enquiryTarget: kontakt
+          - title: Ein neuer Arbeitsplatz muss bereit sein
+            body: >-
+              Eine neue Mitarbeiterin oder ein neuer Mitarbeiter benötigt Zugang zu E-Mail,
+              Microsoft-365-Anwendungen und den richtigen Teamdateien.
+          - title: Outlook oder geschäftliche E-Mail funktioniert nicht
+            body: >-
+              Die Anmeldung schlägt fehl, Nachrichten synchronisieren nicht oder ein gemeinsames
+              Postfach ist nur für manche Personen erreichbar.
+          - title: Teams und gemeinsame Dateien sind unübersichtlich
+            body: >-
+              In OneDrive oder SharePoint fehlen Dateien, Berechtigungen passen nicht oder Kollegen
+              arbeiten unbeabsichtigt an verschiedenen Kopien.
+          - title: Eine Umstellung steht an
+            body: >-
+              Postfächer, Dateien oder Benutzer sollen von einer vorhandenen Lösung zu Microsoft 365
+              wechseln, ohne den laufenden Betrieb aus dem Blick zu verlieren.
+    - id: leistungen
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Praktische Unterstützung
+        title: Microsoft 365 im Zusammenspiel mit dem Arbeitsplatz
+        intro: >-
+          Ein sichtbarer Fehler kann an mehreren Stellen entstehen: beim Konto, der Lizenz, den
+          Berechtigungen, der Anwendung oder am Gerät. Wir grenzen den Zusammenhang ein und stimmen
+          die benötigten Änderungen mit Ihnen ab.
+        blocks:
+          - type: columns
+            columns:
+              - title: Einrichtung und Störungsbehebung
+                paragraphs:
+                  - >-
+                    Wir richten Benutzer und passende Zugriffe ein, verbinden unterstützte
+                    Anwendungen mit bestehenden Arbeitsplätzen und untersuchen Probleme bei
+                    Anmeldung, E-Mail und Dateisynchronisierung. Auch kleine, einmalige Aufgaben
+                    sind willkommen.
+              - title: Änderungen mit klarer Freigabe
+                paragraphs:
+                  - >-
+                    Vor Eingriffen klären wir, wer Konten und Einstellungen im Unternehmen verwalten
+                    darf und welche Zugänge wirklich benötigt werden. Wir besprechen Auswirkungen
+                    auf laufende Nutzer, Daten und Lizenzen, bevor wir etwas ändern.
+          - type: callout
+            tone: quiet
+            title: Keine langfristige Betreuung erforderlich
+            body: >-
+              Sie müssen weder einen vollständigen Plattformwechsel noch einen Wartungsvertrag
+              beauftragen. Wiederkehrende Betreuung ist auf Wunsch ein eigenes Thema; Microsofts
+              eigene Produkt- und Abonnementbetreuung ersetzen wir nicht.
+    - id: kurze-anfrage
+      kind: cta
+      recipe: cta.quick-contact
+      content:
+        eyebrow: Unkompliziert beginnen
+        title: Welche Aufgabe soll wieder funktionieren?
+        body: >-
+          Beschreiben Sie uns das Problem oder das geplante Vorhaben. Das erste Gespräch ist
+          kostenlos; falls ein Diagnosebesuch kostenpflichtig wäre, besprechen wir das vorher.
+        callLabel: Microsoft-365-Anliegen telefonisch besprechen
+        enquiryLabel: Anliegen schriftlich schildern
+        enquiryTarget: kontakt
+    - id: kontakt
+      kind: contact
+      recipe: contact.enquiry-email
+      content:
+        title: Microsoft-365-Anfrage für Ihr Unternehmen
+        intro: >-
+          Teilen Sie uns mit, welche Dienste oder Mitarbeiter betroffen sind, was Sie erreichen
+          möchten und in welchem Berliner Stadtteil Sie Unterstützung benötigen. Ein grober Umfang
+          genügt zum Einstieg.
+        formIntro: >-
+          Das Formular öffnet einen vorbereiteten Entwurf in Ihrer E-Mail-Anwendung. Prüfen und
+          versenden Sie die Nachricht dort selbst; über diese Website wird nichts direkt
+          übermittelt. * Pflichtfelder.
+        request: Wobei benötigen Sie Unterstützung mit Microsoft 365?
+        requestPlaceholder: >-
+          Zum Beispiel: Bei zwei neuen Arbeitsplätzen sollen Outlook, Teams und gemeinsame Ordner
+          eingerichtet werden. Unser Büro liegt in Kreuzberg. Bitte keine Passwörter oder
+          Sicherheitscodes senden.
+        affectedPlaceholder: Zum Beispiel Outlook, Teams, OneDrive, SharePoint oder Windows-Arbeitsplatz
+        emailSubject: Microsoft 365 Support – Anfrage aus Berlin
+    - id: themen
+      kind: scope
+      recipe: scope.chapter-links
+      content:
+        eyebrow: Mehr zum Leistungsumfang
+        title: Einrichtung, E-Mail, Dateien und geplante Änderungen
+        intro: >-
+          Nach Ihrer Anfrage können Sie hier genauer nachlesen, welche Zusammenhänge wir bei
+          typischen Aufgaben prüfen und worauf es vor einer Umstellung ankommt.
+        items:
+          - title: Benutzer und Arbeitsplätze
+            body: Konten, Lizenzen, Anwendungen und Rechte passend zur Aufgabe.
+            target: konten-und-arbeitsplaetze
+          - title: Outlook und geschäftliche E-Mail
+            body: Verbindungsprobleme, Postfächer, Kalender und Domains.
+            target: outlook-und-email
+          - title: Teams, OneDrive und SharePoint
+            body: Dateiablage, Zusammenarbeit, Freigaben und Synchronisation.
+            target: zusammenarbeit-und-dateien
+          - title: Migration und Umstellung
+            body: Abhängigkeiten, Zeitplanung, Tests und Übergabe vor einem Wechsel.
+            target: migration-und-aenderungen
+    - id: konten-und-arbeitsplaetze
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Benutzer, Lizenzen und Anwendungen
+        title: Neue Mitarbeiter und Microsoft-365-Arbeitsplätze einrichten
+        intro: >-
+          Für einen einsatzfähigen Arbeitsplatz reicht das Anlegen eines Kontos selten aus.
+          Postfach, Anwendungen und Datei-Zugriff müssen zu den tatsächlichen Aufgaben und dem
+          vorhandenen Gerät passen.
+        blocks:
+          - type: columns
+            columns:
+              - title: Benutzer und Zugriffsgruppen
+                paragraphs:
+                  - >-
+                    Wir richten neue Benutzer ein oder passen bestehende Konten und Gruppen an.
+                    Dabei prüfen wir, welche Funktionen bereits lizenziert sind und wer auf welche
+                    Arbeitsbereiche zugreifen darf. Die tatsächlichen Microsoft-365-Pläne bestimmen
+                    den möglichen Umfang. Ob Desktop-Anwendungen oder Teams enthalten sind, hängt
+                    vom tatsächlichen Plan ab.
+              - title: Anwendungen am Windows-Arbeitsplatz
+                paragraphs:
+                  - >-
+                    Wir verbinden das vorgesehene Geschäfts- oder Schulkonto mit unterstützten
+                    Microsoft-365-Anwendungen, richten Outlook ein und prüfen den Zugriff auf die
+                    vereinbarten Dienste. Bei Bedarf beziehen wir Windows-Anmeldung und lokale
+                    Geräteeinstellungen in die Prüfung ein.
+          - type: callout
+            tone: quiet
+            title: Berechtigungen bewusst vergeben
+            body: >-
+              Nicht jeder braucht Zugriff auf jedes Postfach oder jeden Ordner. Wir klären Rollen
+              und Freigaben mit einer verantwortlichen Person, statt aus Bequemlichkeit pauschale
+              Administratorrechte zu vergeben. Im vereinbarten Umfang prüfen wir auch die
+              Mehrfaktor-Authentifizierung und vorhandene Wiederherstellungsoptionen mit den
+              berechtigten Verantwortlichen; eine Wiederherstellung geschützter Zugänge können wir
+              nicht garantieren.
+          - type: prose
+            paragraphs:
+              - >-
+                Beim Ausscheiden eines Mitarbeiters sind Zugriffsänderungen, die Behandlung
+                wichtiger Arbeitsdateien und die weitere Erreichbarkeit von Postfächern getrennte
+                Entscheidungen. Welche Schritte möglich und sinnvoll sind, hängt von der vorhandenen
+                Organisation und ihren Vereinbarungen ab.
+    - id: outlook-und-email
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Outlook und Exchange Online
+        title: Outlook und geschäftliche E-Mail wieder zuverlässig nutzen
+        intro: >-
+          Wir prüfen zunächst, ob eine Störung nur einen Computer, einen Benutzer oder mehrere
+          Postfächer betrifft. So lässt sich besser unterscheiden, ob die Ursache in Outlook, bei
+          der Anmeldung oder im E-Mail-Dienst liegt.
+        blocks:
+          - type: columns
+            columns:
+              - title: Outlook, Anmeldung und Synchronisation
+                paragraphs:
+                  - >-
+                    Ein Konto wird wiederholt abgefragt, ein Profil zeigt alte Nachrichten oder
+                    Änderungen erscheinen nicht auf allen Geräten? Wir prüfen Verbindung, Profil,
+                    Anwendung und Synchronisationsverhalten und gleichen den Befund bei Bedarf mit
+                    dem Webpostfach ab.
+              - title: Gemeinsame Postfächer und Kalender
+                paragraphs:
+                  - >-
+                    Für eine gemeinsame Adresse benötigen Teammitglieder je nach Aufgabe Lese- und
+                    eigene Sende-Berechtigungen. Wir prüfen die gewünschte Aufgabenteilung und
+                    testen, ob der Zugriff und das Versenden mit der richtigen Absenderadresse
+                    funktionieren.
+          - type: prose
+            paragraphs:
+              - >-
+                Auch eine geschäftliche Domain kann für die E-Mail-Zustellung entscheidend sein.
+                Wenn wir DNS- oder Mail-Einstellungen anpassen sollen, klären wir zunächst den
+                bestehenden Provider, die berechtigte Verwaltung und die möglichen Auswirkungen auf
+                den laufenden Nachrichtenverkehr.
+          - type: callout
+            tone: quiet
+            title: Ausfälle beim Anbieter
+            body: >-
+              Liegt die Ursache bei Microsoft oder einem externen E-Mail-/Domainanbieter, können wir
+              die Situation einordnen und mit Ihnen die zuständige Supportstelle identifizieren.
+              Eine Behebung fremder Dienste oder eine bestimmte Wiederherstellungszeit können wir
+              nicht zusagen.
+    - id: zusammenarbeit-und-dateien
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Teams · OneDrive · SharePoint
+        title: Gemeinsame Dateien verständlich organisieren und Zugriffe klären
+        intro: >-
+          Bei gemeinsamen Dateien geht es nicht allein darum, ob sich ein Dokument öffnen lässt.
+          Wichtig sind ein nachvollziehbarer Ablageort, passende Berechtigungen und Klarheit
+          darüber, welche Version gemeinsam genutzt wird.
+        blocks:
+          - type: table
+            title: Welche Microsoft-365-Dienste welche Aufgabe unterstützen
+            columns:
+              - Dienst
+              - Praktischer Einsatz
+            rows:
+              - - OneDrive
+                - >-
+                  Persönliche Arbeitsdateien, die bei Bedarf gezielt geteilt werden; nicht
+                  automatisch die gemeinsame Firmenablage.
+              - - SharePoint
+                - >-
+                  Gemeinsam genutzte Dokumentbibliotheken mit geregelter Mitgliedschaft und
+                  laufender Verantwortung für Inhalte.
+              - - Teams
+                - >-
+                  Besprechungen, Kommunikation und Zusammenarbeit; Dateien in Standardkanälen werden
+                  über SharePoint bereitgestellt.
+          - type: prose
+            paragraphs:
+              - >-
+                Wir prüfen Teammitgliedschaften, SharePoint-Rechte, Freigabelinks, Ordner und
+                Synchronisation. Falls bisher private OneDrive-Verzeichnisse für gemeinsame
+                Firmenunterlagen genutzt werden, besprechen wir einen geeigneteren Ablageort und die
+                nötigen Zugriffsänderungen.
+          - type: callout
+            tone: solid
+            title: Bei bestehenden Strukturen vorsichtig vorgehen
+            body: >-
+              Das Verschieben von Dateien oder Umstellen von Berechtigungen kann vorhandene Links,
+              synchronisierte Ordner und Arbeitsabläufe verändern. Vor umfangreicheren Änderungen
+              klären wir wichtige Beteiligte, Abhängigkeiten und vorhandene Sicherungen.
+              Synchronisierung ersetzt keine unabhängige Sicherung. Eine zusätzliche Backup-Lösung
+              wird gesondert vereinbart; Cloud-Speicher und Aufbewahrungsfunktionen allein sind
+              keine Garantie, dass sich jede Datei wiederherstellen lässt.
+    - id: migration-und-aenderungen
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Vor einem Umzug prüfen
+        title: E-Mail, Dateien oder Benutzer zu Microsoft 365 umstellen
+        intro: >-
+          Ein Wechsel zu Microsoft 365 betrifft häufig Daten, Konten, Domains und Gewohnheiten im
+          Team. Bevor Umfang oder Termin feststehen, prüfen wir Ausgangssystem,
+          Zugriffsmöglichkeiten und das gewünschte Ergebnis.
+        blocks:
+          - type: columns
+            columns:
+              - title: E-Mail und Domains
+                paragraphs:
+                  - >-
+                    Welche Postfächer, gemeinsamen Adressen, Kalender und Geräte sind beteiligt? Wir
+                    erfassen benötigte Berechtigungen, die Domainverwaltung sowie Abhängigkeiten zum
+                    bisherigen Dienstleister. Manche Schritte erfordern die Freigabe oder Mitwirkung
+                    anderer Administratoren.
+              - title: Dateien und Zusammenarbeit
+                paragraphs:
+                  - >-
+                    Wir besprechen, welche Daten übernommen werden, wo sie künftig liegen sollen,
+                    welche Nutzer sie brauchen und wie sich Links oder Synchronisationspfade
+                    verändern. Nicht jede alte Freigabe lässt sich unverändert übertragen.
+          - type: callout
+            tone: outline
+            title: Abstimmung vor dem Wechsel
+            body: >-
+              Der Ablauf, ein gegebenenfalls nötiges Wartungsfenster, eine Kopie der wichtigen Daten
+              und nachvollziehbare Tests werden vor der Durchführung vereinbart. Wir versprechen
+              keine unterbrechungsfreie oder vollständige Migration ohne Prüfung der Quellsysteme
+              und Lizenzen. Komplexe Projekte mit unternehmensweiten Governance-, Compliance- oder
+              besonderen Sicherheitsanforderungen benötigen eine gesonderte fachliche Prüfung durch
+              entsprechend spezialisierte Dienstleister.
+          - type: prose
+            paragraphs:
+              - >-
+                Nach dem Wechsel prüfen wir mit den betroffenen Personen vereinbarte Funktionen wie
+                Anmeldung, E-Mail-Versand und Empfang sowie Zugriff auf relevante Dateien. Noch
+                offene Aufgaben und Zuständigkeiten werden festgehalten.
+    - id: ablauf
+      kind: process
+      recipe: process.staged-path
+      content:
+        eyebrow: Von der Anfrage bis zur Übergabe
+        title: So gehen wir bei Microsoft-365-Aufgaben vor
+        intro: >-
+          Ein einzelnes Outlook-Problem braucht weniger Vorbereitung als die Umstellung einer
+          Umgebung. In beiden Fällen bleibt nachvollziehbar, was geprüft, vereinbart und verändert
+          wird.
+        steps:
+          - title: Anliegen klären
+            body: >-
+              Sie nennen betroffene Benutzer, Geräte und Dienste sowie das gewünschte Ergebnis. Wir
+              besprechen, ob Hilfe vor Ort oder remote sinnvoll ist.
+          - title: Umgebung und Aufwand prüfen
+            body: >-
+              Wir klären Berechtigungen, Lizenzen und Abhängigkeiten und stimmen den Umfang ab. Eine
+              möglicherweise kostenpflichtige Diagnose vor Ort besprechen wir vorab.
+          - title: Vereinbarte Arbeit umsetzen
+            body: >-
+              Wir beheben die Störung oder führen die geplante Einrichtung beziehungsweise
+              Umstellung durch. Zusätzliche Lizenzen, Maßnahmen oder Termine stimmen wir vorher ab.
+          - title: Prüfen und übergeben
+            body: >-
+              Wir testen die betroffenen Funktionen, erläutern Änderungen und offene Punkte und
+              halten die vereinbarten Zuständigkeiten verständlich fest.
+    - id: fragen
+      kind: faq
+      recipe: faq.editorial-answers
+      content:
+        eyebrow: Häufige Fragen
+        title: Was Unternehmen vor einer Microsoft-365-Anfrage wissen möchten
+        intro: >-
+          Einige praktische Fragen zu einzelnen Problemen, Lizenzen und Zusammenarbeit mit der
+          bestehenden IT.
+        items:
+          - question: Können Sie auch bei einem einzigen Outlook- oder Zugriffsproblem helfen?
+            paragraphs:
+              - >-
+                Ja. Eine blockierte Anmeldung, ein neu einzurichtender Nutzer oder fehlender Zugriff
+                auf einen Ordner kann ein eigenständiger Auftrag sein. Eine laufende Betreuung oder
+                ein Managed-Service-Vertrag ist nicht Voraussetzung.
+          - question: Helfen Sie auch bei Office 365, und brauchen wir neue Lizenzen?
+            paragraphs:
+              - >-
+                Office 365 wird häufig noch als Bezeichnung für geschäftliche Anwendungen und
+                Dienste verwendet. Wir prüfen das tatsächliche Abonnement und die benötigten
+                Funktionen. Zusätzliche oder andere Lizenzen stimmen wir vor dem Kauf oder der
+                Umstellung ab. Hier geht es um Arbeitsplätze im Unternehmen, nicht um Family- oder
+                Studentenangebote.
+          - question: Können Sie mit unserem bisherigen Administrator zusammenarbeiten?
+            paragraphs:
+              - >-
+                Ja, soweit die beteiligten Verantwortlichen zustimmen. Bestehende Domain-,
+                Microsoft-365- oder Geräteadministratoren können für die Freigabe und Durchführung
+                einzelner Schritte notwendig sein. Ohne berechtigten Zugang nehmen wir keine
+                administrativen Änderungen vor.
+          - question: Helfen Sie vor Ort in Berlin oder auch aus der Ferne?
+            paragraphs:
+              - >-
+                Vor-Ort-Unterstützung in Berlin ist unser normales Arbeitsmodell. Je nach Problem
+                und freigegebenem Zugriff kann eine Fernprüfung sinnvoll sein. Bei Umstellungen und
+                neuen Arbeitsplätzen vereinbaren wir die passende Vorgehensweise individuell.
+          - question: Was kostet die Unterstützung?
+            paragraphs:
+              - >-
+                Das erste Gespräch ist kostenlos. Danach richtet sich ein individuelles Angebot nach
+                dem tatsächlichen Umfang; wir veröffentlichen keine pauschalen Stunden- oder
+                Paketpreise. Wenn eine Diagnose vor Ort berechnet würde, erläutern wir das vor der
+                Terminvereinbarung.
+          - question: Ist das der Kundensupport von Microsoft?
+            paragraphs:
+              - >-
+                Nein. Wir sind ein lokaler IT-Service für Einrichtung, Fehlersuche und geplante
+                Änderungen im Unternehmen. Bei Abrechnung, Kontoinhaberschaft oder
+                Plattformstörungen kann Microsoft oder Ihr Abonnementanbieter zuständig sein. Wir
+                helfen bei der Einordnung, ohne deren Reaktions- oder Behebungszeit zu versprechen.
+    - id: naechster-schritt
+      kind: cta
+      recipe: cta.quick-contact
+      content:
+        eyebrow: Nächster Schritt
+        title: Beschreiben Sie Ihr Microsoft-365-Anliegen
+        body: >-
+          Ob ein Konto hakt, ein neues Team beginnt oder ein Umzug geplant wird: Eine kurze
+          Beschreibung reicht, um das weitere Vorgehen zu besprechen. Senden Sie keine Passwörter
+          oder Sicherheitscodes.
+        callLabel: Telefonisch Kontakt aufnehmen
+        enquiryLabel: Zurück zur Anfrage
+        enquiryTarget: kontakt

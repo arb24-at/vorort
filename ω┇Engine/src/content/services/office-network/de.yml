@@ -108,7 +108,7 @@ composition:
       recipe: recognition.situations
       content:
         eyebrow: Wann wir helfen können
-        title: Neue Räume, mehr Arbeitsplätze oder wiederkehrende Verbindungsprobleme
+        title: "Neue Büroräume, zusätzliche Arbeitsplätze oder Verbindungsprobleme"
         intro: >-
           Ein Netzwerkprojekt kann mit einem Umzug beginnen, mit einer Störung oder mit einer kleinen
           Erweiterung, für die der bisherige Aufbau nicht mehr ausreicht.
@@ -170,7 +170,7 @@ composition:
       kind: contact
       recipe: contact.enquiry-email
       content:
-        title: Erzählen Sie uns von Ihrem Büro
+        title: "Beschreiben Sie Ihr Netzwerk-Anliegen"
         intro: >-
           Beschreiben Sie die Räume, das Problem oder die geplante Änderung und wichtige Termine.
           Ungefähre Angaben reichen für ein erstes Gespräch aus.
@@ -298,7 +298,7 @@ composition:
       recipe: explanation.editorial-prose
       content:
         eyebrow: Geräteauswahl und Einstellungen
-        title: Verwaltbare Netzwerkgeräte sinnvoll einsetzen
+        title: "Router, Switches und Netzwerkkonfiguration"
         intro: >-
           Router, Switches und WLAN-Geräte müssen zusammenarbeiten. Wir wählen und konfigurieren sie für die
           Anschlüsse, Dienste und Zugriffsregeln, die Ihr Büro tatsächlich benötigt.

@@ -13,11 +13,11 @@ sections:
     content:
       eyebrow: "Business IT · On site in Berlin"
       title: "IT support for your business in Berlin"
-      intro: "When connections fail, email stops working or a new office needs setting up, the work around it is affected too. We help small and growing businesses resolve specific IT problems and plan practical improvements—from one workplace to the network and shared services behind it."
+      intro: "Unreliable connections, missing email or an office move can interrupt everyday work. We help small and growing businesses in Berlin resolve IT problems and plan changes, from one computer to the network and shared services used by the team."
       actions:
         - label: "Explore our IT services"
           target: services
-        - label: "Discuss your requirement"
+        - label: "Discuss your request"
           target: contact
       note:
         title: "A useful starting point"
@@ -45,7 +45,7 @@ sections:
         - type: callout
           tone: quiet
           title: "Recurring support is an option"
-          body: "Targeted troubleshooting, installation and upgrades can be standalone engagements. If ongoing maintenance is useful, its scope is discussed separately. It does not come with an assumed monitoring service or response-time commitment."
+          body: "Targeted troubleshooting, installation and upgrades can be separate jobs. If ongoing maintenance is useful, its scope is discussed separately. It does not come with an assumed monitoring service or response-time commitment."
   - id: services
     kind: scope
     recipe: scope.service-directory
@@ -83,8 +83,8 @@ sections:
     recipe: explanation.editorial-prose
     content:
       eyebrow: "Working with an existing business"
-      title: "Plan the change around the people who rely on it"
-      intro: "Replacing a router, moving email or changing access can affect work beyond the original request. Before consequential changes, we agree the intended result and the conditions needed to carry them out responsibly."
+      title: "Plan changes to systems your team uses"
+      intro: "Replacing a router, moving email or changing access can affect other parts of the business. Before changes to live systems, we agree the intended result and check access, dependencies and a suitable time for the work."
       blocks:
         - type: columns
           columns:
@@ -102,7 +102,7 @@ sections:
     recipe: process.staged-path
     content:
       eyebrow: "A clear way to begin"
-      title: "From the business requirement to handover"
+      title: "How we plan, carry out and check the work"
       intro: "On-site work in Berlin is the usual starting point for physical infrastructure and workplace setup. Suitable remote tasks can be considered as part of the agreed work."
       steps:
         - title: "Understand the requirement"

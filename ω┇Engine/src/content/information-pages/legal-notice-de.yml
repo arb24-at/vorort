@@ -11,9 +11,8 @@ header:
   eyebrow: Rechtliches · Arbeitsentwurf
   title: Impressum
   intro: >-
-    Dieser Entwurf zeigt, welche Angaben zum Websitebetreiber noch bestätigt werden müssen. Er ist
-    unvollständig und noch nicht zur Veröffentlichung als fertiges Impressum geeignet. Die
-    deutsche Fassung ist die maßgebliche rechtliche Quelle.
+    Dieser Entwurf ist unvollständig. Vor der Veröffentlichung müssen die aufgeführten Betreiber-
+    und Kontaktangaben geprüft und ergänzt werden.
 sections:
   - id: anbieter
     kind: explanation
@@ -91,8 +90,8 @@ sections:
               für die eine zusätzliche verantwortliche Person nach § 18 Abs. 2 MStV zu benennen
               ist.]
             - >-
-              Diese bedingte Pflicht wird weder mit einem erfundenen Namen ausgefüllt noch allein
-              wegen gewöhnlicher Leistungsbeschreibungen als anwendbar behandelt.
+              Ob diese zusätzliche Pflicht für das tatsächliche Angebot gilt, muss noch geprüft
+              werden.
 draftNotice:
   title: Die Betreiberangaben sind noch offen
   body: >-

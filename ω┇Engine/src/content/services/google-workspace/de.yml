@@ -86,7 +86,7 @@ seo:
 hero:
   eyebrow: "Unternehmen · Google Workspace"
   title: "Google Workspace für Unternehmen in Berlin einrichten"
-  intro: "Wenn Google Workspace bereits eingesetzt wird oder bewusst eingeführt werden soll, unterstützen wir bei Einrichtung, Migration und konkreten Problemen. Dabei betrachten wir Gmail, Domain, Nutzer, gemeinsame Dateien, Geräte, Sicherheit und Backup im Zusammenhang – ohne unnötig Funktionen zu aktivieren, die Ihr Betrieb nicht braucht."
+  intro: "Wir unterstützen Berliner Unternehmen bei Google Workspace: Einrichtung, Migration und konkreten Problemen mit Gmail, Domain, Konten und gemeinsamen Dateien. Dabei berücksichtigen wir die Geräte und Zugriffe Ihres Teams. Ist die Plattform noch offen, können wir auch prüfen, ob Google Workspace oder Microsoft 365 besser zu Ihrer Arbeitsweise passt."
 problems:
   eyebrow: "Typische Situationen"
   title: "Wobei Unternehmen Unterstützung mit Google Workspace brauchen"
@@ -128,10 +128,11 @@ composition:
     content:
       eyebrow: Unternehmen · Google Workspace
       title: Google Workspace für Unternehmen in Berlin einrichten
-      intro: Wenn Google Workspace bereits eingesetzt wird oder bewusst eingeführt werden soll, unterstützen wir bei
-        Einrichtung, Migration und konkreten Problemen. Dabei betrachten wir Gmail, Domain, Nutzer, gemeinsame Dateien,
-        Geräte, Sicherheit und Backup im Zusammenhang – ohne unnötig Funktionen zu aktivieren, die Ihr Betrieb nicht
-        braucht.
+      intro: >-
+        Wir unterstützen Berliner Unternehmen bei Google Workspace: Einrichtung, Migration und
+        konkreten Problemen mit Gmail, Domain, Konten und gemeinsamen Dateien. Dabei berücksichtigen
+        wir die Geräte und Zugriffe Ihres Teams. Ist die Plattform noch offen, können wir auch
+        prüfen, ob Google Workspace oder Microsoft 365 besser zu Ihrer Arbeitsweise passt.
       media:
         subject: business-hero
         src: /images/technical-field-berlin.jpg
@@ -167,8 +168,9 @@ composition:
       - type: callout
         tone: quiet
         title: Auch ein einzelnes Problem ist ein sinnvoller Auftrag
-        body: Ein Fehler bei Gmail, eine neue Nutzerberechtigung oder ein zusätzliches Shared Drive kann für sich
-          geklärt werden. Ein größerer Umbau ist kein Pflichtprogramm.
+        body: >-
+          Ein Fehler bei Gmail, eine neue Nutzerberechtigung oder ein zusätzliches Shared Drive kann
+          für sich geklärt werden. Ein größerer Umbau ist dafür nicht erforderlich.
   - id: leistungsumfang
     kind: explanation
     recipe: explanation.editorial-prose
@@ -227,7 +229,7 @@ composition:
     recipe: explanation.editorial-prose
     content:
       eyebrow: Mitarbeitende und Zugriffsrechte
-      title: Konten, Gruppen und Berechtigungen nachvollziehbar verwalten
+      title: "Nutzer, Gruppen und Kontozugänge verwalten"
       intro: Wenn Kolleginnen und Kollegen dazukommen, Aufgaben wechseln oder das Unternehmen verlassen, müssen Zugänge
         und Dateiberechtigungen weiterhin zum tatsächlichen Bedarf passen.
       blocks:
@@ -252,7 +254,7 @@ composition:
     recipe: explanation.editorial-prose
     content:
       eyebrow: Gemeinsame Dateien
-      title: Shared Drives und Dateifreigaben passend zum Team strukturieren
+      title: "Shared Drives, Berechtigungen und Dateizugriff"
       intro: Ob Dateien persönlichen Konten oder einer gemeinsam genutzten Ablage zugeordnet sind, wird oft erst bei
         Vertretung oder Personalwechsel wichtig. Wir prüfen, was für Ihre Zusammenarbeit sinnvoll ist.
       blocks:
@@ -277,7 +279,7 @@ composition:
     recipe: explanation.editorial-prose
     content:
       eyebrow: Migration und Übergang
-      title: E-Mail und Datenwechsel sorgfältig vorbereiten
+      title: "Eine Google-Workspace-Migration vorbereiten"
       intro: Ein Umzug zu Google Workspace, zwischen Workspace-Umgebungen oder Richtung Microsoft 365 hängt von Datenquellen,
         Zielsystem, Lizenzen, Konten und Berechtigungen ab. Wir prüfen erst die Ausgangslage und entscheiden dann
         über geeignete Verfahren.
@@ -312,7 +314,7 @@ composition:
     recipe: explanation.editorial-prose
     content:
       eyebrow: Geräte und Datensicherung
-      title: Google Workspace in den tatsächlichen Arbeitsalltag einbinden
+      title: "Windows- und Mac-Arbeitsplätze und unabhängiges Backup"
       intro: Eine Cloud-Umgebung muss auch auf den Arbeitsplätzen nutzbar sein. Dafür können Browser, Windows- oder
         Mac-Geräte, lokale Netzwerke und eine ergänzende Datensicherung wichtig werden.
       blocks:

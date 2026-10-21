@@ -49,6 +49,18 @@ export const productionTrials: Record<string, Trial> = {
     authorisation: "Aykhan's explicitly assigned English Home Network correction, v2.2.36; retained existing permission, not approval of blueprint v0.5.",
     recipes: ["recognition.situations", "cta.quick-contact", "contact.enquiry-email"], blocks: [],
   },
+  // Direct bilingual consistency assignment, 2026-10-21: reuse existing
+  // section implementations across this pair; no lifecycle/blueprint approval.
+  "wifi-home-network-de-preview": {
+    id: "wifi-home-network-de", translationId: "wifi-home-network", slug: "wlan-heimnetz", locale: "de", audience: "private",
+    authorisation: "Aykhan’s comprehensive EN/DE consistency assignment, 2026-10-21: align existing introductory journey, email-draft enquiry and shared sections without changing service scope or transport.",
+    recipes: ["recognition.situations", "cta.quick-contact", "contact.enquiry-email"], blocks: [],
+  },
+  "computer-laptop-de-preview": {
+    id: "computer-laptop-de", translationId: "computer-laptop", slug: "computer-laptop-hilfe", locale: "de", audience: "private",
+    authorisation: "Aykhan’s comprehensive EN/DE consistency assignment, 2026-10-21: pair the illustrated hero with existing recognition, early email-draft enquiry and chapter navigation. No new service or transport.",
+    recipes: ["recognition.situations", "cta.quick-contact", "contact.enquiry-email", "scope.chapter-links"], blocks: [],
+  },
   "computer-laptop-en-preview": {
     id: "computer-laptop-en", translationId: "computer-laptop", slug: "computer-laptop-help", locale: "en", audience: "private",
     authorisation: "Aykhan's named Task 4B, v2.2.38.", recipes: serviceExperiments, blocks: [],

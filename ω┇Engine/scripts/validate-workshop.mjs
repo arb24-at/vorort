@@ -168,7 +168,7 @@ try {
   const production = serviceEntries.find(service => service.id === "wifi-home-network-de");
   assert.ok(production?.composition, "German home network service must adopt a validated composition");
   const productionInvalid = [
-    ["shell contact too early", s => { s.composition.contactAfter = "introduction"; }],
+    ["shell positioning field on recipe-enquiry trial", s => { s.composition.contactAfter = "einstieg"; }],
     ["missing composition", s => { delete s.composition; }],
     ["empty composition", s => { s.composition.sections = []; }],
     ["wrong template", s => { s.page.template = "standard"; }],
@@ -178,9 +178,9 @@ try {
     ["duplicate production hero", s => { s.composition.sections.push({ ...structuredClone(s.composition.sections[0]), id: "second-hero" }); }],
     ["missing action target", s => { s.composition.sections[0].content.actions[0].target = "missing"; }],
     ["wrong locale contact target", s => { s.composition.sections[0].content.actions[0].target = "contact"; }],
-    ["missing topic target", s => { s.composition.sections[1].content.items[0].target = "missing"; }],
-    ["non-chapter topic target", s => { s.composition.sections[1].content.items[0].target = "ablauf"; }],
-    ["duplicate topic target", s => { s.composition.sections[1].content.items[1].target = s.composition.sections[1].content.items[0].target; }],
+    ["missing topic target", s => { s.composition.sections.find(section => section.recipe === "scope.topic-index").content.items[0].target = "missing"; }],
+    ["non-chapter topic target", s => { s.composition.sections.find(section => section.recipe === "scope.topic-index").content.items[0].target = "ablauf"; }],
+    ["duplicate topic target", s => { s.composition.sections.find(section => section.recipe === "scope.topic-index").content.items[1].target = s.composition.sections.find(section => section.recipe === "scope.topic-index").content.items[0].target; }],
     ["production styling in copy", s => { s.composition.sections[2].content.className = "custom"; }],
     ["divergent hero summary", s => { s.hero.title = "An unrelated page heading"; }],
     ["duplicate shell contact", s => { s.composition.sections.push({ id: "extra-contact", kind: "contact", recipe: "contact.enquiry", content: {} }); }],
@@ -344,7 +344,7 @@ try {
     try {
       sectionRecipes[id].status = "deprecated";
       assert.equal(recipeAllowedForProduction(id, computerContext), false);
-      assert.equal(serviceSchema.safeParse(computer).success, false);
+      if (computer.composition.sections.some(section => section.recipe === id)) assert.equal(serviceSchema.safeParse(computer).success, false);
     } finally { sectionRecipes[id].status = status; }
   }
   for (const id of ["hero.service-intro", "scope.chapter-links"]) {
@@ -352,7 +352,7 @@ try {
     const usage = getRecipeUsage(fixtures, serviceEntries, id);
     assert.equal(usage.filter(p => p.context === "Production · EN").length,
       serviceEntries.filter(s => s.locale === "en" && s.composition?.sections.some(section => section.recipe === id)).length);
-    assert.ok(usage.some(p => p.path === "en/services/private/computer-laptop-help/"));
+    assert.equal(usage.some(p => p.path === "en/services/private/computer-laptop-help/"), computer.composition.sections.some(section => section.recipe === id));
   }
   const computerInvalid = [
     ["missing permission", s => { delete s.composition.experiment; }],
@@ -362,7 +362,6 @@ try {
     ["wrong audience", s => { s.audience = "business"; }],
     ["duplicate anchor", s => { s.composition.sections[1].id = "introduction"; }],
     ["broken hero target", s => { s.composition.sections[0].content.actions[0].target = "missing"; }],
-    ["missing preparation note", s => { delete s.composition.sections[0].content.note; }],
     ["styling in hero", s => { s.composition.sections[0].content.className = "big"; }],
     ["divergent hero summary", s => { s.hero.title = "An unrelated service heading"; }],
     ["broken chapter target", s => { s.composition.sections[5].content.items[0].target = "missing"; }],
@@ -409,6 +408,7 @@ try {
   // The shared journey safeguards must apply to business, without borrowing a
   // private-page identity or allowing arbitrary experimental recipes.
   const businessInvalid = computerInvalid.map(([name, change]) => [name, change]);
+  businessInvalid.push(["missing preparation note", s => { delete s.composition.sections[0].content.note; }]);
   businessInvalid.push(["borrowed computer permission", s => { s.composition.experiment = "computer-laptop-en-preview"; }]);
   for (const [name, change] of businessInvalid) {
     const candidate = structuredClone(business);
@@ -453,7 +453,7 @@ try {
   console.log(`Validated Microsoft 365: ${microsoftInvalid.length} invalid compositions, exact schema/runtime whitelist, lifecycle safeguards and distinct usage.`);
   // Blueprint approval controls journeys; code enforces semantics, not one pilot.
   const validJourneys = [
-    ["three recognition situations", s => { s.composition.sections[1].content.items = s.composition.sections[1].content.items.slice(0, 3); }],
+    ["three recognition situations", s => { const recognition = s.composition.sections.find(section => section.recipe === "recognition.situations"); recognition.content.items = recognition.content.items.slice(0, 3); }],
     ["renamed scope ID", s => { s.composition.sections[2].id = "help-and-scope"; }],
     ["no recognition section", s => { s.composition.sections.splice(1, 1); }],
     ["one invitation", s => { s.composition.sections.splice(3, 1); }],
@@ -521,25 +521,35 @@ try {
     { title: "Fake approval", blocks: [{ type: "list", ordered: false, items: ["Item"], status: "approved" }] },
   ]) assert.equal(proseSchema.safeParse(content).success, false, "Invalid/unknown blocks and content-supplied approval must fail");
   assert.throws(() => usedRecipeBlocks({ ...compactSpecimen, content: { blocks: [{ type: "__proto__" }] } }), /Unknown block/);
-  for (const id of ["network-it-support-de", "microsoft-365-workplaces-de"]) {
+  for (const id of ["network-it-support-de", "microsoft-365-workplaces-de", "computer-laptop-de", "wifi-home-network-de"]) {
     const service = serviceEntries.find(entry => entry.id === id);
     assert.ok(service?.composition?.experiment, `${id} needs its own German trial`);
     const context = { ...service, experiment: service.composition.experiment };
+    const trial = productionTrials[service.composition.experiment];
+    const englishTrial = serviceEntries.find(entry => entry.translationId === service.translationId && entry.locale === "en").composition.experiment;
+    for (const [recipeId, recipe] of Object.entries(sectionRecipes)) {
+      const approved = recipe.status === "approved";
+      assert.equal(recipeAllowedForProduction(recipeId, context), approved || (recipe.status === "experimental" && trial.recipes.includes(recipeId)), `${id} widened its recipe permission`);
+      for (const changed of [{ ...context, experiment: undefined }, { ...context, experiment: englishTrial }, { ...context, id: "another-de" }, { ...context, translationId: "another" }, { ...context, slug: "another-route" }, { ...context, locale: "en" }, { ...context, audience: service.audience === "business" ? "private" : "business" }]) {
+        assert.equal(recipeAllowedForProduction(recipeId, changed), approved, `${id} permission escaped its exact identity: ${recipeId}`);
+      }
+    }
     for (const section of service.composition.sections) assert.equal(recipeAllowedForProduction(section.recipe, context), true);
     const changes = [
-      ["borrowed English trial", s => { s.composition.experiment = id === "network-it-support-de" ? "business-network-en-preview" : "microsoft-365-en-preview"; }],
+      ["borrowed English trial", s => { s.composition.experiment = englishTrial; }],
       ["wrong locale", s => { s.locale = "en"; }],
       ["duplicate ID", s => { s.composition.sections[1].id = s.composition.sections[0].id; }],
       ["missing enquiry", s => { s.composition.sections = s.composition.sections.filter(x => x.kind !== "contact"); }],
       ["wrong contact target", s => { s.composition.sections.find(x => x.kind === "contact").id = "contact"; }],
-      ["broken chapter", s => { s.composition.sections.find(x => x.recipe === "scope.chapter-links").content.items[0].target = "missing"; }],
+      ["broken chapter", s => { s.composition.sections.find(x => x.recipe === "scope.chapter-links" || x.recipe === "scope.topic-index").content.items[0].target = "missing"; }],
       ["unapproved block", s => { s.composition.sections.find(x => x.recipe === "explanation.editorial-prose").content.blocks.push({ type: "list", ordered: false, items: ["Not authorised"] }); }],
     ];
     for (const [name, change] of changes) { const candidate = structuredClone(service); change(candidate); assert.equal(serviceSchema.safeParse(candidate).success, false, `${id} accepted ${name}`); }
-    const output = await fs.readFile(path.join(root, "dist/leistungen/unternehmen", service.slug, "index.html"), "utf8");
+    const output = await fs.readFile(path.join(root, "dist/leistungen", service.audience === "business" ? "unternehmen" : "privatpersonen", service.slug, "index.html"), "utf8");
     assert.equal((output.match(/<h1[ >]/g) ?? []).length, 1);
     assert.equal((output.match(/<form\b/g) ?? []).length, 1);
     assert.ok(output.includes('data-delivery="email"'));
+    assert.ok(output.includes('Wenn Sie die vorbereitete E-Mail senden'), 'Email privacy wording must not imply direct submission');
     assert.doesNotMatch(output, /data-lab-recipe|data-lab-block|lab-capture-|Preferred contact|Prepare email draft/);
     const ids = [...output.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
     assert.equal(new Set(ids).size, ids.length);
@@ -547,7 +557,7 @@ try {
     const experimental = service.composition.sections.find(x => sectionRecipes[x.recipe].status === "experimental");
     assert.equal(recipeAllowedForProduction(experimental.recipe, { ...context, locale: "en" }), false);
   }
-  console.log("Validated both German business trials: exact permissions, 7 invalid compositions each, unique anchors and one localised truthful enquiry.");
+  console.log("Validated all four German service trials: exact permissions, 7 invalid compositions each, unique anchors and one localised truthful enquiry.");
   console.log(`Validated flexible journeys, shell-contact placements, independent block lifecycle and exact block permissions.`);
   console.log(`Validated private gallery: ${gallery.sections.length} specimens / ${new Set(gallery.sections.map(s => s.recipe)).size} recipes, ${galleryInvalid.length} invalid arrangements, unregistered proposal policy and independent examples.`);
   console.log(`Validated English test: ${englishTestInvalid.length} invalid compositions, route-bound schema/runtime policy, email-draft encoding.`);

@@ -126,281 +126,350 @@ composition:
     title: Other services for your business
     linkLabel: Explore service
     serviceIds:
-    - microsoft-365-workplaces
-    - network-it-support
+      - microsoft-365-workplaces
+      - network-it-support
   contact:
     title: Discuss a Google Workspace request
-    intro: Tell us what needs setting up, moving or fixing and which part of the business is affected. Small requests
-      are welcome alongside planned projects.
-    formIntro: 'This form prepares an email draft in your email application. Please review and send it there: the website
-      does not deliver the message directly. Do not include passwords, one-time codes, recovery keys or other secrets.'
+    intro: >-
+      Tell us what needs setting up, moving or fixing and which part of the business is affected.
+      Small requests are welcome alongside planned projects.
+    formIntro: >-
+      This form prepares an email draft in your email application. Please review and send it there:
+      the website does not deliver the message directly. Do not include passwords, one-time codes,
+      recovery keys or other secrets.
     affectedPlaceholder: For example Gmail delivery, Shared Drives or company domain
     request: What would you like us to help with?
   contactAfter: service-scope
   sections:
-  - id: introduction
-    kind: hero
-    recipe: hero.editorial-art
-    content:
-      eyebrow: Business · Google Workspace
-      title: Google Workspace support for Berlin businesses
-      intro: If your business already uses Google Workspace, or has deliberately chosen it, we can help with setup, migration
-        and practical problems around Gmail, domains, users, shared files, devices, security and backup. If the platform
-        choice is still open, we can also look at whether Google Workspace or Microsoft 365 fits the way your business
-        actually works.
-      media:
-        subject: business-hero
-        src: /images/technical-field-berlin.jpg
-        alt: Illustrated home-office and small workplace with computers, a router and printers.
-      actions:
-      - label: Discuss your Workspace request
-        target: contact
-      - label: Explore the help available
-        target: service-scope
-  - id: common-requests
-    kind: explanation
-    recipe: explanation.editorial-prose
-    content:
-      eyebrow: Typical situations
-      title: When Gmail, shared files or access need attention
-      intro: You can contact us about one concrete problem or a planned change. You do not need to know which setting
-        caused it before explaining the effect on your team.
-      blocks:
-      - type: columns
-        columns:
-        - title: A new environment or change of provider
-          paragraphs:
-          - An existing setup that has grown difficult
-        - title: You may need a business domain connected to Google Workspace, named users and a clear place for shared
-            files. Another common starting point is a planned move from an existing mail or Microsoft 365 environment.
-          paragraphs:
-          - Mail reaches some people but not others, Drive for desktop does not synchronise as expected, or staff changes
-            have left permissions and shared information unclear. We start with the affected work, not a generic product
-            checklist.
-      - type: callout
-        tone: quiet
-        title: A single issue is enough
-        body: A Gmail delivery fault or an access change can be a standalone request. Wider setup or migration work is
-          optional and discussed only when it helps solve the real problem.
-  - id: service-scope
-    kind: explanation
-    recipe: explanation.editorial-prose
-    content:
-      eyebrow: Where we can help
-      title: Google Workspace setup, everyday fixes and planned changes
-      intro: 'We work with Google Workspace in the context of your Berlin business: its domain, people, email, shared
-        information and Windows or Mac workplaces. The exact work is agreed before any live changes.'
-      blocks:
-      - type: columns
-        columns:
-        - title: Setup and configuration
-          paragraphs:
-          - Troubleshooting and transitions
-        - title: Workspace plan guidance, subscription selection, domain verification, Gmail/DNS, users, groups, aliases,
-            sharing and baseline security can be handled as one setup or in smaller pieces. We can help arrange a subscription;
-            we do not act as a Google licence reseller.
-          paragraphs:
-          - We investigate specific Gmail, Drive, access or synchronisation issues and assess migrations or coexistence
-            with Microsoft 365 and suitable existing email and file systems. We do not assume everything needs rebuilding.
-      - type: callout
-        tone: quiet
-        title: Local support, not Google Customer Care
-        body: Google has its own Workspace administrator and product support. Our role is practical help with your company
-          environment, its devices, domain, staff changes and connected systems. Provider-wide outages and platform defects
-          remain with the service provider.
-  - id: domain-and-gmail
-    kind: explanation
-    recipe: explanation.editorial-prose
-    content:
-      eyebrow: Business email and domains
-      title: Get Gmail and the company domain working together
-      intro: A business address involves more than creating an inbox. The domain, DNS, Workspace settings and existing
-        mail arrangements must match the intended result.
-      blocks:
-      - type: columns
-        columns:
-        - title: New Gmail setup
-          paragraphs:
-          - Delivery and configuration problems
-        - title: We can help verify a company domain, set up business addresses, users, aliases and relevant groups,
-            and make the agreed DNS changes with the domain administrator. Existing provider records and website services
-            are considered before anything is replaced.
-          paragraphs:
-          - When messages are missing, rejected or arriving in the wrong place, we trace the affected addresses, mail
-            flow and available configuration evidence. The diagnosis may involve the sending system, domain provider
-            or Google service rather than a single Gmail setting.
-      - type: callout
-        tone: quiet
-        title: Avoid unexpected mail interruption
-        body: For a domain move or cutover, we agree who controls DNS, what needs checking and when changes should happen.
-          Mail delivery depends on external systems and cannot be guaranteed to remain uninterrupted.
-  - id: users-and-access
-    kind: explanation
-    recipe: explanation.editorial-prose
-    content:
-      eyebrow: People, accounts and permissions
-      title: Keep user access aligned with how the team works
-      intro: New joiners, leavers and changing responsibilities often reveal whether an environment has been organised
-        around real business roles.
-      blocks:
-      - type: columns
-        columns:
-        - title: Users, groups and roles
-          paragraphs:
-          - Sign-in and security basics
-        - title: We can set up accounts and groups, review administrator permissions, support staff changes and help
-            document who should have access to what. Administrative changes require the appropriate authorisation and
-            an available account owner.
-          paragraphs:
-          - We can help configure 2-step verification, legitimate recovery options and appropriate baseline security
-            settings. Lost access is addressed through the supported account and administrator recovery processes, not
-            by bypassing protections.
-      - type: callout
-        tone: quiet
-        title: Protect business access
-        body: Do not put passwords, one-time codes, recovery keys or remote-access credentials in an initial enquiry.
-          Where a secret is needed during agreed work, an authorised person should enter it directly.
-  - id: shared-files
-    kind: explanation
-    recipe: explanation.editorial-prose
-    content:
-      eyebrow: Drive and collaboration
-      title: Organise Shared Drives and file access around the business
-      intro: The distinction between personal My Drive files and team-owned Shared Drives matters when colleagues change
-        roles or leave.
-      blocks:
-      - type: columns
-        columns:
-        - title: Shared Drives and ownership
-          paragraphs:
-          - External sharing and synchronisation
-        - title: We can assess where important working documents belong, set up or adjust Shared Drives, review memberships
-            and define practical group-based permissions. We avoid moving or deleting shared content before the owners
-            agree what should change.
-          paragraphs:
-          - We review external access settings with the required collaboration in mind, then check everyday use in the
-            browser or Drive for desktop. A sync problem can depend on the user, local device, connection or available
-            storage as well as Workspace.
-      - type: prose
-        paragraphs:
-        - Where documents already work well, we preserve the useful structure and change only what the agreed task requires.
-          Sharing configuration is not a substitute for clear internal ownership of business information.
-  - id: migration-and-coexistence
-    kind: explanation
-    recipe: explanation.editorial-prose
-    content:
-      eyebrow: Planned moves
-      title: Assess email and file migrations before changing production systems
-      intro: A move into Google Workspace, between Workspace environments or from Workspace to Microsoft 365 depends
-        on the source, destination, licence options, permissions and available migration tools.
-      blocks:
-      - type: table
-        title: Typical considerations before a Workspace change
-        columns:
-        - Area
-        - What needs checking
-        rows:
-        - - Email and domain
-          - Mailbox sizes, routing, aliases, DNS control, cutover and the intended destination.
-        - - Files and Shared Drives
-          - Ownership, access rights, external sharing, structure and suitable migration methods.
-        - - People and devices
-          - User identities, sign-in, Windows/Mac clients and support during the transition.
-        - - Validation and fallback
-          - Representative test data, agreed checks, time constraints and what remains accessible if a step needs revisiting.
-      - type: callout
-        tone: quiet
-        title: No blanket migration guarantee
-        body: Compatibility and transfer quality vary by source and destination. We assess what can be moved, what may
-          need manual attention and which business interruptions need planning before committing to a method.
-      - type: prose
-        paragraphs:
-        - Complex enterprise compliance migrations, identity federation, DLP, eDiscovery and SSO programmes are not offered
-          here as standard projects. Any unusual requirements need separate scoping before we agree to take them on.
-  - id: workplaces-backup
-    kind: explanation
-    recipe: explanation.editorial-prose
-    content:
-      eyebrow: Beyond the cloud console
-      title: Connect Workspace with real workplaces and an appropriate backup
-      intro: A functioning cloud subscription is only one part of daily work. Browsers, local computers, the network
-        and a separate backup may also need attention.
-      blocks:
-      - type: columns
-        columns:
-        - title: Windows and Mac workstations
-          paragraphs:
-          - Independent backup where appropriate
-        - title: We can configure account access and supported workplace applications, check Drive for desktop and browser
-            use, and help investigate specific device-side issues. Broader office-network work remains a separate service
-            when needed.
-          paragraphs:
-          - We can help assess a backup solution separate from the live Workspace environment, including which data should
-            be covered, the restoration need and a suitable retention approach. A backup is a distinct decision, not
-            an automatic feature of file synchronisation.
-      - type: callout
-        tone: quiet
-        title: No mandatory ongoing contract
-        body: A one-off fix, planned setup or migration is welcome. Long-term administration, user training and enterprise
-          security management are not included by default.
-  - id: how-we-work
-    kind: process
-    recipe: process.staged-path
-    content:
-      eyebrow: From enquiry to handover
-      title: How we handle a Google Workspace request
-      intro: The same steps can cover a small Gmail fault or a carefully planned change across a business environment.
-      steps:
-      - title: Understand the request
-        body: Tell us the business goal, domain, approximate team size, affected service and Berlin location. The first
-          conversation is free; there is no need to send secrets.
-      - title: Check scope and dependencies
-        body: We review the relevant accounts, domain, data and connected systems with authorised access. Any paid diagnostic
-          visit is explained before it is arranged.
-      - title: Agree and make changes
-        body: We explain the intended steps, likely interruption and individual quotation. Any additional work, tools
-          or licences are discussed before proceeding.
-      - title: Verify and hand over
-        body: We test the functions within the agreed scope, explain important settings and known limitations, and identify
-          the next sensible actions for the business.
-  - id: questions
-    kind: faq
-    recipe: faq.editorial-answers
-    content:
-      eyebrow: Before you get in touch
-      title: Questions about Google Workspace support in Berlin
-      intro: The useful starting point is the business requirement, not a fixed support package.
-      items:
-      - question: Can you set up Google Workspace for a new business?
-        paragraphs:
-        - Yes. Depending on the starting point, we can help assess the appropriate Workspace subscription, verify the
-          company domain, configure business Gmail, users, groups and Shared Drives, and connect the agreed workplaces.
-          You may purchase the subscription directly; we do not claim to resell Google licences.
-      - question: Can you help with an existing Gmail or Shared Drive problem?
-        paragraphs:
-        - Yes. We can investigate specific delivery, sign-in, sharing and synchronisation issues in the context of your
-          company environment. Some faults depend on the domain provider or Google service itself, in which case we explain
-          the limits of local support.
-      - question: Can you move our email and files from Microsoft 365 to Google Workspace?
-        paragraphs:
-        - We can assess that migration and plan supported methods where the source and destination are suitable. Mailboxes,
-          identities, shared files, ownership and permissions need checking first. We do not promise that every item
-          transfers unchanged or without downtime.
-      - question: Can you also move from Google Workspace to Microsoft 365?
-        paragraphs:
-        - That direction can also be assessed. The method depends on the source data, accounts, required coexistence
-          and the target Microsoft 365 configuration. We agree the scope and verification steps before changing live
-          systems.
-      - question: Do you provide Workspace backups or account security help?
-        paragraphs:
-        - We can help set up an independently chosen backup and configure baseline settings such as 2-step verification
-          and account recovery options. The business needs to agree what is backed up and who can administer it. We do
-          not bypass account protections or offer enterprise compliance programmes as standard.
-      - question: Do we need an ongoing administration contract?
-        paragraphs:
-        - No. We work on agreed one-off setups, changes, migrations and troubleshooting as well as potentially longer
-          work by arrangement. The initial discussion is free and any paid diagnostic visit or further work is explained
-          before agreement.
+    - id: introduction
+      kind: hero
+      recipe: hero.editorial-art
+      content:
+        eyebrow: Business · Google Workspace
+        title: Google Workspace support for Berlin businesses
+        intro: >-
+          If your business already uses Google Workspace, or has deliberately chosen it, we can help
+          with setup, migration and practical problems around Gmail, domains, users, shared files,
+          devices, security and backup. If the platform choice is still open, we can also look at
+          whether Google Workspace or Microsoft 365 fits the way your business actually works.
+        media:
+          subject: business-hero
+          src: /images/technical-field-berlin.jpg
+          alt: Illustrated home-office and small workplace with computers, a router and printers.
+        actions:
+          - label: Discuss your Workspace request
+            target: contact
+          - label: Explore the help available
+            target: service-scope
+    - id: common-requests
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Typical situations
+        title: When Gmail, shared files or access need attention
+        intro: >-
+          You can contact us about one concrete problem or a planned change. You do not need to know
+          which setting caused it before explaining the effect on your team.
+        blocks:
+          - type: columns
+            columns:
+              - title: A new environment or change of provider
+                paragraphs:
+                  - >-
+                    You may need a business domain connected to Google Workspace, named users and a
+                    clear place for shared files. Another common starting point is a planned move
+                    from an existing mail or Microsoft 365 environment.
+              - title: An existing setup that has grown difficult
+                paragraphs:
+                  - >-
+                    Mail reaches some people but not others, Drive for desktop does not synchronise
+                    as expected, or staff changes have left permissions and shared information
+                    unclear. We start with the affected work, not a generic product checklist.
+          - type: callout
+            tone: quiet
+            title: A single issue is enough
+            body: >-
+              A Gmail delivery fault or an access change can be a standalone request. Wider setup or
+              migration work is optional and discussed only when it helps solve the real problem.
+    - id: service-scope
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Where we can help
+        title: Google Workspace setup, everyday fixes and planned changes
+        intro: >-
+          We work with Google Workspace in the context of your Berlin business: its domain, people,
+          email, shared information and Windows or Mac workplaces. The exact work is agreed before
+          any live changes.
+        blocks:
+          - type: columns
+            columns:
+              - title: Setup and configuration
+                paragraphs:
+                  - >-
+                    Workspace plan guidance, subscription selection, domain verification, Gmail/DNS,
+                    users, groups, aliases, sharing and baseline security can be handled as one
+                    setup or in smaller pieces. We can help arrange a subscription; we do not act as
+                    a Google licence reseller.
+              - title: Troubleshooting and transitions
+                paragraphs:
+                  - >-
+                    We investigate specific Gmail, Drive, access or synchronisation issues and
+                    assess migrations or coexistence with Microsoft 365 and suitable existing email
+                    and file systems. We do not assume everything needs rebuilding.
+          - type: callout
+            tone: quiet
+            title: Local support, not Google Customer Care
+            body: >-
+              Google has its own Workspace administrator and product support. Our role is practical
+              help with your company environment, its devices, domain, staff changes and connected
+              systems. Provider-wide outages and platform defects remain with the service provider.
+    - id: domain-and-gmail
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Business email and domains
+        title: Gmail setup with your company domain
+        intro: >-
+          A business address involves more than creating an inbox. The domain, DNS, Workspace
+          settings and existing mail arrangements must match the intended result.
+        blocks:
+          - type: columns
+            columns:
+              - title: New Gmail setup
+                paragraphs:
+                  - >-
+                    We can help verify a company domain, set up business addresses, users, aliases
+                    and relevant groups, and make the agreed DNS changes with the domain
+                    administrator. Existing provider records and website services are considered
+                    before anything is replaced.
+              - title: Delivery and configuration problems
+                paragraphs:
+                  - >-
+                    When messages are missing, rejected or arriving in the wrong place, we trace the
+                    affected addresses, mail flow and available configuration evidence. The
+                    diagnosis may involve the sending system, domain provider or Google service
+                    rather than a single Gmail setting.
+          - type: callout
+            tone: quiet
+            title: Avoid unexpected mail interruption
+            body: >-
+              For a domain move or cutover, we agree who controls DNS, what needs checking and when
+              changes should happen. Mail delivery depends on external systems and cannot be
+              guaranteed to remain uninterrupted.
+    - id: users-and-access
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: People, accounts and permissions
+        title: Users, groups and account access
+        intro: >-
+          New joiners, leavers and changing responsibilities often reveal whether an environment has
+          been organised around real business roles.
+        blocks:
+          - type: columns
+            columns:
+              - title: Users, groups and roles
+                paragraphs:
+                  - >-
+                    We can set up accounts and groups, review administrator permissions, support
+                    staff changes and help document who should have access to what. Administrative
+                    changes require the appropriate authorisation and an available account owner.
+              - title: Sign-in and security basics
+                paragraphs:
+                  - >-
+                    We can help configure 2-step verification, legitimate recovery options and
+                    appropriate baseline security settings. Lost access is addressed through the
+                    supported account and administrator recovery processes, not by bypassing
+                    protections.
+          - type: callout
+            tone: quiet
+            title: Protect business access
+            body: >-
+              Do not put passwords, one-time codes, recovery keys or remote-access credentials in an
+              initial enquiry. Where a secret is needed during agreed work, an authorised person
+              should enter it directly.
+    - id: shared-files
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Drive and collaboration
+        title: Shared Drives, permissions and file access
+        intro: >-
+          The distinction between personal My Drive files and team-owned Shared Drives matters when
+          colleagues change roles or leave.
+        blocks:
+          - type: columns
+            columns:
+              - title: Shared Drives and ownership
+                paragraphs:
+                  - >-
+                    We can assess where important working documents belong, set up or adjust Shared
+                    Drives, review memberships and define practical group-based permissions. We
+                    avoid moving or deleting shared content before the owners agree what should
+                    change.
+              - title: External sharing and synchronisation
+                paragraphs:
+                  - >-
+                    We review external access settings with the required collaboration in mind, then
+                    check everyday use in the browser or Drive for desktop. A sync problem can
+                    depend on the user, local device, connection or available storage as well as
+                    Workspace.
+          - type: prose
+            paragraphs:
+              - >-
+                Where documents already work well, we preserve the useful structure and change only
+                what the agreed task requires. Sharing configuration is not a substitute for clear
+                internal ownership of business information.
+    - id: migration-and-coexistence
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Planned moves
+        title: Planning a Google Workspace migration
+        intro: >-
+          A move into Google Workspace, between Workspace environments or from Workspace to
+          Microsoft 365 depends on the source, destination, licence options, permissions and
+          available migration tools.
+        blocks:
+          - type: table
+            title: Typical considerations before a Workspace change
+            columns:
+              - Area
+              - What needs checking
+            rows:
+              - - Email and domain
+                - >-
+                  Mailbox sizes, routing, aliases, DNS control, cutover and the intended
+                  destination.
+              - - Files and Shared Drives
+                - >-
+                  Ownership, access rights, external sharing, structure and suitable migration
+                  methods.
+              - - People and devices
+                - User identities, sign-in, Windows/Mac clients and support during the transition.
+              - - Validation and fallback
+                - >-
+                  Representative test data, agreed checks, time constraints and what remains
+                  accessible if a step needs revisiting.
+          - type: callout
+            tone: quiet
+            title: No blanket migration guarantee
+            body: >-
+              Compatibility and transfer quality vary by source and destination. We assess what can
+              be moved, what may need manual attention and which business interruptions need
+              planning before committing to a method.
+          - type: prose
+            paragraphs:
+              - >-
+                Complex enterprise compliance migrations, identity federation, DLP, eDiscovery and
+                SSO programmes are not offered here as standard projects. Any unusual requirements
+                need separate scoping before we agree to take them on.
+    - id: workplaces-backup
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Computers and data protection
+        title: Windows and Mac setup, with a separate backup
+        intro: >-
+          A functioning cloud subscription is only one part of daily work. Browsers, local
+          computers, the network and a separate backup may also need attention.
+        blocks:
+          - type: columns
+            columns:
+              - title: Windows and Mac workstations
+                paragraphs:
+                  - >-
+                    We can configure account access and supported workplace applications, check
+                    Drive for desktop and browser use, and help investigate specific device-side
+                    issues. Broader office-network work remains a separate service when needed.
+              - title: Independent backup where appropriate
+                paragraphs:
+                  - >-
+                    We can help assess a backup solution separate from the live Workspace
+                    environment, including which data should be covered, the restoration need and a
+                    suitable retention approach. A backup is a distinct decision, not an automatic
+                    feature of file synchronisation.
+          - type: callout
+            tone: quiet
+            title: No mandatory ongoing contract
+            body: >-
+              A one-off fix, planned setup or migration is welcome. Long-term administration, user
+              training and enterprise security management are not included by default.
+    - id: how-we-work
+      kind: process
+      recipe: process.staged-path
+      content:
+        eyebrow: From enquiry to handover
+        title: How we handle a Google Workspace request
+        intro: >-
+          The same steps can cover a small Gmail fault or a carefully planned change across a
+          business environment.
+        steps:
+          - title: Understand the request
+            body: >-
+              Tell us the business goal, domain, approximate team size, affected service and Berlin
+              location. The first conversation is free; there is no need to send secrets.
+          - title: Check scope and dependencies
+            body: >-
+              We review the relevant accounts, domain, data and connected systems with authorised
+              access. Any paid diagnostic visit is explained before it is arranged.
+          - title: Agree and make changes
+            body: >-
+              We explain the intended steps, likely interruption and individual quotation. Any
+              additional work, tools or licences are discussed before proceeding.
+          - title: Verify and hand over
+            body: >-
+              We test the functions within the agreed scope, explain important settings and known
+              limitations, and identify the next sensible actions for the business.
+    - id: questions
+      kind: faq
+      recipe: faq.editorial-answers
+      content:
+        eyebrow: Before you get in touch
+        title: Questions about Google Workspace support in Berlin
+        intro: Practical details about setup, migrations, account access and one-off support.
+        items:
+          - question: Can you set up Google Workspace for a new business?
+            paragraphs:
+              - >-
+                Yes. Depending on the starting point, we can help assess the appropriate Workspace
+                subscription, verify the company domain, configure business Gmail, users, groups and
+                Shared Drives, and connect the agreed workplaces. You may purchase the subscription
+                directly; we do not claim to resell Google licences.
+          - question: Can you help with an existing Gmail or Shared Drive problem?
+            paragraphs:
+              - >-
+                Yes. We can investigate specific delivery, sign-in, sharing and synchronisation
+                issues in the context of your company environment. Some faults depend on the domain
+                provider or Google service itself, in which case we explain the limits of local
+                support.
+          - question: Can you move our email and files from Microsoft 365 to Google Workspace?
+            paragraphs:
+              - >-
+                We can assess that migration and plan supported methods where the source and
+                destination are suitable. Mailboxes, identities, shared files, ownership and
+                permissions need checking first. We do not promise that every item transfers
+                unchanged or without downtime.
+          - question: Can you also move from Google Workspace to Microsoft 365?
+            paragraphs:
+              - >-
+                That direction can also be assessed. The method depends on the source data,
+                accounts, required coexistence and the target Microsoft 365 configuration. We agree
+                the scope and verification steps before changing live systems.
+          - question: Do you provide Workspace backups or account security help?
+            paragraphs:
+              - >-
+                We can help set up an independently chosen backup and configure baseline settings
+                such as 2-step verification and account recovery options. The business needs to
+                agree what is backed up and who can administer it. We do not bypass account
+                protections or offer enterprise compliance programmes as standard.
+          - question: Do we need an ongoing administration contract?
+            paragraphs:
+              - >-
+                No. We work on agreed one-off setups, changes, migrations and troubleshooting as
+                well as potentially longer work by arrangement. The initial discussion is free and
+                any paid diagnostic visit or further work is explained before agreement.
 expanded:
   situations:
     eyebrow: "Practical projects"

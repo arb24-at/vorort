@@ -54,13 +54,13 @@ sections:
     content:
       eyebrow: "A manageable next step"
       title: "Help with a single task or a wider setup"
-      intro: "You do not need a technical diagnosis or a shopping list before contacting us. Tell us what is difficult now, or what you want to be able to do. We can clarify the appropriate work with you."
+      intro: "You do not need to diagnose the fault or choose new equipment before contacting us. Tell us what is difficult now or what you want to set up. We can then agree a suitable next step."
       blocks:
         - type: columns
           columns:
             - title: "Start with what is already there"
               paragraphs:
-                - "We look at the affected device, application or connection and the equipment around it. A settings change, a targeted repair or a better connection may be enough. New equipment is discussed when it serves the task."
+                - "We look at the affected device, application or connection and the equipment around it. A settings change, a software fix or a better connection may be enough. New equipment is discussed when it serves the task."
             - title: "Agree the work and costs"
               paragraphs:
                 - "The initial conversation is free. Work is quoted individually, and any charge for a diagnostic visit is explained before it is arranged. Additional work, equipment or another appointment is agreed before we proceed."
@@ -84,7 +84,7 @@ sections:
       blocks:
         - type: prose
           paragraphs:
-            - "A video call that drops does not always mean the laptop is faulty. A printer may depend on both the computer and the network. We consider those connections as far as the agreed work requires, rather than assuming that every symptom needs a separate purchase or installation."
+            - "A dropped video call can involve the laptop, Wi-Fi or internet connection. A printer may depend on both the computer and the network. We check the relevant devices and connections together within the agreed work."
         - type: columns
           columns:
             - title: "Your home-office desk"
@@ -98,7 +98,7 @@ sections:
     recipe: process.staged-path
     content:
       eyebrow: "What happens next"
-      title: "From your enquiry to a useful handover"
+      title: "How we arrange and carry out the work"
       intro: "On-site help in Berlin is the usual approach. Suitable remote work can also be considered when the task allows it."
       steps:
         - title: "Describe the need"

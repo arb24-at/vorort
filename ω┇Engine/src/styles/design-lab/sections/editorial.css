@@ -45,6 +45,9 @@
 .pw-hero__art { border-radius: 13px; overflow: hidden; border: 1px solid #cce7df2b; }
 .pw-hero__art img { display: block; width: 100%; height: auto; aspect-ratio: 2.65; object-fit: cover; object-position: center 61%; }
 
+/* Keep the desk/computer in view for tall workplace artwork at the broad hero crop. */
+.pw-hero__art[data-subject="home-office"] img { object-position: center 35%; }
+
 /* One featured entry and four supporting entries. Every item is a real link. */
 .pw-topics { padding-top: clamp(3.5rem, 6vw, 5rem); }
 .pw-topics__grid { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 1.1rem; }
@@ -239,7 +242,7 @@
   .pw-hero :is(h1, h2) { font-size: clamp(2.15rem, 9.5vw, 3.2rem); max-width: 16ch; margin-top: 1rem; line-height: 1.06; letter-spacing: -.045em; }
   .pw-hero__intro { display: block; }
   .pw-hero__intro > p { font-size: 1.125rem; line-height: 1.65; margin-bottom: 1.3rem; }
-  .pw-hero__art img { aspect-ratio: 16 / 10; object-position: center 57%; }
+  .pw-hero__art img, .pw-hero__art[data-subject="home-office"] img { aspect-ratio: 16 / 10; object-position: center 57%; }
   .pw-hero__art { border-radius: 10px; }
   .pw-actions { gap: .6rem; }
   .pw-action { padding-inline: 1rem; font-size: 1rem; }

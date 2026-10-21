@@ -292,7 +292,7 @@ composition:
       recipe: explanation.editorial-prose
       content:
         eyebrow: Equipment and configuration
-        title: Managed network hardware with a clear purpose
+        title: "Routers, switches and network configuration"
         intro: >-
           The router, switches and Wi-Fi equipment need to work as one system. We select and configure them
           for the connections, services and access rules the office actually needs.
@@ -356,10 +356,10 @@ composition:
           - type: prose
             paragraphs:
               - >-
-                Suitable VPN access can be configured within the agreed network project. The work includes
-                checking compatible equipment, individual access and the connections from the intended
-                devices. Multi-factor authentication and restrictions on reachable resources are considered as
-                part of the access design.
+                Suitable VPN access can be configured within the agreed network project. The work
+                includes checking compatible equipment, individual access and the connections from
+                the intended devices. Multi-factor authentication and restrictions on reachable
+                resources are considered where the equipment supports them.
               - >-
                 Remote access also depends on the office internet connection, the user’s connection and
                 supported equipment. Access should be reviewed when people leave or their role changes;
@@ -368,9 +368,10 @@ composition:
             tone: outline
             title: Agree the specialist requirements separately
             body: >-
-              A VPN does not make an entire business secure. Penetration testing, incident investigation,
-              enterprise cybersecurity and compliance consulting are separate specialist services. Windows
-              Server, Active Directory and substantial Linux server work also require a separate scope.
+              A VPN does not make an entire business secure. Penetration testing, incident
+              investigation, enterprise cybersecurity and compliance consulting are outside this
+              network service and need a specialist assessment. Windows Server, Active Directory and
+              substantial Linux server work also require a separate scope.
     - id: working-process
       kind: process
       recipe: process.staged-path

@@ -22,8 +22,8 @@ seo:
   intent: "Hilfe beim geplanten Aufbau oder der Verbesserung eines privaten Heimnetzwerks in Berlin mit WLAN, Mesh, Ethernet und NAS finden."
 hero:
   eyebrow: "WLAN & Heimnetz · Vor Ort in Berlin"
-  title: "Heimnetzwerk einrichten – für Ihren Alltag geplant."
-  intro: "Der Schreibtisch steht im hinteren Zimmer. Der Fernseher braucht eine Verbindung. Fotos sollen gemeinsam erreichbar sein. Wir planen und richten Ihr Heimnetz so ein, dass Räume, WLAN, Kabel und Geräte sinnvoll zusammenkommen – in Wohnung, Haus und Homeoffice."
+  title: "Heimnetzwerk einrichten in Berlin"
+  intro: "Wir helfen bei schwachem WLAN, einem neuen Router und Verbindungen fürs Homeoffice. Ob ein Gerät, ein Zimmer oder ein ganzes Heimnetz: Wir prüfen Ihre vorhandene Technik und besprechen passende Änderungen, bevor Sie neue Geräte kaufen."
 # These short summaries preserve the existing service-data interface. The page
 # itself is authored in composition; the schema checks its hero against this one.
 problems:
@@ -51,256 +51,475 @@ cta:
   text: "Erzählen Sie uns von Ihrem Zuhause und den Stellen, an denen das Netz gebraucht wird. Sie müssen dafür keine Technik auswählen."
   prompt: "Zum Beispiel: Altbauwohnung, drei Zimmer, Arbeitszimmer am anderen Ende. WLAN dort schwach; ein NAS für Fotos ist geplant. Bitte nennen Sie auch vorhandene Netzwerkdosen und Ihren Bezirk – keine Passwörter oder Zugangscodes."
 composition:
+  experiment: wifi-home-network-de-preview
+  relatedBefore: abschluss-kontakt
   related:
-    eyebrow: "Wenn es um mehr als das Netz geht"
-    title: "Der passende nächste Schritt für Ihre Geräte."
-    linkLabel: "Leistung ansehen"
+    eyebrow: Wenn es um mehr als das Netz geht
+    title: Der passende nächste Schritt für Ihre Geräte.
+    linkLabel: Leistung ansehen
     serviceIds:
       - setup-data-transfer
       - computer-laptop
       - software-optimisation
-  contact:
-    formIntro: "Das Formular öffnet eine vorbereitete Nachricht in Ihrem E-Mail-Programm. Prüfen Sie die Angaben und senden Sie die E-Mail dort ab."
-    affectedPlaceholder: "Zum Beispiel WLAN, Netzwerkkabel, NAS oder Homeoffice"
-    request: "Was möchten Sie aufbauen oder verbessern?"
   sections:
     - id: einstieg
       kind: hero
       recipe: hero.editorial-art
       content:
-        eyebrow: "WLAN & Heimnetz · Vor Ort in Berlin"
-        title: "Heimnetzwerk einrichten – für Ihren Alltag geplant."
-        intro: "Der Schreibtisch steht im hinteren Zimmer. Der Fernseher braucht eine Verbindung. Fotos sollen gemeinsam erreichbar sein. Wir planen und richten Ihr Heimnetz so ein, dass Räume, WLAN, Kabel und Geräte sinnvoll zusammenkommen – in Wohnung, Haus und Homeoffice."
+        eyebrow: WLAN & Heimnetz · Vor Ort in Berlin
+        title: Heimnetzwerk einrichten in Berlin
+        intro: >-
+          Wir helfen bei schwachem WLAN, einem neuen Router und Verbindungen fürs Homeoffice. Ob ein
+          Gerät, ein Zimmer oder ein ganzes Heimnetz: Wir prüfen Ihre vorhandene Technik und
+          besprechen passende Änderungen, bevor Sie neue Geräte kaufen.
         media:
           subject: private-hero
           src: /images/concept-ii/private/P1.png
-          alt: "Illustration eines Zuhauses mit Arbeitsplatz, Wohnbereich und gemeinsam geplanter Netzwerkinfrastruktur."
+          alt: >-
+            Illustration eines Zuhauses mit Arbeitsplatz, Wohnbereich und gemeinsam geplanter
+            Netzwerkinfrastruktur.
         actions:
-          - label: "Heimnetz anfragen"
+          - label: Heimnetz anfragen
             target: kontakt
-          - label: "Themen entdecken"
+          - label: Leistungsbereiche ansehen
             target: themen
+    - id: alltagssituationen
+      kind: recognition
+      recipe: recognition.situations
+      content:
+        eyebrow: Typische Anlässe
+        title: Wobei benötigen Sie Unterstützung im Heimnetz?
+        intro: >-
+          Beschreiben Sie, was nicht funktioniert und in welchen Räumen Sie es bemerken. Sie müssen
+          weder die Ursache kennen noch fertige Geräteempfehlungen mitbringen.
+        items:
+          - title: Das WLAN erreicht nicht alle Räume
+            body: >-
+              Neben dem Router klappt der Videoanruf, am Schreibtisch oder im Schlafzimmer bricht er
+              ab. Wir prüfen die Verbindung dort, wo Sie sie nutzen.
+          - title: Ein neuer Router soll eingerichtet werden
+            body: >-
+              Wir helfen beim Anschluss und verbinden Ihre Geräte. Dabei berücksichtigen wir den
+              Internetanbieter und Technik, die Sie weiterverwenden möchten.
+          - title: Besprechungen im Homeoffice brechen ab
+            body: >-
+              Wir prüfen die Verbindung am Arbeitsplatz, einschließlich Computer, Dock oder Adapter,
+              und ob WLAN oder Ethernet besser zur Situation passt.
+          - title: Drucker oder Fernseher verbinden sich nicht
+            body: >-
+              Wir prüfen die unterstützten Anschlüsse und Einstellungen und binden kompatible Geräte
+              ins Heimnetz ein.
+          - title: Sie ziehen um oder verändern die Wohnung
+            body: >-
+              Wir planen nach den künftigen Standorten von Router, Möbeln und Geräten und beziehen
+              nutzbare Anschlüsse und Kabelwege ein.
+    - id: praktische-hilfe
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Was wir übernehmen
+        title: Vorhandenes prüfen und passende Änderungen besprechen
+        intro: >-
+          Manchmal genügen andere Einstellungen, ein besserer Routerstandort oder ein zusätzlicher
+          Anschluss. Diese Möglichkeiten prüfen wir, bevor wir neue Hardware empfehlen.
+        blocks:
+          - type: columns
+            columns:
+              - title: Hilfe bei einem einzelnen Problem
+                paragraphs:
+                  - >-
+                    Wir richten einen Router ein, verbinden Geräte oder untersuchen schwaches WLAN
+                    in einem bestimmten Zimmer. Auch kleine Aufträge sind willkommen; Sie brauchen
+                    keinen Plan für das ganze Zuhause.
+              - title: Ein neues oder erweitertes Heimnetz
+                paragraphs:
+                  - >-
+                    Wir können WLAN, Ethernet-Anschlüsse und gemeinsamen Speicher zusammen planen
+                    und einrichten. Geräte und Arbeiten stimmen wir mit Ihnen ab; auf Wunsch
+                    beschaffen wir passende Hardware.
+          - type: callout
+            tone: quiet
+            title: Kosten vorab klären
+            body: >-
+              Wir erstellen individuelle Angebote. Eine kostenpflichtige Diagnose vor Ort erläutern
+              wir vor der Terminvereinbarung; zusätzliche Geräte oder Arbeiten werden vorher mit
+              Ihnen besprochen.
+    - id: kurzer-kontakt
+      kind: cta
+      recipe: cta.quick-contact
+      content:
+        eyebrow: Kontakt aufnehmen
+        title: Beschreiben Sie uns Ihr Anliegen
+        body: >-
+          Das erste Gespräch ist kostenlos. Rufen Sie uns an oder schildern Sie das Problem unten im
+          Formular.
+        callLabel: Heimnetz-Anliegen telefonisch besprechen
+        enquiryLabel: Anfrageformular verwenden
+        enquiryTarget: kontakt
+    - id: kontakt
+      kind: contact
+      recipe: contact.enquiry-email
+      content:
+        title: Heimnetz-Anfrage stellen
+        intro: >-
+          Was funktioniert nicht oder soll neu eingerichtet werden? Ihr Berliner Stadtteil,
+          betroffene Räume und vorhandene Geräte helfen uns bei der Einordnung.
+        formIntro: >-
+          Das Formular erstellt einen Entwurf in Ihrem E-Mail-Programm. Prüfen und senden Sie ihn
+          dort selbst; die Website versendet nichts direkt. * Pflichtfelder.
+        request: Was möchten Sie einrichten oder verbessern?
+        requestPlaceholder: >-
+          Zum Beispiel: Das WLAN funktioniert im Wohnzimmer, bricht aber am Schreibtisch im
+          Schlafzimmer ab. Ich nutze den Router meines Anbieters und wohne in Neukölln. Bitte keine
+          Passwörter oder Zugangscodes senden.
+        affectedPlaceholder: Zum Beispiel Router, WLAN im Schlafzimmer oder Homeoffice-Verbindung
+        emailSubject: Heimnetz-Anfrage aus Berlin
     - id: themen
       kind: scope
       recipe: scope.topic-index
       content:
-        eyebrow: "Fünf Bausteine, ein Heimnetz"
-        title: "Wo möchten Sie anfangen?"
-        intro: "Vielleicht fehlt die Verbindung in einem Zimmer. Vielleicht planen Sie alles neu. Die folgenden Themen zeigen, was wir gemeinsam betrachten und einrichten können."
+        eyebrow: Mehr zum Leistungsumfang
+        title: WLAN, Kabel und Speicher im Überblick
+        intro: >-
+          Vielleicht fehlt die Verbindung in einem Zimmer. Vielleicht planen Sie alles neu. Die
+          folgenden Themen zeigen, was wir gemeinsam betrachten und einrichten können.
         items:
-          - title: "WLAN & Mesh"
-            body: "Funkabdeckung verbessern und Zugangspunkte sinnvoll platzieren."
+          - title: WLAN & Mesh
+            body: Funkabdeckung verbessern und Zugangspunkte sinnvoll platzieren.
             target: wlan-mesh
             media:
               subject: wifi
               src: /images/concept-ii/private/P2.png
-              alt: "Illustration zweier Wohnbereiche mit einem WLAN-Zugangspunkt und angedeutetem Funkweg."
-          - title: "Ethernet & Kabelwege"
-            body: "Feste Verbindungen dorthin bringen, wo sie gebraucht werden."
+              alt: >-
+                Illustration zweier Wohnbereiche mit einem WLAN-Zugangspunkt und angedeutetem
+                Funkweg.
+          - title: Ethernet & Kabelwege
+            body: Feste Verbindungen dorthin bringen, wo sie gebraucht werden.
             target: netzwerkverkabelung
             media:
               subject: cabling-home
               src: /images/concept-ii/private/P5.png
-              alt: "Illustration einer Netzwerkdose mit einem geordneten Kabelweg im Wohnraum."
-          - title: "Homeoffice & Geräte"
-            body: "Arbeitsplatz, Drucker und weitere Geräte ins Netz einbinden."
+              alt: Illustration einer Netzwerkdose mit einem geordneten Kabelweg im Wohnraum.
+          - title: Homeoffice & Geräte
+            body: Arbeitsplatz, Drucker und weitere Geräte ins Netz einbinden.
             target: homeoffice
             media:
               subject: home-office
               src: /images/concept-ii/private/P3.png
-              alt: "Illustration eines häuslichen Arbeitsplatzes mit Computer und Netzwerkverbindung."
-          - title: "NAS & gemeinsame Dateien"
-            body: "Speicher zugänglich machen und Sicherung getrennt mitdenken."
+              alt: Illustration eines häuslichen Arbeitsplatzes mit Computer und Netzwerkverbindung.
+          - title: NAS & gemeinsame Dateien
+            body: Speicher zugänglich machen und Sicherung getrennt mitdenken.
             target: nas-speicher
             media:
               subject: storage-home
               src: /images/concept-ii/private/P4.png
-              alt: "Illustration eines kompakten Netzwerkspeichers, den mehrere Geräte nutzen."
-          - title: "Umzug & Modernisierung"
-            body: "Ein neues Netz planen oder den vorhandenen Aufbau ordnen."
+              alt: Illustration eines kompakten Netzwerkspeichers, den mehrere Geräte nutzen.
+          - title: Umzug & Modernisierung
+            body: Ein neues Netz planen oder den vorhandenen Aufbau ordnen.
             target: heimnetz-planen
             media:
               subject: upgrade-home
               src: /images/concept-ii/private/P6.png
-              alt: "Illustration eines Wohnraums im Umbau mit vorbereitetem Netzwerkanschluss."
+              alt: Illustration eines Wohnraums im Umbau mit vorbereitetem Netzwerkanschluss.
     - id: wlan-mesh
       kind: explanation
       recipe: explanation.editorial-prose
       content:
-        eyebrow: "01 · WLAN & Mesh"
-        title: "Gutes WLAN beginnt mit dem richtigen Standort."
-        intro: "Ein neuer Router allein löst nicht jede Funklücke. Wenn Sie die WLAN-Reichweite verbessern möchten, zählen vor allem die Wege zwischen Zugangspunkt, Räumen und Endgeräten."
+        eyebrow: WLAN-Reichweite und Zugangspunkte
+        title: WLAN und Mesh einrichten
+        intro: >-
+          Ein neuer Router allein löst nicht jede Funklücke. Wenn Sie die WLAN-Reichweite verbessern
+          möchten, zählen vor allem die Wege zwischen Zugangspunkt, Räumen und Endgeräten.
         blocks:
           - type: prose
             paragraphs:
-              - "Im Flur ist die Verbindung gut, am Schreibtisch bricht sie ab: Solche Unterschiede können durch Wände, Decken, ungünstige Standorte oder benachbarte Funknetze entstehen. Wir betrachten die wichtigen Räume und prüfen, wie die vorhandene Technik angebunden ist."
-              - "Oft lässt sich ein bestehendes Heimnetz gezielt verbessern. Ob dafür ein anderer Standort, ein zusätzlicher Zugangspunkt oder eine Kabelverbindung sinnvoll ist, entscheidet sich am Gebäude und an Ihrer Nutzung. Vorhandene Hardware wird dabei mitgeprüft."
-          - type: subheading
-            emphasis: band
-            title: "Mesh beschreibt das Zusammenspiel. Die Verbindung bleibt entscheidend."
-            body: "Ein Mesh-Netzwerk kann Zugangspunkte per Funk oder per Netzwerkkabel verbinden. Auch ein kabelgebundener Access Point kann Teil eines Mesh-Systems sein."
+              - >-
+                Im Flur ist die Verbindung gut, am Schreibtisch bricht sie ab: Solche Unterschiede
+                können durch Wände, Decken, ungünstige Standorte oder benachbarte Funknetze
+                entstehen. Wir betrachten die wichtigen Räume und prüfen, wie die vorhandene Technik
+                angebunden ist.
+              - >-
+                Ein Zugangspunkt versorgt einen Bereich mit WLAN. Ein Mesh-System koordiniert
+                mehrere Zugangspunkte; sie können untereinander per Funk oder Ethernet verbunden
+                sein. Entscheidend sind sowohl die Verbindung zum Endgerät als auch die Anbindung
+                des Zugangspunkts an das übrige Netz.
           - type: table
-            title: "Drei Wege, WLAN im Zuhause zu verteilen"
-            columns: ["Ansatz", "Wann er infrage kommt", "Worauf es ankommt"]
+            title: Drei Wege, WLAN im Zuhause zu verteilen
+            columns:
+              - Ansatz
+              - Wann er infrage kommt
+              - Worauf es ankommt
             rows:
-              - ["Router sinnvoll platzieren", "Die wichtigen Räume liegen nah beieinander; der bisherige Standort ist ungünstig.", "Der Anschluss und mögliche Kabelwege begrenzen, wohin der Router versetzt werden kann."]
-              - ["Mesh oder Repeater per Funk", "Weitere Räume sollen ohne neue Ethernet-Leitung angebunden werden.", "Der zusätzliche Zugangspunkt braucht selbst eine ausreichend gute Verbindung. Er gehört nicht einfach mitten ins Funkloch."]
-              - ["Zugangspunkt per Ethernet", "Ein entfernter Raum oder eine weitere Etage braucht WLAN; ein Kabelweg ist vorhanden oder machbar.", "Das Kabel übernimmt die Verbindung ins übrige Netz. Standort, Anschlüsse und Stromversorgung werden mitgeplant."]
+              - - Router sinnvoll platzieren
+                - Die wichtigen Räume liegen nah beieinander; der bisherige Standort ist ungünstig.
+                - >-
+                  Der Anschluss und mögliche Kabelwege begrenzen, wohin der Router versetzt werden
+                  kann.
+              - - Mesh oder Repeater per Funk
+                - Weitere Räume sollen ohne neue Ethernet-Leitung angebunden werden.
+                - >-
+                  Der zusätzliche Zugangspunkt braucht selbst eine ausreichend gute Verbindung. Er
+                  gehört nicht einfach mitten ins Funkloch.
+              - - Zugangspunkt per Ethernet
+                - >-
+                  Ein entfernter Raum oder eine weitere Etage braucht WLAN; ein Kabelweg ist
+                  vorhanden oder machbar.
+                - >-
+                  Das Kabel übernimmt die Verbindung ins übrige Netz. Standort, Anschlüsse und
+                  Stromversorgung werden mitgeplant.
           - type: callout
             tone: quiet
-            title: "Dort prüfen, wo Sie das Netz nutzen."
-            body: "Wir richten Mesh-WLAN oder passende Access Points ein und testen die vereinbarten Bereiche mit den relevanten Geräten. Eine pauschale Geschwindigkeit oder lückenlose Abdeckung lässt sich daraus nicht für jedes Gebäude versprechen."
+            title: Die vereinbarten Räume und Geräte testen
+            body: >-
+              Wir richten Mesh-WLAN oder passende Access Points ein und testen die vereinbarten
+              Bereiche mit den relevanten Geräten. Eine pauschale Geschwindigkeit oder lückenlose
+              Abdeckung lässt sich daraus nicht für jedes Gebäude versprechen.
     - id: netzwerkverkabelung
       kind: explanation
       recipe: explanation.connection-path
       content:
-        eyebrow: "02 · Ethernet & Kabelwege"
-        title: "Ein Kabel kann dem WLAN den Weg erleichtern."
+        eyebrow: 02 · Ethernet & Kabelwege
+        title: Ethernet und Netzwerkverkabelung
         paragraphs:
-          - "Ein fester Schreibtisch, ein Fernseher oder ein NAS muss nicht über Funk verbunden sein. Ethernet kann diese Geräte direkt anbinden und zugleich die Basis für einen zusätzlichen WLAN-Zugangspunkt schaffen."
-          - "Wir planen und verlegen Netzwerkkabel, richten Netzwerkdosen und Anschlüsse ein und verbinden die vereinbarten Geräte. Dafür betrachten wir den gesamten Weg: vom Router über vorhandene Leitungen oder einen neuen Kabelkanal bis zum tatsächlichen Nutzungsort."
-        diagramTitle: "Vom Router in die Räume"
-        caption: "Vereinfachtes Beispiel: Je nach Aufbau verteilen ein Switch und mehrere Leitungen die Anschlüsse. Ein Kabelweg allein versorgt nicht beliebig viele Geräte ohne passende Verteilung."
+          - >-
+            Ein fester Schreibtisch, ein Fernseher oder ein NAS muss nicht über Funk verbunden sein.
+            Ethernet kann diese Geräte direkt anbinden und zugleich die Basis für einen zusätzlichen
+            WLAN-Zugangspunkt schaffen.
+          - >-
+            Wir planen und verlegen Netzwerkkabel, richten Netzwerkdosen und Anschlüsse ein und
+            verbinden die vereinbarten Geräte. Dafür betrachten wir den gesamten Weg: vom Router
+            über vorhandene Leitungen oder einen neuen Kabelkanal bis zum tatsächlichen Nutzungsort.
+        diagramTitle: Vom Router in die Räume
+        caption: >-
+          Jeder feste Anschluss braucht eine eigene Leitung und einen Netzwerkport. Das Diagramm
+          fasst getrennte Kabelverbindungen zusammen; es zeigt kein einzelnes Kabel, das sich ohne
+          weitere Verteilung in mehrere Anschlüsse verzweigt.
         source:
-          title: "Router / Switch"
-          body: "Hier werden die lokalen Verbindungen zusammengeführt und bei Bedarf auf zusätzliche Anschlüsse verteilt."
+          title: Router / Switch
+          body: Für jede vereinbarte feste Verbindung wird ein freier Netzwerkport benötigt.
         route:
-          title: "Kabelweg & Netzwerkdose"
-          body: "Eine passende Leitung bringt das Netz an den vorgesehenen Ort."
+          title: Kabelweg & Netzwerkdose
+          body: Getrennte Leitungen führen zu den vereinbarten Anschlusspunkten.
         destinations:
-          - title: "Arbeitsplatz"
-            body: "Computer oder Dockingstation werden direkt angeschlossen."
-          - title: "WLAN-Zugangspunkt"
-            body: "Das Kabel versorgt einen zusätzlichen Access Point mit der Netzwerkverbindung."
-          - title: "NAS oder Fernseher"
-            body: "Ein festes Gerät erhält seinen eigenen Anschluss."
+          - title: Arbeitsplatz
+            body: Computer oder Dockingstation werden direkt angeschlossen.
+          - title: WLAN-Zugangspunkt
+            body: Das Kabel versorgt einen zusätzlichen Access Point mit der Netzwerkverbindung.
+          - title: NAS oder Fernseher
+            body: Ein festes Gerät erhält seinen eigenen Anschluss.
         planning:
-          title: "Der Kabelweg wird vor der Arbeit geklärt."
-          body: "Sichtbare Kanäle, vorhandene Leerrohre oder neue Anschlusspunkte haben unterschiedliche Voraussetzungen. Wir besprechen den machbaren Weg und den vereinbarten Umfang."
+          title: Der Kabelweg wird vor der Arbeit geklärt.
+          body: >-
+            Sichtbare Kanäle, vorhandene Leerrohre oder neue Anschlusspunkte haben unterschiedliche
+            Voraussetzungen. Wir besprechen den machbaren Weg und den vereinbarten Umfang.
           items:
-            - title: "Vorhandenes nutzen"
-              body: "Netzwerkdosen, Leitungen und Verteilung werden geprüft, bevor neue Wege vorgeschlagen werden."
-            - title: "Eingriffe abstimmen"
-              body: "Bei Bohrungen oder Änderungen an der Wohnung werden notwendige Freigaben vorab geklärt. Arbeiten an der Elektroinstallation sind kein Teil dieser Netzwerkleistung."
-            - title: "Anschlüsse prüfen"
-              body: "Die vereinbarten Verbindungen werden praktisch getestet und die Übergabepunkte nachvollziehbar erklärt."
+            - title: Vorhandenes nutzen
+              body: >-
+                Netzwerkdosen, Leitungen und Verteilung werden geprüft, bevor neue Wege
+                vorgeschlagen werden.
+            - title: Eingriffe abstimmen
+              body: >-
+                Bei Bohrungen oder Änderungen an der Wohnung werden notwendige Freigaben vorab
+                geklärt. Arbeiten an der Elektroinstallation sind kein Teil dieser Netzwerkleistung.
+            - title: Standorte und Anschlüsse prüfen
+              body: >-
+                Die Dose soll dort liegen, wo Schreibtisch, Fernseher oder Zugangspunkt genutzt
+                werden. Wir testen die vereinbarten Verbindungen und erklären die Anschlusspunkte.
     - id: homeoffice
       kind: explanation
       recipe: explanation.editorial-prose
       content:
-        eyebrow: "03 · Homeoffice & verbundene Geräte"
-        title: "Der Arbeitsplatz verdient einen festen Platz im Netzplan."
-        intro: "Videokonferenzen, große Dateien und ein gemeinsam genutzter Drucker stellen andere Anforderungen als das gelegentliche Surfen auf dem Sofa. Wir planen den Arbeitsplatz nach dem, was Sie dort tatsächlich tun."
+        eyebrow: 03 · Homeoffice & verbundene Geräte
+        title: Verbindungen für Ihr Homeoffice
+        intro: >-
+          Videokonferenzen, große Dateien und ein gemeinsam genutzter Drucker stellen andere
+          Anforderungen als das gelegentliche Surfen auf dem Sofa. Wir planen den Arbeitsplatz nach
+          dem, was Sie dort tatsächlich tun.
         blocks:
           - type: columns
             columns:
-              - title: "Am Schreibtisch"
+              - title: Am Schreibtisch
                 paragraphs:
-                  - "Wo ein Kabelweg möglich ist, prüfen wir Ethernet für Computer oder Dockingstation. Wo WLAN gebraucht wird, zählt die Verbindung am tatsächlichen Sitzplatz – nicht nur neben dem Router."
-              - title: "Im übrigen Zuhause"
+                  - >-
+                    Wo ein Kabelweg möglich ist, prüfen wir Ethernet für Computer oder
+                    Dockingstation. Wo WLAN gebraucht wird, zählt die Verbindung am tatsächlichen
+                    Sitzplatz – nicht nur neben dem Router.
+              - title: Im übrigen Zuhause
                 paragraphs:
-                  - "Drucker, Smart-TV und weitere ausgewählte Geräte werden passend zu ihren Anschlüssen und Funktionen eingebunden. Gemeinsame Nutzung und Erreichbarkeit werden anschließend mit den vorgesehenen Geräten getestet."
+                  - >-
+                    Drucker, Smart-TV und weitere ausgewählte Geräte werden passend zu ihren
+                    Anschlüssen und Funktionen eingebunden. Gemeinsame Nutzung und Erreichbarkeit
+                    werden anschließend mit den vorgesehenen Geräten getestet.
           - type: prose
             paragraphs:
-              - "Wir betrachten auch die Abhängigkeiten: Eine stockende Besprechung kann am lokalen WLAN, am Endgerät, an der Internetleitung oder am verwendeten Dienst liegen. Ein besseres Heimnetz behebt nicht automatisch jede dieser Ursachen."
+              - >-
+                Wir betrachten auch die Abhängigkeiten: Eine stockende Besprechung kann am lokalen
+                WLAN, am Endgerät, an der Internetleitung oder am verwendeten Dienst liegen. Ein
+                besseres Heimnetz behebt nicht automatisch jede dieser Ursachen.
           - type: callout
             tone: outline
-            title: "Beim Arbeitsgerät gelten die Vorgaben Ihres Arbeitgebers."
-            body: "Firmen-VPN, verwaltete Computer und betriebliche Zugriffsregeln stimmen Sie mit Ihrer zuständigen IT ab. Wir können die Netzwerkbasis zu Hause prüfen, ohne fremde Verwaltungs- oder Sicherheitsvorgaben zu umgehen. Umfangreiche Smart-Home-Installationen werden separat geplant."
+            title: Beim Arbeitsgerät gelten die Vorgaben Ihres Arbeitgebers.
+            body: >-
+              Firmen-VPN, verwaltete Computer und betriebliche Zugriffsregeln stimmen Sie mit Ihrer
+              zuständigen IT ab. Wir können die Verbindung zu Hause prüfen; Änderungen an
+              verwalteten Geräten benötigen deren Freigabe.
     - id: nas-speicher
       kind: explanation
       recipe: explanation.editorial-prose
       content:
-        eyebrow: "04 · NAS & gemeinsame Dateien"
-        title: "Ein Ort für Ihre Dateien. Ein eigener Plan für die Sicherung."
-        intro: "Ein NAS ist ein Speichergerät im Netzwerk. Es kann Fotos, Dokumente oder Medien für mehrere Geräte bereitstellen. Damit es im Alltag hilft, müssen Speicher, Benutzer und Datenwege zusammenpassen."
+        eyebrow: 04 · NAS & gemeinsame Dateien
+        title: NAS und gemeinsame Dateien einrichten
+        intro: >-
+          Ein NAS ist ein Speichergerät im Netzwerk. Es kann Fotos, Dokumente oder Arbeitsdateien
+          für mehrere Geräte bereitstellen, ohne dass ein bestimmter Computer eingeschaltet sein
+          muss. Es ist optional; nicht jeder Haushalt benötigt eines.
         blocks:
           - type: prose
             paragraphs:
-              - "Wir unterstützen Sie bei Auswahl und Einrichtung eines passenden NAS, binden es ins Heimnetz ein und richten die vereinbarten Benutzer und Freigaben ein. Wer welche Ordner verwenden soll, wird vorab besprochen und anschließend praktisch geprüft."
-          - type: subheading
-            emphasis: plain
-            title: "Zugriff und Sicherung sind zwei verschiedene Aufgaben."
+              - >-
+                Wir unterstützen Sie bei Auswahl und Einrichtung eines passenden NAS, binden es ins
+                Heimnetz ein und richten die vereinbarten Benutzer und Freigaben ein. Wer welche
+                Ordner verwenden soll, wird vorab besprochen und anschließend praktisch geprüft.
           - type: columns
             columns:
-              - title: "Dateien gemeinsam nutzen"
+              - title: Dateien gemeinsam nutzen
                 paragraphs:
-                  - "Computer und andere kompatible Geräte greifen auf die vorgesehenen Freigaben zu. Speicherbedarf und Nutzung entscheiden mit darüber, welche Hardware sinnvoll ist. Ein Fernzugriff ist kein automatisch enthaltener Standard, sondern eine gesondert zu prüfende Anforderung."
-              - title: "Eine weitere Kopie vorsehen"
+                  - >-
+                    Computer und andere kompatible Geräte greifen auf die vorgesehenen Freigaben zu.
+                    Speicherbedarf und Nutzung entscheiden mit darüber, welche Hardware sinnvoll
+                    ist. Ein Fernzugriff ist kein automatisch enthaltener Standard, sondern eine
+                    gesondert zu prüfende Anforderung.
+              - title: Eine weitere Kopie vorsehen
                 paragraphs:
-                  - "Wir besprechen, welche Daten zusätzlich gesichert werden sollen, wohin die Sicherung geht und wie eine Wiederherstellung geprüft werden kann. Ein dafür genutztes zweites Gerät oder ein externer Dienst muss separat eingeplant werden."
+                  - >-
+                    Wir besprechen, welche Daten zusätzlich gesichert werden sollen, wohin die
+                    Sicherung geht und wie eine Wiederherstellung geprüft werden kann. Ein dafür
+                    genutztes zweites Gerät oder ein externer Dienst muss separat eingeplant werden.
           - type: callout
             tone: solid
-            title: "Auch mehrere Festplatten sind noch kein vollständiges Backup."
-            body: "Ein RAID kann je nach Aufbau den Ausfall einer Festplatte abfangen. Es schützt nicht automatisch vor versehentlichem Löschen, Schadsoftware oder dem Verlust des ganzen Geräts. Ein NAS ersetzt deshalb weder eine unabhängige Sicherung noch eine zugesicherte Datenrettung."
+            title: Ein NAS braucht eine unabhängige Sicherung
+            body: >-
+              Ein RAID kann je nach Aufbau den Ausfall einer Festplatte abfangen. Es schützt nicht
+              automatisch vor versehentlichem Löschen, Schadsoftware oder dem Verlust des ganzen
+              Geräts. Ein NAS ersetzt deshalb weder eine unabhängige Sicherung noch eine
+              zugesicherte Datenrettung.
     - id: heimnetz-planen
       kind: explanation
       recipe: explanation.editorial-prose
       content:
-        eyebrow: "05 · Umzug, Renovierung & Modernisierung"
-        title: "Erst die Räume. Dann die Einkaufsliste."
-        intro: "Ein Umzug ist ein guter Zeitpunkt, das Heimnetz neu zu denken. Aber auch ein über Jahre gewachsener Aufbau lässt sich ordnen, ohne alles pauschal auszutauschen."
+        eyebrow: 05 · Umzug, Renovierung & Modernisierung
+        title: Heimnetz bei Umzug, Renovierung oder Erweiterung planen
+        intro: >-
+          Ein Umzug ist ein guter Zeitpunkt, das Heimnetz neu zu denken. Aber auch ein über Jahre
+          gewachsener Aufbau lässt sich ordnen, ohne alles pauschal auszutauschen.
         blocks:
           - type: columns
             columns:
-              - title: "Wenn Sie neu planen"
+              - title: Wenn Sie neu planen
                 paragraphs:
-                  - "Wo stehen Schreibtische und Fernseher? Wo kommt der Internetanschluss an? Welche Räume sollen später anders genutzt werden? Wenn Leitungen und Anschlusspunkte früh mitgedacht werden, bleiben mehr Möglichkeiten für WLAN, Speicher und feste Geräte."
-              - title: "Wenn schon vieles vorhanden ist"
+                  - >-
+                    Wo stehen Schreibtische und Fernseher? Wo kommt der Internetanschluss an? Welche
+                    Räume sollen später anders genutzt werden? Wenn Leitungen und Anschlusspunkte
+                    früh mitgedacht werden, bleiben mehr Möglichkeiten für WLAN, Speicher und feste
+                    Geräte.
+              - title: Wenn schon vieles vorhanden ist
                 paragraphs:
-                  - "Wir sichten Router, Repeater, Switches und bestehende Kabelwege. Danach lässt sich entscheiden, was bleiben kann, was anders konfiguriert werden sollte und wo eine gezielte Ergänzung mehr bringt als ein weiterer Einzelkauf."
+                  - >-
+                    Wir sichten Router, Repeater, Switches und bestehende Kabelwege. Danach lässt
+                    sich entscheiden, was bleiben kann, was anders konfiguriert werden sollte und wo
+                    eine gezielte Ergänzung mehr bringt als ein weiterer Einzelkauf.
           - type: prose
             paragraphs:
-              - "Auf Wunsch empfehlen und beschaffen wir geeignete Netzwerk- und Speicherhardware. Zusätzliche Geräte, Arbeiten oder weitere Termine werden mit Ihnen abgestimmt. Auch eine Umsetzung in sinnvollen Schritten kann vereinbart werden."
-          - type: callout
-            tone: quiet
-            title: "Für die erste Anfrage reicht ein Überblick."
-            body: "Hilfreich sind ungefähre Wohnfläche, Anzahl der Räume oder Etagen, Bezirk, wichtige Geräte und vorhandene Netzwerkanschlüsse. Einen Grundriss oder Fotos können wir bei Bedarf später besprechen. Zugangsdaten gehören nicht in die Anfrage."
+              - >-
+                Auf Wunsch empfehlen und beschaffen wir geeignete Netzwerk- und Speicherhardware.
+                Zusätzliche Geräte, Arbeiten oder weitere Termine werden mit Ihnen abgestimmt. Auch
+                eine Umsetzung in sinnvollen Schritten kann vereinbart werden.
     - id: ablauf
       kind: process
       recipe: process.staged-path
       content:
-        eyebrow: "So gehen wir vor"
-        title: "Vom ersten Gespräch bis zum geprüften Anschluss."
-        intro: "Sie beschreiben Ihr Vorhaben. Wir klären, welche Unterstützung sinnvoll ist und was vor einem Termin vereinbart werden muss."
+        eyebrow: So gehen wir vor
+        title: So planen und installieren wir Ihr Heimnetz
+        intro: >-
+          Sie beschreiben Ihr Vorhaben. Wir klären, welche Unterstützung sinnvoll ist und was vor
+          einem Termin vereinbart werden muss.
         steps:
-          - title: "Bedarf klären"
-            body: "Räume, Geräte, gewünschte Nutzung und vorhandene Anschlüsse geben den Ausgangspunkt. Das erste Gespräch ist kostenlos."
-          - title: "Prüfen & vereinbaren"
-            body: "Wir betrachten den Aufbau und schlagen passende Maßnahmen vor. Umfang und Kosten sowie ein gegebenenfalls kostenpflichtiger Diagnosebesuch werden vorab geklärt."
-          - title: "Aufbauen & einrichten"
-            body: "Die vereinbarten Kabel, Zugangspunkte, Speicher und Geräte werden installiert und konfiguriert. Zusätzliche Arbeit wird vorher abgestimmt."
-          - title: "Testen & übergeben"
-            body: "Wir prüfen die vereinbarten Bereiche, Anschlüsse und Speicherzugriffe mit Ihnen und erklären den Aufbau, wichtige Einstellungen und verbleibende Grenzen."
+          - title: Bedarf klären
+            body: >-
+              Räume, Geräte, gewünschte Nutzung und vorhandene Anschlüsse geben den Ausgangspunkt.
+              Das erste Gespräch ist kostenlos.
+          - title: Prüfen & vereinbaren
+            body: >-
+              Wir betrachten den Aufbau und schlagen passende Maßnahmen vor. Umfang und Kosten sowie
+              ein gegebenenfalls kostenpflichtiger Diagnosebesuch werden vorab geklärt.
+          - title: Aufbauen & einrichten
+            body: >-
+              Die vereinbarten Kabel, Zugangspunkte, Speicher und Geräte werden installiert und
+              konfiguriert. Zusätzliche Arbeit wird vorher abgestimmt.
+          - title: Testen & übergeben
+            body: >-
+              Wir prüfen die vereinbarten Bereiche, Anschlüsse und Speicherzugriffe mit Ihnen und
+              erklären den Aufbau, wichtige Einstellungen und verbleibende Grenzen.
     - id: fragen
       kind: faq
       recipe: faq.editorial-answers
       content:
-        eyebrow: "Vor der Anfrage"
-        title: "Was Sie noch wissen möchten."
-        intro: "Sie brauchen keinen fertigen Netzplan. Diese Antworten helfen, das Vorhaben und die nächsten Schritte einzuordnen."
+        eyebrow: Vor der Anfrage
+        title: Häufige Fragen zum Heimnetz
+        intro: >-
+          Sie brauchen keinen fertigen Netzplan. Diese Antworten helfen, das Vorhaben und die
+          nächsten Schritte einzuordnen.
         items:
-          - question: "Muss mein vorhandener Router ersetzt werden?"
+          - question: Muss mein vorhandener Router ersetzt werden?
             paragraphs:
-              - "Nicht grundsätzlich. Wir prüfen, welche Funktionen und Anschlüsse vorhanden sind und ob sich der Router sinnvoll weiterverwenden lässt. Ein anderer Standort, ein zusätzlicher Access Point oder eine bessere Verbindung kann genügen."
-              - "Neue Hardware wird erst empfohlen, wenn die Anforderungen und die vorhandenen Möglichkeiten geklärt sind. Auf Wunsch können wir geeignete Komponenten auch beschaffen."
-          - question: "Können Sie Netzwerkkabel auch in einer bestehenden Wohnung verlegen?"
+              - >-
+                Oft kann er bleiben. Wir prüfen Anschlüsse, Einstellungen und die Kompatibilität mit
+                dem geplanten Aufbau. Ein anderer Standort oder ein zusätzlicher Zugangspunkt kann
+                genügen. Vorgaben für Geräte des Internetanbieters berücksichtigen wir; auf Wunsch
+                beschaffen wir abgestimmte Hardware.
+          - question: Können Sie Ethernet in einer bewohnten Wohnung verlegen?
             paragraphs:
-              - "Ja. Wir können Kabelwege, Netzwerkdosen und Anschlüsse planen und die vereinbarten Netzwerkarbeiten umsetzen. Welche Verlegung machbar ist, hängt von der Wohnung, vorhandenen Wegen und erforderlichen Freigaben ab."
-              - "Bauliche Nacharbeiten werden bei Bedarf gesondert abgestimmt; Änderungen an der Elektroinstallation gehören nicht zu dieser Leistung. Auch ohne Renovierung kann ein geeigneter sichtbarer Kabelkanal eine Möglichkeit sein."
-          - question: "Was kostet die Einrichtung und wann ist ein Termin möglich?"
+              - >-
+                Häufig kommen vorhandene Leerrohre oder sichtbare Kabelkanäle infrage. Wir prüfen
+                den machbaren Weg und besprechen notwendige Freigaben sowie bauliche Nacharbeiten
+                vor Beginn. Änderungen an der Elektroinstallation gehören nicht zur
+                Netzwerkleistung.
+          - question: Was kostet die Einrichtung und wann ist ein Termin möglich?
             paragraphs:
-              - "Der Aufwand richtet sich nach Räumen, vorhandener Technik, Kabelwegen und dem gewünschten Umfang. Wir erstellen deshalb ein individuelles Angebot. Das erste Gespräch ist kostenlos; Kosten für einen notwendigen Diagnosebesuch werden vorher erklärt."
-              - "Termine werden persönlich vereinbart. Je nach Absprache kommen auch Abende oder Samstage infrage. Eine feste Reaktionszeit oder einen kurzfristigen Termin können wir nicht pauschal zusagen."
-          - question: "Können Sie WLAN in jedem Raum garantieren?"
+              - >-
+                Wir erstellen ein individuelles Angebot nach vorhandener Technik, Räumen und
+                Arbeitsumfang. Das erste Gespräch ist kostenlos; eine kostenpflichtige Diagnose vor
+                Ort erklären wir vorab. Termine, auch mögliche Abende oder Samstage, werden
+                persönlich vereinbart. Eine feste Reaktionszeit sagen wir nicht zu.
+          - question: Wird WLAN in jedem Raum gleich gut funktionieren?
             paragraphs:
-              - "Eine solche Zusage wäre ohne Kenntnis des Gebäudes nicht seriös. Wände, Decken, andere Funknetze, Geräteeigenschaften und mögliche Kabelwege beeinflussen das Ergebnis."
-              - "Wir planen für die vereinbarten Nutzungsorte und prüfen sie nach der Einrichtung. Dabei erklären wir auch, wo Grenzen bleiben oder welche weitere Maßnahme sinnvoll wäre."
-          - question: "Helfen Sie auch, wenn die Internetleitung gestört ist?"
+              - >-
+                Nicht unbedingt. Wir planen und testen die vereinbarten Nutzungsorte, aber Wände,
+                Störungen und Geräteeigenschaften beeinflussen das Ergebnis. Bleiben Grenzen,
+                erklären wir, ob ein anderer Standort, ein weiterer Zugangspunkt oder eine
+                Kabelverbindung helfen könnte.
+          - question: Was ist bei einer Störung des Internetanbieters?
             paragraphs:
-              - "Wir können prüfen, ob die Ursache wahrscheinlich im lokalen Heimnetz oder außerhalb davon liegt. Ein Problem am Router oder an der Verbindung zum Arbeitsplatz ist etwas anderes als eine Störung der Anschlussleitung."
-              - "Störungen im Netz des Internetanbieters oder an dessen Anschluss müssen vom Anbieter bearbeitet werden. Eine solche Reparatur gehört nicht zu unserem Heimnetz-Angebot."
-          - question: "Kann mein NAS auch die Sicherung meiner Computer übernehmen?"
+              - >-
+                Wir können eingrenzen, ob das Problem im Heimnetz oder an der ankommenden Verbindung
+                liegt. Störungen im Netz des Internetanbieters oder an dessen Anschluss müssen vom
+                Anbieter bearbeitet werden; deren Reparatur ist nicht Teil unserer Heimnetzleistung.
+          - question: Kann ein NAS auch meinen Computer sichern?
             paragraphs:
-              - "Je nach NAS, Betriebssystem und verwendeter Software lässt sich eine Computersicherung auf dem NAS einrichten. Wir klären dafür Umfang, Kompatibilität und den vorgesehenen Wiederherstellungsweg."
-              - "Dateien, deren einzige Kopie auf dem NAS liegt, sind dadurch noch nicht unabhängig gesichert. Für wichtige Daten sollte eine weitere, passend getrennte Kopie eingeplant werden. Beschädigte oder unlesbare Datenträger sind keine normale Einrichtungsaufgabe."
+              - >-
+                Je nach Gerät und Software lässt sich eine Computersicherung auf dem NAS einrichten.
+                Wir klären Umfang, Kompatibilität und den Wiederherstellungsweg. Dateien, deren
+                einzige Kopie auf dem NAS liegt, brauchen trotzdem eine unabhängige Sicherung.
+                Beschädigte oder unlesbare Datenträger sind keine normale Einrichtungsaufgabe.
+    - id: abschluss-kontakt
+      kind: cta
+      recipe: cta.quick-contact
+      content:
+        eyebrow: Nächster Schritt
+        title: Fragen Sie zu Ihrem Heimnetz an
+        body: >-
+          Ob ein Gerät, ein Zimmer oder ein geplanter Aufbau: Beschreiben Sie Ihr Anliegen
+          telefonisch oder über das Formular.
+        callLabel: Heimnetz-Anliegen telefonisch besprechen
+        enquiryLabel: Zurück zur Anfrage
+        enquiryTarget: kontakt
