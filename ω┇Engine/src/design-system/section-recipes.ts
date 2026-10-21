@@ -509,14 +509,16 @@ export const sectionRecipes = {
   "footer.site": recipe({
     name: "Shared site footer", kind: "footer",
     status: "approved",
+    pageTypes: ["service", "audience", "home", "information"], audiences: ["private", "business", "general"],
+    // Aykhan reaffirmed approval and authorised site-wide EN/DE adoption, 2026-10-21.
     purpose: "Close the site with reliable navigation, direct contact routes, service context and legal information.",
     recommendedPlacement: "Final utility section after the editorial journey, whether the single enquiry appeared early or near the close",
-    recommendedUse: "Use the consistent site-wide closing footer on English private and business service pages, with the navigation and contact details sourced centrally rather than repeated in each page fixture.",
+    recommendedUse: "Use the consistent site-wide closing footer on every German and English customer page through MainLayout; keep it an independent, labelled specimen in Design Lab, with the navigation and contact details sourced centrally rather than repeated in each page fixture.",
     renderer: "SiteFooter.astro",
     authoringGuidance: {
       contentShape: "A site-wide closing introduction, a few service-information labels, Explore navigation, Phone/WhatsApp/Email links, a concise working-method note, copyright and legal links. Fixture content stays empty because all site facts come from shared configuration.",
       typicalRange: "One succinct introduction, the shared navigation set, three contact routes, one short service note and the required legal links; avoid adding another enquiry form or repeating the preceding page content.",
-      fixed: "The footer is the last section after contact and has semantic footer markup. Navigation, real contact destinations and legal routes are drawn from the shared site sources; both audiences use the same stable implementation. Do not invent credentials, guarantees or service claims.",
+      fixed: "Render one semantic footer after the page’s main content, including on pages without an enquiry. Navigation, real contact destinations and legal routes are drawn from the shared site sources; all audiences and both locales use the same stable implementation. Do not invent credentials, guarantees or service claims.",
       flexible: "Visual grouping, horizontal/vertical layout, spacing, typographic hierarchy, labels and concise editorial explanation may be refined without changing navigation or legal facts. Site-wide content changes belong in shared site data/components, not separate page fixture overrides.",
       needsDesignReview: "Use Design review for material navigation changes, legal structure changes, additional signup or enquiry actions, new social channels, different footer contracts for separate audiences or any changes to what is centrally owned.",
       media: "No photograph or illustration is required. The understated coloured marker and decorative accents are optional and must not replace real information.",

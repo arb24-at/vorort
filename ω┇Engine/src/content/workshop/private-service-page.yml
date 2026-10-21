@@ -497,6 +497,10 @@ sections:
       callLabel: "Call to discuss your request"
       enquiryLabel: "Use the enquiry form"
       enquiryTarget: "contact"
+  - id: "site-footer"
+    kind: "footer"
+    recipe: "footer.site"
+    content: {}
   - id: "direct-enquiry"
     kind: "contact"
     recipe: "contact.enquiry"
@@ -513,10 +517,6 @@ sections:
       formIntro: "Prepare a draft in your email app, review the details and send it there. Nothing is sent directly by this page. * Required fields."
       requestPlaceholder: "Describe the task, device or problem. Do not include passwords or access codes."
       emailSubject: "Private service enquiry"
-  - id: "site-footer"
-    kind: "footer"
-    recipe: "footer.site"
-    content: {}
 specimenNotes:
   local-support-introduction:
     context: "Local-service entrance or broad gateway"
@@ -595,8 +595,8 @@ specimenNotes:
     context: "Experimental functional email-draft fallback"
     description: "Shares the enquiry implementation but has a different, honest delivery contract. Compare field spacing, conditional reply requirements, inline errors and the explicit Prepare email draft action."
   site-footer:
-    context: "Shared utility footer specimen"
-    description: "Navigation, contact and legal facts remain centrally sourced. This is one independent specimen at the end of the gallery, not proof that every preceding example forms one customer journey."
+    context: "Approved site-wide section · EN/DE"
+    description: "Recipe footer.site is the shared footer on all customer pages. This independently labelled specimen uses the same renderer and central copy/navigation/contact sources; it is not Design Lab page chrome. Production selects the page locale and renders it once after the main content."
   text-introduction:
     context: "Image-free introduction for a practical service"
     description: "An Experimental alternative, not a replacement for the approved image-led hero. Copy/actions lead, with a subordinate preparation note. Check long titles, mobile reading order and note usefulness without recreating a full service page."

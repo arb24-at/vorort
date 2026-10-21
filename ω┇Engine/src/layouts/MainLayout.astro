@@ -3,7 +3,8 @@ import "../styles/tokens.css";
 import "../styles/global.css";
 import "../styles/technical-field.css";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import RecipeSection from "../components/RecipeSection.astro";
+import { siteFooterSection } from "../data/site-shell";
 import MobileContactDock from "../components/MobileContactDock.astro";
 import { siteConfig } from "../data/site";
 import { withBase } from "../utils/withBase";
@@ -76,7 +77,7 @@ const contactHref = contactPath !== undefined ? withBase(contactPath) : undefine
     <main id="main-content">
       <slot />
     </main>
-    {showSiteChrome && <Footer locale={lang} />}
+    {showSiteChrome && <RecipeSection section={siteFooterSection} audience="general" locale={lang} context="production" />}
     {showSiteChrome && <MobileContactDock locale={lang} contactHref={contactHref} />}
   </body>
 </html>

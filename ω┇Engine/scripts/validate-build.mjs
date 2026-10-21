@@ -114,6 +114,21 @@ for (const file of files) {
   if (!displayPath.startsWith("design-lab/") && reviewChrome.test(contents)) {
     errors.push(`Design Lab review controls must not appear in customer HTML: ${displayPath}`);
   }
+  const footers = [...contents.matchAll(/<footer\b[^>]*data-recipe="footer\.site"[^>]*>[\s\S]*?<\/footer>/g)];
+  if (footers.length !== 1) errors.push(`Expected one canonical footer.site section in ${displayPath}`);
+  const footer = footers[0]?.[0] ?? "";
+  if (!displayPath.startsWith("design-lab/")) {
+    const locale = contents.includes('<html lang="en"') ? "en" : "de";
+    if (!footer.includes('id="site-footer"') || !footer.includes(`data-locale="${locale}"`)) errors.push(`Footer identity/locale mismatch in ${displayPath}`);
+    if (contents.indexOf(footer) < contents.indexOf("</main>")) errors.push(`Customer footer must follow main content in ${displayPath}`);
+    if (/class="site-footer"/.test(contents)) errors.push(`Legacy footer remains in ${displayPath}`);
+    for (const target of (locale === "en" ? ["en/legal-notice/", "en/privacy/"] : ["impressum/", "datenschutz/"])) {
+      if (!footer.includes(`href="${basePath}${target}"`)) errors.push(`Missing locale legal footer link in ${displayPath}: ${target}`);
+    }
+    if (!footer.includes(locale === "en" ? "Get in touch" : "Kontakt aufnehmen")) errors.push(`Missing translated footer interface in ${displayPath}`);
+  } else if (!contents.includes('data-lab-recipe="footer.site"') && !contents.includes('data-library-recipe="footer.site"')) {
+    errors.push(`Lab footer must remain an identified specimen in ${displayPath}`);
+  }
   for (const match of contents.matchAll(/(?:href|src)="([^"]+)"/g)) {
     const url = match[1];
     if (!url.startsWith(basePath)) continue;
@@ -291,6 +306,16 @@ for (const retired of ["wifi-home-network-concept-ii", "wifi-home-network-bluepr
 const libraryHtml = fs.readFileSync(path.join(distRoot, "design-lab/approved/index.html"), "utf8");
 const libraryIds = new Set([...libraryHtml.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]));
 for (const match of libraryHtml.matchAll(/href="#([^"]+)"/g)) if (!libraryIds.has(match[1])) errors.push(`Approved specimen has a broken local target: ${match[1]}`);
+
+// The Approved library must report implicit shell adoption, including utilities.
+const footerArticle = libraryHtml.split('data-library-recipe="footer.site"')[1]?.split("</article>")[0] ?? "";
+const footerUsage = footerArticle.match(/<ul class="lab-usage-list">([\s\S]*?)<\/ul>/)?.[1] ?? "";
+const usageLinks = [...footerUsage.matchAll(/href="([^"]+)"/g)].map(match => match[1]);
+const customerPaths = expectedHtml.filter(route => !route.startsWith("design-lab/")).map(route => `${basePath}${route.replace(/index\.html$/, "")}`);
+for (const target of customerPaths) if (usageLinks.filter(link => link === target).length !== 1) errors.push(`Footer usage must list one customer consumer: ${target}`);
+if (usageLinks.length !== customerPaths.length + workshopIds.length || new Set(usageLinks).size !== usageLinks.length) errors.push("Footer usage must count each Workshop/customer page once.");
+const privateFooterPosition = privateHtml.indexOf('data-lab-recipe="footer.site"');
+if (privateFooterPosition < 0 || privateFooterPosition > privateHtml.indexOf('data-lab-recipe="contact.enquiry"')) errors.push("Private gallery footer must be an independent specimen before the enquiry specimens, not page chrome.");
 
 const sitemapPath = path.join(distRoot, "sitemap.xml");
 if (!fs.existsSync(sitemapPath)) {

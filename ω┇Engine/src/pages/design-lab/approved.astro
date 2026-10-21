@@ -4,6 +4,7 @@ import LabNavigation from "../../components/design-lab/LabNavigation.astro";
 import WorkshopCanvas from "../../components/design-lab/WorkshopCanvas.astro";
 import { recipesWithStatus, sectionRecipes, type RecipeId } from "../../design-system/section-recipes";
 import { getWorkshopPages, workshopPath } from "../../data/workshop";
+import { utilityShellConsumers } from "../../data/site-shell";
 import { getRecipeUsage } from "../../data/workshop-usage";
 import { getInformationPages, informationPath } from "../../data/information-pages";
 import { getHomePages, homePath } from "../../data/home-pages";
@@ -26,7 +27,7 @@ const approved = recipesWithStatus("approved").map(([id, recipe]) => {
   const anchor = `recipe-${id.replaceAll(".", "-")}`;
   return {
     id, recipe, fixture, section, anchor, sourceAnchor: "layout" in fixture.page ? `specimen-${section.id}` : section.id,
-    usage: getRecipeUsage(pages, services, id as RecipeId, [...audiencePages, ...homePages, ...informationPages]),
+    usage: getRecipeUsage(pages, services, id as RecipeId, [...audiencePages, ...homePages, ...informationPages, ...utilityShellConsumers]),
     replacements: Object.entries(sectionRecipes).filter(([, candidate]) => candidate.supersedes === id),
   };
 });

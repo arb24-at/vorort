@@ -127,6 +127,7 @@ Each task covers the family’s source-complete EN/DE pages as they become avail
 ## Design Lab and release bundle
 
 - [ ] **1D — Historical Approved Sections / Design Lab QA** — Retained unfinished ID. Review registry/block lifecycle, guidance/usage, Workshop/Approved specimens, tablet/responsive behaviour, focus/disclosures, capture/clipboard/download and wider production regressions. Consolidated RV IDs remain in Collaboration.
+- [x] **5C — Shared footer adoption** — Explicitly assigned/approved by Aykhan on 2026-10-21. Canonical `footer.site` specimen and shared EN/DE footer adopted on all customer pages; source/repository and representative desktop/mobile review verified in v2.3.16. Does not close 1D or page/release QA.
 - [ ] **5A — Bilingual site-wide consistency and production QA** — Ownership/cannibalisation, shared meaning with local SEO, metadata/links, truthful scope, accessibility, media, layout and form paths across revised pages.
 - [ ] **5B — Publication readiness decision** — Operator/contact/brand/legal facts, media, backend/privacy/spam/delivery, domain/indexing, dependencies and release health. Only Aykhan authorises release; no automatic push/deployment.
 

@@ -11,11 +11,11 @@ const temporary = await fs.mkdtemp(path.join(root, "node_modules/.workshop-check
 try {
   const modulePath = path.join(temporary, "contracts.mjs");
   await build({
-    stdin: { contents: 'export { serviceSchema } from "./src/data/service-schema.ts"; export * from "./src/design-system/workshop-schema.ts"; export * from "./src/design-system/section-recipes.ts"; export * from "./src/data/workshop-usage.ts"; export * from "./src/design-system/production-policy.ts"; export { enquiryEmailHref } from "./src/utils/enquiry-email.ts"; export { enquiryFieldError } from "./src/utils/enquiry-interface.ts"; export { captureScale } from "./src/scripts/design-lab/section-capture.ts";', resolveDir: root, loader: "ts" },
+    stdin: { contents: 'export * from "./src/data/site-shell.ts"; export { serviceSchema } from "./src/data/service-schema.ts"; export * from "./src/design-system/workshop-schema.ts"; export * from "./src/design-system/section-recipes.ts"; export * from "./src/data/workshop-usage.ts"; export * from "./src/design-system/production-policy.ts"; export { enquiryEmailHref } from "./src/utils/enquiry-email.ts"; export { enquiryFieldError } from "./src/utils/enquiry-interface.ts"; export { captureScale } from "./src/scripts/design-lab/section-capture.ts";', resolveDir: root, loader: "ts" },
     outfile: modulePath, bundle: true, platform: "node", format: "esm", packages: "external",
   });
   const { serviceSchema, getRecipeUsage, workshopSchema, blocksAllowedForProduction, productionTrials, usedRecipeBlocks, editorialProseBlocks, recipeAllowedForProduction, isEnglishHomeNetworkTest, isEnglishComputerSupportPreview, isEnglishBusinessNetworkPreview, isEnglishMicrosoft365Preview, enquiryEmailHref, enquiryFieldError, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
-  const { captureScale } = await import(pathToFileURL(modulePath).href);
+  const { captureScale, shellRecipeIds, siteFooterSection } = await import(pathToFileURL(modulePath).href);
   for (const [width, height] of [[390, 400], [1440, 800], [390, 10000], [3000, 20000], [20000, 3000]]) {
     const scale = captureScale(width, height);
     assert.ok(scale > 0 && scale <= 2, "Capture must retain a positive scale without excessive upscaling");
@@ -199,9 +199,14 @@ try {
     } finally { approvedHero[field] = original; }
   }
   for (const id of Object.keys(sectionRecipes)) {
-    const expected = serviceEntries.filter(service => service.composition?.sections.some(section => section.recipe === id)).length;
+    const expected = serviceEntries.filter(service => shellRecipeIds.includes(id) || service.composition?.sections.some(section => section.recipe === id)).length;
     assert.equal(getRecipeUsage(fixtures, serviceEntries, id).length, getWorkshopUsage(fixtures, id).length + expected);
   }
+  assert.equal(siteFooterSection.recipe, "footer.site");
+  assert.equal(sectionRecipes[siteFooterSection.recipe].status, "approved");
+  for (const pageType of ["service", "audience", "home", "information"]) assert.ok(sectionRecipes[siteFooterSection.recipe].pageTypes.includes(pageType));
+  for (const audience of ["private", "business", "general"]) assert.ok(sectionRecipes[siteFooterSection.recipe].audiences.includes(audience));
+  assert.equal(getRecipeUsage([], [production, production], "footer.site").length, 1, "Shell-owned footer counts the page once, even with repeated inputs");
   assert.equal(getRecipeUsage([], [production], "explanation.editorial-prose").length, 1, "Repeated production chapters count as one page");
   const englishProduction = serviceEntries.find(service => service.id === "wifi-home-network-en");
   assert.ok(englishProduction?.composition, "English home network service must adopt a validated composition");

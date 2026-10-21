@@ -1,7 +1,75 @@
 ---
-import WorkshopFooter from "../WorkshopFooter.astro";
+import { legalNavigation, legalNavigationEn, mainNavigation, mainNavigationEn } from "../../../data/navigation";
+import { footerCopy } from "../../../data/footer";
+import "../../../styles/design-lab/sections/site-footer.css";
+import { siteConfig } from "../../../data/site";
+import { withBase } from "../../../utils/withBase";
 
-type Props = { id: string; locale: "en" };
+type Props = { id: string; locale: "en" | "de" };
 const { id, locale } = Astro.props;
+const copy = footerCopy[locale];
+const navigation = locale === "en" ? mainNavigationEn : mainNavigation;
+const legal = locale === "en" ? legalNavigationEn : legalNavigation;
+const year = new Date().getFullYear();
 ---
-<WorkshopFooter id={id} locale={locale} />
+<footer id={id} class="c2-site-footer" data-locale={locale} data-recipe="footer.site">
+  <div class="container">
+    <div class="c2-site-footer__top">
+      <div class="c2-site-footer__brand">
+        <span class="c2-site-footer__mark" aria-hidden="true">●</span>
+        <div>
+          <span class="c2-site-footer__eyebrow">{copy.eyebrow}</span>
+          <strong>{copy.title}</strong>
+          <p>{copy.intro}</p>
+        </div>
+      </div>
+      <div class="c2-site-footer__signals" aria-label={copy.serviceInformation}>
+        {copy.signals.map(signal => <span>{signal}</span>)}
+      </div>
+    </div>
+
+    <div class="c2-site-footer__grid">
+      <nav class="c2-site-footer__explore" aria-label={copy.navigation}>
+        <h2>{copy.explore}</h2>
+        <ul>{navigation.map(item => <li><a href={withBase(item.href)}>{item.label}</a></li>)}</ul>
+      </nav>
+      <section class="c2-site-footer__contact" aria-labelledby={`${id}-contact-title`}>
+        <h2 id={`${id}-contact-title`}>{copy.contact}</h2>
+        <ul>
+          <li>
+            <a href={siteConfig.contact.phoneHref}>
+              <span class="c2-site-footer__contact-label">{copy.phone}</span>
+              <strong>{siteConfig.contact.phoneDisplay}</strong>
+              <span class="c2-site-footer__link-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href={siteConfig.contact.whatsappHref}>
+              <span class="c2-site-footer__contact-label">WhatsApp</span>
+              <strong>{copy.message}</strong>
+              <span class="c2-site-footer__link-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href={`mailto:${siteConfig.contact.email}`}>
+              <span class="c2-site-footer__contact-label">{copy.email}</span>
+              <strong>{siteConfig.contact.email}</strong>
+              <span class="c2-site-footer__link-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section class="c2-site-footer__service" aria-labelledby={`${id}-approach-title`}>
+        <h2 id={`${id}-approach-title`}>{copy.approach}</h2>
+        <p>{copy.approachBody}</p>
+      </section>
+    </div>
+
+    <div class="c2-site-footer__bottom">
+      <span>© {year}. {copy.rights}</span>
+      <nav aria-label={copy.legal}>
+        {legal.map((item, index) => <>{index > 0 ? <span aria-hidden="true">·</span> : null}<a href={withBase(item.href)}>{item.label}</a></>)}
+      </nav>
+    </div>
+  </div>
+</footer>

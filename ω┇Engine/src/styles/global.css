@@ -2374,74 +2374,7 @@ p {
   accent-color: var(--signal-dark);
 }
 
-/* Footer and mobile dock */
-.site-footer {
-  border-top: 1px solid var(--line);
-  background: var(--surface);
-  padding: 3rem 0 2rem;
-}
-
-.footer-grid {
-  display: grid;
-  gap: 2rem;
-}
-
-.footer-title {
-  margin: 0 0 0.7rem;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.82rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.footer-intro > p {
-  max-width: 48ch;
-  margin: 0;
-  color: var(--ink-soft);
-}
-
-.footer-signals {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.footer-signals span {
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 0.35rem 0.65rem;
-  color: var(--ink-soft);
-  font-size: 0.7rem;
-  font-weight: 700;
-}
-
-.footer-links {
-  display: grid;
-  gap: 0.38rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  color: var(--ink-soft);
-  font-size: 0.86rem;
-}
-
-.footer-links a:hover {
-  color: var(--signal-dark);
-}
-
-.footer-note {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.6rem;
-  margin-top: 2rem;
-  border-top: 1px solid var(--line);
-  padding-top: 1rem;
-  color: var(--ink-faint);
-  font-size: 0.76rem;
-}
-
+/* Mobile contact dock */
 .mobile-contact-dock {
   display: none;
 }
@@ -2500,9 +2433,6 @@ p {
     grid-column: 1 / -1;
   }
 
-  .footer-grid--compact {
-    grid-template-columns: 1.5fr 0.8fr 0.9fr;
-  }
 
   .boundary-layout {
     grid-template-columns: 1fr 1fr;
@@ -2779,13 +2709,7 @@ p {
     display: none;
   }
 
-  .footer-grid {
-    gap: 1.5rem;
-  }
 
-  .footer-note {
-    display: grid;
-  }
 
   .mobile-contact-dock {
     position: fixed;
