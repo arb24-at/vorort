@@ -32,7 +32,7 @@ Do not advertise a hardware-repair workshop, guaranteed data recovery, emergency
 
 **Content contracts:** homepages provide a plain-language Berlin/on-site entrance and progressive trust; audience landings orient visitors and link to detailed services. Private pages lead with recognizable situations, scope, outcomes, process, boundaries and FAQs. Business pages lead with operational impact, then systems/dependencies, implementation, documentation and maintainability. Trust content explains necessary access, account/data protection, backup/change precautions, experience and verified qualifications. Each indexable service owns a distinct useful intent, truthful proof and an obvious contact path.
 
-Production copy lives in validated `ω┇Engine/src/content/services/`, `audience-pages/` and `home-pages/` records; the planning-only `ω┇Engine/src/data/seo-keywords.yml` owns keyword routing and research status. Do not present provisional seeds as researched findings when generating copy or duplicate research logs here. German and English research remain distinct evidence sets; their bilingual blueprint shares meaning and structure. Protect service intent over search volume: hardware-repair keywords must not redefine computer support, normal migration must not imply recovery, and business provider terms must not imply a mandatory managed-service/SLA contract. Private landings remain orientation/conversion gateways rather than forced high-volume targets. Preserve canonical and alternate-language pairing; add substantial new pages only for distinct search intent or a genuine customer-information need.
+Production copy lives in validated `ω┇Engine/src/content/services/`, `audience-pages/`, `home-pages/` and `information-pages/` records; the planning-only `ω┇Engine/src/data/seo-keywords.yml` owns keyword routing and research status. Do not present provisional seeds as researched findings when generating copy or duplicate research logs here. German and English research remain distinct evidence sets; their bilingual blueprint shares meaning and structure. Protect service intent over search volume: hardware-repair keywords must not redefine computer support, normal migration must not imply recovery, and business provider terms must not imply a mandatory managed-service/SLA contract. Private landings remain orientation/conversion gateways rather than forced high-volume targets. Preserve canonical and alternate-language pairing; add substantial new pages only for distinct search intent or a genuine customer-information need.
 
 
 ## Routes and content identity
@@ -51,11 +51,11 @@ Routes omit the configured `/vorort/` base. Resolve links/assets with existing h
 | Microsoft 365 | `/leistungen/unternehmen/microsoft-365-arbeitsplaetze/` | `/en/services/business/microsoft-365-workplaces/` |
 | Google Workspace | `/leistungen/unternehmen/google-workspace-cloud/` | `/en/services/business/google-workspace-cloud/` |
 | Business networks | `/leistungen/unternehmen/netzwerk-it-betreuung/` | `/en/services/business/network-it-support/` |
-| Transitional trust page | `/datensicherheit-zertifizierungen/` | Bilingual replacement pending |
+| Trust and working methods | `/datensicherheit-zertifizierungen/` | `/en/how-we-work/` |
 | Legal notice / privacy | `/impressum/`, `/datenschutz/` | Link to German legal sources |
 
 
-Service folders are `computer-laptop`, `software-installation`, `wifi-home-network`, `setup-data-transfer`, `office-network`, `microsoft-365`, `google-workspace`. Read the record for its translation ID rather than deriving it from the folder. Trust/legal English treatment remains a deliberate planning decision; German notices remain the current authority.
+Service folders are `computer-laptop`, `software-installation`, `wifi-home-network`, `setup-data-transfer`, `office-network`, `microsoft-365`, `google-workspace`. Read the record for its translation ID rather than deriving it from the folder. Aykhan approved the English routes `/en/how-we-work/`, `/en/legal-notice/` and `/en/privacy/` on 2026-10-21. German legal/privacy text remains authoritative; legal drafts stay incomplete until verified operator and processing facts are supplied.
 
 ## Architecture and editing map
 
@@ -67,6 +67,8 @@ All paths below are inside `ω┇Engine/`.
 | `src/content/services/<directory>/<locale>.yml` | Actual editable production copy, metadata and composition |
 | `src/content/home-pages/`, `src/data/home-pages.ts`, `src/design-system/home-page-schema.ts` | Validated mixed-audience homepage content; `HomePage.astro` composes shared sections |
 | `src/content/audience-pages/`, `src/data/audience-pages.ts`, `src/design-system/audience-page-schema.ts` | Validated audience-gateway content and locale-aware service references |
+| `src/content/information-pages/`, `src/data/information-pages.ts`, `src/design-system/information-page-schema.ts` | Validated trust/legal/privacy records, publication status and locale route mapping |
+| `src/components/InformationPage.astro`, `src/styles/information-page.css` | Compact document layout, contents navigation and homepage-enquiry destination; no duplicate form |
 | `src/content.config.ts`, `src/data/service-schema.ts`, `services.ts`, `service-paths.ts` | Collection/schema, pairing, routes and resolution |
 | `src/data/seo-keywords.yml` | Planning-only research evidence, intent, exclusions and page ownership |
 | `src/design-system/section-recipes.ts` | Section/block definitions, lifecycle, schemas, renderer pointers and guidance |
@@ -83,6 +85,10 @@ All paths below are inside `ω┇Engine/`.
 Use strict semantic records. Default recipe-service pages use Approved sections/blocks and a shell enquiry. Explicit existing page trials in `production-policy.ts` permit only listed experiments on their exact identity/locale/audience/slug; no trial currently authorises the new list block. Future trials cite an approved blueprint/version and decision. Schema and rendering enforce permissions independently of lifecycle. One opening hero, one enquiry, compatible recipes, unique/reserved anchors and valid navigation remain enforced. Blueprint intent determines the rest of the journey, not a fixed Home Network pattern.
 
 All private service locale pairs, both Google Workspace locales and both Microsoft 365 locales use recipe composition; Both business-network locales use it as well. Other service records retain their existing templates. Root hero summaries must match the opening recipe. Related IDs resolve through the real route map. The optional `contactAfter` places the legacy shell after orientation and requires further content. Compact presentation follows trial/early-enquiry composition, is shared with Lab, and does not depend on a service ID.
+
+## Information pages
+
+The `information` page type with `general` audience supports trust/legal/privacy documents through the canonical Approved `explanation.editorial-prose` implementation and Approved blocks only. This compatible context extension changes no existing recipe fields, lifecycle states or consumer layouts. The document shell owns its H1 and responsive contents navigation; scoped styles make long prose compact without changing service presentation. Optional `MainLayout` contact destinations are used only here, so pages without a local form link to the real locale homepage enquiry; other consumers retain local anchors. Approved Sections usage counts each information locale once per recipe. References accept validated internal paths or HTTPS URLs. Draft records require visible outstanding facts, noindex/nofollow and sitemap exclusion; source completion cannot conceal unknown publication facts.
 
 ## Audience gateways
 

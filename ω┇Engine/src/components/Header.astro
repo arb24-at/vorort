@@ -7,9 +7,10 @@ type Props = {
   currentPath?: string;
   locale?: Locale;
   alternatePath?: string;
+  contactHref?: string;
 };
 
-const { currentPath = "/", locale = "de", alternatePath } = Astro.props;
+const { currentPath = "/", locale = "de", alternatePath, contactHref: contactHrefOverride } = Astro.props;
 const privateServices = await getServices("private", locale);
 const businessServices = await getServices("business", locale);
 const baseHref = withBase("");
@@ -66,7 +67,7 @@ const copy = locale === "en"
 
 const homePath = locale === "en" ? "en/" : "";
 const approachHref = withBase(locale === "en" ? "en/#approach" : "#arbeitsweise");
-const contactHref = `#${locale === "en" ? "contact" : "kontakt"}`;
+const contactHref = contactHrefOverride ?? `#${locale === "en" ? "contact" : "kontakt"}`;
 const privateLandingPath = locale === "en" ? "en/services/private/" : "leistungen/privatpersonen/";
 const businessLandingPath = locale === "en" ? "en/services/business/" : "leistungen/unternehmen/";
 ---

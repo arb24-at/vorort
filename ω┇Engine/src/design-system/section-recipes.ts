@@ -2,7 +2,7 @@ import { z } from "astro/zod";
 
 export type RecipeStatus = "experimental" | "approved" | "deprecated";
 export type Audience = "private" | "business" | "general";
-export type PageType = "service" | "audience" | "home";
+export type PageType = "service" | "audience" | "home" | "information";
 
 const text = z.string().trim().min(1);
 const anchor = z.string().regex(/^[a-z][a-z0-9-]*$/, "Use a lowercase semantic section ID");
@@ -296,7 +296,7 @@ export const sectionRecipes = {
     schema: z.object({ ...editorialHeading, media: suppliedMedia, note: editorialNote.optional() }).strict(),
   }),
   "explanation.editorial-prose": recipe({
-    pageTypes: ["service", "audience", "home"],
+    pageTypes: ["service", "audience", "home", "information"],
     audiences: ["private", "business", "general"],
     name: "Rich editorial prose", kind: "explanation",
     purpose: "Carry a large amount of explanatory content through varied but controlled editorial blocks without reducing it to cards or collapsible fragments.",

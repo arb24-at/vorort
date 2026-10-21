@@ -4,9 +4,10 @@ import type { Locale } from "../data/services";
 
 type Props = {
   locale?: Locale;
+  contactHref?: string;
 };
 
-const { locale = "de" } = Astro.props;
+const { locale = "de", contactHref } = Astro.props;
 const copy = locale === "en"
   ? { call: "Call", whatsapp: "WhatsApp", form: "Enquiry", formTarget: "#contact" }
   : { call: "Anrufen", whatsapp: "WhatsApp", form: "Anfrage", formTarget: "#kontakt" };
@@ -19,7 +20,7 @@ const copy = locale === "en"
   <a href={siteConfig.contact.whatsappHref} class="mobile-contact-dock__item">
     <span aria-hidden="true">↗</span>{copy.whatsapp}
   </a>
-  <a href={copy.formTarget} class="mobile-contact-dock__item mobile-contact-dock__item--accent">
+  <a href={contactHref ?? copy.formTarget} class="mobile-contact-dock__item mobile-contact-dock__item--accent">
     <span aria-hidden="true">＋</span>{copy.form}
   </a>
 </nav>

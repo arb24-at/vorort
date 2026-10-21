@@ -1,0 +1,9 @@
+---
+import InformationPage from "../../components/InformationPage.astro";
+import { getInformationPages, informationPath } from "../../data/information-pages";
+export async function getStaticPaths() {
+  return (await getInformationPages()).filter(page => page.locale === "en").map(page => ({ params: { information: informationPath(page.kind, page.locale).split("/")[1] }, props: { page } }));
+}
+const { page } = Astro.props;
+---
+<InformationPage page={page} />

@@ -527,6 +527,21 @@ pages:
   - iso 27001 beratung berlin
   - penetration test berlin
   - cybersecurity firma berlin
+- id: trust-en
+  route: /en/how-we-work/
+  locale: en
+  researchStatus: supportive-not-primary
+  primary: IT support working methods Berlin
+  useful:
+  - how IT support works
+  - device and account access
+  - backup before IT changes
+  - on-site and remote IT help
+  harmful:
+  - ISO 27001 consulting Berlin
+  - certified cybersecurity company Berlin
+  - penetration testing Berlin
+  note: "Supportive working-method page under the Product Owner-approved route decision, 2026-10-21. The primary is a descriptive intent label, not researched demand or a volume claim. Explains agreed scope, necessary access, backups, remote work and handover using verified Project facts. Commercial IT support Berlin remains with the business gateway; no certification, compliance or specialist-security ownership is claimed."
 excludedRoutes:
 - route: /impressum/
   reason: Legal page; no commercial keyword target.

@@ -11,7 +11,15 @@ const basePath = astroConfig.base ?? "/";
 const workshopIds = fs.readdirSync(path.join(engineRoot, "src/content/workshop"))
   .filter(file => /\.ya?ml$/.test(file)).map(file => file.replace(/\.ya?ml$/, ""));
 
+const informationFolder = path.join(engineRoot, "src/content/information-pages");
+const informationRoutesEn = { trust: "en/how-we-work/index.html", "legal-notice": "en/legal-notice/index.html", privacy: "en/privacy/index.html" };
+const informationRecords = fs.existsSync(informationFolder) ? fs.readdirSync(informationFolder).filter(name => name.endsWith(".yml")).map(name => yaml.load(fs.readFileSync(path.join(informationFolder, name), "utf8"))) : [];
+const englishInformationHtml = informationRecords.filter(page => page.locale === "en").map(page => informationRoutesEn[page.kind]);
+// The baseline includes all three German information routes. Only working
+// English additions enter the sitemap; governed German drafts leave it.
+const expectedSitemapCount = 23 + informationRecords.filter(page => page.locale === "en" && page.publication !== "draft").length - informationRecords.filter(page => page.locale === "de" && page.publication === "draft").length;
 const expectedHtml = [
+  ...englishInformationHtml,
   "404.html",
   "index.html",
   "design-lab/index.html",
@@ -290,11 +298,13 @@ if (!fs.existsSync(sitemapPath)) {
 } else {
   const sitemap = fs.readFileSync(sitemapPath, "utf8");
   const sitemapUrlCount = (sitemap.match(/<url>/g) ?? []).length;
+  const sitemapLocations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
+  if (new Set(sitemapLocations).size !== sitemapLocations.length) errors.push("Sitemap contains duplicate URLs.");
   if (sitemap.includes("/design-lab/") || reviewChrome.test(sitemap)) {
     errors.push("Design Lab must remain excluded from sitemap.xml.");
   }
-  if (sitemapUrlCount !== 23) {
-    errors.push(`Expected 23 sitemap URLs, found ${sitemapUrlCount}.`);
+  if (sitemapUrlCount !== expectedSitemapCount) {
+    errors.push(`Expected ${expectedSitemapCount} sitemap URLs, found ${sitemapUrlCount}.`);
   }
 }
 
@@ -304,5 +314,5 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-console.log(`Validated ${htmlFiles.length} HTML pages and 23 sitemap URLs.`);
+console.log(`Validated ${htmlFiles.length} HTML pages and ${expectedSitemapCount} sitemap URLs.`);
 console.log(`All internal ${basePath} links resolve; no stale /astro-demo/ paths found.`);

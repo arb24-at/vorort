@@ -5,6 +5,7 @@ import WorkshopCanvas from "../../components/design-lab/WorkshopCanvas.astro";
 import { recipesWithStatus, sectionRecipes, type RecipeId } from "../../design-system/section-recipes";
 import { getWorkshopPages, workshopPath } from "../../data/workshop";
 import { getRecipeUsage } from "../../data/workshop-usage";
+import { getInformationPages, informationPath } from "../../data/information-pages";
 import { getHomePages, homePath } from "../../data/home-pages";
 import { getAudiencePages } from "../../data/audience-pages";
 import { audiencePath } from "../../data/audience-paths";
@@ -15,6 +16,7 @@ const pages = await getWorkshopPages();
 const services = (await Promise.all([getServices("private", "de"), getServices("business", "de"), getServices("private", "en"), getServices("business", "en")])).flat();
 const audiencePages = (await getAudiencePages()).map(page => ({ id: page.id, title: page.seo.title, audience: page.audience, locale: page.locale, path: audiencePath(page.audience, page.locale), sections: page.sections }));
 const homePages = (await getHomePages()).map(page => ({ id: page.id, title: page.seo.title, audience: page.audience, locale: page.locale, path: homePath(page.locale), sections: page.sections }));
+const informationPages = (await getInformationPages()).map(page => ({ id: page.id, title: page.seo.title, audience: "general" as const, locale: page.locale, path: informationPath(page.kind, page.locale), sections: page.sections }));
 const approved = recipesWithStatus("approved").map(([id, recipe]) => {
   // The loader provides a stable page order; use the first real occurrence.
   // An unused recipe needs an explicit example decision, never invented content.
@@ -24,7 +26,7 @@ const approved = recipesWithStatus("approved").map(([id, recipe]) => {
   const anchor = `recipe-${id.replaceAll(".", "-")}`;
   return {
     id, recipe, fixture, section, anchor, sourceAnchor: "layout" in fixture.page ? `specimen-${section.id}` : section.id,
-    usage: getRecipeUsage(pages, services, id as RecipeId, [...audiencePages, ...homePages]),
+    usage: getRecipeUsage(pages, services, id as RecipeId, [...audiencePages, ...homePages, ...informationPages]),
     replacements: Object.entries(sectionRecipes).filter(([, candidate]) => candidate.supersedes === id),
   };
 });
@@ -106,7 +108,7 @@ const approved = recipesWithStatus("approved").map(([id, recipe]) => {
                   <div>
                     <h3>Used on pages <span class="lab-usage-count">{usage.length}</span></h3>
                     <ul class="lab-usage-list">{usage.map(page => <li><a href={withBase(page.path)}>{page.title}<span aria-hidden="true"> ↗</span></a><span>{page.context} · {page.audience}</span></li>)}</ul>
-                    <p class="lab-library-note">Derived from Workshop fixtures and production service compositions. Each page counts once per recipe.</p>
+                    <p class="lab-library-note">Derived from Workshop fixtures and production page compositions. Each page counts once per recipe.</p>
                   </div>
                 </footer>
               </div>

@@ -1,4 +1,5 @@
 import type { APIRoute } from "astro";
+import { getInformationPages, informationPath } from "../data/information-pages";
 import { getServicePath, getServices } from "../data/services";
 import { withBase } from "../utils/withBase";
 
@@ -25,9 +26,13 @@ const serviceRoutes = (
   ])
 ).flat().map(getServicePath);
 
+const informationPages = await getInformationPages();
+const informationRoutes = informationPages.filter(page => page.publication !== "draft").map(page => informationPath(page.kind, page.locale));
+const governedRoutes = new Set(informationPages.map(page => informationPath(page.kind, page.locale)));
+
 export const GET: APIRoute = ({ site }) => {
   const origin = site ?? new URL("https://www.berlin-tech-support.de");
-  const urls = [...staticRoutes, ...serviceRoutes]
+  const urls = [...staticRoutes.filter(route => !governedRoutes.has(route)), ...serviceRoutes, ...informationRoutes]
     .map((path) => new URL(withBase(path), origin).toString())
     .map((url) => `  <url><loc>${url}</loc></url>`)
     .join("\n");

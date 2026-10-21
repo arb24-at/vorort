@@ -17,6 +17,8 @@ type Props = {
   robots?: string;
   redirectPath?: string;
   showSiteChrome?: boolean;
+  // Base-free destination for pages which deliberately have no local enquiry.
+  contactPath?: string;
 };
 
 const {
@@ -27,7 +29,8 @@ const {
   alternatePath,
   robots,
   redirectPath,
-  showSiteChrome = true
+  showSiteChrome = true,
+  contactPath
 } = Astro.props;
 
 const isExternalCanonical =
@@ -45,6 +48,7 @@ const alternateUrl = alternatePath !== undefined
 const alternateLang = lang === "de" ? "en" : "de";
 const defaultUrl = new URL(withBase(""), Astro.site ?? "https://www.berlin-tech-support.de").toString();
 const redirectUrl = redirectPath ? withBase(redirectPath) : undefined;
+const contactHref = contactPath !== undefined ? withBase(contactPath) : undefined;
 ---
 
 <!doctype html>
@@ -68,11 +72,11 @@ const redirectUrl = redirectPath ? withBase(redirectPath) : undefined;
   </head>
   <body>
     <a class="skip-link" href="#main-content">{lang === "en" ? "Skip to content" : "Zum Inhalt springen"}</a>
-    {showSiteChrome && <Header currentPath={Astro.url.pathname} locale={lang} alternatePath={alternatePath} />}
+    {showSiteChrome && <Header currentPath={Astro.url.pathname} locale={lang} alternatePath={alternatePath} contactHref={contactHref} />}
     <main id="main-content">
       <slot />
     </main>
     {showSiteChrome && <Footer locale={lang} />}
-    {showSiteChrome && <MobileContactDock locale={lang} />}
+    {showSiteChrome && <MobileContactDock locale={lang} contactHref={contactHref} />}
   </body>
 </html>

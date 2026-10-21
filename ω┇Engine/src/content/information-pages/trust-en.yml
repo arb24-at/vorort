@@ -1,0 +1,136 @@
+id: trust-en
+kind: trust
+locale: en
+publication: working
+seo:
+  title: How We Work | IT Help, Account Access & Data
+  description: >-
+    How we agree IT work, handle necessary device and account access, consider backups and explain
+    changes. Practical working methods for homes and businesses in Berlin.
+header:
+  eyebrow: Our working methods
+  title: How we work with your devices and data
+  intro: >-
+    IT help can involve personal files, business systems and accounts. We explain what access is needed,
+    agree the work with you and make important changes understandable. Here is what to consider before an
+    appointment, during the work and at handover.
+sections:
+  - id: before-work
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Agree the work before it begins
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Start with what you need to do and what is getting in the way. We ask about the affected
+              devices, services and location, then discuss a suitable next step. That might be one small
+              configuration task, an on-site appointment or planned work across several systems.
+            - >-
+              The initial conversation is free. Work is quoted individually, and any paid diagnostic
+              visit is explained before it is arranged. We agree additional work, equipment or another
+              appointment before proceeding. You do not need a long-term support contract for a one-off
+              job.
+  - id: account-access
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Access to devices and accounts
+      blocks:
+        - type: columns
+          columns:
+            - title: Clarify permission and responsibility
+              paragraphs:
+                - >-
+                  We establish which device, account or administration area is needed for the agreed
+                  task. An employer, internal IT team or existing provider may manage part of the setup;
+                  their approval and access rules still apply. We do not bypass those controls.
+            - title: Keep credentials out of the enquiry
+              paragraphs:
+                - >-
+                  Describe the problem without sending passwords, authentication codes, recovery keys or
+                  remote-access credentials. When a sensitive entry is needed during the work, you can
+                  enter it on the device where appropriate. Protected accounts remain subject to their
+                  legitimate recovery and verification processes.
+  - id: files-and-backups
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Backups before important changes
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Before work that could affect files, settings or the ability to use a system, we discuss
+              the important data and the available backup or fallback. An existing backup needs to be
+              understood: what it includes, when it last ran and whether the required files can be
+              restored.
+            - >-
+              A backup reduces some risks; it is not a promise that every problem can be reversed. Normal
+              data transfer concerns readable files on accessible devices. Damaged or unreadable storage,
+              and access that cannot be legitimately recovered, need a different assessment. Tell us
+              about irreplaceable data before work begins.
+  - id: remote-help
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: When remote help is appropriate
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Some software, account and configuration work can be considered remotely by agreement.
+              Physical connections, cabling and work that depends on the room or equipment usually need a
+              visit. We discuss which approach makes sense rather than assuming remote access is
+              required.
+            - >-
+              If a remote session is appropriate, we clarify the tool, access needed and the work to be
+              carried out. A one-off session does not mean ongoing administration or an open-ended
+              support arrangement; any continuing access or maintenance needs separate agreement.
+  - id: handover
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Check the result and explain what changed
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              After the work, we test the relevant functions with the agreed task in mind. A computer
+              starting again, a working connection or access to a shared folder should be checked in the
+              way you actually use it.
+            - >-
+              We explain the important changes, settings you need and any remaining limits or next steps.
+              Where documentation is part of the agreed work, it should help you or the responsible IT
+              contact maintain the setup. Recommendations for later improvements are discussed separately
+              from the work already agreed.
+  - id: experience
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Practical IT experience since 2008
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Our IT experience dates from 2008 and covers computers, workplace software, networks and
+              connected services. The current offer includes Windows and macOS help, Microsoft 365,
+              Google Workspace, home and office networks, and new-device setup.
+            - >-
+              Experience helps us ask useful questions, but the right fit still depends on the task. If
+              your organisation has particular access, approval or documentation requirements, mention
+              them at the start so we can assess the work responsibly.
+nextStep:
+  title: Discuss your setup or a specific requirement
+  body: >-
+    Tell us which device, account or workflow needs attention. Include any access restrictions or
+    important dates, but leave credentials and sensitive records out of the message.
+  linkLabel: Describe your request
+references:
+  - label: Help at home and in your home office
+    href: /en/services/private/
+  - label: Business IT services
+    href: /en/services/business/
+  - label: Website privacy notice — German source
+    href: /datenschutz/

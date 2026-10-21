@@ -1,0 +1,66 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import RecipeSection from "./RecipeSection.astro";
+import { informationPath, type InformationPage as InformationPageRecord } from "../design-system/information-page-schema";
+import { withBase } from "../utils/withBase";
+import "../styles/design-lab/sections/foundation.css";
+import "../styles/design-lab/sections/editorial.css";
+import "../styles/design-lab/sections/editorial-prose.css";
+import "../styles/information-page.css";
+
+type Props = { page: InformationPageRecord };
+const { page } = Astro.props;
+const english = page.locale === "en";
+const draft = page.publication === "draft";
+const contactPath = english ? "en/#contact" : "#kontakt";
+const germanSource = english && page.kind !== "trust";
+const productionContext = { id: page.id, translationId: page.kind, slug: page.kind, locale: page.locale, audience: "general" as const, pageType: "information" as const };
+const copy = english
+  ? { contents: "On this page", status: "Working draft — not ready for publication", statusBody: "This text is being prepared. The outstanding details below still need to be verified before it can serve as a complete notice.", missing: "Details still to be confirmed", german: draft ? "Read the German source draft" : "Read the German source text", source: "The German text is the source version. This English version is provided for understanding.", draftSource: "This English draft follows the German source draft. Neither version is a completed legal notice." }
+  : { contents: "Auf dieser Seite", status: "Arbeitsentwurf – noch nicht zur Veröffentlichung bereit", statusBody: "Dieser Text wird vorbereitet. Die unten genannten Angaben müssen noch geprüft und ergänzt werden, bevor er als vollständige Information dienen kann.", missing: "Noch zu bestätigende Angaben" };
+---
+<MainLayout
+  title={page.seo.title}
+  description={page.seo.description}
+  canonicalPath={informationPath(page.kind, page.locale)}
+  alternatePath={informationPath(page.kind, english ? "de" : "en")}
+  lang={page.locale}
+  robots={draft ? "noindex, nofollow" : undefined}
+  contactPath={contactPath}
+>
+  <div class="concept-ii information-page" data-information-page={page.id} data-publication={page.publication}>
+    <header class="information-header">
+      <div class="container">
+        <p class="pw-eyebrow">{page.header.eyebrow}</p>
+        <h1 id="information-title">{page.header.title}</h1>
+        <p class="information-header__intro">{page.header.intro}</p>
+        {germanSource && <p class="information-source">{draft ? copy.draftSource : copy.source} <a href={withBase(informationPath(page.kind, "de"))}>{copy.german}<span aria-hidden="true"> →</span></a></p>}
+      </div>
+    </header>
+
+    <div class="container information-layout">
+      <nav class="information-contents" aria-labelledby="information-contents">
+        <p id="information-contents">{copy.contents}</p>
+        <ol>
+          {page.sections.map(section => <li><a href={`#${section.id}`}>{section.content.title}</a></li>)}
+        </ol>
+      </nav>
+      <div class="information-body">
+        {draft && <aside class="information-status" aria-labelledby="information-status">
+          <p class="information-status__label">{english ? "Draft status" : "Entwurfsstatus"}</p>
+          <h2 id="information-status">{page.draftNotice?.title ?? copy.status}</h2>
+          <p>{page.draftNotice?.body ?? copy.statusBody}</p>
+          <h3 id="information-missing-facts">{copy.missing}</h3>
+          <ul aria-labelledby="information-missing-facts">{page.missingFacts?.map(fact => <li>{fact}</li>)}</ul>
+        </aside>}
+        {page.sections.map(section => <RecipeSection section={section} audience="general" locale={page.locale} context="production" productionContext={productionContext} />)}
+        {page.references && <nav class="information-references" aria-labelledby="information-references"><h2 id="information-references">{english ? "Further information" : "Weiterführende Informationen"}</h2><ul>{page.references.map(link => <li><a href={link.href.startsWith("https://") ? link.href : withBase(link.href)}>{link.label}</a></li>)}</ul></nav>}
+        {page.nextStep && <section class="information-next-step" id="information-next-step" aria-labelledby="information-next-title">
+          <h2 id="information-next-title">{page.nextStep.title}</h2>
+          <p>{page.nextStep.body}</p>
+          <a class="btn btn-primary" href={withBase(contactPath)}>{page.nextStep.linkLabel}<span aria-hidden="true"> →</span></a>
+        </section>}
+      </div>
+    </div>
+  </div>
+</MainLayout>

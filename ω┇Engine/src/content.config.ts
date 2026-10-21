@@ -1,6 +1,7 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { workshopSchema } from "./design-system/workshop-schema";
+import { informationPageSchema } from "./design-system/information-page-schema";
 import { homePageSchema } from "./design-system/home-page-schema";
 import { audiencePageSchema } from "./design-system/audience-page-schema";
 import { serviceSchema } from "./data/service-schema";
@@ -29,4 +30,8 @@ const homePages = defineCollection({
   loader: glob({ pattern: "*.yml", base: "./src/content/home-pages", generateId: ({ data }) => String(data.id) }),
   schema: homePageSchema,
 });
-export const collections = { services, workshop, audiencePages, homePages };
+const informationPages = defineCollection({
+  loader: glob({ pattern: "*.yml", base: "./src/content/information-pages", generateId: ({ data }) => String(data.id) }),
+  schema: informationPageSchema,
+});
+export const collections = { services, workshop, audiencePages, homePages, informationPages };

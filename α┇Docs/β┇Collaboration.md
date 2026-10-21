@@ -4,6 +4,8 @@ Keep current state and unresolved work here. Durable facts belong in Project, pr
 
 ## Current handoff
 
+- **4K English working methods / v2.3.13:** English working-methods page is complete at the user-approved /en/how-we-work/. Six compact text-led chapters explain agreed scope, necessary access, backups, remote help, testing/handover and verified experience. New validated information records reuse Approved rich prose; no recipe/block promotion or experimental permission. Information-only header/dock actions lead to the real locale homepage enquiry. Next is the German counterpart, then expressly incomplete legal/privacy drafts; QA-K stays open.
+
 - **3G German Microsoft 365 review / v2.3.12:** The existing 13-section German Microsoft 365 journey is complete. Minimal parity refinements clarify authorised MFA/recovery checks, independent backup versus sync and specialist assessment for complex migrations. Exact existing DE recipe permission, all section/block states, routes and English source are preserved. Genuine German Planner figures are Germany-level (support 500/month, Beratung/Dienstleister 50), not Berlin estimates. Next work is EN/DE trust, then expressly incomplete legal/privacy drafts on the approved routes.
 
 - **3F German business networks / v2.3.11:** German network page now uses 14 authored shared sections plus related navigation: substantial situations/scope, one modern German email-draft enquiry, chapter index, cabling diagram, Wi-Fi/table, managed devices, NAS/independent backup, VPN, process/FAQ and return. Genuine network-it-de research/route ownership preserved; small jobs and existing equipment remain welcome. Exact business-network-de-preview trial permits five existing Experimental recipes, no blocks or promotion. No new media, renderer or layout contract. Next bounded work is 3G review, then the approved trust routes and incomplete legal drafts.
@@ -52,6 +54,8 @@ Grouped by current implementation, with historical IDs retained for traceability
 A worker resolving one row should name its actual subchecks/evidence and retain the remainder. Do not recreate already-resolved RV-002. No unavailable check is silently passed by shortening this file.
 
 ## Recent work
+
+- **v2.3.13 / 4K English working methods:** Full npm run validate passed all applicable suites before the discovered static sitemap-count assumption; focused rebuild, information and static checks then passed with 32 HTML pages / 24 sitemap URLs. Fifteen negative information contracts cover identity, lifecycle, blocks, IDs, references and visible draft obligations. Browser reviewed 1440×1000 and 390×844: hierarchy, sticky/stacked contents, column reflow, chapter keyboard focus, one H1/no duplicate form, canonical/alternate, no overflow and working homepage enquiry/dock destination. Existing service/home/gateway contact defaults and recipe fields are unchanged. No push/deployment or approval implied.
 
 - **v2.3.12 / 3G German Microsoft 365 review:** npm run validate passed on the committed service implementation plus only the 3G copy refinement: 31 HTML pages, 23 sitemap URLs, all service/Workshop/audience/home checks and German trial negatives. Browser reviewed at 1440×1000 and 390×844: heading hierarchy, one early email-draft enquiry, German required-field feedback, selected phone/email required/disabled switching, keyboard optional details, table region, continuation/return and no overflow. RV-020 technical scope resolved; separate QA-G and publication dependencies remain. No push/deployment or approval implied.
 
