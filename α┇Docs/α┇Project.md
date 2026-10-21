@@ -88,6 +88,8 @@ All private service locale pairs, both Google Workspace locales and both Microso
 
 ## Information pages
 
+Both working-methods locales use six substantive chapters with natural local copy and supportive SEO ownership; no invented certification/security claim or volume evidence. The historical German URL is retained while its footer label is Arbeitsweise & Daten.
+
 The `information` page type with `general` audience supports trust/legal/privacy documents through the canonical Approved `explanation.editorial-prose` implementation and Approved blocks only. This compatible context extension changes no existing recipe fields, lifecycle states or consumer layouts. The document shell owns its H1 and responsive contents navigation; scoped styles make long prose compact without changing service presentation. Optional `MainLayout` contact destinations are used only here, so pages without a local form link to the real locale homepage enquiry; other consumers retain local anchors. Approved Sections usage counts each information locale once per recipe. References accept validated internal paths or HTTPS URLs. Draft records require visible outstanding facts, noindex/nofollow and sitemap exclusion; source completion cannot conceal unknown publication facts.
 
 ## Audience gateways

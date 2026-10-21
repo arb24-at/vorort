@@ -4,6 +4,8 @@ Keep current state and unresolved work here. Durable facts belong in Project, pr
 
 ## Current handoff
 
+- **3K German working methods / v2.3.14:** German working-methods source now matches the English service meaning with natural Sie copy: agreed scope, access, backups, remote help, testing/handover and experience. Existing /datensicherheit-zertifizierungen/ route is preserved and paired with /en/how-we-work/; the German footer label now describes Arbeitsweise & Daten. Both use the existing Approved-only information composition. Next is the expressly incomplete legal/privacy draft preparation; no new recipe or approval.
+
 - **4K English working methods / v2.3.13:** English working-methods page is complete at the user-approved /en/how-we-work/. Six compact text-led chapters explain agreed scope, necessary access, backups, remote help, testing/handover and verified experience. New validated information records reuse Approved rich prose; no recipe/block promotion or experimental permission. Information-only header/dock actions lead to the real locale homepage enquiry. Next is the German counterpart, then expressly incomplete legal/privacy drafts; QA-K stays open.
 
 - **3G German Microsoft 365 review / v2.3.12:** The existing 13-section German Microsoft 365 journey is complete. Minimal parity refinements clarify authorised MFA/recovery checks, independent backup versus sync and specialist assessment for complex migrations. Exact existing DE recipe permission, all section/block states, routes and English source are preserved. Genuine German Planner figures are Germany-level (support 500/month, Beratung/Dienstleister 50), not Berlin estimates. Next work is EN/DE trust, then expressly incomplete legal/privacy drafts on the approved routes.
@@ -54,6 +56,8 @@ Grouped by current implementation, with historical IDs retained for traceability
 A worker resolving one row should name its actual subchecks/evidence and retain the remainder. Do not recreate already-resolved RV-002. No unavailable check is silently passed by shortening this file.
 
 ## Recent work
+
+- **v2.3.14 / 3K German working methods:** Focused build, information and static checks passed: 32 HTML pages / 24 sitemap URLs, both locale records, lifecycle/negative contracts, metadata, anchors and contact fallbacks. German route browser reviewed at 1440×1000 and 390×844 for heading flow, document/contents layout, keyboard focus, German labels, locale pairing and no overflow. QA-K is separate and remains open; no push/deployment.
 
 - **v2.3.13 / 4K English working methods:** Full npm run validate passed all applicable suites before the discovered static sitemap-count assumption; focused rebuild, information and static checks then passed with 32 HTML pages / 24 sitemap URLs. Fifteen negative information contracts cover identity, lifecycle, blocks, IDs, references and visible draft obligations. Browser reviewed 1440×1000 and 390×844: hierarchy, sticky/stacked contents, column reflow, chapter keyboard focus, one H1/no duplicate form, canonical/alternate, no overflow and working homepage enquiry/dock destination. Existing service/home/gateway contact defaults and recipe fields are unchanged. No push/deployment or approval implied.
 

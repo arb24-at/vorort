@@ -90,7 +90,7 @@ Family/source: `homepage`.
 Family/source: `trust`.
 
 - [x] **4K — EN · Trust and working methods** — `/en/how-we-work/`. Source/repository/browser verified in v2.3.13; QA-K remains open.
-- [ ] **3K — DE · Trust and working methods** — `/datensicherheit-zertifizierungen/`.
+- [x] **3K — DE · Trust and working methods** — `/datensicherheit-zertifizierungen/`. Source/repository/browser verified in v2.3.14; QA-K remains open.
 
 ### Legal notice
 

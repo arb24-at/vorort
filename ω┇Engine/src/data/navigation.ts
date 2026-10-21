@@ -8,7 +8,7 @@ export const mainNavigation: NavItem[] = [
   { label: "Unternehmen", href: "leistungen/unternehmen/" },
   { label: "Privatpersonen", href: "leistungen/privatpersonen/" },
   { label: "Software & Einrichtung", href: "leistungen/privatpersonen/software-installation-optimierung/" },
-  { label: "Datensicherheit", href: "datensicherheit-zertifizierungen/" }
+  { label: "Arbeitsweise & Daten", href: "datensicherheit-zertifizierungen/" }
 ];
 
 export const mainNavigationEn: NavItem[] = [

@@ -1,0 +1,149 @@
+id: trust-de
+kind: trust
+locale: de
+publication: working
+seo:
+  title: Unsere Arbeitsweise | IT-Hilfe, Zugriffe & Daten
+  description: >-
+    So stimmen wir IT-Arbeiten ab, klären nötige Geräte- und Kontozugriffe, berücksichtigen
+    Backups und erläutern Änderungen. Für Privatpersonen und Unternehmen in Berlin.
+header:
+  eyebrow: Unsere Arbeitsweise
+  title: So gehen wir mit Ihren Geräten und Daten um
+  intro: >-
+    Bei IT-Hilfe kann Zugriff auf persönliche Dateien, geschäftliche Systeme oder Konten nötig
+    sein. Wir erklären, welche Zugriffe gebraucht werden, stimmen die Arbeit mit Ihnen ab und
+    machen wichtige Änderungen nachvollziehbar. Hier erfahren Sie, worauf es vor einem Termin, bei
+    der Arbeit und bei der Übergabe ankommt.
+sections:
+  - id: vor-der-arbeit
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Die Arbeiten vorab gemeinsam abstimmen
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Beschreiben Sie zunächst, was Sie erledigen möchten und was dabei nicht
+              funktioniert. Wir fragen nach den betroffenen Geräten, Diensten und dem Einsatzort.
+              Anschließend besprechen wir den passenden nächsten Schritt: eine einzelne
+              Einstellung, einen Termin vor Ort oder geplante Arbeiten an mehreren Systemen.
+            - >-
+              Das erste Gespräch ist kostenlos. Wir kalkulieren die Arbeiten individuell und
+              erläutern einen gegebenenfalls kostenpflichtigen Diagnosetermin, bevor wir ihn
+              vereinbaren. Zusätzliche Arbeiten, Geräte oder weitere Termine stimmen wir vorab mit
+              Ihnen ab. Für einen einzelnen Auftrag ist kein langfristiger Betreuungsvertrag
+              erforderlich.
+  - id: konten-und-zugriffe
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Zugriff auf Geräte und Konten
+      blocks:
+        - type: columns
+          columns:
+            - title: Berechtigungen und Zuständigkeiten beachten
+              paragraphs:
+                - >-
+                  Wir klären, auf welches Gerät, Konto oder welche Verwaltungsoberfläche für die
+                  vereinbarte Aufgabe zugegriffen werden muss. Verwaltet Ihr Arbeitgeber, eine
+                  interne IT-Abteilung oder ein bestehender Dienstleister einen Teil der Umgebung,
+                  gelten deren Freigaben und Zugriffsregeln weiterhin. Diese umgehen wir nicht.
+            - title: Keine Zugangsdaten in der Anfrage
+              paragraphs:
+                - >-
+                  Beschreiben Sie das Anliegen ohne Passwörter, Anmeldecodes,
+                  Wiederherstellungsschlüssel oder Fernzugangsdaten. Sind bei der Arbeit
+                  vertrauliche Eingaben nötig, können Sie diese gegebenenfalls selbst am Gerät
+                  vornehmen. Bei geschützten Konten bleiben die vorgesehenen Nachweise und
+                  Wiederherstellungsverfahren maßgeblich.
+  - id: dateien-und-backups
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Backups vor wichtigen Änderungen
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Können Arbeiten Dateien, Einstellungen oder die Nutzbarkeit eines Systems
+              beeinflussen, besprechen wir die wichtigen Daten und eine vorhandene Sicherung oder
+              Ausweichmöglichkeit. Bei einem bestehenden Backup kommt es darauf an, welche Daten
+              enthalten sind, wann es zuletzt gelaufen ist und ob sich die benötigten Dateien
+              wiederherstellen lassen.
+            - >-
+              Ein Backup verringert bestimmte Risiken, macht aber nicht jeden Eingriff rückgängig.
+              Ein normaler Datenumzug betrifft lesbare Dateien auf zugänglichen Geräten.
+              Beschädigte oder nicht lesbare Datenträger sowie Zugänge, die sich nicht rechtmäßig
+              wiederherstellen lassen, brauchen eine andere Bewertung. Weisen Sie uns vor Beginn
+              auf unersetzliche Daten hin.
+  - id: fernunterstuetzung
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Wann Fernunterstützung sinnvoll ist
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Bestimmte Software-, Konto- und Konfigurationsaufgaben lassen sich nach Absprache
+              aus der Ferne bearbeiten. Physische Anschlüsse, Verkabelung und Arbeiten, bei denen
+              Raum und Geräte zusammen betrachtet werden müssen, erfordern meist einen Besuch. Wir
+              besprechen den geeigneten Weg, statt einen Fernzugriff vorauszusetzen.
+            - >-
+              Kommt eine Fernsitzung infrage, klären wir das verwendete Programm, die benötigten
+              Zugriffe und die vorgesehenen Arbeiten. Eine einzelne Sitzung bedeutet keine
+              laufende Administration oder zeitlich unbegrenzte Betreuung. Dauerhafte Zugriffe
+              oder Wartung brauchen eine gesonderte Vereinbarung.
+  - id: pruefung-und-uebergabe
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Das Ergebnis prüfen und Änderungen erklären
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Nach der Arbeit prüfen wir die relevanten Funktionen anhand der vereinbarten
+              Aufgabe. Ob ein Computer wieder startet, eine Verbindung funktioniert oder ein
+              freigegebener Ordner erreichbar ist, sollte sich in Ihrer tatsächlichen Nutzung
+              zeigen.
+            - >-
+              Wir erläutern die wichtigen Änderungen, benötigte Einstellungen und verbleibende
+              Grenzen oder nächste Schritte. Gehört eine Dokumentation zum Auftrag, soll sie Ihnen
+              oder der zuständigen IT-Ansprechperson die weitere Pflege erleichtern. Empfehlungen
+              für spätere Verbesserungen besprechen wir getrennt von den bereits vereinbarten
+              Arbeiten.
+  - id: erfahrung
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      title: Praktische IT-Erfahrung seit 2008
+      blocks:
+        - type: prose
+          paragraphs:
+            - >-
+              Unsere IT-Erfahrung reicht bis 2008 zurück und umfasst Computer,
+              Arbeitsplatzsoftware, Netzwerke und verbundene Dienste. Zum heutigen Angebot gehören
+              Hilfe mit Windows und macOS, Microsoft 365, Google Workspace, Heim- und
+              Büronetzwerke sowie die Einrichtung neuer Geräte.
+            - >-
+              Erfahrung hilft dabei, die richtigen Fragen zu stellen. Ob ein Auftrag passt, hängt
+              dennoch von der konkreten Aufgabe ab. Hat Ihr Unternehmen besondere Vorgaben für
+              Zugriffe, Freigaben oder Dokumentation, nennen Sie diese bitte zu Beginn. So können
+              wir die Arbeiten verantwortungsvoll einschätzen.
+nextStep:
+  title: Ihre Umgebung oder besondere Anforderungen besprechen
+  body: >-
+    Schildern Sie, welches Gerät, Konto oder welcher Arbeitsablauf Unterstützung braucht. Nennen
+    Sie wichtige Termine und Zugriffsbeschränkungen. Zugangsdaten und vertrauliche Unterlagen
+    gehören nicht in die erste Nachricht.
+  linkLabel: Anliegen beschreiben
+references:
+  - label: IT-Hilfe zu Hause und im Homeoffice
+    href: /leistungen/privatpersonen/
+  - label: IT-Leistungen für Unternehmen
+    href: /leistungen/unternehmen/
+  - label: Datenschutzhinweise zur Website
+    href: /datenschutz/
