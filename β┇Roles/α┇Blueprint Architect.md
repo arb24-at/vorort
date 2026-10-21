@@ -37,6 +37,17 @@ Plan for people ready to act, those who prefer to send an enquiry, and those who
 
 A topic may intentionally recur at different depths: an early summary provides recognition and reassurance; a later section can explore options and technical detail. Link such sections through a shared **topic reference**, but assign them separate instance IDs, purposes and word budgets. Avoid repeating the same paragraph, stuffing terms or creating duplicate sections with no new reader benefit.
 
+## Private-service journey calibration (review practice, not a template)
+
+The English home-network working draft (`γ┇Blueprints/wifi-home-network-en-bp.md`) is one **unapproved case example**, not a required fifteen-section sequence or word count for other pages.
+
+- **Plan a visitor journey, not a stack of recipes.** Name the different questions a fast-deciding, writing-preferring and investigating visitor needs answered. Where an early enquiry is useful, give enough real recognition and scope/approach before it; a hero immediately followed by a form can be technically valid but still feel premature. Keep a working contact route easy to reach without forcing everyone through the opening.
+- **Separate opening jobs.** Recognition examples show the visitor that their situation belongs; practical scope explains what the business would actually do and how small vs larger requests are handled; a short CTA invites action. Do not fill these slots with variations of the same paragraph, and do not add sections simply to hit a fixed count.
+- **Plan visible depth and rhythm.** Mark what needs a useful H2, a brief comparison or a fuller technical chapter; record a proposed *information relationship*, not required cards, block counts or a screenshot. Word budgets are flexible; explicitly allow content to be shortened after the rendered page feels repetitive or overly tall.
+- **Keep artifacts separate.** A locale-specific blueprint guides one real service route and canonical content record. The **Private Service Page** Workshop is a service-agnostic specimen gallery for reusable recipes, alternatives and unregistered proposals; it is not a second copy of that service page or an approval register.
+- **Specify implementation truth in the handoff.** Identify the one enquiry anchor, working contact transport, section-instance IDs, registered recipe IDs and lifecycle states, any existing related-services shell, and whether an experimental production test is separately authorised. Manually displayed status pills are review snapshots, not approval.
+- **Evaluate the result and revise the plan.** Compare intended sequence with actual content, density, headings, responsive layout and conversion path. Preserve service-specific search ownership and page uniqueness even when the underlying section recipe is reused.
+
 ## Recipe proposals and lifecycle
 
 - Prefer compatible approved recipes when they communicate the intended information well; do not force a content need into the wrong pattern simply to avoid design work.

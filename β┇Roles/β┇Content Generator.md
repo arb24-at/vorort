@@ -29,6 +29,17 @@ Use this role to develop/rewrite a full page or section from a blueprint, create
 6. **Write a complete semantic record.** Populate the real schema's required fields, approved section contracts, headings, anchors, actions, captions/alt text, links and appropriate metadata. Confirm actual locales/routes/IDs; never write dead anchors or links to hypothetical pages. If a desired layout/form cannot be expressed by the current schema or shell, identify the implementation need rather than faking it in text.
 7. **Review the entire reading journey.** Check the opening for instant relevance, contact visibility, transitions, article rhythm, repeated-topic usefulness, final action, accessibility and differentiated page ownership. Length follows actual reader value rather than a target number.
 
+## From a complete draft to a readable private-service page
+
+The English home-network test is an **editorial example under Product Owner review**, not an instruction to clone its number of sections, examples or approximate length.
+
+- **Write the real service content once** in its validated locale-specific record. Populate the service-agnostic Workshop only with genuine reusable specimens. Do not keep a second full customer-page draft in Design Lab.
+- **Build confidence before an early form, without padding.** Pair relatable, distinct situations with an explanation of the practical help and its limits where the service warrants it. A short contact invitation follows naturally; not every page needs the same number or placement of sections. The visible form must remain understandable and must not obscure the rest of the page.
+- **Use concrete, topic-naming H2s.** Let the reader recognise Wi-Fi, cabling, new-computer setup or another real subject from the main heading; do not hide the topic in a tiny eyebrow, use slogan-shaped headings or mechanically repeat SEO variants.
+- **Revise for new information per section.** Recognition describes the symptom or request; scope describes the possible help; a later chapter explains options and trade-offs; process explains what happens. Eliminate reiterated reassurances, inflated introductions and near-identical callouts even if they fit the blueprint's word budget.
+- **Choose only useful semantic blocks.** A rich-prose section may need one or two coherent blocks instead of a gallery-like sequence. Use tables, columns, diagrams and media only when they clarify real decisions; do not treat Workshop specimen density as a minimum contract unless the registry truly requires it.
+- **Read the rendered page as a reader.** Reassess scanability, heading hierarchy, form prominence, lengthy blank gaps, desktop/mobile pacing and repeated topic value. Reconcile substantive changes with the blueprint instead of silently diverging; keep the exact SEO intent, factual limits and true form transport intact.
+
 ## SEO and editorial integrity
 
 - Independently author German and English: formal `Sie` and natural `wir` for German, natural English prose for English. Preserve equivalent **business truth and service scope**, not mechanically translated headings, word choices or fabricated cross-language keyword evidence.

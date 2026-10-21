@@ -48,6 +48,17 @@ For Page Workshop / Approved Sections changes, verify as applicable:
 - Workshop/Lab routes remain noindex/nofollow and outside production navigation/sitemap;
 - responsive presentation, focus/keyboard behavior, contrast, reduced motion, and media crop/readability are checked when the visual change affects them.
 
+## Reader-journey acceptance beyond passing schemas
+
+The revised English home-network page is a **working-draft reference**, not proof that the same composition suits all private services or that the Product Owner has approved it.
+
+- Compare the *rendered* service journey to its latest locale blueprint: recognition, substantial but proportional help, true quick contact, one usable enquiry, optional technical depth and a closing return route where planned. Count/IDs passing is insufficient when a form appears before the context intended to support it.
+- Judge editorial hierarchy and density: major H2s name real topics, sections add different reader value, optional rich-prose blocks are not padded to mirror specimens, and whitespace does not make the page excessively long or hollow. Review representative mobile and desktop composition when visual changes matter.
+- Verify **Workshop versus production separation**: the Private Service Page gallery includes distinct private-compatible specimens, statuses from the registry and explicitly unimplemented proposals; retiring duplicate service-specific fixtures does not break Approved Sections usage, anchors, comparisons or the unrelated business fixture.
+- Verify **bounded experiment rules**: only the expressly authorised route/locale/audience and recipe IDs can use experimental production recipes; all other production still rejects them. A displayed Experimental pill or successful build is not Product Owner approval.
+- Test the **actual contact transport**, not just styling: one `contact` target for repeated CTAs, required-field/channel behavior, privacy/sensitive-data notices and an honest mail-app draft vs direct endpoint state. Never claim successful delivery without a real configured test.
+- Record source, repository, browser, Git and deployment evidence separately; preserve prior consumers and prove unchanged locales where shared contracts/styles might leak. Raise factual, editorial or design uncertainty for review instead of silently approving it.
+
 ## Pending repository verification
 
 A Drive-connected Chat may leave an `RV-###` entry in `β┇Collaboration.md` after source/readback-complete work. Treat it as a bounded validation assignment. Validate the existing changes first; do not redesign/refactor or rewrite content unless a real failure requires a fix.

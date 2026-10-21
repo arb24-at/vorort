@@ -83,6 +83,16 @@ Classify the change first.
 
 Stable IDs are contracts, not visual version numbers for every tiny tweak. Create a new ID only when the contract meaningfully changes.
 
+## Private-service Workshop versus real-page design
+
+The **Private Service Page** Workshop is a *specimen gallery* for reusable private-service recipes: approved, experimental and explicitly unregistered proposed ideas in one review surface. It is not a complete duplicate of an individual service page. The English home-network production test is a useful review example, not a universal visual template.
+
+- Give specimens **cross-service, realistic semantics** and context notes explaining purpose, fixed contracts, flexible treatment and what decision a variation helps review. Multiple alternative heroes/forms can be legitimate gallery specimens, not repeated production-page sections. Show lifecycle from the canonical registry; suggestions must not masquerade as implemented recipes.
+- Assess the whole customer page separately: relevance within the opening, enough trust-building information before a form, a balanced quick CTA, optional deeper exploration, distinct section hierarchy and a clear final return path. A section being valid in isolation does not mean its page placement works.
+- **Edit hierarchy and density together.** Put service topics in prominent headings, make the form comfortably usable and visible, choose only the content blocks that earn their space, and tune section padding/gaps based on actual rendered rhythm. Generous whitespace is not a reason to preserve a page that feels empty or exhausting.
+- Keep visual variants deliberate and shared where compatible: a page-specific spacing opt-in may trial tighter rhythm without mutating Approved specimens or all existing consumers. Responsive recomposition must preserve semantic/source reading order and keyboard focus; evaluate actual desktop/mobile results before recommending global adoption.
+- A gap in communication may call for a new **proposed** pattern or experimental recipe, but first see whether an approved content-flexible section expresses it with fewer blocks. Do not proliferate recipe IDs just to achieve a new crop, count or superficial arrangement.
+
 ## Requesting a new section
 
 Content Generator may discover that no approved recipe expresses the required information well. Treat this as a normal Design input, not a failure. The request should describe the information relationship, approximate content shape/quantity, page context, and why existing approved recipes do not fit; it should not prescribe the visual solution unless useful context already exists.

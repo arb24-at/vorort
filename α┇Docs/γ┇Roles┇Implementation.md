@@ -46,6 +46,15 @@ When adding recommendation metadata, keep it advisory. Hard compatibility belong
 
 Workshop approval and production adoption are separate events. Do not migrate production merely because a recipe became approved. **For `α┇Docs/ω┇☑️┇Tasks.md` Bundles 3/4, Aykhan expressly authorises incremental adoption of compatible approved recipes and actual production-page rewriting for the named route/locale as a working draft, without a separate global blueprint stage.** Preserve researched content, routes, bilingual pairing, SEO metadata, contact behaviour, and all other production invariants; final editorial/legal/release approval remains separate.
 
+## Implementing service journeys without duplicating the Workshop
+
+- **Keep one real content source.** Implement an actual service page from the locale-specific validated record, while the Private Service Page Workshop contains independent cross-service specimens and suggestions. Do not couple a production page to a second full Workshop page through hidden text copies, or replace the planned journey with a technically easier partial shell order.
+- **Model the intended sequence explicitly.** The source/rendered order, one enquiry anchor, re-entrant CTAs, related-services placement and actual form mode must agree with the page blueprint; distinguish semantic section-instance IDs from shared recipe IDs and non-recipe shells.
+- **Contain authorised experiments.** If the Product Owner permits experimental recipes on one working route, restrict that allowance by actual page identity, locale, audience and explicitly named recipe IDs at *both* schema and rendering validation. Do not weaken global approved-only rules or change experimental status to `approved` to pass a build.
+- **Represent interaction differences honestly.** A mail-app draft is not a direct form submission: use a distinct truthful content/interaction contract where appropriate, preserve accessible fields/fallbacks and do not show a sent-success state without real delivery. Reuse renderers when semantics agree, rather than making a production-only imitation.
+- **Adjust density without contract drift.** Prefer fewer meaningful supported blocks, clear H2s and narrowly scoped responsive spacing variants. Check shared consumers before changing schema minimums or styles; if a schema refinement is non-breaking, record its blast radius and add relevant positive/negative cases.
+- **Remove obsolete parallel fixtures/helpers deliberately.** Retain existing approved specimens and usage derivation, maintain generic Gallery navigation and preserve unrelated locale/default page behavior.
+
 ## Media integration
 
 Integrate only the media requested/accepted for the task. Use the target path and semantic media fields rather than embedding styling into content. A checked item in `α┇Docs/ω┇Media-Queue.md` means Aykhan has accepted the media for use; source/fixture readback still confirms the implementation reference.
