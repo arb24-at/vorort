@@ -1,0 +1,144 @@
+id: private-landing-de
+translationId: private-landing
+locale: de
+audience: private
+seo:
+  title: "IT-Hilfe für Privatpersonen in Berlin | Computer & WLAN"
+  description: "IT-Hilfe zu Hause in Berlin: Computer, Software, WLAN und neue Geräte einrichten. Finden Sie die passende Leistung oder beschreiben Sie uns Ihr Anliegen."
+experiment: private-landing-de-preview
+sections:
+  - id: einstieg
+    kind: hero
+    recipe: hero.editorial-art
+    content:
+      eyebrow: "Für zu Hause & Ihr Homeoffice · Berlin"
+      title: "IT-Hilfe für Ihren Alltag zu Hause"
+      intro: "Der Computer startet nicht, das WLAN reicht nicht bis zum Schreibtisch oder ein neuer Laptop wartet auf die Einrichtung. Wir helfen Ihnen mit der Technik, die Sie zu Hause nutzen, und schauen zuerst auf die vorhandenen Geräte. Auch mit einer einzelnen, kleinen Aufgabe können Sie sich an uns wenden."
+      media:
+        subject: private-hero
+        src: /images/concept-ii/private/P1.png
+        alt: "Illustration einer Wohnung mit Computerschreibtisch, Wohnbereich und vernetzten Alltagsgeräten."
+      actions:
+        - label: "Passende Leistung finden"
+          target: leistungen
+        - label: "Anliegen beschreiben"
+          target: kontakt
+  - id: leistungen
+    kind: scope
+    recipe: scope.service-directory
+    content:
+      eyebrow: "Vier Bereiche, in denen wir helfen"
+      title: "Wobei benötigen Sie Unterstützung?"
+      intro: "Wählen Sie den Bereich, der am besten passt. Auf der jeweiligen Seite erfahren Sie mehr. Wenn mehrere Dinge zusammenhängen oder die Ursache unklar ist, beschreiben Sie uns einfach die Situation im Formular weiter unten."
+      linkLabel: "Mehr zu dieser Leistung"
+      items:
+        - serviceId: computer-laptop
+          title: "Computer- & Laptop-Hilfe"
+          body: "Für Windows-PCs, Laptops und Macs, die nicht starten, abstürzen, langsam laufen oder keinen Zugang mehr erlauben. Wir untersuchen Ursachen im System und in der Software, bevor wir Änderungen empfehlen."
+          examples: ["Startprobleme", "Langsame oder instabile Computer", "Kontozugang"]
+        - serviceId: software-optimisation
+          title: "Software installieren & Probleme lösen"
+          body: "Unterstützte Programme installieren und einrichten, Updatefehler untersuchen und Konflikte beheben. Ein einzelnes Programm kann die ganze Aufgabe sein; eine komplette Neueinrichtung ist nicht automatisch nötig."
+          examples: ["Programme einrichten", "Updatefehler", "Softwarekonflikte"]
+        - serviceId: wifi-home-network
+          title: "WLAN & Heimnetzwerk"
+          body: "WLAN-Abdeckung verbessern, den Arbeitsplatz per Netzwerkkabel verbinden oder gemeinsame Geräte und NAS-Speicher einrichten. Ausgangspunkt sind Ihre Räume und die Technik, die Sie bereits verwenden."
+          examples: ["WLAN & Mesh", "Netzwerkverkabelung", "NAS & gemeinsame Dateien"]
+        - serviceId: setup-data-transfer
+          title: "Neue Geräte & Datenumzug"
+          body: "Einen neuen PC, Laptop oder Mac auswählen und einrichten. Normal lesbare Dateien übernehmen, E-Mail und Zubehör verbinden und eine unabhängige Datensicherung planen."
+          examples: ["Computerauswahl", "Dateien übertragen", "E-Mail & Zubehör"]
+  - id: praktische-hilfe
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: "Ein überschaubarer nächster Schritt"
+      title: "Hilfe bei einer einzelnen Aufgabe oder einer größeren Einrichtung"
+      intro: "Sie brauchen weder eine technische Diagnose noch eine Einkaufsliste, bevor Sie uns kontaktieren. Erzählen Sie, was gerade schwierig ist oder was Sie künftig mit Ihrer Technik machen möchten. Gemeinsam klären wir, welche Arbeit sinnvoll ist."
+      blocks:
+        - type: columns
+          columns:
+            - title: "Vorhandene Technik zuerst prüfen"
+              paragraphs:
+                - "Wir betrachten das betroffene Gerät, Programm oder die Verbindung und die dazugehörige Ausstattung. Manchmal genügt eine Einstellung, eine gezielte Fehlerbehebung oder eine bessere Verbindung. Neue Geräte besprechen wir, wenn sie für Ihre Aufgabe sinnvoll sind."
+            - title: "Arbeit und Kosten vorher besprechen"
+              paragraphs:
+                - "Das erste Gespräch ist kostenlos. Die Arbeit wird individuell angeboten; mögliche Kosten für einen Diagnosetermin erklären wir vor der Vereinbarung. Zusätzliche Arbeit, Geräte oder weitere Termine stimmen wir mit Ihnen ab."
+  - id: kontakt
+    kind: contact
+    recipe: contact.enquiry-email
+    content:
+      title: "Beschreiben Sie uns Ihr Anliegen"
+      intro: "Ein einzelnes Gerät, mehrere verbundene Dinge oder eine geplante Einrichtung: Eine kurze Beschreibung in Ihren eigenen Worten reicht für den Anfang."
+      formIntro: "Das Formular bereitet einen Entwurf in Ihrem E-Mail-Programm vor. Prüfen und senden Sie ihn dort ab. Diese Website versendet Ihre Anfrage nicht direkt. * Pflichtfelder."
+      affectedPlaceholder: "Zum Beispiel Windows-Laptop, Mac, ein Programm oder WLAN zu Hause"
+      request: "Wobei wünschen Sie sich Hilfe?"
+      requestPlaceholder: "Was passiert oder was möchten Sie einrichten? Nennen Sie gern Ihren Berliner Bezirk und das betroffene Gerät oder Programm, soweit bekannt."
+      emailSubject: "IT-Hilfe zu Hause in Berlin"
+  - id: homeoffice
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: "Wenn mehrere Dinge zusammenhängen"
+      title: "Unterstützung für vernetzte Geräte und Ihr Homeoffice"
+      blocks:
+        - type: prose
+          paragraphs:
+            - "Ein abbrechender Videoanruf bedeutet nicht zwangsläufig, dass der Laptop defekt ist. Ein Drucker hängt möglicherweise sowohl vom Computer als auch vom Netzwerk ab. Wir berücksichtigen diese Zusammenhänge im vereinbarten Umfang, statt für jedes Symptom einen eigenen Gerätekauf vorauszusetzen."
+        - type: columns
+          columns:
+            - title: "Ihr Arbeitsplatz zu Hause"
+              paragraphs:
+                - "Computer, Monitor, Dockingstation, Drucker und Internetverbindung sollen zu Ihren tatsächlichen Aufgaben passen. Je nach Auftrag können passende Anschlüsse, E-Mail und Konten, gemeinsamer Speicher oder eine Datensicherung dazugehören."
+            - title: "Vom Arbeitgeber verwaltete Geräte"
+              paragraphs:
+                - "Sagen Sie uns bitte, wenn Ihr Arbeitgeber das Gerät oder Konto verwaltet. Manche Änderungen brauchen eine Freigabe oder die zuständige IT-Abteilung. Wir umgehen diese Vorgaben nicht und versprechen keinen Zugang, der von Dritten abhängt."
+  - id: ablauf
+    kind: process
+    recipe: process.staged-path
+    content:
+      eyebrow: "Nach Ihrer Anfrage"
+      title: "Vom Anliegen bis zur verständlichen Übergabe"
+      intro: "Üblicherweise helfen wir vor Ort in Berlin. Für geeignete Aufgaben lässt sich auch eine Unterstützung per Fernzugriff besprechen."
+      steps:
+        - title: "Anliegen schildern"
+          body: "Nennen Sie das Gerät oder die Aufgabe, das beobachtete Problem und Ihre Postleitzahl oder Ihren Bezirk. Wichtige Dateien oder kürzliche Änderungen können ebenfalls relevant sein."
+        - title: "Nächsten Schritt klären"
+          body: "Wir besprechen, was sich sinnvoll prüfen lässt, welche Arbeit absehbar ist und ob ein Besuch oder geeignete Fernhilfe infrage kommt."
+        - title: "Vereinbarte Arbeit durchführen"
+          body: "Wir nehmen die abgestimmten Änderungen vor. Relevante Risiken oder zusätzliche Arbeit besprechen wir vorab. Bei Bedarf gehört dazu auch, zunächst eine Datensicherung zu berücksichtigen."
+        - title: "Prüfen und erklären"
+          body: "Wir testen die betroffenen Funktionen und erklären Änderungen, hilfreiche Einstellungen sowie verbleibende Grenzen oder weitere Schritte."
+  - id: fragen
+    kind: faq
+    recipe: faq.editorial-answers
+    content:
+      eyebrow: "Vor der Kontaktaufnahme"
+      title: "Antworten auf praktische Fragen"
+      intro: "Eine Beschreibung aus Ihrem Alltag genügt. Diese Antworten helfen Ihnen dabei, die wichtigsten Angaben zusammenzustellen."
+      items:
+        - question: "Muss ich vorher die richtige Leistung auswählen?"
+          paragraphs:
+            - "Nein. Die Leistungsseiten bieten Ihnen zusätzliche Informationen. Wenn Sie nicht wissen, ob Computer, Software oder Verbindung die Ursache sind, beschreiben Sie einfach, was Sie beobachten und welche Aufgabe betroffen ist."
+        - question: "Helfen Sie bei Windows-PCs und Macs?"
+          paragraphs:
+            - "Ja. Wir unterstützen bei System- und Softwareproblemen unter Windows und macOS sowie bei der Einrichtung neuer Computer. Die Möglichkeiten hängen vom Gerät, unterstützter Software, dem Kontozugang und dem Zustand Ihrer Daten ab."
+        - question: "Reparieren Sie Displays oder retten Sie beschädigte Festplatten?"
+          paragraphs:
+            - "Physische Reparaturen an Display, Ladebuchse oder Platine sowie Flüssigkeitsschäden gehören nicht zum angebotenen Leistungsumfang. Beschädigte oder nicht lesbare Datenträger brauchen eine spezialisierte Prüfung. Eine erfolgreiche Reparatur oder Datenrettung können wir dafür nicht zusagen."
+        - question: "Welche Angaben sind hilfreich und was sollte privat bleiben?"
+          paragraphs:
+            - "Gerätemodell, sichtbare Fehlermeldung, Beginn des Problems und Ihr Berliner Bezirk helfen bei der Einordnung. Senden Sie keine Passwörter, PINs, Bestätigungs- oder Wiederherstellungscodes und Fernzugangsdaten. Sensible Eingaben können Sie bei Bedarf selbst am Gerät vornehmen."
+        - question: "Sind Termine am Abend oder am Samstag möglich?"
+          paragraphs:
+            - "Nennen Sie gern passende Zeiträume. Termine, nach Möglichkeit auch abends oder samstags, werden individuell vereinbart. Eine sofortige Verfügbarkeit oder feste Antwortzeit können wir nicht versprechen."
+  - id: abschliessender-kontakt
+    kind: cta
+    recipe: cta.quick-contact
+    content:
+      eyebrow: "Ihr nächster Schritt"
+      title: "Fragen Sie zu Ihrem Gerät oder Ihrer Einrichtung an"
+      body: "Sie müssen die Ursache noch nicht kennen und sich noch nicht für neue Geräte entscheiden. Beschreiben Sie uns zunächst, wobei Sie Hilfe benötigen."
+      callLabel: "Anliegen telefonisch besprechen"
+      enquiryLabel: "Zurück zur Anfrage"
+      enquiryTarget: kontakt

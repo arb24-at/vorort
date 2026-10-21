@@ -14,6 +14,11 @@ type Trial = {
 // version and Aykhan's decision here, listing recipe and parent/block IDs.
 const serviceExperiments = ["hero.service-intro", "scope.chapter-links", "recognition.situations", "cta.quick-contact", "contact.enquiry-email"];
 export const productionTrials: Record<string, Trial> = {
+  "private-landing-de-preview": {
+    id: "private-landing-de", translationId: "private-landing", slug: "private", locale: "de", audience: "private", pageType: "audience",
+    authorisation: "Aykhan’s six existing gateway/homepage assignment, Task 3E under the initial-update exception, 2026-10-21.",
+    recipes: ["scope.service-directory", "contact.enquiry-email", "cta.quick-contact"], blocks: [],
+  },
   "private-landing-en-preview": {
     id: "private-landing-en", translationId: "private-landing", slug: "private", locale: "en", audience: "private", pageType: "audience",
     authorisation: "Aykhan assigned six existing gateway/homepage updates, starting with Task 4E, during the initial-update blueprint exception, 2026-10-21.",

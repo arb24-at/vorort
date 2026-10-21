@@ -1,4 +1,5 @@
 ---
+import { enquiryInterface } from "../../../utils/enquiry-interface";
 import { siteConfig } from "../../../data/site";
 import { withBase } from "../../../utils/withBase";
 import type { Audience, RecipeContent } from "../../../design-system/section-recipes";
@@ -6,22 +7,23 @@ import type { Audience, RecipeContent } from "../../../design-system/section-rec
 type Props = {
   id: string;
   audience: Audience;
-  locale: "en";
+  locale: "en" | "de";
   content: RecipeContent<"contact.enquiry"> | RecipeContent<"contact.enquiry-email">;
   recipeId?: "contact.enquiry" | "contact.enquiry-email";
   source?: string;
 };
 
-const { id, audience, content, recipeId = "contact.enquiry", source = `workshop:${id}` } = Astro.props;
+const { id, audience, locale = "en", content, recipeId = "contact.enquiry", source = `workshop:${id}` } = Astro.props;
+const ui = enquiryInterface(locale);
 const emailDraft = recipeId === "contact.enquiry-email";
-const emailSubject = "emailSubject" in content ? content.emailSubject : "Service enquiry";
+const emailSubject = "emailSubject" in content ? content.emailSubject : ui.subject;
 const copy = {
-  title: content.title ?? "Let’s talk about your IT needs",
-  intro: content.intro ?? "Tell us what you need help with. A short description is enough.",
-  formIntro: content.formIntro ?? "Just a few details so we can reply. * Required fields.",
-  affectedPlaceholder: content.affectedPlaceholder ?? "For example Wi-Fi, a laptop, Microsoft 365 or a new setup",
-  request: content.request ?? "What do you need help with?",
-  requestPlaceholder: content.requestPlaceholder ?? "Describe what is happening, what should work, and anything important we should know before replying.",
+  title: content.title ?? ui.defaultTitle,
+  intro: content.intro ?? ui.defaultIntro,
+  formIntro: content.formIntro ?? ui.defaultFormIntro,
+  affectedPlaceholder: content.affectedPlaceholder ?? ui.defaultAffected,
+  request: content.request ?? ui.defaultRequest,
+  requestPlaceholder: content.requestPlaceholder ?? ui.defaultRequestPlaceholder,
 };
 const formEndpoint = import.meta.env.PUBLIC_CONTACT_FORM_ENDPOINT?.trim() ?? "";
 const customerContext = audience === "business" ? "Business" : "Private";
@@ -31,25 +33,25 @@ const privacyHref = withBase("/datenschutz/");
   <div class="container">
     <div class="c2-contact__shell">
       <div class="c2-contact__intro">
-        <span class="c2-eyebrow">Start a conversation</span>
+        <span class="c2-eyebrow">{ui.eyebrow}</span>
         <h2 id={`${id}-title`}>{copy.title}</h2>
         <p class="c2-contact__lede">{copy.intro}</p>
 
         <div class="c2-contact__journey">
-          <p class="c2-contact__journey-label">A straightforward start</p>
+          <p class="c2-contact__journey-label">{ui.journey}</p>
           <ol>
-            <li><span aria-hidden="true">01</span><strong>Share your situation</strong></li>
-            <li><span aria-hidden="true">02</span><strong>Clarify the details</strong></li>
-            <li><span aria-hidden="true">03</span><strong>Discuss next steps</strong></li>
+            <li><span aria-hidden="true">01</span><strong>{ui.step1}</strong></li>
+            <li><span aria-hidden="true">02</span><strong>{ui.step2}</strong></li>
+            <li><span aria-hidden="true">03</span><strong>{ui.step3}</strong></li>
           </ol>
         </div>
 
-        <div class="c2-contact__channels" aria-label="Direct contact options">
+        <div class="c2-contact__channels" aria-label={ui.channels}>
           <a href={siteConfig.contact.phoneHref}>
             <span class="c2-contact__channel-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.68 2.79a2 2 0 0 1-.45 2.11L9 10.85a16 16 0 0 0 4.15 4.15l1.23-1.23a2 2 0 0 1 2.11-.45c.89.33 1.83.56 2.79.68A2 2 0 0 1 22 16.92Z"/></svg>
             </span>
-            <span class="c2-contact__channel-copy"><small>Call</small><strong>{siteConfig.contact.phoneDisplay}</strong></span>
+            <span class="c2-contact__channel-copy"><small>{ui.call}</small><strong>{siteConfig.contact.phoneDisplay}</strong></span>
             <span class="c2-contact__channel-action" aria-hidden="true">↗</span>
           </a>
           <a href={siteConfig.contact.whatsappHref}>
@@ -63,7 +65,7 @@ const privacyHref = withBase("/datenschutz/");
             <span class="c2-contact__channel-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
             </span>
-            <span class="c2-contact__channel-copy"><small>Email</small><strong>{siteConfig.contact.email}</strong></span>
+            <span class="c2-contact__channel-copy"><small>{ui.email}</small><strong>{siteConfig.contact.email}</strong></span>
             <span class="c2-contact__channel-action" aria-hidden="true">↗</span>
           </a>
         </div>
@@ -71,8 +73,8 @@ const privacyHref = withBase("/datenschutz/");
 
       <div class="c2-contact__form-panel">
         <div class="c2-contact__form-head">
-          <span class="c2-kicker">Enquiry form</span>
-          <h3>{emailDraft ? "Prepare an email enquiry" : formEndpoint ? "Send an enquiry" : "Enquiry form preview"}</h3>
+          <span class="c2-kicker">{ui.form}</span>
+          <h3>{emailDraft ? ui.prepare : formEndpoint ? ui.sendHeading : ui.previewHeading}</h3>
           <p>{copy.formIntro}</p>
         </div>
 
@@ -82,6 +84,7 @@ const privacyHref = withBase("/datenschutz/");
           method="post"
           enctype={emailDraft ? "text/plain" : undefined}
           data-contact-form
+          data-locale={locale}
           data-endpoint={formEndpoint}
           data-delivery={emailDraft ? "email" : "direct"}
           data-email={emailDraft ? siteConfig.contact.email : undefined}
@@ -93,27 +96,27 @@ const privacyHref = withBase("/datenschutz/");
 
           <div class="c2-contact__form-grid">
             <label>
-              <span>Name <b class="c2-contact__required" aria-hidden="true">*</b></span>
-              <input type="text" name="name" autocomplete="name" placeholder="Your name" required />
+              <span>{ui.name} <b class="c2-contact__required" aria-hidden="true">*</b></span>
+              <input type="text" name="name" autocomplete="name" placeholder={ui.namePlaceholder} required />
               <small class="c2-contact__error" data-error-for="name" aria-live="polite"></small>
             </label>
             <label>
-              <span>Preferred contact <b class="c2-contact__required" aria-hidden="true">*</b></span>
+              <span>{ui.preferred} <b class="c2-contact__required" aria-hidden="true">*</b></span>
               <select name="preferred-contact" required>
-                <option value="Email">Email</option>
-                <option value="Phone">Phone</option>
+                <option value="Email">{ui.email}</option>
+                <option value="Phone">{ui.phone}</option>
                 <option value="WhatsApp">WhatsApp</option>
               </select>
               <small class="c2-contact__error" data-error-for="preferred-contact" aria-live="polite"></small>
             </label>
             <label class="c2-contact__field-wide" data-contact-email>
-              <span>Email <b class="c2-contact__required" data-email-required aria-hidden="true">*</b></span>
-              <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required />
+              <span>{ui.email} <b class="c2-contact__required" data-email-required aria-hidden="true">*</b></span>
+              <input type="email" name="email" autocomplete="email" placeholder={ui.emailPlaceholder} required />
               <small class="c2-contact__error" data-error-for="email" aria-live="polite"></small>
             </label>
             <label class="c2-contact__field-wide" data-contact-phone hidden>
-              <span>Phone number <b class="c2-contact__required" data-phone-required aria-hidden="true">*</b></span>
-              <input type="tel" name="phone" autocomplete="tel" placeholder="For example +49 …" disabled />
+              <span>{ui.phoneNumber} <b class="c2-contact__required" data-phone-required aria-hidden="true">*</b></span>
+              <input type="tel" name="phone" autocomplete="tel" placeholder={ui.phonePlaceholder} disabled />
               <small class="c2-contact__error" data-error-for="phone" aria-live="polite"></small>
             </label>
             <label class="c2-contact__field-wide">
@@ -124,35 +127,35 @@ const privacyHref = withBase("/datenschutz/");
           </div>
 
           <details class="c2-contact__optional">
-            <summary><span>Add details (optional)</span><span class="c2-contact__optional-chevron" aria-hidden="true">⌄</span></summary>
+            <summary><span>{ui.details}</span><span class="c2-contact__optional-chevron" aria-hidden="true">⌄</span></summary>
             <div class="c2-contact__form-grid c2-contact__optional-grid">
               <label>
-                <span>Postcode or district <small>optional</small></span>
-                <input type="text" name="postcode" autocomplete="postal-code" placeholder="For example 10999 or Kreuzberg" />
+                <span>{ui.postcode} <small>{ui.optional}</small></span>
+                <input type="text" name="postcode" autocomplete="postal-code" placeholder={ui.postcodePlaceholder} />
                 <small class="c2-contact__error" data-error-for="postcode" aria-live="polite"></small>
               </label>
               {audience === "business" ? (
                 <label>
-                  <span>Company name <small>optional</small></span>
+                  <span>{ui.company} <small>{ui.optional}</small></span>
                   <input type="text" name="company" autocomplete="organization" />
                   <small class="c2-contact__error" data-error-for="company" aria-live="polite"></small>
                 </label>
               ) : (
                 <label>
-                  <span>Preferred appointment period <small>optional</small></span>
-                  <input type="text" name="appointment-period" placeholder="For example weekday evening or Saturday" />
+                  <span>{ui.appointment} <small>{ui.optional}</small></span>
+                  <input type="text" name="appointment-period" placeholder={ui.appointmentPlaceholder} />
                   <small class="c2-contact__error" data-error-for="appointment-period" aria-live="polite"></small>
                 </label>
               )}
               <label class="c2-contact__field-wide">
-                <span>Affected device or service <small>optional</small></span>
+                <span>{ui.affected} <small>{ui.optional}</small></span>
                 <input type="text" name="affected" placeholder={copy.affectedPlaceholder} />
                 <small class="c2-contact__error" data-error-for="affected" aria-live="polite"></small>
               </label>
               {audience === "business" && (
                 <label class="c2-contact__field-wide">
-                  <span>Preferred appointment period <small>optional</small></span>
-                  <input type="text" name="appointment-period" placeholder="For example weekday evening or Saturday" />
+                  <span>{ui.appointment} <small>{ui.optional}</small></span>
+                  <input type="text" name="appointment-period" placeholder={ui.appointmentPlaceholder} />
                   <small class="c2-contact__error" data-error-for="appointment-period" aria-live="polite"></small>
                 </label>
               )}
@@ -161,16 +164,16 @@ const privacyHref = withBase("/datenschutz/");
 
           <div class="c2-contact__safety">
             <span aria-hidden="true">!</span>
-            <p>Never send passwords, authentication or recovery codes, payment-card details or remote-access credentials.</p>
+            <p>{ui.safety}</p>
           </div>
 
-          <p class="c2-contact__privacy">Details submitted here are used to respond to your enquiry. <a href={privacyHref}>Privacy policy (German)</a>.</p>
+          <p class="c2-contact__privacy">{ui.privacy} <a href={privacyHref}>{ui.privacyLink}</a>.</p>
 
           <button class="c2-contact__submit" type="submit" disabled={!emailDraft && !formEndpoint} aria-describedby={`${id}-delivery-status`}>
-            <span data-submit-label>{emailDraft ? "Prepare email draft" : "Send enquiry"}</span>
+            <span data-submit-label>{emailDraft ? ui.draftButton : ui.sendButton}</span>
             <span aria-hidden="true">→</span>
           </button>
-          <p class="c2-contact__status" id={`${id}-delivery-status`} data-form-status role="status" aria-live="polite">{emailDraft ? "Review and send the draft in your email app. If no app opens, use the email link or another contact option above." : !formEndpoint && "Preview only: direct delivery is not connected. Please use the phone, WhatsApp or email links to get in touch."}</p>
+          <p class="c2-contact__status" id={`${id}-delivery-status`} data-form-status role="status" aria-live="polite">{emailDraft ? ui.draftStatus : !formEndpoint && ui.previewStatus}</p>
         </form>
       </div>
     </div>
@@ -179,7 +182,10 @@ const privacyHref = withBase("/datenschutz/");
 
 <script>
   import { enquiryEmailHref } from "../../../utils/enquiry-email";
+  import { enquiryInterface } from "../../../utils/enquiry-interface";
   document.querySelectorAll<HTMLFormElement>("[data-contact-form]").forEach((form) => {
+    const locale = form.dataset.locale === "de" ? "de" : "en";
+    const ui = enquiryInterface(locale);
     const endpoint = form.dataset.endpoint?.trim() ?? "";
     const status = form.querySelector<HTMLElement>("[data-form-status]");
     const submit = form.querySelector<HTMLButtonElement>("button[type='submit']");
@@ -224,8 +230,8 @@ const privacyHref = withBase("/datenschutz/");
       phone.disabled = !needsPhone;
       if (emailGroup) emailGroup.hidden = !needsEmail;
       if (phoneGroup) phoneGroup.hidden = !needsPhone;
-      email.setCustomValidity(needsEmail && !email.value.trim() ? "Add an email address if you prefer email." : "");
-      phone.setCustomValidity(needsPhone && !phone.value.trim() ? "Add a phone number if you prefer phone or WhatsApp." : "");
+      email.setCustomValidity(needsEmail && !email.value.trim() ? ui.emailRequired : "");
+      phone.setCustomValidity(needsPhone && !phone.value.trim() ? ui.phoneRequired : "");
 
       if (emailRequired) emailRequired.hidden = !needsEmail;
       if (phoneRequired) phoneRequired.hidden = !needsPhone;
@@ -271,26 +277,26 @@ const privacyHref = withBase("/datenschutz/");
       });
 
       if (firstInvalid) {
-        setStatus("Please check the highlighted fields.", "error");
+        setStatus(ui.invalid, "error");
         firstInvalid.focus();
         return;
       }
 
       if (form.dataset.delivery === "email") {
         const entries = Array.from(new FormData(form).entries()).filter((entry): entry is [string, string] => typeof entry[1] === "string");
-        window.location.href = enquiryEmailHref(form.dataset.email!, form.dataset.subject!, entries);
-        setStatus("Your email app should open with a draft. Review it and choose Send there to complete the enquiry. Nothing has been sent by this page.");
+        window.location.href = enquiryEmailHref(form.dataset.email!, form.dataset.subject!, entries, locale);
+        setStatus(ui.draftOpened);
         return;
       }
 
       if (!endpoint) {
-        setStatus("Direct form delivery is not connected in this Design Lab build yet. Please use phone, WhatsApp or email for now.", "error");
+        setStatus(ui.disconnected, "error");
         return;
       }
 
-      const idleLabel = submitLabel?.textContent ?? "Send enquiry";
+      const idleLabel = submitLabel?.textContent ?? ui.sendButton;
       if (submit) submit.disabled = true;
-      if (submitLabel) submitLabel.textContent = "Sending…";
+      if (submitLabel) submitLabel.textContent = ui.sending;
 
       try {
         const response = await fetch(endpoint, {
@@ -303,9 +309,9 @@ const privacyHref = withBase("/datenschutz/");
         form.reset();
         syncContactRequirement();
         fields.forEach(clearFieldError);
-        setStatus("Thanks — your enquiry has been sent. We will reply using your preferred contact method.", "success");
+        setStatus(ui.success, "success");
       } catch {
-        setStatus("We could not send your enquiry. Please try again or use phone, WhatsApp or email.", "error");
+        setStatus(ui.failed, "error");
       } finally {
         if (submit) submit.disabled = false;
         if (submitLabel) submitLabel.textContent = idleLabel;

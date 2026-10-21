@@ -316,6 +316,9 @@ try {
   assert.equal(draft.searchParams.get("subject"), "Setup & connection");
   assert.equal(draft.searchParams.get("body"), "Name: Example & visitor\n\nEmail: reader@example.test\n\nRequest: First line\nSecond line?");
   assert.equal([...draft.searchParams].length, 2, "User punctuation must remain encoded inside the two mailto fields");
+  const germanDraft = new URL(enquiryEmailHref("support@example.test", "Anfrage & Einrichtung", [["name", "Beispiel"], ["preferred-contact", "Phone"], ["phone", "+49 30"], ["context", "Private"], ["request", "WLAN prüfen"]], "de"));
+  assert.equal(germanDraft.searchParams.get("subject"), "Anfrage & Einrichtung");
+  assert.equal(germanDraft.searchParams.get("body"), "Name: Beispiel\n\nGewünschter Kontaktweg: Telefon\n\nTelefon: +49 30\n\nKundenbereich: Privat\n\nAnliegen: WLAN prüfen");
   const computer = serviceEntries.find(s => s.id === "computer-laptop-en");
   assert.ok(computer?.composition, "English computer support must use canonical composition");
   const computerContext = { id: computer.id, translationId: computer.translationId, slug: computer.slug, locale: computer.locale, audience: computer.audience, experiment: computer.composition.experiment };

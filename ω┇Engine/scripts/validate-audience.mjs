@@ -26,7 +26,7 @@ try {
     for (const changed of [undefined, { ...context, pageType: "service" }, { ...context, experiment: undefined }, { ...context, id: "other-en" }, { ...context, translationId: "other" }, { ...context, slug: "other" }, { ...context, locale: page.locale === "en" ? "de" : "en" }, { ...context, audience: page.audience === "private" ? "business" : "private" }]) assert.equal(recipeAllowedForProduction(directory.recipe, changed), false, "Audience experiment escaped its exact identity/page context");
     const invalid = [
       ["borrowed experiment", p => { p.experiment = "computer-laptop-en-preview"; }],
-      ["incorrect identity", p => { p.id = "business-landing-en"; }],
+      ["incorrect identity", p => { p.id = p.audience === "private" ? `business-landing-${p.locale}` : `private-landing-${p.locale}`; }],
       ["wrong locale", p => { p.locale = p.locale === "en" ? "de" : "en"; }],
       ["duplicate ID", p => { p.sections[1].id = p.sections[0].id; }],
       ["broken action", p => { p.sections[0].content.actions[0].target = "missing"; }],
@@ -58,6 +58,11 @@ try {
     assert.equal((output.match(/<form\b/g) ?? []).length, 1);
     assert.ok(output.includes('data-delivery="email"'));
     assert.doesNotMatch(output, /data-lab-recipe|data-lab-block|lab-capture-/);
+    assert.ok(output.includes(`data-locale="${page.locale}"`));
+    if (page.locale === "de") {
+      for (const text of ["Gewünschter Kontaktweg", "Weitere Angaben (optional)", "E-Mail-Entwurf vorbereiten", "Datenschutzerklärung"]) assert.ok(output.includes(text), `Missing German enquiry interface: ${text}`);
+      assert.doesNotMatch(output, /Preferred contact|Prepare email draft|Add details \(optional\)/);
+    }
     const ids = [...output.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
     assert.equal(new Set(ids).size, ids.length);
     for (const match of output.matchAll(/href="#([^"]+)"/g)) assert.ok(ids.includes(match[1]), `Broken target ${match[1]}`);
