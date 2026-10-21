@@ -516,6 +516,33 @@ try {
     { title: "Fake approval", blocks: [{ type: "list", ordered: false, items: ["Item"], status: "approved" }] },
   ]) assert.equal(proseSchema.safeParse(content).success, false, "Invalid/unknown blocks and content-supplied approval must fail");
   assert.throws(() => usedRecipeBlocks({ ...compactSpecimen, content: { blocks: [{ type: "__proto__" }] } }), /Unknown block/);
+  for (const id of ["network-it-support-de", "microsoft-365-workplaces-de"]) {
+    const service = serviceEntries.find(entry => entry.id === id);
+    assert.ok(service?.composition?.experiment, `${id} needs its own German trial`);
+    const context = { ...service, experiment: service.composition.experiment };
+    for (const section of service.composition.sections) assert.equal(recipeAllowedForProduction(section.recipe, context), true);
+    const changes = [
+      ["borrowed English trial", s => { s.composition.experiment = id === "network-it-support-de" ? "business-network-en-preview" : "microsoft-365-en-preview"; }],
+      ["wrong locale", s => { s.locale = "en"; }],
+      ["duplicate ID", s => { s.composition.sections[1].id = s.composition.sections[0].id; }],
+      ["missing enquiry", s => { s.composition.sections = s.composition.sections.filter(x => x.kind !== "contact"); }],
+      ["wrong contact target", s => { s.composition.sections.find(x => x.kind === "contact").id = "contact"; }],
+      ["broken chapter", s => { s.composition.sections.find(x => x.recipe === "scope.chapter-links").content.items[0].target = "missing"; }],
+      ["unapproved block", s => { s.composition.sections.find(x => x.recipe === "explanation.editorial-prose").content.blocks.push({ type: "list", ordered: false, items: ["Not authorised"] }); }],
+    ];
+    for (const [name, change] of changes) { const candidate = structuredClone(service); change(candidate); assert.equal(serviceSchema.safeParse(candidate).success, false, `${id} accepted ${name}`); }
+    const output = await fs.readFile(path.join(root, "dist/leistungen/unternehmen", service.slug, "index.html"), "utf8");
+    assert.equal((output.match(/<h1[ >]/g) ?? []).length, 1);
+    assert.equal((output.match(/<form\b/g) ?? []).length, 1);
+    assert.ok(output.includes('data-delivery="email"'));
+    assert.doesNotMatch(output, /data-lab-recipe|data-lab-block|lab-capture-|Preferred contact|Prepare email draft/);
+    const ids = [...output.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
+    assert.equal(new Set(ids).size, ids.length);
+    for (const match of output.matchAll(/href="#([^"]+)"/g)) assert.ok(ids.includes(match[1]));
+    const experimental = service.composition.sections.find(x => sectionRecipes[x.recipe].status === "experimental");
+    assert.equal(recipeAllowedForProduction(experimental.recipe, { ...context, locale: "en" }), false);
+  }
+  console.log("Validated both German business trials: exact permissions, 7 invalid compositions each, unique anchors and one localised truthful enquiry.");
   console.log(`Validated flexible journeys, shell-contact placements, independent block lifecycle and exact block permissions.`);
   console.log(`Validated private gallery: ${gallery.sections.length} specimens / ${new Set(gallery.sections.map(s => s.recipe)).size} recipes, ${galleryInvalid.length} invalid arrangements, unregistered proposal policy and independent examples.`);
   console.log(`Validated English test: ${englishTestInvalid.length} invalid compositions, route-bound schema/runtime policy, email-draft encoding.`);

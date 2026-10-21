@@ -4,186 +4,458 @@ locale: de
 audience: business
 order: 3
 slug: netzwerk-it-betreuung
-purpose: "Planung, Aufbau und Modernisierung von Netzwerk- und IT-Infrastruktur für kleine und wachsende Unternehmen in Berlin."
+purpose: >-
+  Büro-Netzwerke und IT-Infrastruktur in Berlin planen, aufbauen und modernisieren: mit Verkabelung,
+  Business-WLAN, verwaltbarer Hardware, NAS, VPN und nachvollziehbarer Übergabe im vereinbarten Umfang.
 navigation:
   group: workplace-collaboration
-  label: "Netzwerk & IT-Infrastruktur"
+  label: Netzwerk & IT-Infrastruktur
 page:
-  template: guided-business
+  template: recipe-service
   technicalDepth: professional
   theme:
     variant: network
-    state: "Verkabelung, Netzwerkgeräte, WLAN, Speicher und sichere Zugänge werden als gemeinsam geplante Büro-Infrastruktur sichtbar."
-    title: "Netzwerk als geplante Infrastruktur"
-    description: "Räume, Anschlüsse, Netzwerkgeräte, WLAN und gemeinsame Dienste werden als zusammenhängende technische Basis des Büros betrachtet."
-  storyboard:
-    - role: situation
-      composition: wide
-      visualState: conflict
-      eyebrow: "Neue und wachsende Büros"
-      title: "Wenn ein Büro eine technische Basis braucht, die mitwächst"
-      text: "Ein neues Büro, zusätzliche Räume oder mehr Arbeitsplätze sind gute Gelegenheiten, Netzwerk und Infrastruktur bewusst zu planen. Statt einzelne Geräte später Stück für Stück zu ergänzen, betrachten wir Verkabelung, Netzwerkhardware, WLAN, Speicher und Zugänge von Anfang an im Zusammenhang."
-      points:
-        - "Ein neuer Standort soll vollständig vernetzt und betriebsbereit werden"
-        - "Ein bestehendes Netzwerk soll erweitert oder technisch neu aufgebaut werden"
-        - "Verkabelung, WLAN und Netzwerkgeräte sollen gemeinsam geplant werden"
-      callouts:
-        - "Neues Büro"
-        - "Mehr Arbeitsplätze"
-        - "Infrastruktur wächst"
-    - role: investigation
-      composition: system
-      visualState: dependencies
-      eyebrow: "Planung"
-      title: "Räume, Nutzung und Anforderungen zuerst klären"
-      text: "Bevor Hardware ausgewählt wird, klären wir, wie das Büro tatsächlich genutzt wird: welche Räume und Arbeitsplätze angebunden werden, wo zuverlässiges WLAN benötigt wird, welche gemeinsamen Geräte oder Speicher vorhanden sind und ob sichere Zugänge von außen gebraucht werden."
-      points:
-        - "Arbeitsplätze, Räume, Kabelwege und vorhandene Anschlüsse"
-        - "WLAN-Abdeckung und getrennte Zugänge für Mitarbeitende oder Gäste"
-        - "Gemeinsam genutzte Geräte, Netzwerkspeicher und interne Dienste"
-        - "Internetzugang und sichere Verbindung für berechtigte externe Zugriffe"
-      callouts:
-        - "Räume"
-        - "Verkabelung"
-        - "WLAN"
-        - "Dienste"
-    - role: intervention
-      composition: text-left
-      visualState: controlled-change
-      eyebrow: "Umsetzung"
-      title: "Von Verkabelung bis Konfiguration aus einer Hand"
-      text: "Je nach Projekt können wir passende Komponenten empfehlen oder beschaffen, Kabelwege und Anschlüsse umsetzen, Netzwerkhardware montieren und konfigurieren sowie WLAN, Speicher und sichere Zugänge einrichten. Bestehende Infrastruktur wird nur dort weiterverwendet, wo sie zum geplanten Ergebnis passt."
-      points:
-        - "Netzwerkkomponenten auswählen, liefern und installieren"
-        - "Kabel verlegen, Anschlüsse prüfen und Netzwerkschränke sauber aufbauen"
-        - "Verwaltbare Netzwerkhardware und Business-WLAN passend konfigurieren"
-        - "NAS-Speicher oder VPN-Zugänge einbinden, wenn sie zum Projekt gehören"
-      callouts:
-        - "Planung"
-        - "Verkabelung"
-        - "Installation"
-        - "Konfiguration"
-    - role: outcome
-      composition: text-right
-      visualState: verified
-      eyebrow: "Übergabe"
-      title: "Eine nachvollziehbare und erweiterbare Büro-Infrastruktur"
-      text: "Am Ende soll nicht nur Internet verfügbar sein. Anschlüsse und WLAN sollen dort funktionieren, wo sie gebraucht werden, Netzwerkgeräte sollen sinnvoll aufgebaut sein und die vereinbarte Infrastruktur soll getestet, dokumentiert und verständlich übergeben werden."
-      points:
-        - "Verkabelte Anschlüsse und WLAN sind im vereinbarten Bereich geprüft"
-        - "Netzwerkkomponenten und gemeinsame Dienste funktionieren im vorgesehenen Zusammenspiel"
-        - "Wichtige Einstellungen und die Struktur bleiben nachvollziehbar"
-        - "Spätere Erweiterungen können auf einer geordneten Basis aufbauen"
-      callouts:
-        - "Verbindungen geprüft"
-        - "WLAN geprüft"
-        - "Dienste erreichbar"
-        - "Übergabe klar"
+    state: >-
+      Verkabelung, Netzwerkgeräte, WLAN, Speicher und sichere Zugänge werden als gemeinsam geplante
+      Büro-Infrastruktur sichtbar.
+    title: Netzwerk als geplante Infrastruktur
+    description: >-
+      Räume, Anschlüsse, Netzwerkgeräte, WLAN und gemeinsame Dienste werden als zusammenhängende
+      technische Basis des Büros betrachtet.
 seo:
-  title: "IT-Infrastruktur & Netzwerk Berlin"
-  description: "Planung, Netzwerkverkabelung, Business-WLAN und Netzwerktechnik für kleine und wachsende Unternehmen in Berlin – von neuer Infrastruktur bis zur Modernisierung."
-  intent: "Einen Berliner Dienstleister für Planung, Aufbau oder Modernisierung von Büro-Netzwerk und IT-Infrastruktur finden."
+  title: "IT-Infrastruktur Berlin: Netzwerkverkabelung & WLAN"
+  description: >-
+    Büro-Netzwerk und IT-Infrastruktur in Berlin: Planung, Netzwerkverkabelung, Business-WLAN, NAS und VPN.
+    Neueinrichtung und Modernisierung mit klarer Übergabe.
+  intent: >-
+    Einen Berliner Dienstleister für Planung, Aufbau oder Modernisierung von Büro-Netzwerk und
+    IT-Infrastruktur finden, auch für einzelne Arbeiten ohne laufenden Betreuungsvertrag.
 hero:
-  eyebrow: "Unternehmen · Netzwerk & Infrastruktur"
-  title: "Netzwerk & IT-Infrastruktur für Unternehmen in Berlin"
-  intro: "Wir planen, liefern, installieren und konfigurieren Netzwerk-Infrastruktur für kleine und wachsende Unternehmen in Berlin. Von Verkabelung und verwaltbaren Netzwerkgeräten bis zu Business-WLAN, Netzwerkspeicher und sicherem Fernzugriff entsteht die Lösung passend zum Büro und zum tatsächlichen Bedarf."
+  eyebrow: Unternehmen · Vor Ort in Berlin
+  title: Netzwerk & IT-Infrastruktur für Ihr Büro in Berlin
+  intro: >-
+    Wir planen, installieren und modernisieren Netzwerke für kleine und wachsende Unternehmen in Berlin.
+    Ob zusätzliche Anschlüsse oder ein neues Büro: Wir stimmen Verkabelung, WLAN und gemeinsam genutzte
+    Systeme auf Ihre Räume und die Arbeit Ihres Teams ab.
 problems:
-  eyebrow: "Typische Projekte"
-  title: "Wenn Netzwerk-Infrastruktur neu entstehen oder mitwachsen soll"
-  intro: "Der beste Zeitpunkt für eine saubere technische Basis ist oft vor dem nächsten Wachstumsschritt – bei einem neuen Büro, zusätzlichen Arbeitsplätzen oder einer geplanten Modernisierung."
+  eyebrow: Veränderungen im Büro
+  title: Wenn das Firmennetzwerk Aufmerksamkeit braucht
   items:
-    - "Ein neues Büro benötigt Verkabelung, Netzwerkgeräte und zuverlässiges WLAN"
-    - "Ein vorhandenes Netzwerk soll erweitert, modernisiert oder übersichtlicher aufgebaut werden"
-    - "Netzwerkverkabelung, Patchfelder oder Netzwerkschränke sollen professionell umgesetzt werden"
-    - "Das Büro braucht verwaltbares WLAN mit sinnvoll getrennten Zugängen"
-    - "Ein gemeinsamer Netzwerkspeicher soll in die vorhandene Infrastruktur integriert werden"
-    - "Mitarbeitende benötigen einen sicheren Zugriff auf freigegebene interne Ressourcen"
+    - Ein neues Büro benötigt Anschlüsse, WLAN und gemeinsam nutzbare Geräte
+    - Zusätzliche Arbeitsplätze oder Räume passen nicht mehr zum bisherigen Netzwerk
+    - Verbindungsprobleme unterbrechen Besprechungen oder den Zugriff auf gemeinsame Dateien
+    - Unbeschriftete Anschlüsse und unbekannte Einstellungen erschweren Änderungen
 included:
-  eyebrow: "Leistungsumfang"
-  title: "Von der Planung bis zur betriebsbereiten Infrastruktur"
-  intro: "Der genaue Umfang richtet sich nach Räumen, Nutzung, vorhandener Technik und dem gewünschten Ergebnis. Einzelne Leistungen können separat oder als zusammenhängendes Infrastrukturprojekt umgesetzt werden."
+  eyebrow: Vereinbarter Leistungsumfang
+  title: Planung, Installation und gezielte Unterstützung
   items:
-    - "Anforderungsaufnahme und Planung für neue oder wachsende Büro-Netzwerke"
-    - "Auswahl, Empfehlung und auf Wunsch Beschaffung passender Netzwerkkomponenten"
-    - "Netzwerkverkabelung, Anschlüsse, Patchfelder, Messung und Netzwerkschränke"
-    - "Installation und Konfiguration verwaltbarer Netzwerkhardware"
-    - "Business-WLAN mit passender Abdeckung und getrennten Zugängen, wo sinnvoll"
-    - "Einbindung von NAS- und gemeinsam genutztem Netzwerkspeicher"
-    - "VPN und sicherer Fernzugriff auf vereinbarte interne Ressourcen"
-    - "Funktionstest, grundlegende Dokumentation und verständliche Übergabe"
+    - Vorhandene Infrastruktur prüfen und die benötigten Verbindungen planen
+    - Vereinbarte Verkabelung, Anschlüsse, Patchfelder und Netzwerkschränke installieren und prüfen
+    - Verwaltbare Netzwerkhardware und Business-WLAN auswählen und konfigurieren
+    - NAS-Speicher und berechtigte VPN-Zugänge passend zum Projekt einbinden
+    - Vereinbarte Funktionen testen, Änderungen dokumentieren und Zugänge geordnet übergeben
 outcome:
-  eyebrow: "Projektziel"
-  title: "Planbare Infrastruktur statt einer Sammlung einzelner Geräte"
-  text: "Ein gutes Büro-Netzwerk entsteht nicht dadurch, dass möglichst viel Hardware installiert wird. Entscheidend ist, dass Verkabelung, Netzwerkgeräte, WLAN und gemeinsame Dienste zum tatsächlichen Betrieb passen, zuverlässig zusammenspielen und später nachvollziehbar erweitert werden können."
+  eyebrow: Prüfung und Übergabe
+  title: Ein nachvollziehbares Netzwerk als Grundlage für weitere Arbeit
+  text: >-
+    Die vereinbarten Verbindungen und Dienste werden vor der Übergabe geprüft. Sie erhalten praktische
+    Informationen zu Geräten, Einstellungen und verbleibenden Einschränkungen, damit spätere Änderungen
+    auf einer verständlichen Grundlage aufbauen können.
 cta:
-  title: "Netzwerkprojekt besprechen"
-  text: "Beschreiben Sie kurz das Büro, die ungefähre Zahl der Arbeitsplätze und was neu aufgebaut oder verändert werden soll. Fotos eines vorhandenen Netzwerkschranks oder Grundrissinformationen können später bei der Planung helfen."
-  prompt: "Hilfreich sind Standort, ungefähre Bürogröße, Zahl der Arbeitsplätze, vorhandene Infrastruktur und das gewünschte Ergebnis."
-expanded:
-  situations:
-    eyebrow: "Typische Vorhaben"
-    title: "Netzwerk-Projekte für kleine und wachsende Unternehmen"
-    intro: "Nicht jedes Unternehmen braucht dieselbe Technik. Diese Beispiele zeigen typische Projekte, die wir als Gesamtaufgabe oder in klar abgegrenzten Teilen übernehmen können."
-    items:
-      - title: "Neues Büro vernetzen"
-        text: "Von der ersten Planung über Kabelwege und Netzwerkkomponenten bis zu WLAN und Übergabe entsteht eine technische Basis, die zum Raum und zur geplanten Nutzung passt."
-      - title: "Bestehendes Netzwerk modernisieren"
-        text: "Wenn vorhandene Komponenten nicht mehr zum Wachstum passen, kann die Infrastruktur strukturiert erweitert oder in einem geplanten Schritt neu aufgebaut werden."
-      - title: "Verkabelung & Netzwerkschrank"
-        text: "Kabelwege, Anschlüsse, Patchfelder und Netzwerkschränke können geplant, umgesetzt, geprüft und sauber dokumentiert werden – inklusive vereinbarter Abschlussarbeiten rund um die Installation."
-      - title: "Business-WLAN"
-        text: "WLAN wird nach Fläche und Nutzung geplant. Mehrere Zugangspunkte, sinnvolle Abdeckung und getrennte Zugänge können dort umgesetzt werden, wo das Büro sie tatsächlich braucht."
-      - title: "NAS & gemeinsamer Speicher"
-        text: "Netzwerkspeicher kann für gemeinsame Dateien und passende Zugriffsstrukturen in das Büro-Netzwerk eingebunden werden, ohne daraus automatisch ein komplexes Serverprojekt zu machen."
-      - title: "VPN & sicherer Fernzugriff"
-        text: "Wenn Mitarbeitende oder Verantwortliche von außen auf freigegebene interne Ressourcen zugreifen müssen, kann ein passender VPN-Zugang als Teil der Netzwerk-Infrastruktur eingerichtet werden."
-  process:
-    eyebrow: "Vorgehen"
-    title: "Vom Bedarf zur fertigen Infrastruktur"
-    intro: "Wir beginnen nicht mit einer Produktliste. Zuerst klären wir Nutzung und Rahmenbedingungen, danach werden Planung, Material und Umsetzung so konkret wie nötig abgestimmt."
-    steps:
-      - title: "Bedarf aufnehmen"
-        text: "Wir klären Räume, Arbeitsplätze, vorhandene Anschlüsse, WLAN-Nutzung, gemeinsame Dienste und das gewünschte Ergebnis."
-      - title: "Lösung planen"
-        text: "Wir legen einen sinnvollen Aufbau fest und stimmen Komponenten, Verkabelung, Umfang und auf Wunsch die Beschaffung ab."
-      - title: "Installieren & konfigurieren"
-        text: "Die vereinbarte Infrastruktur wird montiert, verkabelt und so konfiguriert, dass sie zum geplanten Betrieb passt."
-      - title: "Prüfen & übergeben"
-        text: "Anschlüsse, WLAN und vereinbarte Dienste werden getestet; wichtige Informationen und nächste Schritte werden nachvollziehbar übergeben."
-  proof:
-    eyebrow: "Technische Tiefe im Hintergrund"
-    title: "Kompetenz für mehr als nur den Router"
-    text: "Die Seite bleibt bewusst verständlich. Hinter der Planung steht jedoch praktische Erfahrung mit verwaltbaren Netzwerken, professioneller WLAN-Infrastruktur, Verkabelung, Speicher- und Linux-basierten Netzwerkdiensten sowie sicheren Verbindungen."
-    items:
-      - "IT-Erfahrung seit 2008"
-      - "Planung und Konfiguration verwaltbarer Netzwerk-Infrastruktur"
-      - "Verkabelung, Prüfung, Patchfelder und Netzwerkschränke"
-      - "Business-WLAN, NAS, VPN und Linux-Netzwerkdienste im passenden Projektumfang"
-  boundaries:
-    eyebrow: "Klare Abgrenzung"
-    title: "Das Projekt bestimmt die notwendige Tiefe"
-    items:
-      - "Hardware und Aufbau werden nach Anforderungen und vorhandener Umgebung gewählt; wir legen uns öffentlich nicht auf einen einzelnen Hersteller fest."
-      - "Windows-Server-, Active-Directory- und umfangreiche Linux-Server-Projekte werden als eigener Leistungsumfang betrachtet, auch wenn sie mit dem Netzwerkprojekt zusammenhängen."
-      - "Sichere Netzwerk-Konfiguration und Zugriffssteuerung gehören zum Leistungsumfang; Penetrationstests, Forensik und umfassende Cybersecurity- oder Compliance-Beratung sind davon getrennt."
-      - "Wartung nach dem Projekt ist auf Wunsch gelegentlich oder wiederkehrend möglich, aber keine Voraussetzung für Planung oder Umsetzung."
-  faqs:
-    - question: "Können Sie ein komplettes Netzwerk für ein neues Büro planen und aufbauen?"
-      answer: "Ja. Wir können Anforderungen und Räume aufnehmen, einen sinnvollen Aufbau planen, passende Komponenten empfehlen oder beschaffen, Verkabelung und Installation umsetzen und die vereinbarte Infrastruktur anschließend konfigurieren und testen."
-    - question: "Können Sie die Netzwerkhardware auch liefern?"
-      answer: "Ja. Je nach Projekt können wir Komponenten empfehlen und Sie beschaffen selbst, oder wir übernehmen die Beschaffung im vereinbarten Umfang. Die Auswahl richtet sich nach Bedarf und vorhandener Infrastruktur, nicht nach einer festen Herstellerliste."
-    - question: "Übernehmen Sie auch Netzwerkverkabelung und Netzwerkschränke?"
-      answer: "Ja. Dazu können Kabelwege, Anschlüsse, Patchfelder, Messung, saubere Organisation im Netzwerkschrank und vereinbarte Abschlussarbeiten rund um die Installation gehören. Der konkrete bauliche Umfang wird vorab geklärt."
-    - question: "Kann ein bestehendes Firmennetzwerk erweitert oder modernisiert werden?"
-      answer: "Ja. Wir prüfen, welche vorhandenen Komponenten sinnvoll weiterverwendet werden können und planen Erweiterung oder Neuaufbau passend zu zusätzlichen Räumen, Arbeitsplätzen oder neuen Anforderungen."
-    - question: "Planen und installieren Sie WLAN für Büros?"
-      answer: "Ja. Wir können Business-WLAN nach Fläche und Nutzung planen, mehrere Zugangspunkte einrichten und dort, wo es sinnvoll ist, Zugänge für Mitarbeitende und Gäste voneinander trennen."
-    - question: "Richten Sie NAS oder gemeinsamen Netzwerkspeicher ein?"
-      answer: "Ja. NAS-Systeme und gemeinsame Speicher können in das Netzwerk eingebunden und mit passenden Benutzer- und Zugriffsstrukturen eingerichtet werden. Umfangreiche Server- oder Backup-Projekte werden separat abgegrenzt."
-    - question: "Können Sie VPN-Zugänge für Mitarbeitende einrichten?"
-      answer: "Ja. Wenn ein sicherer Zugriff von außen auf vereinbarte interne Ressourcen benötigt wird, kann ein passender VPN-Zugang als Teil des Netzwerkprojekts geplant und eingerichtet werden."
-    - question: "Müssen wir danach einen langfristigen IT-Vertrag abschließen?"
-      answer: "Nein. Planung, Aufbau und Modernisierung sind eigenständige Projekte. Wenn später gelegentliche Unterstützung oder wiederkehrende Wartung gewünscht ist, kann sie separat vereinbart werden."
-  relatedServiceIds:
-    - microsoft-365-workplaces
-    - google-workspace-cloud
+  title: Was benötigt Ihr Büro?
+  text: >-
+    Beschreiben Sie die geplante Änderung oder das Problem, Ihren Standort in Berlin und wichtige Termine.
+    Das erste Gespräch ist kostenlos. Etwaige Kosten eines Diagnosebesuchs erklären wir vor der Vereinbarung.
+  prompt: >-
+    Zum Beispiel: Wir ziehen in ein Büro in Moabit mit acht Arbeitsplätzen und einem Besprechungsraum.
+    Wir benötigen Verkabelung und WLAN und möchten unseren Switch möglichst weiterverwenden.
+    Bitte keine Passwörter oder Zugangscodes angeben.
+composition:
+  experiment: business-network-de-preview
+  relatedBefore: abschluss-kontakt
+  related:
+    eyebrow: Anwendungen am Arbeitsplatz
+    title: Benötigen Sie auch Unterstützung bei den Diensten Ihres Teams?
+    linkLabel: Mehr zu dieser Leistung
+    serviceIds:
+      - microsoft-365-workplaces
+      - google-workspace-cloud
+  sections:
+    - id: einstieg
+      kind: hero
+      recipe: hero.service-intro
+      content:
+        eyebrow: Unternehmen · Vor Ort in Berlin
+        title: Netzwerk & IT-Infrastruktur für Ihr Büro in Berlin
+        intro: >-
+          Wir planen, installieren und modernisieren Netzwerke für kleine und wachsende Unternehmen in Berlin.
+          Ob zusätzliche Anschlüsse oder ein neues Büro: Wir stimmen Verkabelung, WLAN und gemeinsam genutzte
+          Systeme auf Ihre Räume und die Arbeit Ihres Teams ab.
+        actions:
+          - label: Netzwerkprojekt besprechen
+            target: kontakt
+          - label: Leistungen im Detail ansehen
+            target: themen
+        note:
+          title: Steht ein Umzug oder eine Veränderung an?
+          items:
+            - Ihr Standort in Berlin und die ungefähre Zahl der Arbeitsplätze
+            - Was bereits vorhanden ist und was sich ändern soll
+            - Einzugstermin oder Dienste, die während der Arbeit benötigt werden
+          footnote: Für die erste Anfrage benötigen Sie keine technische Planung.
+    - id: typische-vorhaben
+      kind: recognition
+      recipe: recognition.situations
+      content:
+        eyebrow: Wann wir helfen können
+        title: Neue Räume, mehr Arbeitsplätze oder wiederkehrende Verbindungsprobleme
+        intro: >-
+          Ein Netzwerkprojekt kann mit einem Umzug beginnen, mit einer Störung oder mit einer kleinen
+          Erweiterung, für die der bisherige Aufbau nicht mehr ausreicht.
+        items:
+          - title: Sie beziehen ein neues Büro
+            body: >-
+              Arbeitsplätze, Besprechungsräume und gemeinsame Geräte brauchen passende Anschlüsse. Eine
+              Planung vor dem Ausbau hilft, ungünstige Kabelwege und fehlende Netzwerkdosen zu vermeiden.
+          - title: Ihr Team braucht mehr Platz
+            body: >-
+              Weitere Räume oder Arbeitsplätze sind hinzugekommen, aber WLAN und Netzwerkgeräte sind noch
+              auf die ursprüngliche Nutzung ausgelegt.
+          - title: Verbindungen unterbrechen die Arbeit
+            body: >-
+              Videokonferenzen brechen ab, im Besprechungsraum ist das WLAN schwach oder gemeinsame Dateien
+              sind zeitweise nicht erreichbar. Wir untersuchen, welcher Teil der Verbindung betroffen ist.
+          - title: Der vorhandene Aufbau ist unübersichtlich
+            body: >-
+              Ein ungeordneter Netzwerkschrank, unbeschriftete Anschlüsse und nicht dokumentierte Einstellungen
+              machen selbst kleine Änderungen unnötig schwierig.
+    - id: praktische-unterstuetzung
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Was wir übernehmen
+        title: Ihr Firmennetzwerk planen, einrichten oder gezielt verbessern
+        intro: >-
+          Wir sehen uns an, was vorhanden ist, was im Büro gebraucht wird und welche Änderungen sinnvoll
+          sind. Auch einige zusätzliche Anschlüsse, ein weiterer WLAN-Zugangspunkt oder ein geordneter
+          Netzwerkschrank können ein eigenständiger Auftrag sein.
+        blocks:
+          - type: columns
+            columns:
+              - title: Geeignete Geräte weiterverwenden
+                paragraphs:
+                  - >-
+                    Router, Switches und Access Points können bleiben, wenn Leistungsfähigkeit, Herstellerunterstützung
+                    und Konfiguration zur Aufgabe passen. Eine empfohlene Erneuerung erklären wir. Bei Bedarf
+                    beraten wir zur Auswahl oder übernehmen die vereinbarte Beschaffung.
+              - title: Umfang vor der Umsetzung abstimmen
+                paragraphs:
+                  - >-
+                    Wir klären Installation, Konfiguration und Prüfungen sowie mögliche Unterbrechungen im
+                    laufenden Betrieb. Einzelne Projekte und gezielte Fehlersuche sind ebenso möglich wie
+                    eine spätere, separat vereinbarte Wartung.
+    - id: kurzer-kontakt
+      kind: cta
+      recipe: cta.quick-contact
+      content:
+        eyebrow: Der erste Schritt
+        title: Was soll sich in Ihrem Büro ändern?
+        body: >-
+          Rufen Sie uns an oder beschreiben Sie Ihr Vorhaben kurz im Formular. Das erste Gespräch ist
+          kostenlos. Falls ein kostenpflichtiger Diagnosebesuch sinnvoll ist, erklären wir die Kosten vorab.
+        callLabel: Zum Netzwerkprojekt anrufen
+        enquiryLabel: Vorhaben beschreiben
+        enquiryTarget: kontakt
+    - id: kontakt
+      kind: contact
+      recipe: contact.enquiry-email
+      content:
+        title: Erzählen Sie uns von Ihrem Büro
+        intro: >-
+          Beschreiben Sie die Räume, das Problem oder die geplante Änderung und wichtige Termine.
+          Ungefähre Angaben reichen für ein erstes Gespräch aus.
+        formIntro: >-
+          Das Formular bereitet einen Entwurf in Ihrem E-Mail-Programm vor. Bitte prüfen und versenden Sie
+          ihn dort selbst; diese Seite sendet Ihre Nachricht nicht direkt. * Pflichtfelder.
+        request: Was benötigt Ihr Büro?
+        requestPlaceholder: >-
+          Zum Beispiel: Wir ziehen in ein Büro in Moabit mit acht Arbeitsplätzen und einem Besprechungsraum.
+          Wir benötigen Verkabelung und WLAN und möchten unseren Switch möglichst weiterverwenden.
+          Bitte keine Passwörter oder Zugangscodes angeben.
+        affectedPlaceholder: Zum Beispiel Büro-WLAN, Verkabelung, Netzwerkschrank, NAS oder VPN
+        emailSubject: Anfrage zum Büro-Netzwerk in Berlin
+    - id: themen
+      kind: scope
+      recipe: scope.chapter-links
+      content:
+        eyebrow: Technische Details
+        title: Wie die Teile Ihres Büro-Netzwerks zusammenarbeiten
+        intro: >-
+          Der passende Umfang hängt vom Gebäude, den Geräten und den benötigten Diensten ab. Hier finden
+          Sie die wichtigsten Entscheidungen erklärt. Sie können einzelne Bereiche oder ein zusammenhängendes
+          Projekt mit uns besprechen.
+        items:
+          - title: Netzwerkverkabelung und Netzwerkschrank
+            body: Kabelwege, Netzwerkdosen und die Verbindung zu den Arbeitsplätzen.
+            target: netzwerkverkabelung
+          - title: Business-WLAN
+            body: Zugangspunkte, Besprechungsräume sowie Zugänge für Mitarbeitende und Gäste.
+            target: business-wlan
+          - title: Netzwerkgeräte und Konfiguration
+            body: Router, verwaltbare Switches und eine sinnvolle Trennung von Zugängen.
+            target: netzwerkgeraete
+          - title: NAS und gemeinsamer Speicher
+            body: Dateizugriff, Berechtigungen und eine unabhängige Datensicherung.
+            target: netzwerkspeicher
+          - title: VPN und Fernzugriff
+            body: Berechtigter Zugriff auf vereinbarte interne Ressourcen von außerhalb.
+            target: fernzugriff
+    - id: netzwerkverkabelung
+      kind: explanation
+      recipe: explanation.connection-path
+      content:
+        eyebrow: Die physische Infrastruktur
+        title: Netzwerkverkabelung und Netzwerkschränke für Ihr Büro
+        paragraphs:
+          - >-
+            Feste Arbeitsplätze, Netzwerkspeicher und WLAN-Zugangspunkte lassen sich sinnvoll per Kabel
+            anbinden. Wir planen die LAN-Verkabelung nach den Räumen, vorhandenen Kabelwegen und den Orten,
+            an denen Geräte tatsächlich genutzt werden.
+          - >-
+            Zum Auftrag können Netzwerkdosen, Patchfelder, ein Netzwerkschrank und eine geordnete Verbindung
+            der Anschlüsse gehören. Den baulichen Umfang und vereinbarte Abschlussarbeiten klären wir vorab;
+            vorhandene Wege und der Zugang zu den Räumen fließen in die Planung ein.
+        diagramTitle: Vom Netzwerkschrank zum Arbeitsplatz
+        source:
+          title: Netzwerk-Switch
+          body: Zentrale Anschlüsse mit geeigneter Portzahl und Kapazität für die vereinbarten Geräte.
+        route:
+          title: Patchfeld, Kabel und Netzwerkdose
+          body: Ein zugeordneter Kabelweg verbindet den Netzwerkschrank mit dem Raum oder Arbeitsplatz.
+        destinations:
+          - title: Arbeitsplätze
+            body: Kabelverbindungen für Computer und geeignete Geräte am Schreibtisch.
+          - title: WLAN-Zugangspunkte
+            body: Eine Verbindung zum Netzwerk; die passende Stromversorgung wird mitgeprüft.
+          - title: Gemeinsame Geräte
+            body: Anschlüsse für NAS, Netzwerkdrucker oder Ausstattung im Besprechungsraum.
+        caption: >-
+          Vereinfachte Darstellung eines Verbindungswegs. Aufbau, Zahl der Anschlüsse und Geräte werden
+          passend zu Ihren Räumen geplant.
+        planning:
+          title: Installationsdetails rechtzeitig klären
+          body: >-
+            Bei einem neuen Büro oder Umbau lassen sich diese Fragen leichter beantworten, bevor Möbel
+            aufgestellt und Oberflächen fertiggestellt sind.
+          items:
+            - title: Kabelwege und Genehmigungen
+              body: >-
+                Vorhandene Kanäle und mögliche Aufputzwege prüfen; nötige Freigaben von Vermieter oder
+                Gebäudeverwaltung für die vereinbarten Arbeiten klären.
+            - title: Platz und Kapazität
+              body: >-
+                Raum für Patchkabel, Stromversorgung und Belüftung sowie sinnvolle Reserven für absehbare
+                Erweiterungen berücksichtigen.
+            - title: Prüfung und Beschriftung
+              body: >-
+                Vereinbarte Verbindungen prüfen und Dosen sowie Patchfelder zuordnen, damit der installierte
+                Aufbau später nachvollziehbar bleibt.
+    - id: business-wlan
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Funkabdeckung und Zugänge
+        title: Business-WLAN passend zu Ihren Räumen und Ihrer Nutzung
+        intro: >-
+          Besprechungsräume, Arbeitsplätze und Gästebereiche stellen unterschiedliche Anforderungen an das
+          WLAN. Bevor wir Zugangspunkte platzieren, betrachten wir Grundriss, Baumaterialien, Geräte und
+          vorhandene Kabelverbindungen.
+        blocks:
+          - type: table
+            title: Drei Fragen für die WLAN-Planung
+            columns:
+              - Entscheidend ist
+              - Was wir berücksichtigen
+            rows:
+              - - Abdeckung
+                - Wo Verbindungen gebraucht werden, auch in durch Wände oder Stockwerke getrennten Räumen.
+              - - Kapazität
+                - Wie viele Geräte und gleichzeitige Anwendungen die stark genutzten Bereiche tragen sollen.
+              - - Zugang
+                - Wer interne Ressourcen benötigt und wer ausschließlich einen Internetzugang für Gäste braucht.
+          - type: prose
+            paragraphs:
+              - >-
+                Wo es praktikabel ist, werden Access Points per Kabel mit dem Netzwerk verbunden. Ist kein
+                sinnvoller Kabelweg möglich, prüfen wir, ob eine Funkverbindung bei passender Platzierung
+                die vorgesehene Nutzung unterstützen kann.
+              - >-
+                Nach der Einrichtung prüfen wir die vereinbarten Bereiche und typische Anwendungen.
+                Abdeckung und Leistung hängen von Räumen, Endgeräten und Störeinflüssen ab. Zusätzliche
+                Zugangspunkte allein garantieren daher noch kein bestimmtes Ergebnis.
+    - id: netzwerkgeraete
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Geräteauswahl und Einstellungen
+        title: Verwaltbare Netzwerkgeräte sinnvoll einsetzen
+        intro: >-
+          Router, Switches und WLAN-Geräte müssen zusammenarbeiten. Wir wählen und konfigurieren sie für die
+          Anschlüsse, Dienste und Zugriffsregeln, die Ihr Büro tatsächlich benötigt.
+        blocks:
+          - type: columns
+            columns:
+              - title: Kapazität und Kompatibilität prüfen
+                paragraphs:
+                  - >-
+                    Portzahl, Verbindungsgeschwindigkeiten, WLAN-Funktionen und die Stromversorgung geeigneter
+                    Access Points beeinflussen die Auswahl. Vor einer Erweiterung prüfen wir vorhandene Geräte,
+                    Administrationszugänge und die Unterstützung durch den Hersteller.
+              - title: Zugänge nach Bedarf trennen
+                paragraphs:
+                  - >-
+                    Ein Gastzugang sollte nicht automatisch Bürodateien oder interne Geräte erreichen.
+                    Wenn die Technik es unterstützt, können getrennte Netze und Zugriffsregeln zwischen
+                    Gästen, Mitarbeitenden und ausgewählten gemeinsamen Systemen unterscheiden.
+          - type: callout
+            tone: quiet
+            title: Änderungen im laufenden Betrieb brauchen eine Abstimmung
+            body: >-
+              Vor Eingriffen mit möglichen Unterbrechungen vereinbaren wir ein Arbeitsfenster, benennen die
+              betroffenen Dienste und klären praktikable Rückfallmöglichkeiten. Geräteübersicht und relevante
+              Konfigurationsinformationen gehören zur vereinbarten Übergabe.
+    - id: netzwerkspeicher
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: NAS und gemeinsame Dateien
+        title: Netzwerkspeicher für die Zusammenarbeit im Team
+        intro: >-
+          Ein NAS kann berechtigten Personen einen gemeinsamen Speicherort im Büro bereitstellen. Wir binden
+          das Gerät in Ihr Netzwerk ein, richten Benutzer und Berechtigungen ein und prüfen den Zugriff von
+          den vereinbarten Computern.
+        blocks:
+          - type: prose
+            paragraphs:
+              - >-
+                Wir klären, welche Ordner benötigt werden, wer Dateien verändern darf und ob vorhandene
+                Daten umziehen sollen. Kapazität, Gerätekompatibilität und der Zustand des bisherigen Speichers
+                bestimmen mit, was sinnvoll weitergenutzt werden kann.
+          - type: callout
+            tone: solid
+            title: Gemeinsamer Speicher ersetzt keine Datensicherung
+            body: >-
+              Kopien auf demselben NAS, Festplattenredundanz und Synchronisierung sind kein Ersatz für ein
+              unabhängiges Backup. Wir besprechen getrennte Sicherungen, Zuständigkeiten und vereinbarte
+              Wiederherstellungsprüfungen. Größere Datenumzüge, Backup-Systeme und Serverprojekte benötigen
+              einen eigenen Leistungsumfang.
+    - id: fernzugriff
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Zugriff von außerhalb
+        title: VPN-Zugänge für benötigte interne Ressourcen
+        intro: >-
+          Manche Mitarbeitende brauchen unterwegs oder im Homeoffice Zugriff auf Bürodateien oder eine interne
+          Anwendung. Zuerst klären wir, welche Ressource benötigt wird, wer dazu berechtigt ist und ob ein VPN
+          dafür die passende Verbindung ist.
+        blocks:
+          - type: prose
+            paragraphs:
+              - >-
+                Geeignete VPN-Zugänge können Teil des vereinbarten Netzwerkprojekts sein. Dazu prüfen wir
+                kompatible Geräte, persönliche Zugänge und die Verbindung von den vorgesehenen Endgeräten.
+                Mehrfaktor-Authentifizierung und eine Begrenzung der erreichbaren Ressourcen werden, soweit von der eingesetzten Technik unterstützt, bei der
+                Zugriffsplanung berücksichtigt.
+              - >-
+                Der Fernzugriff hängt auch vom Internetanschluss des Büros, der Verbindung am jeweiligen
+                Arbeitsort und unterstützten Geräten ab. Bei Austritten oder geänderten Aufgaben sollten Rechte
+                überprüft werden. Die Zuständigkeit für Updates und spätere Betreuung wird bei der Übergabe geklärt.
+          - type: callout
+            tone: outline
+            title: Weitergehende Anforderungen separat abgrenzen
+            body: >-
+              Ein VPN sichert nicht automatisch das gesamte Unternehmen ab. Penetrationstests, die Untersuchung
+              von Sicherheitsvorfällen und umfassende Cybersecurity- oder Compliance-Beratung gehören nicht
+              zu dieser Netzwerkleistung. Auch Windows Server, Active Directory und umfangreiche Linux-Server-Arbeiten
+              benötigen einen separat geklärten Umfang.
+    - id: ablauf
+      kind: process
+      recipe: process.staged-path
+      content:
+        eyebrow: Von der Anfrage bis zur Übergabe
+        title: So planen und setzen wir die Arbeit um
+        intro: >-
+          Das Vorgehen gilt für eine einzelne Verbesserung ebenso wie für eine neue Installation. Wie viel
+          Planung und Dokumentation sinnvoll ist, richtet sich nach dem Auftrag.
+        steps:
+          - title: Bedarf verstehen
+            body: >-
+              Standort, Arbeitsplätze, vorhandene Technik, benötigte Dienste und Termine besprechen.
+              Wenn erforderlich, die Umgebung vor Ort ansehen.
+          - title: Umfang und Kosten abstimmen
+            body: >-
+              Arbeiten, Geräte, Beschaffung, Abhängigkeiten und mögliche Unterbrechungen festlegen.
+              Diagnosekosten vor einem kostenpflichtigen Besuch erklären.
+          - title: Installieren und konfigurieren
+            body: >-
+              Vereinbarte Verkabelung und Konfiguration umsetzen. Zusätzliche Arbeiten, Geräte oder
+              weitere Besuche vorab mit Ihnen abstimmen.
+          - title: Prüfen und übergeben
+            body: >-
+              Vereinbarte Verbindungen und Dienste testen, Änderungen erläutern und praktische Unterlagen
+              übergeben. Zuständigkeiten für die weitere Betreuung klären.
+    - id: fragen
+      kind: faq
+      recipe: faq.editorial-answers
+      content:
+        eyebrow: Vor der Anfrage
+        title: Fragen zu Netzwerkprojekten im Büro
+        intro: >-
+          Für den Anfang reicht eine grobe Beschreibung. Wir helfen Ihnen, die technischen Anforderungen
+          einzugrenzen und zu klären, ob der Auftrag zu unserem Angebot passt.
+        items:
+          - question: Können wir auch eine kleine Aufgabe ohne Wartungsvertrag beauftragen?
+            paragraphs:
+              - >-
+                Ja. Zusätzliche Anschlüsse, ein WLAN-Problem oder eine vereinbarte Konfigurationsänderung
+                können eigenständige Aufträge sein. Gelegentliche Unterstützung oder regelmäßige Wartung
+                können Sie bei Bedarf separat vereinbaren; beides ist keine Voraussetzung für eine Installation.
+          - question: Können vorhandene Geräte bleiben und neue Komponenten beschafft werden?
+            paragraphs:
+              - >-
+                Wir prüfen, ob vorhandene Geräte zu den Anforderungen passen und sich administrieren und
+                weiter unterstützen lassen. Empfohlene Komponenten können Sie selbst kaufen oder die Beschaffung
+                mit uns vereinbaren. Hardware und zusätzliche Arbeiten werden vor Kauf oder Einbau abgestimmt.
+          - question: Ist die Umsetzung möglich, während im Büro gearbeitet wird?
+            paragraphs:
+              - >-
+                Ein Teil der Vorbereitung kann parallel zum Betrieb stattfinden. Verkabelungsarbeiten und
+                Änderungen an Geräten können Verbindungen jedoch unterbrechen. Wir besprechen die betroffenen
+                Dienste und ein geeignetes Zeitfenster. Termine an Werktagen, abends oder samstags können nach
+                Vereinbarung möglich sein; Verfügbarkeit und Unterbrechungen werden für den konkreten Auftrag geklärt.
+          - question: Wie werden Kosten und ein möglicher Diagnosebesuch vereinbart?
+            paragraphs:
+              - >-
+                Das erste Gespräch ist kostenlos. Für abgrenzbare Arbeiten erstellen wir ein individuelles
+                Angebot. Mögliche Kosten für einen Diagnosebesuch erläutern wir, bevor ein solcher Termin
+                vereinbart wird. Räume, Kabelwege, Geräte und Leistungsumfang beeinflussen den Aufwand.
+          - question: Was passiert, wenn die Störung beim Internetanbieter liegt?
+            paragraphs:
+              - >-
+                Wir können das lokale Netzwerk untersuchen und helfen, interne Probleme von einer Störung
+                des Anbieteranschlusses zu unterscheiden. Leitungsfehler auf Anbieterseite, Tarifänderungen und
+                die Wiederherstellung des externen Anschlusses bleiben beim Provider. Ein Notdienst, eine feste
+                Reaktionszeit oder ein SLA werden damit nicht zugesagt.
+    - id: abschluss-kontakt
+      kind: cta
+      recipe: cta.quick-contact
+      content:
+        eyebrow: Nächsten Schritt besprechen
+        title: Beschreiben Sie uns Ihr Netzwerkvorhaben
+        body: >-
+          Ob eine einzelne Verbesserung oder eine neue Installation: Sagen Sie uns, was Sie erreichen
+          möchten und welche Termine wichtig sind. Den sinnvollen Umfang klären wir gemeinsam.
+        callLabel: Zum Vorhaben anrufen
+        enquiryLabel: Zurück zum Anfrageformular
+        enquiryTarget: kontakt

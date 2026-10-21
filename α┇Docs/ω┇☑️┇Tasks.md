@@ -55,7 +55,7 @@ Family/source: `private gateway`.
 Family/source: `office-network`.
 
 - [x] **4F — EN · Business networks / IT support** — `/en/services/business/network-it-support/`. Historical source work retained; separate QA outstanding.
-- [ ] **3F — DE · Business networks / IT support** — `/leistungen/unternehmen/netzwerk-it-betreuung/`.
+- [x] **3F — DE · Business networks / IT support** — `/leistungen/unternehmen/netzwerk-it-betreuung/`. Source/repository/browser verified in v2.3.11; QA-F remains open.
 
 ### Microsoft 365 workplaces
 

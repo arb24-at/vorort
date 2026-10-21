@@ -53,6 +53,11 @@ export const productionTrials: Record<string, Trial> = {
     id: "computer-laptop-en", translationId: "computer-laptop", slug: "computer-laptop-help", locale: "en", audience: "private",
     authorisation: "Aykhan's named Task 4B, v2.2.38.", recipes: serviceExperiments, blocks: [],
   },
+  "business-network-de-preview": {
+    id: "network-it-support-de", translationId: "network-it-support", slug: "netzwerk-it-betreuung", locale: "de", audience: "business",
+    authorisation: "Aykhan’s assignment to complete the remaining existing-page Content-creation bundle, Task 3F, under the initial-update exception, 2026-10-21.",
+    recipes: serviceExperiments, blocks: [],
+  },
   "business-network-en-preview": {
     id: "network-it-support-en", translationId: "network-it-support", slug: "network-it-support", locale: "en", audience: "business",
     authorisation: "Aykhan's named Task 4F, v2.2.39.", recipes: serviceExperiments, blocks: [],
