@@ -25,10 +25,20 @@ export function isEnglishComputerSupportPreview(context?: ProductionRecipeContex
     && context.locale === "en" && context.audience === "private";
 }
 
+// Named Task 4F continues the English page experiment. Only this business route
+// may reuse these existing experiments; this is adoption, not recipe approval.
+export function isEnglishBusinessNetworkPreview(context?: ProductionRecipeContext) {
+  return context?.experiment === "business-network-en-preview"
+    && context.id === "network-it-support-en"
+    && context.translationId === "network-it-support"
+    && context.slug === "network-it-support"
+    && context.locale === "en" && context.audience === "business";
+}
+
 export function recipeAllowedForProduction(id: string, context?: ProductionRecipeContext) {
   if (recipeAllowedIn(id, "production")) return true;
   if (getSectionRecipe(id).status !== "experimental") return false;
   if (isEnglishHomeNetworkTest(context)) return ["recognition.situations", "cta.quick-contact", "contact.enquiry-email"].includes(id);
-  return isEnglishComputerSupportPreview(context)
+  return (isEnglishComputerSupportPreview(context) || isEnglishBusinessNetworkPreview(context))
     && ["hero.service-intro", "scope.chapter-links", "recognition.situations", "cta.quick-contact", "contact.enquiry-email"].includes(id);
 }

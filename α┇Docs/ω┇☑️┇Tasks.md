@@ -101,6 +101,8 @@ updated: 2026-10-21
 > [!todo] Goal
 > Default sequencing: rewrite English pages **only after Bundle 3**. **Explicit exception, 2026-10-20:** Aykhan assigned **4A** immediately after 3A, with close German/English coverage and independently written English SEO copy; automatic next-task selection remains 3B. **Explicit exception, 2026-10-21:** Aykhan assigned **4B** with permission to adopt/develop experimental sections on the English computer-support route. Research and write for English-speaking audiences independently while preserving the established site relationships. For trust and legal pages with no current independent English route, make a grounded language-route decision and document it rather than manufacturing a path.
 
+> **Explicit exception, 2026-10-21:** Aykhan selected **4F** by ID after 4B. The English business-network page is implemented and validated in v2.2.39. This named selection does not complete skipped tasks or change automatic queue order.
+
 - [x] **4A — EN · Home networks / Wi-Fi**
   - **Route:** `/en/services/private/wifi-home-network/`
   - **Page job:** Pilot an expressive, technically accurate service chapter structure. Preserve the approved editorial hero, topic navigation and conversion path where they help; avoid repair or guaranteed-coverage promises.
@@ -121,7 +123,7 @@ updated: 2026-10-21
   - **Route:** `/en/services/private/`
   - **Page job:** Create a distinct audience-oriented overview and navigation gateway rather than a generic cloned service page; extend page-type compatibility carefully if needed.
   - **Execution:** Independent English authoring using the English intent and research; do not mechanically translate the German copy. Apply the common per-page acceptance contract, record every Design Lab change, verify, mark this item complete, commit once, report and stop.
-- [ ] **4F — EN · Business networks / IT support**
+- [x] **4F — EN · Business networks / IT support**
   - **Route:** `/en/services/business/network-it-support/`
   - **Page job:** Pilot a business service chapter that conveys infrastructure competence without implying enterprise security, SLAs or mandatory managed contracts.
   - **Execution:** Independent English authoring using the English intent and research; do not mechanically translate the German copy. Apply the common per-page acceptance contract, record every Design Lab change, verify, mark this item complete, commit once, report and stop.

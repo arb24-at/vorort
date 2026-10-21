@@ -211,6 +211,27 @@ for (let i = 0; i < computerJourney.length; i++) {
   const position = computerHtml.indexOf(`id="${computerJourney[i]}"`);
   if (position < 0 || (i && position <= computerHtml.indexOf(`id="${computerJourney[i - 1]}"`))) errors.push(`Computer support journey order failed: ${computerJourney[i]}`);
 }
+const businessHtml = fs.readFileSync(path.join(distRoot, "en/services/business/network-it-support/index.html"), "utf8");
+for (const required of [
+  '<html lang="en">', '<title>Network Infrastructure Berlin | Office Cabling &amp; Wi-Fi</title>',
+  `rel="canonical" href="${new URL(`${basePath}en/services/business/network-it-support/`, astroConfig.site)}"`,
+  `hreflang="de" href="${new URL(`${basePath}leistungen/unternehmen/netzwerk-it-betreuung/`, astroConfig.site)}"`,
+  'data-service-page="network-it-support-en"', 'data-recipe="explanation.connection-path"',
+  'data-delivery="email"', 'name="context" value="Business"', 'name="company"', 'Prepare email draft',
+  'en/services/business/microsoft-365-workplaces/', 'en/services/business/google-workspace-cloud/',
+]) if (!businessHtml.includes(required)) errors.push(`Business network missing required output: ${required}`);
+if ((businessHtml.match(/<h1[ >]/g) ?? []).length !== 1 || (businessHtml.match(/<form\b/g) ?? []).length !== 1) errors.push("Business network needs one H1 and one enquiry form");
+if ((businessHtml.match(/data-recipe="cta.quick-contact"/g) ?? []).length !== 2) errors.push("Business network needs two canonical contact invitations");
+if (/<button[^>]*type="submit"[^>]*disabled/.test(businessHtml)) errors.push("Business email draft must remain usable without a direct endpoint");
+const businessIds = [...businessHtml.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]);
+if (businessIds.length !== new Set(businessIds).size) errors.push("Business network contains duplicate IDs");
+for (const m of businessHtml.matchAll(/href="#([^"]+)"/g)) if (!businessIds.includes(m[1])) errors.push(`Business network has a broken target: ${m[1]}`);
+for (const m of businessHtml.matchAll(/aria-labelledby="([^"]+)"/g)) for (const id of m[1].split(" ")) if (!businessIds.includes(id)) errors.push(`Business network has a missing accessible label: ${id}`);
+const businessJourney = ["introduction", "office-situations", "practical-help", "quick-contact", "contact", "topics", "network-cabling", "business-wifi", "network-hardware", "shared-storage", "remote-access", "working-process", "questions", "related-services", "final-contact"];
+for (let i = 0; i < businessJourney.length; i++) {
+  const position = businessHtml.indexOf(`id="${businessJourney[i]}"`);
+  if (position < 0 || (i && position <= businessHtml.indexOf(`id="${businessJourney[i - 1]}"`))) errors.push(`Business network journey order failed: ${businessJourney[i]}`);
+}
 const privatePreview = fs.readFileSync(path.join(distRoot, "design-lab/preview/private-service-page/index.html"), "utf8");
 for (const [name, contents] of [["Workshop", privateHtml], ["Canvas", privatePreview]]) {
   if ((contents.match(/<h1[ >]/g) ?? []).length !== 1 || !contents.includes(">Private Service Page</h1>")) errors.push(`${name} needs one Private Service Page heading`);

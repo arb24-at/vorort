@@ -59,6 +59,7 @@
 .pw-rich-prose__table-scroll { overflow-x: auto; border-top: 2px solid var(--pw-text); border-bottom: 1px solid var(--pw-rule); }
 .pw-rich-prose__table-scroll:focus-visible { outline: 3px solid var(--pw-accent); outline-offset: 4px; }
 .pw-rich-prose table { width: 100%; min-width: 620px; border-collapse: collapse; color: var(--pw-muted); font-size: .92rem; line-height: 1.5; }
+.pw-rich-prose table[data-columns="2"] { min-width: 0; }
 .pw-rich-prose th, .pw-rich-prose td { padding: .85rem .8rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--pw-rule); }
 .pw-rich-prose thead th { color: var(--pw-text); font-size: .75rem; text-transform: uppercase; letter-spacing: .07em; }
 .pw-rich-prose tbody th { width: 22%; color: var(--pw-text); font-weight: 750; }

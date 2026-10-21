@@ -14,7 +14,7 @@ try {
     stdin: { contents: 'export { serviceSchema } from "./src/data/service-schema.ts"; export * from "./src/design-system/workshop-schema.ts"; export * from "./src/design-system/section-recipes.ts"; export * from "./src/data/workshop-usage.ts"; export * from "./src/design-system/production-policy.ts"; export { enquiryEmailHref } from "./src/utils/enquiry-email.ts"; export { captureScale } from "./src/scripts/design-lab/section-capture.ts";', resolveDir: root, loader: "ts" },
     outfile: modulePath, bundle: true, platform: "node", format: "esm", packages: "external",
   });
-  const { serviceSchema, getRecipeUsage, workshopSchema, recipeAllowedForProduction, isEnglishHomeNetworkTest, isEnglishComputerSupportPreview, enquiryEmailHref, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
+  const { serviceSchema, getRecipeUsage, workshopSchema, recipeAllowedForProduction, isEnglishHomeNetworkTest, isEnglishComputerSupportPreview, isEnglishBusinessNetworkPreview, enquiryEmailHref, recipeAllowedIn, recipesWithStatus, sectionRecipes, getWorkshopUsage, validateRecipeRegistry } = await import(pathToFileURL(modulePath).href);
   const { captureScale } = await import(pathToFileURL(modulePath).href);
   for (const [width, height] of [[390, 400], [1440, 800], [390, 10000], [3000, 20000], [20000, 3000]]) {
     const scale = captureScale(width, height);
@@ -341,7 +341,7 @@ try {
   for (const id of ["hero.service-intro", "scope.chapter-links"]) {
     assert.equal(recipeAllowedForProduction(id, englishContext), sectionRecipes[id].status === "approved", "Home-network permission must not expand with the computer page");
     const usage = getRecipeUsage(fixtures, serviceEntries, id);
-    assert.equal(usage.filter(p => p.context === "Production · EN").length, 1);
+    assert.equal(usage.filter(p => p.context === "Production · EN").length, 2);
     assert.ok(usage.some(p => p.path === "en/services/private/computer-laptop-help/"));
   }
   const computerInvalid = [
@@ -379,6 +379,39 @@ try {
   }
   assert.equal(getRecipeUsage([], [computer], "cta.quick-contact").length, 1, "Repeated computer CTAs count once");
   console.log(`Validated computer support: ${computerInvalid.length} invalid compositions, two new shared specimens, route-bound schema/runtime authorisation and derived usage.`);
+  const business = serviceEntries.find(s => s.id === "network-it-support-en");
+  assert.ok(business?.composition, "English business network needs a complete source composition");
+  const businessContext = { id: business.id, translationId: business.translationId, slug: business.slug, locale: business.locale, audience: business.audience, experiment: business.composition.experiment };
+  assert.equal(isEnglishBusinessNetworkPreview(businessContext), true);
+  const businessExperiments = ["hero.service-intro", "scope.chapter-links", "recognition.situations", "cta.quick-contact", "contact.enquiry-email"];
+  for (const [id, recipe] of Object.entries(sectionRecipes)) {
+    assert.equal(recipeAllowedForProduction(id, businessContext), recipe.status === "approved" || (recipe.status === "experimental" && businessExperiments.includes(id)), `Business runtime whitelist mismatch: ${id}`);
+  }
+  for (const id of businessExperiments) {
+    const approved = sectionRecipes[id].status === "approved";
+    for (const context of [undefined, { ...businessContext, experiment: undefined }, { ...businessContext, experiment: "computer-laptop-en-preview" }, { ...businessContext, experiment: "wifi-home-network-en-test" }, { ...businessContext, id: "another-en" }, { ...businessContext, translationId: "another" }, { ...businessContext, slug: "another" }, { ...businessContext, locale: "de" }, { ...businessContext, audience: "private" }]) {
+      assert.equal(recipeAllowedForProduction(id, context), approved, `Business authorisation escaped its exact identity: ${id}`);
+    }
+    const status = sectionRecipes[id].status;
+    try {
+      sectionRecipes[id].status = "deprecated";
+      assert.equal(recipeAllowedForProduction(id, businessContext), false);
+      assert.equal(serviceSchema.safeParse(business).success, false);
+    } finally { sectionRecipes[id].status = status; }
+  }
+  // The shared journey safeguards must apply to business, without borrowing a
+  // private-page identity or allowing arbitrary experimental recipes.
+  const businessInvalid = computerInvalid.map(([name, change]) => [name, change]);
+  businessInvalid.push(["borrowed computer permission", s => { s.composition.experiment = "computer-laptop-en-preview"; }]);
+  for (const [name, change] of businessInvalid) {
+    const candidate = structuredClone(business);
+    if (name === "wrong audience") candidate.audience = "private";
+    else change(candidate);
+    assert.equal(serviceSchema.safeParse(candidate).success, false, `Invalid business composition accepted: ${name}`);
+  }
+  assert.equal(getRecipeUsage([], [business], "cta.quick-contact").length, 1, "Repeated business invitations count as one consumer");
+  assert.ok(getRecipeUsage(fixtures, serviceEntries, "hero.service-intro").some(p => p.path === "en/services/business/network-it-support/"));
+  console.log(`Validated business network: ${businessInvalid.length} invalid compositions, exact schema/runtime whitelist, deprecated rejection and distinct production usage.`);
   const blueprintText = await fs.readFile(path.join(root, "../γ┇Blueprints/wifi-home-network-en-bp.md"), "utf8");
   const blueprint = yaml.load(blueprintText.split("---")[1]);
   assert.equal(blueprint["page-id"], englishProduction.translationId);

@@ -484,7 +484,7 @@ pages:
 - id: network-it-en
   route: /en/services/business/network-it-support/
   locale: en
-  researchStatus: serp-reviewed-2026-09-02
+  researchStatus: serp-reviewed-2026-10-21
   primary: network infrastructure Berlin
   useful:
   - network cabling Berlin
@@ -504,7 +504,7 @@ pages:
   - enterprise network engineering Berlin
   - data centre networking Berlin
   - home Wi-Fi installation Berlin
-  note: "English SERP review on 2026-09-02: Berlin English-language providers commonly use network infrastructure, network cabling, network installation, office LAN cabling and Wi-Fi planning language. Broad IT support results skew toward break/fix or managed-service offers, so this page stays project-led. German Keyword Planner volumes are not reused as English search-volume evidence."
+  note: "English SERP review on 2026-09-02: Berlin English-language providers commonly use network infrastructure, network cabling, network installation, office LAN cabling and Wi-Fi planning language. Broad IT support results skew toward break/fix or managed-service offers, so this page stays project-led. Follow-up on 2026-10-21 confirmed office LAN cabling and installation terminology on https://www.grueninger-netzwerk.de/en/lan/ and network infrastructure / new-office setup language on https://dawico.de/en/netzwerkbetreuung. These provider pages are terminology evidence, not evidence of our capabilities or their outcome claims. Primary ownership remains network infrastructure Berlin; broad IT support Berlin stays with the business landing. No new English volume evidence; German Keyword Planner volumes are not reused."
 - id: trust-de
   route: /datensicherheit-zertifizierungen/
   locale: de

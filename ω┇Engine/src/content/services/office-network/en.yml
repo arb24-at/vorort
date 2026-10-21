@@ -4,186 +4,450 @@ locale: en
 audience: business
 order: 3
 slug: network-it-support
-purpose: "Planning, installation and modernization of network infrastructure for small and growing businesses in Berlin."
+purpose: >-
+  Project-led office network planning, cabling, installation and improvement in Berlin, with business Wi-Fi,
+  managed hardware, NAS, VPN and an understandable handover.
 navigation:
   group: workplace-collaboration
-  label: "Network & IT infrastructure"
+  label: Network & IT infrastructure
 page:
-  template: guided-business
+  template: recipe-service
   technicalDepth: professional
   theme:
     variant: network
-    state: "Cabling, network hardware, Wi-Fi, shared storage and secure access appear as one planned office infrastructure."
-    title: "A network built as infrastructure"
-    description: "Rooms, connections, network equipment, Wi-Fi and shared services are treated as one technical foundation for the workplace."
-  storyboard:
-    - role: situation
-      composition: wide
-      visualState: conflict
-      eyebrow: "New and growing offices"
-      title: "When an office needs a network that can grow with it"
-      text: "A new office, additional rooms or a growing team are good opportunities to plan the network properly. Instead of adding isolated devices later, we consider cabling, network hardware, Wi-Fi, storage and access together from the beginning."
-      points:
-        - "A new office needs to be connected and ready for day-to-day work"
-        - "An existing network needs to be expanded or rebuilt on a cleaner foundation"
-        - "Cabling, Wi-Fi and network equipment should be planned as one system"
-      callouts:
-        - "New office"
-        - "More workspaces"
-        - "Infrastructure grows"
-    - role: investigation
-      composition: system
-      visualState: dependencies
-      eyebrow: "Planning"
-      title: "Start with the rooms, users and real requirements"
-      text: "Before choosing hardware, we look at how the office will actually be used: which rooms and workspaces need connections, where reliable Wi-Fi matters, which shared devices or storage are needed, and whether authorised users require secure remote access."
-      points:
-        - "Workspaces, rooms, cable routes and existing connections"
-        - "Wi-Fi coverage and separate access for staff or guests where useful"
-        - "Shared devices, network storage and internal services"
-        - "Internet connectivity and secure access to agreed internal resources"
-      callouts:
-        - "Rooms"
-        - "Cabling"
-        - "Wi-Fi"
-        - "Services"
-    - role: intervention
-      composition: text-left
-      visualState: controlled-change
-      eyebrow: "Implementation"
-      title: "From cabling to configuration as one project"
-      text: "Depending on the project, we can recommend or supply suitable equipment, install and test network cabling, organise racks and patching, configure managed network hardware, and set up Wi-Fi, storage or secure remote access. Existing equipment is reused where it genuinely fits the planned result."
-      points:
-        - "Select, supply and install appropriate network components"
-        - "Install and test cabling, connections, patch panels and network cabinets"
-        - "Configure managed network hardware and business Wi-Fi for the office"
-        - "Integrate NAS storage or VPN access when they belong to the project"
-      callouts:
-        - "Plan"
-        - "Cable"
-        - "Install"
-        - "Configure"
-    - role: outcome
-      composition: text-right
-      visualState: verified
-      eyebrow: "Handover"
-      title: "Office infrastructure that is understandable and ready to extend"
-      text: "The goal is more than simply getting an internet connection. Wired connections and Wi-Fi should work where they are needed, network equipment should be organised sensibly, and the agreed infrastructure should be tested, documented and handed over in a form that remains understandable later."
-      points:
-        - "Agreed wired connections and Wi-Fi coverage are tested"
-        - "Network components and shared services work together as intended"
-        - "Important settings and the overall structure remain traceable"
-        - "Future expansion starts from an organised technical foundation"
-      callouts:
-        - "Connections tested"
-        - "Wi-Fi checked"
-        - "Services available"
-        - "Clear handover"
+    state: >-
+      Cabling, network hardware, Wi-Fi, shared storage and secure access appear as one planned office
+      infrastructure.
+    title: A network built as infrastructure
+    description: >-
+      Rooms, connections, network equipment, Wi-Fi and shared services are treated as one technical foundation
+      for the workplace.
 seo:
-  title: "Network Infrastructure & Cabling Berlin"
-  description: "Network planning, cabling, managed hardware and business Wi-Fi for small and growing businesses in Berlin, from new office networks to modernization."
-  intent: "Find a Berlin provider to plan, install or modernize business network infrastructure and office cabling."
+  title: Network Infrastructure Berlin | Office Cabling & Wi-Fi
+  description: >-
+    Office network setup in Berlin: network cabling, business Wi-Fi, managed hardware, NAS and VPN. New
+    installations and upgrades, with clear scope and handover.
+  intent: >-
+    Find a Berlin provider to plan, install or improve office network infrastructure and cabling, with
+    project-based help rather than a mandatory managed-service contract.
 hero:
-  eyebrow: "Business · Network infrastructure"
-  title: "Network infrastructure for businesses in Berlin"
-  intro: "We plan, supply, install and configure network infrastructure for small and growing businesses in Berlin. From cabling and managed network hardware to business Wi-Fi, shared storage and secure remote access, the solution is built around the office and the way people actually need to work."
+  eyebrow: Business networks · On site in Berlin
+  title: Office network setup in Berlin
+  intro: >-
+    We plan, install and improve network infrastructure for small and growing businesses in Berlin. From a few
+    additional connections to a new office network, we bring cabling, Wi-Fi and shared systems together around
+    the way your team works.
 problems:
-  eyebrow: "Typical projects"
-  title: "When network infrastructure needs to be built or ready for growth"
-  intro: "A new office, additional workspaces or a planned modernization are often the right moments to create a cleaner technical foundation rather than adding another isolated device."
+  eyebrow: Changes in the workplace
+  title: When your office network needs attention
   items:
-    - "A new office needs cabling, network equipment and reliable Wi-Fi"
-    - "An existing network needs to be expanded, modernized or rebuilt more clearly"
-    - "Network cabling, patch panels or a network cabinet need professional installation"
-    - "The office needs managed Wi-Fi with sensible separation of access where appropriate"
-    - "Shared network storage needs to be integrated into the office infrastructure"
-    - "Authorised users need secure remote access to agreed internal resources"
+    - A new office needs connections, Wi-Fi and shared equipment ready for use
+    - More desks or rooms have outgrown the existing network
+    - Unreliable connections interrupt meetings or access to shared files
+    - An unlabelled cabinet and undocumented settings make changes difficult
 included:
-  eyebrow: "Scope"
-  title: "From planning to working infrastructure"
-  intro: "The exact scope depends on the rooms, intended use, existing equipment and the desired result. Individual services can be delivered separately or as one coordinated infrastructure project."
+  eyebrow: Agreed project scope
+  title: Planning, installation and practical support
   items:
-    - "Requirements review and planning for new or growing office networks"
-    - "Selection, recommendation and, if requested, procurement of suitable network equipment"
-    - "Network cabling, outlets, patch panels, testing and network cabinets"
-    - "Installation and configuration of managed network hardware"
-    - "Business Wi-Fi planned around coverage and access requirements"
-    - "Integration of NAS and shared network storage"
-    - "VPN and secure remote access to agreed internal resources"
-    - "Functional testing, practical documentation and understandable handover"
+    - Review existing infrastructure and plan the connections the office needs
+    - Install and test agreed cabling, outlets, patch panels and network cabinets
+    - Select and configure managed network hardware and business Wi-Fi
+    - Integrate NAS storage and authorised VPN access where appropriate
+    - Test agreed functions, document the changes and hand over access responsibly
 outcome:
-  eyebrow: "Project goal"
-  title: "Planned infrastructure instead of a collection of devices"
-  text: "A good office network is not created by installing as much hardware as possible. Cabling, network equipment, Wi-Fi and shared services should fit the way the business works, operate reliably together and remain understandable when the office grows again."
+  eyebrow: Testing and handover
+  title: A network your business can understand and maintain
+  text: >-
+    The agreed connections and services are checked before handover. You receive practical information about
+    the equipment, configuration and remaining limitations, so future work starts from a clear picture of the
+    network.
 cta:
-  title: "Discuss your network project"
-  text: "Tell us briefly about the office, the approximate number of workspaces and what needs to be built or changed. Floor-plan information or photos of an existing network cabinet can be useful later in the planning stage."
-  prompt: "Useful details include the location, approximate office size, number of workspaces, existing infrastructure and the result you want to achieve."
-expanded:
-  situations:
-    eyebrow: "Typical projects"
-    title: "Network projects for small and growing businesses"
-    intro: "Not every business needs the same infrastructure. These examples show the kinds of projects we can take on as a complete job or in clearly defined parts."
-    items:
-      - title: "Build the network for a new office"
-        text: "From initial planning and cable routes to network equipment, Wi-Fi and handover, we can build a technical foundation around the premises and the way the office will be used."
-      - title: "Modernize an existing network"
-        text: "When the current equipment no longer fits the business, the network can be extended or rebuilt in a planned way instead of accumulating further workarounds."
-      - title: "Cabling & network cabinet"
-        text: "Cable routes, outlets, patch panels and network cabinets can be planned, installed, tested and organised cleanly, including agreed finishing work around the installation where required."
-      - title: "Business Wi-Fi"
-        text: "Wi-Fi is planned around the space and intended use. Multiple access points, practical coverage and separate staff or guest access can be implemented where the office needs them."
-      - title: "NAS & shared storage"
-        text: "Network storage can be integrated for shared files and appropriate access structures without automatically turning the project into a complex server deployment."
-      - title: "VPN & secure remote access"
-        text: "Where authorised staff or responsible users need access to agreed internal resources from outside the office, suitable VPN access can be included in the network infrastructure."
-  process:
-    eyebrow: "Approach"
-    title: "From requirements to a finished network"
-    intro: "We do not begin with a shopping list. First we clarify how the office will be used, then make the design, equipment and implementation as concrete as the project requires."
-    steps:
-      - title: "Understand the requirements"
-        text: "We clarify the rooms, workspaces, existing connections, Wi-Fi use, shared services and the outcome the business needs."
-      - title: "Plan the solution"
-        text: "We define a sensible structure and agree the equipment, cabling, scope and procurement where required."
-      - title: "Install & configure"
-        text: "The agreed infrastructure is installed, cabled and configured for the intended day-to-day use."
-      - title: "Test & hand over"
-        text: "Connections, Wi-Fi and agreed services are tested, with the important information and next steps handed over clearly."
-  proof:
-    eyebrow: "Technical depth behind the project"
-    title: "Capability beyond the office router"
-    text: "The page stays deliberately readable, but the work can involve managed networks, professional Wi-Fi infrastructure, cabling, shared storage, secure connections and Linux-based network services where the project calls for them."
-    items:
-      - "IT experience since 2008"
-      - "Planning and configuration of managed network infrastructure"
-      - "Cabling, testing, patch panels and network cabinets"
-      - "Business Wi-Fi, NAS, VPN and Linux-based network services in an appropriate project scope"
-  boundaries:
-    eyebrow: "Clear scope"
-    title: "The project determines the required depth"
-    items:
-      - "Equipment and topology are selected for the requirements and existing environment; we do not publicly tie the service to one hardware vendor."
-      - "Windows Server, Active Directory and substantial Linux server projects are treated as separate service scopes even when they connect to the network project."
-      - "Secure network configuration and access control can be part of the work; penetration testing, digital forensics and comprehensive cybersecurity or compliance consulting are separate specialist areas."
-      - "Support after the project can be occasional or recurring if useful, but it is not a requirement for planning or implementation."
-  faqs:
-    - question: "Can you plan and build the complete network for a new office?"
-      answer: "Yes. We can review the rooms and requirements, plan a sensible network, recommend or supply suitable equipment, carry out the agreed cabling and installation work, and then configure and test the infrastructure."
-    - question: "Can you supply the network hardware as well?"
-      answer: "Yes. Depending on the project, we can recommend equipment for you to purchase directly or handle procurement within the agreed scope. The choice is based on requirements and the existing environment rather than a fixed public vendor list."
-    - question: "Do you also install network cabling and network cabinets?"
-      answer: "Yes. The work can include cable routes, outlets, patch panels, testing, clean cabinet organisation and agreed finishing work around the installation. The physical scope is clarified before the project begins."
-    - question: "Can you expand or modernize an existing business network?"
-      answer: "Yes. We review which existing components still make sense and plan an extension or rebuild around additional rooms, workspaces or new requirements."
-    - question: "Do you plan and install Wi-Fi for offices?"
-      answer: "Yes. We can plan business Wi-Fi around the space and intended use, configure multiple access points and separate staff and guest access where that is useful."
-    - question: "Can you set up NAS or shared network storage?"
-      answer: "Yes. NAS systems and shared storage can be integrated into the network with appropriate users and access structures. Larger server or backup projects are scoped separately."
-    - question: "Can you set up VPN access for staff?"
-      answer: "Yes. Where secure access from outside is needed for agreed internal resources, suitable VPN access can be planned and configured as part of the network project."
-    - question: "Do we need a long-term IT contract afterwards?"
-      answer: "No. Network planning, installation and modernization can be standalone projects. If occasional support or recurring maintenance is useful later, that can be agreed separately."
-  relatedServiceIds:
-    - microsoft-365-workplaces
-    - google-workspace-cloud
+  title: Tell us what your office needs
+  text: >-
+    Describe the change or problem, your Berlin location and any important dates. The first conversation is
+    free; any paid diagnostic visit is explained before it is arranged.
+  prompt: >-
+    For example: We are moving into an office in Moabit with eight desks and a meeting room. We need cabling
+    and Wi-Fi, and would like to reuse our existing switch. Please leave out passwords and access codes.
+composition:
+  experiment: business-network-en-preview
+  relatedBefore: final-contact
+  related:
+    eyebrow: Workplace services
+    title: Need help with the applications your team uses?
+    linkLabel: Explore this service
+    serviceIds:
+      - microsoft-365-workplaces
+      - google-workspace-cloud
+  sections:
+    - id: introduction
+      kind: hero
+      recipe: hero.service-intro
+      content:
+        eyebrow: Business networks · On site in Berlin
+        title: Office network setup in Berlin
+        intro: >-
+          We plan, install and improve network infrastructure for small and growing businesses in Berlin. From
+          a few additional connections to a new office network, we bring cabling, Wi-Fi and shared systems
+          together around the way your team works.
+        actions:
+          - label: Discuss your office network
+            target: contact
+          - label: Explore the network services
+            target: topics
+        note:
+          title: Planning a move or a change?
+          items:
+            - Your Berlin location and approximate number of workspaces
+            - What is already installed, and what needs to change
+            - Move-in dates or work that must stay available
+          footnote: You do not need a technical specification to get in touch.
+    - id: office-situations
+      kind: recognition
+      recipe: recognition.situations
+      content:
+        eyebrow: When we can help
+        title: New offices, growing teams and everyday connection problems
+        intro: >-
+          A network project can begin with a move, a recurring fault or a small change that the existing setup
+          no longer handles well.
+        items:
+          - title: You are moving into a new office
+            body: >-
+              Desks, meeting rooms and shared equipment need connections. Planning before the fit-out helps
+              avoid awkward cable routes and missing outlets later.
+          - title: The team has outgrown the current setup
+            body: >-
+              Extra rooms or workspaces have been added, but the Wi-Fi and network equipment still reflect the
+              original office.
+          - title: Connections keep interrupting work
+            body: >-
+              Video calls drop, a meeting room has weak Wi-Fi or shared files become unavailable. We
+              investigate which part of the connection is involved.
+          - title: Nobody has a clear picture of the network
+            body: >-
+              An untidy cabinet, unlabelled connections or undocumented settings make even a simple change
+              harder than it should be.
+    - id: practical-help
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: What we do
+        title: Office network planning and installation
+        intro: >-
+          We review what is already in place, what the business needs and which changes are worth making. A
+          few extra outlets, an access point or a cabinet tidy-up can be a useful job in its own right.
+        blocks:
+          - type: columns
+            columns:
+              - title: Keep suitable equipment
+                paragraphs:
+                  - >-
+                    Existing routers, switches and access points can stay where their capacity, support status
+                    and configuration fit the work. We explain any recommended replacement and can advise on
+                    equipment or handle agreed procurement.
+              - title: Agree the work before changing it
+                paragraphs:
+                  - >-
+                    We define the installation, configuration and tests, including any interruption to working
+                    services. One-off projects and targeted troubleshooting are welcome; ongoing maintenance
+                    is optional.
+    - id: quick-contact
+      kind: cta
+      recipe: cta.quick-contact
+      content:
+        eyebrow: Start with a conversation
+        title: What needs to change in your office?
+        body: >-
+          Call or send a short description below. The first conversation is free, and we explain any paid
+          diagnostic visit before arranging it.
+        callLabel: Call about your network
+        enquiryLabel: Describe your project
+        enquiryTarget: contact
+    - id: contact
+      kind: contact
+      recipe: contact.enquiry-email
+      content:
+        title: Tell us what your office needs
+        intro: >-
+          Tell us about the office, the problem or planned change, and any important dates. Approximate
+          details are enough for an initial conversation.
+        formIntro: >-
+          Prepare a draft in your email app, then review and send it there. This page does not send it
+          directly. * Required fields.
+        request: What does your office need?
+        requestPlaceholder: >-
+          For example: We are moving into an office in Moabit with eight desks and a meeting room. We need
+          cabling and Wi-Fi, and would like to reuse our existing switch. Please leave out passwords and
+          access codes.
+        affectedPlaceholder: For example office Wi-Fi, cabling, a network cabinet, NAS or VPN
+        emailSubject: Office network enquiry — Berlin
+    - id: topics
+      kind: scope
+      recipe: scope.chapter-links
+      content:
+        eyebrow: Explore the technical details
+        title: How the parts of an office network fit together
+        intro: >-
+          The right scope depends on the building, equipment and services your team uses. These chapters
+          explain the main decisions; you can discuss a single part or a coordinated project.
+        items:
+          - title: Network cabling and cabinets
+            body: Cable routes, outlets, patching and connections to workspaces.
+            target: network-cabling
+          - title: Business Wi-Fi
+            body: Access-point placement, meeting rooms and staff or guest access.
+            target: business-wifi
+          - title: Network hardware and configuration
+            body: Routers, managed switches and sensible separation of access.
+            target: network-hardware
+          - title: NAS and shared storage
+            body: File access, permissions and a separate backup plan.
+            target: shared-storage
+          - title: VPN and remote access
+            body: Authorised connections to agreed internal resources.
+            target: remote-access
+    - id: network-cabling
+      kind: explanation
+      recipe: explanation.connection-path
+      content:
+        eyebrow: Physical infrastructure
+        title: Network cabling and cabinets for your office
+        paragraphs:
+          - >-
+            A wired connection is useful for fixed workspaces, shared storage and the access points that
+            provide office Wi-Fi. We plan office LAN cabling around the rooms, available routes and where
+            equipment will actually be used.
+          - >-
+            The work can include network outlets, patch panels, a cabinet and organised patching. We agree the
+            physical installation and any finishing work before starting, taking account of access to the
+            premises and existing routes.
+        diagramTitle: From the cabinet to the workplace
+        source:
+          title: Network switch
+          body: A central connection point with suitable ports and capacity for the agreed devices.
+        route:
+          title: Patch panel, cable and outlet
+          body: An identified route connects the cabinet to the room or workspace.
+        destinations:
+          - title: Workspaces
+            body: Wired connections for computers and compatible desk equipment.
+          - title: Wi-Fi access points
+            body: A wired link back to the network, with power provision checked.
+          - title: Shared equipment
+            body: Connections for a NAS, network printer or meeting-room equipment.
+        caption: >-
+          A simplified view of one connection path. The actual layout, number of ports and equipment are
+          planned for your premises.
+        planning:
+          title: Agree the installation details early
+          body: >-
+            In a new office or refurbishment, these decisions are easier before furniture and finishes are in
+            place.
+          items:
+            - title: Routes and permission
+              body: >-
+                Check existing ducts, surface routes and any building or landlord permissions relevant to the
+                work.
+            - title: Cabinet and capacity
+              body: Allow for patching, power, ventilation and sensible spare capacity for agreed future use.
+            - title: Testing and identification
+              body: >-
+                Check the agreed connections and label outlets and patching so the installed routes can be
+                followed later.
+    - id: business-wifi
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Wireless coverage and access
+        title: Business Wi-Fi planned around the working space
+        intro: >-
+          Meeting rooms, desks and guest areas place different demands on Wi-Fi. We look at the layout,
+          building materials, device use and available wired connections before deciding where access points
+          belong.
+        blocks:
+          - type: table
+            title: Three questions that shape the Wi-Fi plan
+            columns:
+              - What matters
+              - What we consider
+            rows:
+              - - Coverage
+                - Where people need a usable connection, including rooms separated by walls or floors.
+              - - Capacity
+                - How many devices and simultaneous activities the busy areas need to support.
+              - - Access
+                - Which users need internal resources and which should have guest internet access only.
+          - type: prose
+            paragraphs:
+              - >-
+                Where practical, access points connect back to the network by cable. Where a cable route is
+                impractical, we assess whether a wireless link can support the intended use and placement.
+              - >-
+                We check the agreed areas and typical uses after configuration. Coverage and performance
+                depend on the premises, devices and interference; adding access points alone does not
+                guarantee a particular result.
+    - id: network-hardware
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Equipment and configuration
+        title: Managed network hardware with a clear purpose
+        intro: >-
+          The router, switches and Wi-Fi equipment need to work as one system. We select and configure them
+          for the connections, services and access rules the office actually needs.
+        blocks:
+          - type: columns
+            columns:
+              - title: Capacity and compatibility
+                paragraphs:
+                  - >-
+                    Port numbers, link speeds, Wi-Fi support and power for compatible access points all affect
+                    the hardware choice. We review existing equipment, administration access and support
+                    status before proposing an upgrade.
+              - title: Separate access where needed
+                paragraphs:
+                  - >-
+                    A guest connection should not automatically reach office files or devices. Where the
+                    equipment supports it, separate networks and access rules can distinguish guests, staff
+                    and selected shared systems.
+          - type: callout
+            tone: quiet
+            title: Changes to a working office need a plan
+            body: >-
+              We agree an installation window, the affected services and practical recovery options before
+              disruptive changes. Equipment records and relevant configuration information form part of the
+              agreed handover.
+    - id: shared-storage
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: NAS and shared files
+        title: NAS and shared storage for your team
+        intro: >-
+          A NAS can give authorised people a shared place for files inside the office. We can integrate the
+          storage into the network, configure users and permissions, and check access from the agreed
+          computers.
+        blocks:
+          - type: prose
+            paragraphs:
+              - >-
+                We clarify which folders people need, who should be able to change them and whether existing
+                data needs moving. Capacity, device compatibility and the current storage condition influence
+                what can sensibly be reused.
+          - type: callout
+            tone: solid
+            title: Shared storage is not the same as a backup
+            body: >-
+              Copies on the same NAS, disk redundancy and synchronisation do not replace an independent
+              backup. We discuss separate copies, responsibility and any agreed restoration checks. Larger
+              migrations, backup systems and server projects need their own defined scope.
+    - id: remote-access
+      kind: explanation
+      recipe: explanation.editorial-prose
+      content:
+        eyebrow: Access from outside the office
+        title: VPN access to the resources your team needs
+        intro: >-
+          Some people need office files or an internal application while working elsewhere. We first establish
+          which resource they need, who is authorised to use it and whether a VPN is the appropriate way to
+          connect.
+        blocks:
+          - type: prose
+            paragraphs:
+              - >-
+                Suitable VPN access can be configured within the agreed network project. The work includes
+                checking compatible equipment, individual access and the connections from the intended
+                devices. Multi-factor authentication and restrictions on reachable resources are considered as
+                part of the access design.
+              - >-
+                Remote access also depends on the office internet connection, the user’s connection and
+                supported equipment. Access should be reviewed when people leave or their role changes;
+                responsibility for updates and later support is agreed at handover.
+          - type: callout
+            tone: outline
+            title: Agree the specialist requirements separately
+            body: >-
+              A VPN does not make an entire business secure. Penetration testing, incident investigation,
+              enterprise cybersecurity and compliance consulting are separate specialist services. Windows
+              Server, Active Directory and substantial Linux server work also require a separate scope.
+    - id: working-process
+      kind: process
+      recipe: process.staged-path
+      content:
+        eyebrow: From requirements to handover
+        title: How we plan and deliver the work
+        intro: >-
+          The same approach applies to a small improvement or a new installation. The level of planning and
+          documentation follows the job.
+        steps:
+          - title: Understand the office
+            body: >-
+              Discuss the location, workspaces, current equipment, required services and timing. Arrange an
+              on-site review where needed.
+          - title: Agree the plan and cost
+            body: >-
+              Define the work, equipment, procurement, dependencies and any interruption. Explain diagnostic
+              charges before arranging a paid visit.
+          - title: Install and configure
+            body: >-
+              Carry out the agreed cabling and configuration. Confirm extra work, equipment or return visits
+              before proceeding.
+          - title: Test and hand over
+            body: >-
+              Check the agreed connections and services. Explain the changes, supply practical documentation
+              and clarify any follow-up responsibilities.
+    - id: questions
+      kind: faq
+      recipe: faq.editorial-answers
+      content:
+        eyebrow: Before you get in touch
+        title: Questions about office network projects
+        intro: >-
+          You can start with an approximate brief. We will help clarify the technical requirements and whether
+          the work is a suitable fit.
+        items:
+          - question: Can we book a small job without a maintenance contract?
+            paragraphs:
+              - >-
+                Yes. Additional connections, a Wi-Fi problem or an agreed configuration change can be
+                standalone work. Occasional support or recurring maintenance can be arranged separately where
+                useful; neither is a condition of an installation.
+          - question: Can you use our existing equipment or supply new hardware?
+            paragraphs:
+              - >-
+                We review whether the existing equipment fits the requirements and can be administered and
+                supported. You can purchase recommended equipment yourself, or ask us to handle agreed
+                procurement. Hardware and any additional work are agreed before purchase or installation.
+          - question: Can the work take place while the office is in use?
+            paragraphs:
+              - >-
+                Some preparation can happen alongside normal work, but cabling and configuration changes may
+                interrupt connections. We discuss the affected services and a suitable work window. Weekday,
+                evening or Saturday appointments may be possible by agreement; availability and downtime are
+                confirmed for the actual job.
+          - question: How are costs and diagnostic visits handled?
+            paragraphs:
+              - >-
+                The first conversation is free. We provide an individual quotation for the work we can define,
+                and explain any charge for a diagnostic visit before arranging it. The premises, cable routes,
+                equipment and agreed scope affect the cost.
+          - question: What if the fault is with our internet provider?
+            paragraphs:
+              - >-
+                We can investigate the local network and help distinguish an internal problem from a provider
+                connection issue. Provider-side line faults, tariff changes and restoration of the external
+                connection remain with the provider. We do not promise emergency response, an SLA or a
+                guaranteed repair time.
+    - id: final-contact
+      kind: cta
+      recipe: cta.quick-contact
+      content:
+        eyebrow: Discuss the next step
+        title: Tell us about your office network
+        body: >-
+          Whether you need one improvement or a new installation, describe the result you want and any
+          important dates. We will clarify the scope with you.
+        callLabel: Call about your project
+        enquiryLabel: Return to the enquiry form
+        enquiryTarget: contact
