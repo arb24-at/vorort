@@ -9,7 +9,7 @@ navigation:
   group: workplace-collaboration
   label: "Google Workspace"
 page:
-  template: guided-business
+  template: recipe-service
   technicalDepth: professional
   theme:
     variant: workspace
@@ -120,6 +120,297 @@ cta:
   title: "Google-Workspace-Anliegen besprechen"
   text: "Beschreiben Sie kurz, was eingerichtet, migriert oder behoben werden soll. Für die erste Einordnung benötigen wir keine Passwörter, Bestätigungscodes oder Wiederherstellungsschlüssel."
   prompt: "Hilfreich sind die ungefähre Nutzerzahl, vorhandene Domain, betroffene Dienste, aktuelles Ausgangssystem und die Auswirkung auf den Arbeitsablauf."
+composition:
+  sections:
+  - id: einstieg
+    kind: hero
+    recipe: hero.editorial-art
+    content:
+      eyebrow: Unternehmen · Google Workspace
+      title: Google Workspace für Unternehmen in Berlin einrichten
+      intro: Wenn Google Workspace bereits eingesetzt wird oder bewusst eingeführt werden soll, unterstützen wir bei
+        Einrichtung, Migration und konkreten Problemen. Dabei betrachten wir Gmail, Domain, Nutzer, gemeinsame Dateien,
+        Geräte, Sicherheit und Backup im Zusammenhang – ohne unnötig Funktionen zu aktivieren, die Ihr Betrieb nicht
+        braucht.
+      media:
+        subject: business-hero
+        src: /images/concept-ii/business/B1.png
+        alt: Illustration einer kleinen Büroumgebung mit Arbeitsplätzen, Geräten und Netzwerkverbindungen.
+      actions:
+      - label: Google-Workspace-Anliegen besprechen
+        target: kontakt
+      - label: Unseren Leistungsumfang ansehen
+        target: leistungsumfang
+  - id: typische-anliegen
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: Typische Situationen
+      title: Wenn Gmail, gemeinsame Dateien oder Zugriffe Probleme machen
+      intro: 'Ob Sie eine neue Umgebung einrichten oder eine einzelne Störung lösen möchten: Entscheidend ist, was
+        in Ihrem Betrieb funktionieren soll. Sie müssen die technische Ursache nicht vorher kennen.'
+      blocks:
+      - type: columns
+        columns:
+        - title: Neue Einrichtung oder Plattformwechsel
+          paragraphs:
+          - Eine Firmendomain soll mit Google Workspace verbunden werden. Mitarbeitende brauchen geschäftliche Gmail-Adressen,
+            geeignete Zugriffe und einen gemeinsam nutzbaren Ablageort.
+          - Oder Sie planen einen Wechsel aus einer bisherigen E-Mail-Umgebung oder von Microsoft 365 und möchten
+            vorher Aufwand und Auswirkungen klären.
+        - title: Probleme im laufenden Betrieb
+          paragraphs:
+          - E-Mails werden nicht zugestellt, Drive for desktop synchronisiert nicht wie erwartet oder jemand verliert
+            den Zugang zu benötigten Dateien.
+          - Nach Personalwechseln sind Gruppen, externe Freigaben oder Administratorrechte möglicherweise unübersichtlich
+            geworden.
+      - type: callout
+        tone: quiet
+        title: Auch ein einzelnes Problem ist ein sinnvoller Auftrag
+        body: Ein Fehler bei Gmail, eine neue Nutzerberechtigung oder ein zusätzliches Shared Drive kann für sich
+          geklärt werden. Ein größerer Umbau ist kein Pflichtprogramm.
+  - id: leistungsumfang
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: Dabei unterstützen wir
+      title: Google Workspace einrichten, Probleme beheben und Änderungen planen
+      intro: 'Wir betrachten Google Workspace im Zusammenhang mit Ihrem Unternehmen in Berlin: Domain, geschäftliche
+        E-Mail, Nutzer, Dateien und Arbeitsplätze. Umfang und notwendige Zugriffsrechte stimmen wir vor produktiven
+        Änderungen ab.'
+      blocks:
+      - type: columns
+        columns:
+        - title: Einrichtung und Erweiterung
+          paragraphs:
+          - Wir unterstützen bei Tarifwahl, Domainbestätigung, Gmail und DNS, Benutzerkonten, Gruppen, Aliassen, Shared
+            Drives und passenden grundlegenden Sicherheitseinstellungen. Sie können das Workspace-Abonnement direkt
+            beziehen; wir treten nicht als Google-Lizenzhändler auf.
+        - title: Fehlerbehebung und Übergänge
+          paragraphs:
+          - Wir untersuchen konkrete Probleme mit Gmail, Drive, Berechtigungen und Synchronisierung. Ebenso prüfen
+            wir geplante Umzüge oder einen zeitlich begrenzten Parallelbetrieb mit bestehenden E-Mail-Systemen oder
+            Microsoft 365. Nicht jede Störung erfordert eine neue Konfiguration.
+      - type: callout
+        tone: quiet
+        title: Ihr Betrieb statt allgemeiner Google-Produktsupport
+        body: Für Plattformstörungen und den Google-Produktsupport ist der Anbieter zuständig. Wir helfen bei Ihrer
+          konkreten Arbeitsumgebung, der Domain, den Geräten, Benutzerwechseln und der Verbindung zu vorhandenen Systemen.
+  - id: gmail-und-domain
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: Geschäftliche E-Mail
+      title: Gmail mit der eigenen Firmendomain einrichten
+      intro: Zu einer geschäftlichen Adresse gehören eine korrekt eingebundene Domain, passende DNS-Einstellungen
+        und die bestehende E-Mail-Landschaft. Gerade bei einem Wechsel müssen diese Teile zusammenpassen.
+      blocks:
+      - type: columns
+        columns:
+        - title: Neue Postfächer und Adressen
+          paragraphs:
+          - Wir helfen bei Domainbestätigung, Nutzerpostfächern, Alias-Adressen, Gruppen und den vereinbarten Mail-Einstellungen.
+            DNS-Einträge passen wir nur mit berechtigtem Zugriff und unter Berücksichtigung vorhandener Website- und
+            E-Mail-Dienste an.
+        - title: Zustellungs- und Konfigurationsfehler
+          paragraphs:
+          - Wenn Nachrichten fehlen, abgelehnt werden oder an der falschen Stelle landen, prüfen wir die betroffenen
+            Adressen, die bekannten Zustellwege und die verfügbaren Konfigurationen. Die Ursache kann auch beim Absender,
+            Domainanbieter oder Google liegen.
+      - type: callout
+        tone: quiet
+        title: Produktive E-Mail mit Bedacht umstellen
+        body: Bei Änderungen an Domains und Mail-Routing klären wir Zuständigkeiten, Zeitpunkt, Prüfschritte und mögliche
+          Unterbrechungen. Eine durchgehend störungsfreie Zustellung lässt sich nicht pauschal versprechen.
+  - id: nutzer-und-zugriff
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: Mitarbeitende und Zugriffsrechte
+      title: Konten, Gruppen und Berechtigungen nachvollziehbar verwalten
+      intro: Wenn Kolleginnen und Kollegen dazukommen, Aufgaben wechseln oder das Unternehmen verlassen, müssen Zugänge
+        und Dateiberechtigungen weiterhin zum tatsächlichen Bedarf passen.
+      blocks:
+      - type: columns
+        columns:
+        - title: Nutzer, Gruppen und Administratorrollen
+          paragraphs:
+          - Wir unterstützen beim Anlegen und Anpassen berechtigter Konten, Gruppen und Rollen. Wir klären, wer welche
+            geschäftlichen Ressourcen braucht, und dokumentieren relevante Änderungen im vereinbarten Umfang.
+        - title: Anmeldung und grundlegende Sicherheit
+          paragraphs:
+          - Zur Einrichtung können 2‑Schritt-Verifizierung, geeignete Wiederherstellungsoptionen und die Prüfung vorhandener
+            Administratorzugänge gehören. Ein verlorener Zugang lässt sich nur mit vorgesehenen, legitim verfügbaren
+            Kontoverfahren bearbeiten; eine Wiederherstellung ist nicht garantiert.
+      - type: callout
+        tone: quiet
+        title: Keine Zugangsdaten in die erste Nachricht
+        body: Bitte senden Sie weder Passwörter noch einmalige Bestätigungscodes, Wiederherstellungsschlüssel oder
+          Fernzugriffskennungen. Notwendige Eingaben erfolgen während vereinbarter Arbeiten durch berechtigte Personen.
+  - id: shared-drives
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: Gemeinsame Dateien
+      title: Shared Drives und Dateifreigaben passend zum Team strukturieren
+      intro: Ob Dateien persönlichen Konten oder einer gemeinsam genutzten Ablage zugeordnet sind, wird oft erst bei
+        Vertretung oder Personalwechsel wichtig. Wir prüfen, was für Ihre Zusammenarbeit sinnvoll ist.
+      blocks:
+      - type: columns
+        columns:
+        - title: Struktur und Verantwortung
+          paragraphs:
+          - Wir können Shared Drives anlegen oder neu ordnen, Mitgliedschaften prüfen und Gruppenberechtigungen nachvollziehbar
+            zuordnen. Vor dem Verschieben oder Löschen gemeinsam genutzter Dateien stimmen wir Ziele und Verantwortliche
+            ab.
+        - title: Externe Freigaben und Synchronisierung
+          paragraphs:
+          - Wir untersuchen die benötigten externen Zugriffe sowie die tatsächliche Nutzung über Browser oder Drive
+            for desktop. Synchronisierungsprobleme können auch vom Gerät, der Verbindung oder dem verfügbaren Speicher
+            abhängen.
+      - type: prose
+        paragraphs:
+        - Bestehende Ablagen, die im Alltag gut funktionieren, müssen nicht ohne Anlass umgebaut werden. Eine saubere
+          Berechtigungskonfiguration hilft, ersetzt aber keine klare betriebliche Zuständigkeit für Informationen.
+  - id: migration-und-parallelbetrieb
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: Migration und Übergang
+      title: E-Mail und Datenwechsel sorgfältig vorbereiten
+      intro: Ein Umzug zu Google Workspace, zwischen Workspace-Umgebungen oder Richtung Microsoft 365 hängt von Datenquellen,
+        Zielsystem, Lizenzen, Konten und Berechtigungen ab. Wir prüfen erst die Ausgangslage und entscheiden dann
+        über geeignete Verfahren.
+      blocks:
+      - type: table
+        title: Was vor einer Google-Workspace-Migration zu prüfen ist
+        columns:
+        - Bereich
+        - Wichtige Fragen
+        rows:
+        - - E-Mail und Domain
+          - Postfachgrößen, Aliasse, Zustellwege, DNS-Zugriff, Umstellungszeitpunkt und Zielsystem.
+        - - Dateien und Shared Drives
+          - Eigentümerschaft, Ordnerstruktur, externe Freigaben, Berechtigungen und mögliche Übertragungswege.
+        - - Benutzer und Geräte
+          - Konten, Anmeldung, Windows- oder Mac-Programme und notwendige Unterstützung beim Wechsel.
+        - - Tests und Rückfalloptionen
+          - Stichproben, betriebliche Ausfallzeiten und das weitere Vorgehen, falls eine Übertragung überprüft werden
+            muss.
+      - type: callout
+        tone: quiet
+        title: Keine pauschale Verlustfrei- oder Unterbrechungszusage
+        body: Nicht alle Daten, Metadaten oder Freigaben lassen sich zwischen Plattformen unverändert übertragen.
+          Was übernommen werden kann, welche Nacharbeit nötig ist und wo Unterbrechungen drohen, klären wir vor einer
+          verbindlichen Planung.
+      - type: prose
+        paragraphs:
+        - Große Compliance-Migrationen sowie DLP-, eDiscovery-, SSO- oder unternehmensweite Identitätsprojekte gehören
+          nicht zu unserem Standardangebot. Besondere Anforderungen müssten vor einer Zusage gesondert geprüft werden.
+  - id: arbeitsplaetze-und-backup
+    kind: explanation
+    recipe: explanation.editorial-prose
+    content:
+      eyebrow: Geräte und Datensicherung
+      title: Google Workspace in den tatsächlichen Arbeitsalltag einbinden
+      intro: Eine Cloud-Umgebung muss auch auf den Arbeitsplätzen nutzbar sein. Dafür können Browser, Windows- oder
+        Mac-Geräte, lokale Netzwerke und eine ergänzende Datensicherung wichtig werden.
+      blocks:
+      - type: columns
+        columns:
+        - title: Arbeitsplätze mit Windows und Mac
+          paragraphs:
+          - Wir richten passende Kontozugänge und unterstützte Anwendungen ein, prüfen Drive for desktop sowie die
+            Browsernutzung und grenzen gerätebezogene Probleme ein. Umfassendere Büro-Netzwerkarbeiten werden bei
+            Bedarf separat betrachtet.
+        - title: Unabhängiges Backup prüfen
+          paragraphs:
+          - Eine von der produktiven Google-Workspace-Umgebung getrennte Sicherung kann je nach Daten, Wiederherstellungsbedarf
+            und gewünschter Aufbewahrung sinnvoll sein. Wir helfen bei Auswahl und Einrichtung einer geeigneten Lösung.
+            Synchronisierung allein ist keine separate Datensicherung.
+      - type: callout
+        tone: quiet
+        title: Einmalige Unterstützung ohne Pflichtvertrag
+        body: Einrichtung, kleinere Korrekturen oder ein vereinbarter Umzug sind auch als einzelne Aufträge möglich.
+          Laufende Workspace-Administration, Mitarbeiterschulungen und umfassendes Enterprise-Sicherheitsmanagement
+          gehören nicht automatisch dazu.
+  - id: ablauf
+    kind: process
+    recipe: process.staged-path
+    content:
+      eyebrow: Von der Anfrage bis zur Übergabe
+      title: So gehen wir bei einem Google-Workspace-Anliegen vor
+      intro: Ein einzelner Gmail-Fehler braucht weniger Planung als eine Migration. Die Grundschritte bleiben trotzdem
+        nachvollziehbar.
+      steps:
+      - title: Anliegen beschreiben
+        body: Nennen Sie Ihr Ziel oder Problem, die vorhandene Domain, die ungefähr betroffenen Nutzer und den Berliner
+          Standort. Das erste Gespräch ist kostenlos; Zugangsdaten benötigen wir dabei nicht.
+      - title: Umfang und Abhängigkeiten klären
+        body: Wir prüfen mit berechtigtem Zugang die betroffenen Konten, Domain-Einstellungen und Systeme. Ein kostenpflichtiger
+          Diagnosetermin vor Ort wird vor der Vereinbarung erläutert.
+      - title: Vorgehen und Änderungen abstimmen
+        body: Wir erklären Schritte, mögliche Auswirkungen und das individuelle Angebot. Zusätzliche Arbeiten, Lizenzen
+          oder Werkzeuge stimmen wir vorab ab.
+      - title: Ergebnis prüfen und übergeben
+        body: Wir testen die vereinbarten Funktionen, erläutern wichtige Einstellungen und halten Einschränkungen
+          und nächste sinnvolle Schritte fest.
+  - id: fragen
+    kind: faq
+    recipe: faq.editorial-answers
+    content:
+      eyebrow: Häufige Fragen
+      title: Fragen zur Google-Workspace-Hilfe in Berlin
+      intro: Ein einzelnes Anliegen oder ein geplantes Projekt lässt sich zuerst unverbindlich besprechen. Hier finden
+        Sie wichtige Unterschiede und Grenzen.
+      items:
+      - question: Können Sie Google Workspace für unser Unternehmen neu einrichten?
+        paragraphs:
+        - Ja. Je nach Ausgangslage unterstützen wir bei der Auswahl einer passenden Tarifstufe, der Firmendomain,
+          Gmail, Nutzerkonten, Gruppen, Shared Drives und der Arbeitsplatzanbindung. Das Abonnement kann direkt beim
+          Anbieter bezogen werden; wir geben uns nicht als Lizenzhändler aus.
+      - question: Helfen Sie auch bei bestehenden Gmail- oder Drive-Problemen?
+        paragraphs:
+        - Ja, wenn es um Ihre Unternehmensumgebung geht. Wir grenzen etwa Zustellungsfehler, fehlende Dateizugriffe
+          und Synchronisierungsprobleme ein. Liegt die Ursache beim Domainanbieter oder Google selbst, benennen wir
+          diese Zuständigkeit statt eine Behebung vor Ort zu versprechen.
+      - question: Können Sie E-Mails und Dateien aus Microsoft 365 zu Google Workspace übertragen?
+        paragraphs:
+        - Wir können diesen Wechsel prüfen und bei geeigneten Voraussetzungen planen. Vorher betrachten wir Postfächer,
+          Nutzer, Eigentümerschaft, Freigaben, Lizenzsituation und benötigte Arbeitsabläufe. Eine unveränderte oder
+          unterbrechungsfreie Übertragung aller Inhalte ist nicht garantiert.
+      - question: Ist auch ein Wechsel von Google Workspace zu Microsoft 365 möglich?
+        paragraphs:
+        - Auch diese Richtung können wir einschätzen. Geeignete Verfahren hängen von der Quelle, dem Ziel, den Konten,
+          Dateiformaten, Berechtigungen und einer möglichen Übergangsphase ab. Umfang und Kontrolle werden vor produktiven
+          Änderungen abgestimmt.
+      - question: Können Sie bei Kontosicherheit und Backup unterstützen?
+        paragraphs:
+        - Wir helfen bei grundlegenden Einstellungen wie 2‑Schritt-Verifizierung und legitim verfügbaren Wiederherstellungswegen
+          sowie bei einer zusätzlich ausgewählten Datensicherung. Eine Kontosperre können wir nicht umgehen; umfassende
+          Enterprise-Compliance-Leistungen bieten wir nicht als Standardprojekt an.
+      - question: Brauchen wir einen laufenden Betreuungsvertrag?
+        paragraphs:
+        - Nein. Eine Neueinrichtung, ein konkretes Problem oder eine geplante Migration kann einmalig beauftragt werden.
+          Das erste Gespräch ist kostenlos. Ob ein Diagnosetermin kostenpflichtig ist und welche weiteren Arbeiten
+          angeboten werden, klären wir vor der Vereinbarung.
+  related:
+    eyebrow: Passende Leistungen für Unternehmen
+    title: Weitere Unterstützung für Ihre Büro-IT
+    linkLabel: Leistung ansehen
+    serviceIds:
+    - microsoft-365-workplaces
+    - network-it-support
+  contact:
+    title: Google-Workspace-Anliegen besprechen
+    intro: Schildern Sie kurz, was eingerichtet, geändert oder behoben werden soll und welche Auswirkungen das auf
+      Ihr Unternehmen hat. Auch kleinere Einzelanfragen sind willkommen.
+    formIntro: Dieses Formular öffnet einen E-Mail-Entwurf in Ihrer E-Mail-Anwendung. Bitte prüfen und versenden Sie
+      ihn dort selbst; die Website sendet keine Nachricht direkt. Teilen Sie keine Passwörter, Bestätigungscodes oder
+      Wiederherstellungsschlüssel mit.
+    affectedPlaceholder: Zum Beispiel Gmail-Zustellung, Shared Drive oder Firmendomain
+    request: Wobei können wir Ihnen helfen?
+  contactAfter: leistungsumfang
 expanded:
   situations:
     eyebrow: "Konkrete Aufgaben"
