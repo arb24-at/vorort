@@ -57,6 +57,13 @@ export const productionTrials: Record<string, Trial> = {
     id: "network-it-support-en", translationId: "network-it-support", slug: "network-it-support", locale: "en", audience: "business",
     authorisation: "Aykhan's named Task 4F, v2.2.39.", recipes: serviceExperiments, blocks: [],
   },
+  // Task 3G: page/locale-scoped working draft under Aykhan's explicit
+  // existing-pages-before-blueprints exception (2026-10-21). No lifecycle promotion.
+  "microsoft-365-de-preview": {
+    id: "microsoft-365-workplaces-de", translationId: "microsoft-365-workplaces", slug: "microsoft-365-arbeitsplaetze", locale: "de", audience: "business",
+    authorisation: "Aykhan's initial existing-page assignment, Task 3G (2026-10-21), explicitly before page blueprints; German source trial only.",
+    recipes: serviceExperiments, blocks: [],
+  },
   "microsoft-365-en-preview": {
     id: "microsoft-365-workplaces-en", translationId: "microsoft-365-workplaces", slug: "microsoft-365-workplaces", locale: "en", audience: "business",
     authorisation: "Aykhan's named Task 4G, v2.2.40.", recipes: serviceExperiments, blocks: [],
